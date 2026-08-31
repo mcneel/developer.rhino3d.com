@@ -64,7 +64,9 @@
   width: 0;
   height: 0;
   border: 6px inset transparent;
-  position: absolute; }
+  position: absolute;
+  -webkit-filter: drop-shadow(0px 0px 1.5px rgba(51, 51, 51, 0.9));
+  filter: drop-shadow(0px 0px 1.5px rgba(51, 51, 51, 0.9)); }
 
 .twentytwenty-left-arrow, .twentytwenty-right-arrow {
   top: 50%;

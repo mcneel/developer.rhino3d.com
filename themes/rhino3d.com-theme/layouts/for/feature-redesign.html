@@ -1,0 +1,25 @@
+{{ define "main" }}
+
+{{ .Scratch.Set "groupBy" "list_group" }}
+{{ .Scratch.Set "groupOrder" "asc" }}
+
+<div class="single-content-area toc-page">
+  {{ if .Params.page_options.toc }}
+      {{ partial "toc.html" . }}
+  {{ end }}
+  <div class="main-content {{ if not .Params.page_options.toc }}toc-no{{ if .Params.page_options.narrow }} toc-no-narrow{{ end }}{{ end }}">
+    {{ if ne false (.Params.page_options.show_title) }}
+    <div class="feature-title-container">
+      <h1 class="docs-page-title">{{ .Page.Title }}</h1>{{ if eq (int .Site.Params.latestRhinoVersion) (int .Params.included_in.since) }}<div class="new-callout"><a href="/{{ .Site.Params.latestRhinoVersion}}/new">{{ i18n "NEW-in-Vx" . }}</a></div>{{ end }}{{- partial "platform-callout" . -}}
+    </div>
+    {{ end }}
+    <p>{{ partial "byline.html" . }}</p>
+    <div class="docs-body-content for-body-content">
+      {{.Content}}
+    </div>
+    {{ if and (not .Params.page_options.plain ) (not .Params.page_options.hide_edit_button ) }}
+      {{- partial "edit_button.html" . -}}
+    {{ end }}
+  </div>
+</div>
+{{ end }}

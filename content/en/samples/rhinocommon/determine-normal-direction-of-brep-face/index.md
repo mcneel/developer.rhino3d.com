@@ -4,7 +4,7 @@ authors = [ "steve" ]
 categories = [ "Other" ]
 description = "Demonstrates how to determine the normal direction of a Brep face at a specified point."
 keywords = [ "determine", "normal", "direction", "brep", "face" ]
-languages = [ "C#", "Python", "VB" ]
+languages = [ "C#", "Python" ]
 sdk = [ "RhinoCommon" ]
 title = "Determine Normal Direction of Brep Face"
 type = "samples/rhinocommon"
@@ -71,61 +71,10 @@ partial class Examples
 
 </div>
 
-
-<div class="codetab-content" id="vb">
-
-```vbnet
-Partial Friend Class Examples
-  Public Shared Function DetermineNormalDirectionOfBrepFace(ByVal doc As RhinoDoc) As Result
-	' select a surface
-	Dim gs = New GetObject()
-	gs.SetCommandPrompt("select surface")
-	gs.GeometryFilter = ObjectType.Surface
-	gs.DisablePreSelect()
-	gs.SubObjectSelect = False
-	gs.Get()
-	If gs.CommandResult() <> Result.Success Then
-	  Return gs.CommandResult()
-	End If
-	' get the selected face
-	Dim face = gs.Object(0).Face()
-	If face Is Nothing Then
-	  Return Result.Failure
-	End If
-
-	' pick a point on the surface.  Constain
-	' picking to the face.
-	Dim gp = New GetPoint()
-	gp.SetCommandPrompt("select point on surface")
-	gp.Constrain(face, False)
-	gp.Get()
-	If gp.CommandResult() <> Result.Success Then
-	  Return gp.CommandResult()
-	End If
-
-	' get the parameters of the point on the
-	' surface that is clesest to gp.Point()
-	Dim u As Double = Nothing, v As Double = Nothing
-	If face.ClosestPoint(gp.Point(), u, v) Then
-	  Dim direction = face.NormalAt(u, v)
-	  If face.OrientationIsReversed Then
-		direction.Reverse()
-	  End If
-	  RhinoApp.WriteLine(String.Format("Surface normal at uv({0:f},{1:f}) = ({2:f},{3:f},{4:f})", u, v, direction.X, direction.Y, direction.Z))
-	End If
-	Return Result.Success
-  End Function
-End Class
-```
-
-</div>
-
-
 <div class="codetab-content" id="py">
 
 ```python
 import rhinoscriptsyntax as rs
-from scriptcontext import *
 import Rhino
 from Rhino.Commands import Result
 
@@ -161,8 +110,8 @@ def RunCommand():
         dir = face.NormalAt(u, v)
         if face.OrientationIsReversed:
             dir.Reverse()
-        print "Surface normal at uv({0:f},{1:f}) = ({2:f},{3:f},{4:f})".format(
-            u, v, dir.X, dir.Y, dir.Z)
+        print("Surface normal at uv({0:f},{1:f}) = ({2:f},{3:f},{4:f})".format(
+            u, v, dir.X, dir.Y, dir.Z))
 
 if __name__ == "__main__":
     RunCommand()

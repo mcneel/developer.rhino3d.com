@@ -1,0 +1,34 @@
+{{ define "main" }}
+
+<div class="single-content-area toc-page">
+  <div class="main-content toc-no">
+
+    {{/* ============================================================
+         HERO — compact variant (no video slot)
+         ============================================================ */}}
+    <div class="feature-hero2 feature-hero2-compact">
+      <div class="feature-hero2-top">
+        <div class="feature-hero2-top-inner">
+
+          <div class="hero2-title-row">
+            {{ if ne false (.Params.page_options.show_title) }}
+            <h1 class="hero2-title">{{ .Page.Title }}</h1>
+            {{ end }}
+          </div>
+
+          {{ with .Page.Params.whats_new.in_v9_summary }}
+            <p class="hero2-subtitle">{{ . | markdownify }}</p>
+          {{ end }}
+
+        </div>
+      </div>
+    </div>
+
+    {{- partial "feature-redesign2-body.html" . -}}
+
+  </div>
+</div>
+
+{{- partial "feature-redesign2-scripts.html" . -}}
+
+{{ end }}

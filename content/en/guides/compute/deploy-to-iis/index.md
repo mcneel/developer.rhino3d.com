@@ -9,7 +9,7 @@ sdk = [ "Compute" ]
 title = "Deployment to Production Servers"
 type = "guides"
 weight = 4
-override_last_modified = "2026-02-09T09:45:21Z"
+override_last_modified = "2026-05-21T09:45:21Z"
 
 [admin]
 picky_sisters = ""
@@ -97,28 +97,19 @@ To start, let's download the RDP file. We'll use the Azure VM Portal but a simil
 Congratulations. You should now have access to the desktop of the remote machine running Windows Server 2019 or higher.
 
 ## Running the Bootstrap script
-Assuming that you are now logged into the virtual machine (using RDP), follow the following steps to install Rhino.Compute behind IIS. Note: The following steps assume that this is an installation on a new virtual machine or server (meaning Rhino.Compute has not been previously installed on this machine). If you have already setup Rhino.Compute and IIS on this machine and simply need to update Rhino and/or Rhino.Compute on this VM, please proceed to the section on [Updating Rhino Compute](../deploy-to-iis/#updating-the-deployment).
+Assuming that you are now logged into the virtual machine (using RDP), follow the steps below to install Rhino.Compute behind IIS. Note: These steps assume that this is an installation on a new virtual machine or server (meaning Rhino.Compute has not been previously installed on this machine). If you have already setup Rhino.Compute and IIS on this machine and simply need to update Rhino and/or Rhino.Compute on this VM, please proceed to the section on [Updating Rhino Compute](../deploy-to-iis/#updating-the-deployment).
 
-### Step 1
+### Installation
 
 1. Click on the Windows Start menu and type in "Powershell". In the menu that appears, right-click on the **Windows Powershell app** and choose **Run As Administrator**.
 {{< image url="/images/powershell_1.png" alt="/images/powershell_1.png" class="image_center" width="50%" >}}
 
-1. **Copy and paste** the command below into the Powershell prompt and hit **Enter**. This command will download the latest step 1 bootstrap script and install Rhino and IIS onto your VM. Note: you will be prompted to enter your **Email Address**, **API Key**, and **Rhino Token**, so please have that information handy.
+1. **Copy and paste** the command below into the Powershell prompt and hit **Enter**. This command will download the latest bootstrap script and install Rhino and IIS onto your VM. Note: you will be prompted to enter your **Email Address**, **API Key**, and **Rhino Token**, so please have that information handy.
     <div class="codetab">
-      <button class="tablinks1" onclick="openCodeTab(event, 'r7-1')">Rhino 7: Step 1</button>
-      <button class="tablinks1" onclick="openCodeTab(event, 'r8-1')" id="defaultOpen1">Rhino 8: Step 1</button>
+      <button class="tablinks1" onclick="openCodeTab(event, 'r8-1')" id="defaultOpen1">Rhino 8: Installation</button>
     </div>
 
     <div class="tab-content">
-    <div class="codetab-content1" id="r7-1">
-
-    ```powershell
-    $F="/bootstrap_step-1.zip";$T="$($Env:temp)\tmp$([convert]::tostring((get-random 65535),16).padleft(4,'0')).tmp"; New-Item -ItemType Directory -Path $T; iwr -useb https://raw.githubusercontent.com/mcneel/compute.rhino3d/7.x/script/production/bootstrap_step-1.zip -outfile $T$F; Expand-Archive $T$F -DestinationPath $T; Remove-Item $T$F;& "$T\bootstrap_step-1\boostrap_step-1.ps1" 
-    ```
-
-    </div>
-
     <div class="codetab-content1" id="r8-1">
 
     ```powershell
@@ -128,39 +119,11 @@ Assuming that you are now logged into the virtual machine (using RDP), follow th
     </div>
     </div>
 
-1. At the end of step 1, your VM will automatically be restarted (You will be logged out of Remote Desktop).
+1. At the end of the bootstrap script, you should see the message *Congratulations! All components have now been installed.* This will be followed by some instructions about how to install 3rd party plugins so that they will work properly with Rhino.Compute. Please take note of the new **Username** and **Password** which will be required when logging back in to install any additional plugin.
 
-### Step 2
-
-1. Log back into your VM using Remote Desktop.
-
-1. Open a new instance of **Windows Powershell**. Make sure to right-click on the application and select **Run As Administrator**.
-
-1. **Copy and paste** the command below into the Powershell prompt and hit **Enter**. This command will download the latest step 2 bootstrap script and will configure IIS to work with Rhino.Compute.
-    <div class="codetab">
-      <button class="tablinks2" onclick="openCodeTab(event, 'r7-2')">Rhino 7: Step 2</button>
-      <button class="tablinks2" onclick="openCodeTab(event, 'r8-2')" id="defaultOpen2">Rhino 8: Step 2</button>
-    </div>
-
-    <div class="tab-content">
-    <div class="codetab-content2" id="r7-2">
-
-    ```powershell
-    $F="/bootstrap_step-2.zip";$T="$($Env:temp)\tmp$([convert]::tostring((get-random 65535),16).padleft(4,'0')).tmp"; New-Item -ItemType Directory -Path $T; iwr -useb https://raw.githubusercontent.com/mcneel/compute.rhino3d/7.x/script/production/bootstrap_step-2.zip -outfile $T$F; Expand-Archive $T$F -DestinationPath $T; Remove-Item $T$F;& "$T\bootstrap_step-2\boostrap_step-2.ps1"
-    ```
-
-    </div>
-
-    <div class="codetab-content2" id="r8-2">
-
-    ```powershell
-    $F="/bootstrap_step-2.zip";$T="$($Env:temp)\tmp$([convert]::tostring((get-random 65535),16).padleft(4,'0')).tmp"; New-Item -ItemType Directory -Path $T; iwr -useb https://raw.githubusercontent.com/mcneel/compute.rhino3d/8.x/script/production/bootstrap_step-2.zip -outfile $T$F; Expand-Archive $T$F -DestinationPath $T; Remove-Item $T$F;& "$T\bootstrap_step-2\boostrap_step-2.ps1"
-    ```
-
-    </div>
-    </div>
-
-1. At the end of the step 2 installation script, you should see the message *Congratulations! All components have now been installed.* This will be followed by some instructions about how to install 3rd party plugins so that they will work properly with Rhino.Compute. Please take note of the new **Username** and **Password** which will be required when logging back in to install any additional plugin.
+{{< call-out "note" "Note" >}}
+The installtion process above is designed for Rhino 8. If you would like to install rhino.compute for Rhino 7, please [follow this guide](/guides/compute/deploy-to-iis-v7/).<br>
+{{< /call-out >}}
 
 ## Testing the app
 
@@ -298,19 +261,10 @@ If you have already Rhino.Compute set up on this machine, you may need to period
 1. **Copy and paste** the command below into the Powershell prompt and hit **Enter**. This command will download the latest version of Rhino for Windows. Note: you will be prompted to enter your **Email Address** so please have that information available.
 
     <div class="codetab">
-      <button class="tablinks1" onclick="openCodeTab(event, 'r7-3')">Update to Latest Rhino 7 Install</button>
       <button class="tablinks1" onclick="openCodeTab(event, 'r8-3')" id="defaultOpen3">Update to Latest Rhino 8 Install</button>
     </div>
 
     <div class="tab-content">
-    <div class="codetab-content1" id="r7-3">
-
-    ```powershell
-    iwr -useb https://raw.githubusercontent.com/mcneel/compute.rhino3d/7.x/script/production/module_update_rhino.ps1 -outfile update_rhino.ps1; .\update_rhino.ps1 
-    ```
-
-    </div>
-
     <div class="codetab-content1" id="r8-3">
 
     ```powershell
@@ -327,19 +281,10 @@ If you have already Rhino.Compute set up on this machine, you may need to period
 1. **Copy and paste** the command below into the Powershell prompt and hit **Enter**. This command will download the latest version of Rhino.Compute.
 
     <div class="codetab">
-      <button class="tablinks1" onclick="openCodeTab(event, 'r7-4')">Update Rhino.Compute for Rhino 7</button>
       <button class="tablinks1" onclick="openCodeTab(event, 'r8-4')" id="defaultOpen4">Update Rhino.Compute for Rhino 8</button>
     </div>
 
     <div class="tab-content">
-    <div class="codetab-content1" id="r7-4">
-
-    ```powershell
-    iwr -useb https://raw.githubusercontent.com/mcneel/compute.rhino3d/7.x/script/production/module_update_compute.ps1 -outfile update_compute.ps1; .\update_compute.ps1 
-    ```
-
-    </div>
-
     <div class="codetab-content1" id="r8-4">
 
     ```powershell

@@ -1,0 +1,177 @@
+{{ define "main" }}
+
+<div class="single-content-area toc-page">
+  {{ if .Params.page_options.toc }}
+    {{ partial "toc.html" . }}
+  {{ end }}
+
+  <div class="main-content {{ if not .Params.page_options.toc }}toc-no{{ if .Params.page_options.narrow }} toc-no-narrow{{ end }}{{ end }}">
+
+    {{/* ============================================================
+         HERO
+         ============================================================ */}}
+    <div class="feature-hero">
+      <div class="feature-hero-content">
+        <div class="feature-hero-text">
+          {{ if eq (int .Site.Params.latestRhinoVersion) (int .Params.included_in.since) }}
+          <div class="feature-hero-eyebrow">
+            <a href="/{{ .Site.Params.latestRhinoVersion }}/new">{{ i18n "NEW-in-Vx" . }}</a>
+          </div>
+          {{ end }}
+
+          <div class="feature-hero-title-row">
+            {{ $iconCmd := .Params.icon | default (index .Params.commands 0) }}
+            {{ with $iconCmd }}
+            <div class="feature-hero-command-icon">
+              <img src="https://docs.mcneel.com/rhino/{{ $.Site.Params.latestRhinoVersion }}/help/{{ $.Site.Params.docLang }}/image/command_icons/{{ lower . }}.png"
+                   onerror="this.parentElement.style.display='none'"
+                   alt="{{ . }}">
+            </div>
+            {{ end }}
+
+            {{ if ne false (.Params.page_options.show_title) }}
+            <h1 class="feature-hero-title">{{ .Page.Title }}</h1>
+            {{ end }}
+          </div>
+
+          {{ with .Page.Params.what_why }}
+            <p class="feature-hero-subtitle">{{ . | markdownify }}</p>
+          {{ end }}
+
+          {{- partial "platform-callout" . -}}
+        </div>
+      </div>
+    </div>
+
+    {{/* ============================================================
+         BODY
+         ============================================================ */}}
+    <div class="feature-body-content">
+
+      {{ with .Page.Params.whats_new.in_v7 }}
+        <h3>{{ i18n "New-in-Rhino-7" }}</h3>
+        <p>{{ . | markdownify }}</p>
+      {{ end }}
+
+      {{ .Content }}
+
+      {{/* Rhino commands */}}
+      {{- $docs_base_url := "https://docs.mcneel.com/rhino/" -}}
+      {{- $docs_version_url := print $docs_base_url $.Site.Params.latestRhinoVersion -}}
+      {{- $docs_help_url := print $docs_version_url "/help/" -}}
+      {{- $docs_lang_url := print $docs_help_url .Site.Params.docLang -}}
+      {{- $docs_commands_url := print $docs_lang_url "/index.htm#commands/" -}}
+      {{ $.Scratch.Set "base_url" $docs_commands_url }}
+
+      {{- $.Scratch.Set "is-english" "false" -}}
+      {{- if eq .Site.Language.Lang "en" -}}
+        {{- $.Scratch.Set "is-english" "true" -}}
+      {{- end -}}
+
+      {{ if eq ($.Scratch.Get "is-english") "false" }}
+        {{- $.Scratch.Set "has-commands" "false" -}}
+        {{- with .Page.Params.commands -}}
+          {{- $.Scratch.Set "has-commands" "true" -}}
+        {{- end -}}
+        {{- if eq ($.Scratch.Get "has-commands") "true" -}}
+          {{- $no_lang_url := substr .RelPermalink 3 -}}
+          {{- $en_url := print "/en" $no_lang_url -}}
+          {{- range .Site.AllPages -}}
+            {{- if eq .RelPermalink $en_url -}}
+              {{- with .Params.commands -}}
+                {{- $.Scratch.Add "en-commands" . -}}
+              {{- end -}}
+            {{- end -}}
+          {{- end -}}
+          <h2 class="feature-commands-heading">{{ i18n "Rhino-Commands" }}</h2>
+          <ul>
+            {{- range $i, $command := .Page.Params.commands -}}
+              {{- $english_command := index ($.Scratch.Get "en-commands") $i -}}
+              <li><a href="{{ $.Scratch.Get "base_url" }}{{ lower $english_command }}.htm" target="_blank" rel="noopener noreferrer">{{ . }}</a></li>
+            {{- end -}}
+          </ul>
+        {{- end -}}
+      {{ else }}
+        {{ with .Page.Params.commands }}
+          <h2 class="feature-commands-heading">{{ i18n "Rhino-Commands" }}</h2>
+          <ul>
+            {{ range . }}
+              <li><a href="{{ $.Scratch.Get "base_url" }}{{ lower . }}.htm" target="_blank" rel="noopener noreferrer">{{ . }}</a></li>
+            {{ end }}
+          </ul>
+        {{ end }}
+      {{ end }}
+
+      {{- partial "edit_button.html" . -}}
+    </div>
+
+  </div>
+</div>
+
+<script>
+(function () {
+  'use strict';
+
+  var body = document.querySelector('.feature-body-content');
+  if (!body) return;
+
+  // ── 1. Split content into alternating sections at each h2 ───────────────
+  var groups  = [];
+  var current = null;
+
+  Array.from(body.childNodes).forEach(function (node) {
+    var isElement = node.nodeType === 1;
+    var isTextContent = node.nodeType === 3 && node.textContent.trim() !== '';
+    if (isElement && node.matches('h2')) {
+      current = [node];
+      groups.push(current);
+    } else if (current && (isElement || isTextContent)) {
+      current.push(node);
+    }
+  });
+
+  groups.forEach(function (group, i) {
+    var section = document.createElement('div');
+    section.className = 'feature-section ' +
+      (i % 2 === 0 ? 'feature-section-white' : 'feature-section-gray');
+
+    var inner = document.createElement('div');
+    inner.className = 'feature-section-inner';
+
+    group.forEach(function (el) { inner.appendChild(el); });
+    section.appendChild(inner);
+    body.appendChild(section);
+  });
+
+  // ── 2. Scroll-reveal with per-section stagger ───────────────────────────
+  if (!('IntersectionObserver' in window)) return;
+
+  var observer = new IntersectionObserver(function (entries) {
+    entries.forEach(function (entry) {
+      if (entry.isIntersecting) {
+        entry.target.classList.add('feature-revealed');
+        observer.unobserve(entry.target);
+      }
+    });
+  }, { threshold: 0.06, rootMargin: '0px 0px -48px 0px' });
+
+  body.querySelectorAll('.feature-section-inner').forEach(function (inner) {
+    var delay = 0;
+    Array.from(inner.children).forEach(function (el) {
+      el.classList.add('feature-reveal');
+      el.style.transitionDelay = delay + 'ms';
+      observer.observe(el);
+      delay = el.matches('h2') ? 80 : Math.min(delay + 80, 320);
+    });
+  });
+
+  // ── 3. Suppress Vimeo unmute button ────────────────────────────────────────
+  document.querySelectorAll('.vimeo-embed iframe').forEach(function (iframe) {
+    if (iframe.src.indexOf('player.vimeo.com') !== -1 && iframe.src.indexOf('unmute_button=') === -1) {
+      iframe.src += '&unmute_button=0';
+    }
+  });
+})();
+</script>
+
+{{ end }}

@@ -1,0 +1,39 @@
+{{- /*
+  resolve-image-src.html
+
+  Resolves a markdown image destination (from a render-image hook) to a usable
+  src, with an English-bundle fallback for localized pages:
+
+    1. A matching Page Resource in the current (possibly localized) page bundle.
+    2. Otherwise, the matching Page Resource in the English translation's bundle.
+       Images are usually bundled only in content/en/... and shared across the
+       translated copies, so non-English pages would otherwise get a broken
+       (404) image relative to their own /<lang>/... URL.
+    3. Otherwise, the raw destination unchanged (external URLs, site-absolute
+       "/..." paths, data: URIs, anchors, or pages without a bundle).
+
+  Localized bundles win over English (step 1 before step 2), so language-specific
+  screenshots are still preferred when present.
+
+  Call with the image render-hook context as the argument; returns the src string.
+  Expects .Page and .Destination on the context.
+*/ -}}
+{{- $dest := .Destination -}}
+{{- $src := $dest -}}
+{{- $rel := strings.TrimPrefix "./" $dest -}}
+{{- if and (not (strings.HasPrefix $rel "http")) (not (strings.HasPrefix $rel "/")) (not (strings.HasPrefix $rel "data:")) (not (strings.HasPrefix $rel "#")) -}}
+  {{- $res := .Page.Resources.GetMatch $rel -}}
+  {{- if not $res -}}
+    {{- range .Page.AllTranslations -}}
+      {{- if eq .Language.Lang "en" -}}
+        {{- with .Resources.GetMatch $rel -}}
+          {{- $res = . -}}
+        {{- end -}}
+      {{- end -}}
+    {{- end -}}
+  {{- end -}}
+  {{- with $res -}}
+    {{- $src = .RelPermalink -}}
+  {{- end -}}
+{{- end -}}
+{{- return $src -}}

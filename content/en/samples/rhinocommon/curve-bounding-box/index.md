@@ -4,7 +4,7 @@ authors = [ "steve" ]
 categories = [ "Curves" ]
 description = "Demonstrates how to create a curve bounding box (world and plane oriented)."
 keywords = [ "curve", "bounding", "world", "plane", "oriented" ]
-languages = [ "C#", "Python", "VB" ]
+languages = [ "C#", "Python" ]
 sdk = [ "RhinoCommon" ]
 title = "Curve Bounding Box"
 type = "samples/rhinocommon"
@@ -68,57 +68,6 @@ partial class Examples
 
 </div>
 
-
-<div class="codetab-content" id="vb">
-
-```vbnet
-Partial Friend Class Examples
-  Public Shared Function CurveBoundingBox(ByVal doc As Rhino.RhinoDoc) As Rhino.Commands.Result
-	' Select a curve object
-	Dim rhObject As Rhino.DocObjects.ObjRef = Nothing
-	Dim rc = Rhino.Input.RhinoGet.GetOneObject("Select curve", False, Rhino.DocObjects.ObjectType.Curve, rhObject)
-	If rc IsNot Rhino.Commands.Result.Success Then
-	  Return rc
-	End If
-
-	' Validate selection
-	Dim curve = rhObject.Curve()
-	If curve Is Nothing Then
-	  Return Rhino.Commands.Result.Failure
-	End If
-
-	' Get the active view's construction plane
-	Dim view = doc.Views.ActiveView
-	If view Is Nothing Then
-	  Return Rhino.Commands.Result.Failure
-	End If
-	Dim plane = view.ActiveViewport.ConstructionPlane()
-
-	' Compute the tight bounding box of the curve in world coordinates
-	Dim bbox = curve.GetBoundingBox(True)
-	If Not bbox.IsValid Then
-	  Return Rhino.Commands.Result.Failure
-	End If
-
-	' Print the min and max box coordinates in world coordinates
-	Rhino.RhinoApp.WriteLine("World min: {0}", bbox.Min)
-	Rhino.RhinoApp.WriteLine("World max: {0}", bbox.Max)
-
-	' Compute the tight bounding box of the curve based on the
-	' active view's construction plane
-	bbox = curve.GetBoundingBox(plane)
-
-	' Print the min and max box coordinates in cplane coordinates
-	Rhino.RhinoApp.WriteLine("CPlane min: {0}", bbox.Min)
-	Rhino.RhinoApp.WriteLine("CPlane max: {0}", bbox.Max)
-	Return Rhino.Commands.Result.Success
-  End Function
-End Class
-```
-
-</div>
-
-
 <div class="codetab-content" id="py">
 
 ```python
@@ -144,16 +93,16 @@ def CurveBoundingBox():
     if not bbox.IsValid: return
 
     # Print the min and max box coordinates in world coordinates
-    print "World min:", bbox.Min
-    print "World max:", bbox.Max
+    print("World min:", bbox.Min)
+    print("World max:", bbox.Max)
 
     # Compute the tight bounding box of the curve based on the
     # active view's construction plane
     bbox = curve.GetBoundingBox(plane)
 
     # Print the min and max box coordinates in cplane coordinates
-    print "CPlane min:", bbox.Min
-    print "CPlane max:", bbox.Max
+    print("CPlane min:", bbox.Min)
+    print("CPlane max:", bbox.Max)
 
 if __name__=="__main__":
     CurveBoundingBox()

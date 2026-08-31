@@ -1,0 +1,16 @@
+{{ $keyframes := .Get "keyframes" }}
+{{ $easing := (.Get "easing" | default "power2.out") }}
+{{ $trigger := (.Get "trigger" | default "0") }}
+{{ $duration := (.Get "duration" | default "1") }}
+{{ $reverse := (.Get "reverse" | default "false") }}
+{{ $id := (print "scroll-section-triggered-" .Ordinal) }}
+
+<div class="scroll-section-child scroll-section-triggered"
+     id="{{ $id }}"
+     data-keyframes="{{ $keyframes }}"
+     data-easing="{{ $easing }}"
+     data-trigger="{{ $trigger }}"
+     data-duration="{{ $duration }}"
+     data-reverse="{{ $reverse }}">
+  {{ .Inner }}
+</div>

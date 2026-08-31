@@ -1,4 +1,4 @@
-﻿#Script written by David Rutten and converted to python by Steve Baer
+#Script written by David Rutten and converted to python by Steve Baer
 #Script copyrighted by Robert McNeel & Associates
 #Script version 19 January 2011
 import rhinoscriptsyntax as rs

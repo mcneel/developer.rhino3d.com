@@ -55,7 +55,7 @@ Clipboard.Instance.Text = "I was copied";
   <div class="codetab-content1" id="py1">
 
 ```py
-from Eto.Forms import Clipboard;
+from Eto.Forms import Clipboard
 Clipboard.Instance.Text = "I was copied"
 ```
 
@@ -154,7 +154,7 @@ def copy_data(sender, args):
     options.IncludeFields = False
     options.IgnoreReadOnlyProperties = True
 
-    data = js.JsonSerializer.Serialize(ed.PointF(4, 8), options);
+    data = js.JsonSerializer.Serialize(ed.PointF(4, 8), options)
     ef.Clipboard.Instance.SetString(data, "PointF")
 
 def paste_data(sender, args):

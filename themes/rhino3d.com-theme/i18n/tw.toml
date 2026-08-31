@@ -88,7 +88,7 @@ other = "Rhino 8 的新功能"
 other = "所有細節..."
 
 [bob-loves-revit]
-other = "Bob ❤️s Revit "
+other = "Bob ❤️s Revit 😘"
 
 # This is optionally shown as a header in some feature pages
 [new-in-rhino-7]
@@ -218,7 +218,7 @@ other = "。"
 # This gets rendered under the title in the header of the page.  It needs to be a specific width, so if it exceeds the english width too much,
 # it might be best to leave it untranslated or figure out a way to condense it.  This is much "branding" as it is words.
 [product-tagline]
-other = "design, model, present, analyze, realize..."
+other = "設計 · 建模 · 提案 · 分析 · 實現"
 
 # This is the placeholder text in the search field on the top navbar
 [search-navbar]

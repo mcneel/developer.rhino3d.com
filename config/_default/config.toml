@@ -41,7 +41,10 @@ target = 'assets'
   baseURLForFigures = "https://developer.rhino3d.com"
   sitemapBaseURL = "https://developer.rhino3d.com"
   navBarShouldResize = false
+  navSearchCollapsed = true # search shows as a magnifying glass that expands on click
   supportsChat = false
+  supportsClarity = false # Microsoft Clarity analytics; only loads in production
+  clarityProjectID = "xxxxxxxxxx" # Placeholder Clarity project/tag ID for developer.rhino3d.com (not yet in use)
   supportsLogin = false
   siteNavLogo = "/images/rhinodevlogo.png"
   logoTitleTextPrimary = "Rhino"
@@ -79,6 +82,10 @@ target = 'assets'
     languageName = "English"
     title = "Rhino Developer Docs"
     weight = 1
+    # Generate llms.txt / llms-full.txt (GEO) for English only. Formats + templates
+    # are defined in the shared theme; other languages keep the HTML-only default.
+    [languages.en.outputs]
+      home = ["HTML", "llms", "llmsfull"]
     [languages.en.params]
       description = "Rhino is a 3D modeler used to create, edit, analyze, document, render, animate, and translate NURBS* curves, surfaces, and solids, point clouds, SubD surfaces, and polygon meshes. There are no limits on complexity, degree, or size beyond those of your hardware."
       author = "Robert McNeel & Associates"

@@ -4,7 +4,7 @@ authors = [ "steve" ]
 categories = [ "Other" ]
 description = "Demonstrates how to add radial dimensions to a selected curve."
 keywords = [ "create", "radial", "dimensions" ]
-languages = [ "C#", "Python", "VB" ]
+languages = [ "C#", "Python" ]
 sdk = [ "RhinoCommon" ]
 title = "Add Radial Dimension"
 type = "samples/rhinocommon"
@@ -74,64 +74,14 @@ partial class Examples
 
 </div>
 
-
-<div class="codetab-content" id="vb">
-
-```vbnet
-Partial Friend Class Examples
-  Public Shared Function AddRadialDimension(ByVal doc As Rhino.RhinoDoc) As Rhino.Commands.Result
-	Dim obj_ref As ObjRef = Nothing
-	Dim rc = RhinoGet.GetOneObject("Select curve for radius dimension", True, ObjectType.Curve, obj_ref)
-	If rc IsNot Result.Success Then
-	  Return rc
-	End If
-	Dim curve_parameter As Double = Nothing
-	Dim curve = obj_ref.CurveParameter(curve_parameter)
-	If curve Is Nothing Then
-	  Return Result.Failure
-	End If
-
-	If curve.IsLinear() OrElse curve.IsPolyline() Then
-	  RhinoApp.WriteLine("Curve must be non-linear.")
-	  Return Result.Nothing
-	End If
-
-	' in this example just deal with planar curves
-	If Not curve.IsPlanar() Then
-	  RhinoApp.WriteLine("Curve must be planar.")
-	  Return Result.Nothing
-	End If
-
-	Dim point_on_curve = curve.PointAt(curve_parameter)
-	Dim curvature_vector = curve.CurvatureAt(curve_parameter)
-	Dim len = curvature_vector.Length
-	If len < RhinoMath.SqrtEpsilon Then
-	  RhinoApp.WriteLine("Curve is almost linear and therefore has no curvature.")
-	  Return Result.Nothing
-	End If
-
-	Dim center = point_on_curve + (curvature_vector/(len*len))
-	Dim plane As Plane = Nothing
-	curve.TryGetPlane(plane)
-	Dim radial_dimension = New RadialDimension(center, point_on_curve, plane.XAxis, plane.Normal, 5.0)
-	doc.Objects.AddRadialDimension(radial_dimension)
-	doc.Views.Redraw()
-	Return Result.Success
-  End Function
-End Class
-```
-
-</div>
-
-
 <div class="codetab-content" id="py">
 
 ```python
-from Rhino import *
-from Rhino.DocObjects import *
-from Rhino.Commands import *
-from Rhino.Geometry import *
-from Rhino.Input import *
+from Rhino import RhinoMath
+from Rhino.DocObjects import ObjectType
+from Rhino.Commands import Result
+from Rhino.Geometry import RadialDimension, AnnotationType
+from Rhino.Input import RhinoGet
 from scriptcontext import doc
 
 def RunCommand():
@@ -143,24 +93,25 @@ def RunCommand():
         return Result.Failure
 
     if curve.IsLinear() or curve.IsPolyline():
-        print "Curve must be non-linear."
+        print("Curve must be non-linear.")
         return Result.Nothing
 
     # in this example just deal with planar curves
     if not curve.IsPlanar():
-        print "Curve must be planar."
+        print("Curve must be planar.")
         return Result.Nothing
 
     point_on_curve = curve.PointAt(curve_parameter)
     curvature_vector = curve.CurvatureAt(curve_parameter)
     len = curvature_vector.Length
     if len < RhinoMath.SqrtEpsilon:
-        print "Curve is almost linear and therefore has no curvature."
+        print("Curve is almost linear and therefore has no curvature.")
         return Result.Nothing
 
     center = point_on_curve + (curvature_vector/(len*len))
     _, plane = curve.TryGetPlane()
-    radial_dimension = RadialDimension(center, point_on_curve, plane.XAxis, plane.Normal, 5.0)
+    indicator_point = point_on_curve + (point_on_curve - center) * 0.5
+    radial_dimension = RadialDimension(AnnotationType.Radius, plane, center, point_on_curve, indicator_point)
     doc.Objects.AddRadialDimension(radial_dimension)
     doc.Views.Redraw()
     return Result.Success

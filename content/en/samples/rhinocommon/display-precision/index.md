@@ -4,7 +4,7 @@ authors = [ "steve" ]
 categories = [ "Other" ]
 description = "Demonstrates how to change the display precision in a Rhino model."
 keywords = [ "changing", "display", "precision" ]
-languages = [ "C#", "Python", "VB" ]
+languages = [ "C#", "Python" ]
 sdk = [ "RhinoCommon" ]
 title = "Display Precision"
 type = "samples/rhinocommon"
@@ -48,51 +48,20 @@ partial class Examples
 
 </div>
 
-
-<div class="codetab-content" id="vb">
-
-```vbnet
-Partial Friend Class Examples
-  Public Shared Function DisplayPrecision(ByVal doc As RhinoDoc) As Result
-	Dim gi = New GetInteger()
-	gi.SetCommandPrompt("New display precision")
-	gi.SetDefaultInteger(doc.ModelDistanceDisplayPrecision)
-	gi.SetLowerLimit(0, False)
-	gi.SetUpperLimit(7, False)
-	gi.Get()
-	If gi.CommandResult() <> Result.Success Then
-	  Return gi.CommandResult()
-	End If
-	Dim distance_display-precision = gi.Number()
-
-	If distance_display-precision IsNot doc.ModelDistanceDisplayPrecision Then
-	  doc.ModelDistanceDisplayPrecision = distance_display-precision
-	End If
-
-	Return Result.Success
-  End Function
-End Class
-```
-
-</div>
-
-
 <div class="codetab-content" id="py">
 
 ```python
-from Rhino import *
-from Rhino.Input.Custom import *
-from Rhino.Commands import *
+from Rhino.Commands import Result
 from scriptcontext import doc
 import rhinoscriptsyntax as rs
 
 def RunCommand():
-    distance_display-precision = rs.GetInteger("Display precision",
+    distance_display_precision = rs.GetInteger("Display precision",
         doc.ModelDistanceDisplayPrecision, 0, 7)
-    if distance_display-precision == None: return Result.Nothing
+    if distance_display_precision == None: return Result.Nothing
 
-    if distance_display-precision != doc.ModelDistanceDisplayPrecision:
-        doc.ModelDistanceDisplayPrecision = distance_display-precision
+    if distance_display_precision != doc.ModelDistanceDisplayPrecision:
+        doc.ModelDistanceDisplayPrecision = distance_display_precision
 
     return Result.Success
 

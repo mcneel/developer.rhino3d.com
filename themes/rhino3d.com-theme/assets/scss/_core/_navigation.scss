@@ -19,7 +19,7 @@
     position:absolute;
     right: 10px;
     bottom: 18px;
-	padding-right: 10px;	
+	padding-right: 4px;	
 }
 
 .navigation a {
@@ -48,30 +48,44 @@
 
 // NEW NAVBAR
 #navbar {
-	display: block;
-	overflow: hidden;
+	z-index: 1000;
 	background-color: $global-background-color;
 	transition: 0.4s;
 	position: fixed;
 	width: 100%;
 	top: 0;
-	z-index: 1000;
 	box-shadow: 0 2px 4px -1px rgba(0,0,0,0.25);
-	display: flex;
-    align-items: center;
+	display:flex;
+	flex-direction: column;
+    align-items: flex-end;
 }
 
-#navbar #wrap {
-	margin-right: auto;
-    margin-left: auto;
-    padding: 0 8px;
-	width: calc(100% - 16px);
-	max-width: 1100px;
+@media screen and (max-width: $global-mobile-maxwidth) {
+	#navbar {
+		align-items: center;
+	}
+}
+
+#nav-logo-search-container {
+	display: block;
+	overflow: hidden;
+	display: flex;
+    justify-content: space-between;
+	width: 100%;
+	align-items: center;
+	max-width: calc(100% - 60px);
+	margin: auto;
+}
+
+@media screen and (max-width: $global-mobile-maxwidth) {
+	#nav-logo-search-container {
+		max-width: calc(100% - 30px);
+	}
 }
 
 #navbar a {
 	color: $global-dark-grey;
-	padding-right: 15px;
+	padding-right: 5px;
 }
 
 #navbar a:hover {
@@ -80,20 +94,23 @@
 }
 
 #logo-container {
-	height: 125px;
+	height: $global-nav-height-large;
 	transition: 0.4s;
-    overflow: hidden;
+    padding: 4px;
+	padding-left: 0px;
 	position: relative;
 }
 
 #logo-inner-container {
-	position: absolute;
 	z-index: 100;
+	height: 100%;
 }
 
 #site-nav-logo {
 	transition: 0.4s;
-	height: 125px;
+	// Fixed height (not a percentage of #logo-container) so the logo keeps
+	// its size when the scroll handler collapses the container to 55px.
+	height: 55px;
 }
 
 #logo-title-text {
@@ -144,20 +161,39 @@
 }
 
 .menu-items {
-	position: absolute;
-	bottom: 18px;
-	padding-left: 180px;
+    margin-top: -43px;
+    padding-bottom: 15px;
+	width: 800px;
+    max-width: 75%;
+    display: flex;
+    justify-content: space-between;
+    flex-wrap: nowrap;
+	margin-right: 30px;
+}
+
+.menu-items a {
+	overflow: hidden;
+    text-overflow: ellipsis;
+	text-wrap: nowrap;
 }
 
 @media screen and (max-width: $global-mobile-maxwidth) {
 	.menu-items { 
-		display: grid; 
-		position: relative; 
-		top: 5px; 
-		padding-left: 0px; 
-		justify-items: center; 
-		height: 0vh; 
-		transition: 0.4s; 
+		display: flex;
+		position: relative;
+		justify-items: center;
+		height: 0;
+		transition: .4s;
+		margin-top: 0;
+		padding-bottom: 0;
+		width: 100%;
+		flex-direction: column;
+		align-content: center;
+		justify-content: space-evenly;
+		align-items: center;
+		margin-right: 0px;    
+		flex-wrap: nowrap;
+		overflow: hidden;
 	}
 	.menu-items a {
 		text-decoration: none;
@@ -194,14 +230,21 @@
 	background-size: contain;
 	width: 24px !important;
 	height: 24px  !important;
+	// Clip the avatar to the circular button so a broken/oversized user
+	// avatar (e.g. /user/avatar/ 404s and the <img> falls back to alt text)
+	// can't spill out and change the navbar height when logged in (WWW-3377).
+	overflow: hidden;
   }
 
   .avatar {
 	border-radius: 50%;
-	background-repeat: no-repeat;
-	background-size: contain;
-	max-width: 24px;
- 	max-height: 24px;
+	// Fixed 24x24 box (not just max-*) + cover keeps the logged-in control the
+	// exact same size as when logged out, regardless of the user's avatar
+	// dimensions or whether /user/avatar/ loads at all (WWW-3377).
+	display: block;
+	width: 24px;
+	height: 24px;
+	object-fit: cover;
   }
   
   .dd-button:hover {
@@ -245,7 +288,8 @@
 
   
   .dd-menu a {
-	padding: 10px !important;
+	// !important needed to beat #navbar a's padding-right
+	padding: 8px 15px !important;
   }
   
   .dd-input + .dd-menu {
@@ -257,7 +301,8 @@
   } 
   
   .dd-menu li {
-	padding: 10px 20px;
+	// Spacing lives on the anchor, not the li, so the whole row is clickable
+	padding: 0;
 	cursor: pointer;
 	white-space: nowrap;
   }
@@ -268,12 +313,18 @@
   
   .dd-menu li a {
 	display: block;
-	margin: -10px -20px;
-	padding: 10px 20px;
+	margin: 0;
+	line-height: 1.5;
+	// counter .logged_in a { width: max-content } so the full row stays clickable
+	width: auto;
   }
   
   .dd-menu li.divider{
 	padding: 0;
+	// Guard against page-level .divider styles (e.g. shortcode-injected ones)
+	margin: 0;
+	height: auto;
+	background: none;
 	border-bottom: 1px solid #cccccc;
   }
 
@@ -288,12 +339,6 @@
 	.overlayMenuIcon {
 		display: block;
 		visibility: visible;
-		right: 10px;
-		position: absolute;
-		top: 50%;
-		-ms-transform: translateY(-50%);
-		transform: translateY(-50%);
-		transition: 0.4s;
 	}
 }
 

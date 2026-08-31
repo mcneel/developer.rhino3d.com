@@ -1,0 +1,22 @@
+{{- /*
+  Returns the regular pages eligible for this site's llms.txt / llms-full.txt files.
+
+  Drops, in order:
+    - pages whose top-level .Section is in params.llms.excludeSections
+    - pages flagged [page_options] block_webcrawlers = true  (honored site-wide, per
+      the same signal used in partials/head.html for the robots meta tag)
+    - drafts are already excluded from .Site.RegularPages by Hugo
+
+  Usage:  {{ $pages := partial "llms/eligible.html" . }}
+  Returns a page slice, in .Site.RegularPages order.
+*/ -}}
+{{- $exclude := .Site.Params.llms.excludeSections | default slice -}}
+{{- $eligible := slice -}}
+{{- range .Site.RegularPages -}}
+  {{- if in $exclude .Section -}}{{- continue -}}{{- end -}}
+  {{- with .Params.page_options.block_webcrawlers -}}
+    {{- if eq . true -}}{{- continue -}}{{- end -}}
+  {{- end -}}
+  {{- $eligible = $eligible | append . -}}
+{{- end -}}
+{{- return $eligible -}}

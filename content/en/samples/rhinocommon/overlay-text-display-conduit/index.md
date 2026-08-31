@@ -4,7 +4,7 @@ authors = [ "steve" ]
 categories = [ "Draw" ]
 description = "Demonstrates how to use a display conduit to draw overlay text."
 keywords = [ "display", "conduit", "draw", "overlay", "text" ]
-languages = [ "C#", "Python", "VB" ]
+languages = [ "C#", "Python" ]
 sdk = [ "RhinoCommon" ]
 title = "Overlay Text Display Conduit"
 type = "samples/rhinocommon"
@@ -51,26 +51,6 @@ partial class Examples
 
 </div>
 
-
-<div class="codetab-content" id="vb">
-
-```vbnet
-Partial Friend Class Examples
-  Private ReadOnly Shared m_customconduit As New CustomConduit()
-  Public Shared Function DrawOverlay(ByVal doc As RhinoDoc) As Rhino.Commands.Result
-	' toggle conduit on/off
-	m_customconduit.Enabled = Not m_conduit.Enabled
-
-	RhinoApp.WriteLine("Custom conduit enabled = {0}", m_customconduit.Enabled)
-	doc.Views.Redraw()
-	Return Rhino.Commands.Result.Success
-  End Function
-End Class
-```
-
-</div>
-
-
 <div class="codetab-content" id="py">
 
 ```python
@@ -88,7 +68,6 @@ class CustomConduit(Rhino.Display.DisplayConduit):
         pt = Rhino.Geometry.Point2d(bounds.Right - 100, bounds.Bottom - 30)
         e.Display.Draw2dText("Hello", color, pt, False)
 
-
 def showafterscript():
     # Create a custom conduit that can continue to draw after the
     # script has completed. The conduit is kept in the sticky
@@ -96,7 +75,7 @@ def showafterscript():
     #
     # check to see if the conduit has been created and is in sticky
     conduit = None
-    if scriptcontext.sticky.has_key("myconduit"):
+    if "myconduit" in scriptcontext.sticky:
         conduit = scriptcontext.sticky["myconduit"]
     else:
         # create a conduit and place it in sticky
@@ -106,10 +85,9 @@ def showafterscript():
     # Toggle enabled state for conduit. Every time this script is
     # run, it will turn the conduit on and off
     conduit.Enabled = not conduit.Enabled
-    if conduit.Enabled: print "conduit enabled"
-    else: print "conduit disabled"
+    if conduit.Enabled: print("conduit enabled")
+    else: print("conduit disabled")
     scriptcontext.doc.Views.Redraw()
-
 
 def showinscript():
     # create a custom conduit that only displays during the execution

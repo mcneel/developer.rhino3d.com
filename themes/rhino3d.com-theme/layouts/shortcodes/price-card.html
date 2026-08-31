@@ -124,7 +124,9 @@
         font-weight: bold;
       }
 
-      .divider {
+      /* Scoped to .plan so this doesn't leak into other .divider elements
+         on the page (e.g. the site-navigation avatar dropdown) */
+      .plan .divider {
         width: 100%;
         height: 1px;
         background: rgba(0, 0, 0, 0.2);

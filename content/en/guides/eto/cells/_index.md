@@ -77,13 +77,15 @@ dialog.ShowModal(parent);
 
 ``` py
 from System.Collections.ObjectModel import ObservableCollection
+from System.Collections.Generic import List
 
 import Eto.Forms as ef
+from Rhino.UI import RhinoEtoApp
 
 items = ObservableCollection[object]()
-items.Add([0, "Zero"])
-items.Add([1, "One"])
-items.Add([2, "Two"])
+items.Add(List[object]([0, "Zero"]))
+items.Add(List[object]([1, "One"]))
+items.Add(List[object]([2, "Two"]))
 
 key_column = ef.GridColumn()
 key_column.HeaderText = "Key"
@@ -102,7 +104,8 @@ gridView.Columns.Add(value_column)
 dialog = ef.Dialog()
 dialog.Content = gridView
 
-dialog.ShowModal()
+parent = RhinoEtoApp.MainWindowForDocument(__rhino_doc__)
+dialog.ShowModal(parent)
 ```
 
   </div>
@@ -166,7 +169,7 @@ var dialog = new Dialog()
 };
 
 var parent = RhinoEtoApp.MainWindowForDocument(__rhino_doc__);
-dialog.Show(parent);
+dialog.ShowModal(parent);
 ```
 
   </div>
@@ -174,13 +177,15 @@ dialog.Show(parent);
 
 ``` py
 from System.Collections.ObjectModel import ObservableCollection
+from System.Collections.Generic import List
 
 import Eto.Forms as ef
+from Rhino.UI import RhinoEtoApp
 
 items = ObservableCollection[object]()
-items.Add([False, "Zero"])
-items.Add([True, "One"])
-items.Add([False, "Two"])
+items.Add(List[object]([False, "Zero"]))
+items.Add(List[object]([True, "One"]))
+items.Add(List[object]([False, "Two"]))
 
 key_column = ef.GridColumn()
 key_column.HeaderText = "Key"
@@ -199,7 +204,8 @@ gridView.Columns.Add(value_column)
 dialog = ef.Dialog()
 dialog.Content = gridView
 
-dialog.ShowModal()
+parent = RhinoEtoApp.MainWindowForDocument(__rhino_doc__)
+dialog.ShowModal(parent)
 ```
 
   </div>
@@ -246,7 +252,7 @@ var items = new ObservableCollection<object>()
   new List<object> () { "Monday", activities[0] },
   new List<object> () { "Tuesday", activities[1] },
   new List<object> () { "Wednesday", activities[2] } 
-}
+};
 
 var dialog = new Dialog()
 {
@@ -273,7 +279,7 @@ var dialog = new Dialog()
 };
 
 var parent = RhinoEtoApp.MainWindowForDocument(__rhino_doc__);
-dialog.Show(parent);
+dialog.ShowModal(parent);
 ```
 
   </div>
@@ -281,15 +287,17 @@ dialog.Show(parent);
 
 ``` py
 from System.Collections.ObjectModel import ObservableCollection
+from System.Collections.Generic import List
 
 import Eto.Forms as ef
+from Rhino.UI import RhinoEtoApp
 
 activities = [ "Running", "Sleeping", "Cycling", "Gardening" ]
 
 items = ObservableCollection[object]()
-items.Add(["Monday", activities[0]])
-items.Add(["Tuesday", activities[1]])
-items.Add(["Wednesday", activities[2]])
+items.Add(List[object](["Monday", activities[0]]))
+items.Add(List[object](["Tuesday", activities[1]]))
+items.Add(List[object](["Wednesday", activities[2]]))
 
 key_column = ef.GridColumn()
 key_column.HeaderText = "Day"
@@ -311,7 +319,8 @@ gridView.Columns.Add(value_column)
 dialog = ef.Dialog()
 dialog.Content = gridView
 
-dialog.ShowModal()
+parent = RhinoEtoApp.MainWindowForDocument(__rhino_doc__)
+dialog.ShowModal(parent)
 ```
 
   </div>
@@ -394,7 +403,7 @@ var dialog = new Dialog()
 };
 
 var parent = RhinoEtoApp.MainWindowForDocument(__rhino_doc__);
-dialog.Show(parent);
+dialog.ShowModal(parent);
 ```
 
   </div>
@@ -402,30 +411,32 @@ dialog.Show(parent);
 
 ``` py
 from System.Collections.ObjectModel import ObservableCollection
+from System.Collections.Generic import List
 
 import Eto.Drawing as ed
 import Eto.Forms as ef
+from Rhino.UI import RhinoEtoApp
 
 colours = [ "#0f9", "#f90", "#9f0" ]
 
 items = ObservableCollection[object]()
-items.Add(colours[0])
-items.Add(colours[1])
-items.Add(colours[2])
+items.Add(List[object]([colours[0]]))
+items.Add(List[object]([colours[1]]))
+items.Add(List[object]([colours[2]]))
 
 def paint_cell(sender, args):
     if args.Item is None:
         return
-    
-    color = ed.Color.Parse(args.Item)
 
-    rect = ed.RectangleF(5, 5, 20, 20);
+    color = ed.Color.Parse(args.Item[0])
+
+    rect = ed.RectangleF(5, 5, 20, 20)
     args.Graphics.FillEllipse(color, rect)
 
 drawable_cell = ef.DrawableCell()
 drawable_cell.Paint += paint_cell
 
-combo_cell = ef.ComboBoxCell(1)
+combo_cell = ef.ComboBoxCell(0)
 combo_cell.DataStore = colours
 
 key_column = ef.GridColumn()
@@ -439,6 +450,7 @@ value_column.DataCell = drawable_cell
 value_column.Resizable = False
 
 gridView = ef.GridView()
+gridView.RowHeight = 30
 gridView.DataStore = items
 gridView.Columns.Add(key_column)
 gridView.Columns.Add(value_column)
@@ -446,7 +458,8 @@ gridView.Columns.Add(value_column)
 dialog = ef.Dialog()
 dialog.Content = gridView
 
-dialog.ShowModal()
+parent = RhinoEtoApp.MainWindowForDocument(__rhino_doc__)
+dialog.ShowModal(parent)
 ```
 
   </div>
@@ -488,8 +501,8 @@ using Rhino.UI;
 var items = Enumerable.Range(0, 100).Cast<object>();
 
 var customCell = new CustomCell();
-customCell.CreateCell = (args) =>
-    new TextBox() { Text = args.Item?.ToString() };
+customCell.CreateCell = (args) => new TextBox();
+customCell.ConfigureCell = (args, ctrl) => (ctrl as TextBox).Text = args.Item?.ToString();
  
 var dialog = new Dialog()
 {
@@ -515,34 +528,41 @@ dialog.ShowModal(parent);
   <div class="codetab-content6" id="py6">
 
 ```py
+from System.Collections.ObjectModel import ObservableCollection
+from System.Collections.Generic import List
+
 import Eto.Forms as ef
 from Rhino.UI import RhinoEtoApp
 
-items = range(0, 100)
-
+items = ObservableCollection[object]()
+for i in range(0, 100):
+    items.Add(List[object]([i]))
+ 
 def create(args):
     text_box = ef.TextBox()
-    text_box.Text = str(args.Item)
-
     return text_box
+ 
+def configure(args, ctrl):
+    ctrl.Text = str(args.Item)
 
 custom_cell = ef.CustomCell()
 custom_cell.CreateCell = create
-
+custom_cell.ConfigureCell = configure
+ 
 value_column = ef.GridColumn()
 value_column.HeaderText = "Value"
 value_column.Editable = True
-value_column.DataCell = ef.TextBoxCell(1)
-
+value_column.DataCell = ef.TextBoxCell(0)
+ 
 gridView = ef.GridView()
 gridView.DataStore = items
 gridView.Columns.Add(value_column)
-
+ 
 dialog = ef.Dialog()
 dialog.Height = 200
 dialog.Content = gridView
-
-var parent = RhinoEtoApp.MainWindowForDocument(__rhino_doc__);
+ 
+parent = RhinoEtoApp.MainWindowForDocument(__rhino_doc__);
 dialog.ShowModal(parent)
 ```
 
@@ -603,7 +623,7 @@ def create(args):
     return ef.TextBox()
 
 def config(args, control):
-    config.Text = str(args.Item)
+    control.Text = str(args.Item)
 
 custom_cell = ef.CustomCell()
 

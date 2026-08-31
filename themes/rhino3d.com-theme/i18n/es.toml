@@ -92,7 +92,7 @@ other = "Bob ❤️s Revit 😘"
 
 # This is optionally shown as a header in some feature pages
 [new-in-rhino-7]
-other = "Nuevo en Rhino 7"
+other = "Novedades de Rhino 7"
 
 # context: the bylines that sometimes show up under the title of a page.  Such as "por Scott Davidson..."
 [by]
@@ -218,7 +218,7 @@ other = "."
 # This gets rendered under the title in the header of the page.  It needs to be a specific width, so if it exceeds the english width too much,
 # it might be best to leave it untranslated or figure out a way to condense it.  This is much "branding" as it is words.
 [product-tagline]
-other = "diseñar, modelar, presentar, analizar, producir..."
+other = "diseñar · modelar · presentar · analizar · producir"
 
 # This is the placeholder text in the search field on the top navbar
 [search-navbar]
@@ -258,11 +258,11 @@ other = "Más información"
 
 # Link title on homepage video captions
 [caption-try]
-other = "probar "
+other = "probar"
 
 # The conjoiner before the Buy link in the video caption
 [caption-or-conjoiner]
-other = "o "
+other = " o "
 
 # Link title on homepage video captions
 [caption-buy]
@@ -306,7 +306,7 @@ other = "Destacado"
 
 # All button and tag on Learn Pages
 [all]
-other = "Todas"
+other = "Todo"
 
 # Filter textfield on Learn Pages
 [filter]

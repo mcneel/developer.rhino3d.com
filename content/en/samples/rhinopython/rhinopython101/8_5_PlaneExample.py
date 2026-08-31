@@ -1,4 +1,4 @@
-﻿import rhinoscriptsyntax as rs
+import rhinoscriptsyntax as rs
 
 def planeexample():
     ptOrigin = rs.GetPoint("Plane origin")

@@ -1,0 +1,58 @@
+<div class="feature-body-content">
+
+  {{ with .Page.Params.whats_new.in_v7 }}
+    <h3>{{ i18n "New-in-Rhino-7" }}</h3>
+    <p>{{ . | markdownify }}</p>
+  {{ end }}
+
+  {{ .Content }}
+
+  {{/* Rhino commands */}}
+  {{- $docs_base_url := "https://docs.mcneel.com/rhino/" -}}
+  {{- $docs_version_url := print $docs_base_url $.Site.Params.latestRhinoVersion -}}
+  {{- $docs_help_url := print $docs_version_url "/help/" -}}
+  {{- $docs_lang_url := print $docs_help_url .Site.Params.docLang -}}
+  {{- $docs_commands_url := print $docs_lang_url "/index.htm#commands/" -}}
+  {{ $.Scratch.Set "base_url" $docs_commands_url }}
+
+  {{- $.Scratch.Set "is-english" "false" -}}
+  {{- if eq .Site.Language.Lang "en" -}}
+    {{- $.Scratch.Set "is-english" "true" -}}
+  {{- end -}}
+
+  {{ if eq ($.Scratch.Get "is-english") "false" }}
+    {{- $.Scratch.Set "has-commands" "false" -}}
+    {{- with .Page.Params.commands -}}
+      {{- $.Scratch.Set "has-commands" "true" -}}
+    {{- end -}}
+    {{- if eq ($.Scratch.Get "has-commands") "true" -}}
+      {{- $no_lang_url := substr .RelPermalink 3 -}}
+      {{- $en_url := print "/en" $no_lang_url -}}
+      {{- range .Site.AllPages -}}
+        {{- if eq .RelPermalink $en_url -}}
+          {{- with .Params.commands -}}
+            {{- $.Scratch.Add "en-commands" . -}}
+          {{- end -}}
+        {{- end -}}
+      {{- end -}}
+      <h2 class="feature-commands-heading">{{ i18n "Rhino-Commands" }}</h2>
+      <ul>
+        {{- range $i, $command := .Page.Params.commands -}}
+          {{- $english_command := index ($.Scratch.Get "en-commands") $i -}}
+          <li><a href="{{ $.Scratch.Get "base_url" }}{{ lower $english_command }}.htm" target="_blank" rel="noopener noreferrer">{{ . }}</a></li>
+        {{- end -}}
+      </ul>
+    {{- end -}}
+  {{ else }}
+    {{ with .Page.Params.commands }}
+      <h2 class="feature-commands-heading">{{ i18n "Rhino-Commands" }}</h2>
+      <ul>
+        {{ range . }}
+          <li><a href="{{ $.Scratch.Get "base_url" }}{{ lower . }}.htm" target="_blank" rel="noopener noreferrer">{{ . }}</a></li>
+        {{ end }}
+      </ul>
+    {{ end }}
+  {{ end }}
+
+  {{- partial "edit_button.html" . -}}
+</div>

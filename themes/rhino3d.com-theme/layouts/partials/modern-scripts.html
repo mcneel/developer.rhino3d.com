@@ -1,0 +1,151 @@
+{{- /*
+  modern-scripts.html — progress bar + TOC active-link tracking for the
+  modern_style theme. Vanilla JS, no dependency on the site's Bootstrap
+  scrollspy (which is wired to the base `.toc`, not used here).
+*/ -}}
+<script>
+(function () {
+  var bar = document.querySelector('.modern-progress__bar');
+  var content = document.querySelector('.modern-style');
+  var tocLinks = Array.prototype.slice.call(
+    document.querySelectorAll('.modern-toc #TableOfContents a[href^="#"]')
+  );
+  if (!content) return;
+
+  // --- Scroll-progress bar (measured against the content column) ---
+  function updateProgress() {
+    if (!bar) return;
+    var rect = content.getBoundingClientRect();
+    var top = rect.top + window.pageYOffset;
+    var total = content.offsetHeight - window.innerHeight;
+    var scrolled = window.pageYOffset - top;
+    var pct = total > 0 ? Math.min(1, Math.max(0, scrolled / total)) : 0;
+    bar.style.width = (pct * 100).toFixed(2) + '%';
+  }
+
+  // --- Active TOC link via IntersectionObserver on headings ---
+  var linkById = {};
+  tocLinks.forEach(function (a) {
+    var id = decodeURIComponent(a.getAttribute('href').slice(1));
+    if (id) linkById[id] = a;
+  });
+  var headings = Object.keys(linkById)
+    .map(function (id) { return document.getElementById(id); })
+    .filter(Boolean);
+
+  function setActive(id) {
+    tocLinks.forEach(function (a) { a.classList.remove('active'); });
+    if (linkById[id]) linkById[id].classList.add('active');
+  }
+
+  // While a TOC click is animating the page, the observer must NOT move the
+  // highlight — otherwise every section the smooth scroll passes flashes active.
+  // The clicked link stays locked until scrolling settles (scrollend + idle
+  // fallback), then the observer resumes and confirms the landed section.
+  var lockActive = false;
+  var settleTimer;
+
+  function unlockSoon() {
+    clearTimeout(settleTimer);
+    settleTimer = setTimeout(function () { lockActive = false; }, 100);
+  }
+
+  if (headings.length && 'IntersectionObserver' in window) {
+    var visible = {};
+    var obs = new IntersectionObserver(function (entries) {
+      // Keep the visibility map current even while locked, so the moment we
+      // unlock we resolve to the correct section without waiting for a scroll.
+      entries.forEach(function (e) {
+        if (e.isIntersecting) visible[e.target.id] = e.intersectionRatio;
+        else delete visible[e.target.id];
+      });
+      if (lockActive) return;
+      // Pick the topmost heading currently in the reading zone.
+      var current = null, best = Infinity;
+      headings.forEach(function (h) {
+        if (!(h.id in visible)) return;
+        var top = h.getBoundingClientRect().top;
+        if (top < best) { best = top; current = h.id; }
+      });
+      if (current) setActive(current);
+    }, { rootMargin: '-80px 0px -70% 0px', threshold: [0, 1] });
+    headings.forEach(function (h) { obs.observe(h); });
+  }
+
+  // Smooth-scroll TOC clicks with a fixed-header offset.
+  tocLinks.forEach(function (a) {
+    a.addEventListener('click', function (e) {
+      var id = decodeURIComponent(a.getAttribute('href').slice(1));
+      var target = document.getElementById(id);
+      if (!target) return;
+      e.preventDefault();
+      lockActive = true;           // freeze the highlight on the clicked link
+      clearTimeout(settleTimer);
+      setActive(id);
+      var top = target.getBoundingClientRect().top + window.pageYOffset - 84;
+      window.scrollTo({ top: top, behavior: 'smooth' });
+      history.pushState(null, null, '#' + id);
+    });
+  });
+
+  // Release the lock when the programmatic scroll finishes.
+  window.addEventListener('scrollend', function () { lockActive = false; clearTimeout(settleTimer); });
+
+  var ticking = false;
+  window.addEventListener('scroll', function () {
+    if (lockActive) unlockSoon();  // idle fallback for browsers without scrollend
+    if (ticking) return;
+    ticking = true;
+    window.requestAnimationFrame(function () { updateProgress(); ticking = false; });
+  }, { passive: true });
+  window.addEventListener('resize', updateProgress, { passive: true });
+  updateProgress();
+
+  // --- Lightbox: click a content image to enlarge, click again / Esc to close ---
+  var overlay = document.createElement('div');
+  overlay.className = 'modern-lightbox';
+  overlay.setAttribute('role', 'dialog');
+  overlay.setAttribute('aria-modal', 'true');
+  overlay.innerHTML = '<img alt="">';
+  document.body.appendChild(overlay);
+  var overlayImg = overlay.firstChild;
+
+  function openLightbox(src) {
+    if (!src) return;
+    overlayImg.src = src;
+    overlay.classList.add('is-open');
+    document.body.style.overflow = 'hidden';
+  }
+  function closeLightbox() {
+    overlay.classList.remove('is-open');
+    document.body.style.overflow = '';
+    // Clear the src after the fade so it doesn't flash on the next open.
+    setTimeout(function () { if (!overlay.classList.contains('is-open')) overlayImg.src = ''; }, 200);
+  }
+  overlay.addEventListener('click', closeLightbox);
+  document.addEventListener('keydown', function (e) {
+    if (e.key === 'Escape' && overlay.classList.contains('is-open')) closeLightbox();
+  });
+
+  // Full-resolution source: the figure's contentUrl anchor if present, else the img itself.
+  function sourceFor(img) {
+    var box = img.closest('.box, figure');
+    var a = box && box.querySelector('a[itemprop="contentUrl"]');
+    return (a && a.getAttribute('href')) || img.currentSrc || img.src;
+  }
+  content.querySelectorAll('.box img, figure img').forEach(function (img) {
+    img.addEventListener('click', function (e) {
+      e.preventDefault();
+      openLightbox(sourceFor(img));
+    });
+  });
+  // The figure shortcode overlays an empty <a itemprop="contentUrl"> on the image;
+  // intercept it so it opens the lightbox instead of navigating to the raw file.
+  content.querySelectorAll('.box a[itemprop="contentUrl"], figure a[itemprop="contentUrl"]').forEach(function (a) {
+    a.addEventListener('click', function (e) {
+      e.preventDefault();
+      openLightbox(a.getAttribute('href'));
+    });
+  });
+})();
+</script>

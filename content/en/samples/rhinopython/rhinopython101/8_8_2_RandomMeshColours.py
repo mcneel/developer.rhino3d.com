@@ -1,4 +1,4 @@
-﻿import rhinoscriptsyntax as rs
+import rhinoscriptsyntax as rs
 from random import random
 
 def randommeshcolors():

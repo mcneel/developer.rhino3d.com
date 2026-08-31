@@ -1,0 +1,13 @@
+{{- $name := "" -}}
+{{- $page := "" -}}
+{{- $icon := "" -}}
+{{- if .IsNamedParams -}}
+    {{- $name = .Get "name" -}}
+    {{- $page = (.Get "page" | default (lower $name)) -}}
+    {{- $icon = (.Get "icon" | default $name) -}}
+{{- else -}}
+    {{- $name = .Get 0 -}}
+    {{- $page = (.Get 1 | default (lower $name)) -}}
+    {{- $icon = (.Get 2 | default $name) -}}
+{{- end -}}
+<a href="/docs/grasshopper/{{ $page }}"><span style="display: inline-block;" class="unfurl-link"><strong><img style="margin-top: -4px; padding-bottom: 2px; height: 24px; vertical-align: middle;" src="https://www.rhino3d.com/static-media/docs/grasshopper/icons/{{ $icon }}.png" onerror="this.onerror=null;this.src='/images/grasshopper-icon.png';"> {{ $name }}</strong></span></a>
