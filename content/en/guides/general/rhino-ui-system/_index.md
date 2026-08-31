@@ -27,38 +27,94 @@ toc = true
 toc_type = "single"
 +++
 
-This guide proves an overview of Rhino's User Interface (UI) system, and it compares the new system found in Rhino 8 with the previous system found in Rhino 7 and earlier.
+This guide proves an overview of Rhino's User Interface (UI) system, and it lists any and all changes made throughout each version.
 
-## Rhino 9 UI System
 
-The goals of the new Rhino 9 UI system were to:
+## UI Concepts
 
-- Simplify RUIs
-- Simplify moving setups across machines
-- Improve and simplify the prior 8 system
-- 100% compatibility with moving to 8 or sending files back to 8
-- A more fluid editing experience
+### Macros
 
-The Rhino 9 system is very similar to Rhino 8, with the following changes.
+Macros contain information needed to display or describe the command script that gets run when the macro is executed. Macro definitions include the following:
+
+- Image which is displayed when possible
+- Name
+- Menu item text
+- Command script to execute.
+
+### Toolbar Buttons
+
+Toolbar buttons can contain left and/or right mouse click actions. Mouse click actions are assigned to macros which contain a script to run when clicked. Toolbar buttons display the image associated with macro assigned to the left mouse action if present, if not the right click macro image is used.
+
+Toolbar buttons can optionally be configured to temporarily fly out other toolbars if desired.
+
+Toolbar buttons can only reference macros from the same RUI file as the toolbar they belong to.
+
+### Toolbars
+
+Toolbars are collections of Toolbar buttons. Toolbars also have a name and optionally an image representing them in a tab.
+
+### Toolbar Groups
+
+Toolbar groups are collections of references to toolbars from the same RUI file. Dragging a toolbar from one file to a group in another file results in the toolbar and its referenced macros being copied from the source file to the destination file. Toolbar groups can’t reference Rhino panels.
+
+### Menus
+
+The Rhino menu system can be extended using menu items defined in an RUI file. The RUI file contains location information describing where to insert an item into the menu system. New menu items are defined by referencing a Macro which contains:
+
+- Menu text.
+- Menu item image.
+- Command script which is run when the menu item is clicked on.
 
 ### RUI Files
 
-- RUI files are modified directly again without diffs exactly as Rhino 7 worked
+RUI files are collections of the items above and are stored in a text file. Items stored in an RUI file can reference items defined in any file. Changes to items in the file are saved automatically when Rhino is closed. You may open or close RUI files or manually choose to save a file at any time. The current version of a file is backed up and changes are saved to the file name. If a file gets damaged you can delete it and rename the backup file in an attempt to restore the previous version. If the backup file is damaged then nothing can be recovered.
+
+Rhino plug-ins can install a RUI file with the same name as the plug-in and it will get copied into a writeable location and opened automatically when Rhino starts. This gives a plug-in the ability to extend the Rhino interface while allowing the plug-in to not load until it is referenced.
+
+Note, all of the above can be managed using the **[Toolbar](https://docs.mcneel.com/rhino/7/help/en-us/index.htm#options/toolbars.htm#(null))** command.
+
+### Rhino Panels
+
+Rhino panels are custom user interfaces created by core Rhino or a plug-in that can be grouped together with tabs.
+
+# Changes
+
+## Rhino 9
+
+The goals of the Rhino 9 UI system were to:
+
+- Simplify RUIs
+- Simplify moving setups across machines
+- Improve and simplify on the prior 8 system
+- 100% compatibility with moving to 8 or sending files back to 8
+- Create a more fluid editing experience
+
+### RUI Files
+
+- RUI files are modified directly (again) without diffs exactly as Rhino 7 and prior worked
 - Any links to other RUIs are resolved and copied into the RUI (Except for fly-outs or sidebars)
 - Diffs will be combined with the respective RUI on migrating to Rhino 9
 - Every part of the RUI file (Except menus) is now edited in one dialog
 
-#### Macro
+#### Groups
 
-Macros have been simplified and no longer need editing separately, nor do they have their own dialog
+Rhino 8 attempted to synchronise groups and containers, Rhino 9 does not synchronise them, when a toolbar or group is shown, it is part of the window layout, and any changes to it, will not be reflected in the RUI. To modify them, use the Toolbar dialog.
+
+#### Macros
+
+Macros have been simplified and no longer need editing separately, nor do they have their own dialog. Trailing macros are also no longer possible, Every macro that is created exists in a toolbar item.
+
+#### Icons
+
+All icons that exist in the RUI are hosted on either a toolbar or macro. This ensures icons in the file are always useful.
 
 ---
 
-## Rhino 8 UI System
+## Rhino 8
 
-The goals of the new Rhino 8 UI system were to:
+The goals of the Rhino 8 UI system were to:
 
-- Display panels and toolbars in the same container.
+- Display panels and toolbars in the same tabbed container as toolbars.
 - Reference toolbars and macros from multiple sources without having to copy definitions from one RUI file to another.
 - Deliver Rhino User Interface (RUI) changes without overwriting or replacing existing files in Rhino or plug-in service releases. (In prior Rhino versions, replacing the RUI file to deliver updated toolbars and macros caused user changes to RUI files to be overwritten.)
 - Quickly change the Rhino UI to display task-orientated tools.
@@ -66,14 +122,13 @@ The goals of the new Rhino 8 UI system were to:
 - Allow users to arbitrarily modify the UI without having to be aware of the location or source of a UI component and to automatically track changes.
 - Provide unified Windows and Mac UI.
 
-The major changes in the new Rhino 8 UI system are:
+The major changes in the Rhino 8 UI system are:
 
-- Toolbar Groups have been replaced by Containers. Containers can display both panels and toolbars.
+- Toolbar Groups auto-convert to Containers. Containers can display both panels and toolbars.
 - RUI files are used to provide toolbar and macro libraries, and they are no longer modified directly. Rhino tracks RUI changes and applies them when loading. Doing this allows Rhino to deliver updated RUI files without losing user changes to a toolbar or macro.
 - Window Layouts have been added and can be used to quickly switch between different UI configurations. They can be exported as files and will include modifications to toolbars and macros and user RUI files
-- Importing a Window Layout will extract user RUI files as necessary and apply RUI modifications.
 
-The new Rhino 8 UI System is designed to allow for the referencing UI components from many sources: including panels, toolbars, and macros, defined by any RUI file or plug-in. When Rhino closes, changes to the UI are saved and original RUI files are never modified unless specifically requested. Configurations of UI layouts can be saved, restored, exported and imported as Window Layouts and shared between Windows and Mac.
+The Rhino 8 UI System is designed to allow for the referencing UI components from many sources: including panels, toolbars, and macros, defined by any RUI file or plug-in. When Rhino closes, changes to the UI are saved and original RUI files are never modified unless specifically requested. Configurations of UI layouts can be saved, restored, exported and imported as Window Layouts and shared between Windows and Mac.
 
 ### Containers
 
@@ -101,115 +156,24 @@ Window Layouts can be exported and imported using Rhino's **[WindowLayout](https
 
 ### RUI Files
 
-In Rhino 8, RUI files are now simply a collection of toolbars, macros and images. These files are intended to provide libraries of toolbars that can be referenced by containers. Changes to toolbars and macros can now be delivered with Rhino and plug-in updates. New toolbars defined in the updated RUI library will automatically appear in the Toolbar command list. Buttons added or removed from a toolbar will be added or removed to the toolbar reference.
+In Rhino 8, RUI files are intended to provide libraries of toolbars that can be referenced by containers. Changes to toolbars and macros can now be delivered with Rhino and plug-in updates. New toolbars defined in the updated RUI library will automatically appear in the Toolbar command list. Buttons added or removed from a toolbar will be added or removed to the toolbar reference.
 
 Toolbar groups defined in RUI files are converted into containers when loaded to support legacy and plug-in RUI files and provide a plug-in RUI file a way to create containers associated with the plug-in.
 
 Linked RUI files can be managed using Rhino's **[Options > Toolbars](https://docs.mcneel.com/rhino/8/help/en-us/index.htm#options/appearance_toolbars.htm#(null))** option.
 
+## Rhino 7
+
+In Rhino 7, panels and toolbars could not be mixed.
+
+### Layouts
+
+The Rhino 7 user interface could not be switched for a different layout and only one can exist for a user.
+
 ### Toolbars
 
-Toolbars are collections of buttons. Toolbar buttons reference macros which may come from any valid RUI source. Toolbars are displayed as tabs in a container.
-
-#### Toolbar Groups
-
-Toolbar Groups are now converted to containers when initially loaded. They exist as a way to support legacy RUI files. Groups may also be used by plug-in developers to provide container definitions associated with a plug-in.
-
-#### Toolbar
-
-Toolbars are collections of toolbar buttons and can be referenced by multiple containers. They can be modified by dragging and dropping buttons from other toolbars or using the new button wizard.
-
-Toolbars can be managed using Rhino's **[Toolbar](https://docs.mcneel.com/rhino/8/help/en-us/index.htm#commands/toolbar.htm#(null))** command.
-
-#### Toolbar Button
-
-Toolbar buttons can contain left and/or right mouse click actions. Left and right mouse click actions are assigned to macros which contain a script to run when clicked. Toolbar buttons display the image associated with macro assigned to the left mouse action if present, if not the right click macro image is used.
-
-#### Menus
-
-The Rhino menu system can be extended using menu objects defined in an RUI file. The RUI file contains location information describing where to insert an item into the menu system. New menu items are defined by referencing a Macro which contains:
-
-- Menu text.
-- Menu item image.
-- Help text which is displayed in the status bar when the mouse is over a menu item.
-- Command script which is run when the menu item is clicked on.
-
-Menus can be managed using Rhino's **[Menus](https://docs.mcneel.com/rhino/8/help/en-us/index.htm#toolbarsandmenus/workspace_editor.htm#(null))** command.
-
-#### Macro
-
-Macros contain information needed to describe the command script that gets run when the macro is executed. Macro definitions include the following:
-
-- Name
-- Image, both light and dark mode versions
-- Command script
-- Button text
-- Button tooltip
-- Menu text
-- Help text
-
-Macros can be managed using Rhino's **[Macros](https://docs.mcneel.com/rhino/8/help/en-us/index.htm#commands/macros.htm#(null))** command.
+Toolbars can be docked a the top or bottom of Rhino user interface.
 
 ### Panels
 
-Panels are modeless user interface forms created by Rhino or by plug-ins. They can appear in any container as a tab, and they may be moved between containers by dragging and dropping.
-
-Panels can be referenced by multiple containers, but they cannot appear in the same container more than once.
-
-## Previous Rhino UI System
-
-The Rhino UI system, found in Rhino for Windows version 7 and earlier consists of the following:
-
-### Toolbars
-
-Rhino toolbars are collections of toolbar buttons. Toolbar buttons reference macros which must be defined in the same RUI file as the toolbar. Buttons contain an: image, tooltip, menu text, help text, and script. Toolbars are displayed in toolbar groups.
-
-### Toolbar Group
-
-Toolbar groups are collections of references to toolbars from the same RUI file. Dragging a toolbar from one file to a group in another file results in the toolbar and its referenced macros being copied from the source file to the destination file. Toolbar groups can’t reference Rhino panels.
-
-### Toolbar
-
-Toolbars are collections of toolbar buttons and are only ever referenced and displayed by toolbar groups.
-
-### Toolbar Button
-
-Toolbar buttons can contain left and/or right mouse click actions. Mouse click actions are assigned to macros which contain a script to run when clicked. Toolbar buttons display the image associated with macro assigned to the left mouse action if present, if not the right click macro image is used.
-
-Toolbar buttons can optionally be configured to temporarily fly out other toolbars if desired.
-
-Toolbar buttons can only reference macros from the same RUI file as the toolbar they belong to.
-
-### Menu
-
-The Rhino menu system can be extended using menu objects defined in an RUI file. The RUI file contains location information describing where to insert an item into the menu system. New menu items are defined by referencing a Macro which contains:
-
-- Menu text.
-- Menu item image.
-- Help text which is displayed in the status bar when the mouse is over a menu item.
-- Command script which is run when the menu item is clicked on.
-
-### Macro
-
-Macros contain information needed to display or describe the command script that gets run when the macro is executed. Macro definitions include the following:
-Image which is displayed either on a referenced toolbar button or menu item.
-
-- Button tool-tip.
-- Button text.
-- Menu item text
-- Help text which is displayed in the status bar when the mouse is over a menu item.
-- Command script to execute.
-
-### RUI File
-
-RUI files are collections of the items above and are stored in a writeable directory. Items stored in an RUI file can reference items defined in any file. Changes to items in the file are saved automatically when Rhino is closed. You may open or close RUI files or manually choose to save a file at any time. The current version of a file is backed up and changes are saved to the file name. If a file gets damaged you can delete it and rename the backup file in an attempt to restore the previous version. If the backup file is damaged then nothing can be recovered.
-
-Rhino plug-ins can install a RUI file with the same name as the plug-in and it will get copied into a writeable location and opened automatically when Rhino starts. This gives a plug-in the ability to extend the Rhino interface while allowing the plug-in to not load until it is referenced.
-
-Note, all of the above can be managed using Rhino 7's **[Toolbars](https://docs.mcneel.com/rhino/7/help/en-us/index.htm#options/toolbars.htm#(null))** command.
-
-### Rhino Panels
-
-Rhino panels are modeless user interface definitions created by core Rhino or a plug-in.
-
-Panels are displayed in a collection of tabs. Tab collections can only contain references to panels and a panel can only be referenced by a single collection. Displaying a panel in a collection will remove references to that panel from any other collections.
+Panels can be docked at the left or right of the Rhino user interface.
