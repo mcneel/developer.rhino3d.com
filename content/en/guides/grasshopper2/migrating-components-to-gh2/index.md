@@ -378,8 +378,52 @@ When a custom warning or error needs to be signaled to the user, the `access` ar
 
 ### Custom Properties
 
-[[[Use CustomValues to store your simple properties since IO is taken care of.]]]
-[[[Overriding Store() and new(IReader) is possible, but discouraged.]]]
+In GH1, any component which needed to remember a custom setting (a mode picked from the context menu, a toggle state, ...) had to override the `Write(GH_IWriter)` and `Read(GH_IReader)` methods and handle the serialisation of that setting by hand. GH2 still allows this (see below), but for settings usig primitive types there is now an easier to use mechanism which requires no serialisation code at all.
+
+Every document object carries a `CustomValues` property of type `KeyedValues`; a mutable collection of named values which is automatically included whenever the object is written to or read from a file. Storing a setting takes a single `Set()` call and retrieving it takes a single `Get()` call, where the second argument acts as the fallback in case the key has not (yet) been assigned:
+
+```cs
+// Read the current smoothing setting, using 0.5 if none was ever set.
+var smoothing = CustomValues.Get("Smoothing", 0.5);
+
+// Assign a new smoothing setting.
+CustomValues.Set("Smoothing", 0.75);
+```
+
+Because every getter takes a fallback value, there is no need to check whether a key exists before reading it, and components loaded from files which predate the introduction of a setting will just get the fallback. Key comparisons are case-insensitive, and access is thread-safe.
+
+The natively supported types are `bool`, `int`, `double`, `string`, `Guid`, `DateTime`, `TimeSpan`, and the `Eto.Drawing` primitives (`Color`, `Point`, `PointF`, `Size`, `SizeF`, `Rectangle`, `RectangleF`).
+
+Two caveats. First, assigning a custom value does not expire the solution or the display; if the setting affects computed results, it is up to you to expire the object. Second, changes to custom values are not automatically undoable. When a change ought to appear on the undo stack, you must create an undo snapshot of the values *before* modifying them using a `CustomValueAction`, then commit that action afterwards:
+
+```cs
+var undoAction = new CustomValueAction(this, "Smoothing");
+AddUndoRecord(new VerbNoun("Change", "Smoothing"), undoAction);
+
+CustomValues.Set("Smoothing", 0.75);
+```
+
+#### Overriding Store() and the Reader Constructor
+
+When object state does not fit into the `CustomValues` collection (collections, nested data structures, other complex types) the GH1 approach is still available. The `Store(IWriter)` method is the equivalent of `Write()`, and deserialisation happens in the constructor which takes an `IReader`, the very same constructor every document object is already required to have:
+
+```cs
+public override void Store(IWriter writer)
+{
+  base.Store(writer);
+  writer.Number64Array("Weights", _weights);
+}
+
+public MyComponent(IReader reader) : base(reader)
+{
+  if (reader.HasItem("Weights"))
+    _weights = reader.Number64Array("Weights");
+}
+```
+
+Note that the `Store()` override must *always* invoke `base.Store(writer)`, and the reader constructor must *always* invoke `: base(reader)`. Forgetting either will lead to broken file IO.
+
+This approach is discouraged for simple settings because it shifts all versioning responsibility onto the developer. Every name and type you ever write into a file becomes a contract with every file saved from that day forward, and reading code must forever guard against items which are absent from older files (note the `HasItem()` check above). The `CustomValues` mechanism handles all of that for you; reserve `Store()` overrides for state which genuinely cannot be expressed any other way.
 
 
 ## Variable Parameter Layouts
