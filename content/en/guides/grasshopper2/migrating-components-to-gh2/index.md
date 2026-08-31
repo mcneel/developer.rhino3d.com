@@ -515,13 +515,33 @@ Creating modular components is quite a bit more involved as modular inputs and o
 
 # Data Types
 
-## Structured Storage
+## Data Trees
 
-[[[Tree, Twig, Path, Pear]]]
+Structured data in GH2 is still organised in trees, and any GH1 developer will recognise the overall shape immediately: a tree is a collection of twigs, each one uniquely identified by a path of integers, and each twig contains an ordered list of items. What has changed is the naming, the type constraints, meta data support, and above all the mutability.
 
-## Garden
+The types involved, from large to small:
 
-[[[One-stop-shop for creating trees and twigs.]]]
+| Type | Role |
+|:----|:----|
+| `Tree<T>` / `ITree` | The whole data structure; the equivalent of `GH_Structure<T>`. |
+| `Paths` | The sorted collection of paths in a tree. |
+| `Path` | An ordered, immutable list of non-negative integers identifying a twig; the equivalent of `GH_Path`. |
+| `Twig<T>` / `ITwig` | An immutable list worth of items and their associated meta data; the equivalent of `List<GH_Goo<T>>` in GH1. |
+| `Pear<T>` / `IPear` | A single value paired with its meta data. |
+| `Site` | The location (path plus index) of an item within a tree. |
+| `MetaData` | The immutable collection of named meta values associated with a single item. |
+
+Most of these types come in a generic and a non-generic interface flavour. Use `Tree<T>`, `Twig<T>`, and `Pear<T>` whenever the item type is known at compile time, and fall back to `ITree`, `ITwig`, and `IPear` when the data may be of mixed or unknown types.
+
+The salient differences with GH1 are:
+
+- **No more goo.** `GH_Structure<T>` demanded that `T` implemented `IGH_Goo`; `Tree<T>` stores plain values.
+- **Everything is immutable.** Trees, twigs, paths, and pears cannot be modified after creation. The GH1 habit of creating an empty structure and appending to it as you go has been replaced by aggregating values in ordinary mutable collections (a `List<T>`, an array) and converting to a twig or tree in a single step at the end.
+- **Meta data exists.** Every item in a twig may carry meta data, and the pear is the unit which keeps a value and its meta data together. A `Twig<int>` which contains both metadata and null values will under the hood maintain three separate arrays; `int[]` for the actual values, `bool[]` for the null states, and `MetaData[]` for the meta data.
+
+Twigs and trees are not created via constructors; the actual instances are specialised internal implementations chosen based on content (with or without nulls, with or without meta data, value or reference types). Instead, all creation goes through the static `Garden` class; the one-stop-shop for growing trees. It contains factory methods for a lot of different tree and twig creation methods: `TwigFromList()`, `TwigFromPears()`, `TreeFromArrays()`, `ITreeFromITwigs()`, and dozens more, along with utilities for merging trees, casting between generic and non-generic forms, and comparing pears.
+
+Modifying existing trees and twigs is often done with instance methods on `ITree`, `Tree<T>`, `ITwig` or `Twig<T>` directly, just remember these methods always return new tree and twig instances, as the existing instance are immutable.
 
 ## Meta Data
 
