@@ -527,17 +527,33 @@ Creating modular components is quite a bit more involved as modular inputs and o
 
 [[[Design, immutability, StandardNames, transformable entries.]]]
 
-## Type Assistants
+## Type Handling
 
-[[[TypeAssistantServer, ITypeAssistant, ZupportsXXXXX properties.]]]
+In GH1, every value was wrapped in an `IGH_Goo` container, and that container was responsible for everything the value could do: formatting, duplication, validity, previews, baking, transformations, and casting to and from other types. GH2 takes a dramatically different tack. Values in GH2 are stored as-is (a circle in a data tree really is a `Rhino.Geometry.Circle`) and all shared functionality is provided by separate objects which are registered centrally. The many features which `IGH_Goo` used to provide are now handled by two separate systems; *assistants* provide type functionality, and the *conversion server* provides data conversion between types.
 
-## Curve and Surface Assistants
+Both systems share the same registration model: when a plugin loads, its assembly is scanned and all assistant and conversion repository classes are instantiated and registered automatically. There is no manual registration step; the classes merely have to be public and have parameterless constructors.
 
-[[[Basic ideology, CurveBroker, SurfaceBroker]]]
+This chapter only explains the design from the perspective of a component developer consuming existing types. Creating your own data types — and the assistants, conversions, and parameters that come with them — is a big enough topic to deserve a document of its own.
 
-## Type Conversion
+### Type Assistants
 
-[[[ConversionServer, ConversionRepository, Inspecting conversions in the UI.]]]
+Every type which flows through Grasshopper 2 should be associated with an `ITypeAssistant`, and the static `TypeAssistantServer` class maintains the registry and provides lookup by type or by value. The assistant answers on behalf of the type whenever Grasshopper has a question: "What is your name?", "Are you valid?", "How do I create a duplicate?", "How are you drawn in the Rhino viewports?", "Do you have a boundingbox, and if 'yes' how big is it?", ...
+
+Not every type supports every operation (a colour cannot be drawn in viewports, a mesh has no length) so each capability is advertised through a property with a `Zupports` prefix: `ZupportsDraw`, `ZupportsBake`, `ZupportsLength`, `ZupportsClosestPoint`, and so on. Whenever a type assistant overrides a virtual method, the base class detects this and sets the appropriate `ZupportsXyz` property to `true`. Code which consumes an unfamiliar assistant ought to check the relevant `Zupports` property before relying on the matching operation.
+
+Curve-like and surface-like types get an additional, more specialised treatment. Whereas the GH1 `Curve` parameter converted every incoming value to a `Rhino.Geometry.Curve`, the GH2 parameter stores values untouched and requires only that each curve-like type registers an `ICurveAssistant` (in practice by deriving from the `CurveAssistant` base class; never implement the interface from scratch). The assistant answers all curve questions — domains, spans, end points, conversion to NURBS or polyline form — so a component which operates on curves through assistants automatically works with *every* registered curve type, including types shipped by other plugins years after the component was written. Surface-like types follow the same pattern via `ISurfaceAssistant` and the `SurfaceAssistant` base class.
+
+Component developers who do not care about any of this and simply want a Rhino curve or brep out of whatever value they were handed can use the static `CurveBroker` and `SurfaceBroker` utility classes, which perform the type-checking and conversion song-and-dance in a single call.
+
+### Type Conversion
+
+The `CastTo`/`CastFrom` logic which used to live inside each `IGH_Goo` type is replaced by the static `ConversionServer`, a central registry of conversion delegates keyed by (source type, target type) pairs. Plugins contribute conversions by deriving a class from `ConversionRepository` and filling it with public static methods which take a source value and produce a target value via an `out` parameter.
+
+Every conversion method must be decorated with a `Merit` attribute, which expresses how sensible the conversion is: `Direct`, `Fair`, `Plausible`, `Strange`, or `Weird`. When data of one type arrives at a parameter of another, the server picks the best available conversion, and the merit travels along with the result. Low-merit conversions are deliberately surfaced to users as a hint that, although Grasshopper managed to perform the requested conversion, they may well be doing something wrong.
+
+The complete set of registered conversions can be inspected from within Grasshopper via the *Conversion Graph* entry in the Solver menu, which displays all conversion pairs known to the server as a chord diagram.
+
+{{< image url="/images/gh2/RegisteredTypeConversions.png" alt="The Type Conversion Diagram shows all centrally registered type coversions currently available." class="image_center" width="70%" >}}
 
 # Renaming Cheat-Sheet
 
