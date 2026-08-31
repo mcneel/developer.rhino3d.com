@@ -538,3 +538,56 @@ Creating modular components is quite a bit more involved as modular inputs and o
 ## Type Conversion
 
 [[[ConversionServer, ConversionRepository, Inspecting conversions in the UI.]]]
+
+# Renaming Cheat-Sheet
+
+The table below maps the GH1 types, members, and concepts you're likely to search for onto their GH2 counterparts. It is organised roughly by topic: plugin level first, then components and parameters, data access, data structures, document objects, user interface, and finally (de)serialisation.
+
+| GH1 name | GH2 name | Salient differences |
+|:----|:----|:----|
+| `*.gha` file | `*.rhp` file | A single `.rhp` can be both a Rhino plugin and a Grasshopper plugin. |
+| `GH_AssemblyInfo` | `Grasshopper2.Framework.Plugin` | Identity and authorship now come from assembly attributes; see the Plugin Assembly section. |
+| `GH_Component` | `Grasshopper2.Components.Component` | Requires an additional deserialisation constructor taking an `IReader`. |
+| `ComponentGuid` property | `[IoId]` class attribute | Lives in `GrasshopperIO.dll`. Applies to all storable types, not just components. |
+| `GH_Exposure` property | `Rank` and `Slot` (inside `Nomen`) | Part of the `Nomen` passed to the constructor rather than a separate override. |
+| `Icon` property (`Bitmap`) | `IIcon` / `AbstractIcon` | Vector icons are supported and recommended. The override can be omitted when an embedded resource matches the class name exactly. |
+| `NickName` | `UserName`, `FallbackName`, `DisplayName` | Split in two: `FallbackName` is set by code, `UserName` by the user. `DisplayName` picks whichever is appropriate. |
+| Name, description, category, subcategory | `Nomen` | One immutable type bundling name, info, tab, panel, slot, and rank. |
+| `RegisterInputParams(GH_InputParamManager)` | `AddInputs(InputAdder)` | Defaults are assigned via `Set()` on the returned parameter rather than an argument. |
+| `RegisterOutputParams(GH_OutputParamManager)` | `AddOutputs(OutputAdder)` | |
+| `GH_ParamAccess.item/list/tree` | `Access.Item/Twig/Tree` | Item access is the default and need not be specified. |
+| `Optional` property | `Requirement` property | Three states instead of a boolean: `MustExist`, `MayBeNull`, `MayBeMissing`. |
+| `GH_PersistentParam<T>.PersistentData` | `Parameter<T>.Set(...)` | Overloads exist for single items, collections, and entire trees. |
+| `IGH_Param` | `Grasshopper2.Parameters.Parameter` / `IParameter` | Type-specific functionality lives in `Parameter<T>`. |
+| `IGH_VariableParameterComponent` | virtual methods on `Component` | No separate interface; override `CanCreateParameter()`, `DoCreateParameter()`, `CanRemoveParameter()`, and `VariableParameterMaintenance()`. |
+| `Params` property | `Parameters` property | E.g. `Parameters.InputCount` and `Parameters.Input(i)`. |
+| `SolveInstance(IGH_DataAccess)` | `Process(IDataAccess)` | Runs multi-threaded by default; must be thread-safe or downgrade `Component.Threading`. |
+| `GH_TaskCapableComponent` | — | Gone. The solver is inherently multi-threaded and cancellable. |
+| `DA.GetData(...)` / `SetData(...)` | `access.GetItem(...)` / `SetItem(...)` | Uses `out` instead of `ref`. Returns `false` for missing or null data. |
+| - | `access.GetPear(...)` / `SetPear(...)` | New. Getting and settings values with metadata requires pears.  |
+| `DA.GetDataList(...)` / `SetDataList(...)` | `access.GetTwig<T>(...)` / `SetTwig(...)` | Use `GetITwig(...)` when the value types cannot be known ahead of time. |
+| `DA.GetDataTree(...)` / `SetDataTree(...)` | `access.GetTree<T>(...)` / `SetTree(...)` | Likewise `GetITree(...)` for mixed or unknown types. |
+| `AddRuntimeMessage(GH_RuntimeMessageLevel, ...)` | `access.AddWarning` / `access.AddError(...)` | Messages take a text and details, and optionally actions which let the user fix the problem. Also see the `VerifyXyz` and `RectifyXyz` methods. |
+| `GH_Structure<T>` | `Grasshopper2.Data.Tree<T>` | Immutable. Aggregate values in mutable collections and construct trees at the end, typically via `Garden`. |
+| branch or `List<T>` | `Twig<T>` / `ITwig` | Immutable, and items are paired with meta data (see pears). |
+| `GH_Path` | `Grasshopper2.Data.Path` | |
+| `IGH_Goo` / `GH_Goo<T>` | — | Gone. Values are stored as-is; shared functionality is provided by type assistants, conversions by the conversion server. |
+| `GH_ObjectWrapper` | - | Gone. Values are stored as-is and do not need to be wrapped. |
+| `GH_Convert` / `CastTo` / `CastFrom` | `ConversionServer` / `ConversionRepository` | Conversions are registered centrally instead of being implemented per data type. |
+| `GH_Document` | `Grasshopper2.Doc.Document` | |
+| `GH_DocumentObject` | `Grasshopper2.Doc.DocumentObject` | |
+| `GH_ActiveObject` | `Grasshopper2.Doc.ActiveObject` | |
+| `OnPingDocument()` | `Document` property | |
+| `ExpireSolution(true)` | `Expire()` + `Document?.Solution.Start()` or `Document?.Solution.DelayedExpire(this)` | Expiry and recomputation are separate steps. Expiring also request-cancels any running solution in the document. |
+| `Locked` | `Activity` property | An `ObjectActivity` enumeration instead of a boolean. |
+| `Hidden` | `Display` property | An `ObjectDisplay` enumeration instead of a boolean. |
+| `RecordUndoEvent(...)` | `AddUndoRecord(...)` | Takes a `VerbNoun` plus any number of `Undo.Action` instances. |
+| `DrawViewportWires/Meshes(...)` | `PopulateDisplay(...)` | Display geometry is cached centrally rather than drawn per frame. |
+| `ClippingBox` | `DisplayBounds()` | |
+| `AppendAdditionalMenuItems(...)` | `AppendToInputPanel(...)` | Context menus are replaced by the input panel, built from `Grasshopper2.UI.InputPanel` parts. |
+| `IGH_Attributes` / `GH_ComponentAttributes` | `IAttributes` / `Attributes<T>` | All custom UI is drawn with Eto rather than WinForms/GDI+, and must work on both Windows and Mac. |
+| `GH_Canvas` | `Grasshopper2.UI.Canvas.Canvas` | An Eto control rather than a WinForms one. |
+| `GH_IO.dll` | `GrasshopperIO.dll` | |
+| `GH_IWriter` / `GH_IReader` | `IWriter` / `IReader` | |
+| `Write(GH_IWriter)` / `Read(GH_IReader)` | `Store(IWriter)` / constructor taking `IReader` | Deserialisation happens in a constructor so that immutable types can be restored. Prefer `CustomValues` for simple settings. |
+| `GH_Archive` | `GrasshopperIO.IO` | Static methods for reading and writing storable objects to streams, files, and byte arrays. |
