@@ -2,7 +2,7 @@
 aliases = []
 authors = [ "David Rutten" ]
 categories = [ "Getting Started" ]
-description = "Information germain to Grasshopper component developers who want to migrate from GH1 to GH2."
+description = "Information germane to Grasshopper component developers who want to migrate from GH1 to GH2."
 keywords = [ "developer", "grasshopper", "component", "migration", "migrate", "upgrade"]
 languages = [ "C#" ]
 sdk = [ "Grasshopper 2" ]
@@ -34,7 +34,7 @@ This document presumes you have experience with developing components for Grassh
 
 ## Introduction
 
-From a bird's eye view, component development in GH1 and GH2 are two almost identical processes. On both platforms one must create a distinct class per component, assign it a unique ID, give it a name and description, a tab and panel location, specify the input and output parameters and finally implement the function which computes the outputs from the inputs. However, the specifics differ to lesser and greated degrees, occasionally in unexpected ways.
+From a bird's eye view, component development in GH1 and GH2 are two almost identical processes. On both platforms one must create a distinct class per component, assign it a unique ID, give it a name and description, a tab and panel location, specify the input and output parameters and finally implement the function which computes the outputs from the inputs. However, the specifics differ to lesser and greater degrees, occasionally in unexpected ways.
 
 Here's a list of conceptually significant differences in no particular order:
 - Many types in Grasshopper 2 are immutable, which often necessitates a different way of doing things.
@@ -98,14 +98,14 @@ All the properties in the table remain virtual, so whenever a value has to be co
 
 Since GH2 plugins are also Rhino plugins, they are distributed and installed through the regular Rhino *PackageManager* command. Grasshopper scans the Rhino plugin install folders for `*.rhp` files, works out which of them contain Grasshopper 2 content, and remembers the verdict per file so subsequent startups stay fast.
 
-Plugins which are still being developed or debugged can be installed directly from disc; they can be registered by file path from the plugin viewer, which opens with the `GH2Plugins` command in Rhino. The viewer lists every plugin Grasshopper knows about — loaded, failed, or deliberately skipped — along with the components each one provides, making it the first place to look when a plugin does not show up on the canvas.
+Plugins which are still being developed or debugged can be installed directly from disk; they can be registered by file path from the plugin viewer, which opens with the `GH2Plugins` command in Rhino. The viewer lists every plugin Grasshopper knows about — loaded, failed, or deliberately skipped — along with the components each one provides, making it the first place to look when a plugin does not show up on the canvas.
 
 Finally, a note on runtimes. Rhino can start in either .NET Framework or .NET Core mode, and a plugin installed as a package may ship a separate build for each, placed in subfolders named after their target framework monikers (`net48`, `net8.0`, and so on). Grasshopper resolves the copy which best suits the running session at load time, so cross-platform plugins should ship both variants whenever they can.
 
 
 # Components
 
-The basic layout for a component class in GH2 closesly tracks with what you're probably used to, with just a few minor administrative changes. As mentioned above, the component identifier is not a property of the class, but rather an attribute of the `IoIdAttribute` type, provided by the `GrasshopperIO.dll` assembly. The `Nomen` type bundles together the values which describe and position an object within the Grasshopper user interface; it is used everywhere objects need a name, a descriptive info text, and tab+panel locations. The `Nomen` provided in the constructor provides not just the name, info, tab and panel data, but also the `Slot` (placing the component in a specific slot within the panel) and the `Rank` (specifying the importance of the component, affecting sort order within the UI).
+The basic layout for a component class in GH2 closely tracks with what you're probably used to, with just a few minor administrative changes. As mentioned above, the component identifier is not a property of the class, but rather an attribute of the `IoIdAttribute` type, provided by the `GrasshopperIO.dll` assembly. The `Nomen` type bundles together the values which describe and position an object within the Grasshopper user interface; it is used everywhere objects need a name, a descriptive info text, and tab+panel locations. The `Nomen` provided in the constructor provides not just the name, info, tab and panel data, but also the `Slot` (placing the component in a specific slot within the panel) and the `Rank` (specifying the importance of the component, affecting sort order within the UI).
 
 Due to the nature of the (de)serialisation api in GH2, a second constructor is required which takes a single `IReader` argument and calls the base class constructor. This is an unfortunate complication caused by the fact that the GH2 deserialisation logic must work for immutable types, requiring deserialisation to be implemented via constructors.
 
@@ -187,7 +187,7 @@ The minor differences worth noting include:
 Major differences worth noting include:
 - GH2 provides a larger set of native types and parameters, which should be used whenever they make sense. More on this below.
 - GH2 provides some additional options on some parameters (such as Indexing on Integer parameters, or Type Filters on Numeric parameters) which ought to be set when appropriate.
-- GH2 parameters all have a `Preset` system, although this is used almost exclusively on Integer parameters to represents enumerations.
+- GH2 parameters all have a `Preset` system, although this is used almost exclusively on Integer parameters to represent enumerations.
 
 ### New Parameter Types
 
@@ -212,7 +212,7 @@ The table below lists some new parameter types and when to use them.
 | `Curve Locus` | Loci replace curve parameters in GH2. Do not use numbers to identify points on curves, use a curve locus. |
 | `Surface Locus` | Loci replace surface uv-parameters in GH2. Do not use numbers to identify points on surfaces, use a surface locus. |
 
-The use of enumerations as inputs is fairly common in GH2 and has been implemented via the `Integer` parameter along with presets. The `inputs.AddEnum(...)` method provides a shorthand for adding an integer parameter with registered presets. For an `Enum` to be used in this way it must derive from the `System.Int32` type, and ideally it provides detailed descriptions and a unique colour for each value. Below is the partial code for the `DistanceMetric` enumeration, which for each item provides a `UiInfo()` and `UiTint()` attribute, and for some items even a `UiName()` attribute to override the name as shown in the GH2 UI.
+The use of enumerations as inputs is fairly common in GH2 and has been implemented via the `Integer` parameter along with presets. The `inputs.AddEnum(...)` method provides a shorthand for adding an integer parameter with registered presets. For an `Enum` to be used in this way its underlying type must be `System.Int32`, and ideally it provides detailed descriptions and a unique colour for each value. Below is the partial code for the `DistanceMetric` enumeration, which for each item provides a `UiInfo()` and `UiTint()` attribute, and for some items even a `UiName()` attribute to override the name as shown in the GH2 UI.
     
 ```cs
 public enum DistanceMetric
@@ -256,7 +256,7 @@ Document?.Solution.Start();
 
 For objects which generate rapid-fire expiration waves (such as mouse-moves on sliders or key-presses in text fields) call `Document.Solution.DelayedExpire(obj)` instead. This method batches up expired objects and is smart about when to interrupt: if no solution is running it expires and restarts immediately. However, if a solution is already running, it is allowed a brief interval in which to complete, before it is cancelled anyway.
 
-Every solution is identified by a `SolutionId`, issued app-wide in ascending order. This id allows code to query the solution server about whether specific solutions have completed or were cancelled, and it allows code to determine which solution is newer.
+Every solution is identified by a `SolutionId`, issued app-wide in ascending order. This id allows code to find out whether a specific solution has since been cancelled, and to determine which of two solutions is newer. Note that there is at present no way to check whether a solution is still running or has completed.
 
 ### A Random Walk Example
 
@@ -296,7 +296,7 @@ protected override void Process(IDataAccess access)
 1. Getting values in GH2 components uses the `out` rather than the `ref` keyword, so is somewhat more economical. Null checks aren't required if the input `Requirement` is set to `MustExist`. Validity checks may be necessary, but we'll focus on those in a later example. 
 2. This component has a pseudo-random aspect, which means it requires a `RandomEngine` as an input. The `RandomEngine.CreateInstance()` method is used on an engine value to create a new random number generator of the correct type with the specified seed. Also note that GH2 provides a lot of useful extension methods via the `Grasshopper2.Extensions` namespace, so when that is added to the `using` block of your C# file you'll get access to methods like `Random.NextUnitVector3D()`.
 3. Since the `while` loop in this component can potentially run for a *very* long time, it is important that cancellation is checked often. The `Solution` object passed to the component via the `IDataAccess` argument has a token which can be used for this. In GH2, every time a new solution starts, any currently running solution in that document is automatically cancelled.
-4. Assignment of output values works exactly the same in GH2 as in GH1, at least when metadata or twigs or trees are not involved.
+4. Assignment of output values works exactly the same in GH2 as in GH1, at least when meta data or twigs or trees are not involved.
 
 {{< image url="/images/gh2/RandomWalkGH2Migration.png" alt="The RandomWalk component running with 100 different random seeds." class="image_center" width="90%" >}}
 
@@ -386,16 +386,16 @@ protected override void Process(IDataAccess access)
 
 Components in GH2 have the ability, just as they did in GH1, to collate warning and error messages during processing. In general, warnings ought to be used when there was a problem the component could work around, and errors ought to be used when the component could not complete its calculations. However, unlike in GH1, the `IDataAccess` argument provides a set of validation and rectification methods which automatically set warning and error messages, if need be. This tends to simplify the portion of the processing code which deals with input validation.
 
-Next time you need to make sure numbers are positive, or fall within a given range, or that two vectors aren't parallel, or three points aren't colinear, have a look at all the methods starting with `Rectify___` and `Verify___` on `IDataAccess.
+Next time you need to make sure numbers are positive, or fall within a given range, or that two vectors aren't parallel, or three points aren't collinear, have a look at all the methods starting with `Rectify___` and `Verify___` on `IDataAccess`.
 
-When a custom warning or error needs to be signaled to the user, the `access` argument also provides direct ways of adding runtime messages to the component. The `IDataAccess.AddWarning()` and `IDataAccess.AddError()` methods allow the developer to set runtime messages with custom phrasing and custom actions. Adding message actions which allow the user to fix problems is strongly encouraged whenever possible. When messages have actions, they will appear in the message menu as follows:
+When a custom warning or error needs to be signalled to the user, the `access` argument also provides direct ways of adding runtime messages to the component. The `IDataAccess.AddWarning()` and `IDataAccess.AddError()` methods allow the developer to set runtime messages with custom phrasing and custom actions. Adding message actions which allow the user to fix problems is strongly encouraged whenever possible. When messages have actions, they will appear in the message menu as follows:
 
 {{< image url="/images/gh2/MessageActionGH2Migration.png" alt="Actions attached to runtime messages provide fast ways to fix issues." class="image_center" width="90%" >}}
 
 
 ### Custom Properties
 
-In GH1, any component which needed to remember a custom setting (a mode picked from the context menu, a toggle state, ...) had to override the `Write(GH_IWriter)` and `Read(GH_IReader)` methods and handle the serialisation of that setting by hand. GH2 still allows this (see below), but for settings usig primitive types there is now an easier to use mechanism which requires no serialisation code at all.
+In GH1, any component which needed to remember a custom setting (a mode picked from the context menu, a toggle state, ...) had to override the `Write(GH_IWriter)` and `Read(GH_IReader)` methods and handle the serialisation of that setting by hand. GH2 still allows this (see below), but for settings using primitive types there is now an easier to use mechanism which requires no serialisation code at all.
 
 Every document object carries a `CustomValues` property of type `KeyedValues`; a mutable collection of named values which is automatically included whenever the object is written to or read from a file. Storing a setting takes a single `Set()` call and retrieving it takes a single `Get()` call, where the second argument acts as the fallback in case the key has not (yet) been assigned:
 
@@ -447,7 +447,7 @@ This approach is discouraged for simple settings because it shifts all versionin
 
 As in GH1, components in GH2 can have variable numbers of inputs and outputs. All that is needed to enable the user interface for adding or removing inputs and outputs is to override the `CanCreateParameter()`, `DoCreateParameter()` and `CanRemoveParameter()` methods. The `DoRemoveParameter()` may be overridden as well, but the default behaviour already does what it says on the tin. Lastly, the `VariableParameterMaintenance()` method is still the best place to ensure that all properties of all parameters are correctly set.
 
-Let's explore this with a component which creates boundingboxes for points in a variable number of inputs. Since we are creating a component which has a fully functional `VariableParameterMaintenance()` implementation, we can avoid assinging names and requirements inside the `AddInputs()` method:
+Let's explore this with a component which creates bounding boxes for points in a variable number of inputs. Since we are creating a component which has a fully functional `VariableParameterMaintenance()` implementation, we can avoid assigning names and requirements inside the `AddInputs()` method:
 
 ```cs
 protected override void AddInputs(InputAdder inputs)
@@ -526,7 +526,7 @@ protected override void Process(IDataAccess access)
 
 ## Modular Components
 
-Whereas variable parameters are typically used for adding inputs or outputs that are all the same kind of thing, and for which is there is no upper limit, Grasshopper 2 adds the notion of a 'Modular Component' which is capable of hiding and showing specific inputs and outputs. When a component class is derived not from `Grasshopper2.Components.Component` but from `Grasshopper2.Components.ModularComponent`, the `AddInputs()` and `AddOutputs()` methods are replaced with their modular counterparts.
+Whereas variable parameters are typically used for adding inputs or outputs that are all the same kind of thing, and for which there is no upper limit, Grasshopper 2 adds the notion of a 'Modular Component' which is capable of hiding and showing specific inputs and outputs. When a component class is derived not from `Grasshopper2.Components.Component` but from `Grasshopper2.Components.ModularComponent`, the `AddInputs()` and `AddOutputs()` methods are replaced with their modular counterparts.
 
 Creating modular components is quite a bit more involved as modular inputs and outputs need to be grouped into categories, given UI tinting, and often even icons. This document will only mention this corner of the Grasshopper 2 SDK without providing any examples.
 
@@ -554,11 +554,11 @@ The salient differences with GH1 are:
 
 - **No more goo.** `GH_Structure<T>` demanded that `T` implemented `IGH_Goo`; `Tree<T>` stores plain values.
 - **Everything is immutable.** Trees, twigs, paths, and pears cannot be modified after creation. The GH1 habit of creating an empty structure and appending to it as you go has been replaced by aggregating values in ordinary mutable collections (a `List<T>`, an array) and converting to a twig or tree in a single step at the end.
-- **Meta data exists.** Every item in a twig may carry meta data, and the pear is the unit which keeps a value and its meta data together. A `Twig<int>` which contains both metadata and null values will under the hood maintain three separate arrays; `int[]` for the actual values, `bool[]` for the null states, and `MetaData[]` for the meta data.
+- **Meta data exists.** Every item in a twig may carry meta data, and the pear is the unit which keeps a value and its meta data together. A `Twig<int>` which contains both meta data and null values will under the hood maintain three separate arrays; `int[]` for the actual values, `bool[]` for the null states, and `MetaData[]` for the meta data.
 
 Twigs and trees are not created via constructors; the actual instances are specialised internal implementations chosen based on content (with or without nulls, with or without meta data, value or reference types). Instead, all creation goes through the static `Garden` class; the one-stop-shop for growing trees. It contains factory methods for a lot of different tree and twig creation methods: `TwigFromList()`, `TwigFromPears()`, `TreeFromArrays()`, `ITreeFromITwigs()`, and dozens more, along with utilities for merging trees, casting between generic and non-generic forms, and comparing pears.
 
-Modifying existing trees and twigs is often done with instance methods on `ITree`, `Tree<T>`, `ITwig` or `Twig<T>` directly, just remember these methods always return new tree and twig instances, as the existing instance are immutable.
+Modifying existing trees and twigs is often done with instance methods on `ITree`, `Tree<T>`, `ITwig` or `Twig<T>` directly, just remember these methods always return new tree and twig instances, as the existing instances are immutable.
 
 ## Meta Data
 
@@ -584,7 +584,7 @@ This chapter only explains the design from the perspective of a component develo
 
 ### Type Assistants
 
-Every type which flows through Grasshopper 2 should be associated with an `ITypeAssistant`, and the static `TypeAssistantServer` class maintains the registry and provides lookup by type or by value. The assistant answers on behalf of the type whenever Grasshopper has a question: "What is your name?", "Are you valid?", "How do I create a duplicate?", "How are you drawn in the Rhino viewports?", "Do you have a boundingbox, and if 'yes' how big is it?", ...
+Every type which flows through Grasshopper 2 should be associated with an `ITypeAssistant`, and the static `TypeAssistantServer` class maintains the registry and provides lookup by type or by value. The assistant answers on behalf of the type whenever Grasshopper has a question: "What is your name?", "Are you valid?", "How do I create a duplicate?", "How are you drawn in the Rhino viewports?", "Do you have a bounding box, and if 'yes' how big is it?", ...
 
 Not every type supports every operation (a colour cannot be drawn in viewports, a mesh has no length) so each capability is advertised through a property with a `Zupports` prefix: `ZupportsDraw`, `ZupportsBake`, `ZupportsLength`, `ZupportsClosestPoint`, and so on. Whenever a type assistant overrides a virtual method, the base class detects this and sets the appropriate `ZupportsXyz` property to `true`. Code which consumes an unfamiliar assistant ought to check the relevant `Zupports` property before relying on the matching operation.
 
@@ -600,7 +600,7 @@ Every conversion method must be decorated with a `Merit` attribute, which expres
 
 The complete set of registered conversions can be inspected from within Grasshopper via the *Conversion Graph* entry in the Solver menu, which displays all conversion pairs known to the server as a chord diagram.
 
-{{< image url="/images/gh2/RegisteredTypeConversions.png" alt="The Type Conversion Diagram shows all centrally registered type coversions currently available." class="image_center" width="70%" >}}
+{{< image url="/images/gh2/RegisteredTypeConversions.png" alt="The Type Conversion Diagram shows all centrally registered type conversions currently available." class="image_center" width="70%" >}}
 
 # Renaming Cheat-Sheet
 
@@ -627,7 +627,7 @@ The table below maps the GH1 types, members, and concepts you're likely to searc
 | `SolveInstance(IGH_DataAccess)` | `Process(IDataAccess)` | Runs multi-threaded by default; must be thread-safe or downgrade `Component.Threading`. |
 | `GH_TaskCapableComponent` | — | Gone. The solver is inherently multi-threaded and cancellable. |
 | `DA.GetData(...)` / `SetData(...)` | `access.GetItem(...)` / `SetItem(...)` | Uses `out` instead of `ref`. Returns `false` for missing or null data. |
-| - | `access.GetPear(...)` / `SetPear(...)` | New. Getting and settings values with metadata requires pears.  |
+| - | `access.GetPear(...)` / `SetPear(...)` | New. Getting and setting values with meta data requires pears. |
 | `DA.GetDataList(...)` / `SetDataList(...)` | `access.GetTwig<T>(...)` / `SetTwig(...)` | Use `GetITwig(...)` when the value types cannot be known ahead of time. |
 | `DA.GetDataTree(...)` / `SetDataTree(...)` | `access.GetTree<T>(...)` / `SetTree(...)` | Likewise `GetITree(...)` for mixed or unknown types. |
 | `AddRuntimeMessage(GH_RuntimeMessageLevel, ...)` | `access.AddWarning` / `access.AddError(...)` | Messages take a text and details, and optionally actions which let the user fix the problem. Also see the `VerifyXyz` and `RectifyXyz` methods. |
