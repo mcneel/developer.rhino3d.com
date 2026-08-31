@@ -49,30 +49,50 @@ Here's a list of conceptually significant differences in no particular order:
 
 # Plugin Assembly
 
-For a .NET assembly to be considered a valid Grasshopper Plugin it should use the `.RHP` extension and it must contain a public class with an empty constructor which inherits from the `Grasshopper2.Framework.Plugin` type, which is the equivalent of the `GH_AssemblyInfo` type in GH1:
+For a .NET assembly to be considered a valid Grasshopper Plugin it should use the `.RHP` extension and it must contain a public class with an empty constructor which inherits from the `Grasshopper2.Framework.Plugin` type, which is the equivalent of the `GH_AssemblyInfo` type in GH1.
+
+Unlike `GH_AssemblyInfo` however, plugin identity and authorship are no longer specified in code. Instead they are read from assembly attributes, so that a single `*.rhp` file can act as both a Rhino plugin and a Grasshopper plugin using a single set of metadata. The table below lists which attribute feeds which plugin property:
+
+| Property | Assembly attribute | Notes |
+|----:|:----|:----|
+| `Id` | `[assembly: Guid]` | The same id Rhino uses to identify the plugin. |
+| `Name` | `[assembly: AssemblyTitle]` | The `<AssemblyTitle>` project property. Falls back to the file name. |
+| `Info` | `[assembly: AssemblyDescription]` | The `<Description>` project property. |
+| `Version` | `[assembly: AssemblyFileVersion]` | The `<FileVersion>` project property. The same version Rhino reports for the plugin. |
+| `Author` | `[assembly: PlugInDescription(DescriptionType.Organization, ...)]` | Falls back to the `AssemblyCompany` attribute. |
+| `Contact` | `[assembly: PlugInDescription(DescriptionType.Email, ...)]` | |
+| `Website` | `[assembly: PlugInDescription(DescriptionType.WebSite, ...)]` | |
+| `Copyright` | `[assembly: AssemblyCopyright]` | The `<Copyright>` project property. A `{now}` placeholder in the text is expanded to the current year when the plugin loads. |
+
+In an SDK-style project the standard .NET attributes are generated from properties in the `*.csproj` file, while the `Guid` and the Rhino `PlugInDescription` attributes are typed directly into a source file:
+
+```cs
+using System.Runtime.InteropServices;
+using Rhino.PlugIns;
+
+[assembly: Guid("88888888-4444-4444-4444-121212121212")]
+[assembly: PlugInDescription(DescriptionType.Organization, "Your Name Here")]
+[assembly: PlugInDescription(DescriptionType.Email, "you@yourwebsite.com")]
+[assembly: PlugInDescription(DescriptionType.WebSite, "http://www.yourwebsite.com/")]
+```
+
+That leaves very little for the plugin class itself to do. The icon and licence details are the only pieces of information which still have to be supplied from code:
 
 ```cs
 public sealed class MyPluginInfo : Plugin
 {
   public MyPluginInfo()
-    : base(new Guid("88888888-4444-4444-4444-121212121212"),
-           new Nomen("My Plugin Name", "Components for ... something or other."),
-           new Version(2, 0, 0, 0))
   {
     Icon = AbstractIcon.FromResource("PluginIcon", typeof(MyPluginInfo));
   }
 
   public override IIcon Icon { get; }
-  public override string Author => "Your Name Here.";
-  public override sealed string Copyright => $"Copyright © 2026 Your Name";
-  public override sealed string Website => "http://www.yourwebsite.com/";
-  public override sealed string Contact => "website, email, ...";
-  public override sealed string LicenceDescription => "MIT";
-  public override sealed string LicenceAgreement => "https://opensource.org/license/mit";
+  public override string LicenceDescription => "MIT";
+  public override string LicenceAgreement => "https://opensource.org/license/mit";
 }
 ```
 
-The `Nomen` type bundles together relevant values for describing and positioning objects within the Grasshopper user interface. It is used everywhere when objects need a name, a descriptive info text, and tab+panel locations.
+All the properties in the table remain virtual, so whenever a value has to be computed at runtime rather than baked into the assembly metadata, simply override the property in question and the corresponding attribute will be ignored.
 
 ## Loading Plugins
 
@@ -81,7 +101,7 @@ The `Nomen` type bundles together relevant values for describing and positioning
 
 # Components
 
-The basic layout for a component class in GH2 closesly tracks with what you're probably used to, with just a few minor administrative changes. As mentioned above, the component identifier is not a property of the class, but rather an attribute of the `IoIdAttribute` type, provided by the `GrasshopperIO.dll` assembly. The `Nomen` provided in the constructor provides not just the name, info, tab and panel data, but also the `Slot` (placing the component in a specific slot within the panel) and the `Rank` (specifying the importance of the component, affecting sort order within the UI).
+The basic layout for a component class in GH2 closesly tracks with what you're probably used to, with just a few minor administrative changes. As mentioned above, the component identifier is not a property of the class, but rather an attribute of the `IoIdAttribute` type, provided by the `GrasshopperIO.dll` assembly. The `Nomen` type bundles together the values which describe and position an object within the Grasshopper user interface; it is used everywhere objects need a name, a descriptive info text, and tab+panel locations. The `Nomen` provided in the constructor provides not just the name, info, tab and panel data, but also the `Slot` (placing the component in a specific slot within the panel) and the `Rank` (specifying the importance of the component, affecting sort order within the UI).
 
 Due to the nature of the (de)serialisation api in GH2, a second constructor is required which takes a single `IReader` argument and calls the base class constructor. This is an unfortunate complication caused by the fact that the GH2 deserialisation logic must work for immutable types, requiring deserialisation to be implemented via constructors.
 
@@ -228,7 +248,9 @@ Let's start with a relatively simple example of a component which doesn't operat
 ```cs
 protected override void Process(IDataAccess access)
 {
-  // 1. Retrieve values from inputs.
+  // 1. Retrieve values from inputs. All the inputs 
+  //    have Requirement=MustExist, so we don't have
+  //    to check for missing or null values.
   access.GetItem(0, out Sphere sphere);
   access.GetItem(1, out Field stepField);
   access.GetItem(2, out RandomEngine engine);
@@ -256,7 +278,7 @@ protected override void Process(IDataAccess access)
 
 1. Getting values in GH2 components uses the `out` rather than the `ref` keyword, so is somewhat more economical. Null checks aren't required if the input `Requirement` is set to `MustExist`. Validity checks may be necessary, but we'll focus on those in a later example. 
 2. This component has a pseudo-random aspect, which means it requires a `RandomEngine` as an input. The `RandomEngine.CreateInstance()` method is used on an engine value to create a new random number generator of the correct type with the specified seed. Also note that GH2 provides a lot of useful extension methods via the `Grasshopper2.Extensions` namespace, so when that is added to the `using` block of your C# file you'll get access to methods like `Random.NextUnitVector3D()`.
-3. Since the `while` loop in this component can potentially run for a *very* long time, it is important that cancellation is checked often. the `Solution` object passed to the component via the `IDataAccess` argument has a token which can be used for this. In GH2, every time a new solution starts, any currently running solution in that document is automatically cancelled.
+3. Since the `while` loop in this component can potentially run for a *very* long time, it is important that cancellation is checked often. The `Solution` object passed to the component via the `IDataAccess` argument has a token which can be used for this. In GH2, every time a new solution starts, any currently running solution in that document is automatically cancelled.
 4. Assignment of output values works exactly the same in GH2 as in GH1, at least when metadata or twigs or trees are not involved.
 
 {{< image url="/images/gh2/RandomWalkGH2Migration.png" alt="The RandomWalk component running with 100 different random seeds." class="image_center" width="90%" >}}
@@ -341,7 +363,7 @@ protected override void Process(IDataAccess access)
 
 {{< image url="/images/gh2/CurveSortingGH2Migration.png" alt="Curve end-point sorting in action." class="image_center" width="90%" >}}
 
-### Working with 
+// TODO: working with Trees/Pears/Meta still needed.
 
 ### Validation and Messaging
 
