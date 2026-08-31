@@ -380,8 +380,6 @@ protected override void Process(IDataAccess access)
 
 {{< image url="/images/gh2/CurveSortingGH2Migration.png" alt="Curve end-point sorting in action." class="image_center" width="90%" >}}
 
-// TODO: working with Trees/Pears/Meta still needed.
-
 ### Validation and Messaging
 
 Components in GH2 have the ability, just as they did in GH1, to collate warning and error messages during processing. In general, warnings ought to be used when there was a problem the component could work around, and errors ought to be used when the component could not complete its calculations. However, unlike in GH1, the `IDataAccess` argument provides a set of validation and rectification methods which automatically set warning and error messages, if need be. This tends to simplify the portion of the processing code which deals with input validation.
