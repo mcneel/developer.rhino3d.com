@@ -71,7 +71,6 @@
   // (0,0,4,1) so this flat override wins the cascade (imported after _feature).
   .box:not(.gallery .box) img,
   > img,
-  .feature-section-inner > img,
   .imageFade,
   .vimeo-embed,
   .local-video-embed {
@@ -94,7 +93,6 @@
   .box img,
   > img,
   p img,
-  .feature-section-inner > img,
   .imageFade,
   .vimeo-embed,
   .local-video-embed {

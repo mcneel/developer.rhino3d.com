@@ -8,9 +8,6 @@
     {{ $tocBack = .Params.page_options.toc_back }}
 {{ end }}
 
-{{/* Opted-in guides get the restyled TOC (guides-only, scoped via .toc-guide). */}}
-{{ $guideNew := and .File (in .File.Dir "guides") .Params.page_options.new_style }}
-
 <script langage="javascript">
     document.addEventListener('DOMContentLoaded', function() {
         $('body').scrollspy({ target: '.toc', offset: 90 });
@@ -63,25 +60,18 @@
 </script>
 
 {{ if eq $tocType "single"}}
-<div class="toc{{ if $guideNew }} toc-guide{{ end }}">
+<div class="toc">
     <aside>
         <div id="toc-top-container" style="
         text-align: center;
     ">
         </div>
-        {{ if $guideNew }}
-            {{/* No title-repeat header on modernized guides; keep the optional parent back-link. */}}
-            {{ if $tocBack }}
-                <a class="toc-back" href="{{ .Parent.RelPermalink }}">&lt; {{ .Parent.Title }}</a>
-            {{ end }}
-        {{ else }}
         <header>
             {{ if $tocBack }}
                 <a href="{{ .Parent.RelPermalink }}" style="color: #901010; overflow: hidden; white-space: nowrap; display: block; text-overflow: ellipsis; font-size: small;"> < {{ .Parent.Title }}</a>
             {{ end }}
             <a href="{{ .RelPermalink }}">{{.Title}}</a>
         </header>
-        {{ end }}
         <nav id="TableOfContents" class="scrollbar">
                 {{ partial "toc-inner.html" $ }}
                 <div id="toc-bottom-container" style="

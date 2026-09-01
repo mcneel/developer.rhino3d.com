@@ -1,0 +1,66 @@
+{{- /*
+  modern-hero-video.html — full-height marketing hero for modern_style pages
+  with `page_options.modern_hero = "video"` (prototype, WWW-3572). Ported from
+  feature-redesign2's hero (layouts/features/feature-redesign2.html) — grid
+  background + border, full-height video slot below (populated by
+  modern-hero-video-scripts.html, which moves the first body video/gif into
+  it), command icon, title, "NEW in vX" eyebrow badge, subtitle from
+  `what_why`, platform callout, scroll-cue chevron. Adds the breadcrumb trail
+  the source markup didn't have, for parity with modern-hero.html.
+
+  Reads `.Params.icon` (falls back to the first `.Params.commands` entry),
+  `.Params.commands`, `.Params.what_why`, `.Params.included_in.since` /
+  `.platforms`, `.Params.page_options.show_title`. Unlike the other two hero
+  variants, breadcrumbs are hidden by default here (feature pages don't want
+  them by default) — set `page_options.breadcrumbs = true` to opt in.
+*/ -}}
+<div class="modern-hero-video">
+  <div class="modern-hero-video__top">
+    <div class="modern-hero-video__top-inner">
+
+      {{- if eq .Params.page_options.breadcrumbs true }}
+      <nav class="modern-hero-video__crumbs" aria-label="Breadcrumb">
+        {{- partial "modern-breadcrumbs.html" . -}}
+      </nav>
+      {{- end }}
+
+      <div class="modern-hero-video__title-row">
+        {{ $iconCmd := .Params.icon | default (index .Params.commands 0) }}
+        {{ with $iconCmd }}
+        <div class="modern-hero-video__icon">
+          <img src="https://docs.mcneel.com/rhino/{{ $.Site.Params.latestRhinoVersion }}/help/{{ $.Site.Params.docLang }}/image/command_icons/{{ lower . }}.png"
+               onerror="this.parentElement.style.display='none'"
+               alt="{{ . }}">
+        </div>
+        {{ end }}
+
+        {{ if ne false (.Params.page_options.show_title) }}
+        <h1 class="modern-hero-video__title">{{ .Page.Title }}</h1>
+        {{ end }}
+
+        {{ if eq (int .Site.Params.latestRhinoVersion) (int .Params.included_in.since) }}
+        <div class="modern-hero-video__eyebrow">
+          <a href="/{{ .Site.Params.latestRhinoVersion }}/new">{{ i18n "NEW-in-Vx" . }}</a>
+        </div>
+        {{ end }}
+      </div>
+
+      {{ with .Page.Params.what_why }}
+        <p class="modern-hero-video__subtitle">{{ . | markdownify }}</p>
+      {{ end }}
+
+      {{- partial "platform-callout" . -}}
+
+    </div>
+  </div>
+
+  <div class="modern-hero-video__video"></div>
+
+  <div class="modern-hero-video__scroll-cue" aria-hidden="true">
+    <svg width="22" height="12" viewBox="0 0 22 12" fill="none"
+         stroke="currentColor" stroke-width="1.5"
+         stroke-linecap="square" stroke-linejoin="miter">
+      <path d="M1 1 L11 11 L21 1" />
+    </svg>
+  </div>
+</div>

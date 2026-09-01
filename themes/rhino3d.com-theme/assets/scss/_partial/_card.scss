@@ -30,6 +30,24 @@
 }
 
 
+/* Whole-card click target (WWW-3517): users click the description and the
+   card's empty space expecting to reach the page the title links to. The
+   title's own anchor is stretched over the card rather than wrapping the card
+   in an <a>, so no text inherits link styling and the card looks unchanged.
+   Scoped to .card-linked so plain .card users are unaffected. */
+.card-linked {
+  position: relative;
+}
+
+/* No z-index needed: an absolutely positioned pseudo-element already paints
+   above the card's static content, and leaving it out keeps this overlay from
+   stacking over anything outside the card. */
+.card-linked .card-link::after {
+  content: "";
+  position: absolute;
+  inset: 0;
+}
+
 .price-card-container {
   display: grid;
   grid-template-columns: repeat(auto-fill, minmax(280px, 1fr));

@@ -3,49 +3,19 @@
 {{ .Scratch.Set "groupBy" "list_group" }}
 {{ .Scratch.Set "groupOrder" "asc" }}
 
-{{/* Opt-in modernized guide chrome (feature-redesign2 typography + restyled TOC).
-     A guide page opts in with `page_options.new_style = true`. user-guide pages keep
-     the modern title/body wrapper they already had, regardless of the flag. */}}
-{{ $guideNew := and .File (in .File.Dir "guides") .Params.page_options.new_style }}
-{{ $modernBody := or (in .File.Dir "user-guide") $guideNew }}
-
-{{/* Opt-in bold "modern-style" guide theme (dark hero, numbered TOC, restyled
-     content). Guides-only, gated by `page_options.modern_style = true`, and takes
-     precedence over the lighter new_style path when both are set. */}}
-{{ $modernStyle := and .File (in .File.Dir "guides") .Params.page_options.modern_style }}
-
-{{ if $modernStyle }}
-{{ $hasToc := .Params.page_options.toc }}
-<div class="modern-guide">
-  <div class="modern-progress"><div class="modern-progress__bar"></div></div>
-  {{- partial "modern-hero.html" . -}}
-  <div class="modern-guide__body{{ if not $hasToc }} modern-guide__body--no-toc{{ end }}">
-    {{ if $hasToc }}{{ partial "modern-toc.html" . }}{{ end }}
-    <main class="modern-style">
-      {{ .Content }}
-      {{ if and (not .Params.page_options.plain) (not .Params.page_options.hide_edit_button) }}
-        {{- partial "edit_button.html" . -}}
-      {{ end }}
-    </main>
-  </div>
-</div>
-{{- partial "modern-scripts.html" . -}}
-{{ else }}
+{{ $modernBody := in .File.Dir "user-guide" }}
 
 <div class="single-content-area toc-page">
   {{ if .Params.page_options.toc }}
       {{ partial "toc.html" . }}
   {{ end }}
-  <div class="main-content{{ if $guideNew }} guide-new{{ end }} {{ if not .Params.page_options.toc }}toc-no{{ if .Params.page_options.narrow }} toc-no-narrow{{ end }}{{ end }}">
+  <div class="main-content {{ if not .Params.page_options.toc }}toc-no{{ if .Params.page_options.narrow }} toc-no-narrow{{ end }}{{ end }}">
     {{ if ne false (.Params.page_options.show_title) }}
     <div class="feature-title-container">
       {{ if $modernBody }}<h1 class="docs-page-title">{{ .Page.Title }}</h1>{{ else }}<div class="feature-title">{{ .Page.Title }}</div>{{ end }}{{ if eq (int .Site.Params.latestRhinoVersion) (int .Params.included_in.since) }}<div class="new-callout"><a href="/{{ .Site.Params.latestRhinoVersion}}/new">{{ i18n "NEW-in-Vx" . }}</a></div>{{ end }}{{- partial "platform-callout" . -}}
     </div>
     {{ end }}
-    {{/* On opted-in guides, skip the byline <p> entirely when it would be empty. */}}
-    {{ if or (not $guideNew) (and .Params.authors (eq .Params.page_options.byline true)) }}
     <p>{{ partial "byline.html" . }}</p>
-    {{ end }}
     {{ if $modernBody }}
     <div class="feature-body-content docs-body-content">
       {{.Content}}
@@ -58,5 +28,4 @@
     {{ end }}
   </div>
 </div>
-{{ end }}{{/* end $modernStyle branch */}}
 {{ end }}

@@ -1,5 +1,7 @@
 {{- /*
-  modern-hero.html — dark hero header for the modern_style guide theme.
+  modern-hero.html — light hero header for the modern_style guide theme
+  (light-on-white/gray with a flat grid — WWW-3572 item 1.5; the earlier dark
+  hero was retired since it was down to a single page still using it).
 
   Reads optional hero fields from a `[modern]` frontmatter table:
     eyebrow     string  — small red mono label above the title
@@ -9,29 +11,18 @@
     breadcrumb  [string]— override the auto crumb trail (plain labels, no links)
 
   The title is always .Title. Every field degrades gracefully when absent.
+  Shown by default; set `page_options.breadcrumbs = false` to drop the crumb
+  trail entirely.
 */ -}}
 {{- $m := .Params.modern | default dict -}}
 <header class="modern-hero">
   <div class="modern-hero__inner">
 
+    {{- if ne .Params.page_options.breadcrumbs false }}
     <nav class="modern-hero__crumbs" aria-label="Breadcrumb">
-      {{- with $m.breadcrumb -}}
-        {{- range $i, $c := . -}}
-          {{- if $i }}<span class="modern-hero__crumb-sep">/</span>{{ end -}}
-          <span>{{ $c }}</span>
-        {{- end -}}
-        <span class="modern-hero__crumb-sep">/</span>
-        <span class="modern-hero__crumb-current">{{ $.Title }}</span>
-      {{- else -}}
-        {{- range $.Ancestors.Reverse -}}
-          {{- if and .Title (not .IsHome) -}}
-            <a href="{{ .RelPermalink }}">{{ .Title }}</a>
-            <span class="modern-hero__crumb-sep">/</span>
-          {{- end -}}
-        {{- end -}}
-        <span class="modern-hero__crumb-current">{{ .Title }}</span>
-      {{- end -}}
+      {{- partial "modern-breadcrumbs.html" . -}}
     </nav>
+    {{- end }}
 
     <div class="modern-hero__grid{{ if not $m.hero_image }} modern-hero__grid--no-image{{ end }}">
       <div class="modern-hero__text">

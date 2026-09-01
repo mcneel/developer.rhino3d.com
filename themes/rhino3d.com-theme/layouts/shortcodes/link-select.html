@@ -1,0 +1,47 @@
+{{- /*
+  link-select.html — a <select> that navigates on change ("jump menu").
+
+  One option per line between the tags, either "Label" or "Label | value".
+  `url` is a template whose {value} is replaced with the URL-encoded option
+  value; when no explicit value is given the label is used with spaces turned
+  into underscores. `placeholder` is the first, empty option.
+
+    {{< link-select placeholder="(Select State)" url="/sales/north-america/United_States/{value}" >}}
+    Arizona
+    New York
+    Other | somewhere-else
+    {{< /link-select >}}
+
+  Styling: assets/scss/_shortcodes/_link-select.scss. The change handler is
+  delegated and emitted once per page.
+*/ -}}
+{{- $url := .Get "url" | default "" -}}
+{{- $placeholder := .Get "placeholder" | default "Select…" -}}
+{{- /* The template lives in data-link-select (not data-url): Hugo's contextual
+     escaper treats data-url as a URL and percent-encodes the {value} braces. */ -}}
+<span class="modern-link-select">
+<select class="modern-link-select__control" id="link-select-{{ .Ordinal }}" data-link-select="{{ $url }}" aria-label="{{ $placeholder }}">
+  <option value="">{{ $placeholder }}</option>
+  {{- range split (trim .Inner "\r\n ") "\n" }}
+    {{- $line := trim . "\r " -}}
+    {{- if $line }}
+      {{- $parts := split $line "|" -}}
+      {{- $label := trim (index $parts 0) " " -}}
+      {{- $value := replaceRE " +" "_" $label -}}
+      {{- if gt (len $parts) 1 }}{{ $value = trim (index $parts 1) " " }}{{ end }}
+  <option value="{{ $value }}">{{ $label }}</option>
+    {{- end }}
+  {{- end }}
+</select>
+</span>
+{{- if not (.Page.Store.Get "link-select-js") }}
+{{- .Page.Store.Set "link-select-js" true }}
+<script>
+document.addEventListener('change', function (e) {
+  var s = e.target && e.target.closest ? e.target.closest('select[data-link-select]') : null;
+  if (!s || !s.value) return;
+  var url = (s.getAttribute('data-link-select') || '').replace('{value}', encodeURIComponent(s.value));
+  if (url) window.location.href = url;
+});
+</script>
+{{- end }}

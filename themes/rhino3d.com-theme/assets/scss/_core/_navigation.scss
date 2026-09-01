@@ -163,10 +163,17 @@
 .menu-items {
     margin-top: -43px;
     padding-bottom: 15px;
-	width: 800px;
+	// The row hugs its links (no fixed width) and the spacing between them
+	// is set here rather than left over from space-between across a fixed
+	// 800px line, so the gaps stay the same no matter how many entries a
+	// site's menu has (WWW-3516). Each link also carries #navbar a's 5px
+	// padding-right, so the visual gap is 5px wider than the value below.
+	// max-width still lets long menus give up room to the logo, shrinking
+	// the links into their ellipsis rule below.
     max-width: 75%;
     display: flex;
-    justify-content: space-between;
+    justify-content: flex-end;
+	gap: 25px;
     flex-wrap: nowrap;
 	margin-right: 30px;
 }
@@ -175,6 +182,21 @@
 	overflow: hidden;
     text-overflow: ellipsis;
 	text-wrap: nowrap;
+}
+
+// Hold the account control (avatar, or the "sign in" link) one extra gap
+// off the last menu link, so the row reads as links plus account instead
+// of one long list. The row is right-aligned, so this widens it leftward:
+// the links move left while the control stays put under the search icon.
+// If a site's menu is long enough that the row hits its max-width, the
+// links give up the room via their ellipsis rule above rather than the
+// control sliding right. Desktop only — the mobile overlay stacks these
+// vertically and centers them.
+@media screen and (min-width: $global-mobile-maxwidth + 1) {
+	.menu-items .logged_in,
+	.menu-items .logged_out {
+		margin-left: 25px;
+	}
 }
 
 @media screen and (max-width: $global-mobile-maxwidth) {
@@ -191,9 +213,12 @@
 		align-content: center;
 		justify-content: space-evenly;
 		align-items: center;
-		margin-right: 0px;    
+		margin-right: 0px;
 		flex-wrap: nowrap;
 		overflow: hidden;
+		// The overlay spaces its links with space-evenly across the height
+		// toggleMenu() sets, so it doesn't want the desktop row's gap.
+		gap: 0;
 	}
 	.menu-items a {
 		text-decoration: none;

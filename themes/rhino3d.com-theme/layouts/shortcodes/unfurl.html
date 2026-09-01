@@ -1,11 +1,30 @@
 
 {{- $titleOverride := "" -}}
 {{- $descriptionOverride := "" -}}
-{{- $imageOverride := "" -}}   
+{{- $imageOverride := "" -}}
 {{- if .Get "title-override"}}{{- $titleOverride =  .Get "title-override" -}}{{- end -}}
 {{- if .Get "description-override"}}{{- $descriptionOverride =  .Get "description-override" -}}{{- end -}}
 {{- if .Get "image-override"}}{{- $imageOverride =  .Get "image-override" -}}{{- end -}}
 
+{{- $display := "link" -}}
+{{- if eq (.Get "display") "card" }}{{- $display = "card" -}}{{- end -}}
+
+{{- if eq $display "card" -}}
+    {{- $rendered := (.Inner | .Page.RenderString) -}}
+    {{- $href := replaceRE `(?s)^.*href="([^"]*)".*$` "$1" $rendered -}}
+    {{- $linkText := replaceRE `(?s)^.*<a[^>]*>([^<]*)</a>.*$` "$1" $rendered -}}
+    {{- $cardTitle := $titleOverride -}}
+    {{- if not $cardTitle }}{{- $cardTitle = $linkText -}}{{- end -}}
+    <div class="unfurl-card">
+        <a class="card" href="{{ $href }}">
+            {{- with $imageOverride }}<div class="card-image"><img src="{{ . }}" alt="{{ $cardTitle }}" loading="lazy" onerror="this.parentElement.remove()"></div>{{ end -}}
+            <div class="card-container">
+                {{- with $cardTitle }}<h1>{{ . }}</h1>{{ end -}}
+                {{- with $descriptionOverride }}<p>{{ . }}</p>{{ end -}}
+            </div>
+        </a>
+    </div>
+{{- else -}}
 <span class="unfurl-link">
     {{ .Inner | .Page.RenderString }}
     <script>
@@ -97,3 +116,4 @@
     })();
     </script>
 </span>
+{{- end -}}
