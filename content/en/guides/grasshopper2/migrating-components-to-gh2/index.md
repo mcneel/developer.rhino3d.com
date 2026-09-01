@@ -1,6 +1,6 @@
 +++
 aliases = []
-authors = [ "David Rutten" ]
+authors = [ "david" ]
 categories = [ "Getting Started" ]
 description = "Information germane to Grasshopper component developers who want to migrate from GH1 to GH2."
 keywords = [ "developer", "grasshopper", "component", "migration", "migrate", "upgrade"]
