@@ -32,7 +32,7 @@ This guide provides an overview of Rhino's User Interface (UI) system, and docum
 
 ## Overview
 
-Rhino's toolbars, menus and the commands behind them are all defined in **RUI files**. Everything below lives inside one of those files, and nothing in a file can reference anything outside it. Step through the diagram to see where each part shows up in Rhino:
+Rhino's toolbars, menus and the commands behind them are all defined in **RUI files**. Everything below lives inside one of those files, and nothing in a file can reference anything outside it. Hover or tap any part of the diagram to see where it shows up in Rhino:
 
 {{< rui-hierarchy >}}
 

@@ -7,11 +7,18 @@
   outside it, because the window is what an RUI file produces rather than
   something it stores.
 
-  No JavaScript. Selection rides on a hidden radio group, and the boxes in
-  the drawing are transparent <label>s laid over the SVG, so clicking one
-  selects it and :has() lights it up on hover. With :has() unsupported the
-  hover preview simply does not happen; clicking still works. With
-  scripting off everything still works.
+  There are no visible controls: the boxes in the drawing ARE the controls.
+  Selection rides on a hidden radio group, and each box is a transparent
+  <label> laid over the SVG, so clicking one selects it and :has() lights it
+  up on hover. The radios stay focusable, so tab-then-arrow is the keyboard
+  route and the focus ring is drawn on the box itself.
+
+  The only JavaScript is the idle tour at the end, which steps through the
+  six parts and stops for good on first hover, click or key. Without it the
+  diagram is still fully usable; it just does not introduce itself. With
+  :has() unsupported the hover preview does not happen and clicking still
+  works. With @container unsupported the narrow layout does not kick in and
+  the drawing just scales down.
 
   Every id and class is prefixed "ruix-", so use this shortcode ONCE per
   page — a second instance would collide on the input ids.
@@ -27,18 +34,9 @@
   <input class="ruix-radio ruix-r-macro" type="radio" name="ruix" id="ruix-macro">
   <input class="ruix-radio ruix-r-menus" type="radio" name="ruix" id="ruix-menus">
 
-  <div class="ruix-steps">
-    <label class="ruix-step" for="ruix-rui"><span class="ruix-dot"></span>RUI file</label>
-    <label class="ruix-step" for="ruix-group"><span class="ruix-dot"></span>Toolbar Group</label>
-    <label class="ruix-step" for="ruix-toolbar"><span class="ruix-dot"></span>Toolbar</label>
-    <label class="ruix-step" for="ruix-button"><span class="ruix-dot"></span>Toolbar Button</label>
-    <label class="ruix-step" for="ruix-macro"><span class="ruix-dot"></span>Macro</label>
-    <label class="ruix-step ruix-step--branch" for="ruix-menus"><span class="ruix-dot"></span>Menu item</label>
-  </div>
-
   <div class="ruix-fig">
     <div class="ruix-stage">
-      <svg class="ruix-dg" viewBox="0 12 700 460" role="img"
+      <svg class="ruix-dg" viewBox="0 18 700 454" role="img"
            aria-label="An RUI file, opened up: a toolbar group of tabs, one toolbar of buttons, one button, and the macro that both the button and a menu item point at.">
       <!-- The two wedges inside the file widen INTO the card below: the far
            end runs past the card edge and the card paints over it, so the
@@ -81,7 +79,7 @@
 
       <rect class="ruix-hl ruix-hl-menus"   x="13" y="44"  width="303" height="16"  rx="3"></rect>
       <rect class="ruix-hl ruix-hl-macro"   x="13" y="58"  width="303" height="32"  rx="3"></rect>
-      <rect class="ruix-hl ruix-hl-group"   x="13" y="88" width="303" height="20"  rx="3"></rect>
+      <rect class="ruix-hl ruix-hl-group"   x="13" y="88" width="303" height="41"  rx="3"></rect>
       <rect class="ruix-hl ruix-hl-toolbar" x="13" y="106" width="303" height="23"  rx="3"></rect>
       <rect class="ruix-hl ruix-hl-toolbar" x="13" y="127" width="24"  height="189" rx="3"></rect>
       <rect class="ruix-hl ruix-hl-button"  x="51" y="110" width="16"  height="16"  rx="3"></rect>
@@ -176,31 +174,31 @@
       <text class="ruix-mono" x="534" y="438">! _Line _Pause</text>
       </svg>
       <label class="ruix-hit ruix-hit-rui" for="ruix-rui" aria-hidden="true"
-             style="left:48.000%;top:3.043%;width:51.714%;height:94.783%"></label>
+             style="left:48.000%;top:1.762%;width:51.714%;height:96.035%"></label>
       <label class="ruix-hit ruix-hit-group" for="ruix-group" aria-hidden="true"
-             style="left:50.000%;top:10.000%;width:47.714%;height:14.783%"></label>
+             style="left:50.000%;top:8.811%;width:47.714%;height:14.978%"></label>
       <label class="ruix-hit ruix-hit-toolbar" for="ruix-toolbar" aria-hidden="true"
-             style="left:50.000%;top:31.739%;width:47.714%;height:14.783%"></label>
+             style="left:50.000%;top:30.837%;width:47.714%;height:14.978%"></label>
       <label class="ruix-hit ruix-hit-button" for="ruix-button" aria-hidden="true"
-             style="left:50.000%;top:53.478%;width:47.714%;height:17.391%"></label>
+             style="left:50.000%;top:52.863%;width:47.714%;height:17.621%"></label>
       <label class="ruix-hit ruix-hit-menus" for="ruix-menus" aria-hidden="true"
-             style="left:50.000%;top:78.696%;width:21.143%;height:15.652%"></label>
+             style="left:50.000%;top:78.414%;width:21.143%;height:15.859%"></label>
       <label class="ruix-hit ruix-hit-macro" for="ruix-macro" aria-hidden="true"
-             style="left:74.571%;top:78.696%;width:23.143%;height:15.652%"></label>
+             style="left:74.571%;top:78.414%;width:23.143%;height:15.859%"></label>
       <label class="ruix-hit ruix-hit-menus ruix-hit--win" for="ruix-menus" aria-hidden="true"
-             style="left:2.000%;top:6.957%;width:43.143%;height:3.478%"></label>
+             style="left:2.000%;top:5.727%;width:43.143%;height:3.524%"></label>
       <label class="ruix-hit ruix-hit-group ruix-hit--win" for="ruix-group" aria-hidden="true"
-             style="left:2.000%;top:16.522%;width:43.143%;height:4.348%"></label>
+             style="left:2.000%;top:15.419%;width:43.143%;height:4.405%"></label>
       <label class="ruix-hit ruix-hit-toolbar ruix-hit--win" for="ruix-toolbar" aria-hidden="true"
-             style="left:2.000%;top:20.435%;width:43.143%;height:5.000%"></label>
+             style="left:2.000%;top:19.383%;width:43.143%;height:5.066%"></label>
       <label class="ruix-hit ruix-hit-button ruix-hit--win" for="ruix-button" aria-hidden="true"
-             style="left:7.143%;top:21.087%;width:2.571%;height:3.913%"></label>
+             style="left:7.143%;top:20.044%;width:2.571%;height:3.965%"></label>
     </div>
   </div>
 
   <div class="ruix-notes" aria-live="polite">
     <p class="ruix-note" data-level="rui"><b>An RUI file</b> &mdash; the dashed outline. Toolbars, groups, buttons, menu items and macros are all stored in it, and none of them can reference anything outside it. A plug-in can ship one named after itself; Rhino copies it somewhere writeable and opens it at startup, without loading the plug-in.</p>
-    <p class="ruix-note" data-level="group"><b>A Toolbar Group</b> &mdash; the row of tabs. Each tab is a reference to a toolbar in the same file rather than a copy of it. Groups cannot reference Rhino panels.</p>
+    <p class="ruix-note" data-level="group"><b>A Toolbar Group</b> &mdash; the row of tabs, together with the toolbar the active tab is showing. Each tab is a reference to a toolbar in the same file rather than a copy of it. Groups cannot reference Rhino panels.</p>
     <p class="ruix-note" data-level="toolbar"><b>A Toolbar</b> &mdash; a collection of buttons, plus a name and an optional tab image. A toolbar can also drive the sidebar: the strip of tools down the left edge of the window.</p>
     <p class="ruix-note" data-level="button"><b>A Toolbar Button</b> &mdash; a left-click slot and a right-click slot, each assigned to a macro. The button shows the left macro&rsquo;s image, falling back to the right one, and it can only reach macros in its own RUI file.</p>
     <p class="ruix-note" data-level="macro"><b>A Macro</b> &mdash; the end of the zoom: an image, a name, menu text, and the command script that runs at the command line. Buttons and menu items point at a macro rather than owning it, so one macro can serve several of them.</p>
@@ -217,13 +215,16 @@
     container-type: inline-size;
     --ruix-accent: #990000;
     --ruix-accent-tint: rgba(153, 0, 0, .08);
-    margin: 1.5em 0 2em;
+    /* no top margin: the preceding paragraph's own 15px bottom margin
+       collapses through and is the floor here anyway */
+    margin: 0 0 2em;
     font-family: 'Roboto', sans-serif;
   }
   .ruix *, .ruix *::before, .ruix *::after { box-sizing: border-box; }
 
-  /* Visually hidden, but still focusable so the radio group keeps its
-     native arrow-key behaviour and shows a focus ring on its label. */
+  /* Visually hidden, but still focusable: tabbing in and arrowing between
+     them is the keyboard route through the diagram, and the focus ring is
+     drawn on the corresponding box further down. */
   .ruix-radio {
     position: absolute;
     width: 1px; height: 1px;
@@ -232,39 +233,6 @@
     clip-path: inset(50%);
     overflow: hidden;
     white-space: nowrap;
-  }
-
-  .ruix-steps {
-    display: flex;
-    flex-wrap: wrap;
-    gap: 6px;
-    margin: 0 0 7px;
-    max-width: 850px;
-    justify-content: center;
-  }
-  .ruix-step {
-    display: inline-flex;
-    align-items: center;
-    gap: 7px;
-    margin: 0;
-    padding: 6px 12px 6px 9px;
-    border: 1px solid #dedee1;
-    border-radius: 999px;
-    background: #fff;
-    color: #5b5b61;
-    font-size: 12.5px;
-    line-height: 1;
-    font-weight: 400;
-    cursor: pointer;
-    transition: border-color .15s, color .15s;
-  }
-  .ruix-step:hover { border-color: #b9b9be; }
-  .ruix-step--branch { border-style: dashed; }
-  .ruix-dot {
-    width: 7px; height: 7px;
-    border-radius: 50%;
-    background: #cdcdd1;
-    transition: background .15s;
   }
 
   /* The drawing scales with the column rather than scrolling: at 850px the
@@ -336,58 +304,46 @@
   .ruix-w-line  { stroke: #dcdcd8; stroke-width: 1; }
 
   /* ---- selected ---- */
-  .ruix-r-rui:checked ~ .ruix-steps [for="ruix-rui"] { border-color: var(--ruix-accent); color: var(--ruix-accent); font-weight: 500; }
-  .ruix-r-rui:checked ~ .ruix-steps [for="ruix-rui"] .ruix-dot { background: var(--ruix-accent); }
   .ruix-r-rui:checked ~ .ruix-notes [data-level="rui"] { visibility: visible; }
   .ruix-r-rui:checked ~ .ruix-fig .ruix-t-rui { fill: var(--ruix-accent); }
   .ruix-r-rui:checked ~ .ruix-fig .ruix-band { stroke: var(--ruix-accent); stroke-dasharray: none; stroke-width: 1.75; }
-  .ruix-r-rui:focus-visible ~ .ruix-steps [for="ruix-rui"] { outline: 2px solid var(--ruix-accent); outline-offset: 2px; }
+  .ruix-r-rui:focus-visible ~ .ruix-fig .ruix-hit-rui:not(.ruix-hit--win) { outline: 2px solid var(--ruix-accent); outline-offset: 2px; }
 
-  .ruix-r-group:checked ~ .ruix-steps [for="ruix-group"] { border-color: var(--ruix-accent); color: var(--ruix-accent); font-weight: 500; }
-  .ruix-r-group:checked ~ .ruix-steps [for="ruix-group"] .ruix-dot { background: var(--ruix-accent); }
   .ruix-r-group:checked ~ .ruix-notes [data-level="group"] { visibility: visible; }
   .ruix-r-group:checked ~ .ruix-fig .ruix-t-group { fill: var(--ruix-accent); }
   .ruix-r-group:checked ~ .ruix-fig .ruix-hl-group { opacity: 1; }
   .ruix-r-group:checked ~ .ruix-fig .ruix-s-group { stroke: var(--ruix-accent); stroke-width: 2; }
   .ruix-r-group:checked ~ .ruix-fig .ruix-w-group { fill: var(--ruix-accent-tint); stroke: var(--ruix-accent); }
   .ruix-r-group:checked ~ .ruix-fig .ruix-c-group { stroke: var(--ruix-accent); }
-  .ruix-r-group:focus-visible ~ .ruix-steps [for="ruix-group"] { outline: 2px solid var(--ruix-accent); outline-offset: 2px; }
+  .ruix-r-group:focus-visible ~ .ruix-fig .ruix-hit-group:not(.ruix-hit--win) { outline: 2px solid var(--ruix-accent); outline-offset: 2px; }
 
-  .ruix-r-toolbar:checked ~ .ruix-steps [for="ruix-toolbar"] { border-color: var(--ruix-accent); color: var(--ruix-accent); font-weight: 500; }
-  .ruix-r-toolbar:checked ~ .ruix-steps [for="ruix-toolbar"] .ruix-dot { background: var(--ruix-accent); }
   .ruix-r-toolbar:checked ~ .ruix-notes [data-level="toolbar"] { visibility: visible; }
   .ruix-r-toolbar:checked ~ .ruix-fig .ruix-t-toolbar { fill: var(--ruix-accent); }
   .ruix-r-toolbar:checked ~ .ruix-fig .ruix-hl-toolbar { opacity: 1; }
   .ruix-r-toolbar:checked ~ .ruix-fig .ruix-s-toolbar { stroke: var(--ruix-accent); stroke-width: 2; }
   .ruix-r-toolbar:checked ~ .ruix-fig .ruix-w-toolbar { fill: var(--ruix-accent-tint); stroke: var(--ruix-accent); }
   .ruix-r-toolbar:checked ~ .ruix-fig .ruix-c-toolbar { stroke: var(--ruix-accent); }
-  .ruix-r-toolbar:focus-visible ~ .ruix-steps [for="ruix-toolbar"] { outline: 2px solid var(--ruix-accent); outline-offset: 2px; }
+  .ruix-r-toolbar:focus-visible ~ .ruix-fig .ruix-hit-toolbar:not(.ruix-hit--win) { outline: 2px solid var(--ruix-accent); outline-offset: 2px; }
 
-  .ruix-r-button:checked ~ .ruix-steps [for="ruix-button"] { border-color: var(--ruix-accent); color: var(--ruix-accent); font-weight: 500; }
-  .ruix-r-button:checked ~ .ruix-steps [for="ruix-button"] .ruix-dot { background: var(--ruix-accent); }
   .ruix-r-button:checked ~ .ruix-notes [data-level="button"] { visibility: visible; }
   .ruix-r-button:checked ~ .ruix-fig .ruix-t-button { fill: var(--ruix-accent); }
   .ruix-r-button:checked ~ .ruix-fig .ruix-hl-button { opacity: 1; }
   .ruix-r-button:checked ~ .ruix-fig .ruix-s-button { stroke: var(--ruix-accent); stroke-width: 2; }
   .ruix-r-button:checked ~ .ruix-fig .ruix-w-button { fill: var(--ruix-accent-tint); stroke: var(--ruix-accent); }
   .ruix-r-button:checked ~ .ruix-fig .ruix-c-button { stroke: var(--ruix-accent); }
-  .ruix-r-button:focus-visible ~ .ruix-steps [for="ruix-button"] { outline: 2px solid var(--ruix-accent); outline-offset: 2px; }
+  .ruix-r-button:focus-visible ~ .ruix-fig .ruix-hit-button:not(.ruix-hit--win) { outline: 2px solid var(--ruix-accent); outline-offset: 2px; }
 
-  .ruix-r-macro:checked ~ .ruix-steps [for="ruix-macro"] { border-color: var(--ruix-accent); color: var(--ruix-accent); font-weight: 500; }
-  .ruix-r-macro:checked ~ .ruix-steps [for="ruix-macro"] .ruix-dot { background: var(--ruix-accent); }
   .ruix-r-macro:checked ~ .ruix-notes [data-level="macro"] { visibility: visible; }
   .ruix-r-macro:checked ~ .ruix-fig .ruix-t-macro { fill: var(--ruix-accent); }
   .ruix-r-macro:checked ~ .ruix-fig .ruix-hl-macro { opacity: 1; }
   .ruix-r-macro:checked ~ .ruix-fig .ruix-s-macro { stroke: var(--ruix-accent); stroke-width: 2; }
-  .ruix-r-macro:focus-visible ~ .ruix-steps [for="ruix-macro"] { outline: 2px solid var(--ruix-accent); outline-offset: 2px; }
+  .ruix-r-macro:focus-visible ~ .ruix-fig .ruix-hit-macro:not(.ruix-hit--win) { outline: 2px solid var(--ruix-accent); outline-offset: 2px; }
 
-  .ruix-r-menus:checked ~ .ruix-steps [for="ruix-menus"] { border-color: var(--ruix-accent); color: var(--ruix-accent); font-weight: 500; }
-  .ruix-r-menus:checked ~ .ruix-steps [for="ruix-menus"] .ruix-dot { background: var(--ruix-accent); }
   .ruix-r-menus:checked ~ .ruix-notes [data-level="menus"] { visibility: visible; }
   .ruix-r-menus:checked ~ .ruix-fig .ruix-t-menus { fill: var(--ruix-accent); }
   .ruix-r-menus:checked ~ .ruix-fig .ruix-hl-menus { opacity: 1; }
   .ruix-r-menus:checked ~ .ruix-fig .ruix-s-menus { stroke: var(--ruix-accent); stroke-width: 2; }
-  .ruix-r-menus:focus-visible ~ .ruix-steps [for="ruix-menus"] { outline: 2px solid var(--ruix-accent); outline-offset: 2px; }
+  .ruix-r-menus:focus-visible ~ .ruix-fig .ruix-hit-menus:not(.ruix-hit--win) { outline: 2px solid var(--ruix-accent); outline-offset: 2px; }
 
   /* ---- hover preview ----
      Pointing at any target first clears the selected highlight, then lights
@@ -400,17 +356,11 @@
   .ruix:has(.ruix-hit:hover) .ruix-tag { fill: #8a8a90; }
   .ruix:has(.ruix-hit:hover) .ruix-wedge { fill: #f3f3f1; stroke: #e6e6e3; }
   .ruix:has(.ruix-hit:hover) .ruix-crop { stroke: #aeaeb4; }
-  .ruix:has(.ruix-hit:hover) .ruix-step { border-color: #dedee1; color: #5b5b61; font-weight: 400; }
-  .ruix:has(.ruix-hit:hover) .ruix-step .ruix-dot { background: #cdcdd1; }
 
-  .ruix:has(.ruix-hit-rui:hover) .ruix-steps [for="ruix-rui"] { border-color: var(--ruix-accent); color: var(--ruix-accent); font-weight: 500; }
-  .ruix:has(.ruix-hit-rui:hover) .ruix-steps [for="ruix-rui"] .ruix-dot { background: var(--ruix-accent); }
   .ruix:has(.ruix-hit-rui:hover) .ruix-notes [data-level="rui"] { visibility: visible; }
   .ruix:has(.ruix-hit-rui:hover) .ruix-t-rui { fill: var(--ruix-accent); }
   .ruix:has(.ruix-hit-rui:hover) .ruix-band { stroke: var(--ruix-accent); stroke-dasharray: none; stroke-width: 1.75; }
 
-  .ruix:has(.ruix-hit-group:hover) .ruix-steps [for="ruix-group"] { border-color: var(--ruix-accent); color: var(--ruix-accent); font-weight: 500; }
-  .ruix:has(.ruix-hit-group:hover) .ruix-steps [for="ruix-group"] .ruix-dot { background: var(--ruix-accent); }
   .ruix:has(.ruix-hit-group:hover) .ruix-notes [data-level="group"] { visibility: visible; }
   .ruix:has(.ruix-hit-group:hover) .ruix-t-group { fill: var(--ruix-accent); }
   .ruix:has(.ruix-hit-group:hover) .ruix-hl-group { opacity: 1; }
@@ -418,8 +368,6 @@
   .ruix:has(.ruix-hit-group:hover) .ruix-w-group { fill: var(--ruix-accent-tint); stroke: var(--ruix-accent); }
   .ruix:has(.ruix-hit-group:hover) .ruix-c-group { stroke: var(--ruix-accent); }
 
-  .ruix:has(.ruix-hit-toolbar:hover) .ruix-steps [for="ruix-toolbar"] { border-color: var(--ruix-accent); color: var(--ruix-accent); font-weight: 500; }
-  .ruix:has(.ruix-hit-toolbar:hover) .ruix-steps [for="ruix-toolbar"] .ruix-dot { background: var(--ruix-accent); }
   .ruix:has(.ruix-hit-toolbar:hover) .ruix-notes [data-level="toolbar"] { visibility: visible; }
   .ruix:has(.ruix-hit-toolbar:hover) .ruix-t-toolbar { fill: var(--ruix-accent); }
   .ruix:has(.ruix-hit-toolbar:hover) .ruix-hl-toolbar { opacity: 1; }
@@ -427,8 +375,6 @@
   .ruix:has(.ruix-hit-toolbar:hover) .ruix-w-toolbar { fill: var(--ruix-accent-tint); stroke: var(--ruix-accent); }
   .ruix:has(.ruix-hit-toolbar:hover) .ruix-c-toolbar { stroke: var(--ruix-accent); }
 
-  .ruix:has(.ruix-hit-button:hover) .ruix-steps [for="ruix-button"] { border-color: var(--ruix-accent); color: var(--ruix-accent); font-weight: 500; }
-  .ruix:has(.ruix-hit-button:hover) .ruix-steps [for="ruix-button"] .ruix-dot { background: var(--ruix-accent); }
   .ruix:has(.ruix-hit-button:hover) .ruix-notes [data-level="button"] { visibility: visible; }
   .ruix:has(.ruix-hit-button:hover) .ruix-t-button { fill: var(--ruix-accent); }
   .ruix:has(.ruix-hit-button:hover) .ruix-hl-button { opacity: 1; }
@@ -436,15 +382,11 @@
   .ruix:has(.ruix-hit-button:hover) .ruix-w-button { fill: var(--ruix-accent-tint); stroke: var(--ruix-accent); }
   .ruix:has(.ruix-hit-button:hover) .ruix-c-button { stroke: var(--ruix-accent); }
 
-  .ruix:has(.ruix-hit-macro:hover) .ruix-steps [for="ruix-macro"] { border-color: var(--ruix-accent); color: var(--ruix-accent); font-weight: 500; }
-  .ruix:has(.ruix-hit-macro:hover) .ruix-steps [for="ruix-macro"] .ruix-dot { background: var(--ruix-accent); }
   .ruix:has(.ruix-hit-macro:hover) .ruix-notes [data-level="macro"] { visibility: visible; }
   .ruix:has(.ruix-hit-macro:hover) .ruix-t-macro { fill: var(--ruix-accent); }
   .ruix:has(.ruix-hit-macro:hover) .ruix-hl-macro { opacity: 1; }
   .ruix:has(.ruix-hit-macro:hover) .ruix-s-macro { stroke: var(--ruix-accent); stroke-width: 2; }
 
-  .ruix:has(.ruix-hit-menus:hover) .ruix-steps [for="ruix-menus"] { border-color: var(--ruix-accent); color: var(--ruix-accent); font-weight: 500; }
-  .ruix:has(.ruix-hit-menus:hover) .ruix-steps [for="ruix-menus"] .ruix-dot { background: var(--ruix-accent); }
   .ruix:has(.ruix-hit-menus:hover) .ruix-notes [data-level="menus"] { visibility: visible; }
   .ruix:has(.ruix-hit-menus:hover) .ruix-t-menus { fill: var(--ruix-accent); }
   .ruix:has(.ruix-hit-menus:hover) .ruix-hl-menus { opacity: 1; }
