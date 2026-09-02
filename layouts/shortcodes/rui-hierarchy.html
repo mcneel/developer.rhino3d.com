@@ -214,7 +214,7 @@
     <p class="ruix-note" data-level="group"><b>A Toolbar Group</b> &mdash; a collection of toolbars, drawn as a row of tabs with the active tab&rsquo;s toolbar below it. Each tab is a reference to a toolbar in the same file rather than a copy of it. Groups cannot reference Rhino panels.</p>
     <p class="ruix-note" data-level="toolbar"><b>A Toolbar</b> &mdash; a collection of buttons, plus a name and an optional tab image. A toolbar can also drive the sidebar: the strip of tools down the left edge of the window.</p>
     <p class="ruix-note" data-level="button"><b>A Toolbar Button</b> &mdash; a left-click slot and a right-click slot, each assigned to a macro. The button shows the left macro&rsquo;s image, falling back to the right one, and it can only reach macros in its own RUI file.</p>
-    <p class="ruix-note" data-level="macro"><b>A Macro</b> &mdash; the end of the zoom: an image, a name, menu text, and the command script that runs at the command line. Buttons and menu items point at a macro rather than owning it, so one macro can serve several of them.</p>
+    <p class="ruix-note" data-level="macro"><b>A Macro</b> &mdash; an image, a name, menu text, and the command script that runs at the command line. Buttons and menu items take their text, image and script from the macro they point at.</p>
     <p class="ruix-note" data-level="menus"><b>A Menu item</b> &mdash; the other way into a macro. The RUI file records where to insert the item into Rhino&rsquo;s menus; the text, the image and the script all come from the macro it references. Where that menu bar is drawn differs by platform: on Windows it sits inside the Rhino window, as shown here, while on Mac it is in the system menu bar at the top of the screen.</p>
   </div>
 </div>
