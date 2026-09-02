@@ -36,13 +36,13 @@
 
   <div class="ruix-fig">
     <div class="ruix-stage">
-      <svg class="ruix-dg" viewBox="0 18 700 454" role="img"
+      <svg class="ruix-dg" viewBox="0 18 700 462" role="img"
            aria-label="An RUI file, opened up: a toolbar group of tabs, one toolbar of buttons, one button, and the macro that both the button and a menu item point at.">
       <!-- The two wedges inside the file widen INTO the card below: the far
            end runs past the card edge and the card paints over it, so the
            wedge dies into the rounded corner instead of ending in a point. -->
-      <path class="ruix-wedge ruix-w-toolbar" d="M368 108 L350 172 L684 172 L424 108 Z"></path>
-      <path class="ruix-wedge ruix-w-button"  d="M622 208 L350 272 L684 272 L650 208 Z"></path>
+      <path class="ruix-wedge ruix-w-toolbar" d="M368 104 L350 190 L684 190 L424 104 Z"></path>
+      <path class="ruix-wedge ruix-w-button"  d="M622 226 L350 284 L684 284 L650 226 Z"></path>
 
       <!-- the Rhino window (outside the file: it is what the file produces) -->
       <g class="ruix-winpart">
@@ -79,7 +79,7 @@
 
       <rect class="ruix-hl ruix-hl-menus"   x="13" y="44"  width="303" height="16"  rx="3"></rect>
       <rect class="ruix-hl ruix-hl-macro"   x="13" y="58"  width="303" height="32"  rx="3"></rect>
-      <rect class="ruix-hl ruix-hl-group"   x="13" y="88" width="303" height="41"  rx="3"></rect>
+      <rect class="ruix-hl ruix-hl-group"   x="13" y="88"  width="303" height="41"  rx="3"></rect>
       <rect class="ruix-hl ruix-hl-toolbar" x="13" y="106" width="303" height="23"  rx="3"></rect>
       <rect class="ruix-hl ruix-hl-toolbar" x="13" y="127" width="24"  height="189" rx="3"></rect>
       <rect class="ruix-hl ruix-hl-button"  x="51" y="110" width="16"  height="16"  rx="3"></rect>
@@ -88,12 +88,12 @@
            comes to a sharp point ON the tab strip it is calling out, drawn
            over the window rather than sliding underneath it. Its far end
            still tucks under the card on the right. -->
-      <path class="ruix-wedge ruix-w-group" d="M312 98.2 L364 58 L364 126 Z"></path>
+      <path class="ruix-wedge ruix-w-group" d="M312 98.2 L364 58 L364 150 Z"></path>
       </g>
 
       <!-- the RUI file. Drawn after the callout so its dashed edge stays
            unbroken where the wedge crosses into the file. -->
-      <rect class="ruix-band" x="336" y="26" width="362" height="436" rx="12"></rect>
+      <rect class="ruix-band" x="336" y="26" width="362" height="444" rx="12"></rect>
       <rect x="352" y="18" width="162" height="16" fill="#fff"></rect>
       <text class="ruix-tag ruix-t-rui" x="358" y="30">RUI FILE</text>
       <text class="ruix-mono" x="420" y="30" fill="#a8a8ad">MyPlugin.rui</text>
@@ -103,102 +103,115 @@
         <text class="ruix-cap" x="14" y="354">The Rhino window</text>
       </g>
 
-      <!-- 1 - Toolbar Group -->
-      <rect class="ruix-card ruix-s-group" x="350" y="58" width="334" height="68" rx="8"></rect>
+      <!-- 1 - Toolbar Group: the tabs AND the toolbar the active tab shows -->
+      <rect class="ruix-card ruix-s-group" x="350" y="58" width="334" height="92" rx="8"></rect>
       <line class="ruix-rule" x1="350" y1="78" x2="684" y2="78"></line>
       <text class="ruix-tag ruix-t-group" x="362" y="72">TOOLBAR GROUP</text>
-      <text class="ruix-edge" x="676" y="72" text-anchor="end">a row of tabs</text>
-      <rect x="360" y="86" width="314" height="36" rx="5" fill="#e6e6e3"></rect>
-      <rect x="368" y="90" width="56" height="28" rx="4" fill="#fff"></rect>
-      <rect x="378" y="100" width="36" height="7" rx="3" fill="#96968f"></rect>
-      <rect x="434" y="100" width="44" height="7" rx="3" fill="#c4c4c0"></rect>
-      <rect x="488" y="100" width="34" height="7" rx="3" fill="#c4c4c0"></rect>
-      <rect x="532" y="100" width="46" height="7" rx="3" fill="#c4c4c0"></rect>
-      <rect x="588" y="100" width="38" height="7" rx="3" fill="#c4c4c0"></rect>
-      <rect class="ruix-crop ruix-c-toolbar" x="368" y="90" width="56" height="28" rx="4"></rect>
+      <text class="ruix-edge" x="676" y="72" text-anchor="end">a collection of toolbars</text>
+      <rect x="360" y="86" width="314" height="56" rx="5" fill="#f2f2ef"></rect>
+      <path d="M365 86 h304 a5 5 0 0 1 5 5 v21 h-314 v-21 a5 5 0 0 1 5 -5 Z" fill="#e6e6e3"></path>
+      <rect x="368" y="90" width="56" height="22" rx="4" fill="#fff"></rect>
+      <rect x="378" y="98" width="36" height="6" rx="3" fill="#96968f"></rect>
+      <rect x="434" y="98" width="44" height="6" rx="3" fill="#c4c4c0"></rect>
+      <rect x="488" y="98" width="34" height="6" rx="3" fill="#c4c4c0"></rect>
+      <rect x="532" y="98" width="46" height="6" rx="3" fill="#c4c4c0"></rect>
+      <rect x="588" y="98" width="38" height="6" rx="3" fill="#c4c4c0"></rect>
+      <g class="ruix-w-icon">
+        <rect x="368" y="117" width="20" height="20" rx="4"></rect>
+        <rect x="394" y="117" width="20" height="20" rx="4"></rect>
+        <rect x="420" y="117" width="20" height="20" rx="4"></rect>
+        <rect x="446" y="117" width="20" height="20" rx="4"></rect>
+        <rect x="472" y="117" width="20" height="20" rx="4"></rect>
+        <rect x="498" y="117" width="20" height="20" rx="4"></rect>
+        <rect x="524" y="117" width="20" height="20" rx="4"></rect>
+        <rect x="550" y="117" width="20" height="20" rx="4"></rect>
+        <rect x="576" y="117" width="20" height="20" rx="4"></rect>
+        <rect x="602" y="117" width="20" height="20" rx="4"></rect>
+      </g>
+      <rect class="ruix-crop ruix-c-toolbar" x="368" y="90" width="56" height="22" rx="4"></rect>
 
       <!-- 2 - Toolbar -->
-      <rect class="ruix-card ruix-s-toolbar" x="350" y="158" width="334" height="68" rx="8"></rect>
-      <line class="ruix-rule" x1="350" y1="178" x2="684" y2="178"></line>
-      <text class="ruix-tag ruix-t-toolbar" x="362" y="172">TOOLBAR</text>
-      <text class="ruix-edge" x="676" y="172" text-anchor="end">one tab = a reference to one toolbar</text>
-      <rect x="360" y="186" width="314" height="36" rx="5" fill="#f2f2ef"></rect>
+      <rect class="ruix-card ruix-s-toolbar" x="350" y="176" width="334" height="68" rx="8"></rect>
+      <line class="ruix-rule" x1="350" y1="196" x2="684" y2="196"></line>
+      <text class="ruix-tag ruix-t-toolbar" x="362" y="190">TOOLBAR</text>
+      <text class="ruix-edge" x="676" y="190" text-anchor="end">one tab = a reference to one toolbar</text>
+      <rect x="360" y="204" width="314" height="36" rx="5" fill="#f2f2ef"></rect>
       <g class="ruix-w-icon">
-        <rect x="370" y="190" width="28" height="28" rx="5"></rect>
-        <rect x="406" y="190" width="28" height="28" rx="5"></rect>
-        <rect x="442" y="190" width="28" height="28" rx="5"></rect>
-        <rect x="478" y="190" width="28" height="28" rx="5"></rect>
-        <rect x="514" y="190" width="28" height="28" rx="5"></rect>
-        <rect x="550" y="190" width="28" height="28" rx="5"></rect>
-        <rect x="586" y="190" width="28" height="28" rx="5"></rect>
-        <rect x="622" y="190" width="28" height="28" rx="5"></rect>
+        <rect x="370" y="208" width="28" height="28" rx="5"></rect>
+        <rect x="406" y="208" width="28" height="28" rx="5"></rect>
+        <rect x="442" y="208" width="28" height="28" rx="5"></rect>
+        <rect x="478" y="208" width="28" height="28" rx="5"></rect>
+        <rect x="514" y="208" width="28" height="28" rx="5"></rect>
+        <rect x="550" y="208" width="28" height="28" rx="5"></rect>
+        <rect x="586" y="208" width="28" height="28" rx="5"></rect>
+        <rect x="622" y="208" width="28" height="28" rx="5"></rect>
       </g>
-      <rect class="ruix-crop ruix-c-button" x="622" y="190" width="28" height="28" rx="5"></rect>
+      <rect class="ruix-crop ruix-c-button" x="622" y="208" width="28" height="28" rx="5"></rect>
 
       <!-- 3 - Toolbar Button -->
-      <rect class="ruix-card ruix-s-button" x="350" y="258" width="334" height="80" rx="8"></rect>
-      <line class="ruix-rule" x1="350" y1="278" x2="684" y2="278"></line>
-      <text class="ruix-tag ruix-t-button" x="362" y="272">TOOLBAR BUTTON</text>
-      <text class="ruix-edge" x="676" y="272" text-anchor="end">a toolbar contains its buttons</text>
-      <rect x="360" y="288" width="42" height="42" rx="6" fill="#f2f2f0" stroke="#dcdce0"></rect>
-      <path d="M392 326 h6 v-6 Z" fill="#a8a8ad"></path>
-      <rect class="ruix-slot" x="416" y="288" width="258" height="19" rx="4"></rect>
-      <text class="ruix-edge" x="426" y="301.5">LEFT CLICK</text>
-      <text class="ruix-mono" x="664" y="301.5" text-anchor="end" fill="#85858b">&#8594; a macro</text>
-      <rect class="ruix-slot" x="416" y="311" width="258" height="19" rx="4"></rect>
-      <text class="ruix-edge" x="426" y="324.5">RIGHT CLICK</text>
-      <text class="ruix-mono" x="664" y="324.5" text-anchor="end" fill="#85858b">&#8594; a macro</text>
+      <rect class="ruix-card ruix-s-button" x="350" y="270" width="334" height="80" rx="8"></rect>
+      <line class="ruix-rule" x1="350" y1="290" x2="684" y2="290"></line>
+      <text class="ruix-tag ruix-t-button" x="362" y="284">TOOLBAR BUTTON</text>
+      <text class="ruix-edge" x="676" y="284" text-anchor="end">a toolbar contains its buttons</text>
+      <rect x="360" y="300" width="42" height="42" rx="6" fill="#f2f2f0" stroke="#dcdce0"></rect>
+      <path d="M392 338 h6 v-6 Z" fill="#a8a8ad"></path>
+      <rect class="ruix-slot" x="416" y="300" width="258" height="19" rx="4"></rect>
+      <text class="ruix-edge" x="426" y="313.5">LEFT CLICK</text>
+      <text class="ruix-mono" x="664" y="313.5" text-anchor="end" fill="#85858b">&#8594; a macro</text>
+      <rect class="ruix-slot" x="416" y="323" width="258" height="19" rx="4"></rect>
+      <text class="ruix-edge" x="426" y="336.5">RIGHT CLICK</text>
+      <text class="ruix-mono" x="664" y="336.5" text-anchor="end" fill="#85858b">&#8594; a macro</text>
 
       <!-- both routes land on the same macro -->
-      <path class="ruix-link" d="M603 338 V364"></path>
-      <path class="ruix-arw" d="M603 374 l-5 -10 h10 Z"></path>
-      <text class="ruix-edge" x="611" y="358">references</text>
-      <path class="ruix-link" d="M498 410 H512"></path>
-      <path class="ruix-arw" d="M522 410 l-10 -5 v10 Z"></path>
+      <path class="ruix-link" d="M603 350 V372"></path>
+      <path class="ruix-arw" d="M603 382 l-5 -10 h10 Z"></path>
+      <text class="ruix-edge" x="611" y="368">references</text>
+      <path class="ruix-link" d="M498 418 H512"></path>
+      <path class="ruix-arw" d="M522 418 l-10 -5 v10 Z"></path>
 
       <!-- the other way in -->
-      <rect class="ruix-card ruix-s-menus" x="350" y="374" width="148" height="72" rx="8"></rect>
-      <line class="ruix-rule" x1="350" y1="394" x2="498" y2="394"></line>
-      <text class="ruix-tag ruix-t-menus" x="362" y="388">MENU ITEM</text>
-      <rect x="360" y="402" width="128" height="34" rx="4" fill="#f7f7f5" stroke="#e4e4e1"></rect>
-      <rect x="368" y="408" width="56" height="6" rx="3" fill="#d4d4d0"></rect>
-      <rect x="362" y="418" width="124" height="12" rx="2" fill="#e8e8e4"></rect>
-      <rect x="368" y="421" width="70" height="6" rx="3" fill="#a8a8a3"></rect>
+      <rect class="ruix-card ruix-s-menus" x="350" y="382" width="148" height="72" rx="8"></rect>
+      <line class="ruix-rule" x1="350" y1="402" x2="498" y2="402"></line>
+      <text class="ruix-tag ruix-t-menus" x="362" y="396">MENU ITEM</text>
+      <rect x="360" y="410" width="128" height="34" rx="4" fill="#f7f7f5" stroke="#e4e4e1"></rect>
+      <rect x="368" y="416" width="56" height="6" rx="3" fill="#d4d4d0"></rect>
+      <rect x="362" y="426" width="124" height="12" rx="2" fill="#e8e8e4"></rect>
+      <rect x="368" y="429" width="70" height="6" rx="3" fill="#a8a8a3"></rect>
 
       <!-- 4 - Macro -->
-      <rect class="ruix-card ruix-s-macro" x="522" y="374" width="162" height="72" rx="8"></rect>
-      <line class="ruix-rule" x1="522" y1="394" x2="684" y2="394"></line>
-      <text class="ruix-tag ruix-t-macro" x="534" y="388">MACRO</text>
-      <rect x="534" y="402" width="22" height="22" rx="4" fill="#e4e4e1"></rect>
-      <text class="ruix-name" x="564" y="418">Line</text>
-      <text class="ruix-mono" x="534" y="438">! _Line _Pause</text>
+      <rect class="ruix-card ruix-s-macro" x="522" y="382" width="162" height="72" rx="8"></rect>
+      <line class="ruix-rule" x1="522" y1="402" x2="684" y2="402"></line>
+      <text class="ruix-tag ruix-t-macro" x="534" y="396">MACRO</text>
+      <rect x="534" y="410" width="22" height="22" rx="4" fill="#e4e4e1"></rect>
+      <text class="ruix-name" x="564" y="426">Line</text>
+      <text class="ruix-mono" x="534" y="446">! _Line _Pause</text>
       </svg>
       <label class="ruix-hit ruix-hit-rui" for="ruix-rui" aria-hidden="true"
-             style="left:48.000%;top:1.762%;width:51.714%;height:96.035%"></label>
+             style="left:48.000%;top:1.732%;width:51.714%;height:96.104%"></label>
       <label class="ruix-hit ruix-hit-group" for="ruix-group" aria-hidden="true"
-             style="left:50.000%;top:8.811%;width:47.714%;height:14.978%"></label>
+             style="left:50.000%;top:8.658%;width:47.714%;height:19.913%"></label>
       <label class="ruix-hit ruix-hit-toolbar" for="ruix-toolbar" aria-hidden="true"
-             style="left:50.000%;top:30.837%;width:47.714%;height:14.978%"></label>
+             style="left:50.000%;top:34.199%;width:47.714%;height:14.719%"></label>
       <label class="ruix-hit ruix-hit-button" for="ruix-button" aria-hidden="true"
-             style="left:50.000%;top:52.863%;width:47.714%;height:17.621%"></label>
+             style="left:50.000%;top:54.545%;width:47.714%;height:17.316%"></label>
       <label class="ruix-hit ruix-hit-menus" for="ruix-menus" aria-hidden="true"
-             style="left:50.000%;top:78.414%;width:21.143%;height:15.859%"></label>
+             style="left:50.000%;top:78.788%;width:21.143%;height:15.584%"></label>
       <label class="ruix-hit ruix-hit-macro" for="ruix-macro" aria-hidden="true"
-             style="left:74.571%;top:78.414%;width:23.143%;height:15.859%"></label>
+             style="left:74.571%;top:78.788%;width:23.143%;height:15.584%"></label>
       <label class="ruix-hit ruix-hit-menus ruix-hit--win" for="ruix-menus" aria-hidden="true"
-             style="left:2.000%;top:5.727%;width:43.143%;height:3.524%"></label>
+             style="left:2.000%;top:5.628%;width:43.143%;height:3.463%"></label>
       <label class="ruix-hit ruix-hit-group ruix-hit--win" for="ruix-group" aria-hidden="true"
-             style="left:2.000%;top:15.419%;width:43.143%;height:4.405%"></label>
+             style="left:2.000%;top:15.152%;width:43.143%;height:4.329%"></label>
       <label class="ruix-hit ruix-hit-toolbar ruix-hit--win" for="ruix-toolbar" aria-hidden="true"
-             style="left:2.000%;top:19.383%;width:43.143%;height:5.066%"></label>
+             style="left:2.000%;top:19.048%;width:43.143%;height:4.978%"></label>
       <label class="ruix-hit ruix-hit-button ruix-hit--win" for="ruix-button" aria-hidden="true"
-             style="left:7.143%;top:20.044%;width:2.571%;height:3.965%"></label>
+             style="left:7.143%;top:19.697%;width:2.571%;height:3.896%"></label>
     </div>
   </div>
 
   <div class="ruix-notes" aria-live="polite">
     <p class="ruix-note" data-level="rui"><b>An RUI file</b> &mdash; the dashed outline. Toolbars, groups, buttons, menu items and macros are all stored in it, and none of them can reference anything outside it. A plug-in can ship one named after itself; Rhino copies it somewhere writeable and opens it at startup, without loading the plug-in.</p>
-    <p class="ruix-note" data-level="group"><b>A Toolbar Group</b> &mdash; the row of tabs, together with the toolbar the active tab is showing. Each tab is a reference to a toolbar in the same file rather than a copy of it. Groups cannot reference Rhino panels.</p>
+    <p class="ruix-note" data-level="group"><b>A Toolbar Group</b> &mdash; a collection of toolbars, drawn as a row of tabs with the active tab&rsquo;s toolbar below it. Each tab is a reference to a toolbar in the same file rather than a copy of it. Groups cannot reference Rhino panels.</p>
     <p class="ruix-note" data-level="toolbar"><b>A Toolbar</b> &mdash; a collection of buttons, plus a name and an optional tab image. A toolbar can also drive the sidebar: the strip of tools down the left edge of the window.</p>
     <p class="ruix-note" data-level="button"><b>A Toolbar Button</b> &mdash; a left-click slot and a right-click slot, each assigned to a macro. The button shows the left macro&rsquo;s image, falling back to the right one, and it can only reach macros in its own RUI file.</p>
     <p class="ruix-note" data-level="macro"><b>A Macro</b> &mdash; the end of the zoom: an image, a name, menu text, and the command script that runs at the command line. Buttons and menu items point at a macro rather than owning it, so one macro can serve several of them.</p>
