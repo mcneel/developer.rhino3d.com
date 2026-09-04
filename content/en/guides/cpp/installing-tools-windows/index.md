@@ -110,4 +110,4 @@ The **Rhino C/C++ SDK** is a set of tools for creating plugin using the C++ lang
 
 **Congratulations!** You have the tools to build a C/C++ plugin for Rhino for Windows. *Now what?*
 
-Check out the [Creating your first C/C++ plugin for Rhino](/guides/cpp/your-first-plugin-windows/) guide for instructions building your first plugin.
+Check out the [Creating your first C/C++ plugin](/guides/cpp/your-first-plugin-windows/) guide for instructions building your first plugin.

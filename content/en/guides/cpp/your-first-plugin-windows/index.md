@@ -6,7 +6,7 @@ description = "This guide walks you through your first plugin for Rhino for Wind
 keywords = [ "c", "C/C++", "plugin" ]
 languages = [ "C/C++" ]
 sdk = [ "C/C++" ]
-title = "Creating your first C/C++ plugin for Rhino"
+title = "Creating your first C/C++ plugin (Win)"
 type = "guides"
 weight = 2
 
