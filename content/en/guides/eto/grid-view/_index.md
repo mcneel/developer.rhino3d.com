@@ -55,6 +55,8 @@ GridViews are defined by Columns which are bound to a list defining the rows.
 ```cs
 using Eto.Forms;
 
+using Rhino.UI;
+
 var gridView = new GridView()
 {
   Columns = {
@@ -86,24 +88,26 @@ dialog.ShowModal(parent);
 
 ```py
 import Eto.Forms as ef
+from Rhino.UI import RhinoEtoApp
 
-plusColumn = ef.GridColumn()
-plusColumn.HeaderText = "Key"
+keyColumn = ef.GridColumn()
+keyColumn.HeaderText = "Key"
 
-itemColumn = ef.GridColumn()
-itemColumn.HeaderText = "Value"
+valueColumn = ef.GridColumn()
+valueColumn.HeaderText = "Value"
 
 gridView = ef.GridView()
 # gridView.DataStore = ...
-gridView.Columns.Add(plusColumn)
-gridView.Columns.Add(itemColumn)
+gridView.Columns.Add(keyColumn)
+gridView.Columns.Add(valueColumn)
 
 dialog = ef.Dialog()
-dialog.Width = 100
-dialog.Height = 100
+dialog.Width = 200
+dialog.Height = 200
 dialog.Content = gridView
 
-dialog.ShowModal()
+parent = RhinoEtoApp.MainWindowForDocument(__rhino_doc__)
+dialog.ShowModal(parent)
 ```
 
   </div>
@@ -123,7 +127,7 @@ Defining a row as a data object is a very strong way to define a GridView. The c
 #### 2. As an Array
 A row can also be defined as an Array or List of data. Using a number as an index in the constructor will bind the cell to the Nth object in a list.
 
-<!-- TODO : How does this handle columns being reordered? Does it just handle it??? -->
+An index refers to a position in the row, not to the column the user sees on screen. Set `AllowColumnReordering = false` on the Grid so the two cannot drift apart.
 
 <div class="codetab">
   <button class="tablinks3" onclick="openCodeTab(event, 'cs3')" id="defaultOpen3">C#</button>
@@ -159,15 +163,15 @@ var gridView = new GridView()
 ``` py no-compile
 # 1. This is an Indirect Binding
 # Python cannot use this style (even though the syntax is valid), c# can
-column_1 = GridColumn()
-column_1.DataCell = TextBoxCell("Property")
+column_1 = ef.GridColumn()
+column_1.DataCell = ef.TextBoxCell("Property")
 
 # 2. This is an Indirect Binding
 # Python AND C# can both use this style
-column_2 = GridColumn()
-column_2.DataCell = TextBoxCell(0)
+column_2 = ef.GridColumn()
+column_2.DataCell = ef.TextBoxCell(1)
 
-grid_view = GridView()
+grid_view = ef.GridView()
 grid_view.Columns.Add(column_1)
 grid_view.Columns.Add(column_2)
  ```
@@ -208,18 +212,19 @@ var _1dList = new List<MyObject>
   </div>
   <div class="codetab-content4" id="py4">
 
-  ```py
-# WORKS
-items = [ef.GridItem([False, "Cheese"])]
+  ```py no-compile
+from System.Collections.Generic import List
 
-# 2D List
-items = [[1, 2, 3], ["one", "two", "three"]]
+# Each row has to support IList indexing for TextBoxCell(int) to read it.
+# A GridItem does, so a plain Python list of GridItems is fine.
+items = [ef.GridItem([False, "Cheese"]), ef.GridItem([True, "Crackers"])]
 
-# Tuples and Lists
-col_1 = [1, 2, 3]
-col_2 = ["one", "two", "three"]
-
-items = (col_1, col_2)
+# Rows of raw values need a .NET list. A Python list does not satisfy IList,
+# so TextBoxCell(0) would render nothing.
+items = List[List[object]]()
+items.Add(List[object]([1, "one"]))
+items.Add(List[object]([2, "two"]))
+items.Add(List[object]([3, "three"]))
   ```
 
   </div>
@@ -346,6 +351,8 @@ var dialog = new Dialog()
   }
 };
 
+closeButton.Click += (s, e) => dialog.Close();
+
 // Make sure we parent the dialog correctly
 var parent = RhinoEtoApp.MainWindowForDocument(__rhino_doc__);
 dialog.ShowModal(parent);
@@ -355,8 +362,6 @@ dialog.ShowModal(parent);
   <div class="codetab-content1" id="py1">
 
 ```py
-import scriptcontext as sc
-
 import Eto.Forms as ef
 import Eto.Drawing as ed
 from Rhino.UI import RhinoEtoApp
@@ -412,8 +417,10 @@ dialog = ef.Dialog()
 dialog.Padding = ed.Padding(4)
 dialog.Content = stackLayout
 
+closeButton.Click += lambda s, e: dialog.Close()
+
 # Make sure we parent the dialog correctly
-parent = RhinoEtoApp.MainWindowForDocument(sc.doc)
+parent = RhinoEtoApp.MainWindowForDocument(__rhino_doc__)
 dialog.ShowModal(parent)
 ```
 
@@ -451,63 +458,72 @@ var parent = RhinoEtoApp.MainWindowForDocument(__rhino_doc__);
 
 class SheetModel : ViewModel
 {
+    // What the grid shows. The GridView edits this directly.
     public ObservableCollection<ObservableCollection<string>> Cells { get; } = new();
+
+    // What the user typed. Kept apart so a formula survives being displayed as its result.
+    public List<List<string>> Formulas { get; } = new List<List<string>>();
 
     public List<char> ColumnLabels { get; } = new List<char>() {'A', 'B', 'C', 'D', 'E', 'F', 'G', 'H', 'I', 'J'};
 
-    public SheetModel(int rows, int cols)
+    public SheetModel(int rows)
     {
         for(int i = 0; i < rows; i++)
         {
-            // var row = new ObservableCollection<string>(Enumerable.Repeat(string.Empty, cols));
-            var row = new ObservableCollection<string>(Enumerable.Range(0, cols).Select(j => (j * i).ToString()));
-            Cells.Add(row);
+            var values = Enumerable.Range(0, ColumnLabels.Count).Select(j => (j * i).ToString()).ToList();
+            Cells.Add(new ObservableCollection<string>(values));
+            Formulas.Add(new List<string>(values));
         }
+    }
+
+    public void SetFormula(int row, int col, string text)
+    {
+        if (row < 0 || row >= Formulas.Count) return;
+        if (col < 0 || col >= Formulas[row].Count) return;
+
+        Formulas[row][col] = text ?? string.Empty;
     }
 
     public void Calculate()
     {
-        for(int x = 0; x < Cells.Count; x++)
-        {
-            var currentRow = Cells[x];
-            for(int y = 0; y < currentRow.Count; y++)
-            {
-                var cell = currentRow[y] ?? string.Empty;
-                var match = Regex.Match(cell, @"=([a-zA-Z])([\d]+)");
-                if (!match.Success) continue;
+        for(int x = 0; x < Formulas.Count; x++)
+            for(int y = 0; y < Formulas[x].Count; y++)
+                Cells[x][y] = Resolve(x, y);
+    }
 
-                string letter = match.Groups[1].Value.ToUpper();
-                string number = match.Groups[2].Value;
+    string Resolve(int x, int y)
+    {
+        var formula = Formulas[x][y] ?? string.Empty;
+        var match = Regex.Match(formula, @"^=([a-zA-Z])(\d+)$");
+        if (!match.Success) return formula;
 
-                if (!int.TryParse(number, out int row)) continue;
-                if (row < 1 || row > Cells.Count) continue;
+        if (!int.TryParse(match.Groups[2].Value, out int row)) return formula;
+        if (row < 1 || row > Formulas.Count) return formula;
 
-                char c = letter.FirstOrDefault();
-                int col = ColumnLabels.IndexOf(c);
-                if (col < 0 || col >= currentRow.Count) continue;
+        char c = match.Groups[1].Value.ToUpper().FirstOrDefault();
+        int col = ColumnLabels.IndexOf(c);
+        if (col < 0 || col >= Formulas[row - 1].Count) return formula;
 
-                // Skip self-references (e.g. =A1 in A1) to avoid noop overwrites
-                if (row - 1 == x && col == y) continue;
+        // A cell pointing at itself would never settle on a value.
+        if (row - 1 == x && col == y) return formula;
 
-                currentRow[y] = Cells[row-1][col];
-            }
-        }
+        return Cells[row - 1][col] ?? string.Empty;
     }
 
     public void Clear()
     {
-        foreach(var row in Cells)
+        for(int x = 0; x < Cells.Count; x++)
         {
-            row.Clear();
-            for(int i = 0; i < ColumnLabels.Count; i++)
-                row.Add("0");
+            for(int y = 0; y < Cells[x].Count; y++)
+            {
+                Cells[x][y] = "0";
+                Formulas[x][y] = "0";
+            }
         }
     }
 }
 
-var cols = new char[] {'A', 'B', 'C', 'D', 'E', 'F', 'G', 'H', 'I', 'J'};
-
-var model = new SheetModel(10, cols.Length);
+var model = new SheetModel(10);
 
 var dialog = new Dialog()
 {
@@ -520,17 +536,21 @@ var gridView = new GridView()
     DataStore = model.Cells,
     Border = BorderType.Line,
     CanDeleteItem = (s) => false,
+    AllowColumnReordering = false,
     AllowMultipleSelection = false,
     AllowEmptySelection = true,
     Cursor = Eto.Forms.Cursors.IBeam,
     GridLines = GridLines.Both,
 };
 gridView.CellEdited += (s, e) => {
+    // The grid has already written the typed text into Cells, so capture it as the formula first.
+    model.SetFormula(e.Row, e.Column, model.Cells[e.Row][e.Column]);
     model.Calculate();
+    gridView.ReloadData(Enumerable.Range(0, model.Cells.Count));
 };
 
 int i = 0;
-foreach(char c in cols)
+foreach(char c in model.ColumnLabels)
 {
     var col = new GridColumn()
     {
@@ -573,11 +593,10 @@ dialog.ShowModal(parent);
   ```
 
   </div>
-  <div class="codetab-content1" id="py10">
+  <div class="codetab-content10" id="py10">
 
 ```py
 import re
-import scriptcontext as sc
 
 import Eto.Forms as ef
 import Eto.Drawing as ed
@@ -586,57 +605,74 @@ from Rhino.UI import RhinoEtoApp
 from System.Collections.ObjectModel import ObservableCollection
 from System.Collections.Generic import List
 
-parent = RhinoEtoApp.MainWindowForDocument(sc.doc)
+parent = RhinoEtoApp.MainWindowForDocument(__rhino_doc__)
 
 
 class SheetModel:
-    def __init__(self, rows, cols):
-        self.Cells = ObservableCollection[ObservableCollection[str]]()
+    def __init__(self, rows):
         self.ColumnLabels = ["A", "B", "C", "D", "E", "F", "G", "H", "I", "J"]
+
+        # What the grid shows. The GridView edits this directly.
+        self.Cells = ObservableCollection[ObservableCollection[str]]()
+
+        # What the user typed. Kept apart so a formula survives being displayed as its result.
+        self.Formulas = []
+
         for i in range(rows):
+            values = [str(i * j) for j in range(len(self.ColumnLabels))]
+
             row = ObservableCollection[str]()
-            for j in range(cols):
-                row.Add(str(i * j))
+            for value in values:
+                row.Add(value)
+
             self.Cells.Add(row)
+            self.Formulas.append(list(values))
+
+    def SetFormula(self, row, col, text):
+        if row < 0 or row >= len(self.Formulas):
+            return
+        if col < 0 or col >= len(self.Formulas[row]):
+            return
+
+        self.Formulas[row][col] = text or ""
 
     def Calculate(self):
-        for x in range(self.Cells.Count):
-            current_row = self.Cells[x]
-            for y in range(current_row.Count):
-                cell = current_row[y] or ""
-                match = re.match(r"=([a-zA-Z])(\d+)", cell)
-                if match is None:
-                    continue
+        for x in range(len(self.Formulas)):
+            for y in range(len(self.Formulas[x])):
+                self.Cells[x][y] = self.Resolve(x, y)
 
-                letter = match.group(1).upper()
-                try:
-                    row = int(match.group(2))
-                except ValueError:
-                    continue
-                if row < 1 or row > self.Cells.Count:
-                    continue
-                if letter not in self.ColumnLabels:
-                    continue
+    def Resolve(self, x, y):
+        formula = self.Formulas[x][y] or ""
+        match = re.match(r"^=([a-zA-Z])(\d+)$", formula)
+        if match is None:
+            return formula
 
-                col = self.ColumnLabels.index(letter)
-                if col < 0 or col >= current_row.Count:
-                    continue
+        row = int(match.group(2))
+        if row < 1 or row > len(self.Formulas):
+            return formula
 
-                # Skip self-references (e.g. =A1 in A1) to avoid noop overwrites
-                if row - 1 == x and col == y:
-                    continue
+        letter = match.group(1).upper()
+        if letter not in self.ColumnLabels:
+            return formula
 
-                current_row[y] = self.Cells[row - 1][col]
+        col = self.ColumnLabels.index(letter)
+        if col >= len(self.Formulas[row - 1]):
+            return formula
+
+        # A cell pointing at itself would never settle on a value.
+        if row - 1 == x and col == y:
+            return formula
+
+        return self.Cells[row - 1][col] or ""
 
     def Clear(self):
-        for row in self.Cells:
-            row.Clear()
-            for _ in range(len(self.ColumnLabels)):
-                row.Add("0")
+        for x in range(self.Cells.Count):
+            for y in range(self.Cells[x].Count):
+                self.Cells[x][y] = "0"
+                self.Formulas[x][y] = "0"
 
 
-cols = ["A", "B", "C", "D", "E", "F", "G", "H", "I", "J"]
-model = SheetModel(10, len(cols))
+model = SheetModel(10)
 
 dialog = ef.Dialog()
 dialog.Padding = ed.Padding(4)
@@ -645,6 +681,7 @@ dialog.DataContext = model
 gridView = ef.GridView()
 gridView.DataStore = model.Cells
 gridView.Border = ef.BorderType.Line
+gridView.AllowColumnReordering = False
 gridView.AllowMultipleSelection = False
 gridView.AllowEmptySelection = True
 gridView.Cursor = ef.Cursors.IBeam
@@ -652,12 +689,15 @@ gridView.GridLines = ef.GridLines.Both
 
 
 def on_cell_edited(s, e):
+    # The grid has already written the typed text into Cells, so capture it as the formula first.
+    model.SetFormula(e.Row, e.Column, model.Cells[e.Row][e.Column])
     model.Calculate()
+    gridView.ReloadData(List[int](list(range(model.Cells.Count))))
 
 
 gridView.CellEdited += on_cell_edited
 
-for i, c in enumerate(cols):
+for i, c in enumerate(model.ColumnLabels):
     col = ef.GridColumn()
     col.HeaderText = c
     col.AutoSize = False

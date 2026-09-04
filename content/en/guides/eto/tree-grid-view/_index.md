@@ -108,8 +108,6 @@ dialog.ShowModal(parent);
   <div class="codetab-content2" id="py2">
 
 ```py
-import scriptcontext as sc
-
 import Eto.Forms as ef
 from Rhino.UI import RhinoEtoApp
 
@@ -126,7 +124,7 @@ dialog.Width = 400
 dialog.Height = 200
 dialog.Content = treeGridView
 
-parent = RhinoEtoApp.MainWindowForDocument(sc.doc)
+parent = RhinoEtoApp.MainWindowForDocument(__rhino_doc__)
 dialog.ShowModal(parent)
 ```
 
@@ -265,11 +263,11 @@ dialog.ShowModal(parent)
 
 ### Reloading Data
 
-Generally `ObservableCollection<T>` is used to inform the UI of changes when the collection is changed. It is not possible to use an `ObservableCollection<t>` for a TreeGridView as a Tree structure is required, hence `TreeGridStore` is used.
+Generally `ObservableCollection<T>` is used to inform the UI of changes when the collection is changed. It is not possible to use an `ObservableCollection<T>` for a TreeGridView as a Tree structure is required, hence a `TreeGridItemCollection` is used.
 
 TreeGridView offers two reload options `ReloadItem()` which reloads 1 item (optionally including children)  and `ReloadData()` which reloads _everything_.
 
-Reloading an ENTIRE GridView due to 1 cell changing is very inefficient, using ReloadItem is much more efficient.
+Reloading an ENTIRE TreeGridView due to 1 cell changing is very inefficient, using ReloadItem is much more efficient.
 
 ## Creating a responsive Tree Grid View UI
 Now that you're aware of the principles, it'd be good to see a fully implemented TreeGridView in action.
@@ -341,6 +339,10 @@ children.Add(ef.TreeGridItem(Flaggable("North America", "🌎")))
 children.Add(ef.TreeGridItem(Flaggable("South America", "🌎")))
 
 tree_data = ef.TreeGridItemCollection()
+
+# On Mac the two-arg TreeGridItem(children, value) form trips a pythonnet overload
+# ambiguity that stuffs both arguments into Values. The branch() helper in the next
+# section builds a parent node the portable way.
 tree_data.Add(ef.TreeGridItem(children, Flaggable("Earth", "🗺️")))
 ```
 
@@ -348,7 +350,7 @@ tree_data.Add(ef.TreeGridItem(children, Flaggable("Earth", "🗺️")))
 </div>
 
 ### Extending the data set
-It's time to add more data, specifically nested data so that the UI tree structure is fully utilised.
+It's time to add more data, specifically nested data so that the UI tree structure is fully used.
 
 <div class="codetab">
   <button class="tablinks6" onclick="openCodeTab(event, 'cs6')" id="defaultOpen6">C#</button>
@@ -436,7 +438,7 @@ tree_data.Add(root)
 ## The Custom Cell
 This example makes use of the Custom Cell. It's not strictly necessary, but it is the most tricky cell and understanding how to use it is very useful.
 
-There are two common ways to wire a CustomCell up to its row data. The first is the *binding* style — declare a binding once in `OnCreateCell` and push the row's value in as the `DataContext` from `OnConfigureCell`. Because Cells are reused as the user scrolls, the binding must be created in `OnCreateCell` (which runs once per reused control) and the per-row value must be assigned in `OnConfigureCell` (which runs every time a control is recycled onto a new row).
+There are two common ways to wire a CustomCell up to its row data. The first is the *binding* style, declare a binding once in `OnCreateCell` and push the row's value in as the `DataContext` from `OnConfigureCell`. Because Cells are reused as the user scrolls, the binding must be created in `OnCreateCell` (which runs once per reused control) and the per-row value must be assigned in `OnConfigureCell` (which runs every time a control is recycled onto a new row).
 
 ``` cs no-compile
 class CustCell : CustomCell
@@ -450,6 +452,9 @@ class CustCell : CustomCell
 
   protected override void OnConfigureCell(CellEventArgs args, Control control)
   {
+    // Cells are recycled onto new rows, so drop the old row before any guard below bails out.
+    control.DataContext = null;
+
     if (args.Item is not TreeGridItem item) return;
     if (item.Values?.FirstOrDefault() is not Flaggable flag) return;
     control.DataContext = flag;
@@ -539,6 +544,10 @@ class CustCell : CustomCell
   protected override void OnConfigureCell(CellEventArgs args, Control control)
   {
     if (control is not Label text) return;
+
+    // Cells are recycled onto new rows, so clear the old value before any guard below bails out.
+    text.Text = string.Empty;
+
     if (args.Item is not TreeGridItem item) return;
     if (item.Values?.FirstOrDefault() is not Flaggable flag) return;
 
@@ -596,8 +605,6 @@ dialog.ShowModal(parent);
   <div class="codetab-content1" id="py1">
 
 ```py
-import scriptcontext as sc
-
 import Eto.Forms as ef
 import Eto.Drawing as ed
 from Rhino.UI import RhinoEtoApp
@@ -646,6 +653,10 @@ class CustCell(ef.CustomCell):
     def OnConfigureCell(self, args, control):
         if not isinstance(control, ef.Label):
             return
+
+        # Cells are recycled onto new rows, so clear the old value before any guard below returns.
+        control.Text = ""
+
         if not isinstance(args.Item, ef.TreeGridItem):
             return
         values = list(args.Item.Values) if args.Item.Values is not None else []
@@ -696,7 +707,7 @@ dialog.Height = 400
 dialog.Content = layout
 dialog.Resizable = True
 
-parent = RhinoEtoApp.MainWindowForDocument(sc.doc)
+parent = RhinoEtoApp.MainWindowForDocument(__rhino_doc__)
 dialog.ShowModal(parent)
 ```
 

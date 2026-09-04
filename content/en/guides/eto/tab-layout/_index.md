@@ -72,8 +72,6 @@ dialog.ShowModal(parent);
   <div class="codetab-content1" id="py1">
 
 ```py
-import scriptcontext as sc
-
 import Rhino
 from Rhino.UI import RhinoEtoApp, EtoExtensions
 
@@ -84,7 +82,7 @@ import Eto.Forms as ef
 def show_message(sender, e):
   ef.MessageBox.Show("You clicked me")
 
-parent = RhinoEtoApp.MainWindowForDocument(sc.doc)
+parent = RhinoEtoApp.MainWindowForDocument(__rhino_doc__)
 
 dialog = ef.Dialog()
 dialog.Padding = ed.Padding(8)

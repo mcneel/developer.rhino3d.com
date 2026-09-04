@@ -79,13 +79,11 @@ dialog.ShowModal(parent);
   <div class="codetab-content1" id="py1">
 
 ```py
-import scriptcontext as sc
-
 from Rhino.UI import RhinoEtoApp, EtoExtensions
 import Eto.Forms as ef
 import Eto.Drawing as ed
 
-parent = RhinoEtoApp.MainWindowForDocument(sc.doc)
+parent = RhinoEtoApp.MainWindowForDocument(__rhino_doc__)
 
 drawable = ef.Drawable()
 drawable.Width = 200
