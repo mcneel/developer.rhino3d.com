@@ -4,7 +4,7 @@ authors = [ "steve" ]
 categories = [ "Other" ]
 description = "Demonstrates how to export the control points of a user-selected curve and write them to a file."
 keywords = [ "export", "control", "points" ]
-languages = [ "C#" ]
+languages = [ "C#", "Python" ]
 sdk = [ "RhinoCommon" ]
 title = "Export Control Points"
 type = "samples/rhinocommon"
@@ -64,7 +64,37 @@ partial class Examples
 <div class="codetab-content" id="py">
 
 ```python
-# No Python sample available
+#! python 3
+import Rhino
+import scriptcontext as sc
+import System
+from Eto.Forms import SaveFileDialog, DialogResult
+
+def RunCommand():
+    get_rc, objref = Rhino.Input.RhinoGet.GetOneObject("Select curve", False, Rhino.DocObjects.ObjectType.Curve)
+    if get_rc != Rhino.Commands.Result.Success:
+        return get_rc
+    curve = objref.Curve()
+    if curve is None:
+        return Rhino.Commands.Result.Failure
+    nc = curve.ToNurbsCurve()
+
+    fd = SaveFileDialog()
+    #fd.Filters = "Text Files | *.txt"
+    #fd.Filter = "Text Files | *.txt"
+    #fd.DefaultExt = "txt"
+    if fd.ShowDialog(None) != DialogResult.Ok:
+        return Rhino.Commands.Result.Cancel
+    path = fd.FileName
+    with System.IO.StreamWriter(path) as sw:
+        for pt in nc.Points:
+            loc = pt.Location
+            sw.WriteLine("{0} {1} {2}", loc.X, loc.Y, loc.Z)
+        sw.Close()
+    return Rhino.Commands.Result.Success
+
+if __name__ == "__main__":
+    RunCommand()
 ```
 
 </div>
