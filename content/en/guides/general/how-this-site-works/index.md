@@ -248,7 +248,7 @@ until = 6
 This is a field to specify whether a page is listed as a page on the website - especially when iterating through pages in layouts/templates. The most common use of the `list` field is to set it to `"never"` like this:
 
 ```toml
-[_build]
+[build]
 list="never"
 ```
 
