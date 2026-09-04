@@ -14,9 +14,9 @@
   {{ end }}
   {{ end }}
 {{ if (.Params.page_options.rhino_bg) }}
-  <body class="rhino-bg">
+  <body class="rhino-bg{{ if eq .Section "kb" }} kb-page{{ end }}">
 {{ else }}
-  <body>
+  <body{{ if eq .Section "kb" }} class="kb-page"{{ end }}>
   {{ end }}
     {{ if (.Params.page_options.container_layout) }} <!--New container layouts-->
 
@@ -43,7 +43,16 @@
           {{- partial "header" . -}}
       {{- end }}
       <div class="outerbox">
+        {{/* Single opt-in switch for the bold "modern-style" chrome (progress bar,
+             hero / plain header, sticky numbered TOC, restyled content). Any page
+             in any section gets it with `page_options.modern_style = true`; the
+             section's own "main" block is skipped. head.html loads the matching
+             fonts off the same flag. */}}
+        {{- if .Params.page_options.modern_style }}
+        {{- partial "modern-guide.html" . -}}
+        {{- else }}
         {{- block "main" . }}
+        {{- end }}
         {{- end }}
         {{- block "footer" . }}
           {{- partial "footer" . -}}

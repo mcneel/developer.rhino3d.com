@@ -68,7 +68,7 @@
             {{- end -}}
         {{- end -}}
 
-        <div class="card">
+        <div class="card card-linked">
             {{ $.Scratch.Set "page_link" .RelPermalink }}
             {{- if ($.Scratch.Get "url") -}}
                 {{ $.Scratch.Set "page_link" ($.Scratch.Get "url") }}
@@ -133,7 +133,7 @@
                 {{ end }}
             {{- end -}}
             <div class="card-container">
-                <h1><a href="{{ $.Scratch.Get "page_link" }}">{{ $.Scratch.Get "page_title" }}</a></h1>
+                <h1><a class="card-link" href="{{ $.Scratch.Get "page_link" }}">{{ $.Scratch.Get "page_title" }}</a></h1>
                 <p>{{ $.Scratch.Get "page_description" }}</p>
             </div>
         </div>

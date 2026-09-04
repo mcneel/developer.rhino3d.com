@@ -326,7 +326,7 @@ buttonCell.CreateCell += create_cell
 plusColumn = ef.GridColumn()
 plusColumn.Width = 24
 plusColumn.HeaderText = "±"
-plusColumn.DataCell = button_cell
+plusColumn.DataCell = buttonCell
 ```
 
   </div>
@@ -524,8 +524,6 @@ def create_cell(args):
       items.Insert(items.Count - 1, ToDoItem("...", True))
 
     button = ef.Button()
-
-    item = [ToDoItem]args.Item
 
     if (args.Item.add_item): # <-- add_items only adds
       button.Text = "+"

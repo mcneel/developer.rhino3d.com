@@ -1,0 +1,50 @@
+{{- /*
+  Returns a page's body Markdown for llms-full.txt, cleaned for LLM consumption.
+
+  Base is .RawContent (NOT .Content/plainify): the sites' code samples contain C#/C++
+  generics like List<Guid>, which HTML-tag stripping via a generic <...> pattern would
+  destroy. Raw Markdown keeps code, headings, lists, and fences exactly intact. Everything
+  below is therefore surgical — matched by shortcode syntax or by specific HTML tag NAME,
+  never by a blanket "<...>".
+
+  Steps:
+    1. Resolve shortcodes whose meaningful text lives in a parameter.
+    2. Strip all remaining shortcode delimiters (keeps paired inner content).
+    3. Absolutize image URLs (markdown ![](…) and raw <img src>) so they resolve:
+       bundle-relative -> the page's own URL; root-relative (/…) -> the site root.
+    4. Strip embedded raw *formatting* HTML by tag name (keep <a>, <img>, and tables).
+
+  Usage:  {{ partial "llms/content.html" $page }}
+*/ -}}
+{{- $c := .RawContent -}}
+
+{{- /* 1. Param-bearing shortcodes -> their text */ -}}
+{{- $c = $c | replaceRE `\{\{<\s*rhino-command\b[^>]*?english-command="([^"]*)"[^>]*?>\}\}` "$1" -}}
+{{- $c = $c | replaceRE `\{\{<\s*(?:figure|image)\b[^>]*?caption="([^"]*)"[^>]*?>\}\}` "$1" -}}
+{{- $c = $c | replaceRE `\{\{<\s*latest-rhino-version\s*>\}\}` (printf "%v" (.Site.Params.latestRhinoVersion | default "")) -}}
+
+{{- /* 2. Drop remaining shortcode delimiters; keep inner content of paired shortcodes */ -}}
+{{- $c = $c | replaceRE `\{\{[<%][^{}]*?[>%]\}\}` "" -}}
+
+{{- /* 3. Absolutize image URLs. Root-relative first (site root), then bundle-relative
+       (page URL); the no-colon guard on the bundle pass skips anything already absolute. */ -}}
+{{- $site := .Site.Params.sitemapBaseURL -}}
+{{- $page := printf "%s%s" $site .RelPermalink -}}
+{{- $c = $c | replaceRE `(!\[[^]]*\]\()(/[^)]*\))` (printf "${1}%s${2}" $site) -}}
+{{- $c = $c | replaceRE `(!\[[^]]*\]\()([^/):][^):]*\))` (printf "${1}%s${2}" $page) -}}
+{{- /* anchor on the closing quote so an already-absolute src (contains "://") can't re-match */ -}}
+{{- $c = $c | replaceRE `(<img[^>]*\bsrc=")(/[^"]*")` (printf "${1}%s${2}" $site) -}}
+{{- $c = $c | replaceRE `(<img[^>]*\bsrc=")([^"/:][^":]*")` (printf "${1}%s${2}" $page) -}}
+
+{{- /* 4. Strip raw formatting HTML by tag name (never generic <...>, so code is safe).
+       Kept intact: <a> (links), <img> (images), and <table>/<tr>/<td>/<th> (data). */ -}}
+{{- $c = $c | replaceRE `(?i)<br\s*/?>` "\n" -}}
+{{- $c = $c | replaceRE `(?i)</?(?:div|p|blockquote|center|section|article|header|footer|aside)\b[^>]*>` "\n" -}}
+{{- $c = $c | replaceRE `(?i)</?(?:span|font|small|big|strong|strike|mark|cite|abbr|samp|kbd|sub|sup|ins|del|em|tt)\b[^>]*>` "" -}}
+{{- /* short single-letter tags only as closing tags or with attributes, so code like a<b never matches */ -}}
+{{- $c = $c | replaceRE `(?i)</(?:b|i|u|s)>` "" -}}
+{{- $c = $c | replaceRE `(?i)<(?:b|i|u|s)\s+[^>]*>` "" -}}
+
+{{- /* Tidy up blank-line runs left by removed block tags */ -}}
+{{- $c = $c | replaceRE `\n{3,}` "\n\n" -}}
+{{- return $c -}}

@@ -1,0 +1,13 @@
+{{- $name := "" -}}
+{{- $url := "" -}}
+{{- $icon := "" -}}
+{{- if .IsNamedParams -}}
+    {{- $name = .Get "name" -}}
+    {{- $url = .Get "url" -}}
+    {{- $icon = .Get "icon" -}}
+{{- else -}}
+    {{- $name = .Get 0 -}}
+    {{- $url = .Get 1 -}}
+    {{- $icon = .Get 2 -}}
+{{- end -}}
+<a href="{{ $url }}" target="_blank"><span style="display: inline-block;"><strong><img style="margin-top: -4px; padding-bottom: 2px; height: 24px; vertical-align: middle;" src="/images/icons/{{ $icon }}" onerror="this.onerror=null;this.style.display='none';"> {{ $name }}</strong></span></a>

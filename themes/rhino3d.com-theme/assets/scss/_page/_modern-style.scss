@@ -1,0 +1,1483 @@
+// =====================================================
+// modern-style guide theme  (opt-in: page_options.modern_style = true)
+// =====================================================
+// A bold, standalone look for guide pages, ported from the Patch tutorial
+// redesign. A dark, grid-textured hero, a sticky numbered table of contents,
+// and content chrome (numbered sections, step badges, bordered figures, code
+// chips, callouts) that render from ordinary guide markdown — no per-section
+// hand-authoring required.
+//
+// Everything is scoped under `.modern-guide`, which also carries the design
+// tokens as CSS custom properties. Existing guides, help pages, and feature
+// pages are untouched. Imported after _custom so the scoped rules here win
+// the cascade over the base `.toc` / body rules.
+//
+// Fonts (Lato / Roboto / Roboto Mono) are loaded in head.html for
+// modern_style pages; each family degrades to a system stack.
+
+// -----------------------------------------------------
+// Design tokens — scoped to the theme root so nothing leaks to the rest of
+// the site. Ported from the "Rhino Studio Series — Identity & Type Specimen".
+// Neutrals run warm at the dark end (brand charcoal) and cool toward the
+// light end; red is the sparing accent (the "eye").
+// -----------------------------------------------------
+.modern-guide {
+  // Neutral ramp (warm charcoal -> cool off-white)
+  --rh-gray-950: #1b1a18;
+  --rh-gray-900: #2c2926; // brand charcoal
+  --rh-gray-800: #3b3935;
+  --rh-gray-700: #51525b; // brand slate
+  --rh-gray-600: #6b6c74;
+  --rh-gray-500: #8a8b92;
+  --rh-gray-400: #adaeb4;
+  --rh-gray-300: #c9cbce;
+  --rh-gray-200: #dde0e5;
+  --rh-gray-100: #e9ebef; // brand off-white
+  --rh-gray-50:  #f5f6f8;
+  --rh-white:    #ffffff;
+
+  // Rhino red — the accent
+  --rh-red-800: #7a0000;
+  --rh-red-700: #970000;
+  --rh-red-600: #901010; // brand accent
+  --rh-red-500: #d11a1a;
+  --rh-red-100: #f6e2e2;
+  --rh-red-50:  #fbf1f1;
+
+  // Functional
+  --rh-info-600:    #2f63a3;
+  --rh-info-100:    #e4ecf5;
+  --rh-success-600: #2e7d4f;
+  --rh-warning-600: #b9791a;
+
+  // Specimen neutrals
+  --rh-ink:        #000000; // max contrast — titles
+  --rh-ink-body:   #1a1a1a; // body text
+  --rh-ink-meta:   #888888; // meta / captions
+  --rh-border:     #e2e2e2; // hairline
+
+  // Families
+  --rh-font-display: "Lato", system-ui, -apple-system, "Segoe UI", Helvetica, Arial, sans-serif;
+  --rh-font-body:    "Roboto", system-ui, -apple-system, "Segoe UI", Helvetica, Arial, sans-serif;
+  --rh-font-mono:    "Roboto Mono", ui-monospace, "SF Mono", Menlo, Consolas, monospace;
+
+  // Layout
+  --rh-container: 1180px;
+
+  // Motion
+  --rh-ease: cubic-bezier(0.2, 0, 0.1, 1);
+}
+
+// -----------------------------------------------------
+// Full-bleed break-out. The theme root sits inside `.outerbox`, which is a
+// centered, side-padded, max-width column. Neutralize that padding/width for
+// modern pages so the dark hero spans the full viewport while inner content
+// stays centered. `:has()` keeps the change scoped to modern pages only.
+//
+// margin-top also overridden here: .outerbox's base margin-top
+// ($global-nav-height-large, 125px) assumes the theme's default resizing
+// navbar, but this site runs the static/collapsed navbar variant — its real
+// rendered height is 68px (see the matching note in _feature.scss) — so every
+// modern_style page had a ~57px gap above its hero until this was scoped in.
+// -----------------------------------------------------
+.outerbox:has(> .modern-guide) {
+  max-width: none;
+  padding-left: 0;
+  padding-right: 0;
+  padding-top: 0;
+  margin-top: 68px;
+}
+
+.modern-guide {
+  font-family: var(--rh-font-body);
+  color: var(--rh-ink-body);
+  background: var(--rh-white);
+  -webkit-font-smoothing: antialiased;
+  text-rendering: optimizeLegibility;
+}
+
+// Shared centered content column
+%rh-inner {
+  max-width: var(--rh-container);
+  margin: 0 auto;
+  padding-left: 40px;
+  padding-right: 40px;
+}
+
+// -----------------------------------------------------
+// Scroll-progress bar
+// -----------------------------------------------------
+.modern-progress {
+  position: fixed;
+  // Sit just under the fixed site navbar instead of drawing over it. The
+  // navbar's real rendered height is 68px (see the matching note in
+  // _feature.scss) — not the $global-nav-height-large(125px)/collapsed(60px)
+  // SCSS variables, which this site's static navbar variant doesn't use.
+  top: 68px;
+  left: 0;
+  right: 0;
+  height: 2px;
+  background: rgba(0, 0, 0, 0.06);
+  z-index: 999;
+
+  &__bar {
+    height: 100%;
+    width: 0;
+    background: var(--rh-red-600);
+    transition: width 90ms linear;
+  }
+}
+
+// -----------------------------------------------------
+// Hero
+// -----------------------------------------------------
+.modern-hero {
+  background: var(--rh-gray-50);
+  color: var(--rh-ink-body);
+  background-image:
+    repeating-linear-gradient(to right, rgba(0, 0, 0, 0.03) 0 1px, transparent 1px 64px),
+    repeating-linear-gradient(to bottom, rgba(0, 0, 0, 0.03) 0 1px, transparent 1px 64px);
+
+  &__inner { @extend %rh-inner; }
+
+  &__crumbs {
+    padding-top: 28px;
+    display: flex;
+    flex-wrap: wrap;
+    align-items: center;
+    gap: 10px;
+    font-family: var(--rh-font-mono);
+    font-size: 12px;
+    letter-spacing: 0.06em;
+    text-transform: uppercase;
+    color: var(--rh-ink-meta);
+
+    a {
+      color: var(--rh-ink-meta);
+      text-decoration: none;
+      border: 0;
+      &:hover { color: var(--rh-ink); }
+    }
+    .modern-crumbs__current { color: var(--rh-ink); }
+    .modern-crumbs__sep { color: var(--rh-border); }
+  }
+
+  &__grid {
+    padding: 34px 0 56px;
+    display: grid;
+    grid-template-columns: minmax(0, 1.05fr) minmax(0, 0.95fr);
+    gap: 56px;
+    align-items: center;
+  }
+
+  &__grid--no-image { grid-template-columns: minmax(0, 1fr); }
+
+  &__eyebrow {
+    margin: 0 0 18px;
+    font-family: var(--rh-font-mono);
+    font-size: 12px;
+    letter-spacing: 0.14em;
+    text-transform: uppercase;
+    color: var(--rh-red-600);
+  }
+
+  &__title {
+    margin: 0 0 20px;
+    font-family: var(--rh-font-display);
+    font-weight: 900;
+    font-size: 54px;
+    line-height: 1.04;
+    letter-spacing: -0.02em;
+    color: var(--rh-ink);
+    text-wrap: balance;
+  }
+
+  &__lead {
+    margin: 0 0 28px;
+    font-size: 18px;
+    line-height: 1.55;
+    color: var(--rh-ink-meta);
+    max-width: 46ch;
+    text-wrap: pretty;
+  }
+
+  &__meta {
+    display: flex;
+    flex-wrap: wrap;
+    gap: 10px;
+    align-items: center;
+  }
+
+  &__figure {
+    margin: 0;
+    img {
+      display: block;
+      width: 100%;
+      height: auto;
+      border-radius: 12px;
+    }
+  }
+
+  .modern-chip {
+    color: var(--rh-ink-body);
+    border-color: var(--rh-border);
+    background: var(--rh-white);
+  }
+}
+
+// -----------------------------------------------------
+// Plain header — lightweight title bar used instead of the dark hero when a
+// page opts out with `page_options.modern_hero = false` (e.g. a reference
+// page where a full hero banner would be overkill). Same eyebrow/title/lead
+// vocabulary as the hero, just light-on-white and without an image. Optional
+// `meta` chips render in a light variant.
+// -----------------------------------------------------
+.modern-plain-header {
+  background: var(--rh-white);
+  border-bottom: 1px solid var(--rh-border);
+
+  &__inner {
+    @extend %rh-inner;
+    padding-top: 44px;
+    padding-bottom: 32px;
+  }
+
+  &__meta {
+    display: flex;
+    flex-wrap: wrap;
+    gap: 10px;
+    align-items: center;
+    margin-top: 20px;
+  }
+
+  // Light-on-white chip (the base .modern-chip is tuned for the dark hero)
+  .modern-chip {
+    color: var(--rh-ink-body);
+    border-color: var(--rh-border);
+    background: var(--rh-gray-50);
+  }
+
+  &__crumbs {
+    margin-bottom: 18px;
+    display: flex;
+    flex-wrap: wrap;
+    align-items: center;
+    gap: 10px;
+    font-family: var(--rh-font-mono);
+    font-size: 12px;
+    letter-spacing: 0.06em;
+    text-transform: uppercase;
+    color: var(--rh-ink-meta);
+
+    a {
+      color: var(--rh-ink-meta);
+      text-decoration: none;
+      border: 0;
+      &:hover { color: var(--rh-ink); }
+    }
+    .modern-crumbs__current { color: var(--rh-ink); }
+    .modern-crumbs__sep { color: var(--rh-border); }
+  }
+
+  &__eyebrow {
+    margin: 0 0 14px;
+    font-family: var(--rh-font-mono);
+    font-size: 12px;
+    letter-spacing: 0.14em;
+    text-transform: uppercase;
+    color: var(--rh-red-600);
+  }
+
+  &__title {
+    margin: 0 0 14px;
+    font-family: var(--rh-font-display);
+    font-weight: 900;
+    font-size: 40px;
+    line-height: 1.08;
+    letter-spacing: -0.02em;
+    color: var(--rh-ink);
+    text-wrap: balance;
+  }
+
+  &__lead {
+    margin: 0;
+    font-size: 17px;
+    line-height: 1.55;
+    color: var(--rh-ink-meta);
+    max-width: 66ch;
+    text-wrap: pretty;
+  }
+}
+
+// Color/border/background set per-context (.modern-hero / .modern-plain-header
+// below) — both heroes are light-on-white/gray now, no dark variant left.
+.modern-chip {
+  display: inline-flex;
+  align-items: center;
+  gap: 7px;
+  font-family: var(--rh-font-mono);
+  font-size: 12px;
+  border: 1px solid;
+  border-radius: 4px;
+  padding: 6px 10px;
+}
+
+// -----------------------------------------------------
+// Body layout: sticky numbered TOC + main content
+// -----------------------------------------------------
+.modern-guide__body {
+  @extend %rh-inner;
+  display: grid;
+  grid-template-columns: 224px minmax(0, 1fr);
+  gap: 56px;
+  align-items: start;
+}
+
+.modern-guide__body--no-toc { grid-template-columns: minmax(0, 1fr); }
+
+// -----------------------------------------------------
+// Table of contents — hairline rail, numbered items, single red active marker
+// -----------------------------------------------------
+.modern-toc {
+  position: sticky;
+  top: 88px;
+  padding: 44px 0 0;
+  align-self: start;
+
+  &__label {
+    margin: 0 0 12px;
+    font-family: var(--rh-font-mono);
+    font-size: 11px;
+    letter-spacing: 0.14em;
+    text-transform: uppercase;
+    color: var(--rh-ink-meta);
+  }
+
+  &__back {
+    display: block;
+    margin-bottom: 16px;
+    font-size: 12px;
+    color: var(--rh-ink-meta);
+    text-decoration: none;
+    border: 0;
+    white-space: nowrap;
+    overflow: hidden;
+    text-overflow: ellipsis;
+    &:hover { color: var(--rh-ink); }
+  }
+
+  #TableOfContents {
+    counter-reset: modern-toc;
+    max-height: calc(100vh - 130px);
+    overflow-y: auto;
+
+    ul { padding-left: 0; margin: 0; list-style: none; }
+    li { margin: 0; }
+
+    // Numbered top-level entries; nested entries indent without a number.
+    > ul > li { counter-increment: modern-toc; }
+
+    a {
+      display: grid;
+      grid-template-columns: 22px 1fr;
+      gap: 8px;
+      padding: 7px 0 7px 10px;
+      border: 0;
+      border-left: 2px solid var(--rh-border);
+      font-size: 13.5px;
+      line-height: 1.35;
+      color: var(--rh-ink-meta);
+      text-decoration: none;
+      transition: color 140ms var(--rh-ease), border-color 140ms var(--rh-ease);
+
+      &:hover { color: var(--rh-ink-body); }
+    }
+
+    > ul > li > a::before {
+      content: counter(modern-toc, decimal-leading-zero);
+      font-family: var(--rh-font-mono);
+      font-size: 11px;
+      color: var(--rh-ink-meta);
+      padding-top: 1px;
+    }
+    // Nested links keep the two-column grid aligned but show no number.
+    ul ul a { padding-left: 20px; }
+    ul ul a::before { content: ""; }
+
+    a.active {
+      color: var(--rh-ink);
+      font-weight: 700;
+      border-left-color: var(--rh-red-600);
+      &::before { color: var(--rh-red-600); }
+    }
+  }
+}
+
+// -----------------------------------------------------
+// Main content — restyles ordinary guide markdown
+// -----------------------------------------------------
+.modern-style {
+  padding: 32px 0 96px;
+  min-width: 0;
+  font-size: 16px;
+  line-height: 1.6;
+
+  // Lead paragraph — the guide's opening h3 reads as a deck.
+  > h3:first-child {
+    margin: 0 0 28px;
+    font-family: var(--rh-font-body);
+    font-weight: 400;
+    font-size: 19px;
+    line-height: 1.55;
+    color: var(--rh-ink-body);
+    max-width: 66ch;
+    &::before { content: none; }
+  }
+
+  p {
+    margin: 0 0 18px;
+    font-size: 16px;
+    line-height: 1.65;
+    // No max-width cap: a narrow measure made command sentences wrap early,
+    // dropping the (unbreakable) icon+name unit onto its own line. Letting
+    // paragraphs fill the content column keeps them inline, as on normal guides.
+    text-wrap: pretty;
+  }
+
+  strong { font-weight: 700; }
+
+  // Anchor targets clear the fixed site header when jumped to from the TOC.
+  :is(h2, h3, h4)[id] { scroll-margin-top: 88px; }
+
+  // Section headers — Lato-900 title, no leading index number.
+  h2 {
+    margin: 64px 0 18px;
+    font-family: var(--rh-font-display);
+    font-weight: 900;
+    font-size: 34px;
+    line-height: 1.1;
+    letter-spacing: -0.015em;
+    color: var(--rh-ink);
+  }
+
+  // The page's very first heading shouldn't carry the same top margin used to
+  // separate it from a preceding section — that space has nothing above it to
+  // separate from, and just reads as a too-large gap under the page header.
+  // (h3:first-child is already zeroed out above as the lead-deck case.)
+  > h2:first-child {
+    margin-top: 0;
+  }
+
+  h3 {
+    margin: 44px 0 14px;
+    font-family: var(--rh-font-display);
+    font-weight: 700;
+    font-size: 22px;
+    line-height: 1.25;
+    color: var(--rh-ink);
+  }
+
+  h4 {
+    margin: 32px 0 12px;
+    font-family: var(--rh-font-display);
+    font-weight: 700;
+    font-size: 18px;
+    color: var(--rh-ink);
+  }
+
+  a {
+    color: var(--rh-red-600);
+    text-decoration: none;
+    &:hover { color: var(--rh-red-700); }
+  }
+
+  // Rhino-command shortcode: <a><span.unfurl-link><strong><img> Name</strong></span>.
+  // Leave the icon at its native size (set inline by the shortcode). Just keep
+  // the icon and command name together as one unit so the name never splits from
+  // its icon; it still flows inline within the paragraph.
+  .unfurl-link strong { white-space: nowrap; }
+
+  // Numbered step lists — plain "1." marker per item (no circle badge).
+  // The marker is an absolutely-positioned ::before and the step content keeps
+  // normal inline flow (indented via padding-left). A CSS grid here would turn
+  // every inline child — command links, <code>, <strong> — into its own grid
+  // item, tearing them onto separate lines; the padding approach avoids that.
+  ol {
+    counter-reset: modern-step;
+    list-style: none;
+    margin: 22px 0;
+    padding: 0;
+
+    > li {
+      counter-increment: modern-step;
+      position: relative;
+      padding-left: 29px;
+      margin: 0 0 16px;
+      line-height: 1.6;
+
+      &::before {
+        content: counter(modern-step) ".";
+        position: absolute;
+        left: 0;
+        top: 0;
+        width: 24px;
+        text-align: left;
+        color: var(--rh-ink-meta);
+        font-family: var(--rh-font-body);
+        font-weight: 400;
+        font-size: 16px;
+        line-height: 1.6;
+      }
+
+      > *:first-child { margin-top: 0; }
+      &:last-child { margin-bottom: 0; }
+    }
+  }
+
+  // "What you'll learn" block (from the {{< learn >}} shortcode): an eyebrow
+  // heading + a list with red mono 01/02 numbers — distinct from step badges.
+  .modern-learn {
+    margin: 8px 0 40px;
+
+    &__title {
+      margin: 0 0 18px;
+      font-family: var(--rh-font-display);
+      font-weight: 700;
+      font-size: 15px;
+      letter-spacing: 0.1em;
+      text-transform: uppercase;
+      color: var(--rh-ink-meta);
+      max-width: none;
+    }
+
+    // The {{% learn %}} shortcode renders a markdown list into a plain <ol>
+    // (or <ul>); restyle it with a simple red dot per item — overriding the
+    // default step-badge / numbering look.
+    ol, ul {
+      list-style: none;
+      margin: 0;
+      padding: 0;
+
+      > li {
+        position: relative;
+        padding-left: 24px;
+        min-height: 0;
+        margin: 0 0 6px;
+        font-size: 16px;
+        line-height: 1.55;
+
+        &::before {
+          content: "";
+          position: absolute;
+          left: 0;
+          top: calc(0.8em - 3px);
+          // reset the ol step-badge box, then draw a small red dot
+          width: 6px;
+          height: 6px;
+          border-radius: 50%;
+          background: var(--rh-red-600);
+          font-size: inherit;
+        }
+      }
+    }
+  }
+
+  // Bulleted lists — small red dot, matching the site's guide vocabulary.
+  ul:not(.modern-hero__meta) {
+    list-style: none;
+    padding-left: 0;
+    margin: 18px 0;
+
+    > li {
+      position: relative;
+      padding-left: 22px;
+      line-height: 1.7;
+      margin-bottom: 8px;
+
+      &::before {
+        content: "";
+        position: absolute;
+        left: 0;
+        top: calc(0.8em - 3px);
+        width: 6px;
+        height: 6px;
+        border-radius: 50%;
+        background: var(--rh-red-600);
+      }
+    }
+
+    // Task lists ("- [ ]" / "- [x]"): drop the red bullet, keep a clean
+    // checkbox. Goldmark renders these <li> with no class, so match by the
+    // checkbox they contain rather than a class name.
+    > li:has(> input[type="checkbox"]) {
+      padding-left: 0;
+      &::before { content: none; }
+
+      input[type="checkbox"] {
+        margin: 0 10px 0 0;
+        width: 15px;
+        height: 15px;
+        accent-color: var(--rh-red-600); // shows on interactive (non-disabled) boxes
+        vertical-align: -2px;
+      }
+    }
+  }
+
+  // Inline code -> chip.
+  code {
+    font-family: var(--rh-font-mono);
+    font-size: 0.9em;
+    color: var(--rh-ink-body); // stay neutral even inside a link — the chip itself already reads as a distinct token
+    background: var(--rh-gray-50);
+    border: 1px solid var(--rh-border);
+    border-radius: 4px;
+    padding: 1px 6px;
+  }
+
+  // Code blocks -> plain panel (strip the inline-chip treatment).
+  pre {
+    background: var(--rh-gray-50);
+    border: 1px solid var(--rh-border);
+    border-radius: 10px;
+    padding: 16px 18px;
+    overflow-x: auto;
+    margin: 22px 0;
+
+    code {
+      background: none;
+      border: 0;
+      padding: 0;
+      font-size: 13.5px;
+    }
+  }
+
+  // Figures — rounded, hairline-bordered, muted caption.
+  figure,
+  .box figure {
+    margin: 22px 0;
+    max-width: 100%;
+
+    img {
+      display: block;
+      // border-box so width:100% includes the 1px border — otherwise, with the
+      // theme's `figure { overflow: hidden }`, the border spills ~2px past the
+      // figure and its right/bottom edge gets clipped.
+      box-sizing: border-box;
+      width: 100%;
+      height: auto;
+      border: 1px solid var(--rh-border);
+      border-radius: 10px;
+      margin: 0;
+      box-shadow: none;
+      cursor: zoom-in; // click to open the lightbox (see modern-scripts.html)
+    }
+
+    figcaption {
+      margin: 10px 0 0;
+      font-size: 13.5px;
+      line-height: 1.5;
+      color: var(--rh-ink-meta);
+      text-align: left;
+    }
+  }
+
+  // Local videos ({{< local-video >}}) — same rounded hairline frame as figures.
+  // The shortcode sets width/max-width inline; border-box keeps the border tucked
+  // inside so it isn't clipped.
+  video {
+    display: block;
+    box-sizing: border-box;
+    height: auto;
+    margin: 22px 0;
+    border: 1px solid var(--rh-border);
+    border-radius: 10px;
+  }
+
+  // Blockquotes -> quiet grey callout with a red rule.
+  blockquote {
+    margin: 24px 0;
+    border: 1px solid var(--rh-border);
+    border-left: 3px solid var(--rh-red-600);
+    border-radius: 10px;
+    padding: 16px 20px;
+    background: var(--rh-gray-50);
+    color: var(--rh-ink-body);
+    font-size: 15px;
+    line-height: 1.6;
+
+    p { margin: 0 0 8px; &:last-child { margin: 0; } }
+  }
+
+  hr {
+    border: 0;
+    border-top: 1px solid var(--rh-border);
+    margin: 48px 0;
+  }
+
+  // Call-out shortcode — restyled to the reference "rh-callout": a subtle
+  // bordered box with a 3px colored left edge, an icon in a left column, a small
+  // title, and muted body text. The shortcode markup nests the icon inside the
+  // title bar and the body in a sibling block; the base stylesheet already
+  // absolutely-positions `i.icon` against `.call-out`, so we reuse that as the
+  // left column and reset the title bar / collapse chrome.
+  .call-out {
+    position: relative;
+    margin: 24px 0;
+    padding: 16px 20px 16px 52px;
+    background: var(--rh-gray-50);
+    border: 1px solid var(--rh-border);
+    border-left: 3px solid var(--rh-border);
+    border-radius: 10px;
+    overflow: hidden;
+    font-family: var(--rh-font-body);
+    color: var(--rh-ink-body);
+
+    // Icon: static left column, muted by default (per-type color below).
+    i.icon {
+      position: absolute;
+      left: 19px;
+      top: 18px;
+      font-size: 18px;
+      color: var(--rh-ink-meta);
+    }
+
+    // These callouts aren't collapsible here — drop the chevron toggle.
+    i.details-icon { display: none; }
+
+    // Title bar -> plain title line (strip the base bg / border / padding).
+    .call-out-title,
+    &.open .call-out-title {
+      margin: 0 0 2px;
+      padding: 0;
+      border: 0;
+      background: none;
+      font-family: var(--rh-font-display);
+      font-weight: 700;
+      font-size: 14px;
+      line-height: 1.4;
+      color: var(--rh-ink);
+    }
+
+    .call-out-content {
+      padding: 0;
+      font-size: 14px;
+      line-height: 1.5;
+      color: var(--rh-ink-meta);
+
+      p { margin: 0 0 8px; &:last-child { margin: 0; } }
+      a { font-size: inherit; }
+
+      // Right-aligned image: <img class="align-right" ...>. `overflow: hidden`
+      // on .call-out already contains the float, so no clearfix is needed.
+      img.align-right {
+        float: right;
+        max-width: 50%;
+        margin: 2px 0 10px 18px;
+        border: 1px solid var(--rh-border);
+        border-radius: 8px;
+      }
+    }
+
+    // Per-type accent: colored left edge + matching icon. Background stays the
+    // uniform subtle grey (reference uses one surface for every type).
+    &.success {
+      border-left-color: var(--rh-success-600);
+      i.icon { color: var(--rh-success-600); }
+    }
+    &.warning, &.danger, &.failure, &.bug {
+      border-left-color: var(--rh-red-600);
+      i.icon { color: var(--rh-red-600); }
+    }
+    &.info, &.note, &.question, &.abstract, &.example, &.quote, &.tip, &.new {
+      border-left-color: var(--rh-info-600);
+      i.icon { color: var(--rh-info-600); }
+    }
+  }
+
+  // Keyboard shortcode -> mono chip register.
+  .keyboard-btn { font-family: var(--rh-font-mono); }
+
+  // Tables — clean hairline grid.
+  table {
+    width: 100%;
+    border-collapse: collapse;
+    margin: 22px 0;
+    font-size: 14px;
+
+    th, td {
+      text-align: left;
+      padding: 10px 14px;
+      border-bottom: 1px solid var(--rh-border);
+    }
+    th {
+      font-weight: 700;
+      color: var(--rh-ink);
+      border-bottom-color: var(--rh-gray-300);
+    }
+  }
+}
+
+// -----------------------------------------------------
+// Unfurl reference cards — restyled to the modern-guide vocabulary: hairline
+// border + rounded corners (matching the figure treatment above), Lato/Roboto
+// type, and a red accent on hover instead of the base theme's grey shadow.
+// -----------------------------------------------------
+.modern-guide .unfurl-card {
+  .card {
+    border: 1px solid var(--rh-border);
+    border-radius: 10px;
+    box-shadow: none;
+    overflow: hidden;
+    transition: border-color 160ms var(--rh-ease), box-shadow 160ms var(--rh-ease);
+
+    &:hover {
+      border-color: var(--rh-red-600);
+      box-shadow: 0 6px 20px rgba(144, 16, 16, 0.12);
+    }
+  }
+
+  .card-image {
+    border-radius: 0;
+  }
+
+  .card-image img {
+    border-radius: 0;
+  }
+
+  .card-container h1 {
+    font-family: var(--rh-font-display);
+    font-weight: 700;
+    color: var(--rh-ink);
+  }
+
+  .card-container p {
+    font-family: var(--rh-font-body);
+    color: var(--rh-ink-meta);
+  }
+}
+
+// -----------------------------------------------------
+// Sales / pricing vocabulary (e.g. the Buy page). Restyles the
+// {{< price-card >}} "plan" pill — homepage look: 2em radius, centered,
+// uppercase — into a compact bordered card matching the figure / callout
+// treatment, tightens the card grids, and adds a muted fine-print block.
+// -----------------------------------------------------
+.modern-style {
+  // Card grids: {{< card-gallery >}} and the homepage's .price-card-container.
+  // Same specificity as the base `.gallery-container:has(.unfurl-card)` rule in
+  // _custom; this file is imported later so it wins the cascade.
+  .gallery-container,
+  .price-card-container {
+    grid-template-columns: repeat(auto-fill, minmax(230px, 1fr));
+    gap: 14px;
+    justify-items: stretch;
+    margin: 16px 0 24px;
+  }
+
+  .plan {
+    width: auto;
+    padding: 20px;
+    border: 1px solid var(--rh-border);
+    border-radius: 10px;
+    box-shadow: none;
+    background: var(--rh-white);
+    font-family: var(--rh-font-body);
+    transition: box-shadow 160ms var(--rh-ease);
+
+    &:hover { box-shadow: 0 6px 20px rgba(0, 0, 0, 0.08); }
+
+    // featured="true": red top bar (padding compensates so content stays put)
+    &.plan-featured {
+      border-color: var(--rh-red-600);
+      border-top-width: 3px;
+      padding-top: 18px;
+    }
+
+    // Reorder into a price tag: title, description, price, currency, upgrade.
+    > div {
+      display: flex;
+      flex-direction: column;
+    }
+
+    .plan-title {
+      order: 1;
+      margin: 0 0 6px;
+      text-align: left;
+      text-transform: none;
+      font-family: var(--rh-font-display);
+      font-weight: 700;
+      font-size: 15px;
+      line-height: 1.35;
+      color: var(--rh-ink);
+    }
+
+    .plan-details {
+      order: 2;
+      flex: 1;
+      padding: 0;
+      font-weight: 400;
+      font-size: 13.5px;
+      line-height: 1.5;
+      color: var(--rh-ink-meta);
+
+      p {
+        margin: 0 0 6px;
+        font-size: inherit;
+        line-height: inherit;
+        &:last-child { margin-bottom: 0; }
+      }
+    }
+
+    .plan-price {
+      order: 3;
+      margin: 14px 0 0;
+      text-align: left;
+      font-family: var(--rh-font-display);
+      font-size: 26px;
+      font-weight: 900;
+      line-height: 1.1;
+      color: var(--rh-ink);
+
+      .plan-price-inactive { font-weight: 400; }
+    }
+
+    .plan-subtitle {
+      order: 4;
+      margin: 2px 0 0;
+      text-align: left;
+      font-size: 12px;
+      font-weight: 400;
+      color: var(--rh-ink-meta);
+    }
+
+    // upgrade="true": "<type>-upgrade" price line
+    .plan-upgrade {
+      order: 5;
+      margin: 8px 0 0;
+      font-size: 13px;
+      font-weight: 500;
+      color: var(--rh-success-600);
+    }
+
+    .button {
+      margin-top: 16px;
+      padding: 9px 14px;
+      border: 1px solid var(--rh-red-600);
+      border-radius: 6px;
+      background: var(--rh-red-600);
+      color: var(--rh-white);
+      font-family: var(--rh-font-display);
+      font-weight: 700;
+      font-size: 14px;
+
+      &:hover {
+        background: var(--rh-red-700);
+        border-color: var(--rh-red-700);
+        color: var(--rh-white);
+      }
+    }
+
+    // secondary="true": quiet outline button, e.g. "Learn More"
+    .button-secondary {
+      background: var(--rh-white);
+      border-color: var(--rh-border);
+      color: var(--rh-ink-body);
+
+      &:hover {
+        background: var(--rh-gray-50);
+        border-color: var(--rh-gray-400);
+        color: var(--rh-ink);
+      }
+    }
+
+    // The shortcode's own hover-anywhere rule paints the button red; keep the
+    // primary red but leave the outline button quiet.
+    &.plan-linked:hover .button {
+      background: var(--rh-red-700);
+      color: var(--rh-white);
+    }
+    &.plan-linked:hover .button-secondary {
+      background: var(--rh-gray-50);
+      color: var(--rh-ink);
+    }
+
+    .featured-ribbon { font-family: var(--rh-font-mono); }
+  }
+
+  // {{< div class="fine-print" >}} — muted legal copy.
+  .fine-print {
+    margin: 32px 0 0;
+    font-size: 12.5px;
+    line-height: 1.7;
+    color: var(--rh-ink-meta);
+
+    p {
+      margin: 0 0 6px;
+      font-size: inherit;
+      line-height: inherit;
+    }
+  }
+}
+
+// -----------------------------------------------------
+// Lightbox — full-screen image overlay. Injected on <body> by
+// modern-scripts.html, so it lives at the top level (outside .modern-guide)
+// and uses literal colors rather than the scoped tokens.
+// -----------------------------------------------------
+.modern-lightbox {
+  position: fixed;
+  inset: 0;
+  z-index: 2000;
+  display: none;
+  align-items: center;
+  justify-content: center;
+  padding: 4vmin;
+  background: rgba(20, 19, 17, 0.88);
+  cursor: zoom-out;
+  opacity: 0;
+  transition: opacity 160ms cubic-bezier(0.2, 0, 0.1, 1);
+
+  &.is-open { display: flex; opacity: 1; }
+
+  img {
+    max-width: 96%;
+    max-height: 96%;
+    object-fit: contain;
+    border-radius: 6px;
+    box-shadow: 0 18px 60px rgba(0, 0, 0, 0.5);
+  }
+}
+
+// -----------------------------------------------------
+// Responsive
+// -----------------------------------------------------
+@media only screen and (max-width: 980px) {
+  .modern-hero {
+    &__inner { padding-left: 24px; padding-right: 24px; }
+    &__grid {
+      grid-template-columns: minmax(0, 1fr);
+      gap: 28px;
+      padding: 24px 0 40px;
+    }
+    &__title { font-size: 38px; }
+  }
+
+  .modern-plain-header {
+    &__inner { padding-left: 24px; padding-right: 24px; padding-top: 32px; }
+    &__title { font-size: 30px; }
+  }
+
+  .modern-guide__body {
+    grid-template-columns: minmax(0, 1fr);
+    gap: 0;
+    padding-left: 24px;
+    padding-right: 24px;
+  }
+
+  // On narrow screens the TOC collapses above the content rather than sticking.
+  .modern-toc {
+    position: static;
+    padding: 32px 0 0;
+    #TableOfContents { max-height: none; }
+  }
+
+  .modern-style { padding-top: 24px; }
+  .modern-style h2 { font-size: 28px; margin-top: 48px; }
+}
+
+// -----------------------------------------------------
+// Marketing hero — modern-hero-video (prototype, WWW-3572)
+// -----------------------------------------------------
+// Ported from _feature.scss's .feature-hero2 / .hero2-* (feature-redesign2),
+// renamed to the modern-hero-video* vocabulary and re-pointed at modern_style's
+// tokens, for `page_options.modern_hero = "video"`. Unlike feature-redesign2,
+// no full-bleed negative-margin mixin is needed here — `.outerbox:has(>
+// .modern-guide)` above already zeroes .outerbox's padding/max-width (and
+// sets the correct margin-top) for every modern_style page, so the hero can
+// just be full-width directly.
+
+.modern-hero-video {
+  position: relative;
+  z-index: 0;
+  background-color: var(--rh-white);
+  display: flex;
+  flex-direction: column;
+  height: calc(100dvh - 68px); // fill viewport below the (fixed-height) navbar
+
+  &__top {
+    flex-shrink: 0;
+    position: relative;
+    z-index: 0;
+    overflow: hidden;
+    background-color: var(--rh-gray-50);
+    border-bottom: 1px solid;
+    border-image: linear-gradient(to right, transparent, var(--rh-red-600) 25%, var(--rh-red-600) 75%, transparent) 1;
+
+    // Perspective grid — clipped to this band only
+    &::before {
+      content: '';
+      position: absolute;
+      top: -50%; bottom: -50%;
+      left: -50%; right: -50%;
+      z-index: 0;
+      background-image:
+        linear-gradient(rgba(0, 0, 0, 0.10) 1px, transparent 1px),
+        linear-gradient(90deg, rgba(0, 0, 0, 0.10) 1px, transparent 1px),
+        linear-gradient(rgba(0, 0, 0, 0.04) 1px, transparent 1px),
+        linear-gradient(90deg, rgba(0, 0, 0, 0.04) 1px, transparent 1px);
+      background-size: 100px 100px, 100px 100px, 20px 20px, 20px 20px;
+      transform: perspective(600px) rotateY(-25deg) scaleX(0.6);
+      transform-origin: center center;
+    }
+
+    // Gradient overlay: solid left → transparent right, reveals grid on the right
+    &::after {
+      content: '';
+      position: absolute;
+      inset: 0;
+      z-index: 1;
+      pointer-events: none;
+      background: linear-gradient(
+        to right,
+        var(--rh-gray-50) 0%,
+        var(--rh-gray-50) 30%,
+        rgba(245, 245, 248, 0.8) 52%,
+        rgba(245, 245, 248, 0.2) 72%,
+        transparent 100%
+      );
+    }
+  }
+
+  // Centered content wrapper — sits above the gradient overlay
+  &__top-inner {
+    @extend %rh-inner;
+    position: relative;
+    z-index: 2;
+    padding-top: 32px;
+    box-sizing: border-box;
+    display: flex;
+    flex-direction: column;
+    gap: 20px;
+  }
+
+  // Light-gray-background band, so the crumb trail uses the plain-header's
+  // light-on-white treatment, not the dark hero's light-on-charcoal one.
+  &__crumbs {
+    margin-bottom: 18px;
+    display: flex;
+    flex-wrap: wrap;
+    align-items: center;
+    gap: 10px;
+    font-family: var(--rh-font-mono);
+    font-size: 12px;
+    letter-spacing: 0.06em;
+    text-transform: uppercase;
+    color: var(--rh-ink-meta);
+
+    a {
+      color: var(--rh-ink-meta);
+      text-decoration: none;
+      border: 0;
+      &:hover { color: var(--rh-ink); }
+    }
+    .modern-crumbs__current { color: var(--rh-ink); }
+    .modern-crumbs__sep { color: var(--rh-border); }
+  }
+
+  &__title-row {
+    display: flex;
+    align-items: flex-end;
+    gap: 20px;
+  }
+
+  &__icon {
+    flex-shrink: 0;
+    line-height: 0; // removes inline whitespace so bottom edges align cleanly
+
+    img {
+      width: clamp(36px, 5vw, 50px);
+      height: clamp(36px, 5vw, 50px);
+      object-fit: contain;
+      filter: drop-shadow(2px 2px 2px rgba(0, 0, 0, 0.5));
+    }
+  }
+
+  &__title {
+    font-family: var(--rh-font-display);
+    font-size: clamp(36px, 5vw, 50px);
+    font-weight: 900;
+    letter-spacing: -0.02em;
+    line-height: 1.0;
+    color: var(--rh-red-600);
+    margin: 0;
+    padding: 0;
+    border: none;
+  }
+
+  &__eyebrow {
+    display: inline-flex;
+    align-items: center;
+    align-self: flex-start;
+    flex-shrink: 0;
+    margin-top: 8px;
+    background: var(--rh-red-600);
+    border-radius: 100px;
+    padding: 5px 14px;
+    font-size: 11px;
+    font-weight: 700;
+    letter-spacing: 0.06em;
+    text-transform: uppercase;
+    color: var(--rh-white);
+
+    a { color: var(--rh-white); text-decoration: none; &:hover, &:visited { color: var(--rh-white); } }
+  }
+
+  &__subtitle {
+    font-size: 17px;
+    font-weight: 400;
+    color: var(--rh-ink-meta);
+    line-height: 1.65;
+    // No narrow cap — wrap only at the %rh-inner container's own width, not
+    // an arbitrary fraction of it, so a normal-length subtitle reads on one line.
+    max-width: 100%;
+    margin: 0;
+    padding: 0;
+  }
+
+  &__video {
+    flex: 1;
+    min-height: 120px;
+    width: 100%;
+    position: relative;
+    z-index: 2;
+    background: var(--rh-white);
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    overflow: hidden;
+
+    // Local video: height-primary — fill slot height, width follows aspect ratio
+    > .local-video-embed {
+      height: 100%;
+      width: auto;
+      max-width: 100%;
+      margin: 0;
+      border-radius: 0;
+      overflow: hidden;
+      box-shadow: none;
+      transform: translateZ(0);
+      background: #000;
+      position: relative;
+
+      video {
+        display: block;
+        height: 100%;
+        width: auto;
+        max-width: 100%;
+        object-fit: contain;
+        pointer-events: none;
+
+        &::-webkit-media-controls { display: none !important; }
+        &::-webkit-media-controls-enclosure { display: none !important; }
+      }
+
+      &::after {
+        content: '';
+        position: absolute;
+        inset: 0;
+        box-shadow: inset 0 0 0 1px var(--video-frame, #ffffff);
+        pointer-events: none;
+        z-index: 10;
+      }
+    }
+
+    // Vimeo: width/height set by sizeHeroVimeo() in modern-hero-video-scripts.html
+    > .vimeo-embed {
+      flex-shrink: 0;
+      position: relative !important;
+      padding: 0 !important;
+      margin: 0 !important;
+      border-radius: 0 !important;
+      overflow: hidden !important;
+      box-shadow: none !important;
+      transform: none !important;
+
+      iframe {
+        position: absolute !important;
+        inset: 0 !important;
+        width: 100% !important;
+        height: 100% !important;
+        border: none !important;
+        pointer-events: none !important;
+      }
+
+      &::after {
+        content: '';
+        position: absolute;
+        inset: 0;
+        box-shadow: inset 0 0 0 1px var(--video-frame, #ffffff);
+        pointer-events: none;
+        z-index: 10;
+      }
+    }
+
+    // GIF / static image: height-primary
+    > img {
+      height: 100%;
+      width: auto;
+      max-width: 100%;
+      display: block;
+      object-fit: contain;
+    }
+  }
+
+  &__scroll-cue {
+    position: absolute;
+    left: 50%;
+    bottom: 18px;
+    transform: translateX(-50%);
+    z-index: 5;
+    pointer-events: none;
+    color: var(--rh-ink-body);
+    opacity: 0.7;
+    transition: opacity 0.4s ease;
+
+    &::before {
+      content: '';
+      position: absolute;
+      left: 50%;
+      top: 50%;
+      width: 64px;
+      height: 64px;
+      transform: translate(-50%, -50%);
+      background: radial-gradient(closest-side, rgba(245, 246, 248, 0.85), rgba(245, 246, 248, 0));
+      z-index: -1;
+    }
+
+    svg {
+      display: block;
+      animation: modern-hero-video-scroll-bob 2.4s ease-in-out infinite;
+    }
+
+    &.is-hidden { opacity: 0; }
+  }
+
+  @media only screen and (max-width: 980px) {
+    height: auto;
+
+    &__top-inner { padding-left: 24px; padding-right: 24px; padding-top: 28px; gap: 16px; }
+    &__video { flex: none; height: 56vw; }
+  }
+}
+
+@keyframes modern-hero-video-scroll-bob {
+  0%, 100% { transform: translateY(0); }
+  50%      { transform: translateY(5px); }
+}
+
+@media (prefers-reduced-motion: reduce) {
+  .modern-hero-video__scroll-cue svg { animation: none; }
+}
+
+// Alternating sections, built by modern-hero-video-scripts.html at runtime.
+// Full-bleed escape from the %rh-inner-constrained .modern-guide__body grid —
+// mirrors _feature.scss's feature-full-bleed mixin, against modern_style's own
+// container metrics (1180px/40px) rather than the sitewide 1110px/75px ones,
+// and modern_style's own 980px responsive breakpoint (not feature.scss's 848px)
+// to avoid a mismatch band against .modern-guide__body's own breakpoint.
+.modern-hero-video-section {
+  // Full-bleed escape only makes sense in the single-column (no-TOC) layout,
+  // where the section's ancestor grid column spans the whole %rh-inner width.
+  // With a TOC present, the content column is narrower and offset right of
+  // the TOC — these same negative margins would overflow past the TOC
+  // instead of the viewport edge, overlapping it. Scoped to --no-toc so a
+  // TOC page just gets plain (non-full-bleed) alternating bands instead.
+  .modern-guide__body--no-toc & {
+    margin-left:  calc(-40px - max(0px, (100vw - 1180px) / 2));
+    margin-right: calc(-40px - max(0px, (100vw - 1180px) / 2));
+
+    @media only screen and (max-width: 980px) {
+      margin-left:  -24px;
+      margin-right: -24px;
+    }
+  }
+
+  &--white { background: var(--rh-white); }
+  &--gray  { background: var(--rh-gray-50); --video-frame: var(--rh-gray-50); }
+
+  &__inner {
+    max-width: 1180px;
+    margin: 0 auto;
+    padding: 72px 40px;
+
+    @media only screen and (max-width: 980px) {
+      padding: 48px 24px;
+    }
+
+    // The JS grouping always starts a section at an h2 (see
+    // modern-hero-video-scripts.html) — .modern-style h2's own 64px
+    // margin-top would otherwise stack with this padding.
+    > h2:first-child { margin-top: 0; }
+  }
+}
+
+.modern-hero-video-reveal {
+  opacity: 0;
+  transform: translateY(40px) scale(0.97);
+  transition:
+    opacity 0.7s cubic-bezier(0.16, 1, 0.3, 1),
+    transform 0.7s cubic-bezier(0.16, 1, 0.3, 1);
+
+  &.modern-hero-video-revealed {
+    opacity: 1;
+    transform: none;
+  }
+}
+
+// In-body Vimeo/local-video embeds on a modern_style page — same hairline
+// framing as .modern-style's figures, so a marketing page's video content
+// doesn't look inconsistent with the rest of the unified prose system.
+.modern-style {
+  .vimeo-embed,
+  .local-video-embed {
+    position: relative;
+    margin: 22px 0;
+    border: 1px solid var(--rh-border);
+    border-radius: 10px;
+    overflow: hidden;
+
+    iframe { border-radius: 10px; }
+  }
+
+  .local-video-embed video {
+    display: block;
+    width: 100%;
+    height: auto;
+  }
+
+  // "New in vX" heading badges (`%%New in vX%%` syntax, rendered by
+  // layouts/_default/_markup/render-heading.html as `.new-callout
+  // .new-callout-inline > a`). Pinned white-on-red regardless of the ambient
+  // link color above — same fix _feature.scss already needed for the same
+  // reason (a generic `a { color: ... }` rule has equal specificity and would
+  // otherwise win on source order).
+  .new-callout-small,
+  .new-callout-bullet,
+  .new-callout.new-callout-inline {
+    background: var(--rh-red-600) !important;
+    color: var(--rh-white) !important;
+    border-radius: 100px !important;
+    font-size: 14px !important;
+    font-weight: 700 !important;
+    padding: 4px 12px !important;
+    letter-spacing: 0.01em;
+    vertical-align: middle;
+    margin-left: 10px;
+
+    a {
+      color: var(--rh-white) !important;
+      text-decoration: none;
+      &:visited { color: var(--rh-white) !important; }
+    }
+  }
+}

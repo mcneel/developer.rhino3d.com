@@ -1,0 +1,87 @@
+{{- /*
+  modern-guide.html — the full "modern-style" page chrome: light hero /
+  lightweight plain header / full-height marketing video hero, sticky numbered
+  TOC (page_options.toc), restyled content column, and the progress-bar /
+  TOC-tracking scripts.
+
+  Rendered by _default/baseof.html in place of the section's "main" block
+  whenever `page_options.modern_style = true` — works for any page in any
+  section. head.html loads the Lato/Roboto fonts off the same flag.
+*/ -}}
+{{/* Hero mode: "video" (marketing hero, WWW-3572) / false (plain header, e.g.
+     a reference page where a full hero would be overkill) / anything else,
+     including unset (the default light hero). Normalized to a string first —
+     Hugo's eq/ne special-case nil but not mixed non-nil types (bool vs.
+     string), and modern_hero is legitimately bool on some existing pages and
+     a string on others. */}}
+{{ $heroMode := printf "%v" .Params.page_options.modern_hero }}
+{{/* The video hero is a single-column, full-bleed-section marketing layout —
+     a sticky TOC sidebar doesn't fit that pattern (confirmed visually: the
+     TOC column and the alternating sections overlapped/read badly together).
+     feature-redesign2 never combined the two either (all of its pages set
+     toc = false). So toc is simply not honored in video-hero mode, regardless
+     of what the page's own page_options.toc says. */}}
+{{ $hasToc := and .Params.page_options.toc (ne $heroMode "video") }}
+<div class="modern-guide">
+  <div class="modern-progress"><div class="modern-progress__bar"></div></div>
+  {{- if eq $heroMode "video" -}}
+  {{- partial "modern-hero-video.html" . -}}
+  {{- else if eq $heroMode "false" -}}
+  {{- partial "modern-plain-header.html" . -}}
+  {{- else -}}
+  {{- partial "modern-hero.html" . -}}
+  {{- end -}}
+  <div class="modern-guide__body{{ if not $hasToc }} modern-guide__body--no-toc{{ end }}">
+    {{ if $hasToc }}{{ partial "modern-toc.html" . }}{{ end }}
+    <main class="modern-style">
+      {{/* Ported from feature-redesign2-body.html — no-op unless these
+           frontmatter fields are set, so existing guide pages are unaffected. */}}
+      {{ with .Page.Params.whats_new.in_v7 }}
+        <h3>{{ i18n "New-in-Rhino-7" }}</h3>
+        <p>{{ . | markdownify }}</p>
+      {{ end }}
+
+      {{ .Content }}
+
+      {{ with .Page.Params.commands }}
+        {{- $docs_base_url := "https://docs.mcneel.com/rhino/" -}}
+        {{- $docs_version_url := print $docs_base_url $.Site.Params.latestRhinoVersion -}}
+        {{- $docs_help_url := print $docs_version_url "/help/" -}}
+        {{- $docs_lang_url := print $docs_help_url $.Site.Params.docLang -}}
+        {{- $docs_commands_url := print $docs_lang_url "/index.htm#commands/" -}}
+        {{- if eq $.Site.Language.Lang "en" }}
+        <h2>{{ i18n "Rhino-Commands" }}</h2>
+        <ul>
+          {{ range . }}
+            <li><a href="{{ $docs_commands_url }}{{ lower . }}.htm" target="_blank" rel="noopener noreferrer">{{ . }}</a></li>
+          {{ end }}
+        </ul>
+        {{- else }}
+          {{- $no_lang_url := substr $.RelPermalink 3 -}}
+          {{- $en_url := print "/en" $no_lang_url -}}
+          {{- $enCommands := slice -}}
+          {{- range $.Site.AllPages -}}
+            {{- if eq .RelPermalink $en_url -}}
+              {{- with .Params.commands -}}{{- $enCommands = . -}}{{- end -}}
+            {{- end -}}
+          {{- end -}}
+        <h2>{{ i18n "Rhino-Commands" }}</h2>
+        <ul>
+          {{ range $i, $command := . }}
+            {{ $english_command := index $enCommands $i }}
+            <li><a href="{{ $docs_commands_url }}{{ lower $english_command }}.htm" target="_blank" rel="noopener noreferrer">{{ $command }}</a></li>
+          {{ end }}
+        </ul>
+        {{- end }}
+      {{ end }}
+
+      {{ if and (not .Params.page_options.plain) (not .Params.page_options.hide_edit_button) }}
+        {{- partial "edit_button.html" . -}}
+      {{ end }}
+    </main>
+  </div>
+</div>
+{{- if eq $heroMode "video" -}}
+{{- partial "modern-hero-video-scripts.html" . -}}
+{{- end -}}
+{{- partial "modern-scripts.html" . -}}

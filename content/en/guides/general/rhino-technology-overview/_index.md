@@ -8,6 +8,7 @@ languages = [ "All" ]
 sdk = [ "General" ]
 title = "Rhino Technology Overview"
 type = "guides"
+layout = "single"
 weight = 0
 
 [admin]

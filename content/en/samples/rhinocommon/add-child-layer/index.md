@@ -4,7 +4,7 @@ authors = [ "steve" ]
 categories = [ "Adding Objects", "Layers" ]
 description = "Demonstrates how to add a child (or sub) layer to a parent layer in a Rhino model."
 keywords = [ "add", "child", "layer" ]
-languages = [ "C#", "Python", "VB" ]
+languages = [ "C#", "Python" ]
 sdk = [ "RhinoCommon" ]
 title = "Add Child Layer"
 type = "samples/rhinocommon"
@@ -68,60 +68,12 @@ partial class Examples
 
 </div>
 
-
-<div class="codetab-content" id="vb">
-
-```vbnet
-Partial Friend Class Examples
-  Public Shared Function AddChildLayer(ByVal doc As Rhino.RhinoDoc) As Rhino.Commands.Result
-	' Get an existing layer
-	Dim default_name As String = doc.Layers.CurrentLayer.Name
-
-	' Prompt the user to enter a layer name
-	Dim gs As New Rhino.Input.Custom.GetString()
-	gs.SetCommandPrompt("Name of existing layer")
-	gs.SetDefaultString(default_name)
-	gs.AcceptNothing(True)
-	gs.Get()
-	If gs.CommandResult() <> Rhino.Commands.Result.Success Then
-	  Return gs.CommandResult()
-	End If
-
-	' Was a layer named entered?
-	Dim layer_name As String = gs.StringResult().Trim()
-	Dim index As Integer = doc.Layers.Find(layer_name, True)
-	If index<0 Then
-	  Return Rhino.Commands.Result.Cancel
-	End If
-
-	Dim parent_layer As Rhino.DocObjects.Layer = doc.Layers(index)
-
-	' Create a child layer
-	Dim child_name As String = parent_layer.Name & "_child"
-	Dim childlayer As New Rhino.DocObjects.Layer()
-	childlayer.ParentLayerId = parent_layer.Id
-	childlayer.Name = child_name
-	childlayer.Color = System.Drawing.Color.Red
-
-	index = doc.Layers.Add(childlayer)
-	If index < 0 Then
-	  Rhino.RhinoApp.WriteLine("Unable to add {0} layer.", child_name)
-	  Return Rhino.Commands.Result.Failure
-	End If
-	Return Rhino.Commands.Result.Success
-  End Function
-End Class
-```
-
-</div>
-
-
 <div class="codetab-content" id="py">
 
 ```python
 import Rhino
 import scriptcontext
-import System.Drawing.Color
+import System.Drawing
 
 def AddChildLayer():
     # Get an existing layer
@@ -136,8 +88,8 @@ def AddChildLayer():
         return gs.CommandResult()
 
     # Was a layer named entered?
-    layer_name = gs.StringResult().Trim()
-    index = scriptcontext.doc.Layers.Find(layer_name, True)
+    layer_name = gs.StringResult().strip()
+    index = scriptcontext.doc.Layers.FindByFullPath(layer_name, -1)
     if index<0: return Rhino.Commands.Result.Cancel
 
     parent_layer = scriptcontext.doc.Layers[index]
@@ -151,7 +103,7 @@ def AddChildLayer():
 
     index = scriptcontext.doc.Layers.Add(childlayer)
     if index<0:
-        print "Unable to add", child_name, "layer."
+        print("Unable to add", child_name, "layer.")
         return Rhino.Commands.Result.Failure
     return Rhino.Commands.Result.Success
 

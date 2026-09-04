@@ -1,0 +1,31 @@
+{{- /*
+  llms.txt — a concise Markdown index of this site for LLM / AI crawlers.
+  Spec: https://llmstxt.org  ·  Rendered on the home page via the "llms" output
+  format (enabled per site for English only in [languages.en.outputs]).
+
+  URLs use the public host (params.sitemapBaseURL + .RelPermalink), matching
+  _default/sitemap.xml — the production baseURL is an internal S3/Amplify host.
+  Page selection lives in partials/llms/eligible.html.
+*/ -}}
+{{- $home := . -}}
+{{- $base := .Site.Params.sitemapBaseURL -}}
+{{- $pages := partial "llms/eligible.html" . -}}
+# {{ .Site.Title }}
+
+{{ with .Description }}> {{ . | plainify | htmlUnescape | chomp }}
+{{ end }}
+Base URL: {{ $base }}/{{ .Site.Language.Lang }}/
+{{ range $home.Site.Sections.ByWeight -}}
+{{- /* Prefer a section's own _index.md title (e.g. "Rhino Support"); otherwise
+       title-case its key — Hugo's auto-title oddly pluralizes ("8" -> "8s"). */ -}}
+{{- $secTitle := .Section | replaceRE `[-_]+` " " | title -}}
+{{- if .File }}{{ $secTitle = .LinkTitle }}{{ end -}}
+{{- $secPages := where $pages "Section" .Section -}}
+{{- with $secPages }}
+
+## {{ $secTitle }}
+{{ range . }}
+- [{{ .Title }}]({{ $base }}{{ .RelPermalink }}){{ with partial "llms/describe.html" . }}: {{ . }}{{ end }}
+{{- end }}
+{{- end -}}
+{{- end }}

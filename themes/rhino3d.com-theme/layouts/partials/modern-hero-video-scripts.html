@@ -1,0 +1,163 @@
+{{- /*
+  modern-hero-video-scripts.html — JS for the modern-hero-video marketing
+  hero (prototype, WWW-3572). Ported from feature-redesign2-scripts.html,
+  re-pointed at .modern-style (body content now renders through modern_style's
+  wrapper, not .feature-body-content) and the renamed modern-hero-video*
+  classes. Included by modern-guide.html BEFORE modern-scripts.html — it
+  relocates the first body media element out of .modern-style into the hero
+  slot, and modern-scripts.html's lightbox wiring must see the DOM after that
+  move, not before.
+*/ -}}
+<script>
+(function () {
+  'use strict';
+
+  var body = document.querySelector('.modern-style');
+  if (!body) return;
+
+  // ── 1. Move first video/gif into the hero media slot (when present) ──────
+  var heroVideo = document.querySelector('.modern-hero-video__video');
+  if (heroVideo) {
+    var firstMedia = body.querySelector('.local-video-embed, .vimeo-embed, img[src$=".gif"], img[src$=".GIF"]');
+
+    if (firstMedia) {
+      heroVideo.appendChild(firstMedia);
+
+      if (firstMedia.classList.contains('vimeo-embed')) {
+        var vimeoIframe = firstMedia.querySelector('iframe');
+
+        // Switch to background mode: hides player UI, enables autoplay+loop
+        if (vimeoIframe) {
+          var src = vimeoIframe.src;
+          if (src.indexOf('background=') === -1) src += '&background=1';
+          if (src.indexOf('autoplay=') === -1)   src += '&autoplay=1';
+          else src = src.replace(/autoplay=\d/, 'autoplay=1');
+          if (src.indexOf('loop=') === -1)        src += '&loop=1';
+          else src = src.replace(/loop=\d/, 'loop=1');
+          vimeoIframe.src = src;
+        }
+        // Sizing handled by sizeHeroVimeo() in the second script block
+      }
+
+      var vid = firstMedia.querySelector ? firstMedia.querySelector('video') : null;
+      if (vid) vid.removeAttribute('controls');
+    } else {
+      heroVideo.style.display = 'none';
+      // No media: collapse the hero to banner height only
+      var hero = document.querySelector('.modern-hero-video');
+      if (hero) hero.style.height = 'auto';
+      // A short banner-only hero doesn't hide content, so drop the scroll cue.
+      var cueEl = document.querySelector('.modern-hero-video__scroll-cue');
+      if (cueEl) cueEl.style.display = 'none';
+    }
+  }
+
+  // ── 1b. Fade the scroll cue once the reader scrolls ─────────────────────
+  var cue = document.querySelector('.modern-hero-video__scroll-cue');
+  if (cue) {
+    var onCueScroll = function () {
+      if (window.scrollY > 40) {
+        cue.classList.add('is-hidden');
+        window.removeEventListener('scroll', onCueScroll);
+      }
+    };
+    window.addEventListener('scroll', onCueScroll, { passive: true });
+  }
+
+  // ── 2. Split body content into alternating sections at each H2 ──────────
+  var groups  = [];
+  var current = null;
+
+  Array.from(body.childNodes).forEach(function (node) {
+    var isEl   = node.nodeType === 1;
+    var isText = node.nodeType === 3 && node.textContent.trim() !== '';
+    if (isEl && node.matches('h2')) {
+      current = [node];
+      groups.push(current);
+    } else if (current && (isEl || isText)) {
+      current.push(node);
+    }
+  });
+
+  groups.forEach(function (group, i) {
+    var section = document.createElement('div');
+    section.className = 'modern-hero-video-section ' +
+      (i % 2 === 0 ? 'modern-hero-video-section--white' : 'modern-hero-video-section--gray');
+    var inner = document.createElement('div');
+    inner.className = 'modern-hero-video-section__inner';
+    group.forEach(function (el) { inner.appendChild(el); });
+    section.appendChild(inner);
+    body.appendChild(section);
+  });
+
+  // ── 3. Scroll-reveal ────────────────────────────────────────────────────
+  if (!('IntersectionObserver' in window)) return;
+
+  var observer = new IntersectionObserver(function (entries) {
+    entries.forEach(function (entry) {
+      if (entry.isIntersecting) {
+        entry.target.classList.add('modern-hero-video-revealed');
+        observer.unobserve(entry.target);
+      }
+    });
+  }, { threshold: 0.06, rootMargin: '0px 0px -48px 0px' });
+
+  body.querySelectorAll('.modern-hero-video-section__inner').forEach(function (inner) {
+    var delay = 0;
+    Array.from(inner.children).forEach(function (el) {
+      el.classList.add('modern-hero-video-reveal');
+      el.style.transitionDelay = delay + 'ms';
+      observer.observe(el);
+      delay = el.matches('h2') ? 80 : Math.min(delay + 80, 320);
+    });
+  });
+
+  // ── 4. Suppress Vimeo unmute button ────────────────────────────────────
+  document.querySelectorAll('.vimeo-embed iframe').forEach(function (iframe) {
+    if (iframe.src.indexOf('player.vimeo.com') !== -1 && iframe.src.indexOf('unmute_button=') === -1) {
+      iframe.src += '&unmute_button=0';
+    }
+  });
+})();
+</script>
+
+<script>
+// Vimeo hero sizing for modern-hero-video pages
+(function () {
+  function init() {
+    // The full-bleed section bands (.modern-hero-video-section) intentionally
+    // overshoot the viewport edge rather than landing exactly on it — same
+    // box-model reasoning as _feature.scss's feature-full-bleed mixin
+    // (.outerbox / .modern-guide__body are content-box, not border-box). This
+    // is the required companion that hides the resulting horizontal overflow.
+    document.documentElement.style.overflowX = 'hidden';
+
+    // Height-primary Vimeo sizing: fill slot height, only shrink when too wide for viewport.
+    var heroSlot = document.querySelector('.modern-hero-video__video');
+    if (heroSlot) {
+      function sizeHeroVimeo() {
+        var embed = heroSlot.querySelector('.vimeo-embed');
+        if (!embed) return;
+        var slotW = heroSlot.offsetWidth;
+        var slotH = heroSlot.offsetHeight;
+        if (!slotW || !slotH) return;
+        var ratio = 16 / 9;
+        var h = slotH, w = h * ratio;
+        if (w > slotW) { w = slotW; h = w / ratio; }
+        embed.style.width  = Math.round(w) + 'px';
+        embed.style.height = Math.round(h) + 'px';
+        var iframe = embed.querySelector('iframe');
+        if (iframe) iframe.style.cssText = 'position:absolute;inset:0;width:100%;height:100%;border:none;';
+      }
+      requestAnimationFrame(sizeHeroVimeo);
+      window.addEventListener('resize', sizeHeroVimeo);
+    }
+  }
+
+  if (document.readyState === 'loading') {
+    document.addEventListener('DOMContentLoaded', init);
+  } else {
+    init();
+  }
+})();
+</script>

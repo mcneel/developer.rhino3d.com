@@ -27,12 +27,12 @@ import scriptcontext
 
 stickyval = 0
 # restore stickyval if it has been saved
-if scriptcontext.sticky.has_key("my_key"):
+if "my_key" in scriptcontext.sticky:
     stickyval = scriptcontext.sticky["my_key"]
 nonstickyval = 12
 
-print "sticky =", stickyval
-print "nonsticky =", nonstickyval
+print("sticky =", stickyval)
+print("nonsticky =", nonstickyval)
 
 val = rs.GetInteger("give me an integer")
 if val:

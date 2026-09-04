@@ -1,0 +1,25 @@
+{{- /*
+  modern-breadcrumbs.html — shared crumb trail for both modern-hero.html and
+  modern-plain-header.html, so the trail renders identically whether or not
+  page_options.modern_hero is set to false.
+
+  Reads the same `breadcrumb` override from the `[modern]` frontmatter table
+  as modern-hero.html (plain labels, no links); falls back to .Ancestors.
+*/ -}}
+{{- $m := .Params.modern | default dict -}}
+{{- with $m.breadcrumb -}}
+  {{- range $i, $c := . -}}
+    {{- if $i }}<span class="modern-crumbs__sep">/</span>{{ end -}}
+    <span>{{ $c }}</span>
+  {{- end -}}
+  <span class="modern-crumbs__sep">/</span>
+  <span class="modern-crumbs__current">{{ $.Title }}</span>
+{{- else -}}
+  {{- range $.Ancestors.Reverse -}}
+    {{- if and .Title (not .IsHome) -}}
+      <a href="{{ .RelPermalink }}">{{ .Title }}</a>
+      <span class="modern-crumbs__sep">/</span>
+    {{- end -}}
+  {{- end -}}
+  <span class="modern-crumbs__current">{{ .Title }}</span>
+{{- end -}}

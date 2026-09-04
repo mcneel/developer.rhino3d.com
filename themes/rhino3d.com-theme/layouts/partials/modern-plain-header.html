@@ -1,0 +1,28 @@
+{{- /*
+  modern-plain-header.html — lightweight title bar for modern_style guide
+  pages that opt out of the dark hero banner (`page_options.modern_hero = false`).
+
+  Reads the same optional `[modern]` frontmatter table as modern-hero.html,
+  using `eyebrow`, `lead`, `meta` chips and `breadcrumb` (no image). The
+  title is always .Title. Shown by default; set `page_options.breadcrumbs =
+  false` to drop the crumb trail entirely.
+*/ -}}
+{{- $m := .Params.modern | default dict -}}
+<header class="modern-plain-header">
+  <div class="modern-plain-header__inner">
+    {{- if ne .Params.page_options.breadcrumbs false }}
+    <nav class="modern-plain-header__crumbs" aria-label="Breadcrumb">
+      {{- partial "modern-breadcrumbs.html" . -}}
+    </nav>
+    {{- end }}
+    {{- with $m.eyebrow }}<p class="modern-plain-header__eyebrow">{{ . }}</p>{{ end }}
+    <h1 class="modern-plain-header__title">{{ .Title }}</h1>
+    {{- $lead := or $m.lead .Description }}
+    {{- with $lead }}<p class="modern-plain-header__lead">{{ . }}</p>{{ end }}
+    {{- with $m.meta }}
+    <div class="modern-plain-header__meta">
+      {{- range . }}<span class="modern-chip">{{ . }}</span>{{ end }}
+    </div>
+    {{- end }}
+  </div>
+</header>

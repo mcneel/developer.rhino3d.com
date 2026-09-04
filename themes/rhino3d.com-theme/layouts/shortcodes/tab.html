@@ -1,0 +1,25 @@
+{{- /*
+  tab.html — one panel of a {{< tabs >}} control; must be nested directly
+  inside {{< tabs >}} (see tabs.html for the full usage).
+
+  Params: label — tab button text (required)
+          name  — optional slug for the tab/panel ids and deep links
+                  (default: urlized label, e.g. "Students or faculty" ->
+                  students-or-faculty)
+
+  The body is rendered as markdown, so nested shortcodes must emit HTML that
+  survives goldmark: no blank (or whitespace-only) line followed by indented
+  markup, or the indented lines become a code block. price-card, call-out,
+  card-gallery and unfurl are known-good.
+*/ -}}
+{{- $parent := .Parent -}}
+{{- if not $parent }}{{ errorf "%s: {{< tab >}} must be nested inside {{< tabs >}}" .Position }}{{ end -}}
+{{- $label := .Get "label" | default (printf "Tab %d" (add .Ordinal 1)) -}}
+{{- $name := .Get "name" | default (urlize $label) -}}
+{{- $tabs := $parent.Scratch.Get "tabs" | default slice -}}
+{{- $i := len $tabs -}}
+{{- $parent.Scratch.Set "tabs" ($tabs | append (dict "label" $label "name" $name)) -}}
+{{- $id := $parent.Get "id" | default (printf "tabs-%d" $parent.Ordinal) -}}
+<div class="modern-tabs__panel{{ if eq $i 0 }} is-active{{ end }}" role="tabpanel" id="{{ $id }}-{{ $name }}-panel" aria-labelledby="{{ $id }}-{{ $name }}"{{ if ne $i 0 }} hidden{{ end }}>
+{{ .Inner | .Page.RenderString }}
+</div>

@@ -294,7 +294,7 @@ stack_layout = ef.StackLayout()
 stack_layout.Spacing = 8
 stack_layout.Padding = ed.Padding(8)
 
-stack_layout.Orientation = Orientation.Vertical
+stack_layout.Orientation = ef.Orientation.Vertical
 
 button_one = ef.Button()
 button_one.Text = "One"

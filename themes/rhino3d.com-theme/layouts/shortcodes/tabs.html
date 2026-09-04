@@ -1,0 +1,85 @@
+{{- /*
+  tabs.html — tabbed control. Pair with {{< tab label="…" >}} children:
+
+    {{< tabs id="pricing" >}}
+    {{< tab label="Commercial" >}}
+    …markdown and shortcodes…
+    {{< /tab >}}
+    {{< tab label="Schools" name="edu" >}} … {{< /tab >}}
+    {{< /tabs >}}
+
+  Hugo renders the children BEFORE this template runs: each {{< tab >}} pushes
+  its label onto .Parent.Scratch "tabs" and emits its own panel, so this
+  template only draws the tab bar and wraps the already-rendered panels.
+
+  Optional id="…" (default tabs-<ordinal>) keeps deep links stable: the tab
+  buttons are #<id>-<name> and the panels #<id>-<name>-panel. Opening a page
+  with such a hash (or a hash pointing at an element inside a panel) selects
+  that tab; clicking a tab updates the hash. Arrow/Home/End keys move between
+  tabs. Styling lives in assets/scss/_shortcodes/_tabs.scss and uses the
+  modern-style tokens (--rh-*) when the page has them, plain site colours
+  otherwise. The script is emitted once per page.
+*/ -}}
+{{- $id := .Get "id" | default (printf "tabs-%d" .Ordinal) -}}
+{{- $tabs := .Scratch.Get "tabs" | default slice -}}
+<div class="modern-tabs" id="{{ $id }}">
+  <div class="modern-tabs__list" role="tablist">
+    {{- range $i, $t := $tabs }}
+    <button class="modern-tabs__tab{{ if eq $i 0 }} is-active{{ end }}" type="button" role="tab" id="{{ $id }}-{{ $t.name }}" aria-controls="{{ $id }}-{{ $t.name }}-panel" aria-selected="{{ if eq $i 0 }}true{{ else }}false{{ end }}" tabindex="{{ if eq $i 0 }}0{{ else }}-1{{ end }}">{{ $t.label }}</button>
+    {{- end }}
+  </div>
+  {{- .Inner }}
+</div>
+{{- if not (.Page.Store.Get "modern-tabs-js") }}
+{{- .Page.Store.Set "modern-tabs-js" true }}
+<script>
+(function () {
+  function tabsOf(root) {
+    return Array.prototype.slice.call(root.querySelectorAll(':scope > .modern-tabs__list > .modern-tabs__tab'));
+  }
+  function activate(btn, focus) {
+    var root = btn.closest('.modern-tabs');
+    tabsOf(root).forEach(function (b) {
+      var on = b === btn;
+      b.classList.toggle('is-active', on);
+      b.setAttribute('aria-selected', on ? 'true' : 'false');
+      b.tabIndex = on ? 0 : -1;
+      var panel = document.getElementById(b.getAttribute('aria-controls'));
+      if (panel) { panel.hidden = !on; panel.classList.toggle('is-active', on); }
+    });
+    if (focus) btn.focus();
+  }
+  document.querySelectorAll('.modern-tabs').forEach(function (root) {
+    var btns = tabsOf(root);
+    btns.forEach(function (btn, i) {
+      btn.addEventListener('click', function () {
+        activate(btn);
+        if (history.replaceState) history.replaceState(null, '', '#' + btn.id);
+      });
+      btn.addEventListener('keydown', function (e) {
+        var j = { ArrowRight: i + 1, ArrowLeft: i - 1, Home: 0, End: btns.length - 1 }[e.key];
+        if (j === undefined) return;
+        e.preventDefault();
+        activate(btns[(j + btns.length) % btns.length], true);
+      });
+    });
+  });
+  // Deep link: #<tab id>, #<panel id>, or any element inside a (hidden) panel.
+  function openFromHash() {
+    var hash = decodeURIComponent(location.hash.slice(1));
+    var el = hash && document.getElementById(hash);
+    if (!el) return;
+    var btn = el.classList.contains('modern-tabs__tab') ? el : null;
+    if (!btn) {
+      var panel = el.closest('.modern-tabs__panel');
+      btn = panel && document.getElementById(panel.getAttribute('aria-labelledby'));
+    }
+    if (!btn || btn.classList.contains('is-active')) return;
+    activate(btn);
+    if (el !== btn) el.scrollIntoView();
+  }
+  openFromHash();
+  window.addEventListener('hashchange', openFromHash);
+})();
+</script>
+{{- end }}

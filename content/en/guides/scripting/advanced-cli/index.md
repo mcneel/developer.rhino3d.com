@@ -41,15 +41,16 @@ To run `rhinocode`:
 - Make sure script server is started by running `StartScriptServer` in Rhino.
 
 On Windows:
+
 - Add `%PROGRAMFILES%\Rhino 8\System` to user or system `PATH` environment variable. Then open a terminal and run `rhinocode`
 
 On macOS:
+
 - Depending on the type of shell you are using, add `/Applications/Rhino 8.app/Contents/Resources/bin` to the `PATH` environment variable. Then reload the terminal and run `rhinocode`
 
 If, for whatever reason, you do not want to modify the `PATH` environment variable, navigate to Rhino installation folder inside terminal and run `.\rhinocode` from there.
 
-
-Test running `rhinocode` by specifying `-V` argument to get the version. Under current implementation, the version matches version of Rhino that ships this utility:
+Test running `rhinocode` by specifying `-V` argument to get the version. Under current implementation, the version matches the version of Rhino that shipped this utility:
 
 ```text
 $ rhinocode -V
@@ -58,8 +59,7 @@ $ rhinocode -V
 
 ## Overview
 
-Running `rhinocode --help` would print out an overview of subcommands and their descriptions (Actual message might be different from below depending on the utility version):
-
+Running `rhinocode --help` will print out an overview of subcommands and their descriptions (Actual message might be different from below depending on the utility version):
 
 ```text
 $ rhinocode --help
@@ -100,7 +100,7 @@ Examples:
 
 ## Listing Rhino Instances
 
-Use `list` subcommand to list all running instance of Rhino. Each instance has a Process ID (PID) and a unique identifier (ID). The report also shows the name and path of any document that is open inside the Rhino instance to better help identifying each Rhino:
+Use `list` subcommand to list all running instances of Rhino. Each instance has a Process ID (PID) and a unique identifier (ID). The report also shows the name and path of any document that is open inside the Rhino instance to better help identify each Rhino:
 
 You can use ID with `--rhino` option to run a subcommand on that specific Rhino instance.
 
@@ -110,10 +110,10 @@ $ rhinocode list
      75029 rhinocode_remotepipe_75029     Sphere.3dm           C:\path\to\rhinofiles\Sphere.3dm
 ```
 
-Add `--json` flag to get results in JSON. This can be used to parse the results of this command easier in your custom integrations:
+Add the `--json` flag to get results in JSON. The below command can be used to parse the results of the `--json` flag, making it easier to read for custom integrations:
 
 ```text
-$ rhinocode list --json
+$ rhinocode list --json | python3 -m json.tool --indent 2
 [
   {
     "pipeId": "rhinocode_remotepipe_75029",
@@ -133,6 +133,7 @@ $ rhinocode list --json
   }
 ]
 ```
+
 ## Running Rhino Commands
 
 Use `command` subcommand to run a rhino command in an instance of Rhino. This example runs the `Circle` command in Rhino with a few arguments to draw a circle:
@@ -141,7 +142,7 @@ Use `command` subcommand to run a rhino command in an instance of Rhino. This ex
 $ rhinocode command "_circle 0 0 0 20"
 ```
 
-If you have multiple instance of Rhino running, you can specify which instance to run the command on using `--rhino` option:
+If you have multiple instances of Rhino running, you can specify which instance to run the command on using the `--rhino` option:
 
 ```text
 $ rhinocode --rhino rhinocode_remotepipe_75029 command "_circle 0 0 0 20"
@@ -157,7 +158,7 @@ $ rhinocode script C:\path\to\scripts\foo.cs
 $ rhinocode script C:\path\to\scripts\foo.py2
 ```
 
-If you have multiple instance of Rhino running, you can specify which instance to run the command on using `--rhino` option:
+If you have multiple instances of Rhino running, you can specify which instance to run the command on using the `--rhino` option:
 
 ```text
 $ rhinocode --rhino rhinocode_remotepipe_75029 script C:\path\to\scripts\foo.py
@@ -166,15 +167,15 @@ $ rhinocode --rhino rhinocode_remotepipe_75029 script C:\path\to\scripts\foo.py
 ## Working With Projects
 
 {{< call-out "note" "Note" >}}
-- `project` command builds projects without requiring a running instance of Rhino. It can be used is build scripts in you CI/CD pipeline.
-- See [Creating Rhino Projects](/guides/scripting/projects-create) and [Creating Rhino and Grasshopper Plugins](/guides/scripting/projects-publish) for more information on creating projects in Rhino script editor.
+- `project` command builds projects without requiring a running instance of Rhino. It can be used in build scripts in your CI/CD pipeline.
+- See [Creating Rhino Projects](/guides/scripting/projects-create) and [Creating Rhino and Grasshopper Plugins](/guides/scripting/projects-publish) for more information on creating projects in the Rhino script editor.
 {{< /call-out >}}
 
 Use `project` subcommand to work with projects created in the Rhino script editor.
 
 ### Build a Project
 
-The `build` subcommand build Rhino and Grasshopper plugins from a project. The project file only stores references to scripts, Grasshopper definitions, and language libraries so these resources can be updated outside of the project without affecting the project file itself. The most recent state of these references is used when building a project.
+The `build` subcommand builds Rhino and Grasshopper plugins from a project. The project file only stores references to scripts, Grasshopper definitions, and language libraries so these resources can be updated outside of the project without affecting the project file itself. The most recent state of these references is used when building a project.
 
 ```text
 $ rhinocode project build C:\path\to\projects\MyTools.rhproj
@@ -219,7 +220,7 @@ Options:
                                                  C:\path\to\mybuild
 ```
 
-The build folder (depends on build target) will contain the generated plugins as well as a yak package that packs the plugins and other resources:
+The build folder (depends on build target) will contain the generated plugins as well as a `.yak` package that packs the plugins and other resources:
 
 - YAK Package: `mytools-0.1.18292.8990-rh8-any.yak`
 - Rhino Plugin containing commands: `MyTools.rhp`

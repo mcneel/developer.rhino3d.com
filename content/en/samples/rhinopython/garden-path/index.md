@@ -41,13 +41,13 @@ def test():
 
 
     	# look for any previously used values stored in sticky and use those if available.
-    if sc.sticky.has_key("GP_WIDTH"):
+    if "GP_WIDTH" in sc.sticky:
         default_hwidth = sc.sticky["GP_WIDTH"]
 
-    if sc.sticky.has_key("GP_RAD"):
+    if "GP_RAD" in sc.sticky:
         default_trad = sc.sticky["GP_RAD"]
 
-    if sc.sticky.has_key("GP_Space"):
+    if "GP_Space" in sc.sticky:
         default_tspace = sc.sticky["GP_SPACE"]
 
         #get the path direction, length and location from two points entered by the user

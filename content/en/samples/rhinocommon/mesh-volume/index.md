@@ -4,7 +4,7 @@ authors = [ "steve" ]
 categories = [ "Other" ]
 description = "Demonstrates how to calculate the volume of a user-specified closed mesh."
 keywords = [ "volume", "meshes" ]
-languages = [ "C#", "Python", "VB" ]
+languages = [ "C#", "Python" ]
 sdk = [ "RhinoCommon" ]
 title = "Mesh Volume"
 type = "samples/rhinocommon"
@@ -61,50 +61,12 @@ partial class Examples
 
 </div>
 
-
-<div class="codetab-content" id="vb">
-
-```vbnet
-Partial Friend Class Examples
-  Public Shared Function MeshVolume(ByVal doc As RhinoDoc) As Result
-	Dim gm = New GetObject()
-	gm.SetCommandPrompt("Select solid meshes for volume calculation")
-	gm.GeometryFilter = ObjectType.Mesh
-	gm.GeometryAttributeFilter = GeometryAttributeFilter.ClosedMesh
-	gm.SubObjectSelect = False
-	gm.GroupSelect = True
-	gm.GetMultiple(1, 0)
-	If gm.CommandResult() <> Result.Success Then
-	  Return gm.CommandResult()
-	End If
-
-	Dim volume As Double = 0.0
-	Dim volume_error As Double = 0.0
-	For Each obj_ref In gm.Objects()
-	  If obj_ref.Mesh() IsNot Nothing Then
-		Dim mass_properties = VolumeMassProperties.Compute(obj_ref.Mesh())
-		If mass_properties IsNot Nothing Then
-		  volume += mass_properties.Volume
-		  volume_error += mass_properties.VolumeError
-		End If
-	  End If
-	Next obj_ref
-
-	RhinoApp.WriteLine("Total volume = {0:f} (+/- {1:f})", volume, volume_error)
-	Return Result.Success
-  End Function
-End Class
-```
-
-</div>
-
-
 <div class="codetab-content" id="py">
 
 ```python
-from Rhino.Input.Custom import *
+from Rhino.Input.Custom import GetObject, GeometryAttributeFilter
 from Rhino.DocObjects import ObjectType
-from Rhino.Geometry import *
+from Rhino.Geometry import VolumeMassProperties
 from Rhino.Commands import Result
 
 def RunCommand():
@@ -127,7 +89,7 @@ def RunCommand():
                 volume += mass_properties.Volume
                 volume_error += mass_properties.VolumeError
 
-    print "Total volume = {0:f} (+/- {1:f})".format(volume, volume_error)
+    print("Total volume = {0:f} (+/- {1:f})".format(volume, volume_error))
     return Result.Success
 
 if __name__ == "__main__":
