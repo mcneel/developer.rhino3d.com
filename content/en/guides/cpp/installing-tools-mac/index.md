@@ -39,4 +39,4 @@ To write C++ plugins for Rhino 9 WIP using the C/C++ SDK, you will need [XCode](
 
 **Congratulations!** You have the tools to build a C/C++ plugin for Rhino for Mac. *Now what?*
 
-Check out the [Creating your first C/C++ plugin for Rhino](/guides/cpp/your-first-plugin-mac/) guide for instructions building your first plugin.
+Check out the [Creating your first C/C++ plugin (Mac)](/guides/cpp/your-first-plugin-mac/) guide for instructions building your first plugin.

@@ -6,7 +6,7 @@ description = "This guide walks you through your first plugin for Rhino for Wind
 keywords = [ "c", "C/C++", "plugin" ]
 languages = [ "C/C++" ]
 sdk = [ "C/C++" ]
-title = "Creating your first C/C++ plugin for Rhino"
+title = "Creating your first C/C++ plugin (Cross Platform)"
 type = "guides"
 weight = 2
 
@@ -28,8 +28,9 @@ It is presumed you already have the necessary tools installed and are ready to g
 
 1. Use git to clone the starter repo
 `git clone https://github.com/mcneel/CrossPlatformCppPlugin`
-
-2. Run the `./rename.sh` script to fill out the plugins plugin, command, properties and GUIDs correctly.
+1. Download the SDK
+`git submodule update --init`
+1. Run the rename`./rename.sh` or `powershell -ExecutionPolicy Bypass -File ./rename.ps1` script to fill out the plugin, command, properties and GUIDs correctly. For this tutorial, it is suggested to use all of the default values.
 
 ### Plugin Anatomy
 
@@ -56,20 +57,33 @@ The following files are of interest:
 
 #### Windows
 
-1. From *Visual Studio*, navigate to *Debug* > *Start Debugging*. This will load Rhino. The version of Rhino that is launched depends on the configuration that you build. The template adds the following configurations to your project:
-     - *Debug*: The *Debug* project is a *Release* project that disables optimizations and generates debugging information using the compiler’s *Program Database* (`/Zi`) option and the linker’s *Generate Debug Information* (`/DEBUG`) option. These option settings let you use the debugger while you are developing your custom plugin. The *Debug* configuration also links with release runtime libraries. Plugins built with the *Debug* configuration will only load in the release version of Rhino that was installed with Rhino.
-     - *Release*: The *Release* configuration of your program contains no symbolic debug information and is fully optimized. *Debug* information can be generated in PDB Files (C++) depending on the compiler options used. Creating PDB files can be very useful if you later need to debug your release version. The *Release* configuration also links with release runtime libraries. Plugins built with the *Release* configuration will only load in the release version of Rhino that was installed with Rhino.
+1. Run the rename script `powershell -ExecutionPolicy Bypass -File ./rename.ps1` to fill out the plugin, command, properties and GUIDs correctly. For this tutorial, it is suggested to use all of the default values.
+1. Double click the `MySamplePlugIn.sln` file in the `win` directory
+1. In *Visual Studio* click *Local Windows Debugger* next to the green arrow. This will load Rhino and the plug-in
+
+![Rhino Options](/images/your-first-plugin-windows-cpp-10.png)
+
 1. For this guide, build the *Debug* configuration.
-1. From within Rhino, navigate to *Tools* > *Options*. Navigate to the *Plugins* page under *Rhino Options* and install your plugin.
+1. From within Rhino, navigate to *Tools* > *Options*. Navigate to the *Plugins* page under *Rhino Options* and install your plugin (it will be in the win/x64/Debug folder)
 
     ![Rhino Options](/images/your-first-plugin-windows-cpp-07.png)
-1. Once your plugin is loaded, close the options dialog and run your *Test* command.
+1. Run MySampleCommand, a message box should appear
+
+![Rhino Options](/images/your-first-plugin-windows-cpp-09.png)
+
 1. You have finished creating your first plugin!
 
 #### Mac
 
-1. Open `osx/<projectname>.xcodeproj` in XCode.
-2. Click the Run button, *project* > *run*. This will load Rhino and the plugin.
+1. Run the rename script `./rename.sh` to fill out the plugin, command, properties and GUIDs correctly. For this tutorial, it is suggested to use all of the default values.
+1. Open `osx/MySamplePlugIn.xcodeproj` in XCode.
+1. Click the Run button, *project* > *run*. This will load Rhino and the plugin.
+![Rhino Options](/images/your-first-plugin-mac-cpp-01.png)
+
+1. Run MySampleCommand, a message box should appear
+![Rhino Options](/images/your-first-plugin-mac-cpp-02.png)
+
+1. You have finished creating your first plugin!
 
 ## Adding Additional Commands
 

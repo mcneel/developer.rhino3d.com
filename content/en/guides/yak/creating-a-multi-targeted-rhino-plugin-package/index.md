@@ -167,4 +167,4 @@ Now that you've created a package, [push it to the package server](../pushing-a-
 - [Creating a Grasshopper Plug-in Package](/guides/yak/creating-a-grasshopper-plugin-package/)
 - [RhinoCommon: Your First Plugin (Windows)](/guides/rhinocommon/your-first-plugin-windows)
 - [RhinoCommon: Your First Plugin (Mac)](/guides/rhinocommon/your-first-plugin-mac)
-- [Creating your first C/C++ plugin for Rhino](/guides/cpp/your-first-plugin-windows/)
+- [Creating your first C/C++ plugin (Win)](/guides/cpp/your-first-plugin-windows/)
