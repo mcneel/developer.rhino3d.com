@@ -1,0 +1,26 @@
+{{- /*
+  llms-full.txt — the full raw Markdown of this site's indexed pages, concatenated
+  so an LLM can ingest complete context in one fetch. Same page selection as
+  llms.txt (partials/llms/eligible.html). Rendered on the home page via the
+  "llmsfull" output format (English only; see each site's [languages.en.outputs]).
+
+  Uses .RawContent (source Markdown) rather than .Content: it is cheap and avoids
+  expanding heavy shortcodes (e.g. the developer site's rhinoscriptsyntax reference).
+*/ -}}
+{{- $home := . -}}
+{{- $base := .Site.Params.sitemapBaseURL -}}
+# {{ .Site.Title }}
+
+{{ with .Description }}> {{ . | plainify | htmlUnescape | chomp }}
+{{ end }}
+{{- range partial "llms/eligible.html" . }}
+
+--------------------------------------------------------------------------------
+
+# {{ .Title }}
+Source: {{ $base }}{{ .RelPermalink }}
+{{ with .Description }}
+{{ . | plainify | htmlUnescape | chomp }}
+{{ end }}
+{{ partial "llms/content.html" . }}
+{{- end }}

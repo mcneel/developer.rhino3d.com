@@ -1,0 +1,59 @@
+// ==============================
+// {{< tabs >}} / {{< tab >}} shortcodes
+// ==============================
+// Underline-style tab bar (single accent rule under the active tab, matching
+// the modern-style TOC marker). Uses the modern-style tokens (--rh-*) when the
+// page carries them, plain site colours otherwise.
+
+.modern-tabs {
+  margin: 0 0 40px;
+
+  &__list {
+    display: flex;
+    flex-wrap: wrap;
+    gap: 2px;
+    margin: 0 0 28px;
+    border-bottom: 1px solid var(--rh-border, #e2e2e2);
+  }
+
+  &__tab {
+    appearance: none;
+    -webkit-appearance: none;
+    margin: 0 0 -1px;
+    padding: 12px 18px;
+    background: transparent;
+    border: 0;
+    border-bottom: 2px solid transparent;
+    font-family: var(--rh-font-display, inherit);
+    font-size: 15px;
+    font-weight: 700;
+    line-height: 1.2;
+    color: var(--rh-ink-meta, #888);
+    cursor: pointer;
+    transition: color 140ms ease, border-color 140ms ease;
+
+    &:hover { color: var(--rh-ink, #000); }
+
+    &.is-active {
+      color: var(--rh-ink, #000);
+      border-bottom-color: var(--rh-red-600, #901010);
+    }
+
+    &:focus { outline: none; }
+    &:focus-visible {
+      outline: 2px solid var(--rh-red-600, #901010);
+      outline-offset: -2px;
+      border-radius: 4px;
+    }
+  }
+
+  &__panel[hidden] { display: none; }
+  &__panel > :first-child { margin-top: 0; }
+}
+
+@media only screen and (max-width: 640px) {
+  .modern-tabs__tab {
+    padding: 10px 12px;
+    font-size: 14px;
+  }
+}

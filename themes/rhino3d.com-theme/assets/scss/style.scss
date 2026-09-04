@@ -39,15 +39,31 @@
 
 @import "_shortcodes/_left-selector-cards";
 @import "_shortcodes/_link-card";
+@import "_shortcodes/_tabs";
+@import "_shortcodes/_link-select";
 
 /* Placed here to override the partial card style in the learn page galleries */
 /* TODO:: Dan wants to fix Card styling so this is not neccesary. */
 @import "_page/learn";
+@import "_page/feature";
 @import "_page/guide";
 
 @import "_core/media";
 
 @import "_custom";
+
+// Opt-in modernized guide chrome. Imported after _custom so the guide-scoped
+// TOC overrides win the cascade over the base .toc rules in _custom.
+
+// Opt-in bold "modern-style" guide theme (dark hero + numbered TOC + restyled
+// content). Scoped under .modern-guide; imported after _custom for the same
+// cascade reason.
+@import "_page/modern-style";
+
+/* Static (collapsed-by-default) navbar for sites with navBarShouldResize = false.
+   Must come before the site override so sites can still re-tune it. */
+@import "_core/navbar-static";
+
 /* Site-specific custom style overrides */
 @import "../../../../static/scss/_site-override";
 

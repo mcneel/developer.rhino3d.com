@@ -4,7 +4,7 @@ authors = [ "steve" ]
 categories = [ "Adding Objects" ]
 description = "Demonstrates how to add a circle from a center point and radius."
 keywords = [ "add", "circle" ]
-languages = [ "C#", "Python", "VB" ]
+languages = [ "C#", "Python" ]
 sdk = [ "RhinoCommon" ]
 title = "Add Circle"
 type = "samples/rhinocommon"
@@ -42,27 +42,6 @@ partial class Examples
 ```
 
 </div>
-
-
-<div class="codetab-content" id="vb">
-
-```vbnet
-Partial Friend Class Examples
-  Public Shared Function AddCircle(ByVal doc As Rhino.RhinoDoc) As Rhino.Commands.Result
-	Dim center As New Rhino.Geometry.Point3d(0, 0, 0)
-	Const radius As Double = 10.0
-	Dim c As New Rhino.Geometry.Circle(center, radius)
-	If doc.Objects.AddCircle(c) <> Guid.Empty Then
-	  doc.Views.Redraw()
-	  Return Rhino.Commands.Result.Success
-	End If
-	Return Rhino.Commands.Result.Failure
-  End Function
-End Class
-```
-
-</div>
-
 
 <div class="codetab-content" id="py">
 

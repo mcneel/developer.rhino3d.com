@@ -1,0 +1,48 @@
+{{- /*
+  modern-hero.html — light hero header for the modern_style guide theme
+  (light-on-white/gray with a flat grid — WWW-3572 item 1.5; the earlier dark
+  hero was retired since it was down to a single page still using it).
+
+  Reads optional hero fields from a `[modern]` frontmatter table:
+    eyebrow     string  — small red mono label above the title
+    lead        string  — deck text (falls back to .Description)
+    hero_image  string  — page-bundle image path (resolved to a Resource)
+    meta        [string]— chips (e.g. "35–45 min", "Rhino 8", "Advanced")
+    breadcrumb  [string]— override the auto crumb trail (plain labels, no links)
+
+  The title is always .Title. Every field degrades gracefully when absent.
+  Shown by default; set `page_options.breadcrumbs = false` to drop the crumb
+  trail entirely.
+*/ -}}
+{{- $m := .Params.modern | default dict -}}
+<header class="modern-hero">
+  <div class="modern-hero__inner">
+
+    {{- if ne .Params.page_options.breadcrumbs false }}
+    <nav class="modern-hero__crumbs" aria-label="Breadcrumb">
+      {{- partial "modern-breadcrumbs.html" . -}}
+    </nav>
+    {{- end }}
+
+    <div class="modern-hero__grid{{ if not $m.hero_image }} modern-hero__grid--no-image{{ end }}">
+      <div class="modern-hero__text">
+        {{- with $m.eyebrow }}<p class="modern-hero__eyebrow">{{ . }}</p>{{ end }}
+        <h1 class="modern-hero__title">{{ .Title }}</h1>
+        {{- $lead := or $m.lead .Description }}
+        {{- with $lead }}<p class="modern-hero__lead">{{ . }}</p>{{ end }}
+        {{- with $m.meta }}
+        <div class="modern-hero__meta">
+          {{- range . }}<span class="modern-chip">{{ . }}</span>{{ end }}
+        </div>
+        {{- end }}
+      </div>
+      {{- with $m.hero_image }}
+      {{- $src := partial "resolve-image-src.html" (dict "Page" $ "Destination" .) }}
+      <figure class="modern-hero__figure">
+        <img src="{{ $src }}" alt="{{ $.Title }}">
+      </figure>
+      {{- end }}
+    </div>
+
+  </div>
+</header>

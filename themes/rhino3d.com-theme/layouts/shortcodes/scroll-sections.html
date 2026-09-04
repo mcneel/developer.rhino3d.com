@@ -1,0 +1,255 @@
+{{ $id := (print "scroll-sections-" .Ordinal) }}
+{{ $height := (.Get "height" | default "300vh") }}
+
+<div class="scroll-sections-wrapper content-fullwidth" id="{{ $id }}">
+  <div class="scroll-sections-pin">
+    {{ .Inner }}
+  </div>
+</div>
+
+<!-- Load ScrollMagic & GSAP -->
+<script src="https://cdnjs.cloudflare.com/ajax/libs/gsap/1.19.1/TweenMax.min.js" integrity="sha384-IEc/+MsamgT27OBODvDOuBIEae9ncji8P9p3YFhL8IcUUhyhabOWsASnyQFX/j9l" crossorigin="anonymous"></script>
+<script src="https://cdnjs.cloudflare.com/ajax/libs/ScrollMagic/2.0.5/ScrollMagic.min.js" integrity="sha384-ZvT4Vepz59SdkHMUWrcs/PCrR+S74FveDmkNPgV9eCw6sBW2UZv07KwdSi79pnsg" crossorigin="anonymous"></script>
+<script src="https://cdnjs.cloudflare.com/ajax/libs/ScrollMagic/2.0.5/plugins/animation.gsap.min.js" integrity="sha384-k5qO2hqiOzvE5pqpY+ay9dt7au1vtSpkRH9R1Bi6HcSKwdcDyKK1cRMVPvOoNSC7" crossorigin="anonymous"></script>
+
+<style>
+#{{ $id }} {
+  position: relative;
+  width: 100vw;
+  left: 50%;
+  right: 50%;
+  margin-left: -50vw;
+  margin-right: -50vw;
+  height: {{ $height }};
+}
+
+#{{ $id }} .scroll-sections-pin {
+  height: 100vh;
+  width: 100%;
+  position: relative;
+}
+
+#{{ $id }} .scroll-section-child {
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+</style>
+
+<script type="module">
+(function() {
+  const wrapper = document.querySelector('#{{ $id }}');
+  const pinEl = document.querySelector('#{{ $id }} .scroll-sections-pin');
+  const children = document.querySelectorAll('#{{ $id }} .scroll-section-child');
+
+  // Parse keyframe DSL: "0:opacity=0,scale=1.2;50:opacity=1,scale=1"
+  function parseKeyframes(dsl) {
+    if (!dsl) return [];
+
+    const frames = dsl.split(';').map(frame => {
+      const [percent, props] = frame.split(':');
+      const properties = {};
+
+      if (props) {
+        props.split(',').forEach(prop => {
+          const [key, val] = prop.split('=');
+          const trimmedVal = val.trim();
+          const numVal = parseFloat(trimmedVal);
+
+          // Use numeric value if it's actually a number (including 0)
+          properties[key.trim()] = !isNaN(numVal) ? numVal : trimmedVal;
+        });
+      }
+
+      return {
+        at: parseFloat(percent),
+        props: properties
+      };
+    });
+
+    return frames.sort((a, b) => a.at - b.at);
+  }
+
+  // Interpolate between keyframes
+  function interpolate(progress, keyframes, easing) {
+    if (keyframes.length === 0) return {};
+    if (keyframes.length === 1) return keyframes[0].props;
+
+    // Find surrounding keyframes
+    let prevFrame = keyframes[0];
+    let nextFrame = keyframes[keyframes.length - 1];
+
+    for (let i = 0; i < keyframes.length - 1; i++) {
+      if (progress >= keyframes[i].at && progress <= keyframes[i + 1].at) {
+        prevFrame = keyframes[i];
+        nextFrame = keyframes[i + 1];
+        break;
+      }
+    }
+
+    // Calculate local progress between frames
+    const range = nextFrame.at - prevFrame.at;
+    const localProgress = range === 0 ? 1 : (progress - prevFrame.at) / range;
+
+    // Interpolate each property
+    const result = {};
+    const allKeys = new Set([
+      ...Object.keys(prevFrame.props),
+      ...Object.keys(nextFrame.props)
+    ]);
+
+    allKeys.forEach(key => {
+      const startVal = prevFrame.props[key] !== undefined ? prevFrame.props[key] :
+                      (nextFrame.props[key] !== undefined ? nextFrame.props[key] : 0);
+      const endVal = nextFrame.props[key] !== undefined ? nextFrame.props[key] : startVal;
+
+      if (typeof startVal === 'number' && typeof endVal === 'number') {
+        result[key] = startVal + (endVal - startVal) * localProgress;
+      } else {
+        result[key] = localProgress < 0.5 ? startVal : endVal;
+      }
+    });
+
+    return result;
+  }
+
+  // Apply CSS properties to element
+  function applyProps(element, props) {
+    Object.entries(props).forEach(([key, val]) => {
+      switch(key) {
+        case 'opacity':
+          element.style.opacity = val;
+          break;
+        case 'scale':
+          const currentTransform = element.style.transform || '';
+          const newTransform = currentTransform.replace(/scale\([^)]*\)/, '') + ` scale(${val})`;
+          element.style.transform = newTransform.trim();
+          break;
+        case 'x':
+          const xTransform = element.style.transform || '';
+          const newXTransform = xTransform.replace(/translateX\([^)]*\)/, '') + ` translateX(${val}px)`;
+          element.style.transform = newXTransform.trim();
+          break;
+        case 'y':
+          const yTransform = element.style.transform || '';
+          const newYTransform = yTransform.replace(/translateY\([^)]*\)/, '') + ` translateY(${val}px)`;
+          element.style.transform = newYTransform.trim();
+          break;
+        case 'videoTime':
+          const video = element.querySelector('video');
+          if (video && video.duration) {
+            video.currentTime = video.duration * val;
+            video.pause();
+          }
+          break;
+        default:
+          element.style[key] = val;
+      }
+    });
+  }
+
+  // Parse all children's keyframes
+  const childData = Array.from(children).map(child => ({
+    element: child,
+    keyframes: parseKeyframes(child.dataset.keyframes),
+    easing: child.dataset.easing || 'linear',
+    isTriggered: child.classList.contains('scroll-section-triggered'),
+    trigger: parseFloat(child.dataset.trigger) || 0,
+    duration: parseFloat(child.dataset.duration) || 1,
+    reverse: child.dataset.reverse === 'true',
+    hasTriggered: false,
+    isAnimatingForward: false
+  }));
+
+  // Set initial state for triggered elements
+  childData.forEach(data => {
+    if (data.isTriggered && data.keyframes.length > 0) {
+      const initialFrame = data.keyframes[0];
+      if (initialFrame && initialFrame.props) {
+        applyProps(data.element, initialFrame.props);
+      }
+    }
+  });
+
+  // Setup ScrollMagic
+  const controller = new ScrollMagic.Controller();
+  const heightVh = parseInt('{{ $height }}'.replace('vh', ''));
+  const duration = `${heightVh - 100}%`;
+
+  const scene = new ScrollMagic.Scene({
+    triggerElement: '#{{ $id }}',
+    triggerHook: 0,
+    duration: duration
+  })
+  .setPin('#{{ $id }} .scroll-sections-pin')
+  .addTo(controller);
+
+  // Use requestAnimationFrame for smooth updates
+  let lastProgress = -1;
+
+  function updateAnimations() {
+    const progress = scene.progress() * 100;
+
+    // Only update if progress changed
+    if (Math.abs(progress - lastProgress) > 0.01) {
+      lastProgress = progress;
+
+      childData.forEach(data => {
+        if (data.isTriggered) {
+          // Scroll-triggered mode
+          if (progress >= data.trigger && !data.isAnimatingForward) {
+            // Forward animation
+            data.hasTriggered = true;
+            data.isAnimatingForward = true;
+
+            const finalFrame = data.keyframes[data.keyframes.length - 1];
+            if (finalFrame && finalFrame.props) {
+              const gsapProps = { duration: data.duration, ease: data.easing };
+
+              Object.entries(finalFrame.props).forEach(([key, val]) => {
+                if (key === 'opacity') gsapProps.opacity = val;
+                else if (key === 'scale') gsapProps.scale = val;
+                else if (key === 'x') gsapProps.x = val;
+                else if (key === 'y') gsapProps.y = val;
+              });
+
+              TweenMax.to(data.element, gsapProps.duration, gsapProps);
+            }
+          } else if (progress < data.trigger && data.hasTriggered && data.reverse && data.isAnimatingForward) {
+            // Reverse animation
+            data.isAnimatingForward = false;
+
+            const initialFrame = data.keyframes[0];
+            if (initialFrame && initialFrame.props) {
+              const gsapProps = { duration: data.duration, ease: data.easing };
+
+              Object.entries(initialFrame.props).forEach(([key, val]) => {
+                if (key === 'opacity') gsapProps.opacity = val;
+                else if (key === 'scale') gsapProps.scale = val;
+                else if (key === 'x') gsapProps.x = val;
+                else if (key === 'y') gsapProps.y = val;
+              });
+
+              TweenMax.to(data.element, gsapProps.duration, gsapProps);
+            }
+          }
+        } else {
+          // Scroll-driven mode: update on every scroll change
+          const props = interpolate(progress, data.keyframes, data.easing);
+          applyProps(data.element, props);
+        }
+      });
+    }
+
+    requestAnimationFrame(updateAnimations);
+  }
+
+  // Start animation loop
+  requestAnimationFrame(updateAnimations);
+})();
+</script>

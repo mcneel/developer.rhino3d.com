@@ -34,6 +34,9 @@ other = "Gestisci account, licenze e team"
 [sign-in]
 other = "accedi"
 
+[sign-out]
+other = "Esci"
+
 [sign-in-title]
 other = "Accedi per gestire, account, licenze e team"
 
@@ -97,7 +100,7 @@ other = "di"
 
 # context: the bylines that sometimes show up under the title of a page, showing when the page was last updated
 [Last-updated]
-other = "Ultimo aggiornamento:"
+other = "Ultimo aggiornato:"
 
 # context: the bylines that sometimes show up under the title of a page, joining the different authors.  Such as: "di Scott Davidson e..."s
 [and]
@@ -215,7 +218,7 @@ other = "."
 # This gets rendered under the title in the header of the page.  It needs to be a specific width, so if it exceeds the english width too much,
 # it might be best to leave it untranslated or figure out a way to condense it.  This is much "branding" as it is words.
 [product-tagline]
-other = "progetta, modella, presenta, analizza, realizza..."
+other = "progetta, modella, presenta, analizza, realizza"
 
 # This is the placeholder text in the search field on the top navbar
 [search-navbar]
@@ -259,7 +262,7 @@ other = "Prova"
 
 # The conjoiner before the Buy link in the video caption
 [caption-or-conjoiner]
-other = " o "
+other = "o "
 
 # Link title on homepage video captions
 [caption-buy]

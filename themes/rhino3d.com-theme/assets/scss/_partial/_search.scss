@@ -9,6 +9,33 @@
 	transition: 0.4s;
 }
 
+/* Collapsed search (opt-in via navSearchCollapsed site param):
+   only the magnifying glass shows; the text field stays in-flow and
+   expands leftward from the icon, since the search widget is anchored
+   to the right edge of the navbar row. */
+#sitesearch.search-collapsed {
+	#searchtext {
+		width: 0;
+		padding: 0;
+		opacity: 0;
+		pointer-events: none;
+		vertical-align: middle;
+		background-color: #ffffff;
+		/* positioned so z-index lifts it above the menu row it can
+		   overlap while open */
+		position: relative;
+		z-index: 1001;
+		transition: width 0.3s, opacity 0.3s;
+	}
+
+	&.expanded #searchtext {
+		width: 200px;
+		padding: 0 6px;
+		opacity: 1;
+		pointer-events: auto;
+	}
+}
+
 @media only screen and (max-width: $global-mobile-maxwidth) {
 	#sitesearch {
 		display: none;

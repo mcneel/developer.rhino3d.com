@@ -4,7 +4,7 @@ authors = [ "steve" ]
 categories = [ "Picking and Selection" ]
 description = "Demonstrates how to replace Rhino's color picking dialog."
 keywords = [ "replace", "rhinos", "color", "picking", "dialog" ]
-languages = [ "C#", "VB" ]
+languages = [ "C#" ]
 sdk = [ "RhinoCommon" ]
 title = "Replace the Color Picking Dialog"
 type = "samples/rhinocommon"
@@ -47,31 +47,6 @@ partial class Examples
 ```
 
 </div>
-
-
-<div class="codetab-content" id="vb">
-
-```vbnet
-Partial Friend Class Examples
-  Private Shared m_dlg As ColorDialog = Nothing
-
-  Public Shared Function ReplaceColorDialog(ByVal doc As RhinoDoc) As Result
-	Dialogs.SetCustomColorDialog(AddressOf OnSetCustomColorDialog)
-	Return Result.Success
-  End Function
-
-  Private Shared Sub OnSetCustomColorDialog(ByVal sender As Object, ByVal e As GetColorEventArgs)
-	m_dlg = New ColorDialog()
-	If m_dlg.ShowDialog(Nothing) = DialogResult.Ok Then
-	  Dim c = m_dlg.Color
-	  e.SelectedColor = System.Drawing.Color.FromArgb(c.Ab, c.Rb, c.Gb, c.Bb)
-	End If
-  End Sub
-End Class
-```
-
-</div>
-
 
 <div class="codetab-content" id="py">
 

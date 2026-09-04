@@ -8,7 +8,9 @@
     <h3>Section:</h3>
     <ul>
       {{ range .Site.Sections }}
+        {{- if ne .Section "kb" -}}
               <li><a href="{{ .Page.RelPermalink }}">{{ .Page.Title }}</a></li>
+        {{- end -}}
       {{ end }}
     </ul>
     {{ range $taxonomyname, $taxonomy := .Site.Taxonomies }}

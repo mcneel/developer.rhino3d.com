@@ -1,0 +1,80 @@
+// ==============================
+// Static (collapsed-by-default) site navigation
+// ==============================
+// Sites opt in by setting navBarShouldResize = false in their config,
+// which adds the .navbar-static class to #navbar (site-navigation.html)
+// and skips loading header-scroll-standard.js. Designed to pair with
+// navSearchCollapsed = true — the menu margins below assume the search
+// widget collapses to its magnifying-glass icon.
+//
+// :where() keeps every selector's specificity identical to the base
+// rules in _core/_navigation.scss, so this file wins over them purely
+// by import order (it is imported later in style.scss), while each
+// site's static/scss/_site-override.scss (imported last of all) can
+// still re-tune any value here the same way.
+//
+// Per-site tuning expected in _site-override.scss: #logo-title-text and
+// #logo-subtitle top/left (sized to each site's logo art), plus any
+// logo-size adjustments (e.g. Bongo renders its square logo smaller).
+
+:where(#navbar.navbar-static) #logo-container {
+	height: 55px;
+}
+
+:where(#navbar.navbar-static) #site-nav-logo {
+	transition: none;
+}
+
+// Collapsed-size type. Transitions only fire on media-query crossings
+// (no resize JS runs), so the title slides down gracefully when the
+// tagline hides at mid widths.
+:where(#navbar.navbar-static) #logo-title-text {
+	transition: top 0.4s;
+	font-size: 25px;
+}
+
+:where(#navbar.navbar-static) #logo-title-text-secondary {
+	transition: font-size 0.4s, opacity 0.4s;
+}
+
+:where(#navbar.navbar-static) #logo-subtitle {
+	transition: opacity 0.4s, visibility 0.4s;
+}
+
+@media screen and (min-width: $global-mobile-maxwidth + 1) {
+	// Uniform navbar height across the sites (desktop only — the mobile
+	// overlay menu needs the bar to grow when opened)
+	#navbar:where(.navbar-static) {
+		height: 68px;
+	}
+
+	// Menu row geometry. min-height pins the row so the bar cannot change
+	// height between login states (WWW-3377: the row otherwise stretches
+	// to the 24px logged-in avatar or the 31px logged-out "sign in" link).
+	// margin-right clears the collapsed search icon on the right.
+	:where(#navbar.navbar-static) .menu-items {
+		margin-right: 90px;
+		margin-top: -44px;
+		min-height: 31px;
+	}
+}
+
+// Mid widths: before the menu links reach the logo text, hide the
+// tagline, collapse the secondary title word (font-size -> 0 shrinks its
+// width smoothly so the protected mark tucks in behind the primary word),
+// and let the menu give up some width. Sites that recenter the title
+// vertically at these widths do so in their _site-override.scss (a theme
+// rule here could not out-cascade the site's base `top`).
+@media screen and (min-width: $global-mobile-maxwidth + 1) and (max-width: 1250px) {
+	:where(#navbar.navbar-static) #logo-title-text-secondary {
+		font-size: 0;
+		opacity: 0;
+	}
+	:where(#navbar.navbar-static) #logo-subtitle {
+		opacity: 0;
+		visibility: hidden;
+	}
+	:where(#navbar.navbar-static) .menu-items {
+		max-width: 70%;
+	}
+}

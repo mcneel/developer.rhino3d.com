@@ -1,0 +1,24 @@
+# Theme-level configuration, merged into each site's config.
+# Currently: the custom output formats that power llms.txt / llms-full.txt
+# (Generative Engine Optimization). Templates live in layouts/index.llms.txt and
+# layouts/index.llmsfull.txt; page selection is in partials/llms/eligible.html.
+# A site turns these on by adding them to its [languages.en.outputs] home list.
+
+[outputFormats.llms]
+  mediaType      = "text/plain"
+  baseName       = "llms"
+  isPlainText    = true
+  notAlternative = true      # keep it out of pages' alternate-format lists
+
+[outputFormats.llmsfull]
+  mediaType      = "text/plain"
+  baseName       = "llms-full"
+  isPlainText    = true
+  notAlternative = true
+
+# Sections dropped from the llms files by default. A site may override this whole
+# list by setting [params.llms] excludeSections in its own config. Editorial,
+# taxonomy, search, and utility sections are excluded; block_webcrawlers pages and
+# drafts are excluded automatically regardless of section (see the eligible partial).
+[params.llms]
+  excludeSections = ["admin", "searchresults", "searchresults-rhino", "categories", "authors", "e-news", "404", "maintenance", "my-account", "download-old"]

@@ -1,0 +1,13 @@
+{{- /*
+  learn.html — "What you'll learn" block for the modern_style guide theme.
+  Call it with the PERCENT form (percent-brace) so the inner markdown, and any
+  nested shortcodes like rhino-command, are fully rendered. Write the items as a
+  normal numbered or bulleted markdown list between the tags. Optional title
+  attribute (default "What you'll learn"). The title is a <p>, not a heading, so
+  it stays out of the TOC and the section numbering.
+*/ -}}
+{{- $title := .Get "title" | default "What you'll learn" -}}
+<div class="modern-learn">
+  <p class="modern-learn__title">{{ $title }}</p>
+  {{ .Inner }}
+</div>

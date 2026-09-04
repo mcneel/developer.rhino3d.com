@@ -1,0 +1,16 @@
+{{- /*
+  modern-toc.html — sticky numbered "On this page" nav for the modern_style
+  theme. Reuses toc-inner.html (which parses headings out of .Content into the
+  standard #TableOfContents markup); numbering and the active marker are handled
+  in CSS + modern-scripts.html. An optional parent back-link is shown when
+  page_options.toc_back is set.
+*/ -}}
+<nav class="modern-toc" aria-label="On this page">
+  <p class="modern-toc__label">On this page</p>
+  {{- if .Params.page_options.toc_back }}
+  <a class="modern-toc__back" href="{{ .Parent.RelPermalink }}">&lt; {{ .Parent.Title }}</a>
+  {{- end }}
+  <div id="TableOfContents" class="scrollbar">
+    {{- partial "toc-inner.html" . -}}
+  </div>
+</nav>

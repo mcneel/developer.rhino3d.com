@@ -2,7 +2,10 @@
 {{- $lang := .Page.Language.Lang -}}
 {{- $dir := .Page.File.Dir -}}
 {{- $path := printf "/%s/%s%s" $lang $dir $file -}}
-<video controls mute autoplay loop width="100%">
+{{- /* Optional width (e.g. "500px"); defaults to full column width. */ -}}
+{{- $width := .Get "width" -}}
+{{- /* controls default on; pass controls="false" to hide them (autoplay demos). */ -}}
+<video{{ if not (eq (.Get "controls") "false") }} controls{{ end }} muted autoplay loop playsinline{{ with $width }} style="width: 100%; max-width: {{ . }};"{{ else }} width="100%"{{ end }}>
   <source src="{{ $path }}" type="video/mp4">
   Your browser does not support the video tag.
 </video>

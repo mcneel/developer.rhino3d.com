@@ -8,6 +8,15 @@ Run every runnable code sample on the doc page at `$ARGUMENTS` through Rhino —
 
 If no path is given in `$ARGUMENTS`, ask the user which page.
 
+## Choose mode
+
+Before doing any work, ask the user with AskUserQuestion which mode they want:
+
+- **Unattended (recommended for batches)** — verify programmatically yourself: pre-stage geometry via the MCP, pre-select objects (`sc.doc.Objects.Select(id)`) so `GetObject` prompts auto-resolve, then assert correctness by inspecting doc state via the API. Only escalate to the user when there's a genuinely visual artifact (conduit overlay, dimension drawn, dynamic-draw preview, color/display change). Default for sweeps over many samples.
+- **Interactive** — run each sample, give a one-line "you should see X", and ask "Look right?" after every one. Default for single-page or visual-heavy verification.
+
+Pick the mode once at the start and stick to it for the run unless the user changes it mid-stream.
+
 ## Setup
 
 1. Use TodoWrite to track each sample.
@@ -17,7 +26,8 @@ If no path is given in `$ARGUMENTS`, ask the user which page.
    - Empty fences
    - Samples the prose says don't run in the script editor (e.g. `LocalizeAndRestore`)
    - Pages that look orphaned (grep for inbound links first if uncertain)
-4. The user verifies visually — don't try to assert correctness from stdout. After each run, give a one-line "you should see X" and ask "Look right?".
+4. In **interactive** mode: the user verifies visually — don't try to assert correctness from stdout. After each run, give a one-line "you should see X" and ask "Look right?".
+   In **unattended** mode: verify programmatically (object counts, return values, geometric properties). Only ask the user when the sample's whole point is visual output you can't query from the API.
 
 ## Auto-close wrapper
 
@@ -71,13 +81,15 @@ For each runnable sample:
 
 1. TodoWrite: mark in_progress.
 2. Apply the auto-close wrapper if it's a modal dialog.
-3. Run via the appropriate MCP tool.
-4. If stdout shows an error or exception:
+3. **Unattended only:** pre-stage the geometry the sample expects (curves, surfaces, meshes, layers, blocks) and pre-select where the sample calls `GetObject`/`GetOneObject` so prompts auto-resolve. If the sample is pure logic (no UI), exercise the inner function directly with synthetic inputs.
+4. Run via the appropriate MCP tool.
+5. If stdout shows an error or exception:
    - Diagnose
    - Fix the source code in the doc with Edit
    - Re-run
-5. Print one sentence telling the user what they should see, then ask "Look right?" (or similar).
-6. Wait for user confirmation. "next" / "yep" / "great" → proceed. Anything else → dig in.
+6. Confirm the result:
+   - **Unattended:** check doc state / return values via the API (`sc.doc.Objects` counts, geometric properties, etc.). If green, mark done silently. Only ask the user for visual-only artifacts (conduit text, dimension drawn, dynamic preview).
+   - **Interactive:** print one sentence telling the user what they should see, ask "Look right?", and wait for "yep"/"next"/etc. before continuing.
 7. TodoWrite: mark completed.
 
 ## Wrap-up

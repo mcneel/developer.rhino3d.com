@@ -8,7 +8,7 @@ other = "下载"
 other = "作品"
 
 [features]
-other = "功能"
+other = "特征"
 
 [news]
 other = "新闻"
@@ -17,7 +17,7 @@ other = "新闻"
 other = "社区"
 
 [learn]
-other = "学习"
+other = "教学"
 
 [support]
 other = "支持"
@@ -38,13 +38,13 @@ other = "登录"
 other = "登出"
 
 [sign-in-title]
-other = "登录以管理您的账户、授权与协作团队"
+other = "注册以管理您的账户、授权与协作团队"
 
 [Icon]
 other = "图标"
 
 [Description]
-other = "描述"
+other = "介绍"
 
 [Toolbars]
 other = "工具列"
@@ -53,10 +53,10 @@ other = "工具列"
 other = "功能表"
 
 [Crease-Splitting]
-other = "Crease Splitting"
+other = "锐边分割"
 
 [History]
-other = "记录建构历史"
+other = "历史记录"
 
 [enabled]
 other = "启用"
@@ -70,11 +70,11 @@ other = "包括:"
 [Rhino-Commands]
 other = "Rhino 指令"
 
-# 请勿翻译 {{ }} 占位符的内容。它会被模板替换为正确的版本。
+# DO NOT TRANSLATE the contents of {{ }} placeholder.  它会由模板替换为正确的版本。
 [NEW-in-Vx]
-other = "{{ .Params.included_in.since }} 新功能"
+other = "新功能 {{ .Params.included_in.since }}"
 
-# 请勿翻译 [VERSION] 占位符的内容。它会被模板替换为正确的版本。
+# DO NOT TRANSLATE the [VERSION] placeholder.  它会由模板替换为正确的版本。
 [New-in-N]
 other = "[VERSION] 新功能"
 
@@ -88,23 +88,23 @@ other = "Rhino 8 新功能"
 other = "所有详情..."
 
 [bob-loves-revit]
-other = "Bob ❤️s Revit "
+other = "Bob ❤️s Revit 😘"
 
 # 这可以在某些功能页面中做为标题显示
 [new-in-rhino-7]
 other = "Rhino 7 新功能"
 
-# context: 有时在页面标题下显示的署名副标题。例如"作者：Scott Davidson..."
+# context: 有时在页面标题下显示的署名副标题。  例如 "作者：Scott "
 [by]
-other = "by"
+other = "Davidson..."
 
-# context: 有时在页面标题下显示的副标题，显示页面的最新更新时间
+# 内容: 有时在页面标题下显示的副标题，显示页面的最新更新时间
 [Last-updated]
 other = "最近更新:"
 
-# context: 有时会在页面标题下显示的署名副标题，并与其他作者一起出现。例如"作者：Scott Davidson 和..."
+# 内容: 有时会在页面标题下显示的署名副标题，并与其他作者一起出现。  例如，"作者：Scott Davidson 和..."
 [and]
-other = "and"
+other = "和"
 
 # context: 页面底部的编辑菜单
 [Edit-this-page]
@@ -120,7 +120,7 @@ other = "编辑数据"
 
 # context: 页面底部的编辑菜单
 [Admin]
-other = "管理员"
+other = "管理"
 
 # context: 页脚
 [Shop-online]
@@ -132,7 +132,7 @@ other = "或者搜索"
 
 # context: 页脚
 [find-a-reseller]
-other = "查找经销商"
+other = "查找您附近的经销商"
 
 # context: 页脚
 [Reseller]
@@ -140,7 +140,7 @@ other = "经销商"
 
 # context: 页脚
 [Privacy-Policy]
-other = "隐私政策"
+other = "隐私权政策"
 
 # context: 页脚
 [About]
@@ -170,13 +170,13 @@ other = "仅限 macOS"
 other = "下载 Rhino"
 
 [Download-Rhino-Both]
-other = "[LINK]为 Windows 或 Mac 下载 [PRODUCT] [VERSION] [TYPE] [/LINK]。"
+other = "[LINK]下载 [PRODUCT] [VERSION] [TYPE] 的 Windows 或 Mac 版本[/LINK]。"
 
 [Download-Rhino-Windows]
-other = "[LINK]为 Windows 下载 [PRODUCT] [VERSION] [TYPE] [/LINK]。"
+other = "[LINK]下载 [PRODUCT] [VERSION] [TYPE] 的 Windows 版本[/LINK]。"
 
 [Download-Rhino-Mac]
-other = "[LINK]为 Mac 下载 [PRODUCT] [VERSION] [TYPE] [/LINK]。"
+other = "[LINK]下载 [PRODUCT] [VERSION] [TYPE] 的 Mac 版本[/LINK]。"
 
 [Rhino]
 other = "Rhino"
@@ -188,13 +188,13 @@ other = "名称"
 other = "文件扩展名"
 
 [Open-Import]
-other = "打开/导入"
+other = "打开/输入"
 
 [Save-Export]
-other = "保存/导出"
+other = "保存/输出"
 
 [Notes]
-other = "附注"
+other = "提示"
 
 [Latest-Updates]
 other = "最近更新"
@@ -215,10 +215,10 @@ other = "Windows | Mac"
 [period-the-punctuation-mark]
 other = "."
 
-# 这将在页面头部的标题下呈现。它需要一个特定的宽度，所以如果它超过了英语的宽度太多，
-# 最好将其保持不翻译，或者找出一种方式将其缩短。
+# 此内容会显示在页面标题下方的页眉区域。  由于其显示宽度有固定限制，如果翻译后的文字比英文长太多，
+# 建议保留英文，或尽量采用更精炼的译法。  这不仅是文字内容，也是 "品牌形象" 的一部分。
 [product-tagline]
-other = "设计，造型，提案，分析，实现..."
+other = "设计 · 造型 · 提案 · 分析 · 实现"
 
 # 这是顶部导航栏搜索字段中的占位符文本
 [search-navbar]
@@ -246,15 +246,15 @@ other = "Rhino 8"
 
 # 首页副标题说明
 [caption-rhino-8-subtitle]
-other = "Charging Forward"
+other = "迈向未来"
 
 # Rhino 8 字幕的子标题
 [caption-rhino-8-details]
-other = "现在可提供 ShrinkWrap、SubD Creases、Mac Speed Boost 等功能。"
+other = "现在可提供收缩包裹、细分锐边、Mac 速度提升等功能。"
 
 # 首页视频字幕的链接标题
 [caption-learn-more]
-other = "了解更多"
+other = "了解详情"
 
 # 首页视频字幕的链接标题
 [caption-try]
@@ -302,11 +302,11 @@ other = "新功能"
 
 # 学习页面的精选按钮和标签
 [featured]
-other = "功能"
+other = "专题"
 
 # 学习页面的所有按钮和标签
 [all]
-other = "所有"
+other = "全部"
 
 # 过滤学习页面上的文本字段
 [filter]

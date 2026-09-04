@@ -1,4 +1,4 @@
-﻿import rhinoscriptsyntax as rs
+import rhinoscriptsyntax as rs
 
 def WhoFramedTheSurface():
     surface_id = rs.GetObject("Surface to frame", 8, True, True)
