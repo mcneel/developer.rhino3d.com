@@ -8,7 +8,7 @@ type = "centered"
 [page_options]
 block_webcrawlers = true
 
-[_build]
+[build]
 list = "never"
 +++
 
