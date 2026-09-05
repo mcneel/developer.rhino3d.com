@@ -75,15 +75,15 @@ howler-0.4.0-rh8-any.yak
 
 ## Distributions
 
-For a single package version it's possible to upload multiple "distributions" to target different Rhino versions and platforms. This information is encoded in a "distribution tag" that is appended to the filename of the package, e.g. _example-1.0.0-rh7-win.yak_.
+For a single package version it's possible to upload multiple "distributions" to target different Rhino versions and platforms. This information is encoded in a "distribution tag" that is appended to the filename of the package, e.g. _example-1.0.0-rh8-win.yak_.
 
 The distribution tag consists of an "app" identifier and version, and a platform. Currently the only supported apps are `rh` and `any` – Grasshopper ships with Rhino so it doesn't need its own identifier. Unless the app is `any`, an app version must be included in the form `<major>_<minor>`. The minor version is optional and is useful if a plug-in relies on an SDK change made in a service release. The platform can be `win`, `mac` or `any` (i.e. cross-platform).
 
 A few examples...
 
-* `rh7-win` - Rhino 7 for Windows >= 7.0
-* `rh6_14-mac` - Rhino 6 for Mac >= 6.14
-* `rh6_9-any` - Rhino 6 (both platforms) >= 6.9
+* `rh8-win` - Rhino 8 for Windows >= 8.0
+* `rh7_14-mac` - Rhino 7 for Mac >= 7.14
+* `rh7_9-any` - Rhino 7 (both platforms) >= 7.9
 * `any-any` - anything goes! (existing behaviour)
 
 When installing packages, the package manager checks whether a compatible distribution exists for the requested version. Only package versions that have at least one compatible distribution will show up when the `_PackageManager` command is run in Rhino 7+.
