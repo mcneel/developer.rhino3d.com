@@ -8,7 +8,6 @@ sdk = [ "Yak" ]
 title = "Erstellen eines Grasshopper-Plug-in-Pakets"
 type = "guides"
 weight = 10
-override_last_modified = "2021-02-04T18:27:17Z"
 
 [admin]
 TODO = ""

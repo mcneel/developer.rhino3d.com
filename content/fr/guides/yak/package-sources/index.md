@@ -8,7 +8,6 @@ sdk = [ "Yak" ]
 title = "Répertoires de paquets personnalisés"
 type = "guides"
 weight = 20
-override_last_modified = "2021-02-12T11:31:53Z"
 
 [admin]
 TODO = ""

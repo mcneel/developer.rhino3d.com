@@ -8,7 +8,6 @@ sdk = [ "Yak" ]
 title = "Inviare un pacchetto al server"
 type = "guides"
 weight = 20
-override_last_modified = "2020-11-12T12:17:36Z"
 
 [admin]
 TODO = ""

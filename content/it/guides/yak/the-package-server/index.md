@@ -8,7 +8,6 @@ sdk = [ "Yak" ]
 title = "Il server dei pacchetti"
 type = "guides"
 weight = 1
-override_last_modified = "2020-08-26T11:56:44Z"
 
 [admin]
 TODO = ""

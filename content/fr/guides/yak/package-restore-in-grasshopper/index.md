@@ -8,7 +8,6 @@ sdk = [ "Yak" ]
 title = "Restauration de paquets dans Grasshopper"
 type = "guides"
 weight = 1
-override_last_modified = "2020-10-21T15:58:32Z"
 
 [admin]
 TODO = ""

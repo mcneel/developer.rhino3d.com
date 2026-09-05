@@ -8,7 +8,6 @@ sdk = [ "Yak" ]
 title = "Le manifeste du paquet"
 type = "guides"
 weight = 1
-override_last_modified = "2021-07-21T10:09:56Z"
 
 [admin]
 TODO = ""
