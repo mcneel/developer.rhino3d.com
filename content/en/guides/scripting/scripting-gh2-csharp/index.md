@@ -309,33 +309,110 @@ Console.WriteLine($"A is {A}");
 
 ## Debugging Scripts
 
-Set a breakpoint and choose **Run > Debug** in the editor to step through your script. See [Debugging Your Scripts](/guides/scripting/editor-debug).
+Debugging pauses your script mid-solution so you can look at your values and step through your code line by line.
 
-Debug runs are single-threaded by default, so iterations stop in order even when the script itself is set to run on **Many** threads.
+Click the gutter to the left of a line to add a **Breakpoint**:
+
+<!-- SCREENSHOT: script in the component editor with a breakpoint set in the gutter -->
+![](gh2-csharp-debug-breakpoint.png)
+
+The **Run** button becomes **Debug** once the script has a breakpoint. Click it and the component solves until it reaches that line, then stops with the line marked and the debugging panels open:
 
 <!-- SCREENSHOT: GH2 C# script paused on a breakpoint with the debugging panels open -->
 ![](gh2-csharp-debug.png)
 
+Debug runs are single-threaded by default, so iterations stop in order even when the script itself is set to run on **Many** threads. See **Debug Threading** in [Threading](#threading).
+
+### Debug Controls
+
+The debug buttons on the editor dashboard control what happens next:
+
+- **Continue** runs until the next breakpoint, which is often the next iteration of the same component
+- **Step Over** runs the current line
+- **Step Into** steps into the method called on the current line
+- **Step Out** runs the rest of the current method and stops where it was called
+- **Stop** ends the debug run
+
+<!-- SCREENSHOT: debug control buttons on the editor dashboard -->
+![](gh2-csharp-debug-controls.png)
+
+### Variables Tray
+
+**Variables** tray lists the values your script is holding at the line it stopped on, including the component inputs. Expand a value to see its members, or the items of a collection:
+
+<!-- SCREENSHOT: variables tray showing inputs and locals, one value expanded -->
+![](gh2-csharp-debug-variables.png)
+
+Pin a value to keep watching it as you step and as iterations go by.
+
+### Call Stack Tray
+
+**Call Stack** tray shows which methods the script is inside. `RunScript` sits at the bottom of a paused component, with any method it called above it. Select a frame to see its values in the **Variables** tray:
+
+<!-- SCREENSHOT: call stack tray with RunScript and a called method listed -->
+![](gh2-csharp-debug-callstack.png)
+
+### Call Stacks On Many Threads
+
+With **Debug Threading** set to **Many**, more than one iteration of your script can be paused at the same time. **Call Stack** tray keeps them apart. Each run is listed with the threads it is using, and each thread carries its own frames:
+
+<!-- SCREENSHOT: call stack tray with two threads listed, each with its own frames -->
+![](gh2-csharp-debug-threads.png)
+
+Every row shows its own state, so you can see which thread is paused on a breakpoint and which is still running, completed, or errored.
+
+Select a frame to see that thread's values in the **Variables** tray. The same variable can hold a different value on each thread, which is the point of looking at them separately.
+
+**Toggle Follow Locks** on the panel header shows a lock on each run. Lock a run and the debugger stays with it instead of following whichever thread stops next:
+
+<!-- SCREENSHOT: Follow Locks enabled with a lock set on one run in the call stack tray -->
+![](gh2-csharp-debug-locks.png)
+
+Unless you are chasing a problem that only happens across threads, leave **Debug Threading** at **One**. Iterations then pause in order and there is a single call stack to read.
+
+For the panels themselves, see [Debugging Your Scripts](/guides/scripting/editor-debug).
+
 ## NuGet Packages
 
-Scripts can use packages published on [NuGet](https://www.nuget.org). Use **Install Package** on the editor dashboard to search for one, and a reference is added to your script:
+Your script can use third-party packages published on [NuGet](https://www.nuget.org). Choose **Install Package** on the editor dashboard, then search for the package or type its name and version:
+
+<!-- SCREENSHOT: Install Package dialog with a NuGet package searched -->
+![](gh2-csharp-packages.png)
+
+Leave **Add Package Reference to Script** checked. The package is then written into the script text as a `#r` line, so the script carries the list of packages it needs. Someone opening your definition gets the packages installed for them:
 
 ```csharp
 #r "nuget: RestSharp, 110.2.0"
+
+using System;
+using RestSharp;
+
+var client = new RestClient("https://httpbin.org");
+var response = client.Get(new RestRequest("get"));
+
+A = response.Content;
 ```
 
-See [NuGet Packages](/guides/scripting/scripting-csharp/#nuget-packages).
+The `#r` line follows the package reference format on the NuGet website, so you can also type it by hand.
 
 ## Assembly References
 
-Scripts can also reference .NET assemblies directly, by name if the assembly is already loaded in Rhino, or by path:
+Scripts can reference .NET assemblies directly. Choose **Install Package** and change **Package Source** to **DLL Reference**:
+
+<!-- SCREENSHOT: Install Package dialog with Package Source set to DLL Reference -->
+![](gh2-csharp-assembly.png)
+
+If the assembly is already loaded in Rhino, reference it by name. Include the extension:
 
 ```csharp
 #r "System.Text.Json.dll"
-#r "/path/to/my/assemblies/MySharedAssembly.dll"
 ```
 
-See [Assembly References](/guides/scripting/scripting-csharp/#assembly-references).
+You can also give a relative or absolute path to the assembly file. Relative paths are resolved next to the definition:
+
+```csharp
+#r "/path/to/my/assemblies/MySharedAssembly.dll"
+```
 
 ## Template Scripts
 
