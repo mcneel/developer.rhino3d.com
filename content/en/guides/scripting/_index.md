@@ -67,8 +67,9 @@ since = 8
 
 ### C# Scripting
 
-- Scripting: C# {{% comingsoon-label %}}  <!-- [C# Scripting](/guides/scripting/scripting-csharp) -->
+- [Scripting: C#](/guides/scripting/scripting-csharp)
 - [Grasshopper Scripting: C#](/guides/scripting/scripting-gh-csharp)
+- [Grasshopper 2 Scripting: C#](/guides/scripting/scripting-gh2-csharp) *(Rhino 9)*
 
 ### Editor Features
 

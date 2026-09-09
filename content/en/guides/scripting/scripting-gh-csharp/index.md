@@ -516,6 +516,13 @@ If a value is a collection of other values, you can expand the variable to see e
 
 ### Watch Tray
 
+{{< call-out "note" "Changed in Rhino 9" >}}
+
+*Watch* tray is removed in Rhino 9. Watching a variable is now done by pinning it in the *Variables* tray. See [Debugging Your Scripts](/guides/scripting/editor-debug).
+
+{{< /call-out >}}
+
+
 *Watch* tray is very similar to the variables tray. The primary difference is that *Watch* tray only shows the variables that you have specifically added to watch. Use the **Add Expression** button on the tray toolbar to add a new variable to watch. Hit Enter on the added *Expression* item to edit and type the variable name:
 
 ![](csharp-component-debugging-11.png)
