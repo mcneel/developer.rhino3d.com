@@ -96,7 +96,7 @@ toc_type = "single"
 - <!-- [Explorer](/guides/scripting/editor-explorer) --> Explorer {{% comingsoon-label %}}
 - <!-- [Search & Replace](/guides/scripting/editor-search) --> Search & Replace {{% comingsoon-label %}}
 - [Terminal](/guides/scripting/editor-terminal)
-- <!-- [Problems Tray](/guides/scripting/editor-problems) --> Problems Tray {{% comingsoon-label %}}
+- [Problems](/guides/scripting/editor-problems)
 - <!-- [Debugging Your Scripts](/guides/scripting/editor-debug) --> Debugger {{% comingsoon-label %}}
 - <!-- [Templates](/guides/scripting/editor-templates) --> Templates {{% comingsoon-label %}}
 - <!-- [Examples](/guides/scripting/editor-examples) --> Examples {{% comingsoon-label %}}
