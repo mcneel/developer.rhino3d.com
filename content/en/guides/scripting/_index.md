@@ -77,7 +77,7 @@ since = 8
 - <!-- [Search & Replace](/guides/scripting/editor-search) --> Search & Replace {{% comingsoon-label %}}
 - [Terminal](/guides/scripting/editor-terminal)
 - [Problems](/guides/scripting/editor-problems)
-- <!-- [Debugging Your Scripts](/guides/scripting/editor-debug) --> Debugger {{% comingsoon-label %}}
+- [Debugging Your Scripts](/guides/scripting/editor-debug)
 - [Templates](/guides/scripting/editor-templates)
 - [Examples](/guides/scripting/editor-examples)
 - [Tests](/guides/scripting/editor-tests) *(Rhino 9)*
