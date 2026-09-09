@@ -113,12 +113,9 @@ toc_type = "single"
 
 - [ScriptEditor Macros](/guides/scripting/advanced-scripteditor-macros)
 - [Language Initialization](/guides/scripting/advanced-langinit)
-- <!-- [CPython Runtime and Language Server](/guides/scripting/advanced-pyruntime) --> CPython Runtime and Language Server {{% comingsoon-label %}}
 - [Python Path Files](/guides/scripting/advanced-pthfiles)
 - [Python Package Environments](/guides/scripting/advanced-pyvenvs)
-- <!-- [Language Libraries](/guides/scripting/advanced-libraries) --> Language Libraries {{% comingsoon-label %}}
 - [Asynchronous Execution](/guides/scripting/advanced-async)
-- <!-- [VisualStudioCode Extension](/guides/scripting/advanced-vscode) --> VisualStudioCode Extension {{% comingsoon-label %}}
 - [RhinoCode Command Line Interface](/guides/scripting/advanced-cli)
 <!-- [RhinoCode API](/guides/scripting/advanced-core-api) -->
 <!-- [RhinoCodeEditor API](/guides/scripting/advanced-editor-api) -->
