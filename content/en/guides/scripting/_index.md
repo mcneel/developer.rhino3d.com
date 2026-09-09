@@ -80,7 +80,7 @@ since = 8
 - <!-- [Debugging Your Scripts](/guides/scripting/editor-debug) --> Debugger {{% comingsoon-label %}}
 - <!-- [Templates](/guides/scripting/editor-templates) --> Templates {{% comingsoon-label %}}
 - <!-- [Examples](/guides/scripting/editor-examples) --> Examples {{% comingsoon-label %}}
-- <!-- [Help](/guides/scripting/editor-help) --> Help {{% comingsoon-label %}}
+- [Help](/guides/scripting/editor-help)
 - [Options](/guides/scripting/editor-configs)
 - [Logs](/guides/scripting/editor-logs)
 
