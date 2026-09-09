@@ -65,6 +65,25 @@ Choose **Tools > Reload Python 3 (CPython) Engine** or **Tools > Reload Python 2
 <!-- SCREENSHOT: Tools menu open showing the two engine reload items -->
 ![](python-engines.png)
 
+## Scripts That Run on Both
+
+For a script that has to work under either runtime, `rhinocompat` carries the differences:
+
+```python
+import rhinocompat as compat
+from rhinocompat import PY3, RANGE
+
+for i in RANGE(10):
+    pass
+
+value = compat.ENUM_NONE(Rhino.Geometry.Mesh.MeshType)
+
+if PY3:
+    pass
+```
+
+It also has `STRING_TYPE`, `IS_STRING_INSTANCE()`, and `ITERATOR2LIST()` for the cases above.
+
 ## Running Scripts From Rhino
 
 Scripts do not have to be run from the editor. The `ScriptEditor` command can run a script file from the Rhino prompt, a macro, a toolbar button, or an alias:
