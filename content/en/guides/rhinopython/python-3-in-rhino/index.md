@@ -110,6 +110,13 @@ Details are in the component guides:
 - [Grasshopper Scripting: Python](/guides/scripting/scripting-gh-python)
 - [Grasshopper 2 Scripting: Python](/guides/scripting/scripting-gh2-python)
 
+## Publishing Scripts as Plugins
+
+Scripts do not have to stay scripts. The Script Editor can gather them into a project and build that project into a Rhino or Grasshopper plugin, so your scripts become Rhino commands and Grasshopper components that others install like any other plugin.
+
+- [Creating Rhino/Grasshopper Script Plugins](/guides/scripting/projects-create) for making a project, and adding commands and components to it
+- [Publishing Rhino/Grasshopper Script Plugins](/guides/scripting/projects-publish) for building and sharing the plugin
+
 ## Moving a Script to Python 3
 
 Most of the work is ordinary Python 2 to Python 3 work: `print` is a function, `/` on two integers no longer truncates, `range` replaces `xrange`, and `str` replaces `basestring`. The [Python documentation](https://docs.python.org/3/whatsnew/3.0.html) covers the language changes.
@@ -146,11 +153,3 @@ class MyConduit(Rhino.Display.DisplayConduit):
 ```
 
 Without it, the object is not fully constructed and calls into it fail.
-
-For a script that has to work under either runtime, see [Scripts That Run on Both](/guides/scripting/scripting-python/#scripts-that-run-on-both).
-
-## Where To Go Next
-
-- [Scripting: Python](/guides/scripting/scripting-python) for writing, running, and debugging scripts
-- [Python Package Environments](/guides/scripting/advanced-pyvenvs) for packages that clash
-- [Python Path Files](/guides/scripting/advanced-pthfiles) for adding module search paths
