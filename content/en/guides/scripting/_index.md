@@ -77,7 +77,7 @@ since = 8
 - <!-- [Search & Replace](/guides/scripting/editor-search) --> Search & Replace {{% comingsoon-label %}}
 - [Terminal](/guides/scripting/editor-terminal)
 - <!-- [Problems Tray](/guides/scripting/editor-problems) --> Problems Tray {{% comingsoon-label %}}
-- <!-- [Debugging Your Scripts](/guides/scripting/editor-debug) --> Debugger {{% comingsoon-label %}}
+- [Debugging Your Scripts](/guides/scripting/editor-debug)
 - <!-- [Templates](/guides/scripting/editor-templates) --> Templates {{% comingsoon-label %}}
 - <!-- [Examples](/guides/scripting/editor-examples) --> Examples {{% comingsoon-label %}}
 - <!-- [Help](/guides/scripting/editor-help) --> Help {{% comingsoon-label %}}
