@@ -93,13 +93,14 @@ toc_type = "single"
 ### Editor Features
 
 - [Editing Features](/guides/scripting/editor-editing)
-- <!-- [Explorer](/guides/scripting/editor-explorer) --> Explorer {{% comingsoon-label %}}
+- [Explorer](/guides/scripting/editor-explorer)
 - <!-- [Search & Replace](/guides/scripting/editor-search) --> Search & Replace {{% comingsoon-label %}}
 - [Terminal](/guides/scripting/editor-terminal)
 - <!-- [Problems Tray](/guides/scripting/editor-problems) --> Problems Tray {{% comingsoon-label %}}
 - <!-- [Debugging Your Scripts](/guides/scripting/editor-debug) --> Debugger {{% comingsoon-label %}}
-- <!-- [Templates](/guides/scripting/editor-templates) --> Templates {{% comingsoon-label %}}
-- <!-- [Examples](/guides/scripting/editor-examples) --> Examples {{% comingsoon-label %}}
+- [Templates](/guides/scripting/editor-templates)
+- [Examples](/guides/scripting/editor-examples)
+- [Tests](/guides/scripting/editor-tests) *(Rhino 9)*
 - <!-- [Help](/guides/scripting/editor-help) --> Help {{% comingsoon-label %}}
 - [Options](/guides/scripting/editor-configs)
 - [Logs](/guides/scripting/editor-logs)
