@@ -74,7 +74,7 @@ since = 8
 
 - [Editing Features](/guides/scripting/editor-editing)
 - <!-- [Explorer](/guides/scripting/editor-explorer) --> Explorer {{% comingsoon-label %}}
-- <!-- [Search & Replace](/guides/scripting/editor-search) --> Search & Replace {{% comingsoon-label %}}
+- [Search & Replace](/guides/scripting/editor-search)
 - [Terminal](/guides/scripting/editor-terminal)
 - <!-- [Problems Tray](/guides/scripting/editor-problems) --> Problems Tray {{% comingsoon-label %}}
 - <!-- [Debugging Your Scripts](/guides/scripting/editor-debug) --> Debugger {{% comingsoon-label %}}
