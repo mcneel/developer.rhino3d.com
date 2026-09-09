@@ -82,8 +82,9 @@ toc_type = "single"
 
 ### Python Scripting
 
-- Scripting: Python {{% comingsoon-label %}}
+- [Scripting: Python](/guides/scripting/scripting-python)
 - [Grasshopper Scripting: Python](/guides/scripting/scripting-gh-python)
+- [Grasshopper 2 Scripting: Python](/guides/scripting/scripting-gh2-python) *(Rhino 9)*
 
 ### C# Scripting
 

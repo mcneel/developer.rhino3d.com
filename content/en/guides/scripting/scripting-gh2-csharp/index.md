@@ -81,7 +81,7 @@ Component options are in the component panel. The **Script** category has:
 
 **One** is the default because scripts that run on many threads at once are harder to reason about. Iterations no longer run in order, and anything your script shares between them has to be written carefully.
 
-**Debug Threading** sets the same choice for debug runs, and is also **One** by default. Stepping through a script while several iterations run at once is confusing, so debug runs stay single-threaded even when the script is set to **Many**:
+**Debug Threading** sets the same choice for debug runs and defaults to **One**, to keep debugging simple. Switch it to **Many** only when you are sure that helps, since stepping through a script while several iterations run at once is confusing:
 
 <!-- SCREENSHOT: component panel showing Threading and Debug Threading option bars -->
 ![](gh2-csharp-threading.png)
