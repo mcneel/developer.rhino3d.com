@@ -6273,7 +6273,7 @@
         "Signature": "UnitDistanceDisplayPrecision(precision=None, model_units=True)",
         "Description": "Return or set the document's distance display precision",
         "HasArguments": true,
-        "ArgumentDesc": "precision (number, optional): The distance display precision.  If the current distance display mode is Decimal, then precision is the number of decimal places.\n                              If the current distance display mode is Fractional (including Feet and Inches), then the denominator = (1/2)^precision.\n                              Use UnitDistanceDisplayMode to get the current distance display mode.\nmodel_units (bool, optional): Return or modify the document's model units (True) or the document's page units (False). The default is True.",
+        "ArgumentDesc": "precision (number, optional): The distance display precision. Valid values are >= 0 and <= 20. If the current distance display mode is Decimal, then precision is the number of decimal places.\n                              If the current distance display mode is Fractional (including Feet and Inches), then the denominator = (1/2)^precision.\n                              Use UnitDistanceDisplayMode to get the current distance display mode.\nmodel_units (bool, optional): Return or modify the document's model units (True) or the document's page units (False). The default is True.",
         "Returns": "number: If precision is not specified, the current distance display precision if successful. If precision is specified, the previous distance display precision if successful. If not successful, or on error.",
         "ExampleString": "import rhinoscriptsyntax as rs\nprecision = 3\nrs.UnitDistanceDisplayPrecision( precision )",
         "SeeAlso": [
@@ -10693,7 +10693,7 @@
         "Signature": "AddMesh(vertices, face_vertices, vertex_normals=None, texture_coordinates=None, vertex_colors=None)",
         "Description": "Add a mesh object to the document",
         "HasArguments": true,
-        "ArgumentDesc": "vertices ([point, ...]) list of 3D points defining the vertices of the mesh\nface_vertices ([[number, number, number], [number, number, number, number], ...]) list containing lists of 3 or 4 numbers that define the\n              vertex indices for each face of the mesh. If the third a fourth vertex\n               indices of a face are identical, a triangular face will be created.\nvertex_normals ([vector, ...], optional) list of 3D vectors defining the vertex normals of\n  the mesh. Note, for every vertex, there must be a corresponding vertex\n  normal\ntexture_coordinates ([[number, number], [number, number], [number, number]], ...], optional): list of 2D texture coordinates. For every\n  vertex, there must be a corresponding texture coordinate\nvertex_colors ([color, ...]) a list of color values. For every vertex,\n  there must be a corresponding vertex color",
+        "ArgumentDesc": "vertices ([point, ...]): list of 3D points defining the vertices of the mesh\nface_vertices ([[number, number, number], [number, number, number, number], ...]): list containing lists of 3 or 4 numbers that define the\n  vertex indices for each face of the mesh. If the third and fourth vertex\n  indices of a face are identical, a triangular face will be created.\nvertex_normals ([vector, ...], optional): list of 3D vectors defining the vertex normals of\n  the mesh. Note, for every vertex, there must be a corresponding vertex\n  normal\ntexture_coordinates ([[number, number], ...], optional): list of 2D texture coordinates. For every\n  vertex, there must be a corresponding texture coordinate\nvertex_colors ([color, ...], optional): a list of color values. For every vertex,\n  there must be a corresponding vertex color",
         "Returns": "guid: Identifier of the new object if successful\nNone: on error",
         "ExampleString": "import rhinoscriptsyntax as rs\nvertices = []\nvertices.append((0.0,0.0,0.0))\nvertices.append((5.0, 0.0, 0.0))\nvertices.append((10.0, 0.0, 0.0))\nvertices.append((0.0, 5.0, 0.0))\nvertices.append((5.0, 5.0, 0.0))\nvertices.append((10.0, 5.0, 0.0))\nvertices.append((0.0, 10.0, 0.0))\nvertices.append((5.0, 10.0, 0.0))\nvertices.append((10.0, 10.0, 0.0))\nfaceVertices = []\nfaceVertices.append((0,1,4,4))\nfaceVertices.append((2,4,1,1))\nfaceVertices.append((0,4,3,3))\nfaceVertices.append((2,5,4,4))\nfaceVertices.append((3,4,6,6))\nfaceVertices.append((5,8,4,4))\nfaceVertices.append((6,4,7,7))\nfaceVertices.append((8,7,4,4))\nrs.AddMesh( vertices, faceVertices )",
         "SeeAlso": [
@@ -11368,6 +11368,26 @@
         "Returns": "bool: True or False indicating success or failure",
         "ExampleString": "import rhinoscriptsyntax as rs\nobj = rs.GetObject(\"Select mesh\", rs.filter.mesh )\nif rs.MeshQuadCount(obj)>0:\n    rs.MeshQuadsToTriangles(obj)",
         "SeeAlso": []
+      },
+      {
+        "ModuleName": "mesh",
+        "Name": "MeshTextureCoordinates",
+        "Signature": "MeshTextureCoordinates(object_id)",
+        "Description": "Returns the texture coordinates of a mesh",
+        "HasArguments": true,
+        "ArgumentDesc": "object_id (guid): identifier of a mesh object",
+        "Returns": "list((number, number), ...): (u,v) texture coordinates, one per mesh vertex\nNone: if the mesh has no texture coordinates",
+        "ExampleString": "import rhinoscriptsyntax as rs\nobj = rs.GetObject(\"Select mesh\", rs.filter.mesh)\ntcs = rs.MeshTextureCoordinates(obj)\nif tcs:\n    for tc in tcs: print(tc)",
+        "SeeAlso": [
+          {
+            "ModuleName": "mesh",
+            "FunctionName": "MeshHasTextureCoordinates"
+          },
+          {
+            "ModuleName": "mesh",
+            "FunctionName": "MeshVertices"
+          }
+        ]
       },
       {
         "ModuleName": "mesh",
@@ -19966,7 +19986,7 @@
         "ModuleName": "view",
         "Name": "ShowGrid",
         "Signature": "ShowGrid(view=None, show=None)",
-        "Description": "Shows or hides a view's construction plane grid",
+        "Description": "Shows or hides a view's construction plane grid\nWhen the view's display mode overrides the document's grid settings, the state\nreported and set is the display mode's, which is shared by every view using it.",
         "HasArguments": true,
         "ArgumentDesc": "view (str|guid, optional): title or id of the view. If omitted, the current active view is used\nshow (bool, optional): The grid state to set. If omitted, the current grid display state is returned",
         "Returns": "bool: If show is not specified, then the grid display state if successful\nbool: If show is specified, then the previous grid display state if successful",
@@ -19986,7 +20006,7 @@
         "ModuleName": "view",
         "Name": "ShowGridAxes",
         "Signature": "ShowGridAxes(view=None, show=None)",
-        "Description": "Shows or hides a view's construction plane grid axes.",
+        "Description": "Shows or hides a view's construction plane grid axes.\nWhen the view's display mode overrides the document's grid settings, the state\nreported and set is the display mode's, which is shared by every view using it.",
         "HasArguments": true,
         "ArgumentDesc": "view (str|guid, optional): title or id of the view. If omitted, the current active view is used\nshow (bool, optional): The state to set. If omitted, the current grid axes display state is returned",
         "Returns": "bool: If show is not specified, then the grid axes display state\nbool: If show is specified, then the previous grid axes display state",
@@ -20022,7 +20042,7 @@
         "ModuleName": "view",
         "Name": "ShowWorldAxes",
         "Signature": "ShowWorldAxes(view=None, show=None)",
-        "Description": "Shows or hides a view's world axis icon",
+        "Description": "Shows or hides a view's world axis icon\nWhen the view's display mode overrides the document's grid settings, the state\nreported and set is the display mode's, which is shared by every view using it.",
         "HasArguments": true,
         "ArgumentDesc": "view (str|guid, optional):  title or id of the view. If omitted, the current active view is used\nshow: (bool, optional): The state to set.",
         "Returns": "bool: If show is not specified, then the world axes display state\nbool: If show is specified, then the previous world axes display state",

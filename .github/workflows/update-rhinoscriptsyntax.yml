@@ -21,7 +21,7 @@
 #   name: Notify developer.rhino3d.com
 #   on:
 #     push:
-#       branches: [rhino-8.x]
+#       branches: [rhino-9.x]
 #       paths: ["Scripts/rhinoscript/**"]
 #   jobs:
 #     dispatch:
@@ -48,7 +48,7 @@ on:
     inputs:
       ref:
         description: rhinoscriptsyntax branch, tag or commit to document
-        default: rhino-8.x
+        default: rhino-9.x
         required: true
   repository_dispatch:
     types: [rhinoscriptsyntax-updated]
@@ -61,9 +61,10 @@ on:
       - .github/workflows/update-rhinoscriptsyntax.yml
 
 env:
-  # The rhinoscriptsyntax branch documented when no other ref is given.  It should
-  # track the shipping Rhino release; rhino-9.x is merged from rhino-8.x regularly.
-  DEFAULT_REF: rhino-8.x
+  # The rhinoscriptsyntax branch documented when no other ref is given.  This is
+  # the development branch: docstring fixes land there first, and it receives
+  # regular merges from the shipping branch, so it documents a superset of both.
+  DEFAULT_REF: rhino-9.x
   PYTHON_VERSION: "3.12"
 
 permissions:
