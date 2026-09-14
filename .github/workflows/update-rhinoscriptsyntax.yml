@@ -27,17 +27,19 @@
 #     dispatch:
 #       runs-on: ubuntu-latest
 #       steps:
-#         - uses: peter-evans/repository-dispatch@v3
-#           with:
-#             token: ${{ secrets.DEVELOPER_SITE_DISPATCH_TOKEN }}
-#             repository: mcneel/developer.rhino3d.com
-#             event-type: rhinoscriptsyntax-updated
-#             client-payload: '{"ref": "${{ github.ref_name }}"}'
+#         - env:
+#             GH_TOKEN: ${{ secrets.DEVELOPER_SITE_DISPATCH_TOKEN }}
+#           run: |
+#             printf '{"event_type":"rhinoscriptsyntax-updated","client_payload":{"ref":"%s"}}' "$GITHUB_REF_NAME" |
+#               gh api repos/mcneel/developer.rhino3d.com/dispatches --input -
 #
-# Pull requests are created with GITHUB_TOKEN, which requires "Allow GitHub Actions
-# to create and approve pull requests" to be enabled in the repository's Actions
-# settings.  Workflows do not run on pull requests opened with GITHUB_TOKEN; pass a
-# personal access token to create-pull-request below if that is wanted.
+# Only actions created by GitHub are used (actions/checkout, actions/setup-python);
+# the commit and pull request are made with git and the gh CLI that ship on the
+# runner, so the repository's "Allow actions created by GitHub" policy is enough.
+# Creating the pull request with GITHUB_TOKEN requires "Allow GitHub Actions to
+# create and approve pull requests" to be enabled in the repository's Actions
+# settings.  Workflows do not run on pull requests opened with GITHUB_TOKEN; use a
+# personal access token as GH_TOKEN in the last step if that is wanted.
 
 name: Update RhinoScriptSyntax API docs
 
@@ -121,9 +123,16 @@ jobs:
         run: |
           python script/ds2json.py --source rhinoscriptsyntax --report report.md
           echo "sha=$(git -C rhinoscriptsyntax rev-parse --short HEAD)" >> "$GITHUB_OUTPUT"
+          if git diff --quiet -- data/rhinoscriptsyntax.json; then
+            echo "changed=false" >> "$GITHUB_OUTPUT"
+            echo "data/rhinoscriptsyntax.json is already up to date; no pull request needed."
+          else
+            echo "changed=true" >> "$GITHUB_OUTPUT"
+          fi
           cat report.md >> "$GITHUB_STEP_SUMMARY"
 
       - name: Write the pull request body
+        if: steps.generate.outputs.changed == 'true'
         env:
           REF: ${{ steps.ref.outputs.ref }}
           SHA: ${{ steps.generate.outputs.sha }}
@@ -142,11 +151,24 @@ jobs:
           } > pr-body.md
 
       - name: Create or update the pull request
-        uses: peter-evans/create-pull-request@v7
-        with:
-          add-paths: data/rhinoscriptsyntax.json
-          branch: automation/rhinoscriptsyntax-docs
-          delete-branch: true
-          commit-message: "Update RhinoScriptSyntax API docs from rhinoscriptsyntax ${{ steps.ref.outputs.ref }} @ ${{ steps.generate.outputs.sha }}"
-          title: "Update RhinoScriptSyntax API docs (${{ steps.ref.outputs.ref }} @ ${{ steps.generate.outputs.sha }})"
-          body-path: pr-body.md
+        if: steps.generate.outputs.changed == 'true'
+        env:
+          GH_TOKEN: ${{ github.token }}
+          BRANCH: automation/rhinoscriptsyntax-docs
+          BASE: ${{ github.event.repository.default_branch }}
+          TITLE: "Update RhinoScriptSyntax API docs (${{ steps.ref.outputs.ref }} @ ${{ steps.generate.outputs.sha }})"
+          MESSAGE: "Update RhinoScriptSyntax API docs from rhinoscriptsyntax ${{ steps.ref.outputs.ref }} @ ${{ steps.generate.outputs.sha }}"
+        run: |
+          git config user.name "github-actions[bot]"
+          git config user.email "41898282+github-actions[bot]@users.noreply.github.com"
+          git checkout -B "$BRANCH"
+          git add data/rhinoscriptsyntax.json
+          git commit -m "$MESSAGE"
+          git push --force origin "$BRANCH"
+          number=$(gh pr list --head "$BRANCH" --base "$BASE" --state open --json number --jq '.[0].number')
+          if [ -n "$number" ]; then
+            gh pr edit "$number" --title "$TITLE" --body-file pr-body.md
+            echo "Updated pull request #$number"
+          else
+            gh pr create --base "$BASE" --head "$BRANCH" --title "$TITLE" --body-file pr-body.md
+          fi
