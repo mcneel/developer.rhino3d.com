@@ -219,6 +219,8 @@ The `yak` CLI is available as a standalone executable for use in environments wh
 * https://files.mcneel.com/yak/tools/0.19.1/win-arm64/yak.exe
 * https://files.mcneel.com/yak/tools/0.19.1/win-x64/yak.exe
 
+Requires .NET 10. If you need a version that runs on .NET 8 then use v0.15.1, e.g. https://files.mcneel.com/yak/tools/0.15.1/win-x64/yak.exe
+
 
 ## Related Topics
 
