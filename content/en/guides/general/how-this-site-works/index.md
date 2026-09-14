@@ -204,6 +204,12 @@ The toml fields here should look familiar to those found in the guides above.
 
 The [API documentation](/api/) is automatically generated from source-code and cannot be edited "by hand."
 
+The [RhinoScriptSyntax reference](/api/RhinoScriptSyntax/) is rendered by the `rhinoscriptsyntax` shortcode from `data/rhinoscriptsyntax.json`, which `script/ds2json.py` generates from the docstrings in the [rhinoscriptsyntax](https://github.com/mcneel/rhinoscriptsyntax) repository. The *Update RhinoScriptSyntax API docs* GitHub Actions workflow reruns that script and opens a pull request whenever the output changes, so to fix that page, fix the docstring in rhinoscriptsyntax. The script also reports docstrings that do not follow the [documented layout](https://github.com/mcneel/rhinoscriptsyntax/blob/rhino-8.x/docstring.md). To run it locally:
+
+```sh
+python3 script/ds2json.py --source path/to/rhinoscriptsyntax --report report.md
+```
+
 ## Other Frontmatter
 
 Many of the pages, guides, and samples have additional frontmatter such as `TODO` and `origin` yaml field. These fields are used by the site to toggle different page features, such as the presence of a table-of-contents (`toc = `) or whether or not a page is crawled by search-engines `block_webcrawlers`. In addition to those frontmatter entries shown above here are some of the more common additional frontmatter fields:
