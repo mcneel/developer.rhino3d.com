@@ -29,7 +29,6 @@ toc_type = "single"
 
 - This project is part of the Rhino WIP (work in progress) and as such should be considered WIP software. We do not recommend using this for production work.
 - Things we are still working on:
-  - GH: RhinoCode enabled script components
   - File IO: Importing and exporting files other than 3dm
   - 3rd Party Plug-in Management. There is currently no mechanism to load 3rd party plugins, other than what can be installed by the yak-cli and only in cases where the package includes a GHA for Grasshopper to load.
   - Probably many other things
