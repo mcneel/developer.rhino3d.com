@@ -1,0 +1,175 @@
+# Regenerates data/rhinoscriptsyntax.json, the data behind the RhinoScriptSyntax
+# API reference at /api/RhinoScriptSyntax/, from the docstrings in
+# https://github.com/mcneel/rhinoscriptsyntax and opens a pull request when the
+# result differs from what is committed.  The generator is script/ds2json.py.
+#
+# Runs:
+#   * on demand from the Actions tab, optionally for a specific rhinoscriptsyntax
+#     branch, tag or commit;
+#   * when the rhinoscriptsyntax repository sends a `repository_dispatch` event of
+#     type `rhinoscriptsyntax-updated` (see below);
+#   * every Monday morning as a safety net;
+#   * on pull requests that touch the generator, in which case it only runs the
+#     unit tests and a lint pass and does not open a pull request.
+#
+# To have rhinoscriptsyntax trigger this workflow after every push, add a workflow
+# like the one below to that repository.  GITHUB_TOKEN cannot dispatch events to
+# another repository, so it needs a fine-grained personal access token (or a
+# GitHub App installation token) with "Contents: read and write" on
+# mcneel/developer.rhino3d.com, stored as the DEVELOPER_SITE_DISPATCH_TOKEN secret.
+#
+#   name: Notify developer.rhino3d.com
+#   on:
+#     push:
+#       branches: [rhino-9.x]
+#       paths: ["Scripts/rhinoscript/**"]
+#   jobs:
+#     dispatch:
+#       runs-on: ubuntu-latest
+#       steps:
+#         - env:
+#             GH_TOKEN: ${{ secrets.DEVELOPER_SITE_DISPATCH_TOKEN }}
+#           run: |
+#             printf '{"event_type":"rhinoscriptsyntax-updated","client_payload":{"ref":"%s"}}' "$GITHUB_REF_NAME" |
+#               gh api repos/mcneel/developer.rhino3d.com/dispatches --input -
+#
+# Only actions created by GitHub are used (actions/checkout, actions/setup-python);
+# the commit and pull request are made with git and the gh CLI that ship on the
+# runner, so the repository's "Allow actions created by GitHub" policy is enough.
+# Creating the pull request with GITHUB_TOKEN requires "Allow GitHub Actions to
+# create and approve pull requests" to be enabled in the repository's Actions
+# settings.  Workflows do not run on pull requests opened with GITHUB_TOKEN; use a
+# personal access token as GH_TOKEN in the last step if that is wanted.
+
+name: Update RhinoScriptSyntax API docs
+
+on:
+  workflow_dispatch:
+    inputs:
+      ref:
+        description: rhinoscriptsyntax branch, tag or commit to document
+        default: rhino-9.x
+        required: true
+  repository_dispatch:
+    types: [rhinoscriptsyntax-updated]
+  schedule:
+    - cron: "23 5 * * 1" # Mondays, 05:23 UTC
+  pull_request:
+    paths:
+      - script/ds2json.py
+      - script/test_ds2json.py
+      - .github/workflows/update-rhinoscriptsyntax.yml
+
+env:
+  # The rhinoscriptsyntax branch documented when no other ref is given.  This is
+  # the development branch: docstring fixes land there first, and it receives
+  # regular merges from the shipping branch, so it documents a superset of both.
+  DEFAULT_REF: rhino-9.x
+  PYTHON_VERSION: "3.12"
+
+permissions:
+  contents: write
+  pull-requests: write
+
+concurrency:
+  group: update-rhinoscriptsyntax-${{ github.event_name == 'pull_request' && github.ref || 'main' }}
+  cancel-in-progress: false
+
+jobs:
+  test:
+    name: Test the generator
+    if: github.event_name == 'pull_request'
+    runs-on: ubuntu-latest
+    permissions:
+      contents: read
+    steps:
+      - uses: actions/checkout@v4
+      - uses: actions/checkout@v4
+        with:
+          repository: mcneel/rhinoscriptsyntax
+          ref: ${{ env.DEFAULT_REF }}
+          path: rhinoscriptsyntax
+      - uses: actions/setup-python@v5
+        with:
+          python-version: ${{ env.PYTHON_VERSION }}
+      - name: Unit tests
+        run: python script/test_ds2json.py
+      - name: Parse the real docstrings
+        run: python script/ds2json.py --source rhinoscriptsyntax --check --report "$GITHUB_STEP_SUMMARY"
+
+  update:
+    name: Regenerate and open a pull request
+    if: github.event_name != 'pull_request'
+    runs-on: ubuntu-latest
+    steps:
+      - name: Pick the rhinoscriptsyntax ref
+        id: ref
+        env:
+          INPUT_REF: ${{ github.event.inputs.ref }}
+          PAYLOAD_REF: ${{ github.event.client_payload.ref }}
+        run: echo "ref=${INPUT_REF:-${PAYLOAD_REF:-$DEFAULT_REF}}" >> "$GITHUB_OUTPUT"
+
+      - uses: actions/checkout@v4
+      - uses: actions/checkout@v4
+        with:
+          repository: mcneel/rhinoscriptsyntax
+          ref: ${{ steps.ref.outputs.ref }}
+          path: rhinoscriptsyntax
+      - uses: actions/setup-python@v5
+        with:
+          python-version: ${{ env.PYTHON_VERSION }}
+
+      - name: Generate data/rhinoscriptsyntax.json
+        id: generate
+        run: |
+          python script/ds2json.py --source rhinoscriptsyntax --report report.md
+          echo "sha=$(git -C rhinoscriptsyntax rev-parse --short HEAD)" >> "$GITHUB_OUTPUT"
+          if git diff --quiet -- data/rhinoscriptsyntax.json; then
+            echo "changed=false" >> "$GITHUB_OUTPUT"
+            echo "data/rhinoscriptsyntax.json is already up to date; no pull request needed."
+          else
+            echo "changed=true" >> "$GITHUB_OUTPUT"
+          fi
+          cat report.md >> "$GITHUB_STEP_SUMMARY"
+
+      - name: Write the pull request body
+        if: steps.generate.outputs.changed == 'true'
+        env:
+          REF: ${{ steps.ref.outputs.ref }}
+          SHA: ${{ steps.generate.outputs.sha }}
+          EVENT: ${{ github.event_name }}
+        run: |
+          {
+            echo "Regenerated \`data/rhinoscriptsyntax.json\` from [mcneel/rhinoscriptsyntax@$SHA](https://github.com/mcneel/rhinoscriptsyntax/commit/$SHA) (\`$REF\`) with \`script/ds2json.py\`."
+            echo
+            echo "Triggered by \`$EVENT\` ([workflow run](${{ github.server_url }}/${{ github.repository }}/actions/runs/${{ github.run_id }}))."
+            echo
+            echo "<details><summary>Docstring report</summary>"
+            echo
+            head -c 60000 report.md
+            echo
+            echo "</details>"
+          } > pr-body.md
+
+      - name: Create or update the pull request
+        if: steps.generate.outputs.changed == 'true'
+        env:
+          GH_TOKEN: ${{ github.token }}
+          BRANCH: automation/rhinoscriptsyntax-docs
+          BASE: ${{ github.event.repository.default_branch }}
+          TITLE: "Update RhinoScriptSyntax API docs (${{ steps.ref.outputs.ref }} @ ${{ steps.generate.outputs.sha }})"
+          MESSAGE: "Update RhinoScriptSyntax API docs from rhinoscriptsyntax ${{ steps.ref.outputs.ref }} @ ${{ steps.generate.outputs.sha }}"
+        run: |
+          git config user.name "github-actions[bot]"
+          git config user.email "41898282+github-actions[bot]@users.noreply.github.com"
+          git checkout -B "$BRANCH"
+          git add data/rhinoscriptsyntax.json
+          git commit -m "$MESSAGE"
+          git push --force origin "$BRANCH"
+          number=$(gh pr list --head "$BRANCH" --base "$BASE" --state open --json number --jq '.[0].number')
+          if [ -n "$number" ]; then
+            gh pr edit "$number" --title "$TITLE" --body-file pr-body.md
+            echo "Updated pull request #$number"
+          else
+            gh pr create --base "$BASE" --head "$BRANCH" --title "$TITLE" --body-file pr-body.md
+          fi
