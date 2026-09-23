@@ -6,6 +6,7 @@ description = "An overview of the new and changed items for developers in Rhino 
 keywords = [ "developer", "rhino", "v9", "whats new" ]
 languages = [ "All" ]
 sdk = [ "General" ]
+thumbnail = "/images/new-in-v9/unfurl.png"
 title = "New for Developers in V9"
 type = "guides"
 weight = 1
