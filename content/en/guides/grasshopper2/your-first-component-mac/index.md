@@ -57,7 +57,7 @@ We are presuming you have never used Visual Studio Code before, so we'll go thro
 1. Open Terminal via _Terminal_ > _New Terminal_, or using the command palette _(⌘ ⇧ P)_ and search for "Terminal".
 1. Enter the following command into the Terminal:
    ```pwsh
-   dotnet new gh2 --version 8 -sample
+   dotnet new gh2 -sample
    ```
 1. In our Folder explorer, we should see the project appear as Visual Studio Code discovers the files.
 1. Expand the Solution Explorer, this is the best way to interact with C# projects on Mac in Visual Studio Code.
@@ -77,7 +77,7 @@ We are presuming you have never used Visual Studio Code before, so we'll go thro
 
 ![Solution Anatomy](/images/gh2/your-first-component-mac-03.png)
 
-5. Press Stop Debugging _(⇧ F5)_, in Visual Studio Code, signified by the Red Square in the debug toolbar. This stops the debugging session. Now let's n take a look at the Plugin Anatomy.
+5. Press Stop Debugging _(⇧ F5)_, in Visual Studio Code, signified by the Red Square in the debug toolbar. This stops the debugging session. Now let's take a look at the Plugin Anatomy.
 
 ### Component Anatomy
 
@@ -90,17 +90,17 @@ Use the **Solution Explorer** to expand the **Solution** (_.sln_) so that it loo
 1. **References**: Just as with most projects, you will be referencing other libraries. The template added the necessary references to create a basic Grasshopper 2 component.
 1. **Grasshopper2** is the Rhino for Mac main grasshopper DLL. Classes in this DLL are subclassed and used by your custom component.
 1. **Icons** All Icons should be placed in Icons to load automatically.
-1. **HelloGrasshopper2Component.cs** is where a custom `Grasshopper.Components.Component` subclass is defined. Your project may contain multiple subclasses of Component if you want to ship multiple components in a single gh2 plugin*.
 1. **HelloGrasshopper2Plugin.cs** is where the Grasshopper Plugin is defined.
-1. **HelloGrasshopper2Info.cs** defines general information about this gh2 plugin.
+1. **HelloGrasshopper2Component.cs** is where a custom `Grasshopper2.Components.Component` subclass is defined. Your project may contain multiple subclasses of Component if you want to ship multiple components in a single gh2 plugin*.
+1. **HelloGrasshopper2PluginInfo.cs** defines general information about this gh2 plugin.
 
 ### Debugging
 
-1. Add a breakpoint to line 52 of _HelloGrasshopper 2Component.cs_. You set breakpoints in Visual Studio Code by clicking in the gutter to the left of the line numbers.
+1. Add a breakpoint to line 52 of _HelloGrasshopper2Component.cs_. You set breakpoints in Visual Studio Code by clicking in the gutter to the left of the line numbers.
    ![Set a breakpoint](/images/gh2/your-first-component-mac-05.png)
 1. _Run and Debug_. our project. The breakpoint will become an empty circle, this is because our code has not been loaded yet. Once we hit the breakpoint once and continue, the code will be loaded until we end our Debug session.
    ![Set a breakpoint](/images/gh2/your-first-component-mac-06.png)
-1. Rhino and Grasshopper 2 should open, if Grasshopper 2 does not open, click "New Model" and run the _G2_ command.
+1. Rhino and Grasshopper 2 should open, if Grasshopper 2 does not open, click "New Model" and run the _GH2_ command.
 1. Place our sample component _HelloGrasshopper2Component_ and as soon as you do, you should hit your breakpoint and rhino/Grasshopper 2 will pause (You may need to drag the Grasshopper 2 window out of the way to see Visual Studio Code)
    ![Hit a breakpoint](/images/gh2/your-first-component-mac-07.png)
 1. With Rhino/Grasshopper 2 paused, in _Visual Studio Code_ we will see _Locals_ under _Variables_. You can inspect all of the values for the variables in your component.
