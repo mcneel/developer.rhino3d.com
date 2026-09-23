@@ -24,6 +24,8 @@ since = 0
 block_webcrawlers = true
 +++
 
+{{< presenter-mode >}}
+
 Rhino 9 brings a C++ SDK on Mac, Rhino.Compute on Linux, significant improvements to its code editor, support for CPython 3.13 and .NET 10, major improvements to our free SDKs, with API refinements, and the introduction of Grasshopper 2 as a development target. Some changes can also have an effect on your existing plugins.
 
 ## Platforms and Targets
