@@ -4,7 +4,7 @@ authors = [ "steve" ]
 categories = [ "Adding Objects", "Blocks" ]
 description = "Demonstrates how to add a nested block to an instance definition."
 keywords = [ "add", "nested", "block" ]
-languages = [ "C#" ]
+languages = [ "C#", "Python" ]
 sdk = [ "RhinoCommon" ]
 title = "Add Nested Block"
 type = "samples/rhinocommon"
@@ -49,7 +49,27 @@ partial class Examples
 <div class="codetab-content" id="py">
 
 ```python
-# No Python sample available
+#! python 3
+import Rhino
+import scriptcontext as sc
+from Rhino.Geometry import Circle, Point3d, ArcCurve, Transform, InstanceReferenceGeometry
+
+def RunCommand():
+    circle = Circle(Point3d.Origin, 5)
+    curveList = [ArcCurve(circle)]
+    circleIndex = sc.doc.InstanceDefinitions.Add("Circle", "Circle with radius of 5", Point3d.Origin, curveList)
+    transform = Transform.Identity
+    irefId = sc.doc.InstanceDefinitions[circleIndex].Id
+    iref = InstanceReferenceGeometry(irefId, transform)
+    circle.Radius = circle.Radius * 2.0
+    blockList = [iref, ArcCurve(circle)]
+    circle2Index = sc.doc.InstanceDefinitions.Add("TwoCircles", "Nested block test", Point3d.Origin, blockList)
+    sc.doc.Objects.AddInstanceObject(circle2Index, transform)
+    sc.doc.Views.Redraw()
+    return Rhino.Commands.Result.Success
+
+if __name__ == "__main__":
+    RunCommand()
 ```
 
 </div>
