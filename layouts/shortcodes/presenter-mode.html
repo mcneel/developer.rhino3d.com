@@ -1,0 +1,178 @@
+{{- /*
+  Adds a "Present" button that shows the page's intro, section headings, and cards as full-screen slides.
+  Usage: put {{< presenter-mode >}} at the top of a page that uses card-gallery/feature-card.
+  Keys: Right/Space/PageDown = next, Left/PageUp = back, Home/End, Esc = exit.
+  Links like page/#present=5 open the view at slide 5. For true full screen, use the browser's own full screen.
+*/ -}}
+<span id="presenter-mode-anchor" hidden></span>
+<style>
+  .pm-launch {
+    float: right; margin-top: 18px; display: inline-flex; align-items: center; gap: 6px;
+    padding: 6px 14px; border: 1px solid #cfd5de; border-radius: 999px; background: #fff;
+    color: #1f2937; font: inherit; font-size: 0.9em; cursor: pointer; white-space: nowrap;
+  }
+  .pm-launch:hover { border-color: #3b82f6; color: #1d4ed8; }
+  .pm-overlay {
+    position: fixed; inset: 0; z-index: 10000; display: none; background: #0f172a; color: #f8fafc;
+    font-family: "Helvetica Neue", Helvetica, Arial, sans-serif; user-select: none;
+  }
+  .pm-overlay.pm-open { display: block; }
+  .pm-slide {
+    position: absolute; inset: 0 0 56px 0; display: flex; flex-direction: column; align-items: center;
+    justify-content: center; padding: 4vh 6vw; text-align: center; box-sizing: border-box;
+    animation: pm-fade 0.25s ease-out;
+  }
+  @keyframes pm-fade { from { opacity: 0; transform: translateY(8px); } to { opacity: 1; transform: none; } }
+  @media (prefers-reduced-motion: reduce) { .pm-slide { animation: none; } }
+  .pm-kicker { font-size: clamp(14px, 1.6vw, 22px); letter-spacing: 0.14em; text-transform: uppercase; color: #93c5fd; margin-bottom: 2vh; }
+  .pm-title { font-size: clamp(32px, 5.5vw, 84px); font-weight: 700; line-height: 1.1; margin: 0 0 3vh; max-width: 18em; }
+  .pm-body { font-size: clamp(18px, 2vw, 30px); line-height: 1.45; color: #cbd5e1; max-width: 42em; margin: 0; }
+  .pm-card img { max-height: 52vh; max-width: 80vw; border-radius: 16px; box-shadow: 0 20px 60px rgba(0, 0, 0, 0.5); margin-bottom: 4vh; }
+  .pm-card .pm-title { font-size: clamp(28px, 4vw, 60px); margin-bottom: 1.5vh; }
+  .pm-card a.pm-open-link { margin-top: 3vh; color: #93c5fd; font-size: clamp(14px, 1.4vw, 20px); text-decoration: none; }
+  .pm-card a.pm-open-link:hover { text-decoration: underline; }
+  .pm-bar { position: absolute; left: 0; right: 0; bottom: 0; height: 56px; display: flex; align-items: center; gap: 12px; padding: 0 20px; box-sizing: border-box; }
+  .pm-bar button { background: none; border: 1px solid #334155; color: #e2e8f0; border-radius: 8px; padding: 6px 12px; font: inherit; cursor: pointer; }
+  .pm-bar button:hover { border-color: #93c5fd; }
+  .pm-count { color: #94a3b8; font-size: 14px; min-width: 5em; text-align: center; }
+  .pm-progress { flex: 1; height: 4px; background: #1e293b; border-radius: 2px; overflow: hidden; }
+  .pm-progress > div { height: 100%; background: #3b82f6; transition: width 0.25s; }
+</style>
+<script>
+(function () {
+  var anchor = document.getElementById("presenter-mode-anchor");
+  var root = anchor && anchor.closest(".main-content");
+  if (!root) return;
+
+  function text(el) { return el ? el.textContent.trim() : ""; }
+
+  // Build slides from the rendered page so card edits and reordering need no changes here.
+  function buildSlides() {
+    var slides = [];
+    var pageTitle = text(root.querySelector(".feature-title")) || document.title;
+    var intro = { type: "title", kicker: "", title: pageTitle, body: [] };
+    var current = intro, section = "";
+    slides.push(intro);
+    Array.prototype.forEach.call(root.querySelectorAll("h2, p, .gallery-container"), function (el) {
+      if (el.closest(".pm-overlay") || el.closest(".card")) return;
+      if (el.tagName === "H2") {
+        section = text(el);
+        current = { type: "title", kicker: "", title: section, body: [] };
+        slides.push(current);
+      } else if (el.tagName === "P") {
+        if (current && text(el)) current.body.push(text(el));
+      } else {
+        current = null;
+        el.querySelectorAll(".card").forEach(function (card) {
+          var link = card.querySelector(".card-link");
+          var img = card.querySelector("img");
+          slides.push({
+            type: "card", kicker: section, title: text(link),
+            body: [text(card.querySelector(".card-container p"))],
+            img: img ? img.getAttribute("src") : "", href: link ? link.getAttribute("href") : ""
+          });
+        });
+      }
+    });
+    return slides;
+  }
+
+  var overlay = document.createElement("div");
+  overlay.className = "pm-overlay";
+  overlay.setAttribute("role", "dialog");
+  overlay.setAttribute("aria-label", "Presenter view");
+  overlay.innerHTML =
+    '<div class="pm-stage"></div>' +
+    '<div class="pm-bar"><button type="button" data-pm="prev" aria-label="Previous">&larr;</button>' +
+    '<span class="pm-count"></span><button type="button" data-pm="next" aria-label="Next">&rarr;</button>' +
+    '<div class="pm-progress"><div></div></div>' +
+    '<button type="button" data-pm="exit" aria-label="Exit presenter view">Esc</button></div>';
+  document.body.appendChild(overlay);
+
+  var stage = overlay.querySelector(".pm-stage");
+  var slides = [], index = 0;
+
+  function el(tag, cls, content) {
+    var e = document.createElement(tag);
+    if (cls) e.className = cls;
+    if (content) e.textContent = content;
+    return e;
+  }
+
+  function render() {
+    var s = slides[index];
+    var slide = el("div", "pm-slide" + (s.type === "card" ? " pm-card" : ""));
+    if (s.img) { var img = el("img"); img.src = s.img; img.alt = ""; slide.appendChild(img); }
+    if (s.kicker) slide.appendChild(el("div", "pm-kicker", s.kicker));
+    slide.appendChild(el(index === 0 ? "h1" : "h2", "pm-title", s.title));
+    s.body.forEach(function (b) { if (b) slide.appendChild(el("p", "pm-body", b)); });
+    if (s.href) {
+      var a = el("a", "pm-open-link", "Open guide →");
+      a.href = s.href; a.target = "_blank"; a.rel = "noopener";
+      slide.appendChild(a);
+    }
+    stage.replaceChildren(slide);
+    overlay.querySelector(".pm-count").textContent = (index + 1) + " / " + slides.length;
+    overlay.querySelector(".pm-progress > div").style.width = ((index + 1) / slides.length * 100) + "%";
+  }
+
+  // The slide number lives in the URL so a reload or shared link resumes at the same slide.
+  function setHash(h) { history.replaceState(null, "", h ? "#" + h : location.pathname + location.search); }
+
+  function go(i) {
+    index = Math.max(0, Math.min(slides.length - 1, i));
+    setHash("present=" + (index + 1));
+    render();
+  }
+
+  // Fills the browser window, not the screen, so opening a guide in another tab keeps the slides in place.
+  function open(start) {
+    slides = buildSlides();
+    overlay.classList.add("pm-open");
+    document.documentElement.style.overflow = "hidden";
+    go(start || 0);
+  }
+
+  function close() {
+    overlay.classList.remove("pm-open");
+    document.documentElement.style.overflow = "";
+    setHash("");
+  }
+
+  document.addEventListener("keydown", function (e) {
+    if (!overlay.classList.contains("pm-open")) return;
+    // PageDown/PageUp are what most presentation clickers send.
+    var k = e.key;
+    if (k === "ArrowRight" || k === " " || k === "PageDown" || k === "Enter") go(index + 1);
+    else if (k === "ArrowLeft" || k === "PageUp" || k === "Backspace") go(index - 1);
+    else if (k === "Home") go(0);
+    else if (k === "End") go(slides.length - 1);
+    else if (k === "Escape") close();
+    else return;
+    e.preventDefault();
+  });
+
+  overlay.addEventListener("click", function (e) {
+    var btn = e.target.closest("button[data-pm]");
+    if (btn) {
+      var a = btn.getAttribute("data-pm");
+      if (a === "prev") go(index - 1); else if (a === "next") go(index + 1); else close();
+      return;
+    }
+    if (e.target.closest("a")) return;
+    // Click the left third to go back, anywhere else to advance.
+    go(e.clientX < window.innerWidth / 3 ? index - 1 : index + 1);
+  });
+
+  var launch = el("button", "pm-launch", "▶ Present");
+  launch.type = "button";
+  launch.title = "Show this page as slides";
+  launch.addEventListener("click", function () { open(0); });
+  var header = root.querySelector(".feature-title-container");
+  if (header) header.appendChild(launch); else root.insertBefore(launch, root.firstChild);
+
+  // This script runs before the cards below it are parsed, so wait for the full page.
+  var m = location.hash.match(/^#present=(\d+)$/);
+  if (m) document.addEventListener("DOMContentLoaded", function () { open(parseInt(m[1], 10) - 1); });
+})();
+</script>
