@@ -373,6 +373,16 @@ toc_type = "single"
 {{< dev-topic-list "guides" "Grasshopper" "Advanced" "weight" >}}
 
 
+## [Grasshopper 2](/guides/grasshopper2)
+
+*Create custom Grasshopper 2 components and plugins.*
+
+### Grasshopper Plugins
+
+- Your First Component ([Windows](/guides/grasshopper2/your-first-component-windows/), [Mac](/guides/grasshopper2/your-first-component-mac/))
+- [Developer discussions on Discourse](https://discourse.mcneel.com/c/grasshopper-developer)
+
+
 ## [RhinoScript](/guides/rhinoscript)
 
 
