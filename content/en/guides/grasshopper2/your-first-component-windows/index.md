@@ -29,7 +29,11 @@ block_webcrawlers = true
 
 +++
 
-It is presumed you already have the necessary tools installed and are ready to go. If you are not there yet, see [Installing Tools (Windows)](/guides/grasshopper/installing-tools-windows).
+It is presumed you already have the necessary tools installed and are ready to go. If you are not there yet, see [Installing Tools (Windows)](/guides/rhinocommon/installing-tools-windows).
+
+{{< call-out info "Rhino 9" >}}
+Grasshopper 2 requires Rhino 9 and the [.NET 8 SDK](https://dotnet.microsoft.com/download/dotnet/8.0).
+{{< /call-out >}}
 
 ## HelloGrasshopper 2
 
@@ -95,20 +99,20 @@ Depending on your edition of Visual Studio, it may look slightly different.
 1. The **HelloGrasshopper 2** project (_.csproj_) has the same name as its parent solution...this is the project that was created for us by the **Grasshopper 2 Assembly** template wizard earlier.
 1. **Dependencies**: Just as with most projects, you will be referencing other libraries. The **Grasshopper 2 Assembly** template added the necessary dependencies to create a custom Grasshopper 2 component.
 1. **Framework Targets** - The **Grasshopper 2 Assembly** template is multi-targeted so that the correct assemblies are loaded for the correct platforms.
-1. **Grasshopper2** - The referenced Grasshopper 2 Nuget.
+1. **Grasshopper2** - The referenced Grasshopper 2 NuGet package.
 1. **Properties** contains the **launchSettings.json** file. This file contains all of the debug.
 1. **HelloGrasshopper2Plugin.cs** the Rhino Plugin required for Grasshopper 2.
-1. **HelloGrasshopper2PlpuginInfo.cs** contains the component library information, such as the name, icon, etc.
+1. **HelloGrasshopper2PluginInfo.cs** contains the component library information, such as the name, icon, etc.
 1. **HelloGrasshopper2Component.cs** is where the action is. Let's take a look at this file...
 
 ### Make Changes
 
-1.  Open **HelloGrasshopper 2Component.cs** in Visual Studio's Source Editor (if it isn't already).
-1.  Notice that `HelloGrasshopper 2Component` inherits from `Component` ...
+1.  Open **HelloGrasshopper2Component.cs** in Visual Studio's Source Editor (if it isn't already).
+1.  Notice that `HelloGrasshopper2Component` inherits from `Component` ...
 
         public class HelloGrasshopper2Component : Component
 
-1.  If you hover over `Component` you will notice this is actually `Grasshopper.Components.Component`.
+1.  If you hover over `Component` you will notice this is actually `Grasshopper2.Components.Component`.
 1.  `HelloGrasshopper2Component` also overrides two methods for determining the input and output parameters ...
 
 ```cs
@@ -145,7 +149,7 @@ inputs.AddPlane("Base Plane", "Bp", "Base plane for spiral").Set(Plane.WorldYZ);
 
 ### Debugging
 
-1. Set a breakpoint on line[^1] 69 of _HelloGrasshopper 2Component.cs_. You set breakpoints in Visual Studio by clicking in the gutter...
+1. Set a breakpoint on line[^1] 69 of _HelloGrasshopper2Component.cs_. You set breakpoints in Visual Studio by clicking in the gutter...
    ![Set a breakpoint](/images/gh2/your-first-component-windows-07.png)
 1. **Build** and **Run**.
 1. Note that at first the breakpoint is not loaded, and won't be until Grasshopper 2 loads.
@@ -158,7 +162,7 @@ inputs.AddPlane("Base Plane", "Bp", "Base plane for spiral").Set(Plane.WorldYZ);
 1. In the list, find the `plane` object. Our `plane` is a `Rhino.Geometry.Plane` with a value of `{Origin=0,0,0 XAxis=0,1,0, YAxis=0,0,1, ZAxis=1,0,0}` ...an YZ plane, the default, as expected.
    ![Continue Executing](/images/gh2/your-first-component-windows-11.png)
 1. **Continue** in Grasshopper 2 by pressing the **Continue** button in the upper menu of **Visual Studio** (or press **F5**)...
-1. Control is passed back to **Grasshopper 2** and the spiral draws in the Rhino viewport. Now, place a _World XY_ component on the canvas and feed it as an input into _HelloGrasshopper 2_'s _Plane_ input. Notice you hit your breakpoint again, because the `SolveInstance` is being called now that the input values have changed.
+1. Control is passed back to **Grasshopper 2** and the spiral draws in the Rhino viewport. Now, place a _World XY_ component on the canvas and feed it as an input into _HelloGrasshopper 2_'s _Plane_ input. Notice you hit your breakpoint again, because the `Process` method is being called now that the input values have changed.
 1. **Exit** Grasshopper 2 and Rhino or **Stop** the debugging session.
 1. **Remove** the breakpoint you created above by clicking on it in the gutter.
 
