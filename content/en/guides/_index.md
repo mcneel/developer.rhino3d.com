@@ -380,6 +380,7 @@ toc_type = "single"
 ### Grasshopper Plugins
 
 - Your First Component ([Windows](/guides/grasshopper2/your-first-component-windows/), [Mac](/guides/grasshopper2/your-first-component-mac/))
+- [Migrating Components to Grasshopper 2](/guides/grasshopper2/migrating-components-to-gh2/)
 - [Developer discussions on Discourse](https://discourse.mcneel.com/c/grasshopper-developer)
 
 
