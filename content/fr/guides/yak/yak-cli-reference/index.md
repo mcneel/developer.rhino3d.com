@@ -214,11 +214,31 @@ Les nouveaux propriétaires doivent être enregistrés sur le serveur avant de p
 
 Le CLI `yak` est disponible en tant qu’exécutable autonome pour une utilisation dans des environnements où Rhino n’est pas installé, comme sur des machines de compilation automatisées.
 
-* https://files.mcneel.com/yak/tools/0.13.0/yak.exe
-* https://files.mcneel.com/yak/tools/0.13.0/win-arm64/yak.exe
-* https://files.mcneel.com/yak/tools/0.13.0/mac/yak
-* https://files.mcneel.com/yak/tools/0.13.0/linux-x64/yak
-* https://files.mcneel.com/yak/tools/0.13.0/linux-arm64/yak
+<details open>
+<summary>.NET 10 (v0.19.1)</summary>
+
+* https://files.mcneel.com/yak/tools/0.19.1/linux-arm64/yak
+* https://files.mcneel.com/yak/tools/0.19.1/linux-x64/yak
+* https://files.mcneel.com/yak/tools/0.19.1/osx-arm64/yak
+* https://files.mcneel.com/yak/tools/0.19.1/osx-universal/yak
+* https://files.mcneel.com/yak/tools/0.19.1/osx-x64/yak
+* https://files.mcneel.com/yak/tools/0.19.1/win-arm64/yak.exe
+* https://files.mcneel.com/yak/tools/0.19.1/win-x64/yak.exe
+
+</details>
+
+<details>
+<summary>.NET 8 (v0.15.1)</summary>
+
+* https://files.mcneel.com/yak/tools/0.15.1/linux-arm64/yak
+* https://files.mcneel.com/yak/tools/0.15.1/linux-x64/yak
+* https://files.mcneel.com/yak/tools/0.15.1/osx-arm64/yak
+* https://files.mcneel.com/yak/tools/0.15.1/osx-universal/yak
+* https://files.mcneel.com/yak/tools/0.15.1/osx-x64/yak
+* https://files.mcneel.com/yak/tools/0.15.1/win-arm64/yak.exe
+* https://files.mcneel.com/yak/tools/0.15.1/win-x64/yak.exe
+
+</details>
 
 
 ## Voir aussi
