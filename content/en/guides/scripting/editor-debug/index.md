@@ -43,19 +43,16 @@ Three panels show what is going on while the script is paused. Each has its own 
 - **Window > Toggle Variables Tray**
 - **Window > Toggle Call Stack Tray**
 
-<!-- SCREENSHOT: editor paused on a breakpoint with breakpoints, variables, and call stack trays visible -->
 ![](debug-panels.png)
 
 ## Breakpoints
 
 Click the gutter to the left of a line to add or remove a breakpoint:
 
-<!-- SCREENSHOT: script with two breakpoints set in the gutter -->
 ![](debug-setbreakpoint.png)
 
 Breakpoints panel lists every breakpoint you have set. Each row shows the script and the line number. Click the icon on a row to disable that breakpoint without removing it:
 
-<!-- SCREENSHOT: breakpoints tray listing breakpoints from two scripts, one disabled -->
 ![](debug-breakpoints.png)
 
 The panel header has:
@@ -77,14 +74,12 @@ Once the script is paused, use **Run** menu to step through it:
 | **Run > Stop Debug** | Ends the debug run |
 | **Run > Reset Debugger** | Clears debug results and starts fresh |
 
-<!-- SCREENSHOT: Run menu open showing the debug commands -->
 ![](debug-controls.png)
 
 ## Variables
 
 Variables panel lists the variables of the paused script, grouped by scope. Values update as you step:
 
-<!-- SCREENSHOT: variables tray while paused, scopes expanded showing variables and values -->
 ![](debug-variables.png)
 
 Type in the search box to list only the variables with matching names. **Show All Variables** clears the search.
@@ -96,18 +91,18 @@ The panel header has:
 - **Collapse Variables** to collapse everything you expanded
 - **Previous Frame** and **Next Frame** to move between call stack frames
 
+![](debug-variables-options.png)
+
 Right-click a variable and choose **Copy Value** to copy its value.
 
 ## Pinned Variables
 
 Click the pin on a variable row to keep watching it. Use **Toggle Pinned Variables Only** to hide everything else, and **Unpin All Variables** to clear your pins:
 
-<!-- SCREENSHOT: variables tray with two pinned variables and pinned-only filter enabled -->
 ![](debug-pinned.png)
 
 Variables holding geometry or a document object can also be previewed in the Rhino viewport:
 
-<!-- SCREENSHOT: variable holding a curve, previewed in the Rhino viewport -->
 ![](debug-preview.png)
 
 Choose **Run > Toggle Show Variables On Debug** to open this panel automatically whenever you debug a script.
@@ -116,7 +111,6 @@ Choose **Run > Toggle Show Variables On Debug** to open this panel automatically
 
 Call Stack panel shows the runs, threads, and frames of your script, and marks where the script is paused. Select a frame to see its variables in the Variables panel:
 
-<!-- SCREENSHOT: call stack tray showing a run with threads and frames, current frame marked -->
 ![](debug-callstack.png)
 
 Each item shows its state: awaiting, paused, paused on a breakpoint, completed, errored, or disconnected.
@@ -130,6 +124,3 @@ Breakpoints panel header also sets when the debugger pauses on an exception. The
 - **Pause on Any Exception (Handled or not)**
 - **Pause on Unhandled Exceptions (Default)**
 - **Do Not Pause on Exceptions**
-
-<!-- SCREENSHOT: pause on exception options open from the breakpoints panel header -->
-![](debug-pauseonexception.png)
