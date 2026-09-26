@@ -35,7 +35,6 @@ block_webcrawlers = false
 
 Help panel lists the libraries available to your scripts and lets you search them. Choose **Help > Toggle Help Panel** to show or hide it. Libraries are loaded the first time the panel is opened:
 
-<!-- SCREENSHOT: Help panel open on the left side of editor window, tree collapsed to top-level libraries -->
 ![](help-panel.png)
 
 ## Libraries
@@ -48,7 +47,6 @@ The tree has three levels:
 
 Python scripts also list `rhinoscriptsyntax`, `rhinoscript`, `scriptcontext`, and `rhinocompat`. Rhino and Grasshopper libraries are listed last:
 
-<!-- SCREENSHOT: tree expanded a few levels deep, showing library > namespace > class > method icons -->
 ![](help-tree.png)
 
 ## Searching
@@ -61,33 +59,28 @@ Type in the search box to filter all libraries at once. Matching items are expan
 
 Press the *Up* or *Down* arrow keys in the search box to step through your previous search terms. The search term and expanded items are remembered between sessions:
 
-<!-- SCREENSHOT: search box with a term typed, matches expanded, non-matching libraries grayed out, header toggles visible -->
 ![](help-search.png)
 
 ## Reading Documentation
 
 Select an entry to see its documentation. Entries that have an online documentation page open in a **Help** tab next to your script tabs:
 
-<!-- SCREENSHOT: Help tab open in tab strip showing an online docs page for a selected entry -->
 ![](help-tab.png)
 
 Entries that only have a description are shown in the help card next to the *Terminal*, so your script stays open:
 
-<!-- SCREENSHOT: help card tray at bottom of editor next to Terminal tab, showing description of selected entry -->
 ![](help-card.png)
 
 ## Older Rhino Libraries
 
 Choose **Help > Toggle Rhino 7 Libraries in Help** to also list the libraries of the previous Rhino version:
 
-<!-- SCREENSHOT: help tree with legacy Rhino 7 libraries added to the list -->
 ![](help-legacy.png)
 
 ## Tip Dots
 
 Choose **Help > Toggle Tip Dots** to show or hide tip dots on editor controls and dialogs. This is an editor-wide option and is not specific to the help panel:
 
-<!-- SCREENSHOT: an editor dialog or control with tip dots visible -->
 ![](help-tipdots.png)
 
 ## Online Help
@@ -108,6 +101,3 @@ These items are listed when editing a Python script:
 | **Help > Rhino.Python Online** | [Rhino.Python Guides](https://developer.rhino3d.com/guides/rhinopython/) |
 | **Help > Rhino.Python Samples** | [Rhino.Python Samples](https://developer.rhino3d.com/samples/#rhinopython) |
 | **Help > Scripting Discussion on Discourse** | [Scripting Forum](https://discourse.mcneel.com/c/scripting/11) |
-
-<!-- SCREENSHOT: Help menu open showing all items -->
-![](help-menu.png)
