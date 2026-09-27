@@ -1,8 +1,8 @@
 +++
 aliases = []
-authors = [ "andy" ]
+authors = [ "callum" ]
 categories = [ "Getting Started" ]
-description = "This guide covers the tools you need to write Rhino plugins in C/C++ on macOS."
+description = "This guide covers all the necessary tools required to author Rhino plugins in C/C++ on Mac."
 keywords = [ "c", "C/C++", "plugin" ]
 languages = [ "C/C++" ]
 sdk = [ "C/C++" ]
@@ -20,63 +20,23 @@ toc = true
 toc_type = "single"
 +++
 
-By the end of this guide you will have everything you need to write, build and debug a C/C++ plugin for Rhino for Mac.
+By the end of this guide, you should have all the tools installed necessary for authoring, building, and debugging C/C++ plugins using the Rhino C/C++ SDK on Mac.
 
-## Rhino 9 for Mac
+## Prerequisites
 
-The C/C++ SDK for Mac is new in Rhino 9. There is no Mac C/C++ SDK for Rhino 8 or earlier.
+This guide presumes you have:
 
-Download [Rhino 9 for Mac](https://www.rhino3d.com/download/rhino-for-mac/9/latest/) and install it.
+### Rhino 9 WIP
 
-Rhino 9 for Mac runs only on Apple silicon - an M-series Mac. Your plugin is built for that processor too, so an Intel Mac cannot be used.
+- A PC running MacOS Tahoe
+- [Rhino 9 WIP for Mac](https://www.rhino3d.com/download/rhino/wip/).
 
-## Xcode
+## XCode
 
-Install [Xcode](https://developer.apple.com/xcode/) from the Mac App Store. It is free.
-
-Xcode brings the compiler and the debugger. You do not have to write your plugin in Xcode if you would rather use another editor, but the compiler it installs is the one that builds your plugin.
-
-After installing it, open Xcode once and let it finish setting itself up. Then install the command line tools:
-
-```
-xcode-select --install
-```
-
-If the tools are already there, that command tells you so, which is also a good check.
-
-## CMake
-
-You build and debug in Xcode. CMake is only the thing that makes the Xcode project, and you run it once when you set a project up.
-
-Install [CMake](https://cmake.org/download/) and forget about it until then.
-
-The easiest way to install it is with [Homebrew](https://brew.sh):
-
-```
-brew install cmake
-```
-
-## Git and Git LFS
-
-The SDK and the samples are on GitHub, and some of the SDK's files are stored with Git LFS - an add-on that handles large files. Without it those files arrive as small text placeholders and your build fails at the link step with a confusing error.
-
-```
-brew install git git-lfs
-git lfs install
-```
-
-The last line only needs running once on your machine.
-
-## The SDK
-
-You do not install the C/C++ SDK. It lives in a repository:
-
-<https://github.com/mcneel/rhino_sdk_cpp>
-
-You normally add it to your own plugin's repository as a *submodule*, so that the SDK sits in a folder inside your project and everyone who clones your project gets it. The next guide shows this being done.
-
-The SDK's own [README](https://github.com/mcneel/rhino_sdk_cpp/blob/main/README.md) is the reference for building against it, and covers both platforms.
+To write C++ plugins for Rhino 9 WIP using the C/C++ SDK, you will need [XCode](https://developer.apple.com/xcode/).
 
 ## Next Steps
 
-You now have the tools. Go on to [Creating your first C/C++ plugin (Cross Platform)](/guides/cpp/your-first-plugin-crossplatform/), which builds a working plugin for Rhino for Mac and Rhino for Windows from the same code.
+**Congratulations!** You have the tools to build a C/C++ plugin for Rhino for Mac. *Now what?*
+
+Check out the [Creating your first C/C++ plugin (Mac)](/guides/cpp/your-first-plugin-mac/) guide for instructions building your first plugin.
