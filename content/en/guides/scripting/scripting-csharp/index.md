@@ -33,12 +33,10 @@ This guide covers writing C# scripts in Rhino. For C# scripting in Grasshopper c
 
 Run the `ScriptEditor` command to open the script editor. Choose **File > New** and pick C# from the list of languages:
 
-<!-- SCREENSHOT: File > New prompt open with the language list, C# highlighted -->
 ![](csharp-new.png)
 
 Write your script and choose **Run > Run** to run it. The status bar shows the language and version of the script you are editing:
 
-<!-- SCREENSHOT: editor with a short C# script, status bar showing the C# language and version -->
 ![](csharp-run.png)
 
 Scripts are saved as `.cs` or `.csx` files. **File > New From Template** starts a new script from one of your [templates](/guides/scripting/editor-templates).
@@ -66,7 +64,6 @@ See [ScriptEditor Command in Macros](/guides/scripting/advanced-scripteditor-mac
 
 Click the gutter to the left of a line to add a breakpoint, then choose **Run > Debug** to run the script and stop there:
 
-<!-- SCREENSHOT: C# script paused on a breakpoint, debug panels open below -->
 ![](csharp-debug.png)
 
 **Debug** is only available when the script has a breakpoint. While the script is paused you can step through it and inspect your variables in the debugging panels. See [Debugging Your Scripts](/guides/scripting/editor-debug).
@@ -75,7 +72,6 @@ Click the gutter to the left of a line to add a breakpoint, then choose **Run > 
 
 Your scripts can use third-party packages published on [NuGet](https://www.nuget.org). Choose **Install Package** on the editor dashboard, then search for the package or type its name and version:
 
-<!-- SCREENSHOT: Install Package dialog with a NuGet package searched -->
 ![](csharp-packages.png)
 
 Leave **Add Package Reference to Script** checked to add the package to the script text. The script then knows which packages it needs, and can install them when someone else opens it:
@@ -92,11 +88,16 @@ var response = client.Get(new RestRequest("get"));
 Console.WriteLine(response.Content);
 ```
 
+## Yak References
+
+Scripts can reference .NET assemblies from Yak packages directly. Change **Package Source** to **Yak** in the **Install Package** dialog:
+
+![](csharp-yak.png)
+
 ## Assembly References
 
 Scripts can also reference .NET assemblies directly. Change **Package Source** to **DLL Reference** in the **Install Package** dialog:
 
-<!-- SCREENSHOT: Install Package dialog with Package Source set to DLL Reference -->
 ![](csharp-assembly.png)
 
 If the assembly is already loaded in Rhino, reference it by name. Include the extension:
@@ -125,7 +126,6 @@ Relative paths are resolved next to the script file.
 
 Editing features like line numbers, indentation guides, autocomplete, and tab size can be set for C# alone. Choose **Tools > Language Options** while editing a C# script, or right-click the script tab and choose **Language Options**:
 
-<!-- SCREENSHOT: Language Options dialog open for C# -->
 ![](csharp-langoptions.png)
 
 Each option can follow the editor-wide setting or be set for C# only. The editor-wide values are in [Options](/guides/scripting/editor-configs).
