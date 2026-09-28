@@ -39,7 +39,6 @@ This guide covers the Python script component in Grasshopper 2. For the Grasshop
 
 The Python script component is in the **Maths** tab, **Script** panel. Drop one onto the canvas:
 
-<!-- SCREENSHOT: Python Script component dropped on the GH2 canvas -->
 ![](gh2-python-component.png)
 
 A new component starts with a small script that sets one output:
@@ -61,8 +60,11 @@ See [Python 3 and Python 2](/guides/scripting/scripting-python/#python-3-and-pyt
 
 Double-click the component to open a script editor. The component draws a cone pointing to the editor associated with it:
 
-<!-- SCREENSHOT: component with the editor open and the cone drawn between them -->
 ![](gh2-python-open.png)
+
+The script editor shows the version of Python language on the status bar:
+
+![](gh2-python-version.png)
 
 ### Component Options
 
@@ -72,7 +74,6 @@ Component options are in the component panel. The **Script** category has:
 - **Export** saves the script to a file
 - **Expire** clears cached results and recomputes
 
-<!-- SCREENSHOT: component panel open showing the Script category buttons -->
 ![](gh2-python-panel.png)
 
 #### Threading
@@ -87,7 +88,6 @@ Component options are in the component panel. The **Script** category has:
 
 **Debug Threading** sets the same choice for debug runs and defaults to **One**, to keep debugging simple. Switch it to **Many** only when you are sure that helps, since stepping through a script while several iterations run at once is confusing:
 
-<!-- SCREENSHOT: component panel showing Threading and Debug Threading option bars -->
 ![](gh2-python-threading.png)
 
 ## Inputs, Outputs
@@ -96,23 +96,16 @@ A new component has two inputs and one output, plus the **Console** output. Inpu
 
 Add, remove, and rename parameters the same way as any other Grasshopper 2 component. Give them meaningful names, since the names are how your script reaches their values:
 
-<!-- SCREENSHOT: component with renamed inputs and outputs -->
 ![](gh2-python-params.png)
 
 ### Pick Pears
 
-Grasshopper 2 keeps metadata alongside every value, and the value together with its metadata is a *pear*. Turn on **Pick Pears** in the **Variable** category of an input's panel to receive `IPear` instances instead of naked values:
-
-<!-- SCREENSHOT: input panel of a script parameter with the Pick Pears toggle enabled -->
-![](gh2-python-pears.png)
-
-This is off by default, and is only offered on inputs. Turn it on when your script needs the metadata of an item, not just its value.
+Grasshopper 2 keeps metadata alongside every value, and the value together with its metadata is a *pear*. Turn on **Pick Pears** in the **Variable** category of an input's panel to receive `IPear` instances instead of naked values. This is off by default, and is only offered on inputs. Turn it on when your script needs the metadata of an item, not just its value.
 
 ### Standard Output (Console)
 
-The **Console** output captures anything your script prints with `print()`. Each printed line becomes one item:
+The **Console (out)** output captures anything your script prints with `print()`. Each printed line becomes one item:
 
-<!-- SCREENSHOT: Console output parameter holding printed text -->
 ![](gh2-python-console.png)
 
 #### Toggling Output
@@ -133,21 +126,13 @@ Right-click a parameter to choose how its data reaches your script. The list is 
 - **Geometry** types like `Line`, `Circle`, `Arc`, `Polyline`, `Rectangle3d`
 - **Geometry base** types like `Curve`, `Mesh`, `Surface`, `Brep`, `SubD`, `PointCloud`
 
-<!-- SCREENSHOT: right-click menu on a script input showing the grouped converter list -->
-![](gh2-python-converters.png)
-
 **No Conversion** is the default, so values reach your script as Grasshopper stores them. Pick a converter and values are converted to that type first.
 
 Converters replace the type hints of the Grasshopper 1 component.
 
 ### Parameter Access
 
-Each parameter takes **Item**, **Twig**, or **Tree** access, which sets whether your script is handed one value, a list, or a whole tree:
-
-<!-- SCREENSHOT: access menu open on a script input -->
-![](gh2-python-access.png)
-
-**Unwrap Data** on an output turns collections your script sets into Grasshopper trees and twigs.
+Each parameter takes **Item**, **Twig**, or **Tree** access, which sets whether your script is handed one value, a list, or a whole tree. **Unwrap Data** on an output turns collections your script sets into Grasshopper trees and twigs.
 
 ## Script-Mode
 
@@ -243,7 +228,6 @@ class Script_Instance(Grasshopper2.Components.GH_ScriptInstance):
             bag.AddCurve(Pear[Circle].Create(circle))
 ```
 
-<!-- SCREENSHOT: circles drawn in the Rhino viewport from a script component preview -->
 ![](gh2-python-preview.png)
 
 ### Input Panel
@@ -271,10 +255,7 @@ class Script_Instance(Grasshopper2.Components.GH_ScriptInstance):
             pass
 ```
 
-Edits apply on the next solve:
-
-<!-- SCREENSHOT: component panel showing the Options category added by the script -->
-![](gh2-python-inputpanel.png)
+Edits apply on the next solve.
 
 ## Marshalling
 
@@ -285,7 +266,6 @@ Edits apply on the next solve:
 - On, the identifiers are looked up and the output carries the objects they refer to
 - Off, the identifiers are passed along as they are
 
-<!-- SCREENSHOT: Marsh Guids toggle in the component panel -->
 ![](gh2-python-guids.png)
 
 On the input side, pick the **ghdoc Object** converter to receive an identifier your script can pass to `rhinoscriptsyntax` functions.
@@ -301,22 +281,13 @@ The **Python 3** category of the component panel controls the conversion:
 
 Leaving both off passes data through without conversion, which is faster when one Python component feeds another:
 
-<!-- SCREENSHOT: Python 3 marshalling toggles in the component panel -->
 ![](gh2-python-marshal.png)
 
 ## Debugging Scripts
 
-Debugging pauses your script mid-solution so you can look at your values and step through your code line by line.
+Debugging pauses your script mid-solution so you can look at your values and step through your code line by line. Click the gutter to the left of a line to add a **Breakpoint**. The **Run** button becomes **Debug** once the script has a breakpoint. Click it and the component solves until it reaches that line, then stops with the line marked and the debugging panels open:
 
-Click the gutter to the left of a line to add a **Breakpoint**:
-
-<!-- SCREENSHOT: script in the component editor with a breakpoint set in the gutter -->
 ![](gh2-python-debug-breakpoint.png)
-
-The **Run** button becomes **Debug** once the script has a breakpoint. Click it and the component solves until it reaches that line, then stops with the line marked and the debugging panels open:
-
-<!-- SCREENSHOT: GH2 Python script paused on a breakpoint with the debugging panels open -->
-![](gh2-python-debug.png)
 
 Debug runs are single-threaded by default, so iterations stop in order even when the script itself is set to run on **Many** threads. See **Debug Threading** in [Threading](#threading).
 
@@ -330,14 +301,10 @@ The debug buttons on the editor dashboard control what happens next:
 - **Step Out** runs the rest of the current function and stops where it was called
 - **Stop** ends the debug run
 
-<!-- SCREENSHOT: debug control buttons on the editor dashboard -->
-![](gh2-python-debug-controls.png)
-
 ### Variables Tray
 
 **Variables** tray lists the values your script is holding at the line it stopped on, including the component inputs. Expand a value to see its members, or the items of a collection:
 
-<!-- SCREENSHOT: variables tray showing inputs and locals, one value expanded -->
 ![](gh2-python-debug-variables.png)
 
 Pin a value to keep watching it as you step and as iterations go by.
@@ -346,14 +313,12 @@ Pin a value to keep watching it as you step and as iterations go by.
 
 **Call Stack** tray shows which functions the script is inside. `RunScript` sits at the bottom of a paused component, with any function it called above it. Select a frame to see its values in the **Variables** tray:
 
-<!-- SCREENSHOT: call stack tray with RunScript and a called function listed -->
 ![](gh2-python-debug-callstack.png)
 
 ### Call Stacks On Many Threads
 
 With **Debug Threading** set to **Many**, more than one iteration of your script can be paused at the same time. **Call Stack** tray keeps them apart. Each run is listed with the threads it is using, and each thread carries its own frames:
 
-<!-- SCREENSHOT: call stack tray with two threads listed, each with its own frames -->
 ![](gh2-python-debug-threads.png)
 
 Every row shows its own state, so you can see which thread is paused on a breakpoint and which is still running, completed, or errored.
@@ -366,7 +331,6 @@ Unless you are chasing a problem that only happens across threads, leave **Debug
 
 Your script can use packages published on [PyPI](https://pypi.org). Choose **Install Package** on the editor dashboard, then search for the package or type its name and version:
 
-<!-- SCREENSHOT: Install Package dialog with a PyPI package searched -->
 ![](gh2-python-packages.png)
 
 Leave **Add Package Reference to Script** checked. The package is then written into the script text, so the script carries the list of packages it needs and someone opening your definition gets them installed:
@@ -412,6 +376,20 @@ Python scripts can reach .NET, so they can use packages published on [NuGet](htt
 from Newtonsoft.Json import JsonConvert
 ```
 
+![](gh2-python-packages-nuget.png)
+
+## Yak Packages
+
+Python scripts can reference .NET assemblies from Yak packages directly. Change **Package Source** to **Yak** in the **Install Package** dialog:
+
+```python
+# r "yak: LunchBox, 2025.5.50"
+
+import LunchBox as LB
+```
+
+![](gh2-python-packages-yak.png)
+
 ## Assembly References
 
 Scripts can reference .NET assemblies directly, by name if the assembly is already loaded in Rhino, or by path:
@@ -428,17 +406,7 @@ import System
 import Rhino
 ```
 
-## Template Scripts
-
-The editor **Templates** panel lists starting points for Python scripts:
-
-- **Script**
-- **Script (With Numpy)**
-- **Script Instance**
-- **Script Instance (With Preview)**
-
-<!-- SCREENSHOT: Templates panel in the component editor listing the Python templates -->
-![](gh2-python-templates.png)
+![](gh2-python-packages-dll.png)
 
 ## Shared State Between Iterations
 

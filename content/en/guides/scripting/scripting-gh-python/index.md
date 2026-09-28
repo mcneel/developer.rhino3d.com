@@ -734,12 +734,6 @@ Right-Click on all input and output parameters and set a **Name** (Human-readabl
 
 Check out [Creating Rhino and Grasshopper Plugins](/guides/scripting/projects-create) on how to publish your script components in a Grasshopper plugin.
 
-## Template Scripts
-
-There are a few template scripts available in the **Templates** panel in the editor. You can Double-Click on any of these templates to replace the contents of your script with the template. This is a good way to start slightly more complicated scripts:
-
-![](python3-component-templates-01.png)
-
 ### User Objects As Templates
 
 Another great way to create template scripts is to setup one script component with the desired inputs, outputs, and template script, and then save that as a Grasshopper **User Object**. You can set extra metadata on the component and customize its icon. Every time you would place an instance of this *User Object*, you are effectively creating a new script component instance with the template script and parameters.
