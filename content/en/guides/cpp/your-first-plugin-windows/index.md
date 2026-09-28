@@ -47,10 +47,10 @@ We will use the *Rhino 3D Plugin (C++)* project template to create a new general
 5. The *New Rhino C++ Plugin* dialog allows you to modify a number of settings used by the template when generating the plugin source code:
      1. **Command name**: Modify this field if you want to change the name of the plugin's initial command.
      2. **Plugin type**: Select the [type of plugin](/guides/general/what-is-a-rhino-plugin) that you want the template to create.
-     3. **Target Version**: Select the target Rhino version.
+     3. **Target Version**: Select the target Rhino version. Rhino 9 plugins require Visual Studio 2026 and the v145 platform toolset. If you target Rhino 9 from an earlier version of Visual Studio, the project will not build because the toolset is missing.
      4. **Automation**: Select this option to allow your program to manipulate objects implemented in another program. Selecting this option also exposes your program to other Automation client plugins.
      5. **Windows sockets**: Select this option to indicate that your program supports Windows sockets. Windows sockets allow you to write programs that communicate over TCP/IP networks.
-     6. **Security Development Lifecycle (SDL) checks**: Select this option to add recommended Security Development Lifecycle (SDL) checks to the project. These checks include extra security-relevant warnings as errors, and additional secure code-generation features. For more information, see [Enable Additional Security Checks](https://msdn.microsoft.com/en-us/library/jj161081.aspx).
+     6. **Security Development Lifecycle (SDL) checks**: Select this option to add recommended Security Development Lifecycle (SDL) checks to the project. These checks include extra security-relevant warnings as errors, and additional secure code-generation features. For more information, see [/sdl (Enable Additional Security Checks)](https://learn.microsoft.com/en-us/cpp/build/reference/sdl-enable-additional-security-checks).
 6. For this tutorial, just accept the default settings. Click the *Finish* button, and the template begins to generate your plugin project’s folders, files, and classes. When the template is finished, look through the plugin project using *Visual Studio’s Solution Explorer*...
 
 ### Plugin Anatomy
@@ -83,7 +83,7 @@ With *Visual Studio*, you can view a project's setting by clicking *Project* > *
 Reviewing the above settings, you can see that there is no 32-bit platform. This is because Rhino is only available as a 64-bit application.
 
 ### Property Sheets
-Visual Studio projects have hundreds of compiler switches and options to choose from. Using custom [Project Property Sheets](https://msdn.microsoft.com/en-us/library/669zx6zc.aspx) is a convenient way to synchronize or share these common settings among other projects.
+Visual Studio projects have hundreds of compiler switches and options to choose from. Using custom [Project Property Sheets](https://learn.microsoft.com/en-us/cpp/build/create-reusable-property-configurations) is a convenient way to synchronize or share these common settings among other projects.
 
 The Plugin Template, used to generate the plugin project, adds Rhino plugin specific property sheets to the project. To view these property sheets, click *View* > *Property Manager*.
 
@@ -93,7 +93,7 @@ The Plugin Template, used to generate the plugin project, adds Rhino plugin spec
 
 The *Rhino Plugin Template*, in addition to generating code, creates a custom project file for your plugin. This file, *Test.vcxproj*, specifies all of the file dependencies together with the compile and link option flags.
 
-Before we can build our project, we need to fill in the Rhino plugin developer declarations. These declarations will let the user of our plugin know who produced the plugin and where they can support information if needed.
+Before we can build our project, we need to fill in the Rhino plugin developer declarations. These declarations will let the user of our plugin know who produced the plugin and where they can get support information if needed.
 
 1. Open *TestPlugIn.cpp* and modify the following lines of code, providing your company name and other support information:
 
@@ -108,12 +108,12 @@ Before we can build our project, we need to fill in the Rhino plugin developer d
 2. When finished, delete the following line of source code as the `#error` directive will prevent the project from building:
 
         #error Developer declarations block is incomplete!
-3. *NOTE*: If you do not delete this line, the plugin will build. You are now ready to build the project by picking *Build Test* from the *Build* menu. If the build was successful, a plugin file named *Test.rhp* is created in the project’s *Debug* folder.
+3. *NOTE*: If you do not delete this line, the plugin will not build. You are now ready to build the project by picking *Build Test* from the *Build* menu. If the build was successful, a plugin file named *Test.rhp* is created in the project’s *x64\Debug* folder.
 
 ### Testing
 
 1. From *Visual Studio*, navigate to *Debug* > *Start Debugging*. This will load Rhino. The version of Rhino that is launched depends on the configuration that you build. The template adds the following configurations to your project:
-     - *Debug*: The *Debug* project is a *Release* project that disables optimizations and generates debugging information using the compiler’s *Program Database* (`/Zi`) option and the linker’s *Generate Debug Information* (`/DEBUG`) option. These option settings let you use the debugger while you are developing your custom plugin. The *Debug* configuration also links with release runtime libraries. Plugins built with the *Debug* configuration will only load in the release version of Rhino that was installed with Rhino.
+     - *Debug*: The *Debug* configuration is built like a *Release* configuration, but it disables optimizations and generates debugging information using the compiler’s *Program Database* (`/Zi`) option and the linker’s *Generate Debug Information* (`/DEBUG`) option. These option settings let you use the debugger while you are developing your custom plugin. The *Debug* configuration also links with release runtime libraries. Plugins built with the *Debug* configuration will only load in the release version of Rhino that was installed with Rhino.
      - *Release*: The *Release* configuration of your program contains no symbolic debug information and is fully optimized. *Debug* information can be generated in PDB Files (C++) depending on the compiler options used. Creating PDB files can be very useful if you later need to debug your release version. The *Release* configuration also links with release runtime libraries. Plugins built with the *Release* configuration will only load in the release version of Rhino that was installed with Rhino.
 1. For this guide, build the *Debug* configuration.
 1. From within Rhino, navigate to *Tools* > *Options*. Navigate to the *Plugins* page under *Rhino Options* and install your plugin.
@@ -167,7 +167,6 @@ public:
 
   // Returns the English command name.
   // If you want to provide a localized command name, then override
-
   // CRhinoCommand::LocalCommandName.
   const wchar_t* EnglishCommandName() override { return L"Test"; }
 
