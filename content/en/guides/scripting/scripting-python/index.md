@@ -39,12 +39,10 @@ This guide covers writing Python scripts in Rhino. For Python scripting in Grass
 
 Run the `ScriptEditor` command to open the script editor. Choose **File > New** and pick Python 3 from the list of languages:
 
-<!-- SCREENSHOT: File > New prompt open with the language list, Python 3 highlighted -->
 ![](python-new.png)
 
 Write your script and choose **Run > Run** to run it. The status bar shows the language and version of the script you are editing:
 
-<!-- SCREENSHOT: editor with a short Python script, status bar showing the language and version -->
 ![](python-run.png)
 
 Scripts are saved as `.py` files. **File > New From Template** starts a new script from one of your [templates](/guides/scripting/editor-templates).
@@ -58,11 +56,10 @@ Rhino embeds two Python runtimes. They are separate implementations rather than 
 
 Python 3 is the better starting point for most scripts, if only for the packages. A script that spends its time calling RhinoCommon, or that needs threads, can do better in Python 2.
 
-Both are listed as separate languages when you create a script, and the editor shows which one the current script uses. A script saved as `.py3` or `.py2` is pinned to that runtime, while a plain `.py` file is opened with the runtime the script asks for.
+Both are listed as separate languages when you create a script, and the editor shows which one the current script uses. A script that starts with `#! python 3` or `#! python 2`, or is saved as `.py3` or `.py2` is specific to that runtime, while a plain `.py` file is opened with the runtime the script asks for.
 
 Choose **Tools > Reload Python 3 (CPython) Engine** or **Tools > Reload Python 2 (IronPython) Engine** to restart an engine without restarting Rhino. This is useful after installing packages or changing modules your script imports:
 
-<!-- SCREENSHOT: Tools menu open showing the two engine reload items -->
 ![](python-engines.png)
 
 ## Scripts That Run on Both
@@ -107,7 +104,6 @@ See [ScriptEditor Command in Macros](/guides/scripting/advanced-scripteditor-mac
 
 Click the gutter to the left of a line to add a breakpoint, then choose **Run > Debug** to run the script and stop there:
 
-<!-- SCREENSHOT: Python script paused on a breakpoint, debug panels open below -->
 ![](python-debug.png)
 
 **Debug** is only available when the script has a breakpoint. While the script is paused you can step through it and inspect your variables in the debugging panels. See [Debugging Your Scripts](/guides/scripting/editor-debug).
@@ -116,7 +112,6 @@ Click the gutter to the left of a line to add a breakpoint, then choose **Run > 
 
 Your scripts can use packages published on [PyPI](https://pypi.org). Choose **Install Package** on the editor dashboard, then search for the package or type its name and version:
 
-<!-- SCREENSHOT: Install Package dialog with a PyPI package searched -->
 ![](python-packages.png)
 
 Leave **Add Package Reference to Script** checked to write the package into the script text. The script then carries the list of packages it needs, and can install them when someone else opens it:
@@ -163,7 +158,6 @@ Packages and assemblies are referenced with the same `# r` directive:
 | `# r "pip: numpy"` | A package from PyPI |
 | `# r "nuget: Newtonsoft.Json, 13.0.3"` | A package from NuGet |
 | `# r "yak: LunchBox, 2025.5.5"` | A Rhino package from the package server |
-| `# r "wheel: /path/to/package.whl"` | A wheel file on disk |
 | `# r "/path/to/module.dll"` | An assembly file on disk |
 
 ## Sharing Code Between Scripts
@@ -178,14 +172,12 @@ myhelpers.do_the_thing()
 
 For Rhino to find the module, its folder has to be on the module search path. **Module Search Paths** in [Options](/guides/scripting/editor-configs) lists the folders that are searched, in order. See [Python Path Files](/guides/scripting/advanced-pthfiles) for adding paths with a `.pth` file instead.
 
-<!-- SCREENSHOT: Module Search Paths in the editor options dialog -->
 ![](python-searchpaths.png)
 
 ## Language Options
 
 Editing features like line numbers, indentation guides, autocomplete, and tab size can be set for Python alone. Choose **Tools > Language Options** while editing a Python script, or right-click the script tab and choose **Language Options**:
 
-<!-- SCREENSHOT: Language Options dialog open for Python -->
 ![](python-langoptions.png)
 
 Each option can follow the editor-wide setting or be set for Python only. The editor-wide values are in [Options](/guides/scripting/editor-configs).
