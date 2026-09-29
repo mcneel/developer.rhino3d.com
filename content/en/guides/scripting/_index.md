@@ -62,25 +62,28 @@ since = 8
 
 ### Python Scripting
 
-- Scripting: Python {{% comingsoon-label %}}
+- [Scripting: Python](/guides/scripting/scripting-python)
 - [Grasshopper Scripting: Python](/guides/scripting/scripting-gh-python)
+- [Grasshopper 2 Scripting: Python](/guides/scripting/scripting-gh2-python) *(Rhino 9)*
 
 ### C# Scripting
 
-- Scripting: C# {{% comingsoon-label %}}  <!-- [C# Scripting](/guides/scripting/scripting-csharp) -->
+- [Scripting: C#](/guides/scripting/scripting-csharp)
 - [Grasshopper Scripting: C#](/guides/scripting/scripting-gh-csharp)
+- [Grasshopper 2 Scripting: C#](/guides/scripting/scripting-gh2-csharp) *(Rhino 9)*
 
 ### Editor Features
 
 - [Editing Features](/guides/scripting/editor-editing)
-- <!-- [Explorer](/guides/scripting/editor-explorer) --> Explorer {{% comingsoon-label %}}
-- <!-- [Search & Replace](/guides/scripting/editor-search) --> Search & Replace {{% comingsoon-label %}}
+- [Explorer](/guides/scripting/editor-explorer)
+- [Search & Replace](/guides/scripting/editor-search)
 - [Terminal](/guides/scripting/editor-terminal)
-- <!-- [Problems Tray](/guides/scripting/editor-problems) --> Problems Tray {{% comingsoon-label %}}
-- <!-- [Debugging Your Scripts](/guides/scripting/editor-debug) --> Debugger {{% comingsoon-label %}}
-- <!-- [Templates](/guides/scripting/editor-templates) --> Templates {{% comingsoon-label %}}
-- <!-- [Examples](/guides/scripting/editor-examples) --> Examples {{% comingsoon-label %}}
-- <!-- [Help](/guides/scripting/editor-help) --> Help {{% comingsoon-label %}}
+- [Problems](/guides/scripting/editor-problems)
+- [Debugging Your Scripts](/guides/scripting/editor-debug)
+- [Templates](/guides/scripting/editor-templates)
+- [Examples](/guides/scripting/editor-examples)
+- [Tests](/guides/scripting/editor-tests) *(Rhino 9)*
+- [Help](/guides/scripting/editor-help)
 - [Options](/guides/scripting/editor-configs)
 - [Logs](/guides/scripting/editor-logs)
 
@@ -97,12 +100,9 @@ since = 8
 
 - [ScriptEditor Macros](/guides/scripting/advanced-scripteditor-macros)
 - [Language Initialization](/guides/scripting/advanced-langinit)
-- <!-- [CPython Runtime and Language Server](/guides/scripting/advanced-pyruntime) --> CPython Runtime and Language Server {{% comingsoon-label %}}
 - [Python Path Files](/guides/scripting/advanced-pthfiles)
 - [Python Package Environments](/guides/scripting/advanced-pyvenvs)
-- <!-- [Language Libraries](/guides/scripting/advanced-libraries) --> Language Libraries {{% comingsoon-label %}}
 - [Asynchronous Execution](/guides/scripting/advanced-async)
-- <!-- [VisualStudioCode Extension](/guides/scripting/advanced-vscode) --> VisualStudioCode Extension {{% comingsoon-label %}}
 - [RhinoCode Command Line Interface](/guides/scripting/advanced-cli)
 <!-- [RhinoCode API](/guides/scripting/advanced-core-api) -->
 <!-- [RhinoCodeEditor API](/guides/scripting/advanced-editor-api) -->
