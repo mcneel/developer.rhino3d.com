@@ -140,6 +140,8 @@ Packages can also be declared in a [PEP 723](https://peps.python.org/pep-0723/) 
 import numpy as np
 ```
 
+See [Script Package References](/guides/scripting/advanced-packages) for the full set of package directives, including editable installs of your own libraries, git repositories, alternate package indexes, and PEP 723 blocks.
+
 For packages that clash with each other, or with what Rhino already loads, see [Python Package Environments](/guides/scripting/advanced-pyvenvs).
 
 ## .NET Packages and Assemblies

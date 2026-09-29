@@ -54,12 +54,12 @@ Scripts of either runtime are written in a refreshed Script Editor, and it is th
 
 Python 3 opens up the wider Python world:
 
-- Packages from [PyPI](https://pypi.org) such as `numpy`, declared in the script itself with `# r: numpy`
+- Packages from [PyPI](https://pypi.org) such as `numpy`, declared in the script itself with `#r: numpy`
 - Separate package environments, for packages that clash with each other
 - Current Python language features, and the libraries that expect them
 
 ```python
-# r: numpy
+#r: numpy
 
 import numpy as np
 import rhinoscriptsyntax as rs

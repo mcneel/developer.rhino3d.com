@@ -373,6 +373,8 @@ using LunchBox;
 
 ![](gh2-csharp-packages-yak.png)
 
+See [Script Package References](/guides/scripting/advanced-packages) for the full set of package directives, including editable installs of your own libraries, git repositories, alternate package indexes, and PEP 723 blocks.
+
 ## Assembly References
 
 Scripts can reference .NET assemblies directly. Choose **Install Package** and change **Package Source** to **DLL Reference**:

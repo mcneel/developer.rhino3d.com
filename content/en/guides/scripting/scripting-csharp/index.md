@@ -94,6 +94,8 @@ Scripts can reference .NET assemblies from Yak packages directly. Change **Packa
 
 ![](csharp-yak.png)
 
+See [Script Package References](/guides/scripting/advanced-packages) for the full set of package directives, including editable installs of your own libraries, git repositories, alternate package indexes, and PEP 723 blocks.
+
 ## Assembly References
 
 Scripts can also reference .NET assemblies directly. Change **Package Source** to **DLL Reference** in the **Install Package** dialog:

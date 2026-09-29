@@ -236,6 +236,8 @@ Console.WriteLine(response.Content);
 
 ![](27.png)
 
+See [Script Package References](/guides/scripting/advanced-packages) for the full set of package directives, including editable installs of your own libraries, git repositories, alternate package indexes, and PEP 723 blocks.
+
 ## Editor Features
 
 Script Editor has other noteworthy features. Here we highlight a few that are used more often:

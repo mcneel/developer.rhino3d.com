@@ -100,6 +100,7 @@ since = 8
 
 - [ScriptEditor Macros](/guides/scripting/advanced-scripteditor-macros)
 - [Language Initialization](/guides/scripting/advanced-langinit)
+- [Script Package References](/guides/scripting/advanced-packages) *(Rhino 9)*
 - [Python Path Files](/guides/scripting/advanced-pthfiles)
 - [Python Package Environments](/guides/scripting/advanced-pyvenvs)
 - [Asynchronous Execution](/guides/scripting/advanced-async)
