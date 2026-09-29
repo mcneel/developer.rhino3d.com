@@ -190,19 +190,19 @@ You can specify the packages required for your scripts inside the script source.
 The default script for each language has a NOTE section at the top that describes how to specify the requirements in your scripts. Looking at the Python 3 default script, we can specify required packages using this syntax:
 
 ```python
-# r: numpy
+#r: numpy
 ```
 
 or 
 
 ```python
-# requirements: numpy
+#requirements: numpy
 ```
 
 Let's create a new Python 3 script and add `numpy` as a package and use that in our script:
 
 ```python
-# requirements: numpy
+#requirements: numpy
 
 import numpy
 

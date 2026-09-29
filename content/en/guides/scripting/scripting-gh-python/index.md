@@ -593,7 +593,7 @@ The Install Package dialog, shows a couple of example of how you can specify the
 The **Add Package Reference to Script** option, when check (default), adds a package reference to the script text. In this manner, the script always knows which packages it needs even when you send this script to others and they do not have the required packages installed.
 
 ```python
-# requirements: numpy
+#requirements: numpy
 
 import numpy as np
 

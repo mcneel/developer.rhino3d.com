@@ -1,2 +1,2 @@
-# r: numpy
+#r: numpy
 from testmodule.riazi import *

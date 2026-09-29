@@ -117,17 +117,17 @@ Your scripts can use packages published on [PyPI](https://pypi.org). Choose **In
 Leave **Add Package Reference to Script** checked to write the package into the script text. The script then carries the list of packages it needs, and can install them when someone else opens it:
 
 ```python
-# r: numpy
+#r: numpy
 
 import numpy as np
 
 print(np.random.rand(7))
 ```
 
-`# r:` and `# requirements:` are the same thing, and both take more than one package:
+`#r:` and `#requirements:` are the same thing, and both take more than one package:
 
 ```python
-# requirements: numpy, requests
+#requirements: numpy, requests
 ```
 
 Packages can also be declared in a [PEP 723](https://peps.python.org/pep-0723/) block, which other Python tools understand too:
@@ -151,14 +151,14 @@ import System
 import Rhino
 ```
 
-Packages and assemblies are referenced with the same `# r` directive:
+Packages and assemblies are referenced with the same `#r` directive:
 
 |  |  |
 | --- | --- |
-| `# r "pip: numpy"` | A package from PyPI |
-| `# r "nuget: Newtonsoft.Json, 13.0.3"` | A package from NuGet |
-| `# r "yak: LunchBox, 2025.5.5"` | A Rhino package from the package server |
-| `# r "/path/to/module.dll"` | An assembly file on disk |
+| `#r "pip: numpy"` | A package from PyPI |
+| `#r "nuget: Newtonsoft.Json, 13.0.3"` | A package from NuGet |
+| `#r "yak: LunchBox, 2025.5.5"` | A Rhino package from the package server |
+| `#r "/path/to/module.dll"` | An assembly file on disk |
 
 ## Sharing Code Between Scripts
 

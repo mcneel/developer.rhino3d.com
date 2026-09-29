@@ -337,7 +337,7 @@ Leave **Add Package Reference to Script** checked. The package is then written i
 
 ```python
 """Grasshopper Script (With Numpy)"""
-# requirements: numpy
+#requirements: numpy
 
 import numpy as np
 
@@ -346,7 +346,7 @@ A = np.random.rand(7)
 print(A)
 ```
 
-`# r:` and `# requirements:` are the same thing, and both take more than one package. Packages can also be declared in a [PEP 723](https://peps.python.org/pep-0723/) block:
+`#r:` and `#requirements:` are the same thing, and both take more than one package. Packages can also be declared in a [PEP 723](https://peps.python.org/pep-0723/) block:
 
 ```python
 # /// script
@@ -371,7 +371,7 @@ For Rhino to find the module, its folder has to be on the module search path. **
 Python scripts can reach .NET, so they can use packages published on [NuGet](https://www.nuget.org) too. Use **Install Package** on the editor dashboard, or write the reference by hand:
 
 ```python
-# r "nuget: Newtonsoft.Json, 13.0.3"
+#r "nuget: Newtonsoft.Json, 13.0.3"
 
 from Newtonsoft.Json import JsonConvert
 ```
@@ -383,7 +383,7 @@ from Newtonsoft.Json import JsonConvert
 Python scripts can reference .NET assemblies from Yak packages directly. Change **Package Source** to **Yak** in the **Install Package** dialog:
 
 ```python
-# r "yak: LunchBox, 2025.5.50"
+#r "yak: LunchBox, 2025.5.50"
 
 import LunchBox as LB
 ```
@@ -395,8 +395,8 @@ import LunchBox as LB
 Scripts can reference .NET assemblies directly, by name if the assembly is already loaded in Rhino, or by path:
 
 ```python
-# r "System.Text.Json.dll"
-# r "/path/to/my/assemblies/MySharedAssembly.dll"
+#r "System.Text.Json.dll"
+#r "/path/to/my/assemblies/MySharedAssembly.dll"
 ```
 
 Import the namespaces you need after referencing them:

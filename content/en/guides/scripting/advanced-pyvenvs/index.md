@@ -100,8 +100,8 @@ You can configure your script to install required packages in a custom environme
 
 ```python
 #! python 3
-# venv: my-pytorch-tools
-# r: torch==2.4.1
+#venv: my-pytorch-tools
+#r: torch==2.4.1
 
 import pytorch
 
