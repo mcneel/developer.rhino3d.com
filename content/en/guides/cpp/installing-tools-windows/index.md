@@ -35,7 +35,7 @@ This guide presumes you have:
 ### Rhino 9
 
 - A PC running Microsoft Windows 11 or later.
-- [Rhino 9 for Windows](https://www.rhino3d.com/download).
+- [Rhino 9 for Windows](https://www.rhino3d.com/download/rhino/beta/).
 
 ### Rhino 8
 
@@ -117,7 +117,7 @@ The **Rhino C/C++ SDK** is a set of tools for creating plugin using the C++ lang
 ### Rhino 9
 
 1. Exit **Visual Studio**.
-2. Download the **[Rhino 9 C/C++ SDK](https://www.rhino3d.com/download/rhino-sdk/9/latest/)**.
+2. Download the **[Rhino 9 C/C++ SDK](https://www.rhino3d.com/download/rhino-sdk/9/beta/)**.
 3. Run the **SDK installer** you downloaded.
 4. Download the **[Rhino Visual Studio Extension (VSIX)](https://github.com/mcneel/RhinoVisualStudioExtensions/releases)**.
 5. Run the **VSIX installer** you downloaded.
