@@ -49,3 +49,16 @@ Use the *Line by Line* toggle on the terminal header to print script output duri
 
 ![](terminal-linebyline.png)
 
+## Zooming
+
+Hold <kbd>Ctrl</kbd> (<kbd>Command</kbd> on Mac) and scroll the mouse wheel over the terminal to make the text bigger or smaller. <kbd>Ctrl</kbd> with <kbd>+</kbd> or <kbd>-</kbd> does the same.
+
+Use **Reset Terminal Zoom** on the terminal header to go back to the default size:
+
+![](terminal-zoom.png)
+
+## Auto Clear %% New in 9
+
+By default the terminal clears itself before each run, so what you see is the output of the last run only. Use the **Auto Clear Terminal** toggle on the terminal header to keep the contents instead, and let output from several runs pile up:
+
+![](terminal-autoclear.png)
