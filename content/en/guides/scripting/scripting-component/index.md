@@ -256,6 +256,7 @@ a = response.Content;
 
 ![](25.png)
 
+See [Script Package References](/guides/scripting/advanced-packages) for the full set of package directives, including editable installs of your own libraries, git repositories, alternate package indexes, and PEP 723 blocks.
 
 ## Editor Features
 

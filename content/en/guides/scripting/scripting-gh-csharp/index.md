@@ -576,6 +576,8 @@ var response = client.Get(request);
 a = response.Content;
 ```
 
+See [Script Package References](/guides/scripting/advanced-packages) for the full set of package directives, including editable installs of your own libraries, git repositories, alternate package indexes, and PEP 723 blocks.
+
 ## Assembly References
 
 C# scripts can also directly reference dotnet assembly files. You can use the **Install Package** dialog and change the **Package Source** option to **DLL Reference**:

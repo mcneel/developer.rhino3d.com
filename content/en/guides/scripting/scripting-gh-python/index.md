@@ -620,6 +620,8 @@ Installing multiple versions of the same package can get very complicated. Scrip
 
 {{< /call-out >}}
 
+See [Script Package References](/guides/scripting/advanced-packages) for the full set of package directives, including editable installs of your own libraries, git repositories, alternate package indexes, and PEP 723 blocks.
+
 ## NuGet Packages
 
 Python script can benefit from third-party packages that are published on [NuGet](https://www.nuget.org) package server. You can use the **Install Package** dialog and change the **Package Source** option to **NuGet**:
