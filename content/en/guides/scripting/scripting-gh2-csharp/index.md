@@ -39,7 +39,6 @@ This guide covers the C# script component in Grasshopper 2. For the Grasshopper 
 
 The C# script component is in the **Maths** tab, **Script** panel. Drop one onto the canvas:
 
-<!-- SCREENSHOT: C# Script component dropped on the GH2 canvas -->
 ![](gh2-csharp-component.png)
 
 A new component starts with a small script that sets one output:
@@ -57,7 +56,6 @@ Console.WriteLine(A);
 
 Double-click the component to open a script editor. The component draws a cone pointing to the editor associated with it:
 
-<!-- SCREENSHOT: component with the editor open and the cone drawn between them -->
 ![](gh2-csharp-open.png)
 
 ### Component Options
@@ -68,7 +66,6 @@ Component options are in the component panel. The **Script** category has:
 - **Export** saves the script to a file
 - **Expire** clears cached compiler results and recomputes
 
-<!-- SCREENSHOT: component panel open showing the Script category buttons -->
 ![](gh2-csharp-panel.png)
 
 #### Threading
@@ -83,7 +80,6 @@ Component options are in the component panel. The **Script** category has:
 
 **Debug Threading** sets the same choice for debug runs and defaults to **One**, to keep debugging simple. Switch it to **Many** only when you are sure that helps, since stepping through a script while several iterations run at once is confusing:
 
-<!-- SCREENSHOT: component panel showing Threading and Debug Threading option bars -->
 ![](gh2-csharp-threading.png)
 
 ## Inputs, Outputs
@@ -92,23 +88,16 @@ A new component has two inputs and one output, plus the **Console** output. Inpu
 
 Add, remove, and rename parameters the same way as any other Grasshopper 2 component. Give them meaningful names, since the names are how your script reaches their values:
 
-<!-- SCREENSHOT: component with renamed inputs and outputs -->
 ![](gh2-csharp-params.png)
 
 ### Pick Pears
 
-Grasshopper 2 keeps metadata alongside every value, and the value together with its metadata is a *pear*. Turn on **Pick Pears** in the **Variable** category of an input's panel to receive `IPear` instances instead of naked values:
-
-<!-- SCREENSHOT: input panel of a script parameter with the Pick Pears toggle enabled -->
-![](gh2-csharp-pears.png)
-
-This is off by default, and is only offered on inputs. Turn it on when your script needs the metadata of an item, not just its value.
+Grasshopper 2 keeps metadata alongside every value, and the value together with its metadata is a *pear*. Turn on **Pick Pears** in the **Variable** category of an input's panel to receive `IPear` instances instead of naked values. This is off by default, and is only offered on inputs. Turn it on when your script needs the metadata of an item, not just its value.
 
 ### Standard Output (Console)
 
 The **Console** output captures anything your script prints to the console. Each printed line becomes one item:
 
-<!-- SCREENSHOT: Console output parameter holding printed text -->
 ![](gh2-csharp-console.png)
 
 #### Toggling Output
@@ -129,21 +118,13 @@ Right-click a parameter to choose how its data reaches your script. The list is 
 - **Geometry** types like `Line`, `Circle`, `Arc`, `Polyline`, `Rectangle3d`
 - **Geometry base** types like `Curve`, `Mesh`, `Surface`, `Brep`, `SubD`, `PointCloud`
 
-<!-- SCREENSHOT: right-click menu on a script input showing the grouped converter list -->
-![](gh2-csharp-converters.png)
-
 **No Conversion** is the default, so values reach your script as Grasshopper stores them. Pick a converter and values are converted to that type first.
 
 Converters replace the type hints of the Grasshopper 1 component.
 
 ### Parameter Access
 
-Each parameter takes **Item**, **Twig**, or **Tree** access, which sets whether your script is handed one value, a list, or a whole tree:
-
-<!-- SCREENSHOT: access menu open on a script input -->
-![](gh2-csharp-access.png)
-
-**Unwrap Data** on an output turns collections your script sets into Grasshopper trees and twigs.
+Each parameter takes **Item**, **Twig**, or **Tree** access, which sets whether your script is handed one value, a list, or a whole tree. **Unwrap Data** on an output turns collections your script sets into Grasshopper trees and twigs.
 
 ## SDK-Mode
 
@@ -254,7 +235,6 @@ public class Script_Instance : GH_ScriptInstance
 }
 ```
 
-<!-- SCREENSHOT: circles drawn in the Rhino viewport from a script component preview -->
 ![](gh2-csharp-preview.png)
 
 ### Input Panel
@@ -289,10 +269,7 @@ public class Script_Instance : GH_ScriptInstance
 }
 ```
 
-Edits apply on the next solve:
-
-<!-- SCREENSHOT: component panel showing the Options category added by the script -->
-![](gh2-csharp-inputpanel.png)
+Edits apply on the next solve.
 
 ## Script-Mode
 
@@ -313,7 +290,6 @@ Debugging pauses your script mid-solution so you can look at your values and ste
 
 Click the gutter to the left of a line to add a **Breakpoint**:
 
-<!-- SCREENSHOT: script in the component editor with a breakpoint set in the gutter -->
 ![](gh2-csharp-debug-breakpoint.png)
 
 The **Run** button becomes **Debug** once the script has a breakpoint. Click it and the component solves until it reaches that line, then stops with the line marked and the debugging panels open:
@@ -333,14 +309,10 @@ The debug buttons on the editor dashboard control what happens next:
 - **Step Out** runs the rest of the current method and stops where it was called
 - **Stop** ends the debug run
 
-<!-- SCREENSHOT: debug control buttons on the editor dashboard -->
-![](gh2-csharp-debug-controls.png)
-
 ### Variables Tray
 
 **Variables** tray lists the values your script is holding at the line it stopped on, including the component inputs. Expand a value to see its members, or the items of a collection:
 
-<!-- SCREENSHOT: variables tray showing inputs and locals, one value expanded -->
 ![](gh2-csharp-debug-variables.png)
 
 Pin a value to keep watching it as you step and as iterations go by.
@@ -349,24 +321,19 @@ Pin a value to keep watching it as you step and as iterations go by.
 
 **Call Stack** tray shows which methods the script is inside. `RunScript` sits at the bottom of a paused component, with any method it called above it. Select a frame to see its values in the **Variables** tray:
 
-<!-- SCREENSHOT: call stack tray with RunScript and a called method listed -->
 ![](gh2-csharp-debug-callstack.png)
 
 ### Call Stacks On Many Threads
 
 With **Debug Threading** set to **Many**, more than one iteration of your script can be paused at the same time. **Call Stack** tray keeps them apart. Each run is listed with the threads it is using, and each thread carries its own frames:
 
-<!-- SCREENSHOT: call stack tray with two threads listed, each with its own frames -->
 ![](gh2-csharp-debug-threads.png)
 
 Every row shows its own state, so you can see which thread is paused on a breakpoint and which is still running, completed, or errored.
 
 Select a frame to see that thread's values in the **Variables** tray. The same variable can hold a different value on each thread, which is the point of looking at them separately.
 
-**Toggle Follow Locks** on the panel header shows a lock on each run. Lock a run and the debugger stays with it instead of following whichever thread stops next:
-
-<!-- SCREENSHOT: Follow Locks enabled with a lock set on one run in the call stack tray -->
-![](gh2-csharp-debug-locks.png)
+**Toggle Follow Locks** on the panel header shows a lock on each run. Lock a run and the debugger stays with it instead of following whichever thread stops next.
 
 Unless you are chasing a problem that only happens across threads, leave **Debug Threading** at **One**. Iterations then pause in order and there is a single call stack to read.
 
@@ -376,7 +343,6 @@ For the panels themselves, see [Debugging Your Scripts](/guides/scripting/editor
 
 Your script can use third-party packages published on [NuGet](https://www.nuget.org). Choose **Install Package** on the editor dashboard, then search for the package or type its name and version:
 
-<!-- SCREENSHOT: Install Package dialog with a NuGet package searched -->
 ![](gh2-csharp-packages.png)
 
 Leave **Add Package Reference to Script** checked. The package is then written into the script text as a `#r` line, so the script carries the list of packages it needs. Someone opening your definition gets the packages installed for them:
@@ -395,12 +361,23 @@ A = response.Content;
 
 The `#r` line follows the package reference format on the NuGet website, so you can also type it by hand.
 
+## Yak Packages
+
+Scripts can reference .NET assemblies from Yak packages directly. Change **Package Source** to **Yak** in the **Install Package** dialog:
+
+```csharp
+#r "yak: LunchBox, 2025.5.50"
+
+using LunchBox;
+```
+
+![](gh2-csharp-packages-yak.png)
+
 ## Assembly References
 
 Scripts can reference .NET assemblies directly. Choose **Install Package** and change **Package Source** to **DLL Reference**:
 
-<!-- SCREENSHOT: Install Package dialog with Package Source set to DLL Reference -->
-![](gh2-csharp-assembly.png)
+![](gh2-csharp-packages-dll.png)
 
 If the assembly is already loaded in Rhino, reference it by name. Include the extension:
 
@@ -413,19 +390,6 @@ You can also give a relative or absolute path to the assembly file. Relative pat
 ```csharp
 #r "/path/to/my/assemblies/MySharedAssembly.dll"
 ```
-
-## Template Scripts
-
-The editor **Templates** panel lists starting points for C# scripts:
-
-- **Script**
-- **Script (With Nuget Package)**
-- **Script Instance**
-- **Script Instance (With Preview)**
-- **Script Instance (With Input Panel)**
-
-<!-- SCREENSHOT: Templates panel in the component editor listing the C# templates -->
-![](gh2-csharp-templates.png)
 
 ## Shared State Between Iterations
 
