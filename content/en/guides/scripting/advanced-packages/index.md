@@ -31,12 +31,6 @@ block_webcrawlers = false
     }
 </style>
 
-{{< call-out "new" "New in Rhino 9" >}}
-
-Some of the directives on this page are new in Rhino 9 and are not understood by earlier versions.
-
-{{< /call-out >}}
-
 ## Package References
 
 A package reference is a line in your script that says which packages the script needs. The script carries its own list, so it installs what it needs when someone else opens it.

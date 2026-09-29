@@ -25,12 +25,6 @@ block_webcrawlers = false
     }
 </style>
 
-{{< call-out "new" "New in Rhino 9" >}}
-
-Tests panel is a Rhino 9 feature and is not available in earlier versions.
-
-{{< /call-out >}}
-
 ## Tests Panel
 
 Tests panel runs scripts as tests and shows whether they passed or failed. Choose **Window > Toggle Tests Panel** to show or hide it.
