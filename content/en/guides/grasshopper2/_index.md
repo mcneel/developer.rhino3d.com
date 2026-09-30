@@ -31,6 +31,7 @@ since = 0
 ### Grasshopper 2 Plugins
 
 - Installing Tools ([Windows](/guides/grasshopper/installing-tools-windows/), [Mac](/guides/grasshopper/installing-tools-mac/))
+- [Getting Started](getting-started/)
 - Your First Component ([Windows](your-first-component-windows/), [Mac](your-first-component-mac/))
 
 {{< /column >}}

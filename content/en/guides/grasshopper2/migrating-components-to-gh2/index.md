@@ -53,6 +53,9 @@ Here's a list of conceptually significant differences in no particular order:
 
 For a .NET assembly to be considered a valid Grasshopper Plugin it should use the `.RHP` extension and it must contain a public class with an empty constructor which inherits from the `Grasshopper2.Framework.Plugin` type, which is the equivalent of the `GH_AssemblyInfo` type in GH1.
 
+<!-- TODO(Mathias): check wording with David -->
+Why the assembly GUID matters, and what changes if you ported an early Rhino 9 WIP plugin, is covered in [Getting Started with Grasshopper 2 Plugins](../getting-started/).
+
 Unlike `GH_AssemblyInfo` however, plugin identity and authorship are no longer specified in code. Instead they are read from assembly attributes, so that a single `*.rhp` file can act as both a Rhino plugin and a Grasshopper plugin using a single set of metadata. The table below lists which attribute feeds which plugin property:
 
 | Property | Assembly attribute | Notes |

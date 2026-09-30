@@ -693,6 +693,12 @@ tagami:
   email: tagami@mcneel.com
   discourse: '11159'
   github: ''
+mathias:
+  name: Mathias Fuchs
+  display_name: Mathias @McNeel
+  email: mathias@mcneel.com
+  discourse: mathiasfuchs_mcn
+  github: mathias-fuchs
 max.soderstrom:
   name: Max Soderstrom
   email: max.soderstrom@mcneel.com

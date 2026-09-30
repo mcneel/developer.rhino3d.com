@@ -32,6 +32,10 @@ block_webcrawlers = true
 
 It is presumed you already have the necessary tools installed and are ready to go. If you are not there yet, see [Installing Tools (Mac)](/guides/rhinocommon/installing-tools-mac).
 
+{{< include-nugget src="../getting-started/index.md" name="assembly-id" >}}
+
+More on plugin identity and loading: [Getting Started with Grasshopper 2 Plugins](../getting-started/).
+
 ## HelloGrasshopper 2
 
 We will use Visual Studio Code and the dotnet Rhino Grasshopper template to create a new, basic, Grasshopper 2 component called _HelloGrasshopper 2_.
