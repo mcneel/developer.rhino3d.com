@@ -1,7 +1,7 @@
 +++
 aliases = ["/guides/scripting/examples/"]
 title = "Examples Panel"
-description = "Provides information on examples panel in script editor"
+description = "Provides information on the Examples panel in the Script Editor"
 authors = ["ehsan"]
 
 [included_in]
@@ -28,7 +28,7 @@ block_webcrawlers = false
 
 ## Examples Panel
 
-Examples panel browses example scripts you can start from. Choose **Window > Toggle Examples Panel** to show or hide it:
+The Examples panel browses example scripts you can start from. Choose **Window > Toggle Examples Panel** to show or hide it:
 
 ![](examples-panel.png)
 

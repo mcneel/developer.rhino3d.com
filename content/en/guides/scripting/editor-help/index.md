@@ -1,6 +1,6 @@
 +++
 title = "Help Panel"
-description = "Provides information on help panel in script editor"
+description = "Provides information on the Help panel in the Script Editor"
 authors = ["ehsan"]
 
 [included_in]
@@ -33,7 +33,7 @@ block_webcrawlers = false
 
 ## Help Panel
 
-Help panel lists the libraries available to your scripts and lets you search them. Choose **Help > Toggle Help Panel** to show or hide it. Libraries are loaded the first time the panel is opened:
+The Help panel lists the libraries available to your scripts and lets you search them. Choose **Help > Toggle Help Panel** to show or hide it. Libraries are loaded the first time the panel is opened:
 
 ![](help-panel.png)
 

@@ -518,7 +518,7 @@ If a value is a collection of other values, you can expand the variable to see e
 
 {{< call-out "note" "Changed in Rhino 9" >}}
 
-*Watch* tray is removed in Rhino 9. Watching a variable is now done by pinning it in the *Variables* tray. See [Debugging Your Scripts](/guides/scripting/editor-debug).
+The *Watch* tray was removed in Rhino 9. Watching a variable is now done by pinning it in the *Variables* tray. See [Debugging Your Scripts](/guides/scripting/editor-debug).
 
 {{< /call-out >}}
 

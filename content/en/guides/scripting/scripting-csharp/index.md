@@ -134,14 +134,14 @@ Each option can follow the editor-wide setting or be set for C# only. The editor
 
 ## Modern C# Features
 
-Scripts are written in a modern flavour of C#, so most of the modern language features are available. The status bar shows the language version in use. A few features that are handy in scripts:
+Scripts are written in a modern flavor of C#, so most of the modern language features are available. The status bar shows the language version in use. A few features that are handy in scripts:
 
 [String interpolation](https://learn.microsoft.com/en-us/dotnet/csharp/tutorials/string-interpolation) mixes values into text:
 
 ```csharp
 int count = 42;
 
-// each pair of {} holds a C# statement
+// each pair of {} holds a C# expression
 Console.WriteLine($"Found {count} objects");
 ```
 

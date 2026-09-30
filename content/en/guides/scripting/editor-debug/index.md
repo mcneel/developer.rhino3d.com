@@ -1,6 +1,6 @@
 +++
 title = "Debugging Your Scripts"
-description = "Provides information on debugging panels in script editor"
+description = "Provides information on the debugging panels in the Script Editor"
 authors = ["ehsan"]
 
 [included_in]
@@ -51,7 +51,7 @@ Click the gutter to the left of a line to add or remove a breakpoint:
 
 ![](debug-setbreakpoint.png)
 
-Breakpoints panel lists every breakpoint you have set. Each row shows the script and the line number. Click the icon on a row to disable that breakpoint without removing it:
+The Breakpoints panel lists every breakpoint you have set. Each row shows the script and the line number. Click the icon on a row to disable that breakpoint without removing it:
 
 ![](debug-breakpoints.png)
 
@@ -63,7 +63,7 @@ The panel header has:
 
 ## Debug Controls
 
-Once the script is paused, use **Run** menu to step through it:
+Once the script is paused, use the **Run** menu to step through it:
 
 |  |  |
 | --- | --- |
@@ -78,7 +78,7 @@ Once the script is paused, use **Run** menu to step through it:
 
 ## Variables
 
-Variables panel lists the variables of the paused script, grouped by scope. Values update as you step:
+The Variables panel lists the variables of the paused script, grouped by scope. Values update as you step:
 
 ![](debug-variables.png)
 
@@ -109,7 +109,7 @@ Choose **Run > Toggle Show Variables On Debug** to open this panel automatically
 
 ## Call Stack
 
-Call Stack panel shows the runs, threads, and frames of your script, and marks where the script is paused. Select a frame to see its variables in the Variables panel:
+The Call Stack panel shows the runs, threads, and frames of your script, and marks where the script is paused. Select a frame to see its variables in the Variables panel:
 
 ![](debug-callstack.png)
 
@@ -119,7 +119,7 @@ Use **Collapse Call Stack** to collapse expanded frames, and **Toggle Follow Loc
 
 ## Pausing on Exceptions
 
-Breakpoints panel header also sets when the debugger pauses on an exception. The same options are in **Run > Pause On Exception Policy**:
+The Breakpoints panel header also sets when the debugger pauses on an exception. The same options are in **Run > Pause On Exception Policy**:
 
 - **Pause on Any Exception (Handled or not)**
 - **Pause on Unhandled Exceptions (Default)**
