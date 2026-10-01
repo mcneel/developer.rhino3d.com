@@ -12,7 +12,7 @@ weight = 3
 
 [included_in]
 platforms = [ "Mac" ]
-since = 0
+since = 9
 
 [page_options]
 byline = true
@@ -34,7 +34,7 @@ static CSamplePlugIn thePlugIn;
 
 Static means it is constructed when Rhino loads the bundle, before anything else runs. Rhino looks for it immediately after loading and gives up if it is not there.
 
-Because the order in which static objects are constructed matters - the plugin has to exist before any of its commands - Windows uses `#pragma init_seg(lib)` to force it. That pragma is Microsoft-only, so wrap it:
+Because the order in which static objects are constructed matters - the plugin has to exist before any of its commands - the Windows build uses `#pragma init_seg(lib)` to force it. That pragma is Microsoft-only, so wrap it:
 
 ```cpp
 #if defined(_MSC_VER)
@@ -68,7 +68,7 @@ RHINO_PLUG_IN_DEVELOPER_WEBSITE(L"My Website");
 RHINO_PLUG_IN_UPDATE_URL(L"My Update URL");
 ```
 
-Those macros write small functions into your plugin that Rhino calls from outside before it trusts the plugin: its name, its id, and which SDK it was built against.
+These macros add small exported functions to your plugin. Before Rhino trusts the plugin, it calls them to get the plugin's name, its ID, and the SDK it was built against.
 
 **The block must be compiled on the Mac too.** In older cross-platform samples it sits inside `#if defined(ON_RUNTIME_WIN)`, because only Windows used to check. Rhino 9 for Mac checks as well, so a plugin whose declaration is compiled out will not load. Only the `init_seg` pragma above is Windows-only.
 
@@ -77,7 +77,7 @@ Two failures come from this block:
 - *"Rhino version not specified"* - the block is missing, or compiled out on the Mac.
 - *"plug-in not compiled for this version of Rhino"* - the block is there, but the SDK you built against is not the one this Rhino expects. Update your `SDK` submodule.
 
-**The id must be yours.** Do not copy an id out of a sample or out of this page. `RHINO_PLUG_IN_ID` has to match the id your plugin class returns from `PlugInID()`, no two plugins may share one, and a plugin using an id that belongs to someone else quietly refuses to load alongside it.
+**The id must be yours.** Do not copy an id out of a sample or out of this page. `RHINO_PLUG_IN_ID` has to match the id your plugin class returns from `PlugInID()`, and no two plugins may share one. If two plugins share an ID, Rhino loads only one of them and shows no warning.
 
 Make your own in Terminal:
 
@@ -136,16 +136,16 @@ The order of those four headers matters. The preamble sets up things the rest of
 
 ## Types that are not the same on both platforms
 
-**`BOOL`.** In MFC, `BOOL` is an `int`. On the Mac, `BOOL` is a single byte. The SDK declares its methods as `int` or `BOOL32`, so a method you wrote as `BOOL` matched on Windows by accident and will not match on the Mac:
+**`BOOL`.** In MFC, `BOOL` is an `int`. On the Mac, `BOOL` is a single byte. The SDK declares its methods as `int` or `BOOL32`, so an override declared as `BOOL` matches on Windows only by accident, and does not match on the Mac:
 
 ```cpp
 int OnLoadPlugIn() override;                  // the SDK says int
 BOOL32 AddToPlugInHelpMenu() const override;  // the SDK says BOOL32
 ```
 
-The compiler finds these for you - it reports an override with a different return type. Change them to what the SDK declares and they still build on Windows.
+The compiler finds these for you - it reports an override with a different return type. Change them to what the SDK declares, and they still build on Windows.
 
-Watch for definitions in your `.cpp` that leave parameter names out, like `(CRhinoDoc&, const wchar_t*, BOOL, BOOL)`. Searching for a parameter name misses those.
+If you search for `BOOL` parameters by name, you will miss definitions that leave the names out, such as `(CRhinoDoc&, const wchar_t*, BOOL, BOOL)`.
 
 **Microsoft spellings.** `__time64_t` and `_time64` are Microsoft's. Use `time_t` and `time`.
 
@@ -157,7 +157,7 @@ Watch for definitions in your `.cpp` that leave parameter names out, like `(CRhi
 
 **The precompiled header source.** `stdafx.cpp` exists to generate the Windows precompiled header. The Mac build does not use it.
 
-**Resource and module definition files.** `.rc`, `.rc2`, `.def` and `Resource.h` are Windows. Version information on the Mac comes from the `Info.plist` instead.
+**Resource and module definition files.** `.rc`, `.rc2`, `.def` and `Resource.h` are Windows-only. Version information on the Mac comes from the `Info.plist` instead.
 
 ## Info.plist
 
@@ -168,7 +168,7 @@ A Mac plugin is a bundle, and every bundle has an `Info.plist` describing it. On
 <string>BNDL</string>
 ```
 
-`BNDL` means a loadable bundle. If it says `APPL`, macOS thinks your plugin is an application, and **Rhino refuses it without printing anything** - no error, and no entry in Options > Plug-ins. It looks exactly like a plugin that was never loaded.
+`BNDL` means a loadable bundle. If it says `APPL`, macOS thinks your plugin is an application, and **Rhino refuses it without printing anything** - no error, and no entry in *Settings* > *Plug-ins*. It looks exactly like a plugin that was never loaded.
 
 This catches people because some build tools write `APPL` by default. If your plugin builds and then simply is not there, check this first.
 
@@ -208,6 +208,6 @@ What it does give you is the option of calling Cocoa directly from the same file
 
 ## Related Topics
 
-- [Creating your first C/C++ plugin (Cross Platform)](/guides/cpp/your-first-plugin-crossplatform/)
+- [Creating your first C/C++ plugin (Cross-Platform)](/guides/cpp/your-first-plugin-crossplatform/)
 - [Installing Tools (Mac)](/guides/cpp/installing-tools-mac/)
 - [The Rhino C++ SDK repository](https://github.com/mcneel/rhino_sdk_cpp)

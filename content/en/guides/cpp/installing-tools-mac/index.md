@@ -12,7 +12,7 @@ weight = 1
 
 [included_in]
 platforms = [ "Mac" ]
-since = 0
+since = 9
 
 [page_options]
 byline = true
@@ -36,7 +36,7 @@ Install [Xcode](https://developer.apple.com/xcode/) from the Mac App Store. It i
 
 Xcode brings the compiler and the debugger. You do not have to write your plugin in Xcode if you would rather use another editor, but the compiler it installs is the one that builds your plugin.
 
-After installing it, open Xcode once and let it finish setting itself up. Then install the command line tools:
+After installing it, open Xcode once and let it finish setting itself up. Then install the Command Line Tools:
 
 ```
 xcode-select --install
@@ -44,9 +44,15 @@ xcode-select --install
 
 If the tools are already there, that command tells you so, which is also a good check.
 
+## Homebrew
+
+Homebrew is our preferred package manager on macOS.
+
+Install [Homebrew](https://brew.sh/) from the one-liner on their homepage.
+
 ## CMake
 
-You build and debug in Xcode. CMake is only the thing that makes the Xcode project, and you run it once when you set a project up.
+You build and debug in Xcode. CMake only generates the Xcode project. You run it once, when you set up a project.
 
 Install [CMake](https://cmake.org/download/) and forget about it until then.
 
@@ -65,7 +71,7 @@ brew install git git-lfs
 git lfs install
 ```
 
-The last line only needs running once on your machine.
+You need to run the last line only once on each computer.
 
 ## The SDK
 
@@ -73,10 +79,10 @@ You do not install the C/C++ SDK. It lives in a repository:
 
 <https://github.com/mcneel/rhino_sdk_cpp>
 
-You normally add it to your own plugin's repository as a *submodule*, so that the SDK sits in a folder inside your project and everyone who clones your project gets it. The next guide shows this being done.
+You normally add it to your own plugin's repository as a *submodule*, so that the SDK sits in a folder inside your project and everyone who clones your project gets it.
 
 The SDK's own [README](https://github.com/mcneel/rhino_sdk_cpp/blob/main/README.md) is the reference for building against it, and covers both platforms.
 
 ## Next Steps
 
-You now have the tools. Go on to [Creating your first C/C++ plugin (Cross Platform)](/guides/cpp/your-first-plugin-crossplatform/), which builds a working plugin for Rhino for Mac and Rhino for Windows from the same code.
+You now have the tools. Go on to [Creating your first C/C++ plugin (Cross-Platform)](/guides/cpp/your-first-plugin-crossplatform/), which builds a working plugin for Rhino for Mac and Rhino for Windows from the same code.
