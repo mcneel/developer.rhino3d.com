@@ -48,6 +48,85 @@ Rhino 8 and newer embed two Python runtimes side by side:
 
 Python 3 is an addition, not a replacement. Your Python 2 scripts keep running on IronPython, and both runtimes are available in Rhino and in Grasshopper.
 
+## Python Versions
+
+Each Rhino release ships with its own version of Python 3. The chart shows that version, and how long [python.org](https://devguide.python.org/versions/) supports it:
+
+<!-- dates from devguide.python.org/versions; x = 170 + (year - 2020) * 48.2 -->
+<svg class="python-versions" viewBox="0 0 720 150" role="img" aria-label="Python versions in Rhino: Rhino 8 ships Python 3.9.10, Rhino 9 ships Python 3.13.13">
+  <style>
+    .python-versions { width: 100%; max-width: 720px; font-family: inherit; }
+    .python-versions text { fill: #333; font-size: 12px; }
+    .python-versions .grid { stroke: #ddd; stroke-width: 1; }
+    .python-versions .year { fill: #777; font-size: 11px; text-anchor: middle; }
+    .python-versions .rhino { font-weight: bold; font-size: 13px; }
+    .python-versions .py { fill: #666; }
+    .python-versions .bar text { fill: #fff; font-size: 11px; text-anchor: middle; }
+    .python-versions .bugfix { fill: #3c8d40; }
+    .python-versions .security { fill: #e0a526; }
+    .python-versions .now line { stroke: #c62828; stroke-width: 1.5; stroke-dasharray: 4 3; }
+    .python-versions .now text { fill: #c62828; font-size: 11px; font-weight: bold; }
+  </style>
+  <g class="grid">
+    <line x1="170" y1="22" x2="170" y2="120"/><line x1="218.2" y1="22" x2="218.2" y2="120"/>
+    <line x1="266.4" y1="22" x2="266.4" y2="120"/><line x1="314.6" y1="22" x2="314.6" y2="120"/>
+    <line x1="362.8" y1="22" x2="362.8" y2="120"/><line x1="411" y1="22" x2="411" y2="120"/>
+    <line x1="459.2" y1="22" x2="459.2" y2="120"/><line x1="507.4" y1="22" x2="507.4" y2="120"/>
+    <line x1="555.6" y1="22" x2="555.6" y2="120"/><line x1="603.8" y1="22" x2="603.8" y2="120"/>
+    <line x1="652" y1="22" x2="652" y2="120"/><line x1="700.2" y1="22" x2="700.2" y2="120"/>
+  </g>
+  <g>
+    <text class="year" x="194.1" y="15">2020</text><text class="year" x="242.3" y="15">2021</text>
+    <text class="year" x="290.5" y="15">2022</text><text class="year" x="338.7" y="15">2023</text>
+    <text class="year" x="386.9" y="15">2024</text><text class="year" x="435.1" y="15">2025</text>
+    <text class="year" x="483.3" y="15">2026</text><text class="year" x="531.5" y="15">2027</text>
+    <text class="year" x="579.7" y="15">2028</text><text class="year" x="627.9" y="15">2029</text>
+    <text class="year" x="676.1" y="15">2030</text>
+  </g>
+  <!-- Rhino 8: 3.9 released 2020-10-05, last bugfix 2022-05-17, end of life 2025-10-31 -->
+  <text class="rhino" x="0" y="45">Rhino 8</text>
+  <text class="py" x="0" y="61">Python 3.9.10</text>
+  <g class="bar">
+    <rect class="bugfix" x="206.7" y="34" width="77.6" height="26"/>
+    <text x="245.5" y="51">bugfix</text>
+    <rect class="security" x="284.3" y="34" width="166.6" height="26"/>
+    <text x="367.6" y="51">security</text>
+  </g>
+  <!-- Rhino 9: 3.13 released 2024-10-07, last bugfix 2026-10-01, end of life 2029-10 -->
+  <text class="rhino" x="0" y="91">Rhino 9</text>
+  <text class="py" x="0" y="107">Python 3.13.13</text>
+  <g class="bar">
+    <rect class="bugfix" x="399.6" y="80" width="95.6" height="26"/>
+    <text x="447.4" y="97">bugfix</text>
+    <rect class="security" x="495.2" y="80" width="146.2" height="26"/>
+    <text x="568.3" y="97">security</text>
+  </g>
+  <g class="bar">
+    <rect class="bugfix" x="170" y="132" width="12" height="12"/>
+    <rect class="security" x="370" y="132" width="12" height="12"/>
+  </g>
+  <text x="188" y="142">bugfix and security fixes</text>
+  <text x="388" y="142">security fixes only</text>
+  <g class="now" visibility="hidden">
+    <line y1="22" y2="120"/>
+    <text y="31"></text>
+  </g>
+</svg>
+<script>
+  // placed at view time so the marker never goes stale
+  (function () {
+    var now = new Date();
+    var x = 170 + (now.getFullYear() + now.getMonth() / 12 - 2020) * 48.2;
+    if (x < 170 || x > 700) return;
+    var g = document.querySelector('.python-versions .now');
+    var line = g.querySelector('line'), label = g.querySelector('text');
+    line.setAttribute('x1', x); line.setAttribute('x2', x);
+    label.setAttribute('x', x + 4);
+    label.textContent = now.toLocaleString('en', { month: 'short', year: 'numeric' });
+    g.setAttribute('visibility', 'visible');
+  })();
+</script>
+
 Scripts of either runtime are written in a refreshed Script Editor, and it is the editor that puts the rest of this page within reach: installing packages, and a real debugger with breakpoints, variables, and a call stack. That debugger also works inside Grasshopper components, which the old editor could not do.
 
 ## What You Get With Python 3
