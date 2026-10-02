@@ -64,10 +64,16 @@ brew install cmake
 
 ## Git and Git LFS
 
-The SDK and the samples are on GitHub, and some of the SDK's files are stored with Git LFS - an add-on that handles large files. Without it those files arrive as small text placeholders and your build fails at the link step with a confusing error.
+The SDK and the samples are on GitHub, so you need Git:
 
 ```
-brew install git git-lfs
+brew install git
+```
+
+A Mac build does not need Git LFS. Only the SDK's four Windows libraries are kept in Git LFS - the Mac links against small `.tbd` files that Git fetches normally. If you will also build for Windows from the same checkout, install it now:
+
+```
+brew install git-lfs
 git lfs install
 ```
 

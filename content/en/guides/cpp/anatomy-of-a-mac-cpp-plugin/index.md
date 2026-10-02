@@ -149,7 +149,7 @@ If you search for `BOOL` parameters by name, you will miss definitions that leav
 
 **Microsoft spellings.** `__time64_t` and `_time64` are Microsoft's. Use `time_t` and `time`.
 
-**A few SDK methods differ.** `CRhinoEventWatcher::UndoEvent` takes an extra document argument on the Mac. Where the SDK does this it uses `#ifdef ON_RUNTIME_APPLE`, and your override has to carry the same test. If the compiler says a method marked `override` hides a virtual function, read the SDK's declaration - that is usually why.
+**A few SDK methods differ.** `CRhinoEventWatcher::UndoEvent` takes an extra document argument on the Mac. Where the SDK does this it uses `#ifdef ON_RUNTIME_APPLE`, and your override has to carry the same test. If your override has the Windows arguments, the Mac compiler stops with `non-virtual member function marked 'override' hides virtual member function`. Your method has the same name as the SDK's but different arguments, so it does not override it. Compare it with the SDK's declaration.
 
 ## What you do not need on the Mac
 

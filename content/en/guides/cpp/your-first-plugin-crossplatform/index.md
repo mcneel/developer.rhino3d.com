@@ -37,7 +37,7 @@ git submodule update --init cpp/SDK
 git -C cpp/SDK lfs pull
 ```
 
-That last line matters on Windows. The Windows part of the SDK includes four large library files kept in Git LFS. Without Git LFS, these files arrive as small placeholders, and the build fails at the link step.
+That last line matters on Windows only. The Windows part of the SDK includes four large library files kept in Git LFS. Without Git LFS, these files arrive as small placeholders, and the Windows build fails at the link step. The Mac does not use them, so on a Mac without Git LFS you can leave the line out.
 
 The sample is in `cpp/SampleEventWatcher`. It watches the Rhino document and prints a line every time something happens - an object added, moved or deleted, a file opened or saved.
 
