@@ -167,19 +167,19 @@ You can specify the packages required for your scripts inside the script source.
 The default script for each language has a NOTE section at the top that describes how to specify the requirements in your scripts. Looking at Python 3 default script, we can specify required packages using this syntax:
 
 ```python
-# r: numpy
+#r: numpy
 ```
 
 or 
 
 ```python
-# requirements: numpy
+#requirements: numpy
 ```
 
 Let's create a new Python 3 script and add `numpy` as a package and use that in our script:
 
 ```python
-# requirements: numpy
+#requirements: numpy
 
 import numpy
 
@@ -201,7 +201,7 @@ Click Run, and the script editor will attempt to install the required packages b
 Another method of adding local packages to Python scripts is by adding their path to the `sys.path`. You can simplify this step by using the `# env:` specifier in your scripts to automatically add a path to the `sys.path` before running your script:
 
 ```python
-# env: C:/Path/To/Where/My/Library/Is/Located/
+#env: C:/Path/To/Where/My/Library/Is/Located/
 
 import mylibrary
 
@@ -235,6 +235,8 @@ Console.WriteLine(response.Content);
 ```
 
 ![](27.png)
+
+See [Script Package References](/guides/scripting/advanced-packages) for the full set of package directives, including editable installs of your own libraries, git repositories, alternate package indexes, and PEP 723 blocks.
 
 ## Editor Features
 

@@ -162,8 +162,11 @@ mylibrary.do_something()
 ```
 
 
+See [Script Package References](/guides/scripting/advanced-packages) for the full set of package directives, including editable installs of your own libraries, git repositories, alternate package indexes, and PEP 723 blocks.
+
 ## Related Topics
 
+- [Script Package References](/guides/scripting/advanced-packages)
 - [What are Python and RhinoScriptSyntax?](/guides/rhinopython/what-is-rhinopython)
 - [Python Basic Syntax](/guides/rhinopython/python-statements/)
 - [Python Procedures](/guides/rhinopython/python-procedures/)

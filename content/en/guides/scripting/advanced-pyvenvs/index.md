@@ -52,6 +52,8 @@ Following the scenario above, even if the two version of *pkg_a* can be installe
 
 ## Virtual Environments
 
+See [Script Package References](/guides/scripting/advanced-packages) for the full set of package directives, including editable installs of your own libraries, git repositories, alternate package indexes, and PEP 723 blocks.
+
 Tools like *pipenv* and other environment managers for Python, normally solve this problem by creating multiple **Virtual Environment**s. Each virtual environment has a dedicated folder with its own `site-packages` (where pip installs packages by default). Python core binaries are then linked into this folder to create a fully functional Python environment. Following the scenario above:
 
 - File *script_a.py* requires *pkg_a* version 1 - installed in *venv_a*
@@ -100,8 +102,8 @@ You can configure your script to install required packages in a custom environme
 
 ```python
 #! python 3
-# venv: my-pytorch-tools
-# r: torch==2.4.1
+#venv: my-pytorch-tools
+#r: torch==2.4.1
 
 import pytorch
 

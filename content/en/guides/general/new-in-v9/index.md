@@ -43,9 +43,11 @@ Rhino 9 brings a C++ SDK on Mac, Rhino.Compute on Linux, significant improvement
 
 {{< card-gallery >}}
 {{< feature-card page="/guides/cpp/dotnet-interop" image="/images/new-in-v9/cpp-dotnet-interop.png" title="C++ to .NET Interop" description="Named Callbacks in C++ for easier access to .NET functionality" >}}
-{{< feature-card page="/guides/rhinocommon" url="https://mcneel-apidocs.herokuapp.com/api/rhinocommon/whatsnew/9.0" image="/images/new-in-v9/rhinocommon.png" title="RhinoCommon" description="New APIs for Shrinkwrap, Flair, Code-Driven File IO, and more..." >}}
+{{< feature-card page="/guides/rhinocommon" url="https://mcneel-apidocs.herokuapp.com/api/rhinocommon/whatsnew/9.0" image="/images/new-in-v9/rhinocommon.png" title="RhinoCommon" description="New APIs for Markups, Page View Groups, Worksessions, CSV File IO, Mesh Booleans and Curvature, and more..." >}}
 {{< feature-card page="/guides/general/rhino-ui-system/in-viewport-ui" image="/images/new-in-v9/in-viewport-ui.png" title="In-Viewport User Interface" description="Controls and grips directly in the Rhino viewport" >}}
+{{< feature-card page="/guides/cpp/installing-tools-windows" image="/images/new-in-v9/cpp-vs2026.png" title="Visual Studio 2026 for C++" description="The C++ SDK for Windows supports Visual Studio 2026, the v145 platform toolset, and C++20." >}}
 {{< /card-gallery >}}
+
 
 ## Scripting Updates
 

@@ -593,7 +593,7 @@ The Install Package dialog, shows a couple of example of how you can specify the
 The **Add Package Reference to Script** option, when check (default), adds a package reference to the script text. In this manner, the script always knows which packages it needs even when you send this script to others and they do not have the required packages installed.
 
 ```python
-# requirements: numpy
+#requirements: numpy
 
 import numpy as np
 
@@ -619,6 +619,8 @@ import my_module
 Installing multiple versions of the same package can get very complicated. Script Editor supports `# venv:` directive that attempts to simplify dependency trees for different scripts. Take a look at [Python Package Environments](/guides/scripting/advanced-pyvenvs) for detailed information on this topic.
 
 {{< /call-out >}}
+
+See [Script Package References](/guides/scripting/advanced-packages) for the full set of package directives, including editable installs of your own libraries, git repositories, alternate package indexes, and PEP 723 blocks.
 
 ## NuGet Packages
 
@@ -733,12 +735,6 @@ Right-Click on all input and output parameters and set a **Name** (Human-readabl
 ![](python3-component-publishing-02.png)
 
 Check out [Creating Rhino and Grasshopper Plugins](/guides/scripting/projects-create) on how to publish your script components in a Grasshopper plugin.
-
-## Template Scripts
-
-There are a few template scripts available in the **Templates** panel in the editor. You can Double-Click on any of these templates to replace the contents of your script with the template. This is a good way to start slightly more complicated scripts:
-
-![](python3-component-templates-01.png)
 
 ### User Objects As Templates
 

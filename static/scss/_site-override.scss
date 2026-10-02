@@ -37,6 +37,17 @@ h2 a:visited {
   margin-bottom: 2px;
 }
 
+/* keep version badges in headings readable; the rules above would
+   otherwise paint their text like a link */
+h1 .new-callout a,
+h1 .new-callout a:visited,
+h2 .new-callout a,
+h2 .new-callout a:visited,
+h3 .new-callout a,
+h3 .new-callout a:visited {
+  color: #ffffff !important;
+}
+
 /*
 ##################################################################
 # Site-specific tuning for the static (collapsed-by-default) navbar.

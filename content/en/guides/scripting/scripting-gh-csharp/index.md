@@ -516,6 +516,13 @@ If a value is a collection of other values, you can expand the variable to see e
 
 ### Watch Tray
 
+{{< call-out "note" "Changed in Rhino 9" >}}
+
+The *Watch* tray was removed in Rhino 9. Watching a variable is now done by pinning it in the *Variables* tray. See [Debugging Your Scripts](/guides/scripting/editor-debug).
+
+{{< /call-out >}}
+
+
 *Watch* tray is very similar to the variables tray. The primary difference is that *Watch* tray only shows the variables that you have specifically added to watch. Use the **Add Expression** button on the tray toolbar to add a new variable to watch. Hit Enter on the added *Expression* item to edit and type the variable name:
 
 ![](csharp-component-debugging-11.png)
@@ -568,6 +575,8 @@ var response = client.Get(request);
  
 a = response.Content;
 ```
+
+See [Script Package References](/guides/scripting/advanced-packages) for the full set of package directives, including editable installs of your own libraries, git repositories, alternate package indexes, and PEP 723 blocks.
 
 ## Assembly References
 
@@ -650,12 +659,6 @@ Right-Click on all input and output parameters and set a **Name** (Human-readabl
 ![](csharp-component-publishing-02.png)
 
 Check out [Creating Rhino and Grasshopper Plugins](/guides/scripting/projects-create) on how to publish your script components in a Grasshopper plugin.
-
-## Template Scripts
-
-There are a few template scripts available in the **Templates** panel in the editor. You can Double-Click on any of these templates to replace the contents of your script with the template. This is a good way to start slightly more complicated scripts:
-
-![](csharp-component-templates-01.png)
 
 ### User Objects As Templates
 
