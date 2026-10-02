@@ -1,6 +1,6 @@
 +++
 title = "Search & Replace"
-description = "Provides information on search and replace panel in script editor"
+description = "Provides information on the Search & Replace panel in the Script Editor"
 authors = ["ehsan"]
 
 [included_in]
@@ -27,7 +27,7 @@ block_webcrawlers = false
 
 ## Search & Replace
 
-Search & Replace panel finds text in the script you are editing. Choose **Window > Toggle Search Panel** to show or hide it.
+The Search & Replace panel finds text in the script you are editing. Choose **Window > Toggle Search Panel** to show or hide it.
 
 Type in the search box and the matches are listed under the script they were found in:
 

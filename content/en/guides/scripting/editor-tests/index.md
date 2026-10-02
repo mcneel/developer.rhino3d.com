@@ -1,6 +1,6 @@
 +++
 title = "Tests Panel"
-description = "Provides information on tests panel in script editor"
+description = "Provides information on the Tests panel in the Script Editor"
 authors = ["ehsan"]
 
 [included_in]
@@ -27,7 +27,7 @@ block_webcrawlers = false
 
 ## Tests Panel
 
-Tests panel runs scripts as tests and shows whether they passed or failed. Choose **Window > Toggle Tests Panel** to show or hide it.
+The Tests panel runs scripts as tests and shows whether they passed or failed. Choose **Window > Toggle Tests Panel** to show or hide it.
 
 Use **Open Tests Directory** on the panel header to choose a directory of tests, **Reload Tests** to collect them again after changing files outside the editor, and **Clear Tests Browser** to empty the panel:
 
@@ -38,10 +38,10 @@ Use **Open Tests Directory** on the panel header to choose a directory of tests,
 Scripts and folders are collected as tests when their names start with `test_`. A script must also be runnable to be collected:
 
 - `test_curves.py` is a test
-- `test_geometry` folder is a group of tests
+- A `test_geometry` folder is a group of tests
 - `curves.py` is not collected
 
-Each collected script is one test. Hover over test icon to see the test language and file info:
+Each collected script is one test. Hover over the test icon to see the test language and file info:
 
 ![](tests-info.png)
 

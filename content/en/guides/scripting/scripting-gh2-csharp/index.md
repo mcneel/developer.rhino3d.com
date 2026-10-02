@@ -52,7 +52,7 @@ A = "Hello C# Scripting!";
 Console.WriteLine(A);
 ```
 
-### Opening Script Editor
+### Opening the Script Editor
 
 Double-click the component to open a script editor. The component draws a cone pointing to the editor associated with it:
 
@@ -158,7 +158,7 @@ The instance also gives access to what is running the script:
 | `RhinoDocument` | The active Rhino document |
 | `Access` | Data access for the iteration being computed |
 | `Solution` | The solution being computed |
-| `Callstack` | The callstack leading up to the component |
+| `Callstack` | The call stack leading up to the component |
 | `CustomData` | Data shared by all iterations of the solution |
 | `Iteration` | Index of the iteration being computed |
 | `Iterations` | Number of iterations in the solution |
@@ -311,7 +311,7 @@ The debug buttons on the editor dashboard control what happens next:
 
 ### Variables Tray
 
-**Variables** tray lists the values your script is holding at the line it stopped on, including the component inputs. Expand a value to see its members, or the items of a collection:
+The **Variables** tray lists the values your script is holding at the line it stopped on, including the component inputs. Expand a value to see its members, or the items of a collection:
 
 ![](gh2-csharp-debug-variables.png)
 
@@ -319,13 +319,13 @@ Pin a value to keep watching it as you step and as iterations go by.
 
 ### Call Stack Tray
 
-**Call Stack** tray shows which methods the script is inside. `RunScript` sits at the bottom of a paused component, with any method it called above it. Select a frame to see its values in the **Variables** tray:
+The **Call Stack** tray shows which methods the script is inside. `RunScript` sits at the bottom of a paused component, with any method it called above it. Select a frame to see its values in the **Variables** tray:
 
 ![](gh2-csharp-debug-callstack.png)
 
 ### Call Stacks On Many Threads
 
-With **Debug Threading** set to **Many**, more than one iteration of your script can be paused at the same time. **Call Stack** tray keeps them apart. Each run is listed with the threads it is using, and each thread carries its own frames:
+With **Debug Threading** set to **Many**, more than one iteration of your script can be paused at the same time. The **Call Stack** tray keeps them apart. Each run is listed with the threads it is using, and each thread carries its own frames:
 
 ![](gh2-csharp-debug-threads.png)
 
@@ -523,4 +523,4 @@ private void RunScript(double X, double Y, ref double A)
 
 `BeforeRun` and `AfterRun` run once per solution, not once per iteration, so setting up and summarizing there needs no lock. `Iteration` and `Iterations` are also safe to read, since each iteration sees its own values.
 
-When a script is hard to make thread safe, set **Threading** to **One** and leave it there.
+When a script is hard to make thread-safe, set **Threading** to **One** and leave it there.

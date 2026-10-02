@@ -1,6 +1,6 @@
 +++
 title = "Problems Panel"
-description = "Provides information on problems panel in script editor"
+description = "Provides information on the Problems panel in the Script Editor"
 authors = ["ehsan"]
 
 [included_in]
@@ -27,7 +27,7 @@ block_webcrawlers = false
 
 ## Problems Panel
 
-Problems panel lists the problems found in your script as you type. Choose **Window > Toggle Problems Tray** or click the *Problems* tab to show or hide it.
+The Problems panel lists the problems found in your script as you type. Choose **Window > Toggle Problems Tray** or click the *Problems* tab to show or hide it.
 
 The panel lists problems of the current script only, and its title shows how many were found:
 
@@ -54,7 +54,7 @@ Both toggles are remembered between sessions:
 
 ## Copy Message
 
-Right-click a problem and choose **Copy Message** to copy its message to clipboard:
+Right-click a problem and choose **Copy Message** to copy its message to the clipboard:
 
 ![](problems-copy.png)
 

@@ -56,7 +56,7 @@ Rhino embeds two Python runtimes. They are separate implementations rather than 
 
 Python 3 is the better starting point for most scripts, if only for the packages. A script that spends its time calling RhinoCommon, or that needs threads, can do better in Python 2.
 
-Both are listed as separate languages when you create a script, and the editor shows which one the current script uses. A script that starts with `#! python 3` or `#! python 2`, or is saved as `.py3` or `.py2` is specific to that runtime, while a plain `.py` file is opened with the runtime the script asks for.
+Both are listed as separate languages when you create a script, and the editor shows which one the current script uses. A script that starts with `#! python 3` or `#! python 2`, or is saved as `.py3` or `.py2`, is specific to that runtime, while a plain `.py` file is opened with the runtime the script asks for.
 
 Choose **Tools > Reload Python 3 (CPython) Engine** or **Tools > Reload Python 2 (IronPython) Engine** to restart an engine without restarting Rhino. This is useful after installing packages or changing modules your script imports:
 
@@ -67,6 +67,7 @@ Choose **Tools > Reload Python 3 (CPython) Engine** or **Tools > Reload Python 2
 For a script that has to work under either runtime, `rhinocompat` carries the differences:
 
 ```python
+import Rhino
 import rhinocompat as compat
 from rhinocompat import PY3, RANGE
 
@@ -79,7 +80,7 @@ if PY3:
     pass
 ```
 
-It also has `STRING_TYPE`, `IS_STRING_INSTANCE()`, and `ITERATOR2LIST()` for the cases above.
+It also has `STRING_TYPE`, `IS_STRING_INSTANCE()`, and `ITERATOR2LIST()` for strings and iterators, which differ between the two runtimes.
 
 ## Running Scripts From Rhino
 

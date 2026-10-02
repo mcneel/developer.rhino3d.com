@@ -1,6 +1,6 @@
 +++
 title = "Explorer Panel"
-description = "Provides information on explorer panel in script editor"
+description = "Provides information on the Explorer panel in the Script Editor"
 authors = ["ehsan"]
 
 [included_in]
@@ -27,7 +27,7 @@ block_webcrawlers = false
 
 ## Explorer Panel
 
-Explorer panel browses a directory of scripts on your machine. Choose **Window > Toggle Explorer Panel** to show or hide it.
+The Explorer panel browses a directory of scripts on your machine. Choose **Window > Toggle Explorer Panel** to show or hide it.
 
 Use **Open Directory** on the panel header to choose a directory, and **Clear Explorer** to empty the panel. Click the **>** in front of a folder to expand it. Folders are read as you expand them, so large directories stay responsive:
 

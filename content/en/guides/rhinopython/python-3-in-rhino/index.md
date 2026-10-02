@@ -41,7 +41,7 @@ toc_type = "single"
 
 ## Python 3 in Rhino
 
-Rhino 8 and newer, embed two Python runtimes side by side:
+Rhino 8 and newer embed two Python runtimes side by side:
 
 - **Python 3** is [CPython](https://www.python.org), and reaches .NET and RhinoCommon through [Python.NET](https://pythonnet.github.io)
 - **Python 2** is [IronPython](https://ironpython.net), which runs on .NET itself

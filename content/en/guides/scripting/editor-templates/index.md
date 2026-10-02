@@ -1,6 +1,6 @@
 +++
 title = "Templates Panel"
-description = "Provides information on templates panel in script editor"
+description = "Provides information on the Templates panel in the Script Editor"
 authors = ["ehsan"]
 
 [included_in]
@@ -27,7 +27,7 @@ block_webcrawlers = false
 
 ## Templates Panel
 
-Templates panel browses a directory of scripts you use as starting points for new scripts. Choose **Window > Toggle Templates Panel** to show or hide it.
+The Templates panel browses a directory of scripts you use as starting points for new scripts. Choose **Window > Toggle Templates Panel** to show or hide it.
 
 Use **Open Templates Directory** on the panel header to choose the directory, and **Clear Templates Browser** to empty the panel. Click the **>** in front of a folder to expand it. Folders are read as you expand them:
 

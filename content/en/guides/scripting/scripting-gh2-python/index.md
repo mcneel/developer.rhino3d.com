@@ -56,13 +56,13 @@ Python 3 and Python 2 are separate components, so pick the one you need. They ar
 
 See [Python 3 and Python 2](/guides/scripting/scripting-python/#python-3-and-python-2).
 
-### Opening Script Editor
+### Opening the Script Editor
 
 Double-click the component to open a script editor. The component draws a cone pointing to the editor associated with it:
 
 ![](gh2-python-open.png)
 
-The script editor shows the version of Python language on the status bar:
+The script editor shows the version of the Python language on the status bar:
 
 ![](gh2-python-version.png)
 
@@ -173,7 +173,7 @@ The instance also gives access to what is running the script:
 | `self.RhinoDocument` | The active Rhino document |
 | `self.Access` | Data access for the iteration being computed |
 | `self.Solution` | The solution being computed |
-| `self.Callstack` | The callstack leading up to the component |
+| `self.Callstack` | The call stack leading up to the component |
 | `self.CustomData` | Data shared by all iterations of the solution |
 | `self.Iteration` | Index of the iteration being computed |
 | `self.Iterations` | Number of iterations in the solution |
@@ -259,7 +259,7 @@ Edits apply on the next solve.
 
 ## Marshalling
 
-### Marshalling Guids
+### Marshalling GUIDs
 
 `rhinoscriptsyntax` refers to Rhino document objects by their unique identifier. **Marsh Guids** in the component panel controls what happens to identifiers your script sets on an output:
 
@@ -303,7 +303,7 @@ The debug buttons on the editor dashboard control what happens next:
 
 ### Variables Tray
 
-**Variables** tray lists the values your script is holding at the line it stopped on, including the component inputs. Expand a value to see its members, or the items of a collection:
+The **Variables** tray lists the values your script is holding at the line it stopped on, including the component inputs. Expand a value to see its members, or the items of a collection:
 
 ![](gh2-python-debug-variables.png)
 
@@ -311,13 +311,13 @@ Pin a value to keep watching it as you step and as iterations go by.
 
 ### Call Stack Tray
 
-**Call Stack** tray shows which functions the script is inside. `RunScript` sits at the bottom of a paused component, with any function it called above it. Select a frame to see its values in the **Variables** tray:
+The **Call Stack** tray shows which functions the script is inside. `RunScript` sits at the bottom of a paused component, with any function it called above it. Select a frame to see its values in the **Variables** tray:
 
 ![](gh2-python-debug-callstack.png)
 
 ### Call Stacks On Many Threads
 
-With **Debug Threading** set to **Many**, more than one iteration of your script can be paused at the same time. **Call Stack** tray keeps them apart. Each run is listed with the threads it is using, and each thread carries its own frames:
+With **Debug Threading** set to **Many**, more than one iteration of your script can be paused at the same time. The **Call Stack** tray keeps them apart. Each run is listed with the threads it is using, and each thread carries its own frames:
 
 ![](gh2-python-debug-threads.png)
 
@@ -470,4 +470,4 @@ def RunScript(self, x, y):
 
 `BeforeRun` and `AfterRun` run once per solution, not once per iteration, so setting up and summarizing there needs no lock. `self.Iteration` and `self.Iterations` are also safe to read, since each iteration sees its own values.
 
-When a script is hard to make thread safe, set **Threading** to **One** and leave it there.
+When a script is hard to make thread-safe, set **Threading** to **One** and leave it there.
