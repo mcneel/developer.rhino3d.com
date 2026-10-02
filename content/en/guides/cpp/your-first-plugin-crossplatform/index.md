@@ -1,18 +1,18 @@
 +++
-aliases = []
-authors = [ "callum" ]
+aliases = [ "/guides/cpp/your-first-plugin-mac/" ]
+authors = [ "andy" ]
 categories = [ "Getting Started" ]
-description = "This guide walks you through your first plugin for Rhino for Windows using C/C++ and Visual Studio."
+description = "Build a Rhino C/C++ plugin that works on both Windows and Mac from one set of sources."
 keywords = [ "c", "C/C++", "plugin" ]
 languages = [ "C/C++" ]
 sdk = [ "C/C++" ]
-title = "Creating your first C/C++ plugin (Cross Platform)"
+title = "Creating your first C/C++ plugin (Cross-Platform)"
 type = "guides"
 weight = 2
 
 [included_in]
 platforms = [ "Windows", "Mac" ]
-since = 0
+since = 9
 
 [page_options]
 byline = true
@@ -20,165 +20,165 @@ toc = true
 toc_type = "single"
 +++
 
-It is presumed you already have the necessary tools installed and are ready to go. If you are not there yet, see:
-- [Installing Tools (Windows)](/guides/cpp/installing-tools-windows).
-- [Installing Tools (Mac)](/guides/cpp/installing-tools-mac).
+Rhino 9 has a C/C++ SDK for Mac as well as for Windows. It is the same SDK, so one set of source files can build a plugin for both.
 
-## Bare bones plugin
+This guide builds a working sample plugin on whichever platform you are using. It is written for two kinds of readers: someone starting a new plugin who wants it to run on both platforms, and someone who already has a Windows plugin and wants it to run on the Mac as well. If you are the second group, read the whole guide and then the [porting section](#porting-a-windows-plugin) at the end.
 
-1. Use git to clone the starter repo
-`git clone https://github.com/mcneel/CrossPlatformCppPlugin`
-1. Download the SDK
-`git submodule update --init`
-1. Run the rename`./rename.sh` or `powershell -ExecutionPolicy Bypass -File ./rename.ps1` script to fill out the plugin, command, properties and GUIDs correctly. For this tutorial, it is suggested to use all of the default values.
+You need the tools from [Installing Tools (Windows)](/guides/cpp/installing-tools-windows/) or [Installing Tools (Mac)](/guides/cpp/installing-tools-mac/) before you start.
 
-### Plugin Anatomy
+## Get the code
 
-The following files are of interest:
+The sample lives in the Rhino developer samples repository. The SDK is a submodule inside it, so you get both in one go:
 
-| File             | Platform | Description                                                                       |
-| :--------------- | :------- | :-------------------------------------------------------------------------------- |
-| Sample.vcxproj   | Windows  | Project file that allows Visual C++ to build your plugin.                         |
-| stdafx.h         | Windows  | Main project header.                                                              |
-| stdafx.cpp       | Windows  | Used to generate the precompiled header.                                          |
-| SampleApp.h      | Both     | Application class header that contains the `CSampleApp` class declaration.        |
-| SampleApp.cpp    | Both     | Application class implementation that contains the `CSampleApp` member functions. |
-| SamplePlugIn.h   | Both     | Plugin class header that contains the `CSamplePlugIn` class declaration.          |
-| SamplePlugIn.cpp | Both     | Plugin class implementation that contains the `CSamplePlugIn` member functions.   |
-| cmdSample.cpp    | Both     | Initial Rhino command.                                                            |
-| Resource.h       | Windows  | #define constant definitions for resources.                                       |
-| Sample.rc        | Windows  | Resource script.                                                                  |
-| Sample.rc2       | Windows  | Resource script.                                                                  |
-| Sample.def       | Windows  | Module definition.                                                                |
-| Sample.ico       | Windows  | Plugin icon.                                                                      |
-| targetver.h      | Windows  | Defines the supported Windows platform.                                           |
-
-### Getting up and Running
-
-#### Windows
-
-1. Run the rename script `powershell -ExecutionPolicy Bypass -File ./rename.ps1` to fill out the plugin, command, properties and GUIDs correctly. For this tutorial, it is suggested to use all of the default values.
-1. Double click the `MySamplePlugIn.sln` file in the `win` directory
-1. In *Visual Studio* click *Local Windows Debugger* next to the green arrow. This will load Rhino and the plug-in
-
-![Rhino Options](/images/your-first-plugin-windows-cpp-10.png)
-
-1. For this guide, build the *Debug* configuration.
-1. From within Rhino, navigate to *Tools* > *Options*. Navigate to the *Plugins* page under *Rhino Options* and install your plugin (it will be in the win/x64/Debug folder)
-
-    ![Rhino Options](/images/your-first-plugin-windows-cpp-07.png)
-1. Run MySampleCommand, a message box should appear
-
-![Rhino Options](/images/your-first-plugin-windows-cpp-09.png)
-
-1. You have finished creating your first plugin!
-
-#### Mac
-
-1. Run the rename script `./rename.sh` to fill out the plugin, command, properties and GUIDs correctly. For this tutorial, it is suggested to use all of the default values.
-1. Open `osx/MySamplePlugIn.xcodeproj` in XCode.
-1. Click the Run button, *project* > *run*. This will load Rhino and the plugin.
-![Rhino Options](/images/your-first-plugin-mac-cpp-01.png)
-
-1. Run MySampleCommand, a message box should appear
-![Rhino Options](/images/your-first-plugin-mac-cpp-02.png)
-
-1. You have finished creating your first plugin!
-
-## Adding Additional Commands
-
-Rhino plugins can contain any number of commands. Commands are created by deriving a new class from `CRhinoCommand`. See *rhinoSdkCommand.h* for details on the `CRhinoCommand` class.
-
-### Example
-
-The following example code demonstrates a simple command class that essentially does nothing:
-
-```cpp
-// Do NOT put the definition of class CCommandTest in a header
-// file. There is only ONE instance of a CCommandTest class
-// and that instance is the static theTestCommand that appears
-// immediately below the class definition.
-
-class CCommandTest : public CRhinoCommand
-{
-public:
-  // The one and only instance of CCommandTest is created below.
-  // No copy constructor or operator= is required.
-  // Values of member variables persist for the duration of the application.
-
-  // CCommandTest::CCommandTest()
-  // is called exactly once when static theTestCommand is created.
-  CCommandTest() = default;
-
-  // CCommandTest::~CCommandTest()
-  // is called exactly once when static theTestCommand is destroyed.
-  // The destructor should not make any calls to the Rhino SDK.
-  // If your command has persistent settings, then override
-  // CRhinoCommand::SaveProfile and CRhinoCommand::LoadProfile.
-  ~CCommandTest() = default;
-
-  // Returns a unique UUID for this command.
-  // If you try to use an id that is already being used, then
-  // your command will not work. Use GUIDGEN.EXE to make unique UUID.
-  UUID CommandUUID() override
-  {
-    // {F502C783-C0CE-4118-8869-EFB0CB34CCCB}
-    static const GUID TestCommand_UUID =
-    { 0xF502C783, 0xC0CE, 0x4118, { 0x88, 0x69, 0xEF, 0xB0, 0xCB, 0x34, 0xCC, 0xCB } };
-    return TestCommand_UUID;
-  }
-
-  // Returns the English command name.
-  // If you want to provide a localized command name, then override
-
-  // CRhinoCommand::LocalCommandName.
-  const wchar_t* EnglishCommandName() override { return L"Test"; }
-
-  // Rhino calls RunCommand to run the command.
-  CRhinoCommand::result RunCommand(const CRhinoCommandContext& context) override;
-};
-
-// The one and only CCommandTest object
-// Do NOT create any other instance of a CCommandTest class.
-static class CCommandTest theTestCommand;
-
-CRhinoCommand::result CCommandTest::RunCommand(const CRhinoCommandContext& context)
-{
-  // CCommandTest::RunCommand() is called when the user
-  // runs the "Test".
-
-  // TODO: Add command code here.
-
-  // Rhino command that display a dialog box interface should also support
-  // a command-line, or scriptable interface.
-
-  ON_wString str;
-  str.Format(L"The \"%s\" command is under construction.\n", EnglishCommandName());
-  if (context.IsInteractive())
-    RhinoMessageBox(str, TestPlugIn().PlugInName(), MB_OK);
-  else
-    RhinoApp().Print(str);
-
-  // TODO: Return one of the following values:
-  //   CRhinoCommand::success:  The command worked.
-  //   CRhinoCommand::failure:  The command failed because of invalid input, inability
-  //                            to compute the desired result, or some other reason
-  //   CRhinoCommand::cancel:   The user interactively canceled the command
-  //                            (by pressing ESCAPE, clicking a CANCEL button, etc.)
-  //                            in a Get operation, dialog, time consuming computation, etc.
-
-  return CRhinoCommand::success;
-}
+```
+git clone https://github.com/mcneel/rhino-developer-samples
+cd rhino-developer-samples
+git submodule update --init cpp/SDK
+git -C cpp/SDK lfs pull
 ```
 
-### Notes
+That last line matters on Windows only. The Windows part of the SDK includes four large library files kept in Git LFS. Without Git LFS, these files arrive as small placeholders, and the Windows build fails at the link step. The Mac does not use them, so on a Mac without Git LFS you can leave the line out.
 
-A couple things to consider:
+The sample is in `cpp/SampleEventWatcher`. It watches the Rhino document and prints a line every time something happens - an object added, moved or deleted, a file opened or saved.
 
-1. Command classes must return a unique UUID.  If you try to use a UUID that is already in use, then your command will not work.  To create a unique UUID, use *GUIDGEN.EXE* (which ships with *Visual Studio*) on Windows, or run `uuidgen` from the *Terminal* on macOS.
-2. Command classes must return a unique command name.  If you try to use a command name that is already in use, then your command will not work.
-3. Only ONE instance of a command class can be created.  This is why you should put the definition of your command classes in *.cpp* files.
+## What is in a plugin
+
+| File | Platform | What it is |
+| :--- | :--- | :--- |
+| `SampleEventWatcherPlugIn.h` / `.cpp` | Both | The plugin itself. One object, created once, that Rhino loads. |
+| `cmdSampleEventWatcher.cpp` and the other `cmd*.cpp` files | Both | One Rhino command each. |
+| `SampleRhinoEventWatcher.h` / `.cpp` | Both | The part that listens for document events. |
+| `stdafx.h` | Both | Included first by every source file. It brings in MFC on Windows and the SDK headers on the Mac. |
+| `CMakeLists.txt` | Both | Describes how to build the plugin. |
+| `Info.plist.in` | Mac | Describes the plugin bundle to macOS. |
+| `SampleEventWatcher.vcxproj` | Windows | A Visual Studio project, as an alternative to CMake. |
+| `SampleEventWatcherApp.cpp`, `stdafx.cpp` | Windows | The MFC pieces a Windows plugin needs. Not built on the Mac. |
+| `SampleEventWatcher.rc`, `Resource.h`, `SampleEventWatcher.def` | Windows | Version information, icon and exported names. |
+
+The plugin object and the commands are the parts you write. Everything else is scaffolding.
+
+For what each of those pieces has to contain on the Mac - the declaration block, the `Info.plist`, the types that differ, and the Windows files a Mac plugin does without - see [Anatomy of a C/C++ plugin on the Mac](/guides/cpp/anatomy-of-a-mac-cpp-plugin/).
+
+## Build it
+
+### Windows
+
+Open `cpp\SampleEventWatcher\SampleEventWatcher.vcxproj` in Visual Studio. Choose the **Debug** configuration and **x64**, and build.
+
+To run it, press the green arrow marked **Local Windows Debugger**. That starts Rhino with the debugger attached, so you can put a breakpoint in your command and stop on it.
+
+If Rhino does not start, Visual Studio does not know what to run. Open the project's properties, go to *Debugging*, and set **Command** to your Rhino executable - usually `C:\Program Files\Rhino 9\System\Rhino.exe`.
+
+### Mac
+
+The repository does not include an Xcode project. CMake generates one for you. Run this once:
+
+```
+cd cpp/SampleEventWatcher
+cmake -G Xcode -S . -B build
+```
+
+That writes `build/SampleEventWatcher.xcodeproj`. Open it in Xcode and work there from now on. You only need that command again if you add or remove source files - there is more about what it is doing [at the end of this guide](#building-with-cmake).
+
+Build it with *Product > Build*.
+
+To run it under the debugger, tell Xcode what to launch: *Product > Scheme > Edit Scheme*, choose *Run* on the left, and set **Executable** to `Rhino 9.app`. Now the Run button starts Rhino, and your breakpoints work.
+
+## Load it into Rhino
+
+Building the plugin does not tell Rhino about it. There are two ways to load one, and they are for different jobs.
+
+### While you are developing
+
+Use the `TestLoadPlugIn` command. It is a test command, so it does not autocomplete - type the whole name - and it asks you for the `.rhp` you just built.
+
+On Windows the file is under `x64\Debug`; on the Mac it is in `build/Debug`. You can also drag the `.rhp` onto an open Rhino window.
+
+Rhino remembers the plugin, so it loads next time too. This is for trying your own builds and nothing else.
+
+### When you give it to somebody else
+
+Package it with [Yak](/guides/yak/what-is-yak/), Rhino's package manager. A package is what users install, what the Package Manager lists, and what carries your plugin's version and description.
+
+- [Creating a Rhino plugin package](/guides/yak/creating-a-rhino-plugin-package/)
+- [Installing and managing packages](/guides/yak/installing-and-managing-packages/)
+
+A C++ plugin has to be built for each platform, so a package containing only your Windows `.rhp` will install on a Mac and then do nothing - the file is a Windows DLL and Rhino for Mac cannot load it. Build on both and put both in the package.
+
+## Try it
+
+Run the `SampleEventWatcher` command and choose **Enable**.
+
+Now draw a point, move it, and delete it. Each time, the command line prints what happened:
+
+```
+** EVENT: Add Object **
+** EVENT: Replace Object **
+** EVENT: Delete Object **
+```
+
+The plugin adds three more commands - `SampleIdleWatcher`, `SampleUndoable` and `SampleNotUndoable` - which show other things the SDK can do.
+
+Run `SampleEventWatcher` again and choose **Disable** when you have seen enough.
+
+## Starting your own plugin
+
+Copy the sample folder, rename the files, and change the class names to match. Three things have to be right:
+
+**The plugin declaration.** One of your `.cpp` files carries a block that tells Rhino the plugin's name, its id, and which SDK it was built against. Without it Rhino refuses to load the plugin, saying *"Rhino version not specified"*. The block is the same on both platforms. The SDK's [README](https://github.com/mcneel/rhino_sdk_cpp/blob/main/README.md) gives it in full.
+
+**A new plugin id.** The id in the declaration must be unique to your plugin, and must match the one your plugin class returns from PlugInID(). Generate one with `uuidgen` on the Mac, or *Tools > Create GUID* in Visual Studio. Two plugins with the same id will not both load.
+
+**The SDK and Rhino must be a matching pair.** Your plugin records which SDK it was built against, and Rhino checks it. If you see *"plug-in not compiled for this version of Rhino"*, update the `SDK` submodule:
+
+```
+git -C cpp/SDK pull
+```
+
+The SDK's README is the reference for everything else - the `CMakeLists.txt` in full, the Windows precompiled header, and how the Mac link stubs work.
+
+## Porting a Windows plugin
+
+If you already have a Windows plugin, most of the work is build files rather than code. A few source changes come up almost every time.
+
+**`stdafx.h` needs a Mac branch.** Put the existing MFC includes inside `#if defined(_WIN32) || defined(_MSC_VER)`, and add an `#elif defined(__APPLE__)` branch that includes `rhinoSdkStdafxPreamble.h`, `rhinoSdk.h`, `RhRdkHeaders.h` and `rhinoSdkChecks.h`, in that order. Rhino for Mac has no MFC.
+
+**`BOOL` is not the same type on both platforms.** In MFC, `BOOL` is an `int`. On the Mac it is a single byte. The SDK declares methods like `OnLoadPlugIn` as `int` and `AddToPlugInHelpMenu` as `BOOL32`, so a method you wrote as `BOOL` matched on Windows by chance and will not match on the Mac. The compiler tells you which ones. Change them to what the SDK says, and they still build on Windows.
+
+**Windows-only pieces do not come across.** The MFC application file, the `.rc` and `.def` files and the precompiled header stay in the Windows build only. The plugin object itself is a static variable in your plugin's `.cpp` file, so nothing is lost by leaving the application file out.
+
+**Some things have no Mac equivalent.** MFC dialogs have to be rewritten - [Eto](https://github.com/picoe/Eto) is the cross-platform way to build user interfaces for Rhino. A few parts of Rhino are Windows-only. Skins are one example. You cannot skin Rhino for Mac.
+
+Again, a C++ plugin for Mac has to be built for the Mac. Shipping your Windows `.rhp` in a package does not make it work there - Rhino will not load it.
+
+## Building with CMake
+
+You can skip this. It explains the file that made the Xcode project, which is worth knowing about if you want your own plugin to build on both platforms or on a build server.
+
+`CMakeLists.txt` describes the plugin once - which files it is built from, and what each platform needs. CMake reads that and writes a real Visual Studio project on Windows and a real Xcode project on the Mac, so you still work in your IDE. Nothing about the plugin is different; only where the project file came from.
+
+The point of it is that the two platforms need quite different settings, and you would otherwise keep them in step by hand in two places. The sample's file, for instance, builds the MFC files on Windows only, compiles as Objective-C++ on the Mac, and links different libraries on each.
+
+To build from a terminal, which is what a build server does:
+
+```
+cmake --build build --config Debug
+```
+
+To generate a Visual Studio project instead of using the one in the repository:
+
+```
+cmake -G "Visual Studio 18 2026" -A x64 -S . -B build
+```
+
+If CMake does not recognize this generator name, your CMake is too old. Update it, or use the copy of CMake that comes with Visual Studio.
+
+The SDK's [README](https://github.com/mcneel/rhino_sdk_cpp/blob/main/README.md) gives a complete `CMakeLists.txt` you can start from, with the settings each platform needs and what each one is for.
 
 ## Related Topics
 
-- [What is a Rhino Plugin?](/guides/general/what-is-a-rhino-plugin)
+- [What is the C/C++ SDK?](/guides/cpp/what-is-the-cpp-sdk/)
+- [Installing Tools (Mac)](/guides/cpp/installing-tools-mac/)
+- [Installing Tools (Windows)](/guides/cpp/installing-tools-windows/)
+- [The Rhino C++ SDK repository](https://github.com/mcneel/rhino_sdk_cpp)
+- [Rhino developer samples](https://github.com/mcneel/rhino-developer-samples)
