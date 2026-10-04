@@ -2,8 +2,8 @@
 aliases = []
 authors = [ "mathias" ]
 categories = [ "Getting Started" ]
-description = "What every Grasshopper 2 plugin developer should know before writing the first line: plugin identity, assembly ids, and how Rhino and Grasshopper 2 find your plugin."
-keywords = [ "developer", "grasshopper2", "grasshopper", "gh2", "plugin", "guid", "assembly", "id" ]
+description = "Where to start as a Grasshopper 2 plugin developer: documentation, icons, immutable inputs, and your plugin's id."
+keywords = [ "developer", "grasshopper2", "grasshopper", "gh2", "plugin", "icon", "documentation", "guid", "assembly", "immutable" ]
 languages = [ "C#" ]
 sdk = [ "Grasshopper 2" ]
 title = "Getting Started with Grasshopper 2 Plugins"
@@ -11,7 +11,7 @@ type = "guides"
 weight = 1
 
 [admin]
-TODO = "WWW-3714: skeleton, rephrase all TODO(Mathias) blocks"
+TODO = "WWW-3714: draft, rephrase the TODO(Mathias) paragraphs"
 origin = ""
 picky_sisters = ""
 state = ""
@@ -27,122 +27,87 @@ toc_type = "single"
 block_webcrawlers = false
 +++
 
-<!-- TODO(Mathias): rephrase. Who this page is for: everyone writing a GH2 plugin, whether new or
-coming from GH1 (-> migration guide) or from an early Rhino 9 WIP build. Short, two or three sentences. -->
+<!-- TODO(Mathias): rephrase in your own voice. -->
 
-This page collects a few facts about plugin identity and loading that are easy to miss.
-Whether you start from the [project templates](../your-first-component-windows/), port a GH1 plugin
-([migration guide](../migrating-components-to-gh2/)), or update a plugin written against an early
-Rhino 9 WIP, read these before you ship.
+This guide is for anyone who wants to write a Grasshopper 2 plugin. It does not matter whether you have written Grasshopper 1 components before. There is no code in this guide. It covers a few things that are good to know before you start.
 
-## Plugin identity
+## Prerequisites
 
-{{< nugget name="assembly-id" >}}{{< /nugget >}}
-{{< call-out type="info" title="Your plugin's id is the assembly GUID" open=false >}}
-<!-- TODO(Mathias): rephrase -->
-- There is exactly **one id per assembly**: the .NET `[assembly: Guid("...")]` attribute.
-- Rhino and Grasshopper 2 both read that attribute and nothing else.
-  Neither the Rhino `PlugIn` class nor the Grasshopper 2 `Plugin` class can override it.
-- Grasshopper 2 refuses to load a plugin without it:
-  *"plugin does not declare an id; add an [assembly: Guid] attribute to the plugin project."*
-- The project templates generate a fresh GUID for every new project. Keep it.
-- **Never change it after release.** Rhino and Grasshopper 2 remember your plugin by this id:
-  - plugin settings and load protection
-  - toolbars and panels
-  - licensing
-  - data your plugin writes into `.3dm` files, and the Package Manager's "install the missing plug-in" prompt
-  - package lookup on the package server
-  - the list of required plugins stored in every `.ghz` file
+Grasshopper 2 requires Rhino 9. You also need the development tools. See Installing Tools ([Windows](/guides/grasshopper/installing-tools-windows/), [Mac](/guides/grasshopper/installing-tools-mac/)).
 
-  A new id makes your plugin a different plugin: settings are lost and old documents report it as missing.
+## Learn Grasshopper 2 First
 
-```cs
-// Properties/AssemblyInfo.cs
-[assembly: Guid("88888888-4444-4444-4444-121212121212")] // generate your own, once
-```
-{{< /call-out >}}
-{{< nugget name="assembly-id-end" >}}{{< /nugget >}}
+Grasshopper 2 ships with extensive documentation. It is written for users. It is also the best place to learn the concepts the SDK is built on: the *solution*, *components*, *parameters*, *data trees*, and *preview geometry*.
 
-See the [Plugin Assembly](../migrating-components-to-gh2/#plugin-assembly) section of the migration
-guide for the attributes that supply your plugin's name, author, version and so on.
+To open it:
 
-## One .rhp, one or two roles
+1. In Grasshopper 2, click *Help* > *Documentation...*, or press *F1*.
+1. In Rhino, run the `GH2Docs` command.
+1. For a single component, hover over it and press *?*.
 
-{{< call-out type="note" title="Rhino plugin class, Grasshopper 2 plugin class, or both" open=false >}}
-<!-- TODO(Mathias): rephrase -->
-- A Grasshopper 2 plugin is a `.rhp` file (not a `.gha`).
-- It needs one public, non-abstract class deriving from `Grasshopper2.Framework.Plugin`, with a
-  public **parameterless** constructor. Without it, Grasshopper 2 won't load components from the assembly.
-- The Rhino `Rhino.PlugIns.PlugIn` class is **optional**. Add it if you also need Rhino commands,
-  panels, or Rhino plugin events. Without it, Rhino recognises the file as a "Grasshopper-only" `.rhp`
-  and leaves it to Grasshopper 2.
-- Either way it is one assembly with one id (see above). A `.rhp` containing both classes is a
-  Rhino plugin and a Grasshopper 2 plugin under the same id.
-<!-- TODO(Mathias): mention the template contains both classes; delete the Rhino one if unused? -->
-{{< /call-out >}}
+The documentation is interactive. For example, many pages contain live Grasshopper documents. You can drag them onto the canvas and try them out. <!-- TODO(Mathias): confirm the wording of the drag-and-drop example. -->
 
-## Shipping several assemblies
+A read-only copy is available on the web at [rhino3d.com/docs/grasshopper2](https://www.rhino3d.com/docs/grasshopper2/).
 
-{{< call-out type="note" title="When to share an id and when not to" open=false >}}
-<!-- TODO(Mathias): rephrase -->
-- **Same function, same id.** Builds of one plugin for different targets (`net48` / `net8.0`,
-  `-windows` / `-macos`) must carry the **same** GUID. Only one of them is ever loaded; Rhino and
-  Grasshopper 2 pick the build matching the running runtime.
-- **Different function, different id.** Assemblies that are meant to be loaded at the same time
-  (e.g. a component library and a separate UI library) need **different** GUIDs.
-- What users see when two different files claim the same id:
-  - Grasshopper 2 loads only one and shows a dialog. If the names differ, the dialog says this
-    "points to a mistake by one of the plugin developers".
-  - Rhino (Windows): *"Unable to load … plug-in: ID already in use."* The first one loaded wins.
-<!-- TODO(Mathias): keep or drop the macOS detail (no error, last loaded wins)? -->
-{{< /call-out >}}
+## Document Your Components
 
-## Coming from an early Rhino 9 WIP
+Your users will expect documentation for your components too. You write it with the same tools we use. Run the `GH2DocsAuthoring` command in Rhino to get started. <!-- TODO(Mathias): one sentence on the authoring workflow, and where the content ends up. -->
 
-{{< call-out type="warning" title="The Plugin constructor no longer takes an id" open=false >}}
-<!-- TODO(Mathias): rephrase -->
-- Until the end of July 2026 the Grasshopper 2 `Plugin` base constructor took an id, a `Nomen` and a
-  version. That constructor has been removed. Identity now comes only from assembly attributes.
-- Plugins compiled against the old `Grasshopper2.dll` no longer load. Recompile.
-- **Trap:** your project probably already has an `[assembly: Guid]` generated by Visual Studio,
-  and it is *not* the GUID you used to pass to the constructor. If you just delete the constructor
-  argument, your plugin's id silently changes and existing `.ghz` files will report it as missing.
-  Copy the GUID you used to pass to the constructor into `[assembly: Guid]`.
+## Icons
+
+Grasshopper 2 icons are 3D drawings. You model them in Rhino. This may sound intimidating. It is not. The icons stay sharp at any size, and they follow the light and dark themes on their own.
+
+The tool is the *GH2 Icon* panel in Rhino. It appears once Grasshopper 2 has been loaded, for example after running the `GH2` command. To try it:
+
+1. Run `GH2IconSetup` to set the icon size.
+1. Draw some curves. Select them. Set edges and fills in the *GH2 Icon* panel.
+1. Click *Save* in the panel's preview to export a *.ghicon* file.
+1. Embed the *.ghicon* file in your project. Name it after your component class, for example *MyComponent.ghicon*. Grasshopper 2 finds it on its own.
+
+Colours have a meaning in Grasshopper 2. You do not pick an RGB value. You pick a role, such as *Input*, *Output*, or *Analysis*. Grasshopper 2 picks the actual colour for the current theme. The *GH2 Icon* panel offers these roles. The documentation explains them. <!-- TODO(Mathias): link the documentation topic on icon colours once there is one. -->
+
+If you prefer, you can use SVG icons instead. They use the same colour roles. Write `fill="gh:Input"` instead of a fixed colour. <!-- TODO(Mathias): SVG support (SvgIcon.FromResource) is labelled "proof of concept" in the source. Decide how strongly to recommend it. -->
+
+## Inputs Are Immutable
+
+This is the most important difference to Grasshopper 1, and the easiest to miss.
+
+In Grasshopper 1 you could often get away with modifying your input data in place. In Grasshopper 2 you cannot. The solver is multi-threaded. Several instances of your component may read the same data at the same time.
+
+Treat all input data as immutable. If you need to change something, duplicate it first. When in doubt, duplicate.
+
+***Note***: This applies to geometry too. Do not transform or edit a curve, mesh, or Brep you received as an input. Duplicate it, then work on the copy.
+
+See [Component Processing](../migrating-components-to-gh2/#component-processing) in the migration guide for the details.
+
+## Your Plugin's Id
+
+Rhino identifies your plugin by the GUID of its assembly. This is the `[assembly: Guid("...")]` attribute in your project. The template generates one for you. Keep it. Never change it once you have shipped.
 
 ```cs
-// before
-public MyPluginInfo() : base(new Guid("aaaaaaaa-..."), new Nomen("My Plugin", "..."), new Version(1, 0)) { }
-
-// after: constructor has no arguments, and in AssemblyInfo.cs:
-[assembly: Guid("aaaaaaaa-...")] // the GUID you used to pass to the constructor
+[assembly: Guid("88888888-4444-4444-4444-121212121212")]
 ```
-{{< /call-out >}}
 
-## Ids that are not the plugin id
+If you ship more than one assembly:
 
-{{< call-out type="note" title="Don't mix these up" open=false >}}
-<!-- TODO(Mathias): rephrase -->
-- `[IoId("...")]` on components, parameters and other storable types identifies a *type*, not the
-  plugin. Each needs its own GUID, and it too must never change.
-- A GH1 `.gha` is identified by `GH_AssemblyInfo.Id`, not by its assembly GUID. If you ship GH1 and
-  GH2 versions side by side, they are separate plugins.
-<!-- TODO(Mathias): recommend same or different id for the GH2 port of a GH1 plugin? -->
-{{< /call-out >}}
+- Assemblies that **replace** each other share the same id. For example, a build for .NET 8 and a build for another .NET version. Only one of them is ever loaded.
+- Assemblies that are loaded **at the same time** need different ids.
 
-## Work in progress
+## Rhino Commands in Your Plugin
 
-{{< call-out type="warning" title="Not everything is in place yet" open=false >}}
-<!-- TODO(Mathias): rephrase; keep as statements of intent, no dates -->
-- The rule above is the contract: **Rhino will refer to your assembly by its GUID, Rhino-wide**,
-  whether or not it contains a Rhino plugin class.
-- Rhino does not yet keep a registry of Grasshopper-only assemblies, or deduplicate them across
-  Rhino and Grasshopper. Following the id rules now means your plugin will be ready for that.
-- The Package Manager does not yet show whether a package contains a Rhino plugin, a Grasshopper 1
-  plugin, a Grasshopper 2 plugin, or several of these.
-{{< /call-out >}}
+Your assembly may also contain a Rhino plugin class and Rhino commands. Both share the assembly's id.
 
-## Next steps
+***Note***: If a Rhino command uses Grasshopper 2, Grasshopper 2 must be running first. It is not enough that the assembly is loaded. The `GH2` command has to have run at least once. Make sure of this in your command before you call into Grasshopper 2. <!-- TODO(Mathias): recommend one way to do this, e.g. RhinoApp.RunScript("-_GH2 _Enter", false), or a check on Grasshopper2.UI.Editor.Instance. -->
+
+## Next Steps
+
+Start with Your First Component ([Windows](../your-first-component-windows/), [Mac](../your-first-component-mac/)). It takes you from the project template to a running component.
+
+Then read [Migrating Components to Grasshopper 2](../migrating-components-to-gh2/). Despite the title, it is the most complete description of the Grasshopper 2 SDK so far. It is long. You do not need to read it in one go. Keep it as a reference.
+
+## Related Topics
 
 - Your First Component ([Windows](../your-first-component-windows/), [Mac](../your-first-component-mac/))
 - [Migrating Components to Grasshopper 2](../migrating-components-to-gh2/)
-- [Developer discussions on Discourse](https://discourse.mcneel.com/c/grasshopper-developer)
+- [Grasshopper 2 documentation](https://www.rhino3d.com/docs/grasshopper2/)
+- [Grasshopper developer forum](https://discourse.mcneel.com/c/grasshopper-developer)

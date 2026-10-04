@@ -32,9 +32,7 @@ block_webcrawlers = true
 
 It is presumed you already have the necessary tools installed and are ready to go. If you are not there yet, see [Installing Tools (Mac)](/guides/rhinocommon/installing-tools-mac).
 
-{{< include-nugget src="../getting-started/index.md" name="assembly-id" >}}
-
-More on plugin identity and loading: [Getting Started with Grasshopper 2 Plugins](../getting-started/).
+New to Grasshopper 2 plugins? Have a look at [Getting Started with Grasshopper 2 Plugins](../getting-started/) first.
 
 ## HelloGrasshopper 2
 
