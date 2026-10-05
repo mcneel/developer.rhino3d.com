@@ -52,31 +52,30 @@ Write a plugin when you want to share your components, give them icons and docum
 
 ## Learn Grasshopper 2 First
 
-Grasshopper 2 ships with extensive documentation written for users. It is also the best place to learn the concepts the SDK is built on: the *solution*, *components*, *parameters*, *data trees*, and *preview geometry*.
+Grasshopper 2 ships with plenty of documentation written for users. It is also the best place to learn the concepts the SDK is built on: the *solution*, *components*, *parameters*, *data trees*, and *preview geometry*.
 
 To open it:
 
 1. In Grasshopper 2, click *Help* > *Documentation...*, or press *F1*.
 1. In Rhino, run the `GH2Docs` command.
-1. For a single component, hover over it and press *?*.
 
-The documentation is interactive. For example, many pages contain live Grasshopper documents. You can drag them onto the canvas and try them out.
+The documentation is live in the sense that many pages contain live Grasshopper documents. You can drag them onto the canvas and try them out.
 
 A read-only copy is available on the web at [rhino3d.com/docs/grasshopper2](https://www.rhino3d.com/docs/grasshopper2/).
 
 ## Open Your Grasshopper 1 Files
 
-Grasshopper 2 opens Grasshopper 1 files, both *.gh* and *.ghx*. Try it on your own existing files. It is a quick way to see how familiar things look in Grasshopper 2.
+Grasshopper 2 opens Grasshopper 1 files, both *.gh* and *.ghx*. Try it on your own existing files. It is a quick way to see how familiar things look in Grasshopper 2. Components can be dragged from Grasshopper 1 to Grasshopper 2.
 
 Behind this is a migration framework. Each Grasshopper 1 component is either migrated to its Grasshopper 2 counterpart, or hosted in an interop component that still runs on Grasshopper 1. If you have a Grasshopper 1 plugin, you can supply migrations for your own components. Implement `IMigrateComponent` or `IMigrateParameter` from the `Grasshopper2.Doc.Migration` namespace, or use `Gh1MigrationRule` for simple one-to-one cases. Grasshopper 2 finds these types in your plugin on its own.
 
 ## Document Your Components
 
-Your users will expect documentation for your components too. You write it with the same tools we use. Run the `GH2DocsAuthoring` command in Rhino to get started. Your documentation shipped with your plugin will get loaded automatically by Grasshopper 2 and be available to your users. While you author documentation, it is helpful to know about the *Help* > *Custom Folders...* menu to point at your working folder.
+Your users will expect documentation for your components too. You write it with the same tools we use. Run the `GH2DocsAuthoring` command in Rhino to get started. Documentation shipped with your plugin will get loaded automatically by Grasshopper 2 and be available to your users. While you author documentation, it is helpful to know about the *Help* > *Custom Folders...* menu to point at your working folder.
 
 ## Icons
 
-Grasshopper 2 icons are 3D drawings that you model in Rhino. This may sound intimidating, but it is not. The icons stay sharp at any size, and they follow the light and dark themes on their own.
+Grasshopper 2 icons are 2D drawings, but the recommended way to design them is in Rhino, which is a 3D editor. This may sound intimidating, but it is not. The icons stay sharp at any size, and they follow the light and dark themes on their own.
 
 The tool is the *GH2 Icon* panel in Rhino. It appears once Grasshopper 2 has been loaded, for example after running the `GH2` command. To try it:
 
@@ -94,8 +93,11 @@ If you prefer, you can use SVG icons instead. They use the same colour roles. Wr
 
 Grasshopper 2 looks a lot like Grasshopper 1 from the outside. Inside, it is a different machine. Five habits from Grasshopper 1 will not carry over immediately. If you are new to Grasshopper altogether, the same five rules will save you the most time. They are easy to miss, and experience shows that many developers, including the author, miss one or more of them even repeatedly.
 
-1. **Inputs are immutable.** In Grasshopper 1 you could often modify input data in place. In Grasshopper 2 you cannot, because Grasshopper 2 is inherently multi-threaded. Components solve in parallel by default, so several components may read the same data at the same time. Duplicate before you modify. This applies to geometry too: duplicate a curve, mesh, or Brep before you transform or edit it. When in doubt, duplicate. Failure to duplicate leads to data corruption and hard-to-debug crashes.
-1. **Long loops must be cancellable.** The user can interrupt the solver at any time. Check `access.Solution.Token` for cancellation every few hundred iterations, and let the exception it throws propagate. Any component whose solver does anything non-trivial must periodically check its cancellation token.
+1. **Inputs are immutable.** Neither in Grasshopper 1 nor in Grasshopper 2 can you modify input data in place. However, doing so often had no bad consequences in Grasshopper 1. In Grasshopper 2 it can have much more dire consequences because it is inherently multi-threaded. Components solve in parallel by default, so several components may read the same data at the same time. This could lead to data corruption and hard-to-debug crashes.
+
+   Duplicate before you modify, to prevent those. This applies to geometry too: duplicate a curve, mesh, or Brep before you transform or edit it. When in doubt, duplicate.
+
+1. **Long loops must be cancellable.** The user can interrupt the solver at any time. Check `access.Solution.Token` for cancellation frequently, and let the exception it throws propagate, or simply return early without throwing. Doing so is very fast and won't affect your plugin's performance considerably. Any component whose solver does anything non-trivial must periodically check its cancellation token.
 1. **The access level is a contract.** Each parameter is declared as `Item`, `Twig`, or `Tree`. That decides which `access.Get...` and `access.Set...` methods you call on it. The wrong one may compile and fail at run time. This is similar to how Grasshopper 1 operates, but is still easy to miss.
 1. **Not every type comes from RhinoCommon.** Some types that look like RhinoCommon types are Grasshopper 2 types, for example `Angle`, `Colour`, and `Grasshopper2.Types.Shapes.Triangle`. Check the namespace before you reach for the Rhino version.
 1. **Look it up before you write it.** The `Grasshopper2` NuGet package ships the full XML documentation. Your IDE shows it as you type. The API is new. Guessing a name from Grasshopper 1 is the most common cause of code that does not compile.
