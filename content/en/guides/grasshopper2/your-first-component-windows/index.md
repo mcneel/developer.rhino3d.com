@@ -35,6 +35,8 @@ It is presumed you already have the necessary tools installed and are ready to g
 Grasshopper 2 requires Rhino 9 and the [.NET 8 SDK](https://dotnet.microsoft.com/download/dotnet/8.0).
 {{< /call-out >}}
 
+New to Grasshopper 2 plugins? Have a look at [Getting Started with Grasshopper 2 Plugins](../getting-started/) first.
+
 ## HelloGrasshopper 2
 
 We will use the Grasshopper 2 Assembly templates to create a new, basic, component library called HelloGrasshopper2.
