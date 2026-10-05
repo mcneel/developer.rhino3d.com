@@ -25,7 +25,7 @@
   @keyframes pm-fade { from { opacity: 0; transform: translateY(8px); } to { opacity: 1; transform: none; } }
   @media (prefers-reduced-motion: reduce) { .pm-slide { animation: none; } }
   .pm-kicker { font-size: clamp(14px, 1.6vw, 22px); letter-spacing: 0.14em; text-transform: uppercase; color: #93c5fd; margin-bottom: 2vh; }
-  .pm-title { font-size: clamp(32px, 5.5vw, 84px); font-weight: 700; line-height: 1.1; margin: 0 0 3vh; max-width: 18em; }
+  .pm-title { font-size: clamp(32px, 5.5vw, 84px); font-weight: 700; line-height: 1.1; margin: 0 0 3vh; max-width: 18em; border: 0; padding: 0; color: inherit; font-family: inherit; letter-spacing: normal; }
   .pm-body { font-size: clamp(18px, 2vw, 30px); line-height: 1.45; color: #cbd5e1; max-width: 42em; margin: 0; }
   .pm-card img { max-height: 52vh; max-width: 80vw; border-radius: 16px; box-shadow: 0 20px 60px rgba(0, 0, 0, 0.5); margin-bottom: 4vh; }
   .pm-card .pm-title { font-size: clamp(28px, 4vw, 60px); margin-bottom: 1.5vh; }
@@ -46,6 +46,9 @@
 
   function text(el) { return el ? el.textContent.trim() : ""; }
 
+  // Matches both the current theme's cards (.rh-card) and the older markup (.card).
+  var CARD = ".rh-card, .card";
+
   // Build slides from the rendered page so card edits and reordering need no changes here.
   function buildSlides() {
     var slides = [];
@@ -54,7 +57,7 @@
     var current = intro, section = "";
     slides.push(intro);
     Array.prototype.forEach.call(root.querySelectorAll("h2, p, .gallery-container"), function (el) {
-      if (el.closest(".pm-overlay") || el.closest(".card")) return;
+      if (el.closest(".pm-overlay") || el.closest(CARD)) return;
       if (el.tagName === "H2") {
         section = text(el);
         current = { type: "title", kicker: "", title: section, body: [] };
@@ -63,12 +66,17 @@
         if (current && text(el)) current.body.push(text(el));
       } else {
         current = null;
-        el.querySelectorAll(".card").forEach(function (card) {
-          var link = card.querySelector(".card-link");
+        el.querySelectorAll(CARD).forEach(function (card) {
+          var heading = card.querySelector(".rh-card-heading, .card-container h1");
+          var link = (heading && heading.querySelector("a")) || card.querySelector(".rh-card-link, .card-link");
           var img = card.querySelector("img");
+          // The description is the first paragraph that is neither the image nor the heading.
+          var desc = Array.prototype.find.call(card.querySelectorAll("p"), function (p) {
+            return !p.querySelector("img") && !p.classList.contains("rh-card-heading") && text(p);
+          });
           slides.push({
-            type: "card", kicker: section, title: text(link),
-            body: [text(card.querySelector(".card-container p"))],
+            type: "card", kicker: section, title: text(heading || link),
+            body: [text(desc)],
             img: img ? img.getAttribute("src") : "", href: link ? link.getAttribute("href") : ""
           });
         });
