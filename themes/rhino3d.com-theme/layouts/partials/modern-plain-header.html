@@ -4,13 +4,13 @@
 
   Reads the same optional `[modern]` frontmatter table as modern-hero.html,
   using `eyebrow`, `lead`, `meta` chips and `breadcrumb` (no image). The
-  title is always .Title. Shown by default; set `page_options.breadcrumbs =
-  false` to drop the crumb trail entirely.
+  title is always .Title. Breadcrumbs are hidden by default (WWW-3754); set
+  `page_options.breadcrumbs = true` to opt in.
 */ -}}
 {{- $m := .Params.modern | default dict -}}
 <header class="modern-plain-header">
   <div class="modern-plain-header__inner">
-    {{- if ne .Params.page_options.breadcrumbs false }}
+    {{- if eq .Params.page_options.breadcrumbs true }}
     <nav class="modern-plain-header__crumbs" aria-label="Breadcrumb">
       {{- partial "modern-breadcrumbs.html" . -}}
     </nav>

@@ -1,6 +1,10 @@
 {{- $.Page.Scratch.Add "figurecount" 1 }}
 {{ $baseURL := .Site.BaseURL }}
-<div class="gallery caption-position-{{ with .Get "caption-position" | default "bottom" }}{{.}}{{end}} caption-effect-{{ with .Get "caption-effect" | default "slide" }}{{.}}{{end}} hover-effect-{{ with .Get "hover-effect" | default "zoom" }}{{.}}{{end}} {{ if ne (.Get "hover-transition") "none" }}hover-transition{{end}}" itemscope itemtype="http://schema.org/ImageGallery">
+<!-- hover-card="true" swaps the default caption-position/caption-effect/hover-effect
+     styling for a fixed grid of tiles whose title sits over the image and whose
+     figure "caption" folds out as a 2-line description on hover/focus (WWW-3513) -->
+{{- $hoverCard := eq (.Get "hover-card") "true" }}
+<div class="gallery{{ if $hoverCard }} hover-card{{ else }} caption-position-{{ with .Get "caption-position" | default "bottom" }}{{.}}{{end}} caption-effect-{{ with .Get "caption-effect" | default "slide" }}{{.}}{{end}} hover-effect-{{ with .Get "hover-effect" | default "zoom" }}{{.}}{{end}} {{ if ne (.Get "hover-transition") "none" }}hover-transition{{end}}{{ end }}"{{ if $hoverCard }} style="--gallery-columns: {{ .Get "columns" | default "3" }};"{{ end }} itemscope itemtype="http://schema.org/ImageGallery">
 	{{- with (.Get "dir") -}}
 		<!-- If a directory was specified, generate figures for all of the images in the directory -->
 		{{- $files := readDir (print "/static/" .) }}

@@ -1,2 +1,2 @@
 
-<div class="column" {{- if .Get 0 -}}style="{{ .Get 0 }}"{{- end -}}>
+<div class="column"{{ with .Get 0 }} style="{{ . | safeCSS }}"{{ end }}>

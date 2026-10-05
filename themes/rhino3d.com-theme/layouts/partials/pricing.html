@@ -1,0 +1,25 @@
+{{- /*
+  pricing.html — one entry of the site-wide price table, data/pricing/.
+
+    {{ partial "pricing.html" (dict "page" .Page "key" "commercial") }}
+
+  Returns the string stored under `key` for the current sales region and the
+  page's language, or "" when there is none. Keys: "<type>", "<type>-upgrade",
+  "<type>-promo", "currency". Used by the price, price-card and currency
+  shortcodes so all three agree.
+
+  Region: the MCNEEL_REGION page param (set on the per-region homepage copies
+  script/regionize.sh makes at deploy), else the MCNEEL_REGION build variable,
+  else NAPA.
+  Language: data/pricing/<lang>.toml wins per key; data/pricing/en.toml is the
+  fallback, so a language file only carries the keys it writes differently.
+*/ -}}
+{{- $page := .page -}}
+{{- $key := .key -}}
+{{- $region := $page.Params.MCNEEL_REGION | default (getenv "MCNEEL_REGION" | default "NAPA") -}}
+{{- $all := site.Data.pricing | default dict -}}
+{{- $loc := index $all $page.Language.Lang | default dict -}}
+{{- $en := index $all "en" | default dict -}}
+{{- $v := index (index $loc $region | default dict) $key -}}
+{{- if not $v }}{{ $v = index (index $en $region | default dict) $key }}{{ end -}}
+{{- return ($v | default "") -}}

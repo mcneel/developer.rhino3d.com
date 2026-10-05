@@ -1,0 +1,36 @@
+{{/*
+    check-for-updates-widget
+
+    The result area of the /check-for-updates/ page (RH-15299). Every string is
+    handed to check-for-updates.js through a data attribute so the script holds
+    no English and the page reads correctly in all 13 languages.
+
+    The message starts as the "unavailable" wording: that is what a visitor
+    without JavaScript is left with, and it is the honest answer, since without
+    the script we cannot check anything. The script replaces it immediately.
+*/}}
+<div class="check-for-updates"
+     data-check-for-updates
+     data-api-base="/www-api/updates"
+     data-msg-checking="{{ i18n "check_for_updates-checking" }}"
+     data-msg-update-available="{{ i18n "check_for_updates-update_available" }}"
+     data-msg-up-to-date="{{ i18n "check_for_updates-up_to_date" }}"
+     data-msg-unavailable="{{ i18n "check_for_updates-unavailable" }}"
+     data-msg-no-details="{{ i18n "check_for_updates-no_details" }}"
+     data-label-download="{{ i18n "check_for_updates-download_now" }}"
+     data-label-download-version="{{ i18n "check_for_updates-download_version" }}">
+    <p class="check-for-updates__message" data-cfu-message aria-live="polite">
+        {{- i18n "check_for_updates-unavailable" -}}
+    </p>
+    <p class="check-for-updates__action" data-cfu-action hidden>
+        {{/* Same button as the home page's "Download Rhino 8": the
+             .home-download-button class is global and already reused on
+             /playground/, so this stays pixel-identical to it rather than
+             becoming a near-duplicate. */}}
+        <a class="home-download-button" data-cfu-download href="#">
+            <i class="fas fa-download"></i> <span data-cfu-download-label>
+                {{- i18n "check_for_updates-download_now" -}}
+            </span>
+        </a>
+    </p>
+</div>

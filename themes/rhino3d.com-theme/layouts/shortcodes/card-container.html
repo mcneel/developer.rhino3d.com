@@ -1,0 +1,90 @@
+{{- /*
+  card-container.html — composable card (WWW-3676). The shortcode is only the
+  box; picture, title, icon, text and call to action are all ordinary markdown
+  in the body. Nothing about the content or its arrangement is a param.
+
+    {{< card-container >}}
+    ![Level 1 - Training Manual](/images/leveloneguide.jpg)
+    ### [Level 1 - Training Manual](/learn/level-1)
+    A complete introduction to 3-D modeling in Rhino.
+
+    {{< button link="/learn/level-1" block="true" >}}Start course{{< /button >}}
+    {{< /card-container >}}
+
+  What the body's markdown means (all optional, all by position):
+    - A picture as the FIRST block is the media: flush with the card edges,
+      16:9, cropped. `![alt](src)`, the {{< image >}} shortcode, or a linked
+      picture `[![alt](src)](url)`. A picture with its own size —
+      {{< image url="…" width="120" >}} — is NOT the media slot: it stays an
+      ordinary inline picture inside the padding, at that size.
+    - Arrangement inside the card is not a param either. Use the layout
+      shortcodes: {{< row nowrap="true" >}} + {{< column width="120px" >}} puts
+      a picture beside the text (the column width sizes the picture). Each
+      column follows the slot rules on its own: a trailing button / hotlink /
+      badge is pinned to the column's bottom, and a picture in a column is an
+      inset picture with the card's corner radius.
+    - A lone Font Awesome icon as the first block ({{< awesome fas fa-comment >}})
+      is drawn large in the accent color.
+    - Headings (any level) are the card's titles, sized as that level is on
+      the page; they never enter the page TOC. If the FIRST heading is a
+      link — `### [Title](/url)` — the whole card becomes clickable, as does a
+      linked picture. Body links keep working on their own.
+    - The bottom slot needs no shortcode: a trailing button, hotlink or badge
+      line is pinned to the bottom so rows line up, and a rule (---) right
+      before the last block turns that block into a pinned footer note.
+    - No layout params at all. Center text by wrapping it in {{< center >}}
+      (leave the picture outside so it stays the flush media). Letterbox a
+      picture instead of cropping it with {{< image url="…" class="contain" >}}.
+
+  Params (appearance only):
+    radius      none | small | medium (default) | large
+    border      thin (default) | none | accent
+    shadow      none (default) | always
+    hover       none | shadow | lift | accent. Default: shadow when the card
+                is clickable, none otherwise.
+    padding     none | small | medium (default) | large   (body; media flush)
+    background  white (default) | gray | transparent
+    link        URL: makes the card clickable without a linked title (e.g. a
+                picture-only card). The first heading's text names the link.
+    class       extra class names
+
+  This shortcode validates the params and renders the body; the box itself,
+  and the position-to-slot rules, live in partials/card-container.html, which
+  feature-card and market-card render through as well.
+
+  Headings stay <hN> but are marked data-toc="skip" so partials/toc-inner
+  leaves them out of the page TOC.
+  Styles, and the position-to-slot rules: assets/scss/_shortcodes/_card.scss.
+  Documented in content/en/admin/style-guide; the full bench of designs is
+  content/en/admin/card-container.
+*/ -}}
+{{- $link := .Get "link" | default "" -}}
+{{- $radius := .Get "radius" | default "medium" -}}
+{{- $border := .Get "border" | default "thin" -}}
+{{- $shadow := .Get "shadow" | default "none" -}}
+{{- $padding := .Get "padding" | default "medium" -}}
+{{- $background := .Get "background" | default "white" -}}
+{{- $hover := .Get "hover" | default "" -}}
+{{- $class := .Get "class" | default "" -}}
+{{- $errors := slice -}}
+{{- if not (in (slice "none" "small" "medium" "large") $radius) }}{{ $errors = $errors | append (printf "radius=%q" $radius) }}{{ end -}}
+{{- if not (in (slice "thin" "none" "accent") $border) }}{{ $errors = $errors | append (printf "border=%q" $border) }}{{ end -}}
+{{- if not (in (slice "none" "always") $shadow) }}{{ $errors = $errors | append (printf "shadow=%q" $shadow) }}{{ end -}}
+{{- if not (in (slice "none" "small" "medium" "large") $padding) }}{{ $errors = $errors | append (printf "padding=%q" $padding) }}{{ end -}}
+{{- if not (in (slice "white" "gray" "transparent") $background) }}{{ $errors = $errors | append (printf "background=%q" $background) }}{{ end -}}
+{{- if and (ne $hover "") (not (in (slice "none" "shadow" "lift" "accent") $hover)) }}{{ $errors = $errors | append (printf "hover=%q" $hover) }}{{ end -}}
+{{- if eq (trim .Inner " \t\r\n") "" }}{{ $errors = $errors | append "an empty body" }}{{ end -}}
+{{- if $errors -}}
+<span class="shortcode-error">Error: card-container: {{ delimit $errors ", " }}. See the comment at the top of layouts/shortcodes/card-container.html.</span>
+{{- else -}}
+{{- partial "card-container.html" (dict
+      "inner" (.Page.RenderString (dict "display" "block") (trim .Inner "\n"))
+      "link" $link
+      "radius" $radius
+      "border" $border
+      "shadow" $shadow
+      "padding" $padding
+      "background" $background
+      "hover" $hover
+      "class" $class) -}}
+{{- end -}}

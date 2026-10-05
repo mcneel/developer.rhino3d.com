@@ -9,6 +9,10 @@
         <div>
           {{ .Content}}
         </div>
+        <!-- Auto-generated cards for the child guides. Pages whose body already
+             lists its children opt out with page_options.gallery_cards = false,
+             the same switch _default/list.html honours. -->
+        {{- if ne .Page.Params.page_options.gallery_cards false -}}
         <div>
           <!-- Groups content according to the "list_group" field in front matter -->
           {{ $groups := .Pages.GroupByParam "list_group" }}
@@ -30,6 +34,7 @@
             {{ end }}
           {{ end }}
         </div>
+        {{- end -}}
       </div>
   </div>
 </div>

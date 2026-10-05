@@ -1,173 +1,78 @@
-{{- $inner := .Inner | .Page.RenderString -}}
-{{ $maillist := "" }}
-{{ $loginLabel := "Login" }}
-{{ $id := 0 }}
-{{ $label := "Subscribe to Maillist" }}
-{{ $class := "" }}
-{{ $container := "" }}
-{{ if .IsNamedParams }}  
-    {{ if .Get "maillist"}}{{ $maillist =  .Get "maillist" }}{{ end }}
-    {{ if .Get "id"}}{{ $id =  .Get "id" }}{{ end }}
-    {{ if .Get "label"}}{{ $label =  .Get "label" }}{{ end }}
-    {{ if .Get "loginLabel"}}{{ $loginLabel =  .Get "loginLabel" }}{{ end }}
-    {{ if .Get "class"}}{{ $class =  .Get "class" }}{{ end }}
-    {{ if .Get "container"}}{{ $container =  .Get "container" }}{{ end }}
-{{ end }}
+{{- /*
+  subscribe.html — pill button that adds the signed-in visitor to a mailing
+  list (WWW-3622). It stays on the page after subscribing: the envelope turns
+  into a check mark and the label into "Subscribed". A signed-out visitor gets
+  a dialog with the body text and a sign-in button; signing in comes back to
+  this page and finishes the subscription.
 
-<div id="vueApp">
-<!-- Button trigger modal -->
-<button id="subscribe-button {{$maillist}}-{{$id}}" type="button" class="btn btn-primary {{$class}}" v-bind:class="{'btn-disappear': subscribed }" @click="handleSubscribe">
-    <i class="fas fa-check" v-if="subscribed"></i>
-    <i class="fas fa-envelope" v-if="!subscribed & !saving"></i>
-    <i class="fas fa-spinner fa-pulse" v-if="saving"></i>
-    {{$label}}
+    {{< subscribe maillist="profession" id="2" label="Sign up for Educator News" />}}
+
+    {{< subscribe maillist="profession" id="2" label="Sign up for Educator News" >}}
+    Please sign in to your Rhino Account to subscribe to this mailing list.
+    {{< /subscribe >}}
+
+  Required params:
+    maillist         profession | market_segment | companion_product | legacy_maillist
+    id               list id — content/en/my-account/maillist/maillist.toml has them;
+                     for legacy_maillist, the list's ID or name
+
+  Optional params:
+    label            button text (default: i18n "subscribe")
+    subscribedLabel  button text once subscribed (default: i18n "subscribed")
+    loginLabel       sign-in button in the dialog (default: i18n "sign-in-button")
+    class            extra class names on the widget, e.g. fixed-bottom-left
+    container        id of an element the widget moves into on load
+                     (toc-top-container / toc-bottom-container). Legacy.
+
+  Body (optional): markdown shown in the dialog when the visitor is signed
+  out (default: i18n "subscribe-sign-in-message"). Every visible string is a
+  param, the body or an i18n key, so translated pages pass their own.
+
+  The output is one HTML block with no blank lines, so the shortcode can sit
+  in a {{< card-container >}} body; as the card's last block it is pinned to
+  the bottom like a {{< button >}}. Styles: assets/scss/_shortcodes/_subscribe.scss.
+  Behaviour: assets/script/subscribe.js, loaded once per page by
+  partials/js-scripts.html off the "has_subscribe" page store flag.
+*/ -}}
+{{- $maillist := .Get "maillist" | default "" -}}
+{{- $id := printf "%v" (.Get "id" | default "") -}}
+{{- $label := .Get "label" | default (i18n "subscribe") -}}
+{{- $subscribedLabel := .Get "subscribedLabel" | default (i18n "subscribed") -}}
+{{- $loginLabel := .Get "loginLabel" | default (i18n "sign-in-button") -}}
+{{- $class := .Get "class" | default "" -}}
+{{- $container := .Get "container" | default "" -}}
+{{- $errors := slice -}}
+{{- if not (in (slice "profession" "market_segment" "companion_product" "legacy_maillist") $maillist) }}{{ $errors = $errors | append (printf "maillist=%q (profession, market_segment, companion_product or legacy_maillist)" $maillist) }}{{ end -}}
+{{- if eq $id "" }}{{ $errors = $errors | append "a missing id" }}{{ end -}}
+{{- if $errors -}}
+<span class="shortcode-error">Error: subscribe: {{ delimit $errors ", " }}. See the comment at the top of layouts/shortcodes/subscribe.html.</span>
+{{- else -}}
+{{- .Page.Store.Set "has_subscribe" true -}}
+{{- $body := trim .Inner " \t\r\n" -}}
+{{- if eq $body "" }}{{ $body = i18n "subscribe-sign-in-message" }}{{ end -}}
+{{- $inner := string (.Page.RenderString (dict "display" "block") $body) -}}
+{{- /* No blank lines: a wrapping shortcode's markdown pass would end the HTML block there. */ -}}
+{{- $inner = replaceRE `\n(?:[ \t]*\n)+` "\n" $inner -}}
+<div class="rh-subscribe{{ with $class }} {{ . }}{{ end }}" data-maillist="{{ $maillist }}" data-id="{{ $id }}"{{ with $container }} data-container="{{ . }}"{{ end }} data-state="idle">
+<button type="button" class="rh-button rh-subscribe-button">
+<i class="fas fa-envelope rh-subscribe-icon-idle" aria-hidden="true"></i>
+<i class="fas fa-spinner fa-pulse rh-subscribe-icon-saving" aria-hidden="true"></i>
+<i class="fas fa-check rh-subscribe-icon-subscribed" aria-hidden="true"></i>
+<span class="rh-subscribe-text-idle">{{ $label }}</span>
+<span class="rh-subscribe-text-subscribed">{{ $subscribedLabel }}</span>
 </button>
-  
-  <!-- Modal -->
-  <div class="modal fade" id="ModalCenter" tabindex="-1" role="dialog" aria-labelledby="ModalCenterTitle" aria-hidden="true">
-    <div class="modal-dialog modal-dialog-centered" role="document">
-      <div class="modal-content">
-        <div class="modal-header">
-          <p class="modal-title" id="ModalLongTitle">{{$label}}</p>
-          <button type="button" class="close" data-dismiss="modal" aria-label="Close">
-            <span aria-hidden="true">&times;</span>
-          </button>
-        </div>
-        <div class="modal-body">
-          {{- $inner -}}
-        </div>
-        <div class="modal-footer" >
-          <button type="button" class="btn btn-primary {{$class}}" @click="login">
-            {{$loginLabel}}
-        </button>
-        </div>
-      </div>
-    </div>
-  </div>
-
+<span class="rh-subscribe-error" role="alert" hidden>{{ i18n "subscribe-failed" }}</span>
+<dialog class="rh-subscribe-dialog" aria-label="{{ $label }}">
+<div class="rh-subscribe-dialog-header">
+<p class="rh-subscribe-dialog-title">{{ $label }}</p>
+<button type="button" class="rh-subscribe-dialog-close" aria-label="{{ i18n "close" }}"><i class="fas fa-times" aria-hidden="true"></i></button>
 </div>
-
-{{- partial "jquery" . }}
-<script src="https://cdn.jsdelivr.net/npm/vue@2.6.10/dist/vue.min.js" integrity="sha384-8t+aLluUVnn5SPPG/NbeZCH6TWIvaXIm/gDbutRvtEeElzxxWaZN+G/ZIEdI/f+y" crossorigin="anonymous"></script>
-<script type="text/javascript" src='{{ (resources.Get "/script/fast-toml.js" | resources.Fingerprint).Permalink }}'>
-</script>
-
-<script>
-
-    const apiUrl = "https://api.mcneel.com/maillist/preferences"
-
-    Vue.options.delimiters = ['((', '))'];
-    var app;
-
-  app = new Vue({
-      el: '#vueApp',
-      components: { 
-      },
-      props: {
-      },
-      data(){
-          return {
-          saving: false,
-          error: "",
-          token: "",
-          subscribed: false,
-          current_subscriptions: {
-            companion_product: [],
-            market_segment: [],
-            profession:[]
-          },
-          }
-      },
-      watch: {
-      },
-      computed: {
-      },
-      created(){
-          $.ajax({
-              url:"https://www.rhino3d.com/licenses/session_variables.json"
-          }).then(licenseData => {
-              this.token = JSON.parse(licenseData)["oauth2Token"]
-              const headers = {"Authorization": `Bearer ${this.token}`}
-              $.ajax({
-              url: apiUrl,
-              headers,
-          }).then(data => {
-              this.current_subscriptions["profession"] = data.profession.map(x => x.ProfessionID)
-              this.current_subscriptions["market_segment"] = data.market_segment.map(x => x.MarketSegmentID)
-              this.current_subscriptions["companion_product"] = data.companion_product.map(x => x.CompanionProductId)
-              if (this.current_subscriptions["{{$maillist}}"].includes(parseInt("{{$id}}"))){
-                this.subscribed = true
-              }
-              else{
-                //Auto subscribe if query string is present
-                const params = new Proxy(new URLSearchParams(window.location.search), {
-                  get: (searchParams, prop) => searchParams.get(prop),
-                });
-                // Get the value of "subscribe" in query params
-                let autoSubscribe = params.subscribe; 
-                console.log("Auto subscribe:", autoSubscribe)
-                if (autoSubscribe>0){
-                  this.handleSubscribe();
-                }
-              }
-          }).catch(e =>
-          {
-              this.error = "Failed loading subscriptions."
-          })
-      }).catch(e =>
-      {
-          this.error = "You need to log in to see this page."
-      })
-      },
-      methods: {
-        handleSubscribe() {
-          body = {}
-          body["{{ $maillist }}"]= [{"id":"{{ $id }}", "add":true }]
-
-          const headers = {"Authorization": `Bearer ${this.token}`, 'Content-Type': 'application/json',
-          'Accept': 'application/json'}
-
-          if (this.token){
-              this.saving = true
-              // post request
-              $.ajax({
-                  url: apiUrl,
-                  type: 'post',
-                  data: JSON.stringify(body),
-                  headers,
-                  dataType: 'json',
-              }).then( data => {
-                  this.saving = false
-                  this.subscribed = true
-              }).catch(e =>{
-                  alert("Something went wrong")
-                  this.saving = false
-              })
-          }
-          else {
-            $('#ModalCenter').modal()
-          }
-      },
-      login(){
-        let redirect = "https://www.rhino3d.com"+"{{ .Page.RelPermalink }}"+"?subscribe=1"
-        //console.log("redirect link:", redirect);
-        let loginLink = "https://www.rhino3d.com/user/login?redirect_uri="+encodeURIComponent(redirect)
-        //console.log("login link:", loginLink);
-        window.open(loginLink,"_self");
-      }
-      }
-  });
-
-</script>
-
-<script>
-  if ("{{ $container }}"){
-  var button = document.getElementById("subscribe-button {{$maillist}}-{{$id}}");
-  var container = document.getElementById("{{ $container }}");
-  container.appendChild(button);
-  }
-</script>
-
-{{ $sass := resources.Get "/scss/_page/_subscribe.scss" }}
-{{ $style := $sass | css.Sass | resources.Minify | resources.Fingerprint }}
-<link rel="stylesheet" href="{{ $style.Permalink }}">
+<div class="rh-subscribe-dialog-body">
+{{ trim $inner "\n" | safeHTML }}
+</div>
+<div class="rh-subscribe-dialog-footer">
+<button type="button" class="rh-button rh-subscribe-login">{{ $loginLabel }}</button>
+</div>
+</dialog>
+</div>
+{{- end -}}

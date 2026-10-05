@@ -5,6 +5,7 @@
 
   Reads the same `breadcrumb` override from the `[modern]` frontmatter table
   as modern-hero.html (plain labels, no links); falls back to .Ancestors.
+  The current page is left out — its title is already the heading below.
 */ -}}
 {{- $m := .Params.modern | default dict -}}
 {{- with $m.breadcrumb -}}
@@ -12,14 +13,10 @@
     {{- if $i }}<span class="modern-crumbs__sep">/</span>{{ end -}}
     <span>{{ $c }}</span>
   {{- end -}}
-  <span class="modern-crumbs__sep">/</span>
-  <span class="modern-crumbs__current">{{ $.Title }}</span>
 {{- else -}}
-  {{- range $.Ancestors.Reverse -}}
-    {{- if and .Title (not .IsHome) -}}
-      <a href="{{ .RelPermalink }}">{{ .Title }}</a>
-      <span class="modern-crumbs__sep">/</span>
-    {{- end -}}
+  {{- $crumbs := where $.Ancestors.Reverse "IsHome" false -}}
+  {{- range $i, $c := where $crumbs "Title" "!=" "" -}}
+    {{- if $i }}<span class="modern-crumbs__sep">/</span>{{ end -}}
+    <a href="{{ $c.RelPermalink }}">{{ $c.Title }}</a>
   {{- end -}}
-  <span class="modern-crumbs__current">{{ .Title }}</span>
 {{- end -}}

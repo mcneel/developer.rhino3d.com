@@ -1,0 +1,155 @@
+// ==============================
+// Navbar submenus
+// ==============================
+// Dropdowns under a top-level entry of .menu-items
+// (partials/site-navigation.html + partials/nav-menu-link.html).
+//
+// WWW-3627: wiring only. An entry grows a submenu when another menu entry in
+// the config names its identifier as `parent`; until a language's menu does
+// that, nothing on the site matches these selectors. Panel styling follows
+// the account dropdown (.dd-menu in _core/_navigation.scss) on purpose.
+//
+// Imported after _core/navigation so the submenu rules below out-cascade the
+// row's own `.menu-items a` rules at equal specificity.
+
+.menu-item-group {
+	position: relative;
+}
+
+// Bundled Font Awesome (theme rule: no new SVGs). The caret sits outside the
+// parent's <a>, so hovering the group has to color it by hand — inside the
+// anchor it would pick up the link underline as well.
+.menu-item-caret {
+	font-size: 0.7em;
+	margin-left: 7px;
+	vertical-align: middle;
+	color: $global-dark-grey;
+}
+
+// A parent that is a link carries #navbar a's 5px padding-right, one that is
+// only a dropdown trigger (a <span>) does not. Drop it so the caret sits the
+// same distance from the label either way; the id beats #navbar a.
+#navbar .menu-item-parent {
+	padding-right: 0;
+}
+
+.menu-item-group:hover .menu-item-caret {
+	color: $global-link-hover-color;
+}
+
+// A parent that only opens its submenu (no url in the config) renders as a
+// <span>, which #navbar a's color and hover rules never reach — it would sit
+// in the row as black, static text. Match the links instead.
+span.menu-item-parent {
+	color: $global-dark-grey;
+	cursor: pointer;
+}
+
+.menu-item-group:hover span.menu-item-parent {
+	color: $global-link-hover-color;
+	text-decoration: underline;
+}
+
+.menu-submenu {
+	list-style: none;
+	margin: 0;
+	padding: 0;
+}
+
+.menu-submenu li {
+	list-style: none;
+	margin: 0;
+}
+
+@media screen and (min-width: $global-mobile-maxwidth + 1) {
+	.menu-submenu {
+		display: none;
+		position: absolute;
+		// Flush against the parent: a gap here is a dead zone that closes the
+		// panel while the pointer crosses into it.
+		top: 100%;
+		left: 0;
+		z-index: 1;
+		min-width: 100%;
+		width: max-content;
+		max-width: 260px;
+		background-color: $global-background-color;
+		border: 1px solid #ccc;
+		border-radius: 4px;
+		box-shadow: 0 0 6px 0 rgba(0, 0, 0, 0.1);
+		text-align: left;
+	}
+
+	// The panel is wider than the label it hangs from, so the corner between
+	// the two — right of the label, above the panel's top edge — belonged to
+	// neither box, and a pointer moving diagonally into the menu crossed it
+	// and closed the menu mid-travel. This transparent strip spans the
+	// panel's width across that band, so the whole path stays inside the
+	// group. It exists only while the panel is displayed, and is short enough
+	// to clear the next menu link's text above it.
+	.menu-submenu::before {
+		content: "";
+		position: absolute;
+		left: 0;
+		right: 0;
+		bottom: 100%;
+		height: 12px;
+	}
+
+	// .open is script/nav-submenu.js holding the panel open through the
+	// pointer's trip to it; :hover is the no-JS fallback; :focus-within keeps
+	// it reachable by keyboard.
+	.menu-item-group.open > .menu-submenu,
+	.menu-item-group:hover > .menu-submenu,
+	.menu-item-group:focus-within > .menu-submenu {
+		display: block;
+	}
+
+	.menu-submenu a {
+		display: block;
+		// !important to beat #navbar a's padding-right, as .dd-menu a does
+		padding: 8px 15px !important;
+		// The row truncates its links with an ellipsis; the panel has room to
+		// wrap instead.
+		overflow: visible;
+		text-overflow: clip;
+		white-space: normal;
+		text-wrap: wrap;
+	}
+
+	.menu-submenu li:hover {
+		background-color: #f6f6f6;
+	}
+}
+
+@media screen and (max-width: $global-mobile-maxwidth) {
+	// No hover on the overlay menu, and no room to float a panel over it, so
+	// children just stack under their parent.
+	.menu-item-group {
+		display: flex;
+		flex-direction: column;
+		align-items: center;
+	}
+
+	.menu-item-caret {
+		display: none;
+	}
+
+	// Same reach problem as the desktop rule above: the overlay sizes and
+	// colors its entries through `.menu-items a`, which a <span> parent
+	// misses.
+	span.menu-item-parent {
+		font-size: 26px;
+		color: #818181;
+	}
+
+	.menu-submenu a {
+		font-size: 20px;
+	}
+
+	// A nested menu can outgrow the viewport height toggleMenu() gives the
+	// overlay. Scroll rather than clip; no-op while the stack still fits.
+	.menu-items {
+		overflow: hidden auto;
+	}
+}

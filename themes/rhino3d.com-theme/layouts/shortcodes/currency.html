@@ -1,1 +1,9 @@
-{{- if eq (.Page.Params.MCNEEL_REGION | default (getenv "MCNEEL_REGION"| default "NAPA")) "EMEA" -}}€{{- else -}}${{- end -}}
+{{- /*
+  currency.html — currency symbol of the current sales region ($, €, ¥), from
+  the "currency" key in data/pricing/ (see partials/pricing.html).
+
+    {{< currency >}}195
+*/ -}}
+{{- with partial "pricing.html" (dict "page" .Page "key" "currency") -}}{{ . }}{{- else -}}
+<span class="shortcode-error">Error: no "currency" for this region in data/pricing/</span>
+{{- end -}}

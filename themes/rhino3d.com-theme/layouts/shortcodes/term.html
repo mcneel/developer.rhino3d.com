@@ -1,0 +1,43 @@
+{{/*
+    term — a named thing, linked to its reference page, with a definition the
+    reader can open in place.
+
+    Params:
+      id     (required) key in data/glossary/<lang>.toml, falling back to
+             data/glossary/en.toml
+      label  overrides the label from the data file, for a term that has to
+             bend to the sentence around it ("teams", "a LAN Zoo")
+
+    Renders the link plus a question-mark button that opens the definition in
+    the top layer (HTML popover), so it is never clipped by a scrolling or
+    overflow-hidden ancestor. Browsers without popover support get the link on
+    its own: the button and the panel are hidden in CSS, so nothing renders
+    that cannot work. See _shortcodes/_term.scss.
+*/}}
+{{- $id := .Get "id" | default (.Get 0) -}}
+{{- if not $id -}}
+  {{- errorf "term: `id` is required (%s)" .Position -}}
+{{- end -}}
+{{- $table := index site.Data.glossary site.Language.Lang -}}
+{{- if not (index $table $id) -}}
+  {{- $table = index site.Data.glossary "en" -}}
+{{- end -}}
+{{- $entry := index $table $id -}}
+{{- if not $entry -}}
+  {{- errorf "term: no glossary entry %q in data/glossary (%s)" $id .Position -}}
+{{- end -}}
+{{- $label := .Get "label" | default $entry.label -}}
+{{- $panel := printf "term-%s-%d" (anchorize $id) .Ordinal -}}
+<span class="term">
+  {{- with $entry.href -}}
+    <a class="term__link" href="{{ . }}">{{ $label }}</a>
+  {{- else -}}
+    <span class="term__link">{{ $label }}</span>
+  {{- end -}}
+  <button type="button" class="term__toggle" popovertarget="{{ $panel }}" aria-label="{{ replace (i18n "term_definition_of") "[TERM]" $entry.label }}">?</button>
+  <span class="term__panel" id="{{ $panel }}" popover>
+    <span class="term__panel-title">{{ $entry.label }}</span>
+    <span class="term__panel-body">{{ $entry.definition }}</span>
+    {{- with $entry.href }}<a class="term__panel-link" href="{{ . }}">{{ i18n "term_learn_more" }}</a>{{ end -}}
+  </span>
+</span>

@@ -1,0 +1,19 @@
+{{- /*
+  price.html — a price from the site-wide price table, inline in text or in a
+  {{< price-card >}} body. Plain text, so it works inside bold, links, headings.
+
+    Rhino costs {{< price "commercial" >}}; students pay {{< price type="edu" >}}.
+
+  Param: type (positional or named) — key in data/pricing/en.toml (or the
+  language override), e.g. commercial, commercial-upgrade, edu, eval. Resolved
+  for the current region and language by partials/pricing.html. An unknown
+  type renders a visible error rather than an empty string.
+*/ -}}
+{{- $type := .Get "type" | default (.Get 0) | default "" -}}
+{{- if eq $type "" -}}
+<span class="shortcode-error">Error: price needs a type. Usage: &lbrace;&lbrace;&lt; price "commercial" &gt;&rbrace;&rbrace;</span>
+{{- else -}}
+{{- with partial "pricing.html" (dict "page" .Page "key" $type) -}}{{ . }}{{- else -}}
+<span class="shortcode-error">Error: no price "{{ $type }}" for this region in data/pricing/</span>
+{{- end -}}
+{{- end -}}

@@ -1,177 +1,80 @@
-{{ $.Scratch.Add "A" (.Get "A" | default "A") }}
-{{ $.Scratch.Add "B" (.Get "B" | default "B") }}
-{{ $.Scratch.Add "Atarget" (.Get "Atarget" | default "") }}
-{{ $.Scratch.Add "Btarget" (.Get "Btarget" | default "") }}
+{{- /*
+  segmented.html — two-way segmented control (the homepage's "New License /
+  Upgrade" switch). Two modes:
 
+  Panes: shows the element matching the selected segment and hides the other.
+    {{< segmented A="New License" Atarget="#pricing-new" B="Upgrade" Btarget="#pricing-upgrade" >}}
 
-<div class="segmented-controls">
-    <input id="segmentA" name="option" class="segmentInput" type="radio" checked>
-    <label for="segmentA">{{ $.Scratch.Get "A" }}</label>
-    <input id="segmentB" name="option" class="segmentInput" type="radio">
-    <label for="segmentB">{{ $.Scratch.Get "B" }}</label>
+  Links: each segment is a link to a page and the segment for the current page
+  is drawn selected. The Learn Rhino / Teach Rhino pages use it as a cross-page
+  toggle (WWW-3604). Real anchors, so it works without the script.
+    {{< segmented A="Learn Rhino" Alink="/learn2/" B="Teach Rhino" Blink="/teach2/" >}}
+
+  Params: A, B             — segment labels (default "A" / "B")
+          Atarget, Btarget — CSS selectors of the two panes, e.g. "#pricing-new";
+                             give the B pane style="display: none;" so it stays
+                             hidden until the script runs
+          Alink, Blink     — URLs: the segment is a link. The selected segment
+                             is plain text (it is the current page). A
+                             site-root page path ("/teach2/") resolves to the
+                             page in the current language.
+          selected         — "A" or "B": the segment drawn selected on load.
+                             Default: the segment whose link is the current
+                             page, else A.
+          Bquery           — query string that pre-selects B on page load, e.g.
+                             Bquery="upgrade=1" makes /?upgrade=1 open the B
+                             pane (e-news mailings link to /?upgrade=1#price).
+                             "key" alone matches on presence, "key=value" on
+                             an exact value. Panes only.
+          id               — id stem for this control's radios, e.g.
+                             id="platform". Default: segmented-<ordinal>.
+                             Only needed if you want stable ids.
+
+  Any number of controls per page (WWW-3776). Each gets its own radio ids and
+  its own radio group name from `id`, and hands the pane selectors to the
+  script in data attributes rather than having them templated into an inline
+  script — so two controls neither collide on ids nor share a radio group.
+  Style: assets/scss/_shortcodes/_segmented.scss. Script:
+  assets/script/segmented.js, loaded once by partials/js-scripts.html when the
+  "has_segmented" flag below is set — i.e. only when a control has panes to
+  switch. (Like the other js-scripts-loaded shortcodes, the script is not
+  emitted on a page_options.plain page, which does not include js-scripts.)
+*/ -}}
+{{- $A := .Get "A" | default "A" -}}
+{{- $B := .Get "B" | default "B" -}}
+{{- $Atarget := .Get "Atarget" | default "" -}}
+{{- $Btarget := .Get "Btarget" | default "" -}}
+{{- $Alink := .Get "Alink" | default "" -}}
+{{- $Blink := .Get "Blink" | default "" -}}
+{{- /* Pages live under a language prefix (defaultContentLanguageInSubdir):
+       /teach2/ is really /en/teach2/. Site-root page paths resolve to the page
+       in the current language, like markdown links do (partials/resolve-link),
+       so the toggle works on hugo server too, where no proxy adds the prefix. */ -}}
+{{- $Alink = partial "resolve-link.html" (dict "page" .Page "url" $Alink) -}}
+{{- $Blink = partial "resolve-link.html" (dict "page" .Page "url" $Blink) -}}
+{{- $Bquery := .Get "Bquery" | default "" -}}
+{{- $selected := .Get "selected" | default "" -}}
+{{- /* Unique per control: the radio ids and the radio group name. Ordinal is
+       the shortcode's position in the page, so two controls never collide. */ -}}
+{{- $id := .Get "id" | default (printf "segmented-%d" .Ordinal) -}}
+{{- if not (in (slice "" "A" "B") $selected) -}}
+<span class="shortcode-error">Error: segmented: selected must be A or B.</span>
+{{- else -}}
+{{- /* Resolved links equal RelPermalink; the suffix match covers a link that
+       did not resolve to a page. */ -}}
+{{- if eq $selected "" -}}
+  {{- $here := .Page.RelPermalink -}}
+  {{- if and (ne $Blink "") (or (eq $Blink $here) (hasSuffix $here $Blink)) }}{{ $selected = "B" }}{{ else }}{{ $selected = "A" }}{{ end -}}
+{{- end -}}
+{{- $links := or (ne $Alink "") (ne $Blink "") -}}
+{{- $panes := or (ne $Atarget "") (ne $Btarget "") -}}
+{{- /* Tells partials/js-scripts.html to load segmented.js once for this page. */ -}}
+{{- if $panes }}{{ .Page.Store.Set "has_segmented" true }}{{ end -}}
+
+<div class="segmented-controls{{ if $links }} segmented-links{{ end }}"{{ if $panes }} data-segmented-panes{{ with $Atarget }} data-a-target="{{ . }}"{{ end }}{{ with $Btarget }} data-b-target="{{ . }}"{{ end }}{{ with $Bquery }} data-b-query="{{ . }}"{{ end }}{{ end }}>
+    <input id="{{ $id }}-A" name="{{ $id }}" class="segmentInput" type="radio"{{ if eq $selected "A" }} checked{{ end }}>
+    <label for="{{ $id }}-A"{{ if and $links (eq $selected "A") }} aria-current="page"{{ end }}>{{ if and (ne $Alink "") (ne $selected "A") }}<a href="{{ $Alink }}">{{ $A }}</a>{{ else }}{{ $A }}{{ end }}</label>
+    <input id="{{ $id }}-B" name="{{ $id }}" class="segmentInput" type="radio"{{ if eq $selected "B" }} checked{{ end }}>
+    <label for="{{ $id }}-B"{{ if and $links (eq $selected "B") }} aria-current="page"{{ end }}>{{ if and (ne $Blink "") (ne $selected "B") }}<a href="{{ $Blink }}">{{ $B }}</a>{{ else }}{{ $B }}{{ end }}</label>
 </div>
-
-
-  <style>
-
-  /* 
-   * SEGMENTED CONTROLS LAYOUT
-   */ 
-  
-  /*
-   * Container
-   */
-  .segmented-controls {
-    display: flex;
-    margin: 0 auto;
-    position: relative;
-    overflow: hidden;
-    transition: all .3s ease;
-    max-width: 100%;
-    width: 300px;
-    z-index: 0;
-  }
-  
-  /*
-   * Vissualy hidden radiobuttons
-   */
-  .segmented-controls input {
-    position: absolute !important;
-    height: 1px;
-    width: 1px;
-    overflow: hidden;
-    clip: rect(1px 1px 1px 1px); /* IE6, IE7 */
-    clip: rect(1px, 1px, 1px, 1px);
-    white-space: nowrap; /* added line */
-  }
-  
-  /* 
-   * Labels need to be the same size
-   */
-  .segmented-controls label {
-    grid-row: 1;
-    display: flex;
-    justify-content: center;
-    align-items: center;
-    text-align: center;
-    cursor: pointer;
-    flex: 1 1 0px;
-    position: relative;
-    z-index: 2;
-    transition: inherit;  
-  }
-  
-  /* 
-   * Adjust z-index of last label since that contains 
-   * the paddle that needs to go beneath all other labels 
-   */
-  .segmented-controls label:last-of-type {
-    z-index: 1;
-  }
-  
-  /*
-   * Paddle 
-   */
-  .segmented-controls label:last-of-type::after {
-    content: "";
-    position: absolute;
-    top: 0;
-    right: 0;
-    bottom: 0;
-    left: 0;
-    z-index: -2;
-    background-color: black;
-    transition: inherit;
-  }
-  
-
-.segmented-controls input:nth-last-of-type(2):checked ~ label:last-of-type::after {
-    transform: translateX(-100%);
-}
-
-  
-  
-  /*
-   * Container
-   */
-  .segmented-controls {
-    border-radius: 0.5rem;
-    background: #e2e2e9;
-    height: 2rem;
-    padding: 0.125rem;
-  }
-  
-  /*
-   * Labels 
-   */
-  .segmented-controls label {
-    font-size: 0.8125rem;
-    font-family: -apple-system, BlinkMacSystemFont, sans-serif;
-    font-weight: 500;
-    line-height: 1;
-  }
-  
-  /*
-   * Dividers
-   */
-  .segmented-controls label:not(:first-of-type)::before {
-    content: "";
-    position: absolute;
-    z-index: -3;
-    top: 0.5rem;
-    left: 0;
-    bottom: 0.5rem;
-    width: 1px;
-    background: rgba(0,0,0,0.15);
-    transition: inherit;
-  }
-  
-  
-  /*
-   * Selected option 
-   */
-  .segmented-controls input:checked + label {
-    font-weight: 600;
-    font-size: 0.875rem;
-  }
-
-  
-  /*
-   * Hide dividers before and after the selected option
-   */
-  .segmented-controls input:checked + label::before,
-  .segmented-controls input:checked + label + input + label::before {
-    opacity: 0;
-  }
-  
-  
-  /*
-   * Paddle
-   */
-  .segmented-controls label:last-of-type::after {
-    background: white;
-    border-radius: 0.4275rem;
-    border: 0.5px solid rgba(0, 0, 0, 0.04);
-    box-shadow: 0px 3px 1px rgba(0, 0, 0, 0.04), 0px 3px 8px rgba(0, 0, 0, 0.12);
-  }
-  
-  </style>
-
-  <script>
-
-    $(window).on('pageshow', function(){
-        var showSegment = function() { 
-            if($('#segmentA').is(':checked')){
-                $('{{ $.Scratch.Get "Atarget" }}').css('display', '');
-                $('{{ $.Scratch.Get "Btarget" }}').css('display', 'none');
-              } else {
-                  $('{{ $.Scratch.Get "Atarget" }}').css('display', 'none');
-                  $('{{ $.Scratch.Get "Btarget" }}').css('display', '');
-              }
-        };
-        showSegment();
-      $('.segmentInput').change(function(){
-        showSegment();
-      });
-    });
-    </script>
+{{- end -}}

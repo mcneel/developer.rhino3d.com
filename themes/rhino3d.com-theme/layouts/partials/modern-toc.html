@@ -1,12 +1,14 @@
 {{- /*
-  modern-toc.html — sticky numbered "On this page" nav for the modern_style
-  theme. Reuses toc-inner.html (which parses headings out of .Content into the
-  standard #TableOfContents markup); numbering and the active marker are handled
-  in CSS + modern-scripts.html. An optional parent back-link is shown when
-  page_options.toc_back is set.
+  modern-toc.html — sticky table-of-contents nav for the modern_style theme.
+  Reuses toc-inner.html (which parses headings out of .Content into the
+  standard #TableOfContents markup); the active marker is handled in CSS +
+  modern-scripts.html. Leading numbers ("01", "02", …) are off by default and
+  opt-in via page_options.toc_numbers (adds the .modern-toc--numbered modifier).
+  page_options.toc_collapse (off by default) hides nested items and reveals only
+  the active section's children (adds the .modern-toc--collapse modifier).
+  An optional parent back-link is shown when page_options.toc_back is set.
 */ -}}
-<nav class="modern-toc" aria-label="On this page">
-  <p class="modern-toc__label">On this page</p>
+<nav class="modern-toc{{ if .Params.page_options.toc_numbers }} modern-toc--numbered{{ end }}{{ if .Params.page_options.toc_collapse }} modern-toc--collapse{{ end }}" aria-label="On this page">
   {{- if .Params.page_options.toc_back }}
   <a class="modern-toc__back" href="{{ .Parent.RelPermalink }}">&lt; {{ .Parent.Title }}</a>
   {{- end }}

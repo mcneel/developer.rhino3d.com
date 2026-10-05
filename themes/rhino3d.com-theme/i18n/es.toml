@@ -311,3 +311,22 @@ other = "Todo"
 # Filter textfield on Learn Pages
 [filter]
 other = "Filtrar..."
+
+# {{< subscribe >}} shortcode (WWW-3622)
+[subscribe]
+other = "Suscribirse"
+
+[subscribed]
+other = "Se ha suscrito"
+
+[subscribe-failed]
+other = "Se ha producido un error. Vuelva a intentarlo."
+
+[subscribe-sign-in-message]
+other = "Inicie sesión en su cuenta de Rhino para suscribirse a esta lista de correo."
+
+[sign-in-button]
+other = "Iniciar sesión"
+
+[close]
+other = "Cerrar"

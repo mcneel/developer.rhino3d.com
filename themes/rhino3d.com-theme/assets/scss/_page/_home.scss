@@ -306,27 +306,6 @@ model-viewer {
     }
 }
 
-.home-quote {
-    blockquote {
-        border-left: 3px solid $global-rhino-color;
-        padding-left: 10px;
-        color: black;
-        font-size: 20px;
-        font-style: italic;
-        display: block;
-        margin-block-start: 1.2em;
-        margin-block-end: 1em;
-        margin-inline-start: 20px;
-        margin-inline-end: 20px;
-
-      .name {
-        color: black;
-        margin-top: 10px;
-        font-size: 14px;
-        font-weight: bold;
-      }
-    }
-}
 
 .home-grasshopper {
     background-size: cover;

@@ -1,0 +1,84 @@
+// ==============================
+// {{< button >}} shortcode
+// ==============================
+// The site's pill button as a standalone element: same look as the .button on
+// the homepage price cards (price-card.html), which still carries its own copy
+// in an inline <style>. TODO: point price-card at these classes and drop that.
+
+$rh-button-bg: var(--rh-gray-50, #f5f5f5);
+$rh-button-color: var(--rh-red-600, #{$global-link-color});
+
+.rh-button {
+  // The resting surface is read from a custom property so a container can
+  // re-tint it (a gray card-container sets --rh-button-surface: #fff, see
+  // _card.scss). Only the fallback lives here: declaring the property on
+  // .rh-button itself would shadow the inherited value and the card's white
+  // could never win.
+  display: inline-block;
+  box-sizing: border-box;
+  padding: 0.7em 1.4em;
+  border: 1px solid transparent;
+  border-radius: 2.5em;
+  background: var(--rh-button-surface, #{$rh-button-bg});
+  color: $rh-button-color;
+  font-weight: 700;
+  font-size: 14px;
+  line-height: 1.2;
+  text-align: center;
+  text-decoration: none;
+  cursor: pointer;
+  transition: background-color 160ms ease, color 160ms ease, border-color 160ms ease;
+
+  // A button that shares its line with something else — "Download  Share
+  // Course" in a card's pill row — keeps a gutter, so the two read as two
+  // things. A button on its own (the usual case, and every block button) is
+  // its paragraph's last child and gets nothing.
+  &:not(:last-child) { margin-right: 0.75em; }
+
+  // Repeated under .modern-style because that theme's `.modern-style a:hover`
+  // (color: red-700) outranks a bare `.rh-button:hover` and kept the label red
+  // on the red fill.
+  &:hover,
+  &:focus-visible,
+  .modern-style &:hover,
+  .modern-style &:focus-visible {
+    background: $rh-button-color;
+    color: #fff;
+    text-decoration: none;
+  }
+
+  &.rh-button-secondary {
+    background: #fff;
+    border-color: #d0d0d0;
+    color: #333;
+
+    &:hover,
+    &:focus-visible {
+      background: #f5f5f5;
+      border-color: #a0a0a0;
+      color: #111;
+    }
+  }
+
+  // Solid red call to action (WWW-3701). Modern-style pages only: elsewhere
+  // primary="true" falls back to the default pill.
+  .modern-style &.rh-button-primary {
+    background: $rh-button-color;
+    color: #fff;
+
+    &:hover,
+    &:focus-visible {
+      background: var(--rh-red-800, #7a0000);
+      color: #fff;
+    }
+  }
+
+  &.rh-button-block {
+    display: block;
+    width: 100%;
+  }
+}
+
+// Markdown wraps a lone shortcode in <p>; keep block buttons from picking up
+// paragraph spacing twice.
+p > .rh-button-block { margin: 0; }

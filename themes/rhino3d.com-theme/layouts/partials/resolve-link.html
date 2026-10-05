@@ -1,0 +1,18 @@
+{{- /*
+  resolve-link.html — the href for a link an author typed into a shortcode
+  param, resolved the way markdown links resolve on this site (Hugo's embedded
+  link render hook): a site-root path that is a page ("/teach2/") becomes that
+  page's RelPermalink in the current language ("/en/teach2/", the pages live
+  under defaultContentLanguageInSubdir). Anything else — an external URL,
+  "#anchor", "?query", "mailto:", a static file — is returned untouched; in
+  production the proxy adds the language prefix to those.
+
+    {{ partial "resolve-link.html" (dict "page" .Page "url" (.Get "link")) }}
+
+  Used by the button and segmented shortcodes.
+*/ -}}
+{{- $url := .url | default "" -}}
+{{- if hasPrefix $url "/" -}}
+  {{- with .page.GetPage $url }}{{ $url = .RelPermalink }}{{ end -}}
+{{- end -}}
+{{- return $url -}}

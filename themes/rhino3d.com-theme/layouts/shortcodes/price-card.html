@@ -1,14 +1,22 @@
 {{- /*
-  price-card.html — pricing "plan" card. The price comes from the page's
-  [pricing.<REGION>] frontmatter table keyed by `type`; the region is
-  MCNEEL_REGION (page param, else env, default NAPA).
+  price-card.html — pricing "plan" card: title, price, subtitle, markdown body,
+  button. Prices are never passed in: `type` names a row of the site-wide price
+  table (data/pricing/, see partials/pricing.html) and the card reads
+  "<type>", "<type>-upgrade" and "<type>-promo" for the current sales region
+  and the page's language. For a price inline in text use {{< price >}}.
 
-  Params: title, type, subtitle, action (default "Buy Now"), link, ribbon,
-          has-promo (shows "<type>-promo" struck against the list price)
+  Params: title, type      — required
+          subtitle, action (default "Buy Now"), link, ribbon
+          upgrade="true"   — adds the "upgrade from older version" line with
+                             the "<type>-upgrade" price
           featured="true"  — accent border (adds .plan-featured)
-          upgrade="true"   — also show the "<type>-upgrade" price line
           secondary="true" — quiet button style (adds .button-secondary),
                              e.g. for a "Learn More" link
+
+  Promo: if the table has a "<type>-promo" price and today is before
+  promo_until (data/pricing/en.toml), the list price is struck through and the
+  promo price shown. A `ribbon` on such a card is the promo ribbon and is
+  hidden once the promo ends, so content needs no edit when a promo closes.
 
   The markup is kept free of blank / whitespace-only lines (the one before
   <style> is deliberate) so the card survives a markdown pass when nested in a
@@ -16,40 +24,37 @@
   block at the first blank line and would turn indented markup after it into
   a code block; the blank line lets <style> open its own raw block instead.
 */ -}}
-{{- $title := .Get "title" | default "title" -}}
-{{- $type := .Get "type" | default "type" -}}
-{{- $hasPromo := .Get "has-promo" | default "" -}}
-{{- $promoActive := $hasPromo -}}
+{{- $title := .Get "title" | default "" -}}
+{{- $type := .Get "type" | default "" -}}
 {{- $subtitle := .Get "subtitle" | default "" -}}
 {{- $action := .Get "action" | default "Buy Now" -}}
 {{- $ribbon := .Get "ribbon" | default "" -}}
 {{- $link := .Get "link" | default "" -}}
 {{- $featured := eq (.Get "featured") "true" -}}
 {{- $secondary := eq (.Get "secondary") "true" -}}
-{{- $region := .Page.Params.MCNEEL_REGION | default (getenv "MCNEEL_REGION" | default "NAPA") -}}
-{{- /* A missing [pricing.<REGION>] table renders empty prices instead of failing the build with "index of untyped nil". */ -}}
-{{- $regionPricing := index (.Page.Params.pricing | default dict) $region | default dict -}}
-{{- $price := index $regionPricing $type | default "" -}}
-{{- $promoPrice := index $regionPricing (print $type "-promo") | default "" -}}
+{{- $price := "" -}}
+{{- $promoPrice := "" -}}
 {{- $upgradePrice := "" -}}
-{{- if eq (.Get "upgrade") "true" }}{{ $upgradePrice = index $regionPricing (print $type "-upgrade") | default "" }}{{ end -}}
-{{- $currentDate := now.Format "2006-01-02" -}}
-{{- $promoEndDate := "2024-02-27" -}}
-{{- if ge $currentDate $promoEndDate }}{{ $promoActive = "" }}{{ end -}}
+{{- if ne $type "" -}}
+  {{- $price = partial "pricing.html" (dict "page" .Page "key" $type) -}}
+  {{- $promoPrice = partial "pricing.html" (dict "page" .Page "key" (print $type "-promo")) -}}
+  {{- if eq (.Get "upgrade") "true" }}{{ $upgradePrice = partial "pricing.html" (dict "page" .Page "key" (print $type "-upgrade")) }}{{ end -}}
+{{- end -}}
+{{- $promoUntil := index (index (site.Data.pricing | default dict) "en" | default dict) "promo_until" | default "" -}}
+{{- $promoActive := and (ne $promoPrice "") (ne $promoUntil "") (lt now.Unix (time $promoUntil).Unix) -}}
+{{- if or (eq $title "") (eq $type "") -}}
+<span class="shortcode-error">Error: price-card needs <code>title="…"</code> and <code>type="…"</code>.<br>Shortcode usage: &lbrace;&lbrace;&lt; price-card title="Commercial" type="commercial" &gt;&rbrace;&rbrace; … &lbrace;&lbrace;&lt; /price-card &gt;&rbrace;&rbrace;</span>
+{{- else if eq $price "" -}}
+<span class="shortcode-error">Error: price-card: no price "{{ $type }}" for this region in data/pricing/</span>
+{{- else -}}
 <div class="plan{{ if ne $link "" }} plan-linked{{ end }}{{ if $featured }} plan-featured{{ end }}">
-{{- if ne $ribbon "" }}
-  {{- if ne $hasPromo "" }}
-    {{- if ne $promoActive "" }}
+{{- if and (ne $ribbon "") (or (eq $promoPrice "") $promoActive) }}
   <div class="featured-ribbon">{{ $ribbon }}</div>
-    {{- end }}
-  {{- else }}
-  <div class="featured-ribbon">{{ $ribbon }}</div>
-  {{- end }}
 {{- end }}
   <div>
     <p class="plan-title">{{ $title }}</p>
     <p class="plan-price">
-      {{- if ne $promoActive "" }}
+      {{- if $promoActive }}
       <span class="plan-price-inactive">{{ $price }}</span>
       <span class="plan-price-active">{{ $promoPrice }}</span>
       {{- else }}
@@ -64,6 +69,7 @@
   </div>
   <a class="button{{ if ne $link "" }} plan-link{{ end }}{{ if $secondary }} button-secondary{{ end }}" href='{{ $link }}'>{{ $action }}</a>
 </div>
+{{- end }}
 
 <style>
 

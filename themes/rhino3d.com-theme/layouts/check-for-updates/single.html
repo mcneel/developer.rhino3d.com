@@ -1,0 +1,16 @@
+{{/*
+    /check-for-updates/ (RH-15299)
+
+    Rhino's "Check Now..." lands here. The heading comes from i18n rather than
+    the page title so it is localized the moment this ships, without waiting for
+    a translated content file in every content/<lang>/ directory.
+*/}}
+{{ define "main" }}
+<div class="single-content-area">
+    <div class="check-for-updates-page">
+        <h1>{{ i18n "check_for_updates-heading" }}</h1>
+        {{ .Content }}
+        {{ partial "check-for-updates-widget.html" . }}
+    </div>
+</div>
+{{ end }}

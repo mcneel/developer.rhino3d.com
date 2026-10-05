@@ -4,6 +4,7 @@
 <script src="https://stackpath.bootstrapcdn.com/bootstrap/4.3.1/js/bootstrap.min.js" integrity="sha384-JjSmVgyd0p3pXB1rRibZUAYoIIy6OrQ6VrjIEaFf/nJGzIxFDsf4x0xIM+B07jRM" crossorigin="anonymous"></script>
 
 <script type="text/javascript" src="{{ (resources.Get "/script/rhino.js" | resources.Fingerprint).Permalink }}"></script>
+<script type="text/javascript" src="{{ (resources.Get "/script/nav-submenu.js" | resources.Fingerprint).Permalink }}"></script>
 {{ if .Site.Params.navBarShouldResize }}
   <script type="text/javascript" src="{{ (resources.Get "/script/header-scroll-standard.js" | resources.Fingerprint).Permalink }}"></script>
 {{ end }}
@@ -61,6 +62,27 @@
 
 {{- if  .Params.page_options.model_viewer -}}
 {{- partial "model-viewer" . }}
+{{- end -}}
+
+{{/*  Stepped {{< section >}} / {{< section-selector >}} chooser; the flag is
+      set by the section shortcode while .Content renders above.  */}}
+{{- if .Page.Store.Get "has_sections" -}}
+<script type="text/javascript" src="{{ (resources.Get "/script/section-wizard.js" | resources.Fingerprint).Permalink }}"></script>
+{{- end -}}
+
+{{/*  {{< subscribe >}} buttons; the flag is set by the shortcode while .Content renders above.  */}}
+{{- if .Page.Store.Get "has_subscribe" -}}
+<script type="text/javascript" src="{{ (resources.Get "/script/subscribe.js" | resources.Fingerprint).Permalink }}"></script>
+{{- end -}}
+
+{{/*  {{< segmented >}} controls in pane mode; the flag is set by the shortcode
+      while .Content renders above. Link-mode controls need no script.  */}}
+{{- if .Page.Store.Get "has_segmented" -}}
+<script type="text/javascript" src="{{ (resources.Get "/script/segmented.js" | resources.Fingerprint).Permalink }}"></script>
+{{- end -}}
+
+{{- if .Params.page_options.check_for_updates -}}
+{{- partial "check-for-updates-js" . }}
 {{- end -}}
 
 {{/*  Homepage video  */}}

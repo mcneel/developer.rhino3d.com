@@ -1,7 +1,34 @@
+{{/*
+  bilibili — embeds a bilibili video in a responsive 16:9 (by default) iframe.
+
+  Required Arguments:
+    id        - BV id of the video (e.g. "BV1xx411c7mD"). Positional arg 0 also works.
+
+  Optional Arguments:
+    page        - page (分P) number, starting at 1 (default "1")
+    width       - CSS width of the embed wrapper (default "100%")
+    margin      - CSS shorthand `margin` on the outer wrapper, e.g. "-50px auto 1em" to shift up 50px (default "1em auto")
+    padding     - aspect-ratio padding-top of the wrapper, e.g. "45.83%" for ~2.18:1 (default "56.25%" = 16:9)
+    quality     - "1" requests highest quality (default "1"; alias: high_quality)
+    danmaku     - "1" enables danmaku comments (default "0")
+    simple      - "1" uses the mobile player with a cleaner UI (default "0")
+    fullscreen  - "1" allows fullscreen (default "0")
+    autoplay    - "1" autoplays; browsers usually block this unless muted (default "0")
+    recommend   - "0" hides related-video recommendations (default "0")
+
+  Note: the bilibili player has no loop or autopause URL parameters; those
+  cannot be supported. See https://player.bilibili.com/ for the parameter list.
+
+  Example:
+    {{< bilibili id="BV1khac6XEPy" autoplay="1" padding="45.83%" >}}
+*/}}
 {{ $id := .Get "id" }}
 {{ if not $id }}{{ $id = .Get 0 }}{{ end }}
+{{ if not $id }}{{ errorf "shortcode bilibili: missing required 'id' parameter (page %s)" .Page.RelPermalink }}{{ end }}
 {{ $page := .Get "page" | default "1" }}
 {{ $width := .Get "width" | default "100%" }}
+{{ $margin := .Get "margin" | default "1em auto" }}
+{{ $padding := .Get "padding" | default "56.25%" }}
 {{ $quality := .Get "quality" | default (.Get "high_quality") | default "1" }}
 {{ $danmaku := .Get "danmaku" | default "0" }}
 {{ $simple := .Get "simple" | default "0" }}
@@ -10,15 +37,15 @@
 {{ $recommend := .Get "recommend" | default "0" }}
 {{ if eq $simple "1" }}
 {{/* Mobile player - cleaner UI without danmaku input bar */}}
-<div style="width:{{ $width }};margin:1em auto;">
-    <div style="padding:56.25% 0 0 0;position:relative;">
+<div style="width:{{ $width }};margin:{{ $margin }};">
+    <div style="padding:{{ $padding }} 0 0 0;position:relative;">
         <iframe title="bilibili video" src="https://www.bilibili.com/blackboard/html5mobileplayer.html?bvid={{ $id }}&p={{ $page }}&danmaku={{ $danmaku }}&high_quality={{ $quality }}&autoplay={{ $autoplay }}&recommend={{ $recommend }}" style="position:absolute;top:0;left:0;width:100%;height:100%;" frameborder="0" {{ if eq $fullscreen "1" }}allowfullscreen{{ end }} scrolling="no"></iframe>
     </div>
 </div>
 {{ else }}
 {{/* Standard player */}}
-<div style="width:{{ $width }};margin:1em auto;">
-    <div style="padding:56.25% 0 0 0;position:relative;">
+<div style="width:{{ $width }};margin:{{ $margin }};">
+    <div style="padding:{{ $padding }} 0 0 0;position:relative;">
         <iframe title="bilibili video" src="https://player.bilibili.com/player.html?bvid={{ $id }}&page={{ $page }}&autoplay={{ $autoplay }}&high_quality={{ $quality }}&danmaku={{ $danmaku }}&as_wide=1&recommend={{ $recommend }}" style="position:absolute;top:0;left:0;width:100%;height:100%;" frameborder="0" {{ if eq $fullscreen "1" }}allowfullscreen{{ end }}></iframe>
     </div>
 </div>

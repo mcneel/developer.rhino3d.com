@@ -245,19 +245,20 @@
 	height: 24px;
   }
 
+  // The fallback glyph shown when /user/avatar/ has no image to give, and the
+  // stacking that puts the avatar in front of it, are in
+  // _partial/_nav-account.scss — they need Font Awesome (WWW-3684).
   .dd-button {
 	display: inline-block;
 	cursor: pointer;
 	white-space: nowrap;
 	padding: 0px !important;
 	border-radius: 50%;
-	background-repeat: no-repeat;
-	background-size: contain;
 	width: 24px !important;
 	height: 24px  !important;
 	// Clip the avatar to the circular button so a broken/oversized user
-	// avatar (e.g. /user/avatar/ 404s and the <img> falls back to alt text)
-	// can't spill out and change the navbar height when logged in (WWW-3377).
+	// avatar can't spill out and change the navbar height when logged in
+	// (WWW-3377).
 	overflow: hidden;
   }
 

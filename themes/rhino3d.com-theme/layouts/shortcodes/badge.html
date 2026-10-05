@@ -1,4 +1,17 @@
-{{ $.Scratch.Add "background" (.Get "background" | default "#900") }}
-<span class="badge-btn" style='background-color: {{ $.Scratch.Get "background" }};'>
-    {{ .Inner }}
-</span>
+{{- /*
+  badge.html — small rounded label. Filled by default; outline="true" draws a
+  bordered pill with colored text instead (e.g. a course level).
+
+    {{< badge background="#30ab8a" >}}1{{< /badge >}}
+    {{< badge background="#2f8a34" outline="true" >}}Beginner{{< /badge >}}
+
+  Params: background — color (default #900). For outline badges it is the
+                       text + border color.
+          outline    — "true" for the bordered variant
+*/ -}}
+{{- $color := .Get "background" | default "#900" -}}
+{{- if eq (.Get "outline") "true" -}}
+<span class="badge-btn badge-outline" style="--badge-color: {{ $color }};">{{ trim .Inner " \t\r\n" }}</span>
+{{- else -}}
+<span class="badge-btn" style="background-color: {{ $color }};">{{ trim .Inner " \t\r\n" }}</span>
+{{- end -}}

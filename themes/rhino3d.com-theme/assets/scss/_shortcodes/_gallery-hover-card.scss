@@ -1,0 +1,186 @@
+// Gallery shortcode - hover-card modifier (WWW-3513)
+// Opt in with {{< gallery hover-card="true" >}}. Renders a responsive grid of
+// tiles with the title over the image; the figure's caption folds out below
+// the tile as a description on hover/focus, styled as a direct copy of the
+// site's existing "unfurl" tooltip (_custom.scss .unfurl-link .tooltip /
+// .tooltip.arrow-top) rather than a one-off look. gallery.html omits the
+// caption-position/caption-effect/hover-effect classes for this mode so this
+// file doesn't need to fight hugo-easy-gallery.css's cascade.
+
+.gallery.hover-card {
+    display: grid;
+    grid-template-columns: repeat(var(--gallery-columns, 3), 1fr);
+    gap: 20px;
+    overflow: visible;
+    margin: 20px 0;
+    max-width: none;
+
+    .box {
+        float: none;
+        width: auto;
+        padding-bottom: 0;
+        position: relative;
+    }
+
+    figure {
+        position: relative;
+        overflow: visible;
+        margin: 0;
+        border: none;
+        border-radius: 14px;
+        cursor: pointer;
+    }
+
+    // .img is the fixed-size frame (clips via overflow:hidden) and must
+    // never itself be transformed — a transform on an overflow:hidden
+    // element scales its own clip region right along with it, which is
+    // what made the whole tile look like it was growing. The actual zoom
+    // happens on the <img> inside it (normally hidden in gallery mode;
+    // shown here as the real zooming layer instead of .img's background).
+    .img {
+        position: relative;
+        inset: auto;
+        aspect-ratio: 4 / 3;
+        border-radius: 14px;
+        overflow: hidden;
+
+        img {
+            display: block;
+            position: absolute;
+            inset: 0;
+            width: 100%;
+            height: 100%;
+            object-fit: cover;
+            transition: transform 0.3s ease;
+        }
+
+        &::after {
+            content: "";
+            position: absolute;
+            inset: 0;
+            background: linear-gradient(to top, rgba(0, 0, 0, 0.65) 0%, rgba(0, 0, 0, 0.15) 35%, rgba(0, 0, 0, 0) 60%);
+        }
+    }
+
+    // figure.html renders the caption as <p><div>...</div></p>, but a <div>
+    // isn't valid <p> content — browsers auto-close the <p> before it, so
+    // figcaption actually ends up with <h4>, an empty <p>, the real caption
+    // as a plain sibling <div>, and another empty <p>. Style the promoted
+    // <div> (that's where the caption text really lives) and hide the now-
+    // empty <p> tags.
+    figcaption {
+        position: static;
+        background: transparent;
+        text-align: left;
+        cursor: inherit;
+
+        h4 {
+            position: absolute;
+            left: 20px;
+            right: 20px;
+            bottom: 18px;
+            margin: 0;
+            color: #fff;
+            font-size: 1.25rem;
+            font-weight: 600;
+            line-height: 1.25;
+            text-shadow: 0 1px 6px rgba(0, 0, 0, 0.4);
+            z-index: 2;
+        }
+
+        p {
+            display: none;
+        }
+
+        // A direct copy of .unfurl-link .tooltip + .tooltip.arrow-top:after —
+        // same colors, spacing, shadow, and opacity/visibility/transform
+        // transition (including the 333ms hover-in delay). The arrow is a
+        // pseudo-element of this same div (not a separate element), so it
+        // rides along with the card's own transform automatically instead of
+        // needing to be kept in sync by hand.
+        > div {
+            position: absolute;
+            top: 100%;
+            left: 14px;
+            right: 14px;
+            margin-top: -16px;
+            padding: 20px;
+            color: #666666;
+            background-color: white;
+            font-weight: normal;
+            font-size: 13px;
+            line-height: 1.5;
+            border-radius: 8px;
+            border: 1px solid #e0e0e0;
+            box-sizing: border-box;
+            box-shadow: 0 4px 16px rgba(0, 0, 0, 0.1);
+            visibility: hidden;
+            opacity: 0;
+            transform: translateY(10px);
+            transition: opacity 0.3s, visibility 0.3s, transform 0.3s;
+            transition-delay: 0s;
+            pointer-events: none;
+            z-index: 30;
+            text-align: left;
+
+            &::after {
+                content: "";
+                position: absolute;
+                width: 20px;
+                height: 20px;
+                background: white;
+                border-top: 1px solid #e0e0e0;
+                border-left: 1px solid #e0e0e0;
+                transform: rotate(45deg);
+                top: -11px;
+                left: 24px;
+            }
+        }
+    }
+
+    .box:hover,
+    .box:focus-within {
+        // Lifts the tile (and its overflowing popover) above the next row
+        // in paint order, since later grid items would otherwise paint over
+        // an earlier row's popover where it spills past the row gap.
+        z-index: 20;
+
+        // matches .gallery.hover-effect-zoom figure:hover .img in
+        // hugo-easy-gallery.css, which this mode otherwise opts out of.
+        // Transforms the inner <img>, not .img itself, so .img's
+        // overflow:hidden frame clips the zoom instead of scaling with it.
+        .img img {
+            transform: scale(1.05);
+        }
+
+        figcaption > div {
+            visibility: visible;
+            opacity: 1;
+            transform: translateY(0);
+            transition-delay: 333ms;
+            pointer-events: auto;
+        }
+    }
+
+    @media (max-width: 1023px) {
+        grid-template-columns: repeat(2, 1fr);
+    }
+
+    @media (max-width: 767px) {
+        grid-template-columns: 1fr;
+
+        figcaption > div {
+            position: static;
+            margin-top: 10px;
+            visibility: visible;
+            opacity: 1;
+            transform: none;
+            pointer-events: auto;
+            box-shadow: none;
+
+            &::after {
+                display: none;
+            }
+        }
+    }
+}

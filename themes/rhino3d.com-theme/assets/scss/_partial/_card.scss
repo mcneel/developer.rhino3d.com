@@ -20,6 +20,12 @@
 }
 
 
+/* What is left of .card is not one of our cards any more: feature-card and
+   market-card render through partials/card-container.html (WWW-3694,
+   WWW-3695), so their rules are gone from this file. The box below is still
+   borrowed by the unfurl display="card" shortcode and the Learn page's
+   client-side cards; it goes when those do (WWW-3691, and the Learn rewrite),
+   and this file goes with it. */
 .card {
   /* box-shadow: 0 4px 8px 0 rgba(0,0,0,0.2); */
   transition: 0.3s;
@@ -30,23 +36,6 @@
 }
 
 
-/* Whole-card click target (WWW-3517): users click the description and the
-   card's empty space expecting to reach the page the title links to. The
-   title's own anchor is stretched over the card rather than wrapping the card
-   in an <a>, so no text inherits link styling and the card looks unchanged.
-   Scoped to .card-linked so plain .card users are unaffected. */
-.card-linked {
-  position: relative;
-}
-
-/* No z-index needed: an absolutely positioned pseudo-element already paints
-   above the card's static content, and leaving it out keeps this overlay from
-   stacking over anything outside the card. */
-.card-linked .card-link::after {
-  content: "";
-  position: absolute;
-  inset: 0;
-}
 
 .price-card-container {
   display: grid;
@@ -77,62 +66,4 @@
 .card img {
   border-radius: 10px 10px 0 0;
   max-width: 100%;
-}
-
-.card-container h1 {
-  font-size: 14px;
-  font-weight: 700;
-  margin-top: 5px;
-  margin-left: 5px;
-}
-
-.card-container h3 {
-  font-size: 14px;
-  font-weight: 700;
-  margin-top: 5px;
-}
-
-.card-container p {
-  font-size: 11px;
-  padding-left: 5px;
-}
-
-.card-container li {
-  font-size: 11px;
-  margin: 2px;
-}
-
-.card-gacontainer ul {
-  list-style-type: none;
-  margin: 0;
-  padding: 0;
-  list-style-position: outside;
-  list-style-image: none;
-}
-
-.card-market {
-  transition: 0.3s;
-  border-radius: $global-border-radius; /* 5px rounded corners */
-  width: 100%;
-  margin-bottom: 10px;
-  img {
-    border-radius: $global-border-radius;
-    max-width: 100%;
-  }
-  img:hover {
-    box-shadow: 0 8px 16px 0 rgba(0,0,0,0.2);
-  }
-}
-
-.card-container-market {
-  width: 100%;
-  text-align: center;
-  .card-container-market:hover {
-    box-shadow: none;
-  }
-}
-
-.card-title-market {
-  font-size: 18px;
-  font-weight: 700;
 }

@@ -1,3 +1,38 @@
-<div class="column" {{- if .Get 0 -}}style="{{ .Get 0 }}"{{- end -}}>
-    {{ .Inner | .Page.RenderString }}
+{{- /*
+  column.html — one column of a {{< row >}}. Columns share the row's width
+  equally unless given a fixed width.
+
+    {{< column >}}…{{< /column >}}
+    {{< column width="120px" >}}![logo](logo.png){{< /column >}}
+
+  Optional named params:
+    width   fixed width, e.g. "120px" or "30%". The column neither grows nor
+            shrinks; the others share what is left. A picture inside fills it,
+            which is how you size a picture next to text.
+            width="auto" sizes it to what is in it instead — a button or a
+            link that keeps its size while the other columns take the rest.
+    align   top | center | bottom — vertical alignment of this column alone
+            (the row's `align` sets it for all).
+
+  Legacy positional form, still supported: {{< column "max-width: 200px" >}}
+  passes the string through as an inline style.
+
+  Styles: assets/scss/_core/_layout.scss (.column). No blank lines in the
+  output so a column can sit inside another shortcode's markdown body.
+*/ -}}
+{{- $width := "" -}}
+{{- $align := "" -}}
+{{- $style := "" -}}
+{{- if .IsNamedParams -}}
+  {{- $width = .Get "width" | default "" -}}
+  {{- $align = .Get "align" | default "" -}}
+{{- else -}}
+  {{- $style = .Get 0 | default "" -}}
+{{- end -}}
+{{- if not (in (slice "" "top" "center" "bottom") $align) -}}
+<span class="shortcode-error">Error: column: align must be top, center or bottom.</span>
+{{- else -}}
+<div class="column{{ if eq $width "auto" }} column-auto{{ else if ne $width "" }} column-fixed{{ end }}{{ with $align }} column-align-{{ . }}{{ end }}"{{ if and (ne $width "") (ne $width "auto") }} style="--column-width: {{ $width }};"{{ else if ne $style "" }} style="{{ $style | safeCSS }}"{{ end }}>
+{{ .Inner | .Page.RenderString }}
 </div>
+{{- end -}}

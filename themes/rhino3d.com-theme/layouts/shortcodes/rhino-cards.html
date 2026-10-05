@@ -1,0 +1,82 @@
+{{- /*
+  rhino-cards.html — a grid of course / tutorial cards fetched in the browser
+  from a card feed (card.v1.json, WWW-3633) and rendered by the <rhino-cards>
+  web component that mcneel/rhino3d.com-vue publishes at
+  /webcomponents/v1/rhino-cards.mjs (WWW-3607, WWW-3610, WWW-3611, WWW-3619).
+  The cards use the card-container look from this theme; the component brings
+  its own filter bar, search box and pager. This shortcode is only the shell:
+  it validates the params, emits the element and loads the script once per
+  page (partials/rhino-cards-script.html).
+
+    {{< rhino-cards src="https://…/courses.json" type="course" columns="3" limit="6" >}}
+    Loading courses…
+    {{< /rhino-cards >}}
+
+    {{< rhino-cards src="https://…/tutorials.json" type="tutorial" filters="true" search="true" checks="true" url-sync="true" pagination="pages" page-size="12" >}}
+    Loading tutorials…
+    {{< /rhino-cards >}}
+
+  Params: src        — required. URL of the card feed (absolute, or a path on
+                       this site).
+          type       — course | tutorial | text | link | all (default all):
+                       which cards of the feed to show.
+          columns    — 1–6 (default 3).
+          limit      — at most this many cards.
+          pagination — none | pages | load-more: everything at once, a
+                       numbered pager, or a button that appends the next
+                       page. Default pages when page-size is given.
+          page-size  — cards per page (default 12).
+          filters    — "true" for the five dropdowns (duration, level, topic,
+                       format, industry) or a comma list of those names.
+          search     — "true": search box (needs filters).
+          checks     — "true": the regional / legacy / developer checkboxes.
+          url-sync   — "true": filters and page mirrored into the address bar.
+                       One such element per page.
+          featured   — "true": only cards flagged in the feed.
+          new-tab    — "true": open cards in a new tab.
+  Body (optional): markdown shown until the component has loaded.
+
+  The language is passed from the page (.Site.Language.Lang); the component
+  maps it to its own translations. Documented in content/en/admin/style-guide.
+*/ -}}
+{{- $src := .Get "src" | default "" -}}
+{{- $type := .Get "type" | default "all" -}}
+{{- $columns := .Get "columns" | default "3" -}}
+{{- $filters := .Get "filters" | default "" -}}
+{{- $errors := slice -}}
+{{- if eq $src "" }}{{ $errors = $errors | append "src is required" }}{{ end -}}
+{{- if not (in (slice "course" "tutorial" "text" "link" "all") $type) }}{{ $errors = $errors | append (printf "type=%q (course, tutorial, text, link or all)" $type) }}{{ end -}}
+{{- if not (in (slice "1" "2" "3" "4" "5" "6") $columns) }}{{ $errors = $errors | append (printf "columns=%q (1–6)" $columns) }}{{ end -}}
+{{- with .Get "pagination" }}{{ if not (in (slice "none" "pages" "load-more") .) }}{{ $errors = $errors | append (printf "pagination=%q (none, pages or load-more)" .) }}{{ end }}{{ end -}}
+{{- range $name := slice "limit" "page-size" -}}
+  {{- with $.Get $name }}{{ if not (findRE `^[0-9]+$` .) }}{{ $errors = $errors | append (printf "%s=%q (a whole number)" $name .) }}{{ end }}{{ end -}}
+{{- end -}}
+{{- range $name := slice "search" "checks" "url-sync" "featured" "new-tab" -}}
+  {{- with $.Get $name }}{{ if not (in (slice "true" "false") .) }}{{ $errors = $errors | append (printf "%s=%q (true or false)" $name .) }}{{ end }}{{ end -}}
+{{- end -}}
+{{- /* filters: true, false, or a comma list of dropdown names. */ -}}
+{{- if and (ne $filters "") (not (in (slice "true" "false") $filters)) -}}
+  {{- range split $filters "," }}{{ if not (in (slice "duration" "level" "topic" "format" "industry") (trim . " ")) }}{{ $errors = $errors | append (printf "filters=%q (true, false, or a list of duration, level, topic, format, industry)" $filters) }}{{ end }}{{ end -}}
+{{- end -}}
+{{- if $errors -}}
+<span class="shortcode-error">Error: rhino-cards: {{ delimit (uniq $errors) ", " }}. See the comment at the top of layouts/shortcodes/rhino-cards.html.</span>
+{{- else -}}
+{{- /* Optional attributes, built as one string: html/template does not allow
+       an {{ if }} that sometimes adds ="value" to an attribute. Every value was
+       validated above (digits, or names from a fixed list), so the string is
+       safe to emit as-is. Boolean attributes are present when "true". */ -}}
+{{- $attrs := slice -}}
+{{- with .Get "limit" }}{{ $attrs = $attrs | append (printf "limit=\"%s\"" .) }}{{ end -}}
+{{- with .Get "pagination" }}{{ $attrs = $attrs | append (printf "pagination=\"%s\"" .) }}{{ end -}}
+{{- with .Get "page-size" }}{{ $attrs = $attrs | append (printf "page-size=\"%s\"" .) }}{{ end -}}
+{{- if eq $filters "true" }}{{ $attrs = $attrs | append "filters" }}{{ else if and (ne $filters "") (ne $filters "false") }}{{ $attrs = $attrs | append (printf "filters=\"%s\"" (replace $filters " " "")) }}{{ end -}}
+{{- range $name := slice "search" "checks" "url-sync" "featured" "new-tab" -}}
+  {{- if eq ($.Get $name) "true" }}{{ $attrs = $attrs | append $name }}{{ end -}}
+{{- end -}}
+<rhino-cards src="{{ $src }}" type="{{ $type }}" lang="{{ .Site.Language.Lang }}" columns="{{ $columns }}"{{ with $attrs }} {{ delimit . " " | safeHTMLAttr }}{{ end }}>
+{{- with trim .Inner " \t\r\n" }}
+{{ $.Page.RenderString (dict "display" "block") . }}
+{{- end }}
+</rhino-cards>
+{{- partial "rhino-cards-script.html" .Page -}}
+{{- end -}}

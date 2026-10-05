@@ -1,3 +1,50 @@
-<div class="flex-container">
-    {{ .Inner | .Page.RenderString }}
+{{- /*
+  row.html — flex row of {{< column >}}s. Columns share the width and wrap
+  onto new lines as the page narrows (each keeps a 250px minimum).
+
+    {{< row >}}{{< column >}}…{{< /column >}}{{< column >}}…{{< /column >}}{{< /row >}}
+
+  Optional named params (all off by default, so existing rows are unchanged):
+    wrap            auto (default) | late | tight — how long the columns hold
+                    their line before the row wraps. Each mode is a smaller
+                    minimum width for the columns that can shrink, and the row
+                    wraps when they no longer fit side by side — measured on
+                    the width the row itself has, so a row inside a narrow card
+                    stacks on a desktop too.
+                      late   250px minimum down to 200px, for tight layouts
+                             such as picture + text inside a card.
+                      tight  down to 100px, for a title and its buttons — a
+                             "pill". The title takes whatever the buttons leave
+                             and wraps inside its column; the row gives up and
+                             stacks only when even that is gone. Give the
+                             buttons' columns width="auto" so they keep their
+                             size. Not for a row of paragraphs: 100px of text
+                             is a word per line.
+    nowrap="true"   the old spelling of wrap="late", still honoured for the
+                    translated pages that use it. New pages use wrap.
+    gap             none | small | medium (default) | large — gutter between
+                    columns.
+    align           top | center | bottom | stretch (default) — vertical
+                    alignment of the columns.
+
+  Styles: assets/scss/_core/_layout.scss (.flex-container). Output has no
+  blank lines so a row can sit inside another shortcode's markdown body.
+*/ -}}
+{{- $wrap := "" -}}
+{{- $gap := "" -}}
+{{- $align := "" -}}
+{{- if .IsNamedParams -}}
+  {{- $wrap = .Get "wrap" | default "" -}}
+  {{- if and (eq $wrap "") (eq (.Get "nowrap") "true") -}}
+    {{- $wrap = "late" -}}
+  {{- end -}}
+  {{- $gap = .Get "gap" | default "" -}}
+  {{- $align = .Get "align" | default "" -}}
+{{- end -}}
+{{- if or (not (in (slice "" "auto" "late" "tight") $wrap)) (not (in (slice "" "none" "small" "medium" "large") $gap)) (not (in (slice "" "top" "center" "bottom" "stretch") $align)) -}}
+<span class="shortcode-error">Error: row: wrap must be auto|late|tight, gap none|small|medium|large and align top|center|bottom|stretch.</span>
+{{- else -}}
+<div class="flex-container{{ if in (slice "late" "tight") $wrap }} flex-wrap-{{ $wrap }}{{ end }}{{ with $gap }} flex-gap-{{ . }}{{ end }}{{ with $align }} flex-align-{{ . }}{{ end }}">
+{{ .Inner | .Page.RenderString }}
 </div>
+{{- end -}}

@@ -8,8 +8,9 @@
     {{ if ne false (.Params.page_options.show_title) }}
     <h1>{{ .Page.Title }}</h1>
     {{ end }}
-    <p>{{ partial "byline.html" . }}</p> 
-    {{ .Content }}
+    {{ partial "byline.html" . }}
+    {{/* api/main is the skin appengine wraps its pages in: emit the [[BODY]] placeholder bare, since markdown would wrap it in a <p> */}}
+    {{ if and .File (eq .File.ContentBaseName "main") }}[[BODY]]{{ else }}{{ .Content }}{{ end }}
     {{ if and (not .Params.page_options.plain ) (not .Params.page_options.hide_edit_button ) }}
       {{- partial "edit_button.html" . -}}
     {{ end }}

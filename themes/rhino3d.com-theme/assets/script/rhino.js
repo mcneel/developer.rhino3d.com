@@ -17,6 +17,22 @@ function readCookie(name) {
     return null;
 }
 
+// True if Rhino Accounts has left a session cookie for any client id. The id
+// varies by host (rhino3dWebsite on www, rhino3dWebsiteDEBUG everywhere else),
+// so matching the prefix rather than one name keeps the navbar's logged-in
+// state working on staging and dev too, where the avatar and account links
+// used to never appear at all (WWW-3684).
+function hasAccountSession() {
+    var prefix = "MCA_CLIENT_USER_SESSION_INFO-";
+    var ca = document.cookie.split(';');
+    for (var i = 0; i < ca.length; i++) {
+        var c = ca[i];
+        while (c.charAt(0) == ' ') c = c.substring(1, c.length);
+        if (c.indexOf(prefix) == 0) return true;
+    }
+    return false;
+}
+
 $(document).ready(function(){
 
     // Set up tabs for learn page (and others?)
@@ -52,8 +68,7 @@ $(document).ready(function(){
             $('.mcneel_only').removeClass('hidden');
         }
     });
-    cookie = readCookie("MCA_CLIENT_USER_SESSION_INFO-rhino3dWebsite");
-    if(cookie) {
+    if(hasAccountSession()) {
         $('.logged_in').removeClass('hidden');
         $('.logged_out').addClass('hidden');
     }
@@ -61,6 +76,18 @@ $(document).ready(function(){
         $('.logged_in').addClass('hidden');
         $('.logged_out').removeClass('hidden');
     }
+
+    // /user/avatar/ has no image to serve for every account, and can be
+    // blocked outright. Hide an avatar that fails to load so the Font Awesome
+    // fallback glyph behind it shows through instead of a broken-image icon
+    // (see .dd-button::before in _partial/_nav-account.scss, WWW-3684).
+    $('.avatar').each(function() {
+        var img = this;
+        var hideBroken = function() { $(img).addClass('hidden'); };
+        // The error may already have fired before this script ran
+        if (img.complete && img.naturalWidth === 0) hideBroken();
+        $(img).on('error', hideBroken);
+    });
 
     $(".rhinoProtocol").click(function (event) {
         var url = $(this).attr('href');
@@ -72,34 +99,6 @@ $(document).ready(function(){
             });
         window.location = path;
         event.preventDefault ? event.preventDefault() : event.returnValue = false;
-    });
-
-    $('.section-selector').click(function(o) {
-        $this = $(this);
-        $('.section-selector').removeClass('selected');
-        $this.addClass('selected');
-        var fam = $this.attr('data-section-group');
-        var name = $this.attr('data-section-name');
-        var behavior = $this.attr('data-section-behavior');
-        if (behavior === 'close-all') {
-            document.location.hash = "#"
-            $('.section').hide();
-        }
-        showOneInFamily(fam, name);
-    });
-
-    //read url hash and update selected section in section-selector
-    $(function() {
-        if (document.location.hash){
-            var names = document.location.hash.split("#")
-            names.forEach(name =>{
-                var matchedFam = $($('.section[data-name="' + name + '"]')[0]).attr("data-group")
-                if(matchedFam){
-                    // console.log("showing:", name, "in", matchedFam)
-                    showOneInFamily(matchedFam, name);
-                }
-            })
-        }
     });
 
 });
@@ -144,34 +143,4 @@ function resizeFunction() {
 ///////////////////////////////////////////////////
 
 
-///////////////////////////////////////////////////
-// Section Toggle Functions
-function clearActionShowLicenseType(name) {
-    showOneInFamily('action', '');
-    showOneInFamily('license-type', name);
-}
-function showOneInFamily(family, name) {
-
-    $.each( $('.section[data-group="' + family + '"]'), function( index, el ) {
-        if (name == $(el).attr("data-name")){
-            //console.log("adding:",$(el).attr("data-name"))
-            if (!document.location.hash.includes(name)){
-                document.location.hash = `${document.location.hash}#${name}`
-            }
-        }
-        else{
-            // console.log(`removing #${$(el).attr("data-name")} from hash ${document.location.hash} while processing ${name},${family}`)
-            document.location.hash = document.location.hash.split("#").filter(h => h != $(el).attr("data-name")).join("#")
-        }
-    } );
-    $('.section[data-group="' + family + '"]').hide();
-    if (name != '') {
-        $('.section[data-name="' + name + '"]').show()[0].scrollIntoView({
-            behavior: "smooth", // or "auto" or "instant"
-            block: "start" // or "end"
-        });
-    }
-}
-//
-///////////////////////////////////////////////////
 

@@ -1,0 +1,351 @@
+// ==============================
+// {{< card-container >}} shortcode (WWW-3676)
+// ==============================
+// The shortcode is only the box: border, radius, shadow, hover, padding,
+// background. Everything inside is authored markdown, and the rules below turn
+// *position* in that markdown into slots: a picture as the first block is the
+// flush media, a lone Font Awesome <i> first is the icon, headings are titles,
+// a trailing button / hotlink / badge (or a rule before the last block) is the
+// pinned footer. Arranging things inside a card is {{< row >}} / {{< column >}}'s
+// job (_core/_layout.scss), not the card's.
+//
+// Also here: {{< checklist >}} and the `columns` param of {{< card-gallery >}}.
+// Namespaced .rh-card because .card / .card-container already belong to
+// feature-card.html. Imported after _page/modern-style so the fixed-column
+// grid rule wins over modern-style's auto-fill .gallery-container rule (same
+// specificity, later wins).
+
+// Tokens: the modern-style --rh-* custom properties when the card sits in a
+// modern_style page (they are declared on .modern-guide), plain-site
+// fallbacks otherwise. One ruleset, both chromes.
+$rh-card-border: var(--rh-border, #e2e2e2);
+$rh-card-accent: var(--rh-red-600, #{$global-link-color});
+$rh-card-ink: var(--rh-ink, #111111);
+$rh-card-ink-body: var(--rh-ink-body, #444444);
+$rh-card-surface: var(--rh-white, #ffffff);
+$rh-card-surface-alt: var(--rh-gray-50, #f5f5f5);
+$rh-card-font-display: var(--rh-font-display, inherit);
+$rh-card-ease: var(--rh-ease, cubic-bezier(0.2, 0, 0.1, 1));
+
+// The media slot: a picture as the first block. `![alt](src)` (<p><img>), a
+// linked picture (<p><a><img></a>), or a bare <img> from {{< image >}}. A
+// picture that carries its own width ({{< image url="…" width="96" >}}; the
+// shortcode always emits width="" otherwise) was sized by the author on
+// purpose and stays an ordinary inline picture instead.
+$rh-card-img: "img:not([width]:not([width='']))";
+$rh-card-media: ":is(#{$rh-card-img}, p:has(> #{$rh-card-img}:only-child), p:has(> a:only-child > #{$rh-card-img}:only-child))";
+
+.rh-card {
+  position: relative;
+  display: flex;
+  flex-direction: column;
+  box-sizing: border-box;
+  width: 100%;
+  margin: 1em 0;
+  overflow: hidden;
+  background: $rh-card-surface;
+  border: 1px solid $rh-card-border;
+  border-radius: $global-border-radius;
+  color: $rh-card-ink-body;
+  transition: box-shadow 160ms $rh-card-ease, border-color 160ms $rh-card-ease, transform 160ms $rh-card-ease;
+  // Body padding as custom properties so the media can pull itself flush by
+  // the same amount with negative margins.
+  --rh-card-pad-y: 18px;
+  --rh-card-pad-x: 20px;
+
+  // Inside a grid the gap does the spacing.
+  .gallery-container > & { margin: 0; }
+  // height: 100% plus a margin would push the card out of its column.
+  .column > &:first-child { margin-top: 0; }
+  .column > &:last-child  { margin-bottom: 0; }
+
+  // A card fills the cell a gallery or a column gives it, so cards side by side
+  // line up whatever is in them. Everywhere else it is as tall as its content:
+  // height: 100% needs a cell to mean anything, and without one it takes the
+  // height of whatever block it landed in — the whole page on a page with a
+  // sidebar — or, stacked with other cards inside a card's body, splits that
+  // body between them and lets overflow: hidden cut off the longest.
+  .gallery-container > &,
+  .column > & { height: 100%; }
+
+  // ---------- radius ----------
+  &.rh-card-radius-none   { border-radius: 0; }
+  &.rh-card-radius-small  { border-radius: 5px; }
+  &.rh-card-radius-medium { border-radius: $global-border-radius; }
+  &.rh-card-radius-large  { border-radius: 20px; }
+
+  // ---------- border ----------
+  &.rh-card-border-none   { border-color: transparent; }
+  &.rh-card-border-accent { border-color: $rh-card-accent; }
+
+  // ---------- shadow / hover ----------
+  &.rh-card-shadow { box-shadow: 0 1px 20px rgba(0, 0, 0, 0.1); }
+
+  &.rh-card-hover-shadow:hover,
+  &.rh-card-hover-shadow:focus-within { box-shadow: 0 6px 20px rgba(0, 0, 0, 0.12); }
+
+  &.rh-card-hover-lift:hover,
+  &.rh-card-hover-lift:focus-within {
+    transform: translateY(-3px);
+    box-shadow: 0 10px 24px rgba(0, 0, 0, 0.12);
+  }
+
+  &.rh-card-hover-accent:hover,
+  &.rh-card-hover-accent:focus-within {
+    border-color: $rh-card-accent;
+    box-shadow: 0 6px 20px rgba(144, 16, 16, 0.12);
+  }
+
+  // ---------- background ----------
+  // On a gray card the gray pill would vanish, so buttons rest on white.
+  &.rh-card-bg-gray        { background: $rh-card-surface-alt; --rh-button-surface: #fff; }
+  &.rh-card-bg-transparent { background: transparent; }
+
+  // ---------- padding (body only, media stays flush) ----------
+  &.rh-card-pad-none   { --rh-card-pad-y: 0px;  --rh-card-pad-x: 0px; }
+  &.rh-card-pad-small  { --rh-card-pad-y: 12px; --rh-card-pad-x: 14px; }
+  &.rh-card-pad-large  { --rh-card-pad-y: 28px; --rh-card-pad-x: 32px; }
+
+  // ---------- body ----------
+  .rh-card-body {
+    display: flex;
+    flex: 1 1 auto;
+    flex-direction: column;
+    min-width: 0;
+    padding: var(--rh-card-pad-y) var(--rh-card-pad-x);
+    font-size: 14px;
+    line-height: 1.5;
+
+    // The padding is the only spacing: drop the first and last block's outer margin.
+    > :first-child { margin-top: 0; }
+    > :last-child  { margin-bottom: 0; }
+  }
+
+  // ---------- media: a picture as the first block ----------
+  // Flush with the card, 16:9, cropped.
+  .rh-card-body > :first-child#{$rh-card-media} {
+    margin: calc(-1 * var(--rh-card-pad-y)) calc(-1 * var(--rh-card-pad-x)) 14px;
+    padding: 0;
+    line-height: 0;
+    background: $rh-card-surface-alt;
+
+    a {
+      display: block;
+      position: static; // the stretched link's ::after must anchor to the card
+    }
+
+    img {
+      display: block;
+      width: 100%;
+      height: auto;
+      max-width: none;
+      aspect-ratio: 16 / 9;
+      object-fit: cover;
+      margin: 0;
+      border-radius: 0;
+    }
+  }
+
+  // {{< image url="…" class="contain" >}}: letterbox instead of crop.
+  .rh-card-body > :first-child#{$rh-card-media} img.contain { object-fit: contain; }
+
+  // A picture and nothing else: let it fill the whole card.
+  .rh-card-body > :only-child#{$rh-card-media} {
+    flex: 1 1 auto;
+    margin-bottom: calc(-1 * var(--rh-card-pad-y));
+
+    a { height: 100%; }
+    img { height: 100%; aspect-ratio: auto; }
+  }
+
+  // ---------- icon: a lone Font Awesome <i> as the first block ----------
+  // Also when the body is wrapped in {{< center >}} (a div) for centered cards.
+  .rh-card-body > p:first-child:is(:has(> i:only-child), :has(> span:only-child > i:only-child)),
+  .rh-card-body > div:first-child > p:first-child:is(:has(> i:only-child), :has(> span:only-child > i:only-child)) {
+    margin: 0 0 12px;
+    font-size: 26px;
+    line-height: 1;
+    color: $rh-card-accent;
+
+    span { color: inherit; }
+    i { display: block; }
+  }
+
+  // ---------- titles ----------
+  // Headings keep the page's size for their level; the card only sets the
+  // spacing, since page heading margins (64px on a modern h2) swamp a card.
+  .rh-card-heading {
+    margin: 0 0 8px;
+    padding: 0;
+    border: 0;
+    color: $rh-card-ink;
+
+    a { color: inherit; text-decoration: none; }
+    a:hover { color: $rh-card-accent; }
+  }
+
+  .rh-card-body * + .rh-card-heading { margin-top: 0.75em; }
+  .rh-card-body > :first-child#{$rh-card-media} + .rh-card-heading { margin-top: 0; }
+
+  // feature-card / market-card tiles: one compact title size so a row lines up.
+  &.rh-card-tile .rh-card-heading {
+    font-family: $rh-card-font-display;
+    font-size: 17px;
+    font-weight: 700;
+    line-height: 1.3;
+  }
+
+  // ---------- text rhythm ----------
+  .rh-card-body p  { margin: 0 0 10px; font-size: inherit; line-height: inherit; }
+  .rh-card-body ul,
+  .rh-card-body ol { margin: 0 0 10px; padding-left: 1.2em; font-size: inherit; }
+  .rh-card-body li { margin: 0 0 6px; font-size: inherit; line-height: inherit; }
+
+  .rh-card-body hr {
+    height: 0;
+    margin: 12px 0;
+    border: 0;
+    border-top: 1px solid $rh-card-border;
+  }
+
+  // Pictures that are not the media slot stay inline.
+  .rh-card-body img { max-width: 100%; }
+
+  // modern-style's list rules (`.modern-style ul:not(…)`) outrank the ones
+  // above by specificity; restate the card's compact spacing at the same
+  // weight so it wins by order. Its red-dot markers are kept.
+  .modern-style & .rh-card-body {
+    ul:not(.modern-hero__meta),
+    ol { margin: 0 0 10px; }
+    li { margin: 0 0 6px; line-height: inherit; }
+    hr { margin: 12px 0; }
+  }
+
+  // ---------- footer, without a shortcode ----------
+  // A trailing button, hotlink, badge line or {{< subscribe >}} sticks to the
+  // bottom so a row of cards with different text lengths still lines up.
+  .rh-card-body > :last-child:is(.hotlink, .rh-subscribe, p:has(> .rh-button:only-child), p:has(> .badge-btn:first-child)) {
+    margin-top: auto;
+    padding-top: 10px;
+  }
+
+  // A rule right before the last block makes that block a footer note (the
+  // rule is its divider). A rule directly under the title is just a divider.
+  .rh-card-body > hr:nth-last-child(2):not(:nth-child(2)) { margin-top: auto; }
+
+  // ---------- columns inside the body ----------
+  // {{< row >}} + {{< column >}} inside a card: each column follows the body's
+  // slot rules on its own. In a stretched row (the default) a trailing button,
+  // hotlink, badge line or {{< subscribe >}} is pinned to the column's bottom,
+  // so text-left / picture-right cards get the button level with the
+  // picture's bottom edge. A picture inside a column is an inset picture and
+  // takes the card's corner radius (the flush media slot is the first block
+  // of the body, not a column).
+  // A width="auto" column is the exception: it is as wide as what is in it, so
+  // there is no bottom to pin anything to, and as a flex column it would stack
+  // the inline run "{{< button >}} **[Share Course](…)**" into two lines
+  // instead of leaving it a line of text.
+  .rh-card-body .column:not(.column-auto) {
+    display: flex;
+    flex-direction: column;
+
+    > :last-child:is(.hotlink, .rh-subscribe, p:has(> .rh-button:only-child), p:has(> .badge-btn:first-child)) {
+      margin-top: auto;
+      padding-top: 10px;
+    }
+  }
+
+  .rh-card-body .column img { border-radius: $global-border-radius; }
+
+  // ---------- whole-card link ----------
+  // Same trick as feature-card / price-card: stretch one anchor over the card
+  // instead of wrapping the card in <a>, because the body can hold its own
+  // links and nested anchors are invalid HTML. The anchor is the first
+  // heading's link, a linked media picture, or the overlay <a> the shortcode
+  // adds for its `link` param.
+  &.rh-card-linked { cursor: pointer; }
+
+  .rh-card-link::after {
+    content: "";
+    position: absolute;
+    inset: 0;
+    z-index: 1;
+  }
+
+  // Keep the body's own links, buttons and inputs clickable above the overlay.
+  .rh-card-body a:not(.rh-card-link),
+  .rh-card-body button,
+  .rh-card-body input,
+  .rh-card-body .rh-button {
+    position: relative;
+    z-index: 2;
+  }
+
+  // Hovering anywhere on a linked card highlights its button.
+  &.rh-card-linked:hover .rh-button:not(.rh-button-secondary) {
+    background: $rh-card-accent;
+    color: #fff;
+  }
+
+  // ---------- print ----------
+  @media only print {
+    break-inside: avoid;
+    box-shadow: none;
+  }
+}
+
+// ---------- market-card (WWW-3695) ----------
+// The homepage's "Who uses Rhino" tiles are the same box with the outline off
+// and the body centered. Centering is the one thing a market tile needs that
+// position in the body cannot express, so market-card.html passes this class;
+// everything else about the tile is the ordinary card.
+.rh-card.rh-card-market .rh-card-body { text-align: center; }
+
+// ---------- card-gallery columns="N" ----------
+// Fixed column count, collapsing to 2 on tablets and 1 on phones. Declared
+// after modern-style's .gallery-container rule (see style.scss) so it wins.
+.gallery-container.gallery-columns {
+  grid-template-columns: repeat(var(--gallery-columns, 3), minmax(0, 1fr));
+
+  @media only screen and (max-width: $global-mobile-maxwidth) {
+    // Interpolated so libsass passes CSS min() through instead of evaluating it.
+    grid-template-columns: repeat(#{"min(var(--gallery-columns, 3), 2)"}, minmax(0, 1fr));
+  }
+
+  @media only screen and (max-width: 600px) {
+    grid-template-columns: minmax(0, 1fr);
+  }
+}
+
+// ---------- {{< checklist >}} ----------
+// Markdown list with Font Awesome check marks for bullets. Works on its own or
+// inside a card. Specificity is kept above modern-style's
+// `.modern-style ul:not(…) > li::before` red-dot rule so the check replaces
+// the dot instead of stacking on it.
+.rh-checklist ul,
+.modern-style .rh-checklist ul:not(.modern-hero__meta) {
+  list-style: none;
+  margin: 0 0 10px;
+  padding-left: 0;
+
+  > li {
+    position: relative;
+    margin: 0 0 8px;
+    padding-left: 26px;
+
+    &::before {
+      @extend %fa-icon;
+      @extend .fas;
+      content: fa-content($fa-var-check);
+      position: absolute;
+      left: 0;
+      top: 0.2em;
+      width: auto;
+      height: auto;
+      border-radius: 0;
+      background: none;
+      font-size: 14px;
+      color: $rh-card-accent;
+    }
+  }
+}

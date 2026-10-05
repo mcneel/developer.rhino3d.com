@@ -1,0 +1,27 @@
+{{- /*
+  card-page-body.html — the body of a card that is bound to a page: its
+  picture, its linked title and, optionally, its description, in the order
+  partials/card-container.html reads as media / title / text. Shared by
+  feature-card (WWW-3694) and market-card (WWW-3695), which differ only in the
+  box they ask for and whether they pass a description.
+
+  It is a template rather than a string built with printf so that
+  html/template does the escaping: a plain string out of front matter is
+  escaped, while the HTML that `truncate` returns is passed through as it is.
+  Hand-escaping gets this wrong in one direction or the other.
+
+    {{ partial "card-page-body.html" (dict "link" $link "title" $title
+         "description" $description "thumbnail" $thumbnail) }}
+
+  Keys:
+    link         URL the title and picture point at (required)
+    title        card title (required)
+    description  card text (optional)
+    thumbnail    an image resource, already resized (optional)
+*/ -}}
+{{- with .thumbnail }}<p><a href="{{ $.link }}"><img src="{{ .RelPermalink }}" alt="{{ $.title }}"></a></p>
+{{ end -}}
+<h3><a href="{{ .link }}">{{ .title }}</a></h3>
+{{- with .description }}
+<p>{{ . }}</p>
+{{- end -}}

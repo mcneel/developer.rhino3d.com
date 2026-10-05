@@ -1,0 +1,144 @@
+// ==============================
+// {{< subscribe >}} shortcode (WWW-3622)
+// ==============================
+// The button itself is a .rh-button (_button.scss). This file adds the three
+// states subscribe.js switches with data-state on the .rh-subscribe root —
+// idle (envelope + label), saving (spinner), subscribed (check + "Subscribed",
+// stays on the page, inert) — the inline error line, and the sign-in <dialog>
+// shown to signed-out visitors. Same token scheme as _card.scss: modern-style
+// --rh-* custom properties with plain-site fallbacks.
+
+$rh-subscribe-accent: var(--rh-red-600, #{$global-link-color});
+$rh-subscribe-ink: var(--rh-ink, #111111);
+$rh-subscribe-ink-body: var(--rh-ink-body, #444444);
+$rh-subscribe-border: var(--rh-border, #e2e2e2);
+$rh-subscribe-font-display: var(--rh-font-display, inherit);
+
+.rh-subscribe {
+  display: block;
+
+  .rh-subscribe-button {
+    white-space: nowrap;
+
+    i { margin-right: 0.45em; }
+  }
+
+  // ---------- states ----------
+  // Every icon and label is in the markup (so the strings are the template's,
+  // not the script's); data-state picks which pair shows.
+  .rh-subscribe-icon-idle,
+  .rh-subscribe-icon-saving,
+  .rh-subscribe-icon-subscribed,
+  .rh-subscribe-text-idle,
+  .rh-subscribe-text-subscribed { display: none; }
+
+  &[data-state="idle"] {
+    .rh-subscribe-icon-idle,
+    .rh-subscribe-text-idle { display: inline; }
+  }
+
+  &[data-state="saving"] {
+    .rh-subscribe-icon-saving,
+    .rh-subscribe-text-idle { display: inline; }
+
+    .rh-subscribe-button { cursor: progress; }
+  }
+
+  // Subscribed: the button stays where it was as a quiet "done" chip — no
+  // hover fill, not clickable, not focusable (the script also disables it).
+  &[data-state="subscribed"] {
+    .rh-subscribe-icon-subscribed,
+    .rh-subscribe-text-subscribed { display: inline; }
+
+    .rh-subscribe-button {
+      pointer-events: none;
+      color: $rh-subscribe-ink-body;
+
+      i { color: $rh-subscribe-accent; }
+    }
+  }
+
+  // ---------- error ----------
+  .rh-subscribe-error {
+    display: block;
+    margin-top: 6px;
+    font-size: 13px;
+    line-height: 1.4;
+    color: $rh-subscribe-accent;
+
+    &[hidden] { display: none; }
+  }
+
+  // ---------- sign-in dialog ----------
+  // Native <dialog>, opened with showModal() so it sits in the top layer:
+  // a card's overflow:hidden or transform can't clip it.
+  .rh-subscribe-dialog {
+    box-sizing: border-box;
+    // Interpolated so libsass passes CSS min() through instead of evaluating it.
+    width: #{"min(440px, calc(100vw - 2rem))"};
+    max-width: 100%;
+    margin: auto;
+    padding: 0;
+    border: 0;
+    border-radius: $global-border-radius;
+    background: #fff;
+    color: $rh-subscribe-ink-body;
+    box-shadow: 0 10px 40px rgba(0, 0, 0, 0.25);
+    font-size: 15px;
+    line-height: 1.5;
+    text-align: left;
+
+    &::backdrop { background: rgba(0, 0, 0, 0.5); }
+  }
+
+  .rh-subscribe-dialog-header {
+    display: flex;
+    align-items: flex-start;
+    justify-content: space-between;
+    gap: 12px;
+    padding: 16px 20px;
+    border-bottom: 1px solid $rh-subscribe-border;
+  }
+
+  .rh-subscribe-dialog-title {
+    margin: 0;
+    font-family: $rh-subscribe-font-display;
+    font-size: 17px;
+    font-weight: 700;
+    line-height: 1.3;
+    color: $rh-subscribe-ink;
+  }
+
+  .rh-subscribe-dialog-close {
+    flex: 0 0 auto;
+    margin: 0;
+    padding: 0 0 0 8px;
+    border: 0;
+    background: none;
+    color: $rh-subscribe-ink-body;
+    font-size: 18px;
+    line-height: 1.3;
+    cursor: pointer;
+
+    &:hover,
+    &:focus-visible { color: $rh-subscribe-accent; }
+  }
+
+  .rh-subscribe-dialog-body {
+    padding: 16px 20px;
+
+    p {
+      margin: 0 0 10px;
+      font-size: inherit;
+      line-height: inherit;
+
+      &:last-child { margin-bottom: 0; }
+    }
+  }
+
+  .rh-subscribe-dialog-footer {
+    display: flex;
+    justify-content: flex-end;
+    padding: 12px 20px 16px;
+  }
+}

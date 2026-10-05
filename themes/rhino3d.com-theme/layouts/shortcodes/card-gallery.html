@@ -1,3 +1,18 @@
-<div class="gallery-container">
+{{- /*
+  card-gallery.html — responsive grid for cards ({{< card-container >}},
+  feature-card, market-card, price-card, unfurl display="card"). By default it adds columns
+  as the page gets wider (auto-fill, 200px minimum). Pass `columns` to fix the
+  count; it still drops to 2 columns on tablets and 1 on phones.
+
+    {{< card-gallery columns="3" >}} … {{< /card-gallery >}}
+
+  Params: columns — 1–6 (optional)
+*/ -}}
+{{- $columns := .Get "columns" | default "" -}}
+{{- if and (ne $columns "") (not (in (slice "1" "2" "3" "4" "5" "6") $columns)) -}}
+<span class="shortcode-error">Error: card-gallery: columns must be 1–6, got {{ printf "%q" $columns }}.</span>
+{{- else -}}
+<div class="gallery-container{{ if ne $columns "" }} gallery-columns{{ end }}"{{ if ne $columns "" }} style="--gallery-columns: {{ $columns }};"{{ end }}>
     {{- .Inner -}}
 </div>
+{{- end -}}

@@ -1,7 +1,9 @@
 {{ $toc := .Site.Params.tableOfContents }}
 {{ $hRange := printf "[%s-%s]" (string $toc.startLevel) (string $toc.endLevel)}}
 
-{{- $headers := findRE (printf "<h%s.*?>(.|\n)*?</h%s>" $hRange $hRange) .Content -}}
+{{- /* WWW-3696: drop headings marked data-toc="skip" (card titles) before scraping; RE2 has no lookahead. */ -}}
+{{- $content := replaceRE `(?s)<h([1-6])[^>]*\sdata-toc="skip"[^>]*>.*?</h[1-6]>` "" .Content -}}
+{{- $headers := findRE (printf "<h%s.*?>(.|\n)*?</h%s>" $hRange $hRange) $content -}}
 {{- $has_headers := ge (len $headers) 1 -}}
 {{- if $has_headers -}}
 

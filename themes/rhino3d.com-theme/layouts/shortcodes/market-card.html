@@ -1,71 +1,62 @@
-{{- $.Scratch.Set "page" "" -}}
-{{- $.Scratch.Set "url" "" -}}
-{{- $.Scratch.Set "title" "" -}}
-{{- $.Scratch.Set "error" false -}}
-{{- $.Scratch.Set "error_message" "" -}}
+{{- /*
+  market-card.html — the homepage's "Who uses Rhino" tiles (WWW-3695): a
+  market page's thumbnail with its title centered underneath, no outline.
+  Like feature-card it looks the page up, so the tiles pick up translated
+  titles and new artwork on their own.
 
-{{- if .IsNamedParams -}}
-    {{- if .Get "page" -}}
-        {{- $.Scratch.Set "page" (.Get "page") -}}
-    {{- else -}}
-        {{- $.Scratch.Set "error" true -}}
-        {{- $.Scratch.Set "error_message" "page is a required parameter" -}}
-    {{- end -}}
+    {{< card-gallery >}}
+    {{< market-card page="/for/architecture/index.md" title="Architects & Engineers" >}}
+    {{< /card-gallery >}}
 
-    {{/*  Optional Link override  */}}
-    {{- if .Get "url" -}}
-        {{- $.Scratch.Set "url" (.Get "url") -}}
-    {{- end -}}
+  Required arguments:
+    page   path to the page, e.g. "/for/architecture/index.md"
 
-    {{/*  Optional title override  */}}
-    {{- if .Get "title" -}}
-        {{- $.Scratch.Set "title" (.Get "title") -}}
-    {{- end -}}
+  Optional arguments:
+    url    link target  (default: the page's own URL)
+    title  card title   (default: the page's title)
+
+  The box comes from partials/card-container.html — the same partial the
+  {{< card-container >}} shortcode and feature-card render through — with the
+  outline off and the body centered, which is all that makes a market tile
+  different from any other card. Styles: assets/scss/_shortcodes/_card.scss.
+*/ -}}
+{{- $error := "" -}}
+{{- if not .IsNamedParams -}}
+  {{- $error = "Not using named params." -}}
+{{- else if not (.Get "page") -}}
+  {{- $error = "page is a required parameter" -}}
+{{- end -}}
+{{- if $error -}}
+<span class="shortcode-error">Error: {{ $error }}<br>Shortcode usage: &lbrace;&lbrace;&lt; market-card page=[path-to-page] &gt;&rbrace;&rbrace;</span>
 {{- else -}}
-    {{- $.Scratch.Set "error" true -}}
-    {{- $.Scratch.Set "error_message" "Not using named params." -}}
+{{- with .Site.GetPage (.Get "page") -}}
+{{- $page := . -}}
+{{- $link := $.Get "url" | default .RelPermalink -}}
+{{- $title := $.Get "title" | default .Title -}}
+
+{{- /* Thumbnail, cropped to the media slot's 16:9. */ -}}
+{{- $thumbnail := "" -}}
+{{- with .Params.thumbnail -}}
+  {{- $image := "" -}}
+  {{- if hasPrefix . "/images/" -}}
+    {{- $image = resources.Get . -}}
+  {{- else -}}
+    {{- $image = $page.Resources.GetMatch . -}}
+  {{- end -}}
+  {{- with $image }}{{ $thumbnail = .Fill "800x450 Center" }}{{ end -}}
 {{- end -}}
 
-{{- if ($.Scratch.Get "error") -}}
-<span class="shortcode-error">Error: {{ $.Scratch.Get "error_message" }}<br>Shortcode usage: &lbrace;&lbrace;&lt; feature-card page=[path-to-page] &gt;&rbrace;&rbrace;</span>
-{{- else -}}
-    {{ with .Site.GetPage ($.Scratch.Get "page") }}
-        <div class="card-market">
-            {{ $.Scratch.Set "page_link" .RelPermalink }}
-            {{- if ($.Scratch.Get "url") -}}
-                {{ $.Scratch.Set "page_link" ($.Scratch.Get "url") }}
-            {{- end -}}
-            {{ $.Scratch.Set "has-thumbnail" "false" }}
-            {{- with .Params.thumbnail -}}
-            {{ $.Scratch.Set "has-thumbnail" "true" }}
-            {{- end -}}
-            {{ if eq ($.Scratch.Get "has-thumbnail") "true" }}
-                {{ if hasPrefix .Params.Thumbnail "/images/"}}
-                    {{/*  Global image folder  */}}
-                    {{- $image := resources.Get .Params.Thumbnail -}}
-                    {{ $thumbnail := $image.Fill "900x550" }}
-                    {{ with $thumbnail }}
-                            <a href="{{ $.Scratch.Get "page_link" }}"><img src="{{ .RelPermalink }}" alt="{{ . }}" style="width:100%"></a>
-                    {{ end }}
-                {{ else }}
-                    {{/*  Page bundle  */}}
-                    {{ with .Resources.GetMatch ( printf "%s" .Params.thumbnail) }}
-                        {{ $thumbnail := .Fill "900x550" }}
-                        {{ with $thumbnail }}
-                            <a href="{{ $.Scratch.Get "page_link" }}"><img src="{{ .RelPermalink }}" alt="{{ . }}" style="width:100%"></a>
-                        {{ end }}
-                    {{ end }}
-                {{ end }}
-            {{ end }}
-            <div class="card-container-market">
-                {{- if ($.Scratch.Get "title") -}}
-                <span class="card-title-market"><a href="{{ $.Scratch.Get "page_link" }}">{{ $.Scratch.Get "title" }}</a></span>
-                {{ else }}
-                <span class="card-title-market"><a href="{{ $.Scratch.Get "page_link" }}">{{ .Title }}</a></span>
-                {{ end }}
-            </div>
-        </div>
-    {{ end }}
+{{- /* Picture then linked title, no description: the same body feature-card
+       builds. The box has no outline and no fill, so the tile reads as a
+       picture with a caption the way it always has. */ -}}
+{{- partial "card-container.html" (dict
+      "inner" (partial "card-page-body.html" (dict
+        "link" $link
+        "title" $title
+        "thumbnail" $thumbnail))
+      "border" "none"
+      "padding" "none"
+      "background" "transparent"
+      "class" "rh-card-market rh-card-tile") -}}
 {{- end -}}
-
-
+{{- end -}}

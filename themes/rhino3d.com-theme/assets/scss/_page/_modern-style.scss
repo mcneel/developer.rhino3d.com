@@ -53,6 +53,7 @@
   // Specimen neutrals
   --rh-ink:        #000000; // max contrast — titles
   --rh-ink-body:   #1a1a1a; // body text
+  --rh-ink-muted:  var(--rh-gray-700); // muted body text (call-outs)
   --rh-ink-meta:   #888888; // meta / captions
   --rh-border:     #e2e2e2; // hairline
 
@@ -63,6 +64,8 @@
 
   // Layout
   --rh-container: 1180px;
+
+  --ia-radius: 12px;
 
   // Motion
   --rh-ease: cubic-bezier(0.2, 0, 0.1, 1);
@@ -131,6 +134,12 @@
 // -----------------------------------------------------
 // Hero
 // -----------------------------------------------------
+// Eyebrow metrics, shared with the hero figure's top offset.
+$modern-hero-eyebrow-size: 12px;
+$modern-hero-eyebrow-lh: 1.5;
+$modern-hero-eyebrow-gap: 18px;
+$modern-hero-eyebrow-block: $modern-hero-eyebrow-size * $modern-hero-eyebrow-lh + $modern-hero-eyebrow-gap;
+
 .modern-hero {
   background: var(--rh-gray-50);
   color: var(--rh-ink-body);
@@ -158,24 +167,26 @@
       border: 0;
       &:hover { color: var(--rh-ink); }
     }
-    .modern-crumbs__current { color: var(--rh-ink); }
     .modern-crumbs__sep { color: var(--rh-border); }
   }
 
   &__grid {
-    padding: 34px 0 56px;
+    padding: 34px 0;
     display: grid;
     grid-template-columns: minmax(0, 1.05fr) minmax(0, 0.95fr);
     gap: 56px;
     align-items: center;
   }
 
-  &__grid--no-image { grid-template-columns: minmax(0, 1fr); }
+  &__grid--no-image {
+    grid-template-columns: minmax(0, 1fr);
+  }
 
   &__eyebrow {
-    margin: 0 0 18px;
+    margin: 0 0 $modern-hero-eyebrow-gap;
     font-family: var(--rh-font-mono);
-    font-size: 12px;
+    font-size: $modern-hero-eyebrow-size;
+    line-height: $modern-hero-eyebrow-lh;
     letter-spacing: 0.14em;
     text-transform: uppercase;
     color: var(--rh-red-600);
@@ -199,6 +210,12 @@
     color: var(--rh-ink-meta);
     max-width: 46ch;
     text-wrap: pretty;
+
+    // That bottom margin separates the lead from the meta chips below it —
+    // useful when they're there, but with nothing following (no meta, as on
+    // the eval page) it just stacks on top of the grid's own bottom padding
+    // and reads as extra dead space under the lead.
+    &:last-child { margin-bottom: 0; }
   }
 
   &__meta {
@@ -208,13 +225,33 @@
     align-items: center;
   }
 
+  // Sized to the text column so a page with an image isn't taller than one
+  // without (WWW: Brian flagged cloud-zoo vs. the licensing index having very
+  // different hero heights). Size containment keeps the image out of the row
+  // height calculation; the stretched figure then fills whatever height the
+  // text column sets, and the image scales to fit it (never upscaled).
   &__figure {
     margin: 0;
+    align-self: stretch;
+    container-type: size;
+    display: flex;
+    justify-content: center;
+    align-items: center;
     img {
       display: block;
-      width: 100%;
+      max-width: 100cqw;
+      max-height: 100cqh;
+      width: auto;
       height: auto;
       border-radius: 12px;
+    }
+  }
+
+  // Start the image level with the title rather than the eyebrow above it
+  // (side-by-side layout only; see the responsive block for stacked).
+  @media only screen and (min-width: 981px) {
+    &__text:has(.modern-hero__eyebrow) + .modern-hero__figure {
+      margin-top: $modern-hero-eyebrow-block;
     }
   }
 
@@ -275,7 +312,6 @@
       border: 0;
       &:hover { color: var(--rh-ink); }
     }
-    .modern-crumbs__current { color: var(--rh-ink); }
     .modern-crumbs__sep { color: var(--rh-border); }
   }
 
@@ -344,15 +380,6 @@
   padding: 44px 0 0;
   align-self: start;
 
-  &__label {
-    margin: 0 0 12px;
-    font-family: var(--rh-font-mono);
-    font-size: 11px;
-    letter-spacing: 0.14em;
-    text-transform: uppercase;
-    color: var(--rh-ink-meta);
-  }
-
   &__back {
     display: block;
     margin-bottom: 16px;
@@ -367,20 +394,14 @@
   }
 
   #TableOfContents {
-    counter-reset: modern-toc;
     max-height: calc(100vh - 130px);
     overflow-y: auto;
 
     ul { padding-left: 0; margin: 0; list-style: none; }
     li { margin: 0; }
 
-    // Numbered top-level entries; nested entries indent without a number.
-    > ul > li { counter-increment: modern-toc; }
-
     a {
-      display: grid;
-      grid-template-columns: 22px 1fr;
-      gap: 8px;
+      display: block;
       padding: 7px 0 7px 10px;
       border: 0;
       border-left: 2px solid var(--rh-border);
@@ -393,6 +414,29 @@
       &:hover { color: var(--rh-ink-body); }
     }
 
+    ul ul a { padding-left: 20px; }
+
+    a.active {
+      color: var(--rh-ink);
+      font-weight: 700;
+      border-left-color: var(--rh-red-600);
+      &::before { color: var(--rh-red-600); }
+    }
+  }
+
+  // Opt-in leading numbers ("01", "02", …), enabled with page_options.toc_numbers.
+  &--numbered #TableOfContents {
+    counter-reset: modern-toc;
+
+    // Numbered top-level entries; nested entries indent without a number.
+    > ul > li { counter-increment: modern-toc; }
+
+    a {
+      display: grid;
+      grid-template-columns: 22px 1fr;
+      gap: 8px;
+    }
+
     > ul > li > a::before {
       content: counter(modern-toc, decimal-leading-zero);
       font-family: var(--rh-font-mono);
@@ -401,15 +445,17 @@
       padding-top: 1px;
     }
     // Nested links keep the two-column grid aligned but show no number.
-    ul ul a { padding-left: 20px; }
     ul ul a::before { content: ""; }
+  }
 
-    a.active {
-      color: var(--rh-ink);
-      font-weight: 700;
-      border-left-color: var(--rh-red-600);
-      &::before { color: var(--rh-red-600); }
-    }
+  // Opt-in collapse, enabled with page_options.toc_collapse. Nested items are
+  // hidden and only the current (active) section's children are shown, via
+  // :has() matching the active heading link as the reader scrolls.
+  &--collapse #TableOfContents {
+    > ul > li > ul { display: none; }
+    > ul > li:has(a.active) > ul { display: block; }
+    // Clicking the active section's link again collapses it (JS toggles is-collapsed).
+    > ul > li.is-collapsed:has(a.active) > ul { display: none; }
   }
 }
 
@@ -468,6 +514,18 @@
     margin-top: 0;
   }
 
+  // Same fix, reached one level deeper: a page that opens with a row/column
+  // pair (e.g. {{< row >}}{{< column >}}### Heading, as on the eval page)
+  // puts its first heading inside .flex-container > .column instead of as a
+  // direct child of .modern-style, so the >h2:first-child rule above never
+  // matches it — it falls through to the generic h2/h3 rule and reads with
+  // the same too-large gap under the hero this section exists to prevent.
+  > .flex-container:first-child > .column:first-child {
+    > h2:first-child, > h3:first-child {
+      margin-top: 0;
+    }
+  }
+
   h3 {
     margin: 44px 0 14px;
     font-family: var(--rh-font-display);
@@ -491,6 +549,14 @@
     &:hover { color: var(--rh-red-700); }
   }
 
+  // The download button is an anchor, but it's fully styled in _home.scss
+  // (white text on a red gradient). Keep the generic modern link color above
+  // from repainting its text — scoped here so it outweighs `.modern-style a`.
+  a.home-download-button {
+    color: $button-text-color;
+    &:hover { color: $global-background-color; }
+  }
+
   // Rhino-command shortcode: <a><span.unfurl-link><strong><img> Name</strong></span>.
   // Leave the icon at its native size (set inline by the shortcode). Just keep
   // the icon and command name together as one unit so the name never splits from
@@ -512,7 +578,7 @@
       counter-increment: modern-step;
       position: relative;
       padding-left: 29px;
-      margin: 0 0 16px;
+      margin: 0 0 8px;
       line-height: 1.6;
 
       &::before {
@@ -651,9 +717,58 @@
     }
   }
 
-  // Figures — rounded, hairline-bordered, muted caption.
-  figure,
-  .box figure {
+  // Numbered code blocks (```lang {linenos=true}) render through Chroma as a
+  // two-column <table> (line numbers | code) inside div.highlight, each column
+  // its own <pre>. The `pre` rule above would box each column separately —
+  // two bordered rounds side by side. Draw one panel on the wrapper and flatten
+  // the inner cells so it reads as a single block like the non-numbered case.
+  // (noClasses is on, so target by structure, not the .chroma/.lnt classes.)
+  .highlight:has(table) {
+    border: 1px solid var(--rh-border);
+    border-radius: 10px;
+    padding: 16px 18px;
+    overflow-x: auto;
+    margin: 22px 0;
+
+    pre {
+      border: 0;
+      border-radius: 0;
+      padding: 0;
+      margin: 0;
+      overflow: visible;
+      // Never wrap: a wrapped code line becomes two visual rows while its number
+      // stays one, breaking alignment. Scroll the panel instead (overflow-x
+      // above). Overrides _override.scss's `div.highlight pre { pre-wrap }`.
+      white-space: pre;
+    }
+
+    // The numbers and the code live in two separate <pre>s, so the rows only
+    // line up if each row is the exact same height in both columns. Chroma emits
+    // the number rows as plain inline <span>s (which honor line-height) but each
+    // *code* row as a display:flex wrapper whose height is computed from content
+    // metrics, not line-height — so it renders a hair taller and the offset
+    // accumulates down the block. Both are `pre code > span`, so pin them to the
+    // same block box: identical structure => identical row height => no drift.
+    // !important is required because Chroma hard-codes `style="display:flex"`
+    // inline on the code rows, which a plain stylesheet rule can't override.
+    pre code > span {
+      display: block !important;
+      line-height: 21px;
+    }
+
+    table { margin: 0; }
+  }
+
+  // Figures — rounded, hairline-bordered, muted caption. Excludes figures/boxes
+  // nested in a {{< gallery >}} grid, which must keep hugo-easy-gallery's own
+  // tile/absolute-position layout (same exclusion _feature.scss already needed
+  // for the same reason — this generic rule's margin and `img { display: block;
+  // width: 100% }` break the classic gallery's absolutely-positioned tiles,
+  // which rely on the theme's own `.gallery img { display: none }` and hidden
+  // overflow). The hover-card gallery variant (_gallery-hover-card.scss) already
+  // overrides this rule via higher selector specificity and is unaffected.
+  figure:not(.gallery figure),
+  .box:not(.gallery .box) figure {
     margin: 22px 0;
     max-width: 100%;
 
@@ -728,7 +843,9 @@
     border: 1px solid var(--rh-border);
     border-left: 3px solid var(--rh-border);
     border-radius: 10px;
-    overflow: hidden;
+    // flow-root, not overflow: hidden — contains floats without clipping the
+    // rhino-command hover tooltip (WWW-3723).
+    display: flow-root;
     font-family: var(--rh-font-body);
     color: var(--rh-ink-body);
 
@@ -741,8 +858,13 @@
       color: var(--rh-ink-meta);
     }
 
-    // These callouts aren't collapsible here — drop the chevron toggle.
+    // These callouts aren't collapsible here — drop the chevron toggle and keep
+    // the body open regardless of the `.open` state. theme.js still binds a
+    // click handler to every `.details-summary`, so also strip the click
+    // affordance (pointer-events) so the title can't toggle the panel shut.
     i.details-icon { display: none; }
+    .details-summary { cursor: default; pointer-events: none; }
+    .details-content { max-height: none; }
 
     // Title bar -> plain title line (strip the base bg / border / padding).
     .call-out-title,
@@ -753,21 +875,24 @@
       background: none;
       font-family: var(--rh-font-display);
       font-weight: 700;
-      font-size: 14px;
+      font-size: 16px;
       line-height: 1.4;
       color: var(--rh-ink);
     }
 
     .call-out-content {
       padding: 0;
-      font-size: 14px;
+      font-size: 16px;
       line-height: 1.5;
-      color: var(--rh-ink-meta);
+      color: var(--rh-ink-muted);
 
-      p { margin: 0 0 8px; &:last-child { margin: 0; } }
+      // font-size: inherit keeps body copy at the call-out's size — otherwise
+      // `.modern-style p`'s 16px leaks in and only paragraphs (not bare text
+      // nodes) match, so two call-outs render at different sizes.
+      p { margin: 0 0 8px; font-size: inherit; &:last-child { margin: 0; } }
       a { font-size: inherit; }
 
-      // Right-aligned image: <img class="align-right" ...>. `overflow: hidden`
+      // Right-aligned image: <img class="align-right" ...>. `display: flow-root`
       // on .call-out already contains the float, so no clearfix is needed.
       img.align-right {
         float: right;
@@ -802,7 +927,7 @@
     width: 100%;
     border-collapse: collapse;
     margin: 22px 0;
-    font-size: 14px;
+    font-size: 16px;
 
     th, td {
       text-align: left;
@@ -857,10 +982,9 @@
 }
 
 // -----------------------------------------------------
-// Sales / pricing vocabulary (e.g. the Buy page). Restyles the
-// {{< price-card >}} "plan" pill — homepage look: 2em radius, centered,
-// uppercase — into a compact bordered card matching the figure / callout
-// treatment, tightens the card grids, and adds a muted fine-print block.
+// Card grids on modern pages, plus the muted fine-print block used by the
+// support pages. (A restyle of the {{< price-card >}} "plan" pill used to live
+// here too; removed 2026-09-10 so the card looks the same everywhere.)
 // -----------------------------------------------------
 .modern-style {
   // Card grids: {{< card-gallery >}} and the homepage's .price-card-container.
@@ -872,136 +996,6 @@
     gap: 14px;
     justify-items: stretch;
     margin: 16px 0 24px;
-  }
-
-  .plan {
-    width: auto;
-    padding: 20px;
-    border: 1px solid var(--rh-border);
-    border-radius: 10px;
-    box-shadow: none;
-    background: var(--rh-white);
-    font-family: var(--rh-font-body);
-    transition: box-shadow 160ms var(--rh-ease);
-
-    &:hover { box-shadow: 0 6px 20px rgba(0, 0, 0, 0.08); }
-
-    // featured="true": red top bar (padding compensates so content stays put)
-    &.plan-featured {
-      border-color: var(--rh-red-600);
-      border-top-width: 3px;
-      padding-top: 18px;
-    }
-
-    // Reorder into a price tag: title, description, price, currency, upgrade.
-    > div {
-      display: flex;
-      flex-direction: column;
-    }
-
-    .plan-title {
-      order: 1;
-      margin: 0 0 6px;
-      text-align: left;
-      text-transform: none;
-      font-family: var(--rh-font-display);
-      font-weight: 700;
-      font-size: 15px;
-      line-height: 1.35;
-      color: var(--rh-ink);
-    }
-
-    .plan-details {
-      order: 2;
-      flex: 1;
-      padding: 0;
-      font-weight: 400;
-      font-size: 13.5px;
-      line-height: 1.5;
-      color: var(--rh-ink-meta);
-
-      p {
-        margin: 0 0 6px;
-        font-size: inherit;
-        line-height: inherit;
-        &:last-child { margin-bottom: 0; }
-      }
-    }
-
-    .plan-price {
-      order: 3;
-      margin: 14px 0 0;
-      text-align: left;
-      font-family: var(--rh-font-display);
-      font-size: 26px;
-      font-weight: 900;
-      line-height: 1.1;
-      color: var(--rh-ink);
-
-      .plan-price-inactive { font-weight: 400; }
-    }
-
-    .plan-subtitle {
-      order: 4;
-      margin: 2px 0 0;
-      text-align: left;
-      font-size: 12px;
-      font-weight: 400;
-      color: var(--rh-ink-meta);
-    }
-
-    // upgrade="true": "<type>-upgrade" price line
-    .plan-upgrade {
-      order: 5;
-      margin: 8px 0 0;
-      font-size: 13px;
-      font-weight: 500;
-      color: var(--rh-success-600);
-    }
-
-    .button {
-      margin-top: 16px;
-      padding: 9px 14px;
-      border: 1px solid var(--rh-red-600);
-      border-radius: 6px;
-      background: var(--rh-red-600);
-      color: var(--rh-white);
-      font-family: var(--rh-font-display);
-      font-weight: 700;
-      font-size: 14px;
-
-      &:hover {
-        background: var(--rh-red-700);
-        border-color: var(--rh-red-700);
-        color: var(--rh-white);
-      }
-    }
-
-    // secondary="true": quiet outline button, e.g. "Learn More"
-    .button-secondary {
-      background: var(--rh-white);
-      border-color: var(--rh-border);
-      color: var(--rh-ink-body);
-
-      &:hover {
-        background: var(--rh-gray-50);
-        border-color: var(--rh-gray-400);
-        color: var(--rh-ink);
-      }
-    }
-
-    // The shortcode's own hover-anywhere rule paints the button red; keep the
-    // primary red but leave the outline button quiet.
-    &.plan-linked:hover .button {
-      background: var(--rh-red-700);
-      color: var(--rh-white);
-    }
-    &.plan-linked:hover .button-secondary {
-      background: var(--rh-gray-50);
-      color: var(--rh-ink);
-    }
-
-    .featured-ribbon { font-family: var(--rh-font-mono); }
   }
 
   // {{< div class="fine-print" >}} — muted legal copy.
@@ -1057,7 +1051,13 @@
     &__grid {
       grid-template-columns: minmax(0, 1fr);
       gap: 28px;
-      padding: 24px 0 40px;
+      padding: 24px 0;
+    }
+    // Stacked, there's no text column to match — drop the size containment
+    // (it would collapse the figure to zero height) and cap the image instead.
+    &__figure {
+      container-type: normal;
+      img { max-width: 100%; max-height: 220px; }
     }
     &__title { font-size: 38px; }
   }
@@ -1180,7 +1180,6 @@
       border: 0;
       &:hover { color: var(--rh-ink); }
     }
-    .modern-crumbs__current { color: var(--rh-ink); }
     .modern-crumbs__sep { color: var(--rh-border); }
   }
 
@@ -1321,6 +1320,24 @@
       }
     }
 
+    // Plain <video> (local-video shortcode) or video.html's .video-container
+    > video,
+    > .video-container {
+      height: 100%;
+      width: auto;
+      max-width: 100%;
+      margin: 0;
+    }
+
+    > .video-container video {
+      display: block;
+      height: 100%;
+      width: auto;
+      max-width: 100%;
+      object-fit: contain;
+      pointer-events: none;
+    }
+
     // GIF / static image: height-primary
     > img {
       height: 100%;
@@ -1455,15 +1472,16 @@
     height: auto;
   }
 
-  // "New in vX" heading badges (`%%New in vX%%` syntax, rendered by
-  // layouts/_default/_markup/render-heading.html as `.new-callout
-  // .new-callout-inline > a`). Pinned white-on-red regardless of the ambient
-  // link color above — same fix _feature.scss already needed for the same
-  // reason (a generic `a { color: ... }` rule has equal specificity and would
-  // otherwise win on source order).
+  // new-label shortcode output, all styles (standard/flag, small, bullet,
+  // and the inline `%%New in vX%%` heading badge, which renders as
+  // `.new-callout.new-callout-inline` and is also matched by `.new-callout`
+  // below). Pinned white-on-red regardless of the ambient link color above —
+  // same fix _feature.scss already needed for the same reason (a generic
+  // `a { color: ... }` rule has equal specificity and would otherwise win on
+  // source order).
+  .new-callout,
   .new-callout-small,
-  .new-callout-bullet,
-  .new-callout.new-callout-inline {
+  .new-callout-bullet {
     background: var(--rh-red-600) !important;
     color: var(--rh-white) !important;
     border-radius: 100px !important;

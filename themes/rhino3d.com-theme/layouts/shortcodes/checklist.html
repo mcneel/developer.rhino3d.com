@@ -1,0 +1,20 @@
+{{- /*
+  checklist.html — a markdown list whose bullets are red check marks (Font
+  Awesome fa-check), as on the Authorized Rhino Training text cards
+  (WWW-3623, WWW-3628). Wrap an ordinary list; nothing else changes.
+
+    {{< checklist >}}
+    - **Market visibility** - listed in the Rhino Custom Training directory.
+    - **Exclusive resources** - instructor-only webinars and regional support.
+    {{< /checklist >}}
+
+  For empty checkboxes use a markdown task list instead ("- [ ] item"); the
+  site already styles those. No params. Styles: _shortcodes/_card.scss.
+*/ -}}
+{{- if eq (trim .Inner " \t\r\n") "" -}}
+<span class="shortcode-error">Error: checklist needs a markdown list as its body.<br>Shortcode usage: &lbrace;&lbrace;&lt; checklist &gt;&rbrace;&rbrace; - item &lbrace;&lbrace;&lt; /checklist &gt;&rbrace;&rbrace;</span>
+{{- else -}}
+<div class="rh-checklist">
+{{ .Page.RenderString (dict "display" "block") (trim .Inner "\n") }}
+</div>
+{{- end -}}

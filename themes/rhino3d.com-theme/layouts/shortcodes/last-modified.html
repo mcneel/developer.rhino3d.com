@@ -34,6 +34,8 @@
 {{- $.Scratch.Get "day" }}/{{ $.Scratch.Get "month_trans" }}/{{ $.Scratch.Get "year" -}}
 {{- else if eq ($.Scratch.Get "lang") "ru" -}}
 {{- $.Scratch.Get "day" }}.{{ $.Scratch.Get "month_trans" }}.{{ $.Scratch.Get "year" -}}
+{{- else if eq ($.Scratch.Get "lang") "tr" -}}
+{{- $.Scratch.Get "day" }}.{{ $.Scratch.Get "month_trans" }}.{{ $.Scratch.Get "year" -}}
 {{- else if eq ($.Scratch.Get "lang") "tw" -}}
 {{ $.Scratch.Get "year" }}年{{ $.Scratch.Get "month_trans" }}月{{ $.Scratch.Get "day" }}日 {{ $.Scratch.Get "weekday_trans" -}}
 {{- else -}} <!-- English -->

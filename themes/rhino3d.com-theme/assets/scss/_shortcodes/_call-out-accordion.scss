@@ -1,0 +1,90 @@
+// ==============================
+// {{< call-out type="accordion" >}} — FAQ item (WWW-3615, WWW-3624)
+// ==============================
+// A collapsible grey rounded rectangle: title bar with a red "+" that turns
+// into a cross when open, the answer opening underneath inside the same box.
+// Stack several for an accordion; the margin is the gap. Unlike the other call-out types it starts closed and stays
+// collapsible on modern_style pages, whose .call-out reset pins call-outs open
+// and turns the click off — hence the selectors below repeat that reset's
+// shapes (.call-out-title / .open .call-out-title, .details-content, i.icon)
+// and this file is imported after _page/modern-style so it wins the ties.
+// Same token scheme as _card.scss: modern-style --rh-* custom properties with
+// plain-site fallbacks.
+
+$rh-acc-ink: var(--rh-ink, #111111);
+$rh-acc-ink-body: var(--rh-ink-body, #444444);
+$rh-acc-accent: var(--rh-red-600, #{$global-link-color});
+$rh-acc-surface: var(--rh-gray-100, #ededed);
+$rh-acc-border: var(--rh-border, #e2e2e2);
+$rh-acc-font-display: var(--rh-font-display, inherit);
+
+.call-out.accordion {
+  // The whole item is the grey rounded rectangle; the title bar and the answer
+  // both sit inside it. Radius = card-container "large", the price-card look,
+  // so the header is a rounded rectangle rather than a pill.
+  position: relative;
+  margin: 14px 0;
+  padding: 0;
+  background: $rh-acc-surface;
+  border: 1px solid $rh-acc-border;
+  border-radius: 20px;
+  overflow: hidden;
+  color: $rh-acc-ink-body;
+
+  // ---------- title bar ----------
+  .call-out-title,
+  &.open .call-out-title {
+    display: flex;
+    align-items: center;
+    gap: 14px;
+    margin: 0;
+    padding: 16px 26px;
+    background: transparent;
+    border: 0;
+    border-radius: 0;
+    cursor: pointer;
+    pointer-events: auto;
+    font-family: $rh-acc-font-display;
+    font-weight: 700;
+    font-size: 15.5px;
+    line-height: 1.3;
+    color: $rh-acc-ink;
+  }
+
+  // The "+" sits in the flow (the base sheet absolutely positions it) and
+  // turns into a cross when open.
+  i.icon {
+    position: static;
+    flex: none;
+    font-size: 14px;
+    line-height: 1;
+    color: $rh-acc-accent;
+    transition: transform 180ms ease;
+  }
+  &.open i.icon { transform: rotate(45deg); }
+
+  // The "+" is the indicator; no chevron.
+  i.details-icon { display: none; }
+
+  // ---------- answer, still inside the rectangle ----------
+  .details-content {
+    max-height: 0;
+    overflow: hidden;
+    @include details-transition-open;
+  }
+  &.open .details-content {
+    max-height: $MAX_LENGTH;
+    @include details-transition-close;
+  }
+
+  // Left edge lines up with the title text: 26px padding + 14px icon + 14px gap.
+  .call-out-content {
+    padding: 0 26px 18px 54px;
+    font-size: 14.5px;
+    line-height: 1.55;
+    color: $rh-acc-ink-body;
+
+    p { margin: 0 0 8px; font-size: inherit; &:last-child { margin: 0; } }
+    a { font-size: inherit; }
+  }
+}

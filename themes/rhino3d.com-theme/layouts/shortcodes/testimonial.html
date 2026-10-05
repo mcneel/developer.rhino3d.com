@@ -1,0 +1,36 @@
+{{- /*
+  testimonial.html — pull quote with attribution (the homepage's "Who Uses
+  Rhino?" quotes). The body (required) is the quote as markdown; type the
+  quotation marks yourself so each language keeps its own convention.
+
+    {{< testimonial author="Scott Schneider, Film Designer" link="https://…" >}}
+    "I've been using Rhino for 20 years…"
+    {{< /testimonial >}}
+
+  Params: author — attribution text under the quote (optional)
+          link   — URL for the attribution, opens in a new tab (optional,
+                   ignored without author)
+
+  Styling: assets/scss/_shortcodes/_testimonial.scss. Lay several out side by
+  side with {{< row >}} / {{< column >}}. Output has no blank lines so it
+  survives the markdown pass of a wrapping {{< column >}}.
+*/ -}}
+{{- $author := .Get "author" | default "" -}}
+{{- $link := .Get "link" | default "" -}}
+{{- if eq (trim .Inner " \t\r\n") "" -}}
+<span class="shortcode-error">Error: testimonial needs the quote as its body.<br>Shortcode usage: &lbrace;&lbrace;&lt; testimonial author="…" link="…" &gt;&rbrace;&rbrace; quote &lbrace;&lbrace;&lt; /testimonial &gt;&rbrace;&rbrace;</span>
+{{- else -}}
+<div class="testimonial">
+  <blockquote>{{ .Inner | .Page.RenderString }}
+    {{- with $author }}
+    <div class="name">
+      {{- if ne $link "" }}
+      <a href="{{ $link }}" target="_blank" rel="noopener">{{ . }}</a>
+      {{- else }}
+      <span>{{ . }}</span>
+      {{- end }}
+    </div>
+    {{- end }}
+  </blockquote>
+</div>
+{{- end -}}

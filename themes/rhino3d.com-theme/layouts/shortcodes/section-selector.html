@@ -1,13 +1,29 @@
+{{/*
+    section-selector — inline control that opens a {{< section >}} body.
+
+    Params (named, or positional group/name/label):
+      group    (required) the section group ("step") this selector picks from
+      name     (required) the data-name of the section to open
+      label    the visible text; the shortcode's inner text wins if given
+      description  a second line under the label, for a choice that needs a
+               few words of explanation. Markdown is rendered.
+      recommended  true marks this choice as the recommended one, with a
+               badge after the label (translated, i18n key `recommended`).
+      behavior legacy, ignored — the wizard always replaces the step
+
+    script/section-wizard.js turns the selectors + sections on a page into a
+    one-step-at-a-time wizard; see _shortcodes/_section-wizard.scss.
+*/}}
 {{- $label := "Section Header" -}}
 {{- $name := "" -}}
 {{- $group := "" -}}
-{{- $behavior := "" -}}
+{{- $description := .Get "description" -}}
+{{- $recommended := .Get "recommended" | default false -}}
 {{- if .Get "label"}}{{- $label =  .Get "label" -}}{{- end -}}
-{{- if .IsNamedParams -}}    
+{{- if .IsNamedParams -}}
     {{- if .Get "name"}}{{- $name =  .Get "name" -}}{{- end -}}
     {{- if .Get "group"}}{{- $group =  .Get "group" -}}{{- end -}}
     {{- if .Get "label"}}{{- $label =  .Get "label" -}}{{- end -}}
-    {{- if .Get "behavior"}}{{- $behavior =  .Get "behavior" -}}{{- end -}}
 {{- else -}}
     {{- $group = .Get 0 -}}
     {{- if .Get 1 -}}{{- $name = .Get 1 -}}{{- end -}}
@@ -16,6 +32,11 @@
 {{- if .Inner -}}
   {{- $label = .Inner -}}
 {{- end -}}
-<span class='section-selector' data-section-group='{{- $group -}}' data-section-name='{{- $name -}}' data-section-behavior='{{- $behavior -}}'>
-    {{- $label | .Page.RenderString -}}
+{{- if or (not $group) (not $name) -}}
+  {{- errorf "section-selector: both `group` and `name` are required (%s)" .Position -}}
+{{- end -}}
+<span class='section-selector' role='button' tabindex='0' aria-pressed='false' data-section-group='{{- $group -}}' data-section-name='{{- $name -}}'>
+    <span class='section-selector__label'>{{ $label | .Page.RenderString }}</span>
+    {{- if $recommended }}<span class='section-selector__badge'>{{ i18n "recommended" }}</span>{{ end -}}
+    {{- with $description }}<span class='section-selector__note'>{{ . | $.Page.RenderString }}</span>{{ end -}}
 </span>

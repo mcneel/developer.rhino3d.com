@@ -1,7 +1,18 @@
+{{/*
+    section — a body opened by a {{< section-selector >}} of the same group.
+
+    Params (named, or positional group/name):
+      group  (required) the group ("step") this body belongs to
+      name   (required) the id a selector points at, and the URL fragment
+             segment used to link straight to this step
+
+    Hidden until script/section-wizard.js takes over, which moves every
+    section of a group into that group's wizard panel.
+*/}}
 {{- $label := "Section Body" -}}
 {{- $name := "" -}}
 {{- $group := "" -}}
-{{- if .IsNamedParams -}}    
+{{- if .IsNamedParams -}}
     {{- if .Get "name"}}{{- $name =  .Get "name" -}}{{- end -}}
     {{- if .Get "group"}}{{- $group =  .Get "group" -}}{{- end -}}
     {{- if .Get "label"}}{{- $label =  .Get "label" -}}{{- end -}}
@@ -13,6 +24,10 @@
 {{- if .Inner -}}
   {{- $label = .Inner -}}
 {{- end -}}
+{{- if or (not $group) (not $name) -}}
+  {{- errorf "section: both `group` and `name` are required (%s)" .Position -}}
+{{- end -}}
+{{- .Page.Store.Set "has_sections" true -}}
 <div class='section' style='display:none' data-group='{{ $group }}' data-name='{{ $name }}'>
     {{ $label | .Page.RenderString }}
 </div>

@@ -1,143 +1,95 @@
-{{- $.Scratch.Set "page" "" -}}
-{{- $.Scratch.Set "url" "" -}}
-{{- $.Scratch.Set "image" "" -}}
-{{- $.Scratch.Set "title" "" -}}
-{{- $.Scratch.Set "description" "" -}}
-{{- $.Scratch.Set "error" false -}}
-{{- $.Scratch.Set "error_message" "" -}}
+{{- /*
+  feature-card.html — a card for a page on this site (WWW-3694). It looks the
+  page up and reads its thumbnail, title and short description, so a feature
+  card picks up translated text and new artwork on its own; when the feature is
+  new or changed in the current Rhino version it shows the "what's new" summary
+  instead of the generic description.
 
-{{- if .IsNamedParams -}}
-    {{- if .Get "page" -}}
-        {{- $.Scratch.Set "page" (.Get "page") -}}
-    {{- else -}}
-        {{- $.Scratch.Set "error" true -}}
-        {{- $.Scratch.Set "error_message" "page is a required parameter" -}}
-    {{- end -}}
+    {{< card-gallery >}}
+    {{< feature-card page="/features/shrinkwrap/index.md" >}}
+    {{< /card-gallery >}}
 
-    {{/*  Optional Link override  */}}
-    {{- if .Get "url" -}}
-        {{- $.Scratch.Set "url" (.Get "url") -}}
-    {{- end -}}
+  Required arguments:
+    page         path to the page, e.g. "/features/shrinkwrap/index.md"
 
-    {{/*  Optional Image override  */}}
-    {{- if .Get "image" -}}
-        {{- $.Scratch.Set "image" (.Get "image") -}}
-    {{- end -}}
+  Optional arguments (each overrides what the page says):
+    url          link target                (default: the page's own URL)
+    title        card title                 (default: the page's title)
+    description  card text                  (default: the what's-new summary
+                 for the current Rhino version, else short_description)
+    image        thumbnail: a path under /images/, or a file name looked up
+                 first in the images/ folder next to the page holding the
+                 card, then in the target page's bundle
+                                            (default: the page's `thumbnail`)
 
-    {{/*  Optional Image override  */}}
-    {{- if .Get "title" -}}
-        {{- $.Scratch.Set "title" (.Get "title") -}}
-    {{- end -}}
-
-    {{/*  Optional Image override  */}}
-    {{- if .Get "description" -}}
-        {{- $.Scratch.Set "description" (.Get "description") -}}
-    {{- end -}}
+  The box is not this shortcode's business: it builds the body — picture,
+  linked title, description — and hands it to partials/card-container.html,
+  the same partial the {{< card-container >}} shortcode renders through, so a
+  feature card is the same card as every other card on the site. Styles:
+  assets/scss/_shortcodes/_card.scss. Sits in a {{< card-gallery >}} grid.
+*/ -}}
+{{- $error := "" -}}
+{{- if not .IsNamedParams -}}
+  {{- $error = "Not using named params." -}}
+{{- else if not (.Get "page") -}}
+  {{- $error = "page is a required parameter" -}}
+{{- end -}}
+{{- if $error -}}
+<span class="shortcode-error">Error: {{ $error }}<br>Shortcode usage: &lbrace;&lbrace;&lt; feature-card page=[path-to-page] &gt;&rbrace;&rbrace;</span>
 {{- else -}}
-    {{- $.Scratch.Set "error" true -}}
-    {{- $.Scratch.Set "error_message" "Not using named params." -}}
+{{- with .Site.GetPage (.Get "page") -}}
+{{- $page := . -}}
+{{- $latest := int $.Site.Params.latestRhinoVersion -}}
+{{- $link := $.Get "url" | default .RelPermalink -}}
+{{- $title := $.Get "title" | default .Title -}}
+
+{{- /* Description: the full short_description while the feature is brand new
+       in this version, otherwise a 75-character teaser — of the what's-new
+       summary if the page has one for this version, else of the generic
+       short description. */ -}}
+{{- $description := "" -}}
+{{- if eq $latest (int .Params.included_in.since) -}}
+  {{- $description = .Params.short_description -}}
+{{- else -}}
+  {{- $summary := "" -}}
+  {{- with .Params.whats_new -}}
+    {{- with index . (printf "in_v%d_summary" $latest) -}}
+      {{- $summary = . -}}
+    {{- end -}}
+  {{- end -}}
+  {{- $description = truncate 75 (cond (ne $summary "") $summary .Params.short_description) -}}
+{{- end -}}
+{{- with $.Get "description" }}{{ $description = . }}{{ end -}}
+
+{{- /* Thumbnail, cropped to the media slot's 16:9. Either a file in the global
+       /images/ folder or a bundle resource: an `image` override is looked for
+       first in the images/ folder of the page holding the card, so card
+       artwork can live next to the cards, then in the target page's bundle.
+       An SVG is used as is (it cannot be resized), so draw it at 16:9. */ -}}
+{{- $thumbnail := "" -}}
+{{- with $.Get "image" | default .Params.thumbnail -}}
+  {{- $image := "" -}}
+  {{- if hasPrefix . "/images/" -}}
+    {{- $image = resources.Get . -}}
+  {{- else -}}
+    {{- if $.Get "image" -}}
+      {{- $image = $.Page.Resources.GetMatch (printf "images/%s" .) -}}
+    {{- end -}}
+    {{- if not $image -}}
+      {{- $image = $page.Resources.GetMatch . -}}
+    {{- end -}}
+  {{- end -}}
+  {{- with $image }}{{ if eq (lower (path.Ext .Name)) ".svg" }}{{ $thumbnail = . }}{{ else }}{{ $thumbnail = .Fill "800x450 Center" }}{{ end }}{{ end -}}
 {{- end -}}
 
-{{- if ($.Scratch.Get "error") -}}
-<span class="shortcode-error">Error: {{ $.Scratch.Get "error_message" }}<br>Shortcode usage: &lbrace;&lbrace;&lt; feature-card page=[path-to-page] &gt;&rbrace;&rbrace;</span>
-{{- else -}}
-    {{ with .Site.GetPage ($.Scratch.Get "page") }}
-        {{ $new_feature := (eq (int .Site.Params.latestRhinoVersion) (int .Params.included_in.since)) }}
-        {{ $.Scratch.Set "new_feature" "false" }}
-        {{- if $new_feature -}}
-            {{ $.Scratch.Set "new_feature" "true" }}
-        {{- else -}}
-            {{ $.Scratch.Set "updated_feature" "false" }}
-            {{ if (eq (int .Site.Params.latestRhinoVersion) (int "7")) }}
-                {{- with .Params.whats_new.in_v7_summary -}}
-                    {{ $.Scratch.Set "latest_update" . }}
-                    {{ $.Scratch.Set "updated_feature" "true" }}
-                {{- end -}}
-            {{- end -}}
-            {{ if (eq (int .Site.Params.latestRhinoVersion) (int "8")) }}
-                {{- with .Params.whats_new.in_v8_summary -}}
-                    {{ $.Scratch.Set "latest_update" . }}
-                    {{ $.Scratch.Set "updated_feature" "true" }}
-                {{- end -}}
-            {{- end -}}
-            {{ if (eq (int .Site.Params.latestRhinoVersion) (int "9")) }}
-                {{- with .Params.whats_new.in_v9_summary -}}
-                    {{ $.Scratch.Set "latest_update" . }}
-                    {{ $.Scratch.Set "updated_feature" "true" }}
-                {{- end -}}
-            {{- end -}}
-        {{- end -}}
-
-        <div class="card card-linked">
-            {{ $.Scratch.Set "page_link" .RelPermalink }}
-            {{- if ($.Scratch.Get "url") -}}
-                {{ $.Scratch.Set "page_link" ($.Scratch.Get "url") }}
-            {{- end -}}
-
-            {{ $.Scratch.Set "page_title" .Title }}
-            {{- if ($.Scratch.Get "title") -}}
-                {{ $.Scratch.Set "page_title" ($.Scratch.Get "title") }}
-            {{- end -}}
-
-            {{ $.Scratch.Set "page_description" .Params.short_description }}
-            {{ if (eq ($.Scratch.Get "new_feature") "true") }}
-                {{ $.Scratch.Set "page_description" .Params.short_description }}
-            {{ else if (eq ($.Scratch.Get "updated_feature") "true") }}
-                {{ $.Scratch.Set "page_description" ( truncate 75 ( $.Scratch.Get "latest_update" ) ) }}
-            {{ else }}
-                {{ $.Scratch.Set "page_description" ( truncate 75 .Params.short_description ) }}
-            {{ end }}
-            {{- if ($.Scratch.Get "description") -}}
-                {{ $.Scratch.Set "page_description" ($.Scratch.Get "description") }}
-            {{- end -}}
-
-            {{- if ($.Scratch.Get "image") -}}
-                {{ if hasPrefix ($.Scratch.Get "image") "/images/" }}
-                    {{/*  Global image folder  */}}
-                    {{- $image := resources.Get ($.Scratch.Get "image") -}}
-                    {{ $thumbnail := $image.Fill "800x450 Center" }}
-                    {{ with $thumbnail }}
-                        <a href="{{ $.Scratch.Get "page_link" }}"><img src="{{ .RelPermalink }}" alt="{{ . }}" style="width:100%"></a>
-                    {{ end }}
-                {{ else }}
-                    {{/*  Page bundle  */}}
-                    {{ with .Resources.GetMatch ( printf "%s" ($.Scratch.Get "image") ) }}
-                        {{ $thumbnail := .Fill "800x450 Center" }}
-                        {{ with $thumbnail }}
-                            <a href="{{ $.Scratch.Get "page_link" }}"><img src="{{ .RelPermalink }}" alt="{{ . }}" style="width:100%"></a>
-                        {{ end }}
-                    {{ end }}
-                {{ end }}
-            {{ else }}
-                {{ $.Scratch.Set "has-thumbnail" "false" }}
-                {{- with .Params.thumbnail -}}
-                {{ $.Scratch.Set "has-thumbnail" "true" }}
-                {{- end -}}
-                {{ if eq ($.Scratch.Get "has-thumbnail") "true" }}
-                    {{ if hasPrefix .Params.Thumbnail "/images/"}}
-                        {{/*  Global image folder  */}}
-                        {{- $image := resources.Get .Params.Thumbnail -}}
-                        {{ $thumbnail := $image.Fill "800x450 Center" }}
-                        {{ with $thumbnail }}
-                                <a href="{{ $.Scratch.Get "page_link" }}"><img src="{{ .RelPermalink }}" alt="{{ . }}" style="width:100%"></a>
-                        {{ end }}
-                    {{ else }}
-                        {{/*  Page bundle  */}}
-                        {{ with .Resources.GetMatch ( printf "%s" .Params.thumbnail) }}
-                            {{ $thumbnail := .Fill "800x450 Center" }}
-                            {{ with $thumbnail }}
-                                <a href="{{ $.Scratch.Get "page_link" }}"><img src="{{ .RelPermalink }}" alt="{{ . }}" style="width:100%"></a>
-                            {{ end }}
-                        {{ end }}
-                    {{ end }}
-                {{ end }}
-            {{- end -}}
-            <div class="card-container">
-                <h1><a class="card-link" href="{{ $.Scratch.Get "page_link" }}">{{ $.Scratch.Get "page_title" }}</a></h1>
-                <p>{{ $.Scratch.Get "page_description" }}</p>
-            </div>
-        </div>
-    {{ end }}
+{{- /* Picture, linked title, description — the body an author would write by
+       hand in {{< card-container >}}; the box partial turns that position into
+       the media, title and text slots. */ -}}
+{{- partial "card-container.html" (dict "inner" (partial "card-page-body.html" (dict
+      "link" $link
+      "title" $title
+      "description" $description
+      "thumbnail" $thumbnail))
+      "class" "rh-card-tile") -}}
 {{- end -}}
-
-
+{{- end -}}

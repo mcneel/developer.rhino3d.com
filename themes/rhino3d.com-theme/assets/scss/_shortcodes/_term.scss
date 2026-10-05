@@ -1,0 +1,117 @@
+// ==============================
+// {{< term >}} shortcode — a named thing plus its definition
+// ==============================
+// The link is always rendered. The question-mark button and the definition
+// panel depend on the HTML popover API, which puts the panel in the top layer
+// where no overflow-hidden ancestor (the section wizard's viewport, say) can
+// clip it. The feature query is interpolated because the SCSS compiler here
+// (libsass) cannot parse `selector()` in an @supports condition. Browsers without popover support show the link alone: both pieces
+// stay hidden, so nothing renders that cannot work.
+
+.term {
+	white-space: nowrap;   // keeps the button from wrapping away from its term
+
+	&__link {
+		white-space: normal;
+	}
+
+	&__toggle {
+		display: none;
+	}
+
+	&__panel {
+		display: none;
+	}
+}
+
+@supports #{'selector(:popover-open)'} {
+	.term__toggle {
+		display: inline-flex;
+		align-items: center;
+		justify-content: center;
+		width: 1.25em;
+		height: 1.25em;
+		margin-left: 0.25em;
+		padding: 0;
+		border: 1px solid currentColor;
+		border-radius: 50%;
+		background: transparent;
+		color: $global-link-color;
+		font-family: inherit;
+		font-size: 0.75em;
+		line-height: 1;
+		vertical-align: 0.15em;
+		cursor: pointer;
+
+		&:hover {
+			background-color: rgba($global-link-color, 0.1);
+		}
+
+		&:focus-visible {
+			outline: 2px solid $global-link-color;
+			outline-offset: 1px;
+		}
+	}
+
+	.term__panel:popover-open {
+		display: block;
+		// Padding counts toward the cap below, or the panel runs off a phone.
+		box-sizing: border-box;
+		// Keeps a gutter on a phone, where 28em is wider than the screen.
+		max-width: #{'min(28em, calc(100vw - 2rem))'};
+		margin: auto;
+		padding: 14px 18px;
+		border: 1px solid rgba(0, 0, 0, 0.15);
+		border-radius: 8px;
+		background: #ffffff;
+		box-shadow: 0 6px 24px rgba(0, 0, 0, 0.18);
+		white-space: normal;
+		text-align: left;
+	}
+
+	.term__panel::backdrop {
+		background: transparent;
+	}
+
+	.term__panel-title {
+		display: block;
+		margin-bottom: 0.25em;
+		font-weight: 700;
+	}
+
+	.term__panel-body {
+		display: block;
+		font-size: 0.95em;
+		line-height: 1.5;
+	}
+
+	.term__panel-link {
+		display: inline-block;
+		margin-top: 0.6em;
+		font-size: 0.9em;
+	}
+}
+
+// modern_style pages: the panel borrows the theme's hairline and type.
+.modern-guide {
+	@supports #{'selector(:popover-open)'} {
+		.term__toggle {
+			color: var(--rh-red-600);
+		}
+
+		.term__panel:popover-open {
+			border-color: var(--rh-border);
+			border-radius: 10px;
+			font-family: var(--rh-font-body);
+		}
+
+		.term__panel-title {
+			font-family: var(--rh-font-display);
+			color: var(--rh-ink);
+		}
+
+		.term__panel-body {
+			color: var(--rh-ink-body);
+		}
+	}
+}

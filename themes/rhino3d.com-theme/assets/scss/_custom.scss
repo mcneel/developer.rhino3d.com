@@ -508,6 +508,12 @@ li .new-callout-bullet {
 	border: 1px solid $global-medium-grey;
 }
 
+// Dark backing for artwork made for dark backgrounds (transparent light-on-dark
+// logos). Usage: {{< figure src="…" class="figure-bordered figure-dark" >}}
+.figure-dark {
+	background-color: $global-background-color-dark;
+}
+
 .figure-no-margins {
 	margin: 0;
 	display: block;
@@ -528,16 +534,7 @@ li .new-callout-bullet {
 	padding-top: 50px;
 }
 
-.section-selector {
-	color: $global-link-color;
-	&:hover {
-		text-decoration: underline;
-		cursor: pointer;
-	}
-}
-.section-selector.selected {
-	background-color: yellow;
-}
+// .section-selector / .section: see _shortcodes/_section-wizard.scss
 
 /*
 ##############################################################################
@@ -705,6 +702,20 @@ table.multiline-middle img{
 	text-align: center;
 	min-width: 1.2em;
     padding: .1em;
+}
+
+/* {{< badge outline="true" >}}: bordered pill with colored text, e.g. a course
+   level. --badge-color is set by the shortcode from its background param. */
+.badge-btn.badge-outline {
+	color: var(--badge-color, #900);
+	background: transparent;
+	border: 1px solid var(--badge-color, #900);
+	border-radius: 4px;
+	padding: .15em .6em;
+	font-size: 12px;
+	letter-spacing: .02em;
+	text-transform: uppercase;
+	vertical-align: middle;
 }
 
 .keyboard-btn {

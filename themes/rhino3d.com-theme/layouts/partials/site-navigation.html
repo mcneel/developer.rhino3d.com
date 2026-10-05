@@ -36,43 +36,64 @@
 
     <!-- The Horizontal textual menu items -->
     <div class="menu-items" id="theMenuItems">
+      {{/* WWW-3627: an entry whose identifier another entry names as its
+           `parent` in the config gets that entry as a child, and renders as a
+           dropdown group instead of a plain link. Menus with no nesting are
+           unaffected — they still emit the same bare <a class="menu-item">.
+           Styles: assets/scss/_partial/_nav-submenu.scss. */}}
       {{- range .Site.Menus.main -}}
-        {{- $url := .URL -}}
-        {{- with .Page -}}
-            {{- $url = .RelPermalink -}}
+        {{- if .HasChildren -}}
+          <span class="menu-item-group">
+            {{- partial "nav-menu-link.html" (dict "entry" . "page" $ "class" "menu-item menu-item-parent") -}}
+            <i class="fas fa-caret-down menu-item-caret" aria-hidden="true"></i>
+            <ul class="menu-submenu">
+              {{- range .Children -}}
+                <li>{{- partial "nav-menu-link.html" (dict "entry" . "page" $ "class" "menu-subitem") -}}</li>
+              {{- end -}}
+            </ul>
+          </span>
+        {{- else -}}
+          {{- partial "nav-menu-link.html" (dict "entry" . "page" $ "class" "menu-item") -}}
         {{- end -}}
-        {{ $.Scratch.Set "target" "_self" }}
-        {{ if (or (in $url "rhino3d.com") (hasPrefix $url "/")) }}
-          {{ $.Scratch.Set "target" "_self" }}
-        {{ else }}
-          {{ $.Scratch.Set "target" "_blank" }}
-        {{ end }}
-        <a class="menu-item{{ if $.IsMenuCurrent `main` . | or ($.HasMenuCurrent `main` .) | or (eq $.RelPermalink $url) }} active{{ end }}" href="{{ $url }}"{{ with .Title }}title="{{ . }}"{{ end }} target="{{ $.Scratch.Get "target" }}">
-        {{- .Pre | safeHTML }}{{ .Name }}{{ .Post | safeHTML -}}
-        </a>
       {{- end -}}
       {{- if .Site.Params.supportsLogin -}}
-        <span class="logged_in" style="height: 24px">
+        {{/* WWW-3684: "my account" is a link in the menu row itself, not only
+             an item inside the avatar dropdown. Users did not know the avatar
+             was clickable, and it can come up as an empty circle, which left
+             no visible way to reach the account page or sign out. Styles and
+             the avatar fallback glyph: assets/scss/_partial/_nav-account.scss.
+             rhino.js swaps the .logged_in / .logged_out pair once it has read
+             the Rhino Accounts session cookie. */}}
+        <span class="logged_in">
+          <a href="{{ .Site.Params.rhinoURL }}/my-account/" title="{{ i18n "logged-in-title" }}">{{ i18n "my-account" }}</a>
+        </span>
+
+        <span class="logged_in nav-account-avatar">
           <label class="nav-dropdown">
 
-            <a class="dd-button" style="background-image: url('https://upload.wikimedia.org/wikipedia/commons/5/59/User-avatar.svg')">
-              <div style="width: 100%; height: 100%;">
-                <img class = "avatar" src="https://www.rhino3d.com/user/avatar/" alt="User Avatar">
-              </div>
+            {{/* The avatar endpoint is served from the site root, so it does
+                 not take rhinoURL — that carries the language prefix the
+                 account page needs (.../it, .../de).
+                 The image itself is decorative — the "my account" link beside
+                 it already names this control — so alt is empty. That also
+                 keeps a failed load from painting alt text over the fallback
+                 glyph; rhino.js hides the image outright in that case. */}}
+            <a class="dd-button" title="{{ i18n "logged-in-title" }}">
+              <img class="avatar" src="https://www.rhino3d.com/user/avatar/" alt="">
             </a>
-          
+
             <input type="checkbox" class="dd-input" id="nav-avatar">
-          
+
             <ul class="dd-menu">
-              <li onclick="toAccount()">
-                <a>{{ i18n "my-account" }}</a>
+              <li>
+                <a href="{{ .Site.Params.rhinoURL }}/my-account/">{{ i18n "my-account" }}</a>
               </li>
               <li class="divider"></li>
               <li onclick="logout()">
                 <a>{{ i18n "sign-out" }}</a>
               </li>
             </ul>
-            
+
           </label>
         </span>
 
@@ -107,10 +128,6 @@
           else{
           console.log("not logged in");
           }
-  }
-
-  const toAccount = () => {
-    window.location.href = "/my-account";
   }
 
   //Click away

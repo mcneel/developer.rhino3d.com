@@ -1,0 +1,17 @@
+{{- /*
+  rhino-cards-script.html — loads the <rhino-cards> web component once per
+  page. Called by the rhino-cards shortcode; pass the page (.Page) so the
+  once-only guard lives in the page store.
+
+  The module is built and published by mcneel/rhino3d.com-vue
+  (`npm run build:cards`, deployed to /webcomponents/v1/rhino-cards.mjs and
+  cached ten minutes by the proxy). `v1` changes only when the element's
+  attributes or the feed contract change incompatibly. For local work
+  against a dev build, point `[params] rhinoCardsScript` in a config
+  environment at another URL.
+*/ -}}
+{{- if not (.Store.Get "rhino-cards-script") -}}
+{{- .Store.Set "rhino-cards-script" true -}}
+{{- $url := .Site.Params.rhinoCardsScript | default (printf "%s/webcomponents/v1/rhino-cards.mjs" .Site.Params.rhinoURL) }}
+<script type="module" src="{{ $url }}"></script>
+{{- end -}}

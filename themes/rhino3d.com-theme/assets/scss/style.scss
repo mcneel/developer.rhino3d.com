@@ -11,6 +11,7 @@
 
 @import "twentytwenty/twentytwenty";
 @import "hugo-easy-gallery/hugo-easy-gallery";
+@import "_shortcodes/_gallery-hover-card";
 
 @import "fontawesome/fontawesome.scss";
 @import "fontawesome/solid.scss";
@@ -20,11 +21,16 @@
 @import "_page/home";
 @import "_page/support";
 @import "_page/download";
+@import "_page/check-for-updates";
 @import "_page/scripting";
 
 @import "_mixin/index";
 
 @import "_partial/header";
+/* Navbar account control. Imported here rather than with the rest of the
+   navbar in _core/navigation because it needs Font Awesome above. */
+@import "_partial/nav-account";
+@import "_partial/nav-submenu";
 @import "_partial/search";
 @import "_partial/footer";
 @import "_partial/pagination";
@@ -40,7 +46,10 @@
 @import "_shortcodes/_left-selector-cards";
 @import "_shortcodes/_link-card";
 @import "_shortcodes/_tabs";
+@import "_shortcodes/_testimonial";
 @import "_shortcodes/_link-select";
+@import "_shortcodes/_section-wizard";
+@import "_shortcodes/_term";
 
 /* Placed here to override the partial card style in the learn page galleries */
 /* TODO:: Dan wants to fix Card styling so this is not neccesary. */
@@ -59,6 +68,19 @@
 // content). Scoped under .modern-guide; imported after _custom for the same
 // cascade reason.
 @import "_page/modern-style";
+
+// {{< card-container >}} / {{< checklist >}} / {{< button >}} and card-gallery's
+// `columns` grid. After modern-style so the fixed-column grid rule outranks
+// its auto-fill .gallery-container rule.
+@import "_shortcodes/_card";
+@import "_shortcodes/_button";
+@import "_shortcodes/_subscribe";
+// {{< call-out type="accordion" >}}: after modern-style, whose .call-out reset
+// it has to outrank at equal specificity.
+@import "_shortcodes/_call-out-accordion";
+// {{< segmented >}}: after modern-style, which is where the shortcode's own
+// <style> block used to sit in the cascade (last, in the body).
+@import "_shortcodes/_segmented";
 
 /* Static (collapsed-by-default) navbar for sites with navBarShouldResize = false.
    Must come before the site override so sites can still re-tune it. */

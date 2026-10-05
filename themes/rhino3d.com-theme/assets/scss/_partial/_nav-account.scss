@@ -1,0 +1,71 @@
+// ==============================
+// Navbar account control
+// ==============================
+// The "my account" / "sign in" links and the avatar dropdown at the right end
+// of .menu-items (partials/site-navigation.html, gated on supportsLogin).
+//
+// The dropdown's own structure (.nav-dropdown, .dd-button, .dd-menu, .avatar)
+// lives with the rest of the navbar in _core/_navigation.scss. This file holds
+// the parts that need Font Awesome, which style.scss imports after
+// _core/navigation, plus the geometry for the restored link (WWW-3684).
+
+// Two adjacent .logged_in items — the "my account" link and the avatar
+// dropdown — read as one account control, so only the first takes the extra
+// gap that separates the control from the last menu link. The pair itself sits
+// at the row's own 25px gap. Desktop only; the mobile overlay stacks them.
+@media screen and (min-width: $global-mobile-maxwidth + 1) {
+	.menu-items .logged_in + .logged_in {
+		margin-left: 0;
+	}
+}
+
+// Pin the avatar to its own 24px so it cannot stretch to the menu row and
+// change the navbar height between login states (WWW-3377).
+//
+// The fixed height is also what vertically aligns the avatar: a flex item
+// with a definite cross size takes cross-start instead of stretching, so the
+// 24px circle lands on the row's top edge — the same place the menu links'
+// 24px line box (16px type at the 1.5 line height) starts. Their centers
+// coincide there, and that in turn lines up with the search icon, which the
+// logo row centers one row above. Do NOT "fix" this with align-self: center;
+// that centers the circle in the row's 31px min-height instead and drops it
+// 3.5px below the text and the search icon.
+.nav-account-avatar {
+	height: 24px;
+}
+
+.dd-button {
+	// Positioning context for the fallback glyph below
+	position: relative;
+
+	// Fallback for the avatar image. /user/avatar/ has no image to serve for
+	// every account, and can be blocked outright, which used to leave the
+	// dropdown as an empty 24px circle: nothing visible to click, and so no
+	// way to reach the account page or sign out (WWW-3684). This glyph is
+	// painted behind the <img> and shows through whenever the image is
+	// missing — rhino.js hides an <img> that fails to load, and a loaded
+	// avatar is opaque and covers the glyph. Inherits #navbar a's color, so
+	// it matches the menu links and dims with .dd-button:hover.
+	&::before {
+		@extend %fa-icon;
+		@extend .fas;
+		content: fa-content($fa-var-user-circle);
+		position: absolute;
+		top: 0;
+		left: 0;
+		z-index: 0;
+		width: 100%;
+		// Fill the 24px button; .dd-button's overflow: hidden clips any
+		// overshoot in the glyph's em box.
+		font-size: 24px;
+		line-height: 1;
+		text-align: center;
+	}
+}
+
+// Keep the avatar above the fallback glyph. Both are positioned, so without
+// this the absolutely positioned ::before would paint over the static image.
+.avatar {
+	position: relative;
+	z-index: 1;
+}

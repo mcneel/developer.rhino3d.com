@@ -1,0 +1,143 @@
+//
+// {{< segmented >}} — two-way segmented control (the homepage's
+// "New License / Upgrade" switch, the Windows / Mac switches in the
+// deployment and LAN Zoo guides).
+//
+// Moved here from the inline <style> block the shortcode used to emit, so the
+// rules land once in the stylesheet instead of once per control: several
+// controls on one page are now supported (WWW-3776).
+//
+// Every rule below is scoped to .segmented-controls and structural within it
+// (:first-of-type / :last-of-type / sibling combinators), so each control
+// styles itself independently of the others on the page.
+//
+
+//
+// Container
+//
+.segmented-controls {
+  display: flex;
+  margin: 0 auto;
+  position: relative;
+  overflow: hidden;
+  transition: all 0.3s ease;
+  max-width: 100%;
+  width: 300px;
+  z-index: 0;
+
+  border-radius: 0.5rem;
+  background: #e2e2e9;
+  height: 2rem;
+  padding: 0.125rem;
+}
+
+//
+// Visually hidden radio buttons
+//
+.segmented-controls input {
+  position: absolute !important;
+  height: 1px;
+  width: 1px;
+  overflow: hidden;
+  clip: rect(1px, 1px, 1px, 1px);
+  white-space: nowrap;
+}
+
+//
+// Labels need to be the same size
+//
+.segmented-controls label {
+  grid-row: 1;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  text-align: center;
+  cursor: pointer;
+  flex: 1 1 0px;
+  position: relative;
+  z-index: 2;
+  transition: inherit;
+
+  font-size: 0.8125rem;
+  font-family: -apple-system, BlinkMacSystemFont, sans-serif;
+  font-weight: 500;
+  line-height: 1;
+}
+
+//
+// Adjust z-index of the last label since it contains the paddle, which needs
+// to sit beneath all the other labels.
+//
+.segmented-controls label:last-of-type {
+  z-index: 1;
+}
+
+//
+// Paddle
+//
+.segmented-controls label:last-of-type::after {
+  content: "";
+  position: absolute;
+  top: 0;
+  right: 0;
+  bottom: 0;
+  left: 0;
+  z-index: -2;
+  transition: inherit;
+
+  background: white;
+  border-radius: 0.4275rem;
+  border: 0.5px solid rgba(0, 0, 0, 0.04);
+  box-shadow: 0px 3px 1px rgba(0, 0, 0, 0.04), 0px 3px 8px rgba(0, 0, 0, 0.12);
+}
+
+// Paddle slides left when the first of the two radios is the checked one.
+.segmented-controls input:nth-last-of-type(2):checked ~ label:last-of-type::after {
+  transform: translateX(-100%);
+}
+
+//
+// Dividers
+//
+.segmented-controls label:not(:first-of-type)::before {
+  content: "";
+  position: absolute;
+  z-index: -3;
+  top: 0.5rem;
+  left: 0;
+  bottom: 0.5rem;
+  width: 1px;
+  background: rgba(0, 0, 0, 0.15);
+  transition: inherit;
+}
+
+//
+// Selected option
+//
+.segmented-controls input:checked + label {
+  font-weight: 600;
+  font-size: 0.875rem;
+}
+
+//
+// Hide the dividers before and after the selected option
+//
+.segmented-controls input:checked + label::before,
+.segmented-controls input:checked + label + input + label::before {
+  opacity: 0;
+}
+
+//
+// Link mode: the anchor fills its label so any click navigates. Inherits the
+// label's color (modern-style would paint anchors red).
+//
+.segmented-controls label a,
+.segmented-controls label a:hover {
+  flex: 1 1 auto;
+  align-self: stretch;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  color: inherit;
+  text-decoration: none;
+}

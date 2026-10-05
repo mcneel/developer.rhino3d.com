@@ -1,0 +1,80 @@
+{{- /*
+  card-container.html — the card box (WWW-3676, WWW-3694, WWW-3695).
+
+  Everything that draws a card goes through here: the {{< card-container >}}
+  shortcode (body authored in markdown), feature-card and market-card (body
+  built from a page's front matter). One code path, so a page card and a
+  hand-written card can never drift apart.
+
+  The caller hands over rendered HTML for the body; this partial applies the
+  position-to-slot rules the stylesheet expects and wraps the result in the
+  box:
+    - every heading keeps its level and gets class="rh-card-heading"
+      data-toc="skip", which partials/toc-inner drops before its scrape;
+    - if the first heading is a link, or the first block is a linked picture,
+      that anchor is stretched over the whole card (.rh-card-link);
+    - `link` adds an overlay anchor instead, for a card with no linked title.
+  Which block is the media, the icon or the pinned footer is decided in CSS
+  from position alone: assets/scss/_shortcodes/_card.scss.
+
+    {{ partial "card-container.html" (dict "inner" $html "border" "none") }}
+
+  Keys:
+    inner       rendered HTML for the body (required)
+    link        URL: makes the whole card clickable
+    radius      none | small | medium (default) | large
+    border      thin (default) | none | accent
+    shadow      none (default) | always
+    padding     none | small | medium (default) | large   (body; media flush)
+    background  white (default) | gray | transparent
+    hover       none | shadow | lift | accent. Default: shadow when the card
+                is clickable, none otherwise.
+    class       extra class names
+
+  Values are not validated here — the caller does that, so the error names the
+  shortcode the author actually wrote.
+*/ -}}
+{{- $inner := .inner | default "" -}}
+{{- $link := .link | default "" -}}
+{{- $radius := .radius | default "medium" -}}
+{{- $border := .border | default "thin" -}}
+{{- $shadow := .shadow | default "none" -}}
+{{- $padding := .padding | default "medium" -}}
+{{- $background := .background | default "white" -}}
+{{- $class := .class | default "" -}}
+{{- /* render-heading.html (untrimmed template) leaves runs of whitespace-only
+       lines before every heading; squash them so the card survives a wrapping
+       shortcode's markdown pass (goldmark ends an HTML block at a blank line). */ -}}
+{{- $inner = replaceRE `\n(?:[ \t]*\n)+` "\n" (string $inner) -}}
+{{- $inner = replaceRE `<h([1-6])(\s[^>]*)?>` `<h${1} class="rh-card-heading" data-toc="skip"${2}>` $inner -}}
+{{- /* First heading: its text names an overlay link; if it IS a link, that
+       anchor becomes the stretched whole-card link. */ -}}
+{{- $title := "" -}}
+{{- $linkedInside := false -}}
+{{- with index (findRE `(?s)<h[1-6] class="rh-card-heading"[^>]*>.*?</h[1-6]>` $inner 1) 0 -}}
+  {{- $title = trim (plainify .) " \t\r\n" -}}
+  {{- if findRE `(?s)^<h[1-6][^>]*>\s*<a\s` . -}}
+    {{- $linkedInside = true -}}
+    {{- $inner = replace $inner . (replaceRE `<a\s` `<a class="rh-card-link" ` . 1) 1 -}}
+  {{- end -}}
+{{- end -}}
+{{- /* A linked picture as the first block also links the whole card. */ -}}
+{{- with index (findRE `(?s)^\s*<p>\s*<a\s[^>]*>\s*<img[^>]*>\s*</a>\s*</p>` $inner 1) 0 -}}
+  {{- $linkedInside = true -}}
+  {{- $inner = replace $inner . (replaceRE `<a\s` `<a class="rh-card-link" ` . 1) 1 -}}
+{{- end -}}
+{{- $linked := or (ne $link "") $linkedInside -}}
+{{- $hover := .hover | default (cond $linked "shadow" "none") -}}
+{{- $classes := slice "rh-card" (printf "rh-card-radius-%s" $radius) (printf "rh-card-border-%s" $border) (printf "rh-card-pad-%s" $padding) (printf "rh-card-bg-%s" $background) -}}
+{{- if eq $shadow "always" }}{{ $classes = $classes | append "rh-card-shadow" }}{{ end -}}
+{{- if ne $hover "none" }}{{ $classes = $classes | append (printf "rh-card-hover-%s" $hover) }}{{ end -}}
+{{- if $linked }}{{ $classes = $classes | append "rh-card-linked" }}{{ end -}}
+{{- if ne $class "" }}{{ $classes = $classes | append $class }}{{ end -}}
+<div class="{{ delimit $classes " " }}">
+{{- if ne $link "" }}
+<a class="rh-card-link rh-card-overlay" href="{{ $link }}"{{ with $title }} aria-label="{{ . }}"{{ end }}></a>
+{{- end }}
+<div class="rh-card-body">
+{{ trim $inner "\n" | safeHTML }}
+</div>
+</div>

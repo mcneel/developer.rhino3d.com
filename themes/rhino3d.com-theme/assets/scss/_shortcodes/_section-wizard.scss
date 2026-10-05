@@ -1,0 +1,406 @@
+// ==============================
+// {{< section-selector >}} / {{< section >}} — stepped chooser
+// ==============================
+// script/section-wizard.js rewraps the flat shortcode output into a track of
+// full-width panels (WWW-3686). One panel is visible at a time; picking a
+// selector slides the track left, the back arrow slides it right.
+//
+// Everything is scoped under .section-wizard so the shortcodes degrade to
+// plain (hidden) content if the script never runs.
+
+$wizard-slide: 320ms;   // keep in sync with SLIDE_MS in section-wizard.js
+
+.section-selector {
+	color: $global-link-color;
+	border-bottom: 1px dotted currentColor;
+
+	&:hover,
+	&:focus {
+		text-decoration: none;
+		border-bottom-style: solid;
+		cursor: pointer;
+	}
+
+	&:focus-visible {
+		outline: 2px solid $global-link-color;
+		outline-offset: 2px;
+	}
+
+	&.selected {
+		font-weight: 600;
+		background-color: rgba($global-link-color, 0.12);
+		border-radius: 3px;
+		box-shadow: 0 0 0 3px rgba($global-link-color, 0.12);
+	}
+}
+
+// Marks the choice most people should take. Sits after the label, in the
+// eyebrow vocabulary the rest of the site uses for small labels.
+.section-selector__badge {
+	display: inline-block;
+	margin-left: 0.6em;
+	padding: 0.15em 0.5em;
+	border-radius: 3px;
+	background-color: rgba($global-link-color, 0.1);
+	color: $global-link-color;
+	font-size: 0.7em;
+	font-weight: 600;
+	letter-spacing: 0.06em;
+	text-transform: uppercase;
+	vertical-align: 0.12em;
+	white-space: nowrap;
+}
+
+// A second line under a choice's label: what the choice means, in the
+// muted weight and colour of supporting text.
+.section-selector__note {
+	display: block;
+	margin-top: 0.15rem;
+	color: var(--rh-ink-meta, #666666);
+	font-weight: 400;
+	font-size: 0.95em;
+	line-height: 1.4;
+}
+
+.section-wizard {
+	margin: 1rem 0 2rem;
+
+	&__nav {
+		min-height: 2rem;
+		margin-bottom: 0.6rem;
+	}
+
+	&__back {
+		display: inline-flex;
+		align-items: center;
+		gap: 0.5em;
+		max-width: 100%;
+		padding: 0.35em 0.75em 0.35em 0.5em;
+		border: 1px solid rgba(0, 0, 0, 0.15);
+		border-radius: 999px;
+		background: transparent;
+		color: $global-link-color;
+		font-size: 0.95rem;
+		line-height: 1.3;
+		text-align: left;
+
+		// A text arrow rather than a Font Awesome glyph: it sits inline with
+		// the label, so it should be in the same font, and it can never come
+		// out as a missing-glyph box if the icon font is slow or absent.
+		&::before {
+			content: "\2190";
+			font-size: 1.1em;
+			line-height: 1;
+		}
+
+		&:hover {
+			background-color: rgba(0, 0, 0, 0.04);
+			text-decoration: none;
+		}
+
+		&:focus-visible {
+			outline: 2px solid $global-link-color;
+			outline-offset: 2px;
+		}
+
+		&[hidden] {
+			display: none;
+		}
+	}
+
+	&__back-label {
+		overflow: hidden;
+		text-overflow: ellipsis;
+		white-space: nowrap;
+	}
+
+	&__viewport {
+		position: relative;
+		overflow: hidden;
+	}
+
+	&__track {
+		display: flex;
+		align-items: flex-start;
+		width: 100%;
+	}
+
+	&__panel {
+		flex: 0 0 100%;
+		width: 100%;
+		min-width: 0;
+		padding: 0 2px;   // room for the focus ring on edge elements
+
+		&:focus {
+			outline: none;
+		}
+
+		// Off-screen panels stay out of the tab order and off the
+		// accessibility tree, but keep their box so the slide has something
+		// to move.
+		&:not(.is-active) {
+			visibility: hidden;
+		}
+
+		// The first child of a panel starts the step, so drop the margin the
+		// theme puts above headings.
+		> :first-child,
+		> .section.is-active > :first-child {
+			margin-top: 0;
+		}
+	}
+
+	// A list of choices, in the opening step or inside one: each choice gets
+	// a row of its own, and the row is the target rather than the label.
+	&__choices {
+		list-style: none;
+		padding-left: 0;
+		margin-left: 0;
+	}
+
+	&__choice {
+		position: relative;
+		margin: 0 0 0.5rem;
+		padding: 0.7rem 2.4rem 0.7rem 1rem;
+		border: 1px solid rgba(0, 0, 0, 0.14);
+		border-radius: 6px;
+		cursor: pointer;
+		color: var(--rh-ink-meta, #666666);
+
+		// Aligned with the label rather than centred, so a row carrying its
+		// own detail points does not park the arrow halfway down.
+		&::after {
+			content: "\2192";
+			position: absolute;
+			top: 0.7rem;
+			right: 1rem;
+			color: $global-link-color;
+		}
+
+		&:hover {
+			background-color: rgba($global-link-color, 0.05);
+			border-color: rgba($global-link-color, 0.5);
+		}
+
+		&:focus-within {
+			border-color: $global-link-color;
+			box-shadow: 0 0 0 2px rgba($global-link-color, 0.25);
+		}
+
+		&.is-selected {
+			border-color: $global-link-color;
+			background-color: rgba($global-link-color, 0.06);
+		}
+
+		// The label is the choice's title, so keep the row's own padding off
+		// the note under it.
+		.section-selector__note {
+			margin-right: 1.4rem;
+		}
+
+		// The row carries the selected state, so the label inside it does not
+		// need its own highlight. The title keeps the link colour and picks up
+		// an underline with the row, so the row reads as the link it is.
+		.section-selector {
+			font-weight: 600;
+			border-bottom: 0;
+
+			&.selected {
+				background: none;
+				box-shadow: none;
+			}
+		}
+
+		// The label alone, not the explanation under it, carries the underline.
+		&:hover .section-selector__label,
+		&:focus-within .section-selector__label {
+			text-decoration: underline;
+		}
+
+		// The arrow leans toward the step it opens.
+		&:hover::after {
+			transform: translateX(2px);
+		}
+
+		&::after {
+			transition: transform 120ms ease;
+		}
+
+		// Detail under a choice: the sub-points of a lab option, say.
+		ul {
+			margin: 0.4rem 0 0;
+			font-size: 0.95em;
+		}
+	}
+
+	// Inside a step, an option leads its line, so let the label carry the
+	// weight and the sentence after it explain.
+	li > .section-selector:first-child {
+		font-weight: 600;
+	}
+
+	// The paragraph right under a step's heading says what this step is, as
+	// opposed to the choices or the numbered steps that follow it. Nothing in
+	// content marks it up, so translated pages get this as well.
+	.section > h3 + p {
+		max-width: 46em;
+		margin-bottom: 1.1rem;
+	}
+
+	// Only the picked section of a group is shown in its panel.
+	.section {
+		display: none;
+
+		&.is-active {
+			display: block;
+		}
+	}
+
+	// Animation is enabled once the initial state is painted, so a deep link
+	// does not slide in from the side on load.
+	&.is-ready {
+		.section-wizard__track {
+			transition: transform $wizard-slide ease;
+		}
+
+		.section-wizard__viewport {
+			transition: height $wizard-slide ease;
+		}
+	}
+}
+
+@media (prefers-reduced-motion: reduce) {
+	.section-wizard.is-ready {
+		.section-wizard__track,
+		.section-wizard__viewport {
+			transition: none;
+		}
+	}
+}
+
+// =====================================================
+// modern_style pages
+// =====================================================
+// On a `page_options.modern_style = true` page the wizard borrows that
+// theme's tokens (see _page/_modern-style.scss): Lato titles, hairline
+// borders, the gray-50 panel ground, red as the accent. The modern theme also
+// paints its own markers on every li (red dot / step number) and indents
+// them, so choice rows opt out of both.
+
+.modern-guide {
+	.section-wizard {
+		margin: 8px 0 40px;
+	}
+
+	.section-wizard__back {
+		border-color: var(--rh-border);
+		border-radius: 999px;
+		font-family: var(--rh-font-display);
+		font-size: 14px;
+		color: var(--rh-red-600);
+
+		&:hover {
+			background-color: var(--rh-gray-50);
+		}
+	}
+
+	.section-wizard__choices {
+		// Capped so the opening step's rows keep a readable length; inside a
+		// step the grid column is narrower than this anyway.
+		max-width: 760px;
+		margin: 18px 0;
+	}
+
+	.section-wizard__choice {
+		padding: 14px 44px 14px 18px;
+		border-color: var(--rh-border);
+		border-radius: 10px;
+
+		// Drop the theme's own list marker: the row is the marker.
+		&::before {
+			display: none;
+			content: none;
+		}
+
+		&::after {
+			top: 14px;
+			right: 18px;
+			color: var(--rh-red-600);
+		}
+
+		&:hover {
+			background-color: var(--rh-gray-50);
+			border-color: var(--rh-red-600);
+		}
+
+		&.is-selected {
+			background-color: var(--rh-gray-50);
+			border-color: var(--rh-border);
+			border-left: 3px solid var(--rh-red-600);
+			padding-left: 16px;
+		}
+
+		.section-selector {
+			font-family: var(--rh-font-display);
+			font-weight: 700;
+			font-size: 16px;
+			line-height: 1.4;
+			color: var(--rh-red-600);
+		}
+
+		.section-selector__badge {
+			background-color: var(--rh-red-50);
+			color: var(--rh-red-600);
+			font-family: var(--rh-font-body);
+		}
+
+		.section-selector__note {
+			margin-top: 4px;
+			font-family: var(--rh-font-body);
+			font-size: 15px;
+			line-height: 1.5;
+			color: var(--rh-ink-meta);
+		}
+
+		// Sub-points a choice brings with it keep the theme's red dots but sit
+		// in the note's size and colour.
+		ul {
+			font-size: 15px;
+			color: var(--rh-ink-meta);
+		}
+	}
+
+	// A step's opening paragraph becomes a note beside the step: what this
+	// option means, next to what to do about it. Below the theme's own
+	// breakpoint it goes back to sitting above the content.
+	@media only screen and (min-width: 981px) {
+		// `.is-active` matters: the plain `.section` selector here would beat
+		// the rule that keeps the other steps hidden.
+		.section-wizard .section.is-active {
+			display: grid;
+			grid-template-columns: minmax(0, 1fr) minmax(220px, 300px);
+			column-gap: 40px;
+			align-items: start;
+
+			> * {
+				grid-column: 1;
+			}
+
+			> h3 {
+				grid-column: 1 / -1;
+			}
+
+			> h3 + p {
+				grid-column: 2;
+				grid-row: 2 / span 100;
+				max-width: none;
+				margin: 0;
+				padding: 16px 20px;
+				background: var(--rh-gray-50);
+				border: 1px solid var(--rh-border);
+				border-left: 3px solid var(--rh-red-600);
+				border-radius: 10px;
+			}
+		}
+	}
+}

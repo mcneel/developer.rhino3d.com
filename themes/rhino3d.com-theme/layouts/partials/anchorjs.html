@@ -5,7 +5,8 @@
 	(function () {
 		'use strict';
 		anchors.options.placement = 'right';
-		anchors.add();
+		// skip headings appengine injects through the skin (.proxy-skin): they get stray ids and hover icons
+		anchors.add(':is(h2, h3, h4, h5, h6):not([data-toc="skip"]):not(.proxy-skin *)');
 		}
 	)();
 </script>

@@ -1,3 +1,25 @@
+{{- /*
+  call-out.html — titled box with an icon; the body is markdown.
+
+    {{< call-out type="tip" title="Shortcut" >}}Press F1.{{< /call-out >}}
+    {{< call-out warning "Heads up" >}}…{{< /call-out >}}          (positional: type, title, open)
+
+  Params: type   note (default) | abstract | info | tip | success | question |
+                 warning | failure | danger | bug | example | quote | new |
+                 accordion
+          title  default: the type's i18n name
+          open   every type is open unless open=false. `accordion` is the
+                 other way round: closed unless open=true.
+
+  type="accordion" is an FAQ item (WWW-3615, WWW-3624): a grey pill with a
+  red "+" that turns into a cross when opened, the answer underneath. It stays
+  collapsible on modern_style pages, where the other types are pinned open.
+  Stack several for an accordion.
+
+  Toggle: theme.js flips `.open` on click of .details-summary.
+  Styles: _partial/_call-out.scss, _page/_modern-style.scss (modern look),
+  _shortcodes/_call-out-accordion.scss (accordion type).
+*/ -}}
 {{- $inner := .Inner | .Page.RenderString -}}
 
 {{- $iconMap := dict "note" "fas fa-pencil-alt fa-fw" -}}
@@ -13,30 +35,29 @@
 {{- $iconMap  = dict "example" "fas fa-list-ol fa-fw" | merge $iconMap -}}
 {{- $iconMap  = dict "quote" "fas fa-quote-right fa-fw" | merge $iconMap -}}
 {{- $iconMap  = dict "new" "fas fa-plus fa-fw" | merge $iconMap -}}
+{{- $iconMap  = dict "accordion" "fas fa-plus fa-fw" | merge $iconMap -}}
 {{- $iconDetails := "fas fa-angle-right fa-fw" -}}
 
+{{- $type := "note" -}}
+{{- $title := "" -}}
+{{- $openParam := true -}}
 {{- if .IsNamedParams -}}
-    {{- $type := .Get "type" | default "note" -}}
-    <div class="details call-out {{ $type }}{{ if .Get `open` | ne false }} open{{ end }}">
-        <div class="details-summary call-out-title">
-            <i class="icon {{ index $iconMap $type | default (index $iconMap "note") }}"></i>{{ .Get "title" | default (T $type) }}<i class="details-icon {{ $iconDetails }}"></i>
-        </div>
-        <div class="details-content">
-            <div class="call-out-content">
-                {{- $inner -}}
-            </div>
-        </div>
-    </div>
+    {{- $type = .Get "type" | default "note" -}}
+    {{- $title = .Get "title" -}}
+    {{- $openParam = .Get "open" -}}
 {{- else -}}
-    {{- $type := .Get 0 | default "note" -}}
-    <div class="details call-out {{ $type }}{{ if .Get 2 | ne false }} open{{ end }}">
-        <div class="details-summary call-out-title">
-            <i class="icon {{ index $iconMap $type | default (index $iconMap "note") }}"></i>{{ .Get 1 | default (T $type) }}<i class="details-icon {{ $iconDetails }}"></i>
-        </div>
-        <div class="details-content">
-            <div class="call-out-content">
-                {{- $inner -}}
-            </div>
+    {{- $type = .Get 0 | default "note" -}}
+    {{- $title = .Get 1 -}}
+    {{- $openParam = .Get 2 -}}
+{{- end -}}
+{{- $open := cond (eq $type "accordion") (eq $openParam true) (ne $openParam false) -}}
+<div class="details call-out {{ $type }}{{ if $open }} open{{ end }}">
+    <div class="details-summary call-out-title">
+        <i class="icon {{ index $iconMap $type | default (index $iconMap "note") }}"></i>{{ $title | default (T $type) }}<i class="details-icon {{ $iconDetails }}"></i>
+    </div>
+    <div class="details-content">
+        <div class="call-out-content">
+            {{- $inner -}}
         </div>
     </div>
-{{- end -}}
+</div>

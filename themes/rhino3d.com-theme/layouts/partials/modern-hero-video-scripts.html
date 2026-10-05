@@ -15,13 +15,38 @@
   var body = document.querySelector('.modern-style');
   if (!body) return;
 
-  // ── 1. Move first video/gif into the hero media slot (when present) ──────
+  // ── 1. Move first image/gif/video into the hero media slot (when present) ─
+  // WWW-3751: whichever media element comes first in the body wins — static
+  // images included, not just moving ones. Inline icons (rhino-command,
+  // gh-component, rhino-icon-link — all wrapped in <a>, sitting among text)
+  // and unfurl card thumbnails are skipped; only standalone images qualify.
   var heroVideo = document.querySelector('.modern-hero-video__video');
   if (heroVideo) {
-    var firstMedia = body.querySelector('.local-video-embed, .vimeo-embed, img[src$=".gif"], img[src$=".GIF"]');
+    var isStandaloneImg = function (img) {
+      // The image shortcode emits a bare <img> straight into the body.
+      return !img.closest('a') &&
+        (img.parentElement === body || img.parentElement.textContent.trim() === '');
+    };
+    var firstMedia = null;
+    var candidates = body.querySelectorAll('.vimeo-embed, video, img');
+    for (var c = 0; c < candidates.length; c++) {
+      var el = candidates[c];
+      if (el.tagName === 'IMG' && !isStandaloneImg(el)) continue;
+      // video.html wraps its <video> in .video-container; move the wrapper.
+      firstMedia = el.tagName === 'VIDEO' ? (el.closest('.video-container') || el) : el;
+      break;
+    }
 
     if (firstMedia) {
+      var oldParent = firstMedia.parentElement;
       heroVideo.appendChild(firstMedia);
+      // Drop wrappers the move left empty (the markdown <p>, figure boxes).
+      while (oldParent && oldParent !== body && !oldParent.textContent.trim() &&
+             !oldParent.querySelector('img, video, iframe')) {
+        var next = oldParent.parentElement;
+        oldParent.remove();
+        oldParent = next;
+      }
 
       if (firstMedia.classList.contains('vimeo-embed')) {
         var vimeoIframe = firstMedia.querySelector('iframe');
@@ -39,8 +64,12 @@
         // Sizing handled by sizeHeroVimeo() in the second script block
       }
 
-      var vid = firstMedia.querySelector ? firstMedia.querySelector('video') : null;
-      if (vid) vid.removeAttribute('controls');
+      var vid = firstMedia.tagName === 'VIDEO' ? firstMedia : firstMedia.querySelector('video');
+      if (vid) {
+        vid.removeAttribute('controls');
+        vid.muted = vid.loop = vid.autoplay = true;
+        vid.play && vid.play().catch(function () {});
+      }
     } else {
       heroVideo.style.display = 'none';
       // No media: collapse the hero to banner height only

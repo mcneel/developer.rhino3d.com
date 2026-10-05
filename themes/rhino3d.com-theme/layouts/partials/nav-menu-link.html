@@ -1,0 +1,24 @@
+{{/* One navbar menu link (partials/site-navigation.html).
+
+     Params:
+       entry (required) - a .Site.Menus.main entry, top level or child
+       page  (required) - the page context, for the active state
+       class (optional) - classes for the element, default "menu-item"
+
+     WWW-3627: shared by the menu row and its submenus so both resolve the
+     URL, the link target and the active state the same way. An entry with
+     no url (a group that only opens a submenu) renders as a <span>. */}}
+{{- $entry := .entry -}}
+{{- $page := .page -}}
+{{- $class := .class | default "menu-item" -}}
+{{- $url := $entry.URL -}}
+{{- with $entry.Page -}}
+  {{- $url = .RelPermalink -}}
+{{- end -}}
+{{- $external := and $url (not (or (in $url "rhino3d.com") (hasPrefix $url "/"))) -}}
+{{- $active := or ($page.IsMenuCurrent "main" $entry) ($page.HasMenuCurrent "main" $entry) (and $url (eq $page.RelPermalink $url)) -}}
+{{- if $url -}}
+<a class="{{ $class }}{{ if $active }} active{{ end }}" href="{{ $url }}"{{ with $entry.Title }} title="{{ . }}"{{ end }} target="{{ if $external }}_blank{{ else }}_self{{ end }}">{{ $entry.Pre | safeHTML }}{{ $entry.Name }}{{ $entry.Post | safeHTML }}</a>
+{{- else -}}
+<span class="{{ $class }}{{ if $active }} active{{ end }}"{{ with $entry.Title }} title="{{ . }}"{{ end }}>{{ $entry.Pre | safeHTML }}{{ $entry.Name }}{{ $entry.Post | safeHTML }}</span>
+{{- end -}}

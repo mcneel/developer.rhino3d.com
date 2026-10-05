@@ -33,9 +33,23 @@
     .map(function (id) { return document.getElementById(id); })
     .filter(Boolean);
 
+  var tocContainer = document.getElementById('TableOfContents');
+  var collapseMode = !!document.querySelector('.modern-toc--collapse');
+  var activeId = null;
+
   function setActive(id) {
+    if (id === activeId) return;      // same section — keep any manual collapse state
+    activeId = id;
     tocLinks.forEach(function (a) { a.classList.remove('active'); });
     if (linkById[id]) linkById[id].classList.add('active');
+    // A different section became active — drop any manual collapse override so
+    // the newly active section opens fresh.
+    if (collapseMode && tocContainer) {
+      Array.prototype.forEach.call(
+        tocContainer.querySelectorAll('li.is-collapsed'),
+        function (li) { li.classList.remove('is-collapsed'); }
+      );
+    }
   }
 
   // While a TOC click is animating the page, the observer must NOT move the
@@ -78,6 +92,19 @@
       var id = decodeURIComponent(a.getAttribute('href').slice(1));
       var target = document.getElementById(id);
       if (!target) return;
+
+      // In collapse mode, clicking the already-active top-level section toggles
+      // its sub-items shut (and open again) rather than re-scrolling to it.
+      if (collapseMode) {
+        var li = a.parentElement;
+        var topLevel = li && li.parentElement && li.parentElement.parentElement === tocContainer;
+        if (topLevel && li.querySelector(':scope > ul') && a.classList.contains('active')) {
+          e.preventDefault();
+          li.classList.toggle('is-collapsed');
+          return;
+        }
+      }
+
       e.preventDefault();
       lockActive = true;           // freeze the highlight on the clicked link
       clearTimeout(settleTimer);

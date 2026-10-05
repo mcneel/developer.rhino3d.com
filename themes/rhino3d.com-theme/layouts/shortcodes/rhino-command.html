@@ -3,17 +3,19 @@
 {{- $imageName := "" -}}
 {{- $version := "" -}}
 {{- $platform := "" -}}
+{{- /* WWW-3727: v9-only commands 404 on v8 docs; pages with since > site version link to their own version. */ -}}
+{{- $defaultVersion := string (math.Max (int .Site.Params.latestRhinoVersion) (int (.Page.Params.since | default 0))) -}}
 {{- if .IsNamedParams -}}
     {{- if .Get "english-command" -}}{{- $englishCommand = .Get "english-command" -}}{{- end -}}
     {{- $localCommand = (.Get "local-command" | default $englishCommand) -}}
     {{- $imageName = (.Get "image-name" | default $englishCommand) -}}
-    {{- $version = (.Get "version" | default (string .Site.Params.latestRhinoVersion)) -}}
+    {{- $version = (.Get "version" | default $defaultVersion) -}}
     {{- $platform = (.Get "platform" | default "win") -}}
 {{- else -}}
     {{- $englishCommand = .Get 0 -}}
     {{- $localCommand = (.Get 1 | default $englishCommand) -}}
     {{- $imageName = (.Get 2 | default $englishCommand) -}}
-    {{- $version = (.Get 3 | default (string .Site.Params.latestRhinoVersion)) -}}
+    {{- $version = (.Get 3 | default $defaultVersion) -}}
     {{- $platform = (.Get 4 | default "win") -}}
 {{- end -}}
 {{- $docBase := printf "https://docs.mcneel.com/rhino/%s/help/%s" $version .Site.Params.docLang -}}

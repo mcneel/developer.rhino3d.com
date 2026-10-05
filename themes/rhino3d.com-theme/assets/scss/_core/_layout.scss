@@ -54,7 +54,8 @@
 
 .header-area {
 	grid-area: header-start / header-start / header-end / header-end;
-	z-index: 2;
+	// WWW-3625: this is the fixed #navbar's stacking context, so it caps the navbar's own z-index.
+	z-index: 1000;
 }
 
 .footer-area {
@@ -216,10 +217,13 @@
 // See https://developer.mozilla.org/en-US/docs/Web/CSS/CSS_Flexible_Box_Layout/Mastering_Wrapping_of_Flex_Items
 // for creation of proper gutters in wrapped columns.
 .flex-container {
+	--flex-gutter: 1em;	// the gutter, as a length the columns and the row share
 	display: flex;
 	flex-flow: row wrap;
 	justify-content: center;
-	margin: -1em;	// Required for gutters between columns, but not outside
+	// WWW-3730: vertical gutter as row-gap; a negative margin collapses with the next block and pulls it under the row.
+	row-gap: calc(2 * var(--flex-gutter));
+	margin: 0 calc(-1 * var(--flex-gutter));	// Required for gutters between columns, but not outside
 }
   
 .flex-container > div,
@@ -227,7 +231,92 @@
 	// padding: 5px;
 	flex: 1 1;
 	min-width: 250px;
-	margin: 1em;   // Required for gutters between columns but not outside
+	margin: 0 var(--flex-gutter);   // Required for gutters between columns but not outside
+}
+
+// Opt-in modifiers set by the {{< row >}} / {{< column >}} named params.
+// Nothing here changes a row or column that doesn't ask for it.
+
+// How narrow a column that can shrink may get before the row wraps instead —
+// one floor per wrap mode, from the 250px of a plain row down.
+$flex-wrap-late-min: 200px;
+$flex-wrap-tight-min: 100px;
+
+// row wrap="late" (legacy nowrap="true") and wrap="tight": a lower floor than
+// 250px. `late` is for a picture beside a paragraph inside a card; `tight` is
+// for a title and its buttons — a "pill" — which should give up its line only
+// when the title has nowhere left to go. The columns still wrap in both, just
+// later.
+//
+// The floor has to be a real width, not 0 (WWW-3700). `flex: 1 1` means
+// flex-basis: 0, so a column allowed to shrink to nothing always "fits" the
+// line: the row never wraps and the text squeezes to one word — or, with the
+// broken words a pill needs, half a word — per line instead. That is what broke
+// the cards on /learn2, and a viewport breakpoint cannot rescue it either,
+// because flex-wrap: wrap has nothing to wrap on.
+//
+// Because the floor is the columns' own width, a row stacks on the space it
+// actually has rather than on the size of the screen: the same row wraps inside
+// a three-up gallery card on a desktop, and stays side by side on a phone when
+// it fits. The `100% - 2 * gutter` half of the min() is the column's share of a
+// row too narrow for even one floor's worth — without it the floor would
+// overflow the line, and `justify-content: center` would push the overflow off
+// the left edge where it cannot be scrolled to.
+// The `:not()`s are the columns that carry their own width already: the floor
+// must not widen a width="120px" or width="auto" column to the floor.
+.flex-container.flex-wrap-late {
+	> div:not(.column-fixed):not(.column-auto) {
+		// Interpolated so libsass passes CSS min() through instead of evaluating it.
+		min-width: #{"min(#{$flex-wrap-late-min}, 100% - 2 * var(--flex-gutter))"};
+	}
+}
+
+.flex-container.flex-wrap-tight {
+	> div:not(.column-fixed):not(.column-auto) {
+		min-width: #{"min(#{$flex-wrap-tight-min}, 100% - 2 * var(--flex-gutter))"};
+		// Last resort at the floor itself: a word wider than 100px breaks rather
+		// than pushing the row past the card's edge.
+		overflow-wrap: break-word;
+	}
+}
+
+// row gap=…: the gutter is the columns' side margin (cancelled at the row's edge
+// by the row's negative margin) and half the row-gap, so all move together.
+.flex-container.flex-gap-none  { --flex-gutter: 0px; }
+.flex-container.flex-gap-small { --flex-gutter: 0.5em; }
+.flex-container.flex-gap-large { --flex-gutter: 1.5em; }
+
+// row align=… / column align=…
+.flex-container.flex-align-top     { align-items: flex-start; }
+.flex-container.flex-align-center  { align-items: center; }
+.flex-container.flex-align-bottom  { align-items: flex-end; }
+.flex-container.flex-align-stretch { align-items: stretch; }
+.flex-container > .column-align-top    { align-self: flex-start; }
+.flex-container > .column-align-center { align-self: center; }
+.flex-container > .column-align-bottom { align-self: flex-end; }
+
+// column width="…": fixed basis, the others share the rest. It keeps that width
+// on its own line once the row has wrapped, but never exceeds the row: a
+// width="340px" column inside a phone-width card shrinks to fit rather than
+// bleeding out of the card.
+.flex-container > div.column-fixed {
+	flex: 0 0 var(--column-width);
+	width: var(--column-width);
+	min-width: 0;
+	max-width: 100%;
+
+	img { max-width: 100%; }
+}
+
+// column width="auto": as wide as what is in it, no wider. It neither grows nor
+// shrinks, so in a wrap="tight" row it is the fixed part of the line — a button
+// or a link that keeps its size while the text column takes the rest.
+.flex-container > div.column-auto {
+	flex: 0 0 auto;
+	min-width: 0;
+	max-width: 100%;
+
+	img { max-width: 100%; }
 }
 
 // .columns {

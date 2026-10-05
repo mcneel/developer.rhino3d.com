@@ -1,0 +1,29 @@
+// /check-for-updates/ - the page Rhino's "Check Now..." opens (RH-15299).
+// One short answer and, when there is an update, one button. Scoped under
+// .check-for-updates-page so nothing here leaks into other pages.
+
+.check-for-updates-page {
+  margin: 3rem auto;
+  max-width: 42rem;
+  text-align: center;
+
+  h1 {
+    margin-bottom: 1.5rem;
+  }
+
+  .check-for-updates {
+    &__message {
+      font-size: 1.15rem;
+      // Reserve two lines so the button does not jump when the message
+      // changes from "Checking..." to the answer.
+      min-height: 3rem;
+    }
+
+    // The button itself is .home-download-button, styled in _home.scss and
+    // reused verbatim so it matches the one on the front page. Nothing here
+    // may restyle it; this only positions it.
+    &__action {
+      margin-top: 1.5rem;
+    }
+  }
+}

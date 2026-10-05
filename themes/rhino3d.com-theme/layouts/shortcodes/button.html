@@ -1,0 +1,29 @@
+{{- /*
+  button.html — a link styled as the site's pill button (the one on the
+  homepage price cards): grey pill, red text, fills red on hover. The label is
+  the body, so it is translated with the page; add your own arrow if you want
+  one.
+
+    {{< button link="/learn/level-1" >}}Start course →{{< /button >}}
+
+  Params: link                — required. A site-root path to a page
+                                ("/learn2/") resolves to that page's URL in
+                                the current language, like a markdown link;
+                                external URLs, anchors and files pass through.
+          primary="true"      — solid red variant for the main call to action
+                                (modern-style pages only; default pill elsewhere)
+          secondary="true"    — quiet outline variant, e.g. "Learn More"
+          block="true"        — full width of its container (card footers)
+          new-tab="true"      — opens in a new tab
+
+  Styles: assets/scss/_shortcodes/_button.scss. As the last line of a
+  {{< card-container >}} it is pinned to the bottom, and hovering anywhere on a
+  linked card highlights it.
+*/ -}}
+{{- $link := partial "resolve-link.html" (dict "page" .Page "url" (.Get "link" | default "")) -}}
+{{- $label := trim .Inner " \t\r\n" -}}
+{{- if or (eq $link "") (eq $label "") -}}
+<span class="shortcode-error">Error: button needs <code>link="…"</code> and a label as its body.<br>Shortcode usage: &lbrace;&lbrace;&lt; button link="/learn" &gt;&rbrace;&rbrace;Start course&lbrace;&lbrace;&lt; /button &gt;&rbrace;&rbrace;</span>
+{{- else -}}
+<a class="rh-button{{ if eq (.Get "primary") "true" }} rh-button-primary{{ end }}{{ if eq (.Get "secondary") "true" }} rh-button-secondary{{ end }}{{ if eq (.Get "block") "true" }} rh-button-block{{ end }}" href="{{ $link }}"{{ if eq (.Get "new-tab") "true" }} target="_blank" rel="noopener"{{ end }}>{{ $label | .Page.RenderString }}</a>
+{{- end -}}

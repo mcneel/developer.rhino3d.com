@@ -311,3 +311,22 @@ other = "모두"
 # Filter textfield on Learn Pages
 [filter]
 other = "필터링..."
+
+# {{< subscribe >}} shortcode (WWW-3622)
+[subscribe]
+other = "구독"
+
+[subscribed]
+other = "구독됨"
+
+[subscribe-failed]
+other = "문제가 발생했습니다. 다시 시도해 주세요."
+
+[subscribe-sign-in-message]
+other = "이메일 뉴스레터를 구독하시려면 귀하의 Rhino 계정에 로그인하세요."
+
+[sign-in-button]
+other = "로그인"
+
+[close]
+other = "닫기"

@@ -11,14 +11,15 @@
     breadcrumb  [string]— override the auto crumb trail (plain labels, no links)
 
   The title is always .Title. Every field degrades gracefully when absent.
-  Shown by default; set `page_options.breadcrumbs = false` to drop the crumb
-  trail entirely.
+  Breadcrumbs are hidden by default (WWW-3754: they cost hero height and can
+  link to pages not suitable to browse back to); set
+  `page_options.breadcrumbs = true` to opt in.
 */ -}}
 {{- $m := .Params.modern | default dict -}}
 <header class="modern-hero">
   <div class="modern-hero__inner">
 
-    {{- if ne .Params.page_options.breadcrumbs false }}
+    {{- if eq .Params.page_options.breadcrumbs true }}
     <nav class="modern-hero__crumbs" aria-label="Breadcrumb">
       {{- partial "modern-breadcrumbs.html" . -}}
     </nav>

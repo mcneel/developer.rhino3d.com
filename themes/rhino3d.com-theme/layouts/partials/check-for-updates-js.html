@@ -1,0 +1,7 @@
+{{/*
+    Loads the /check-for-updates/ script. Opt in from the page:
+
+        [page_options]
+        check_for_updates = true
+*/}}
+<script type="text/javascript" src="{{ (resources.Get "/script/check-for-updates.js" | resources.Fingerprint).Permalink }}"></script>
