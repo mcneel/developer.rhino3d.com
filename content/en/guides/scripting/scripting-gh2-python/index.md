@@ -32,7 +32,7 @@ block_webcrawlers = false
 </style>
 
 {{< call-out "note" "Note" >}}
-This guide covers the Python script component in Grasshopper 2. For the Grasshopper 1 component, see [Grasshopper Scripting: Python](/guides/scripting/scripting-gh-python). For scripting in Rhino itself, see [Scripting: Python](/guides/scripting/scripting-python).
+This guide covers the Python script component in Grasshopper 2. For the Grasshopper 1 component, see [Grasshopper Scripting: Python](/guides/scripting/scripting-gh-python). For scripting in Rhino itself, see [Scripting: Python](/guides/scripting/scripting-python). To ship your components as a plugin instead, see [Getting Started with Grasshopper 2 Plugins](/guides/grasshopper2/getting-started/).
 {{< /call-out >}}
 
 ## Python Component

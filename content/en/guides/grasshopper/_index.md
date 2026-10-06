@@ -26,6 +26,8 @@ since = 0
 <!--the .snagit project for this image can be found next to the image -->
 [<img src="/images/grasshopper-guides-col1.png">](/guides/grasshopper/what-is-a-grasshopper-component/)
 
+Looking for Grasshopper 2? See [Getting Started with Grasshopper 2 Plugins](/guides/grasshopper2/getting-started/).
+
 ### [Essential Algorithms and Data Structures for Grasshopper](/guides/grasshopper/gh-algorithms-and-data-structures/)
 
 - [Introduction](/guides/grasshopper/gh-algorithms-and-data-structures/)
