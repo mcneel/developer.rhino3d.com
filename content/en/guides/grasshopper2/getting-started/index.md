@@ -135,6 +135,14 @@ Start reading in the API documentation at `Grasshopper2.Doc.IAttributes` and `Gr
 
 ***Note***: All custom drawing uses Eto, not WinForms or GDI+. It must work on both Windows and Mac.
 
+## Preview Geometry
+
+Grasshopper 2 previews the geometry on your outputs on its own. You do not write any display code for that. So the simple rule is: put everything you want to see in the viewport on an output.
+
+If you need extra preview geometry that is not an output, override `PopulateDisplay`. It hands you a `DisplayBag`, and you add points, curves, vectors, planes, and text to it. Grasshopper 2 caches the bag and draws it. This replaces `DrawViewportWires` from Grasshopper 1, and it is not called once per frame, so do not try to animate with it.
+
+***Note***: There is no replacement for `DrawViewportMeshes` yet. The `DisplayBag` has no method for shaded meshes, and the per-frame `DisplayFaces` override is not finished for plugin use. Until that changes, put your meshes on an output and let Grasshopper 2 preview them. <!-- TODO(Mathias): revisit when DisplayFaces/DisplayContentStamp is finalised for third parties. -->
+
 ## Your Plugin's Id
 
 Rhino identifies your plugin by the GUID of its assembly. This is the `[assembly: Guid("...")]` attribute in your project. The template generates one for you. Keep it. Never change it once you have shipped.
@@ -153,6 +161,12 @@ If you ship more than one assembly:
 Your assembly may also contain a Rhino plugin class and Rhino commands. A Rhino plugin class is one that derives from `Rhino.PlugIns.PlugIn`. Both share the assembly's id.
 
 ***Note***: If such a Rhino command uses Grasshopper 2, Grasshopper 2 must be running first. It is not enough that the assembly is loaded. The `GH2` command has to have run at least once. Make sure of this in your command before you call into Grasshopper 2. <!-- TODO): recommend one way to do this, e.g. RhinoApp.RunScript("-_GH2 _Enter", false)?? -->
+
+## Writing to the Rhino Document
+
+Most components never touch the Rhino document, and that is how it should be. If yours needs to, read this.
+
+***Note***: Never modify the Rhino document from your solver. Access to the Rhino document is not thread-safe, and your `Process` method runs on a worker thread, often several at once. Do not add objects to the document, do not edit the layer table, and do not change document settings from inside `Process`. Compute your results and set them on your outputs. If your plugin has to write to the document, do it from a Rhino command, a menu action, or a bake, where Grasshopper 2 and Rhino control the timing.
 
 ## Native Code
 
