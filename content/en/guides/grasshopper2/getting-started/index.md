@@ -9,6 +9,7 @@ sdk = [ "Grasshopper 2" ]
 title = "Getting Started with Grasshopper 2 Plugins"
 type = "guides"
 weight = 1
+thumbnail = "/images/dev-logo-grasshopper-small.png"
 
 [admin]
 TODO = ""
@@ -65,7 +66,11 @@ A read-only copy is available on the web at [rhino3d.com/docs/grasshopper2](http
 
 ## Open Your Grasshopper 1 Files
 
-Grasshopper 2 opens Grasshopper 1 files, both *.gh* and *.ghx*. Try it on your own existing files. It is a quick way to see how familiar things look in Grasshopper 2. Components can be dragged from Grasshopper 1 to Grasshopper 2.
+Grasshopper 2 opens Grasshopper 1 files, both *.gh* and *.ghx*. Try it on your own existing files. It is a quick way to see how familiar things look in Grasshopper 2.
+
+Copy and paste works from Grasshopper 1 to Grasshopper 2. Select any part of a Grasshopper 1 definition containing one or more components and wires, copy it, and paste it onto the Grasshopper 2 canvas. The wires between the pasted components come along. Wires to components you did not copy are dropped. Use the plain *Paste* command for this; the *Paste in Place* and other paste variants do not understand Grasshopper 1 content. The other direction, from Grasshopper 2 to Grasshopper 1, does not work.
+
+Dragging works too, from the Grasshopper 1 tool panels onto the Grasshopper 2 canvas.
 
 Behind this is a migration framework. Each Grasshopper 1 component is either migrated to its Grasshopper 2 counterpart, or hosted in an interop component that still runs on Grasshopper 1. If you have a Grasshopper 1 plugin, you can supply migrations for your own components. Implement `IMigrateComponent` or `IMigrateParameter` from the `Grasshopper2.Doc.Migration` namespace, or use `Gh1MigrationRule` for simple one-to-one cases. Grasshopper 2 finds these types in your plugin on its own.
 
@@ -82,16 +87,21 @@ The tool is the *GH2 Icon* panel in Rhino. It appears once Grasshopper 2 has bee
 1. Run `GH2IconSetup` to set the icon size.
 1. Draw some curves. Select them. Set edges and fills in the *GH2 Icon* panel.
 1. Click *Save* in the panel's preview to export a *.ghicon* file.
-1. Embed the *.ghicon* file in your project. Name it after your component class, for example *MyComponent.ghicon*. Grasshopper 2 finds it on its own.
+1. Embed the *.ghicon* file in your project as a resource. Name it after your component class, for example *MyComponent.ghicon*.
+
+That is all. You do not need to write any icon code. Grasshopper 2 looks for an embedded resource with the name of the class and loads it. Almost all of Grasshopper 2's own components get their icons this way. Only the plugin icon needs one line of code, in your plugin class: `Icon = AbstractIcon.FromResource("MyPlugin", typeof(MyPluginInfo));`.
 
 Colours have a meaning in Grasshopper 2. You do not pick an RGB value. You pick a role, such as *Input*, *Output*, or *Analysis*. Grasshopper 2 picks the actual colour for the current theme. The *GH2 Icon* panel offers these roles.
  <!-- TODO(): link the documentation topic on icon colours once there is one. -->
 
-If you prefer, you can use SVG icons instead. They use the same colour roles. Write `fill="gh:Input"` instead of a fixed colour, for example.
+There are two other ways to supply an icon. Both need an override of the `IconInternal` property in your component class.
 
-## Five Rules for Component Code
+- **SVG.** SVG icons use the same colour roles. Write `fill="gh:Input"` instead of a fixed colour, for example. Embed the *.svg* file as a resource and return `SvgIcon.FromResource(GetType().Assembly, "MyComponent.svg")`. `SvgIcon` lives in the `Grasshopper2.UI.Icon.Vector` namespace, not in `AbstractIcon`.
+- **Bitmap.** An existing PNG or other bitmap becomes an icon with `AbstractIcon.FromBitmap`. Treat this as an emergency fallback only. Bitmap icons are not sharp at every size, and they ignore the colour roles, so they look out of place next to the others.
 
-Grasshopper 2 looks a lot like Grasshopper 1 from the outside. Inside, it is a different machine. Five habits from Grasshopper 1 will not carry over immediately. If you are new to Grasshopper altogether, the same five rules will save you the most time. They are easy to miss, and experience shows that many developers, including the author, miss one or more of them even repeatedly.
+## Six Rules for Component Code
+
+Grasshopper 2 looks a lot like Grasshopper 1 from the outside. Inside, it is a different machine. Six habits from Grasshopper 1 will not carry over immediately. If you are new to Grasshopper altogether, the same six rules will save you the most time. They are easy to miss, and experience shows that many developers, including the author, miss one or more of them even repeatedly.
 
 1. **Inputs are immutable.** Neither in Grasshopper 1 nor in Grasshopper 2 can you modify input data in place. However, doing so often had no bad consequences in Grasshopper 1. In Grasshopper 2 it can have much more dire consequences because it is inherently multi-threaded. Components solve in parallel by default, so several components may read the same data at the same time. This could lead to data corruption and hard-to-debug crashes.
 
@@ -101,6 +111,13 @@ Grasshopper 2 looks a lot like Grasshopper 1 from the outside. Inside, it is a d
 1. **The access level is a contract.** Each parameter is declared as `Item`, `Twig`, or `Tree`. That decides which `access.Get...` and `access.Set...` methods you call on it. The wrong one may compile and fail at run time. This is similar to how Grasshopper 1 operates, but is still easy to miss.
 1. **Not every type comes from RhinoCommon.** Some types that look like RhinoCommon types are Grasshopper 2 types, for example `Angle`, `Colour`, and `Grasshopper2.Types.Shapes.Triangle`. Check the namespace before you reach for the Rhino version.
 1. **Look it up before you write it.** The `Grasshopper2` NuGet package ships the full XML documentation. Your IDE shows it as you type. The API is new. Guessing a name from Grasshopper 1 is the most common cause of code that does not compile.
+1. **Every component needs two constructors.** Next to the usual parameterless constructor, a component class must have a constructor that takes an `IReader`. In most cases it only forwards to the base class:
+
+   ```cs
+   public MyComponent(IReader reader) : base(reader) { }
+   ```
+
+   Grasshopper 2 uses it to restore your component from a file. Without it, the component compiles, shows up, and runs, but it cannot be read back from a saved file, and copy, paste, and undo fail for it. The *Grasshopper* > *Plugins...* window lists the class as a problem, with the reason "No accessible constructor with a single IReader argument." The project template includes this constructor. Do not delete it.
 
 See [Component Processing](../migrating-components-to-gh2/#component-processing) in the migration guide for the details on threading and cancellation.
 
@@ -141,13 +158,17 @@ Your assembly may also contain a Rhino plugin class and Rhino commands. A Rhino 
 
 You can call C or C++ code from your plugin. See [Wrapping Native Libraries](/guides/rhinocommon/wrapping-native-libraries/) and the [Moose sample](https://github.com/dalefugier/Moose) on GitHub. Moose shares one C++ library between a Rhino C++ plugin, a RhinoCommon plugin, and a Grasshopper component.
 
-***Note***: Compile your native code against the [Rhino C/C++ SDK](/guides/cpp/what-is-the-cpp-sdk/), not against the public openNURBS toolkit. The two are not binary compatible. A library built on public openNURBS cannot exchange geometry with Rhino in memory.
+***Note***: Compile your native code against the [Rhino C/C++ SDK](/guides/cpp/what-is-the-cpp-sdk/), not against the public openNURBS toolkit. The SDK exists for Mac too; see [Installing Tools (Mac)](/guides/cpp/installing-tools-mac/) for the C++ side. The two are not binary compatible. A library built on public openNURBS cannot exchange geometry with Rhino in memory.
 
 ## Testing Your Plugin
 
 The templates set up debugging for you. Press *F5* and Rhino starts with your plugin.
 
-To load a build by hand, open Grasshopper 2 and click *Grasshopper* > *Plugins...*. Click *Install...* and pick your *.rhp* file. Grasshopper 2 remembers it and loads it again next time.
+To see whether your plugin loaded, run the `GH2Plugins` command in Rhino. It opens the plugin window, the same one as *Grasshopper* > *Plugins...* in Grasshopper 2. The window lists every plugin Grasshopper 2 found, whether it loaded, and why not if it failed. It also lists problems in loaded plugins under *Invalid types*, such as a component class without the `IReader` constructor.
+
+To load a build by hand, click *Install...* in that window and pick your *.rhp* file. Grasshopper 2 remembers it and loads it again next time.
+
+***Note***: Grasshopper 2 autosaves. After an edit, it writes a *.ghautosave* file next to the open file, or into the *UnnamedFiles* folder under your local application data for unsaved documents. There is currently no setting to turn this off. Keep it in mind when you debug: every autosave serialises the document, so your component's `Store` method runs after many edits, not only when the user saves. <!-- TODO: the only knob is the AutoSaveReasons bitmask in %AppData%\Grasshopper2\Settings\app.ghs (binary). Revisit once Preferences exist. -->
 
 ## Publishing Your Plugin
 
@@ -157,7 +178,7 @@ Publish your plugin with the [Package Manager](/guides/yak/). The `yak build` co
 
 Many developers write Grasshopper 2 code with an AI assistant. These models were trained on Grasshopper 1 code. Left alone, they will write Grasshopper 1 code with new names, and it will not compile or not behave.
 
-The [five rules](#five-rules-for-component-code) above apply to your assistant as much as to you. Put them in a short instruction file in your project, and point the assistant to this page and to the migration guide. <!-- TODO: consider publishing a ready-made instruction file developers can copy. -->
+The [six rules](#six-rules-for-component-code) above apply to your assistant as much as to you. Put them in a short instruction file in your project, and point the assistant to this page and to the migration guide. <!-- TODO: we will publish a curated AI prompt. -->
 
 ## Next Steps
 

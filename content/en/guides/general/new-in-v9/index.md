@@ -35,6 +35,7 @@ Rhino 9 brings a C++ SDK on Mac, Rhino.Compute on Linux, significant improvement
 {{< feature-card page="/guides/cpp" url="/guides/cpp/your-first-plugin-crossplatform/" image="/images/new-in-v9/cpp-mac.png" title="C++ SDK on Mac" description="Build with C++ for both Windows and Mac" >}}
 {{< feature-card page="/guides/compute/compute-linux-getting-started" image="/images/new-in-v9/compute-linux.png" title="Rhino.Compute on Linux" description="Access the Rhino and Grasshopper SDKs through a stateless REST API. Now available on Linux Servers." >}}
 {{< feature-card page="/guides/rhinocommon/moving-to-dotnet-core" image="/images/new-in-v9/dotnet-10.png" title=".NET 10 Upgrade" description=".NET 10 framework running on both Windows and Mac." >}}
+{{< feature-card page="/guides/grasshopper2/getting-started" title="Getting Started with Grasshopper 2 Plugins" description="What to know before you write your first Grasshopper 2 plugin" >}}
 {{< feature-card page="/guides/grasshopper2/your-first-component-windows" image="/images/new-in-v9/gh2-component.png" title="Grasshopper 2 Components" description="A beginners guide to creating your first Grasshopper 2 Component" >}}
 {{< feature-card page="/guides/grasshopper2/migrating-components-to-gh2" image="/images/new-in-v9/gh2-migrate.png" title="Move to Grasshopper 2" description="Migrate your Grasshopper 1 Components to Grasshopper 2" >}}
 {{< /card-gallery >}}

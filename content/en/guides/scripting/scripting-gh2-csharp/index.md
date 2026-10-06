@@ -32,7 +32,7 @@ block_webcrawlers = false
 </style>
 
 {{< call-out "note" "Note" >}}
-This guide covers the C# script component in Grasshopper 2. For the Grasshopper 1 component, see [Grasshopper Scripting: C#](/guides/scripting/scripting-gh-csharp). For scripting in Rhino itself, see [Scripting: C#](/guides/scripting/scripting-csharp).
+This guide covers the C# script component in Grasshopper 2. For the Grasshopper 1 component, see [Grasshopper Scripting: C#](/guides/scripting/scripting-gh-csharp). For scripting in Rhino itself, see [Scripting: C#](/guides/scripting/scripting-csharp). To ship your components as a plugin instead, see [Getting Started with Grasshopper 2 Plugins](/guides/grasshopper2/getting-started/).
 {{< /call-out >}}
 
 ## C# Component
