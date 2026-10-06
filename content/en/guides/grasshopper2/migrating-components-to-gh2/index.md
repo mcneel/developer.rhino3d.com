@@ -32,7 +32,7 @@ By the end of this document, you should have a sufficient grip on what it takes 
 
 ## Prerequisites
 
-This document presumes you have experience with developing components for [Grasshopper 1.0 in C#](guides/#grasshopper-plugins).
+This document presumes you have experience with developing components for [Grasshopper 1.0 in C#](guides/#grasshopper-plugins). If Grasshopper 2 plugins are new to you, read [Getting Started with Grasshopper 2 Plugins](/guides/grasshopper2/getting-started/) first.
 
 ## Introduction
 
