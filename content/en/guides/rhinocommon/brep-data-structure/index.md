@@ -47,7 +47,12 @@ static class BrepFaceTopologySample
   /// <param name="faceTrimIndices">Indices into brep.Trims of the face's trims.</param>
   /// <param name="faceEdgeIndices">Indices into brep.Edges of the face's edges.</param>
   /// <returns>true if successful, false if the face index is out of range.</returns>
-  public static bool GetFaceTrimsAndEdges(Brep brep, int faceIndex, out List<int> faceTrimIndices, out List<int> faceEdgeIndices)
+  public static bool GetFaceTrimsAndEdges(
+    Brep brep, 
+    int faceIndex, 
+    out List<int> faceTrimIndices, 
+    out List<int> faceEdgeIndices
+  )
   {
     faceTrimIndices = new List<int>();
     faceEdgeIndices = new List<int>();
