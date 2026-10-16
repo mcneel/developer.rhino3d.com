@@ -6,7 +6,7 @@ description = "This guide discusses the Boundary Representation (B-rep) in the c
 keywords = [ "rhino", "brep", "openNURBS", "data" ]
 languages = [ "C/C++" ]
 sdk = [ "C/C++" ]
-title = "Brep Data Structure"
+title = "B-rep Data Structure"
 type = "guides"
 weight = 4
 
