@@ -1,17 +1,17 @@
 +++
-aliases = ["/en/5/guides/cpp/brep-data-structure/", "/en/6/guides/cpp/brep-data-structure/", "/en/7/guides/cpp/brep-data-structure/", "/en/wip/guides/cpp/brep-data-structure/"]
+aliases = [""]
 authors = [ "dale" ]
 categories = [ "Fundamentals" ]
-description = "This guide discusses the Boundary Representation (B-rep) in the context of openNURBS."
-keywords = [ "rhino", "brep", "openNURBS", "data" ]
-languages = [ "C/C++" ]
-sdk = [ "C/C++" ]
+description = "This guide discusses the Boundary Representation (B-rep) in the context of RhinoCommon."
+keywords = [ "rhino", "brep", "RhinoCommon", "data" ]
+languages = [ "C#" ]
+sdk = [ "RhinoCommon" ]
 title = "B-rep Data Structure"
 type = "guides"
-weight = 4
+weight = 1
 
 [admin]
-TODO = "needs explanation, diagram style update"
+TODO = ""
 origin = "http://wiki.mcneel.com/developer/brepstructure"
 picky_sisters = ""
 state = ""
@@ -29,11 +29,11 @@ toc_type = "single"
 
 ## Conceptual diagram
 
-![B-rep Data Structure|600](brep-opennurbs.svg)
+![B-rep Data Structure|600](brep-rhinocommon.svg)
 
 ## Sample
 
-```cpp
+```csharp
 /*
 Description:
   Gets the indices of the trims and edges used by a brep face.
@@ -65,25 +65,47 @@ bool GetFaceTrimsAndEdges(
   {
     const ON_BrepLoop* loop = face->Loop(fli);
     if (nullptr == loop)
-      continue;
+      cusing System.Collections.Generic;
+using Rhino.Geometry;
 
-    // Walk the trims of the loop
-    for (int lti = 0; lti < loop->TrimCount(); lti++)
+static class BrepFaceTopologySample
+{
+  /// <summary>
+  /// Gets the indices of the trims and edges used by a Brep face.
+  /// </summary>
+  /// <param name="brep">The Brep.</param>
+  /// <param name="faceIndex">Index of the face in brep.Faces.</param>
+  /// <param name="faceTrimIndices">Indices into brep.Trims of the face's trims.</param>
+  /// <param name="faceEdgeIndices">Indices into brep.Edges of the face's edges.</param>
+  /// <returns>true if successful, false if the face index is out of range.</returns>
+  public static bool GetFaceTrimsAndEdges(Brep brep, int faceIndex, out List<int> faceTrimIndices, out List<int> faceEdgeIndices)
+  {
+    faceTrimIndices = new List<int>();
+    faceEdgeIndices = new List<int>();
+
+    // Get the BrepFace at the given index
+    if (null == brep || faceIndex < 0 || faceIndex >= brep.Faces.Count)
+      return false;
+    BrepFace face = brep.Faces[faceIndex];
+
+    // Walk the loops of the face
+    foreach (BrepLoop loop in face.Loops)
     {
-      const ON_BrepTrim* trim = loop->Trim(lti);
-      if (nullptr == trim)
-        continue;
-      face_trim_indices.Append(trim->m_trim_index);
+      // Walk the trims of the loop
+      foreach (BrepTrim trim in loop.Trims)
+      {
+        faceTrimIndices.Add(trim.TrimIndex);
 
-      // Get the edge the trim uses.
-      // Singular trims have no edge, so trim->Edge() is nullptr for them.
-      const ON_BrepEdge* edge = trim->Edge();
-      if (nullptr == edge)
-        continue;
-      face_edge_indices.Append(edge->m_edge_index);
+        // Get the edge the trim uses.
+        // Singular trims have no edge, so trim.Edge is null for them.
+        BrepEdge edge = trim.Edge;
+        if (null == edge)
+          continue;
+        faceEdgeIndices.Add(edge.EdgeIndex);
+      }
     }
-  }
 
-  return true;
+    return true;
+  }
 }
 ```
