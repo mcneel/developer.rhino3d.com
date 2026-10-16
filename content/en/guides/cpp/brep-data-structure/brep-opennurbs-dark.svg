@@ -1,0 +1,312 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 1180 1140" width="1180" height="1140" font-family="Segoe UI, Helvetica, Arial, sans-serif">
+  <title>Boundary Representation (B-rep) in openNURBS (C++) (dark)</title>
+  <style>
+    .mono { font-family: Consolas, Menlo, "Courier New", monospace; }
+    .face { fill: #f65a8e; } .loop { fill: #7e8d35; } .trim { fill: #677de9; }
+    .edge { fill: #7de967; } .vert { fill: #e6e6e6; } .geom { fill: #eda8fa; } .note { fill: #a8a8a8; }
+    .lbl { font-size: 12px; }
+    .box { fill: #1e1e1e; stroke-width: 1.5; }
+    .gbox { fill: #3a2a3a; stroke: #eda8fa; stroke-width: 1.2; stroke-dasharray: 4 3; }
+  </style>
+  <defs>
+    <pattern id="hatch" width="7" height="7" patternUnits="userSpaceOnUse" patternTransform="rotate(45)">
+      <rect width="7" height="7" fill="#4a1f2c"/>
+      <line x1="0" y1="0" x2="0" y2="7" stroke="#9a3d5c" stroke-width="1.6"/>
+    </pattern>
+    <!-- arrowheads: tip at path end -->
+    <marker id="a-face" viewBox="0 0 10 10" refX="10" refY="5" markerWidth="9" markerHeight="9" markerUnits="userSpaceOnUse" orient="auto"><path d="M0,0 L10,5 L0,10 z" fill="#f65a8e"/></marker>
+    <marker id="a-loop" viewBox="0 0 10 10" refX="10" refY="5" markerWidth="9" markerHeight="9" markerUnits="userSpaceOnUse" orient="auto"><path d="M0,0 L10,5 L0,10 z" fill="#7e8d35"/></marker>
+    <marker id="a-trim" viewBox="0 0 10 10" refX="10" refY="5" markerWidth="9" markerHeight="9" markerUnits="userSpaceOnUse" orient="auto"><path d="M0,0 L10,5 L0,10 z" fill="#677de9"/></marker>
+    <marker id="a-edge" viewBox="0 0 10 10" refX="10" refY="5" markerWidth="9" markerHeight="9" markerUnits="userSpaceOnUse" orient="auto"><path d="M0,0 L10,5 L0,10 z" fill="#7de967"/></marker>
+    <marker id="a-vert" viewBox="0 0 10 10" refX="10" refY="5" markerWidth="9" markerHeight="9" markerUnits="userSpaceOnUse" orient="auto"><path d="M0,0 L10,5 L0,10 z" fill="#e6e6e6"/></marker>
+    <marker id="a-geom" viewBox="0 0 10 10" refX="10" refY="5" markerWidth="9" markerHeight="9" markerUnits="userSpaceOnUse" orient="auto"><path d="M0,0 L10,5 L0,10 z" fill="#eda8fa"/></marker>
+    <marker id="a-red" viewBox="0 0 10 10" refX="10" refY="5" markerWidth="10" markerHeight="10" markerUnits="userSpaceOnUse" orient="auto"><path d="M0,0 L10,5 L0,10 z" fill="#e6e6e6"/></marker>
+    <marker id="a-gray" viewBox="0 0 10 10" refX="10" refY="5" markerWidth="10" markerHeight="10" markerUnits="userSpaceOnUse" orient="auto"><path d="M0,0 L10,5 L0,10 z" fill="#9a9a9a"/></marker>
+    <!-- arrowheads that stop short of a vertex dot -->
+    <marker id="a-edge-v" viewBox="0 0 10 10" refX="19" refY="5" markerWidth="8" markerHeight="8" markerUnits="userSpaceOnUse" orient="auto"><path d="M0,0 L10,5 L0,10 z" fill="#7de967"/></marker>
+    <marker id="a-edge-s" viewBox="0 0 10 10" refX="15" refY="5" markerWidth="6" markerHeight="6" markerUnits="userSpaceOnUse" orient="auto"><path d="M0,0 L10,5 L0,10 z" fill="#7de967"/></marker>
+    <!-- double-headed (start) -->
+    <marker id="s-gray" viewBox="0 0 10 10" refX="0" refY="5" markerWidth="8" markerHeight="8" markerUnits="userSpaceOnUse" orient="auto"><path d="M10,0 L0,5 L10,10 z" fill="#cfcfcf"/></marker>
+    <marker id="e-gray" viewBox="0 0 10 10" refX="10" refY="5" markerWidth="8" markerHeight="8" markerUnits="userSpaceOnUse" orient="auto"><path d="M0,0 L10,5 L0,10 z" fill="#cfcfcf"/></marker>
+  </defs>
+
+  <rect width="1180" height="1140" fill="#1e1e1e"/>
+
+  <text x="590" y="42" text-anchor="middle" font-size="26" font-weight="bold" fill="#e6e6e6">Boundary Representation (B-rep) in openNURBS (C++)</text>
+
+  <!-- ===================== LEFT: 3D space ===================== -->
+  <text x="20" y="96" font-size="17" font-weight="bold" fill="#e6e6e6">3D space</text>
+
+  <!-- surface -->
+  <path d="M20,290 L140,120 L490,120 L370,290 Z" fill="#3a3622" stroke="#8c8040" stroke-width="1"/>
+  <text x="400" y="148" font-size="14" font-weight="bold" class="geom">Surface</text>
+
+  <!-- 3D curves on the surface (the edge curves before trimming) -->
+  <g fill="none" stroke="#d8d8d8" stroke-width="1.3">
+    <path d="M95,176 Q117,176 140,180 Q250,175 360,200 Q385,206 410,214"/>
+    <path d="M384,176 Q372,188 360,200 Q330,230 290,250 Q275,258 262,268"/>
+    <path d="M42,232 Q56,233 70,235 Q180,230 290,250 Q312,254 334,262"/>
+    <path d="M58,256 Q64,245 70,235 Q100,200 140,180 Q156,172 172,158"/>
+    <path d="M175,200 L220,195 L228,230 L185,237 Z"/>
+  </g>
+  <text x="196" y="166" font-size="13" font-weight="bold" class="geom">3D curve</text>
+
+  <!-- surface normal (this example: face is reversed relative to its surface) -->
+  <line x1="255" y1="222" x2="255" y2="318" stroke="#e6e6e6" stroke-width="1.8" stroke-dasharray="3 3" marker-end="url(#a-red)"/>
+  <circle cx="255" cy="222" r="3.5" fill="#e6e6e6"/>
+  <text x="263" y="314" font-size="13" fill="#e6e6e6">Surface normal</text>
+
+  <!-- projection lines: surface curve corners down to face vertices -->
+  <g stroke="#a8a8a8" stroke-width="1" stroke-dasharray="6 4">
+    <line x1="140" y1="180" x2="140" y2="414"/>
+    <line x1="360" y1="200" x2="360" y2="464"/>
+    <line x1="290" y1="250" x2="290" y2="534"/>
+    <line x1="70" y1="235" x2="70" y2="499"/>
+  </g>
+
+  <!-- 3D bounding box (decoration) -->
+  <g fill="none" stroke="#555555" stroke-width="1" stroke-dasharray="4 4">
+    <rect x="40" y="400" width="340" height="175"/>
+    <rect x="70" y="375" width="340" height="175"/>
+    <line x1="40" y1="400" x2="70" y2="375"/><line x1="380" y1="400" x2="410" y2="375"/>
+    <line x1="40" y1="575" x2="70" y2="550"/><line x1="380" y1="575" x2="410" y2="550"/>
+  </g>
+
+  <!-- face F0 with a hole -->
+  <path fill="url(#hatch)" fill-rule="evenodd"
+        d="M70,505 C150,505 220,515 290,540 C315,515 335,490 360,470 C280,455 210,410 140,420 C110,440 85,470 70,505 Z
+           M175,455 L220,450 L228,485 L185,492 Z"/>
+
+  <!-- outer edges E0..E3 -->
+  <g fill="none" stroke="#7de967" stroke-width="2" marker-end="url(#a-edge-v)">
+    <path d="M70,505 C150,505 220,515 290,540"/>
+    <path d="M290,540 C315,515 335,490 360,470"/>
+    <path d="M360,470 C280,455 210,410 140,420"/>
+    <path d="M140,420 C110,440 85,470 70,505"/>
+  </g>
+  <!-- inner edges E4..E7 -->
+  <g fill="none" stroke="#7de967" stroke-width="1.6" marker-end="url(#a-edge-s)">
+    <path d="M175,455 L220,450"/>
+    <path d="M220,450 L228,485"/>
+    <path d="M228,485 L185,492"/>
+    <path d="M185,492 L175,455"/>
+  </g>
+  <g class="edge lbl" font-weight="bold">
+    <text x="178" y="528">E0</text>
+    <text x="330" y="518">E1</text>
+    <text x="250" y="432">E2</text>
+    <text x="80" y="460" text-anchor="end">E3</text>
+    <text x="190" y="446" font-size="11">E4</text>
+    <text x="232" y="472" font-size="11">E5</text>
+    <text x="200" y="506" font-size="11">E6</text>
+    <text x="172" y="480" font-size="11" text-anchor="end">E7</text>
+  </g>
+
+  <!-- vertices -->
+  <g class="vert">
+    <circle cx="290" cy="540" r="6"/><circle cx="360" cy="470" r="6"/>
+    <circle cx="140" cy="420" r="6"/><circle cx="70" cy="505" r="6"/>
+    <circle cx="175" cy="455" r="3"/><circle cx="220" cy="450" r="3"/>
+    <circle cx="228" cy="485" r="3"/><circle cx="185" cy="492" r="3"/>
+  </g>
+  <g class="vert" font-size="13" font-weight="bold">
+    <text x="298" y="560">V0</text>
+    <text x="372" y="470">V1</text>
+    <text x="118" y="412">V2</text>
+    <text x="40" y="520">V3</text>
+  </g>
+
+  <text x="250" y="510" font-size="17" font-weight="bold" class="face">F0</text>
+
+  <!-- face normal -->
+  <line x1="300" y1="490" x2="300" y2="400" stroke="#e6e6e6" stroke-width="1.8" marker-end="url(#a-red)"/>
+  <circle cx="300" cy="490" r="3.5" fill="#e6e6e6"/>
+  <text x="308" y="418" font-size="13" fill="#e6e6e6">Face normal</text>
+
+  <text x="20" y="602" font-size="12" font-style="italic" class="note">
+    <tspan x="20">Here face.m_bRev is true, so the face normal</tspan>
+    <tspan x="20" dy="15">points opposite the surface normal.</tspan>
+  </text>
+
+  <!-- down to parameter space -->
+  <line x1="220" y1="636" x2="220" y2="690" stroke="#9a9a9a" stroke-width="1.5" stroke-dasharray="5 4" marker-end="url(#a-gray)"/>
+  <text x="234" y="660" font-size="12" class="note">
+    <tspan x="234">Trims live in the (u, v) domain</tspan>
+    <tspan x="234" dy="15">of the face's surface</tspan>
+  </text>
+
+  <!-- ===================== LEFT: 2D parameter space ===================== -->
+  <text x="20" y="712" font-size="17" font-weight="bold" fill="#e6e6e6">2D parameter space</text>
+  <path d="M20,955 L100,725 L490,725 L410,955 Z" fill="#252525" stroke="#707070" stroke-width="1" stroke-dasharray="5 4"/>
+
+  <!-- outer loop L0 -->
+  <path d="M80,915 L375,915 L435,760 L140,760 Z" fill="none" stroke="#7e8d35" stroke-width="2"/>
+  <text x="150" y="752" font-size="13" font-weight="bold" class="loop">L0 (outer)</text>
+  <!-- inner loop L1 -->
+  <path d="M215,870 L310,870 L330,815 L235,815 Z" fill="none" stroke="#7e8d35" stroke-width="2"/>
+  <text x="272" y="848" text-anchor="middle" font-size="12" font-weight="bold" class="loop">L1 (inner)</text>
+
+  <!-- trims: outer loop counter-clockwise, inner loop clockwise -->
+  <g stroke="#677de9" stroke-width="1.8" marker-end="url(#a-trim)">
+    <line x1="120" y1="903" x2="345" y2="903"/>
+    <line x1="370" y1="890" x2="410" y2="785"/>
+    <line x1="405" y1="772" x2="170" y2="772"/>
+    <line x1="145" y1="785" x2="105" y2="890"/>
+    <line x1="245" y1="805" x2="320" y2="805"/>
+    <line x1="340" y1="822" x2="325" y2="862"/>
+    <line x1="300" y1="880" x2="225" y2="880"/>
+    <line x1="200" y1="862" x2="215" y2="822"/>
+  </g>
+  <g class="trim" font-size="12" font-weight="bold">
+    <text x="232" y="934">T0</text>
+    <text x="404" y="864">T1</text>
+    <text x="356" y="790">T2</text>
+    <text x="132" y="842">T3</text>
+    <text x="276" y="799">T4</text>
+    <text x="343" y="850">T5</text>
+    <text x="206" y="895" text-anchor="end">T6</text>
+    <text x="196" y="846" text-anchor="end">T7</text>
+  </g>
+
+  <!-- legend -->
+  <g font-size="12" fill="#e6e6e6">
+    <text x="20" y="992" font-size="13" font-weight="bold" fill="#e6e6e6">Legend</text>
+    <rect x="20" y="1004" width="14" height="14" fill="#f65a8e"/><text x="40" y="1016">Face  (ON_BrepFace)</text>
+    <rect x="185" y="1004" width="14" height="14" fill="#7e8d35"/><text x="205" y="1016">Loop  (ON_BrepLoop)</text>
+    <rect x="360" y="1004" width="14" height="14" fill="#677de9"/><text x="380" y="1016">Trim  (ON_BrepTrim)</text>
+    <rect x="20" y="1028" width="14" height="14" fill="#7de967"/><text x="40" y="1040">Edge  (ON_BrepEdge)</text>
+    <rect x="185" y="1028" width="14" height="14" fill="#e6e6e6"/><text x="205" y="1040">Vertex  (ON_BrepVertex)</text>
+    <rect x="360" y="1028" width="14" height="14" fill="#3a2a3a" stroke="#eda8fa" stroke-dasharray="3 2"/><text x="380" y="1040">Geometry</text>
+    <text x="20" y="1066" class="note">In this example, trim Tn uses edge En.</text>
+  </g>
+
+  <!-- ===================== RIGHT: Brep lists ===================== -->
+  <text x="530" y="82" font-size="14" font-weight="bold" fill="#e6e6e6">
+    <tspan x="530">Boundary representation (B-rep) describes an object by its boundary:</tspan>
+    <tspan x="530" dy="19">faces, plus the topology that connects them.</tspan>
+  </text>
+
+  <rect x="530" y="112" width="630" height="250" rx="6" fill="#262a30" stroke="#3d444d"/>
+  <g class="mono" font-size="13">
+    <text x="548" y="137" font-weight="bold" fill="#e6e6e6">ON_Brep</text>
+    <text x="566" y="160" fill="#9aa3ad">// geometry</text>
+    <text x="566" y="181" fill="#e6e6e6">m_C2</text><text x="616" y="181" fill="#5cc6d0">ON_CurveArray</text><text x="790" y="181" fill="#9aa3ad">// 2D trimming curves, used by trims</text>
+    <text x="566" y="201" fill="#e6e6e6">m_C3</text><text x="616" y="201" fill="#5cc6d0">ON_CurveArray</text><text x="790" y="201" fill="#9aa3ad">// 3D curves, used by edges</text>
+    <text x="566" y="221" fill="#e6e6e6">m_S</text><text x="616" y="221" fill="#5cc6d0">ON_SurfaceArray</text><text x="790" y="221" fill="#9aa3ad">// parametric surfaces, used by faces</text>
+    <text x="566" y="246" fill="#9aa3ad">// topology</text>
+    <text x="566" y="267" fill="#e6e6e6">m_V</text><text x="616" y="267" fill="#5cc6d0">ON_BrepVertexArray</text><text x="790" y="267" fill="#9aa3ad">// ON_BrepVertex</text>
+    <text x="566" y="287" fill="#e6e6e6">m_E</text><text x="616" y="287" fill="#5cc6d0">ON_BrepEdgeArray</text><text x="790" y="287" fill="#9aa3ad">// ON_BrepEdge</text>
+    <text x="566" y="307" fill="#e6e6e6">m_T</text><text x="616" y="307" fill="#5cc6d0">ON_BrepTrimArray</text><text x="790" y="307" fill="#9aa3ad">// ON_BrepTrim</text>
+    <text x="566" y="327" fill="#e6e6e6">m_L</text><text x="616" y="327" fill="#5cc6d0">ON_BrepLoopArray</text><text x="790" y="327" fill="#9aa3ad">// ON_BrepLoop</text>
+    <text x="566" y="347" fill="#e6e6e6">m_F</text><text x="616" y="347" fill="#5cc6d0">ON_BrepFaceArray</text><text x="790" y="347" fill="#9aa3ad">// ON_BrepFace</text>
+  </g>
+
+  <!-- compact topology summary -->
+  <rect x="530" y="374" width="630" height="100" rx="6" fill="#1e1e1e" stroke="#cfcfcf" stroke-width="1.2"/>
+  <g font-size="17">
+    <text x="600" y="431" text-anchor="middle" class="face">face</text>
+    <text x="730" y="431" text-anchor="middle" class="loop">loop</text>
+    <text x="860" y="431" text-anchor="middle" class="trim">trim</text>
+    <text x="1030" y="404" text-anchor="middle" class="edge">edge</text>
+    <text x="1030" y="460" text-anchor="middle" class="vert">vertex</text>
+  </g>
+  <g stroke="#cfcfcf" stroke-width="1.5" marker-start="url(#s-gray)" marker-end="url(#e-gray)">
+    <line x1="630" y1="425" x2="698" y2="425"/>
+    <line x1="760" y1="425" x2="828" y2="425"/>
+    <line x1="890" y1="417" x2="996" y2="400"/>
+    <line x1="1030" y1="412" x2="1030" y2="440"/>
+  </g>
+  <line x1="890" y1="432" x2="992" y2="452" stroke="#cfcfcf" stroke-width="1.5" marker-end="url(#e-gray)"/>
+
+  <!-- ===================== RIGHT: navigation ===================== -->
+  <text x="530" y="506" font-size="17" font-weight="bold" fill="#e6e6e6">Navigating the topology</text>
+
+  <!-- boxes -->
+  <rect x="655" y="518" width="130" height="44" rx="4" class="box" stroke="#f65a8e"/>
+  <text x="720" y="537" text-anchor="middle" font-size="14" font-weight="bold" class="face">ON_BrepFace</text>
+  <text x="720" y="553" text-anchor="middle" font-size="11" class="note mono">: ON_SurfaceProxy</text>
+
+  <rect x="655" y="648" width="130" height="44" rx="4" class="box" stroke="#7e8d35"/>
+  <text x="720" y="667" text-anchor="middle" font-size="14" font-weight="bold" class="loop">ON_BrepLoop</text>
+  <text x="720" y="683" text-anchor="middle" font-size="11" class="note mono">: ON_Geometry</text>
+
+  <rect x="655" y="778" width="130" height="44" rx="4" class="box" stroke="#677de9"/>
+  <text x="720" y="797" text-anchor="middle" font-size="14" font-weight="bold" class="trim">ON_BrepTrim</text>
+  <text x="720" y="813" text-anchor="middle" font-size="11" class="note mono">: ON_CurveProxy</text>
+
+  <rect x="895" y="778" width="130" height="44" rx="4" class="box" stroke="#7de967"/>
+  <text x="960" y="797" text-anchor="middle" font-size="14" font-weight="bold" class="edge">ON_BrepEdge</text>
+  <text x="960" y="813" text-anchor="middle" font-size="11" class="note mono">: ON_CurveProxy</text>
+
+  <rect x="895" y="908" width="130" height="44" rx="4" class="box" stroke="#e6e6e6"/>
+  <text x="960" y="927" text-anchor="middle" font-size="14" font-weight="bold" class="vert">ON_BrepVertex</text>
+  <text x="960" y="943" text-anchor="middle" font-size="11" class="note mono">: ON_Point</text>
+
+  <!-- geometry -->
+  <ellipse cx="1100" cy="540" rx="52" ry="20" class="gbox"/>
+  <text x="1100" y="545" text-anchor="middle" font-size="13" class="geom">ON_Surface</text>
+  <ellipse cx="960" cy="670" rx="52" ry="20" class="gbox"/>
+  <text x="960" y="675" text-anchor="middle" font-size="13" class="geom">ON_Curve (3D)</text>
+  <ellipse cx="650" cy="930" rx="52" ry="20" class="gbox"/>
+  <text x="650" y="935" text-anchor="middle" font-size="13" class="geom">ON_Curve (2D)</text>
+  <ellipse cx="960" cy="1040" rx="52" ry="20" class="gbox"/>
+  <text x="960" y="1045" text-anchor="middle" font-size="13" class="geom">ON_3dPoint</text>
+
+  <!-- topology arrows -->
+  <g fill="none" stroke-width="1.6">
+    <line x1="705" y1="562" x2="705" y2="646" stroke="#f65a8e" marker-end="url(#a-face)"/>
+    <line x1="735" y1="648" x2="735" y2="564" stroke="#7e8d35" marker-end="url(#a-loop)"/>
+    <line x1="705" y1="692" x2="705" y2="776" stroke="#7e8d35" marker-end="url(#a-loop)"/>
+    <line x1="735" y1="778" x2="735" y2="694" stroke="#677de9" marker-end="url(#a-trim)"/>
+    <line x1="785" y1="792" x2="893" y2="792" stroke="#677de9" marker-end="url(#a-trim)"/>
+    <line x1="895" y1="810" x2="787" y2="810" stroke="#7de967" marker-end="url(#a-edge)"/>
+    <path d="M760,822 V930 H893" stroke="#677de9" marker-end="url(#a-trim)"/>
+    <line x1="945" y1="822" x2="945" y2="906" stroke="#7de967" marker-end="url(#a-edge)"/>
+    <line x1="975" y1="908" x2="975" y2="824" stroke="#e6e6e6" marker-end="url(#a-vert)"/>
+  </g>
+  <!-- geometry arrows -->
+  <g fill="none" stroke="#eda8fa" stroke-width="1.5" stroke-dasharray="5 3" marker-end="url(#a-geom)">
+    <line x1="785" y1="540" x2="1046" y2="540"/>
+    <line x1="960" y1="778" x2="960" y2="692"/>
+    <line x1="680" y1="822" x2="680" y2="911"/>
+    <line x1="960" y1="952" x2="960" y2="1018"/>
+  </g>
+
+  <!-- member labels -->
+  <g class="mono" font-size="12">
+    <text x="697" y="590" text-anchor="end" class="face">face.m_li[]</text>
+    <text x="697" y="604" text-anchor="end" class="face">face.Loop(i)</text>
+    <text x="697" y="618" text-anchor="end" class="face">face.OuterLoop()</text>
+    <text x="743" y="600" class="loop">loop.m_fi</text>
+    <text x="743" y="614" class="loop">loop.Face()</text>
+    <text x="697" y="722" text-anchor="end" class="loop">loop.m_ti[]</text>
+    <text x="697" y="736" text-anchor="end" class="loop">loop.Trim(i)</text>
+    <text x="743" y="722" class="trim">trim.m_li</text>
+    <text x="743" y="736" class="trim">trim.Loop()</text>
+    <text x="840" y="760" text-anchor="middle" class="trim">trim.m_ei</text>
+    <text x="840" y="774" text-anchor="middle" class="trim">trim.Edge()</text>
+    <text x="840" y="830" text-anchor="middle" class="edge">edge.m_ti[]</text>
+    <text x="840" y="844" text-anchor="middle" class="edge">edge.Trim(i)</text>
+    <text x="827" y="950" text-anchor="middle" class="trim">trim.m_vi[2]</text>
+    <text x="827" y="966" text-anchor="middle" class="trim">trim.Vertex(i)</text>
+    <text x="937" y="874" text-anchor="end" class="edge">edge.m_vi[2]</text>
+    <text x="937" y="888" text-anchor="end" class="edge">edge.Vertex(i)</text>
+    <text x="983" y="870" class="vert">vertex.m_ei[]</text>
+
+    <text x="915" y="532" text-anchor="middle" class="geom">face.SurfaceOf()</text>
+    <text x="915" y="556" text-anchor="middle" class="geom">face.m_si</text>
+    <text x="968" y="726" class="geom">edge.m_c3i</text>
+    <text x="968" y="742" class="geom">edge.EdgeCurveOf()</text>
+    <text x="672" y="856" text-anchor="end" class="geom">trim.m_c2i</text>
+    <text x="672" y="872" text-anchor="end" class="geom">trim.TrimCurveOf()</text>
+    <text x="968" y="984" class="geom">vertex.Point()</text>
+    <text x="968" y="1000" class="geom">vertex.point</text>
+  </g>
+
+  <!-- notes -->
+  <g font-size="12" class="note">
+    <text x="530" y="1084">• <tspan class="mono">m_…i</tspan> members are indices into the <tspan class="mono">ON_Brep</tspan> arrays above, e.g. <tspan class="mono">brep.m_E[trim.m_ei]</tspan>.</text>
+    <text x="530" y="1103">• For singular trims (<tspan class="mono">ON_BrepTrim::singular</tspan>), <tspan class="mono">trim.m_ei</tspan> is -1 and <tspan class="mono">trim.Edge()</tspan> is nullptr.</text>
+    <text x="530" y="1122">• Also: <tspan class="mono">trim.Face()</tspan>, <tspan class="mono">trim.m_bRev3d</tspan>, and <tspan class="mono">brep.Edge(i)</tspan>, <tspan class="mono">brep.Trim(i)</tspan>, … to turn an index into a pointer.</text>
+  </g>
+</svg>

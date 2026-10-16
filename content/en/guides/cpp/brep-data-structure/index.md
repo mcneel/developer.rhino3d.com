@@ -9,7 +9,6 @@ sdk = [ "C/C++" ]
 title = "Brep Data Structure"
 type = "guides"
 weight = 4
-override_last_modified = "2018-12-05T14:59:06Z"
 
 [admin]
 TODO = "needs explanation, diagram style update"
@@ -18,7 +17,7 @@ picky_sisters = ""
 state = ""
 
 [included_in]
-platforms = [ "Windows" ]
+platforms = [ "Windows", "Mac" ]
 since = 0
 
 [page_options]
@@ -27,46 +26,64 @@ toc = true
 toc_type = "single"
 +++
 
- 
+
 ## Conceptual diagram
 
-![BRep Data Structure](/images/brep-data-structure-01.png)
+![B-rep Data Structure|600](brep-opennurbs.svg)
 
 ## Sample
 
 ```cpp
-//Given a brep and a face index
-const ON_Brep* brep;
-const int face_index = 0;
-ON_SimpleArray<int> face_ti_list; //trims indeces list
-ON_SimpleArray<int> face_ei_list; //edges indeces list
-
-//Get the BrepFace of the given index
-const ON_BrepFace* face = brep->Face(face_index);
-if( 0 == face )
-  return false;
-
-//Get the loop of the face
-for( int fli = 0; fli < face->LoopCount(); fli++ )
+/*
+Description:
+  Gets the indices of the trims and edges used by a brep face.
+Parameters:
+  brep              - [in] The brep.
+  face_index        - [in] Index of the face in brep.m_F[].
+  face_trim_indices - [out] Indices into brep.m_T[] of the face's trims.
+  face_edge_indices - [out] Indices into brep.m_E[] of the face's edges.
+Returns:
+  true if successful, false if face_index is out of range.
+*/
+bool GetFaceTrimsAndEdges(
+  const ON_Brep& brep,
+  int face_index,
+  ON_SimpleArray<int>& face_trim_indices,
+  ON_SimpleArray<int>& face_edge_indices
+)
 {
-  const ON_BrepLoop* loop = face->Loop( fli );
-  if( 0 == loop )
-    continue;
+  face_trim_indices.Empty();
+  face_edge_indices.Empty();
 
-  for( int lti = 0; lti < loop->TrimCount(); lti++ )
+  // Get the face at the given index
+  const ON_BrepFace* face = brep.Face(face_index);
+  if (nullptr == face)
+    return false;
+
+  // Walk the loops of the face
+  for (int fli = 0; fli < face->LoopCount(); fli++)
   {
-    //Find the trim
-    const ON_BrepTrim* trim = loop->Trim( lti );
-    if( 0 == trim )
+    const ON_BrepLoop* loop = face->Loop(fli);
+    if (nullptr == loop)
       continue;
-    face_ti_list.Append( trim->m_trim_index );
 
-    //Find the edge of that trim
-    //Each trim has exactly one edge attached to it
-    const ON_BrepEdge* edge = trim->Edge();
-    if( 0 == edge )
-      continue;
-    face_ei_list.Append( edge->m_edge_index );
+    // Walk the trims of the loop
+    for (int lti = 0; lti < loop->TrimCount(); lti++)
+    {
+      const ON_BrepTrim* trim = loop->Trim(lti);
+      if (nullptr == trim)
+        continue;
+      face_trim_indices.Append(trim->m_trim_index);
+
+      // Get the edge the trim uses.
+      // Singular trims have no edge, so trim->Edge() is nullptr for them.
+      const ON_BrepEdge* edge = trim->Edge();
+      if (nullptr == edge)
+        continue;
+      face_edge_indices.Append(edge->m_edge_index);
+    }
   }
+
+  return true;
 }
 ```
