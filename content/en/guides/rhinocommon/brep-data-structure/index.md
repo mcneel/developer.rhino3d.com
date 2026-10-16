@@ -34,38 +34,7 @@ toc_type = "single"
 ## Sample
 
 ```csharp
-/*
-Description:
-  Gets the indices of the trims and edges used by a brep face.
-Parameters:
-  brep              - [in] The brep.
-  face_index        - [in] Index of the face in brep.m_F[].
-  face_trim_indices - [out] Indices into brep.m_T[] of the face's trims.
-  face_edge_indices - [out] Indices into brep.m_E[] of the face's edges.
-Returns:
-  true if successful, false if face_index is out of range.
-*/
-bool GetFaceTrimsAndEdges(
-  const ON_Brep& brep,
-  int face_index,
-  ON_SimpleArray<int>& face_trim_indices,
-  ON_SimpleArray<int>& face_edge_indices
-)
-{
-  face_trim_indices.Empty();
-  face_edge_indices.Empty();
-
-  // Get the face at the given index
-  const ON_BrepFace* face = brep.Face(face_index);
-  if (nullptr == face)
-    return false;
-
-  // Walk the loops of the face
-  for (int fli = 0; fli < face->LoopCount(); fli++)
-  {
-    const ON_BrepLoop* loop = face->Loop(fli);
-    if (nullptr == loop)
-      cusing System.Collections.Generic;
+using System.Collections.Generic;
 using Rhino.Geometry;
 
 static class BrepFaceTopologySample
