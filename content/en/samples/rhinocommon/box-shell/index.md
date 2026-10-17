@@ -4,7 +4,7 @@ authors = [ "steve" ]
 categories = [ "Other" ]
 description = "Demonstrates how to give thickness to (or shell) a Brep box."
 keywords = [ "shell" ]
-languages = [ "C#" ]
+languages = [ "C#", "Python" ]
 sdk = [ "RhinoCommon" ]
 title = "Box Shell"
 type = "samples/rhinocommon"
@@ -56,7 +56,25 @@ partial class Examples
 <div class="codetab-content" id="py">
 
 ```python
-# No Python sample available
+#! python 3
+import Rhino
+import scriptcontext as sc
+
+def RunCommand():
+    rc, box = Rhino.Input.RhinoGet.GetBox()
+    if rc == Rhino.Commands.Result.Success:
+        brep = Rhino.Geometry.Brep.CreateFromBox(box)
+        if brep is not None:
+            facesToRemove = [0]
+            shells = Rhino.Geometry.Brep.CreateShell(brep, facesToRemove, 1.0, sc.doc.ModelAbsoluteTolerance)
+            if shells is not None:
+                for i in range(len(shells)):
+                    sc.doc.Objects.AddBrep(shells[i])
+                sc.doc.Views.Redraw()
+    return rc
+
+if __name__ == "__main__":
+    RunCommand()
 ```
 
 </div>

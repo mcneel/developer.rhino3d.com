@@ -4,7 +4,7 @@ authors = [ "steve" ]
 categories = [ "Adding Objects" ]
 description = "Demonstrates how to construct a mesh box from a Brep box."
 keywords = [ "add", "mesh" ]
-languages = [ "C#" ]
+languages = [ "C#", "Python" ]
 sdk = [ "RhinoCommon" ]
 title = "Add Mesh Box"
 type = "samples/rhinocommon"
@@ -51,7 +51,23 @@ partial class Examples
 <div class="codetab-content" id="py">
 
 ```python
-# No Python sample available
+#! python 3
+import Rhino
+import scriptcontext as sc
+
+def RunCommand():
+    rc, box = Rhino.Input.RhinoGet.GetBox()
+    if rc == Rhino.Commands.Result.Success:
+        mesh = Rhino.Geometry.Mesh.CreateFromBox(box, 2, 2, 2)
+        if mesh is not None:
+            sc.doc.Objects.AddMesh(mesh)
+            sc.doc.Views.Redraw()
+            return Rhino.Commands.Result.Success
+
+    return Rhino.Commands.Result.Failure
+
+if __name__ == "__main__":
+    RunCommand()
 ```
 
 </div>
