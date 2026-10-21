@@ -1,7 +1,7 @@
 +++
 aliases = ["/en/5/guides/compute/deploy-to-iis/", "/en/6/guides/compute/deploy-to-iis/", "/en/7/guides/compute/deploy-to-iis/", "/en/wip/guides/compute/deploy-to-iis/", "/en/guides/compute/deploy/"]
 authors = [ "andy.payne" ]
-categories = [ "Deployment" ]
+categories = [ "Legacy" ]
 description = "How to deploy rhino compute for production on a machine running Internet Information Services (IIS) for Rhino 7"
 keywords = [ "developer", "compute", "production", "IIS" ]
 languages = [ "C#", "VB" ]
