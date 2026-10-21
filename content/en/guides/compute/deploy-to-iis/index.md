@@ -277,9 +277,9 @@ If you already have Rhino.Compute set up on this machine, you should periodicall
     ```
 
 1. The script shows what's installed, then asks three questions. Press **Enter** to answer yes to each:
-    - *Update Rhino 8 (recommended)?*
-    - *Update Rhino.Compute and its .NET hosting bundle (recommended)?*
-    - *Update Hops (recommended)?*
+    - Update Rhino 8 (recommended)?
+    - Update Rhino.Compute and its .NET hosting bundle (recommended)?
+    - Update Hops (recommended)?
 
 The script downloads and checks everything first, while Rhino.Compute keeps answering requests. Then it stops IIS once, installs the updates and starts IIS again. Requests sent while it installs will fail, so pick a quiet time. If the new Rhino.Compute can't be installed, the previous one is put back. At the end, the script shows the result for each part, and it logs every run in `C:\Rhino-Compute-Installation\update_log.txt`.
 
