@@ -1,7 +1,7 @@
 {{ define "main" }}
 <div class="single-content-area">
   <div class="feature-title-container">
-    <div class="feature-title">{{ .Page.Title }}</div>{{ if eq (int .Site.Params.latestRhinoVersion) (int .Params.included_in.since) }}<div class="new-callout"><a href="/{{ .Site.Params.latestRhinoVersion}}/new">{{ i18n "NEW-in-Vx" . }}</a></div>{{ end }}{{- partial "platform-callout" . -}}        
+    <div class="feature-title">{{ .Page.Title }}</div>{{ if eq (int .Site.Params.latestRhinoVersion) (int .Params.included_in.since) }}<div class="new-callout"><a href="/guides/general/new-in-v9/">{{ i18n "NEW-in-Vx" . }}</a></div>{{ end }}{{- partial "platform-callout" . -}}        
   </div>
 
   <p>{{ .Page.Description }}</p>

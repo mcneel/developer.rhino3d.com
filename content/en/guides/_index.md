@@ -25,7 +25,7 @@ toc_type = "single"
 
 ### Overview
 
-- [New for Developers in V9](/guides/general/new-in-v9/)
+- [New for Developers in V9](/guides/general/new-in-v9/) {{< new-label version="9" style="inline" link="/guides/general/new-in-v9/" >}}
 - [Developing Software In Public](/guides/general/developing-software-in-public)
 - [Rhino Technology Overview](/guides/general/rhino-technology-overview)
     - [OpenGL in Rhino 9](/guides/general/rhino-technology-overview/opengl/) {{< new-label version="9" style="inline" link="/guides/general/new-in-v9/" >}}
