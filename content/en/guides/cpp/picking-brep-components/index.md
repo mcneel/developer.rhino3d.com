@@ -9,7 +9,6 @@ sdk = [ "C/C++" ]
 title = "Picking Brep Components"
 type = "guides"
 weight = 1
-override_last_modified = "2018-12-05T14:59:06Z"
 
 [admin]
 TODO = ""
@@ -18,7 +17,7 @@ picky_sisters = ""
 state = ""
 
 [included_in]
-platforms = [ "Windows" ]
+platforms = [ "Windows", "Mac" ]
 since = 0
 
 [page_options]

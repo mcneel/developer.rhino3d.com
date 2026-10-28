@@ -282,7 +282,7 @@ toc_type = "single"
 
 ## [C/C++](/guides/cpp)
 
-*Native SDK for Rhino for Windows plugins.*
+*Native SDK for Rhino plugins on Windows and Mac.*
 
 ### Overview
 

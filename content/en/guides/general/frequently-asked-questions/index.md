@@ -29,7 +29,7 @@ toc_type = "single"
 
 **Which SDK is right for me?**
 
-It all depends on what you want to do.  If you are looking to automate repetitive tasks in Rhino, writing a [Python](/guides/#rhinopython) script is the way to go.  If you are looking to write a full-fledged plugin or Grasshopper component, we strongly suggest the [RhinoCommon SDK](/guides/rhinocommon/what-is-rhinocommon/).  If you are very proficient with C/C++, you should consider the native C/C++ SDK (only supported on Rhino for Windows).
+It all depends on what you want to do.  If you are looking to automate repetitive tasks in Rhino, writing a [Python](/guides/#rhinopython) script is the way to go.  If you are looking to write a full-fledged plugin or Grasshopper component, we strongly suggest the [RhinoCommon SDK](/guides/rhinocommon/what-is-rhinocommon/).  If you are very proficient with C/C++, you should consider the native C/C++ SDK (supported on Rhino for Windows, and on Rhino for Mac starting with Rhino 9).
 
 **Can I write plugins that run on both Windows and Mac?**
 

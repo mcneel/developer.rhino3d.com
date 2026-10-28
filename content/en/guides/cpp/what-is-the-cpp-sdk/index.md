@@ -29,7 +29,7 @@ toc_type = "single"
 
 The Rhino C/C++ Software Development Kit (SDK) is an set of developer resources for customizing and extending Rhino. The SDK provides tools that provide direct access to its database structures, geometry, graphics system, file I/O, command definitions, and much more.
 
-The Rhino C/C++ SDK consists primarily of C++ headers and libraries that can be used to build Rhino extensions called *Plugins*. Plugins are Windows DLLs that can be loaded into the Rhino process and interact directly with the Rhino application. Rhino plugin modules use the file extension *.rhp* instead of the more common *.dll*.
+The Rhino C/C++ SDK consists primarily of C++ headers and libraries that can be used to build Rhino extensions called *Plugins*. On Windows, plugins are DLLs. On Mac (Rhino 9 and later), plugins are loadable bundles. Rhino loads plugins into its process, where they interact directly with the Rhino application. Rhino plugin modules use the file extension *.rhp* instead of the more common *.dll*.
 
 ## Types of Plugins
 
