@@ -34,6 +34,8 @@ target = 'assets'
 [params]
   nwo = "mcneel/developer.rhino3d.com" # github repository (name with owner)
   latestRhinoVersion = 9
+  # this site has no /9/new/ page; heading badges link here instead
+  newBadgeLink = "/guides/general/new-in-v9/"
   supportedPlatforms = "Windows and macOS" # used for unfurls
   siteRootURL = "/" # used in navigation banner
   rhinoURL = "https://www.rhino3d.com"

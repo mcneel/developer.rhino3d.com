@@ -1,4 +1,5 @@
 {{/* overriding headingIDs to be English www-1221 */}}
+{{/* Sites without a /N/new/ page set params.newBadgeLink for the %% badge link */}}
 {{ $enHeadings := slice }}
 {{ $translations := dict }}
 {{ $enOccurances := dict }}
@@ -33,4 +34,4 @@
 
 {{/* overriding id and href of heading */}}
 {{ $generatedAnchor := index $translations $.Anchor }}
-<h{{ $.Level }} id="{{$generatedAnchor}}">{{ $headingText | safeHTML }}<a aria-label="{{ $headingText | safeHTML }}" href="#{{$generatedAnchor}}"></a>{{ if $badge }}<div class="new-callout new-callout-inline"><a href="/{{ $.Page.Site.Params.latestRhinoVersion }}/new/">{{ $badge | safeHTML }}</a></div>{{ end }}</h{{ $.Level }}>
+<h{{ $.Level }} id="{{$generatedAnchor}}">{{ $headingText | safeHTML }}<a aria-label="{{ $headingText | safeHTML }}" href="#{{$generatedAnchor}}"></a>{{ if $badge }}<div class="new-callout new-callout-inline"><a href="{{ $.Page.Site.Params.newBadgeLink | default (printf "/%v/new/" $.Page.Site.Params.latestRhinoVersion) }}">{{ $badge | safeHTML }}</a></div>{{ end }}</h{{ $.Level }}>
