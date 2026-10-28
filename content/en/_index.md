@@ -25,7 +25,7 @@ list_group = "uncategorized"
 {{< feature-card page="/guides/rhinopython/python-3-in-rhino" image="/images/new-in-v9/python3.png" title="Python 3 and the Script Editor" description="Write Python 3 and C# scripts in Rhino and Grasshopper." >}}
 {{< /card-gallery >}}
 
-[See all that is new for developers in Rhino 9](/guides/general/new-in-v9/).
+<p style="text-align: right;"><a href="/guides/general/new-in-v9/">See all that is new for developers in Rhino 9</a>.</p>
 
 ## Development Platform Overview
 
