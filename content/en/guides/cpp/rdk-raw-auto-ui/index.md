@@ -9,7 +9,6 @@ sdk = [ "C/C++" ]
 title = "RDK Automatic UI"
 type = "guides"
 weight = 1
-override_last_modified = "2019-01-17T10:24:25Z"
 
 [admin]
 TODO = ""
@@ -18,7 +17,7 @@ picky_sisters = ""
 state = ""
 
 [included_in]
-platforms = [ "Windows" ]
+platforms = [ "Windows", "Mac" ]
 since = 0
 
 [page_options]

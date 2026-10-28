@@ -56,9 +56,9 @@ For more information about openNURBS, please see the [openNURBS guides](/guides/
 
 ### C++ SDK
 
-On top of all of this is our C++ SDK, available only on Windows.
+On top of all of this is our C++ SDK. It is available on Windows and, starting with Rhino 9, on Mac.
 
-Compiling against the C++ SDK requires a specific version of Microsoft Visual Studio and the Microsoft C-Runtime.  You have to recompile for every major version of Rhino.
+Compiling against the C++ SDK requires a specific toolchain: Microsoft Visual Studio and the Microsoft C-Runtime on Windows, and Xcode on Mac.  You have to recompile for every major version of Rhino, and for each platform.
 
 Virtually everything Rhino can do is exposed through the C++ SDK. Some commands and features haven’t been exposed yet, but this SDK is very broad and rich.
 

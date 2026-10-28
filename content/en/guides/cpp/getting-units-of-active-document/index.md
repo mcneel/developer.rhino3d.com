@@ -9,7 +9,6 @@ sdk = [ "C/C++" ]
 title = "Getting the Units of the Active Document"
 type = "guides"
 weight = 1
-override_last_modified = "2019-03-12T09:24:09Z"
 
 [admin]
 TODO = ""
@@ -18,7 +17,7 @@ picky_sisters = ""
 state = ""
 
 [included_in]
-platforms = [ "Windows" ]
+platforms = [ "Windows", "Mac" ]
 since = 0
 
 [page_options]

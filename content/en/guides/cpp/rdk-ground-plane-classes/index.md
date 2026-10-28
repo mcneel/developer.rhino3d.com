@@ -9,7 +9,6 @@ sdk = [ "C/C++" ]
 title = "RDK Ground Plane"
 type = "guides"
 weight = 1
-override_last_modified = "2019-01-16T16:52:27Z"
 
 [admin]
 TODO = ""
@@ -18,7 +17,7 @@ picky_sisters = ""
 state = ""
 
 [included_in]
-platforms = [ "Windows" ]
+platforms = [ "Windows", "Mac" ]
 since = 0
 
 [page_options]
