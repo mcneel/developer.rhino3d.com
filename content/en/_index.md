@@ -16,11 +16,18 @@ since = 0
 list_group = "uncategorized"
 +++
 
-{{< call-out note "Need help migrating C# to Rhino 9?" >}}
-Please check out the [Moving to .NET Core guide](/guides/rhinocommon/moving-to-dotnet-core/).  Also, check out [What's New for developers in V9](/guides/general/new-in-v9).
-{{< /call-out >}}
+## New in Rhino 9
 
-{{< vimeo 188730450 >}}
+{{< card-gallery columns="4" >}}
+{{< feature-card page="/guides/cpp" url="/guides/cpp/your-first-plugin-crossplatform/" image="/images/new-in-v9/cpp-mac.png" title="C++ SDK on Mac" description="Build C++ plugins for Windows and Mac." >}}
+{{< feature-card page="/guides/compute/compute-linux-getting-started" image="/images/new-in-v9/compute-linux.png" title="Rhino.Compute on Linux" description="Run Rhino and Grasshopper on a Linux server." >}}
+{{< feature-card page="/guides/grasshopper2" image="/images/new-in-v9/gh2-component.png" title="Grasshopper 2 components" description="Make your first Grasshopper 2 component on Windows or Mac." >}}
+{{< feature-card page="/guides/rhinopython/python-3-in-rhino" image="/images/new-in-v9/python3.png" title="Python 3 and the Script Editor" description="Write Python 3 and C# scripts in Rhino and Grasshopper." >}}
+{{< /card-gallery >}}
+
+[See all that is new for developers in Rhino 9](/guides/general/new-in-v9/).
+
+## Development Platform Overview
 
 <br>
 
