@@ -25,8 +25,10 @@ toc_type = "single"
 
 ### Overview
 
+- [New for Developers in V9](/guides/general/new-in-v9/)
 - [Developing Software In Public](/guides/general/developing-software-in-public)
 - [Rhino Technology Overview](/guides/general/rhino-technology-overview)
+    - [OpenGL in Rhino 9](/guides/general/rhino-technology-overview/opengl/) {{< new-label version="9" style="inline" link="/guides/general/new-in-v9/" >}}
 - [Frequently Asked Questions (FAQ)](/guides/general/frequently-asked-questions)
 
 ### Getting Started
@@ -37,8 +39,10 @@ toc_type = "single"
 ### Fundamentals
 
 - [What is a Rhino Plugin?](/guides/general/what-is-a-rhino-plugin)
+- [Rhino Installer Engine](/guides/general/rhino-installer-engine)
 - [Rhino Package Manager](/guides/yak/)
 - [Rhino UI System](/guides/general/rhino-ui-system/)
+- [In-Viewport User Interface](/guides/general/rhino-ui-system/in-viewport-ui/) {{< new-label version="9" style="inline" link="/guides/general/new-in-v9/" >}}
 - [Simple Command Macros](/guides/general/creating-command-macros/)
 
 ### [Essential Mathematics](/guides/general/essential-mathematics)
@@ -84,13 +88,13 @@ toc_type = "single"
 
 - [Scripting: Python](/guides/scripting/scripting-python)
 - [Grasshopper Scripting: Python](/guides/scripting/scripting-gh-python)
-- [Grasshopper 2 Scripting: Python](/guides/scripting/scripting-gh2-python) *(Rhino 9)*
+- [Grasshopper 2 Scripting: Python](/guides/scripting/scripting-gh2-python) {{< new-label version="9" style="inline" link="/guides/general/new-in-v9/" >}}
 
 ### C# Scripting
 
 - [Scripting: C#](/guides/scripting/scripting-csharp)
 - [Grasshopper Scripting: C#](/guides/scripting/scripting-gh-csharp)
-- [Grasshopper 2 Scripting: C#](/guides/scripting/scripting-gh2-csharp) *(Rhino 9)*
+- [Grasshopper 2 Scripting: C#](/guides/scripting/scripting-gh2-csharp) {{< new-label version="9" style="inline" link="/guides/general/new-in-v9/" >}}
 
 ### Editor Features
 
@@ -102,7 +106,7 @@ toc_type = "single"
 - [Debugging Your Scripts](/guides/scripting/editor-debug)
 - [Templates](/guides/scripting/editor-templates)
 - [Examples](/guides/scripting/editor-examples)
-- [Tests](/guides/scripting/editor-tests) *(Rhino 9)*
+- [Tests](/guides/scripting/editor-tests) {{< new-label version="9" style="inline" link="/guides/general/new-in-v9/" >}}
 - [Help](/guides/scripting/editor-help)
 - [Options](/guides/scripting/editor-configs)
 - [Logs](/guides/scripting/editor-logs)
@@ -116,7 +120,7 @@ toc_type = "single"
 
 - [ScriptEditor Macros](/guides/scripting/advanced-scripteditor-macros)
 - [Language Initialization](/guides/scripting/advanced-langinit)
-- [Script Package References](/guides/scripting/advanced-packages) *(Rhino 9)*
+- [Script Package References](/guides/scripting/advanced-packages) {{< new-label version="9" style="inline" link="/guides/general/new-in-v9/" >}}
 - [Python Path Files](/guides/scripting/advanced-pthfiles)
 - [Python Package Environments](/guides/scripting/advanced-pyvenvs)
 - [Asynchronous Execution](/guides/scripting/advanced-async)
@@ -132,6 +136,7 @@ toc_type = "single"
 
 - [What is RhinoCommon?](/guides/rhinocommon/what-is-rhinocommon/)
 - [What's New?](/guides/rhinocommon/whats-new/)
+- [Moving to .NET Core](/guides/rhinocommon/moving-to-dotnet-core)
 
 ### Getting Started
 
@@ -147,17 +152,18 @@ toc_type = "single"
 ### RhinoCommon Geometry
 
 - [Overview](/guides/grasshopper/csharp-essentials/3-rhinocommon-geometry/#31-overview)  
-- [Geometry structures](/guides/grasshopper/csharp-essentials/3-rhinocommon-geometry/#32-geometry-structures)  
-    - [The Point3d structure](/guides/grasshopper/csharp-essentials/3-rhinocommon-geometry/#321-the-point3d-structure)  
-    - [Points and vectors](/guides/grasshopper/csharp-essentials/3-rhinocommon-geometry/#322-points--vectors)  
-    - [Lightweight curves](/guides/grasshopper/csharp-essentials/3-rhinocommon-geometry/#323-lightweight-curves)  
-    - [Lightweight surfaces](/guides/grasshopper/csharp-essentials/3-rhinocommon-geometry/#324-lightweight-surfaces)  
-    - [Lightweight surfaces](/guides/grasshopper/csharp-essentials/3-rhinocommon-geometry/#325-other-geometry-structures)  
+- [Geometry Structures](/guides/grasshopper/csharp-essentials/3-rhinocommon-geometry/#32-geometry-structures)  
+    - [The Point3d Structure](/guides/grasshopper/csharp-essentials/3-rhinocommon-geometry/#321-the-point3d-structure)  
+    - [Points and Vectors](/guides/grasshopper/csharp-essentials/3-rhinocommon-geometry/#322-points--vectors)  
+    - [Lightweight Curves](/guides/grasshopper/csharp-essentials/3-rhinocommon-geometry/#323-lightweight-curves)  
+    - [Lightweight Surfaces](/guides/grasshopper/csharp-essentials/3-rhinocommon-geometry/#324-lightweight-surfaces)  
+    - [Other Geometry Structures](/guides/grasshopper/csharp-essentials/3-rhinocommon-geometry/#325-other-geometry-structures)  
 - [Geometry classes](/guides/grasshopper/csharp-essentials/3-rhinocommon-geometry/#33-geometry-classes)  
-    -  [Curves](/guides/grasshopper/csharp-essentials/3-rhinocommon-geometry/#331-curves)  
+    - [Curves](/guides/grasshopper/csharp-essentials/3-rhinocommon-geometry/#331-curves)  
     - [Surfaces](/guides/grasshopper/csharp-essentials/3-rhinocommon-geometry/#332-surfaces)  
-    - [Boundary representation (Brep)](/guides/grasshopper/csharp-essentials/3-rhinocommon-geometry/#334-boundary-representation-brep)  
-    - [Other geometry classes](/guides/grasshopper/csharp-essentials/3-rhinocommon-geometry/#335-other-geometry-classes)  
+    - [Meshes](/guides/grasshopper/csharp-essentials/3-rhinocommon-geometry/#333-meshes)  
+    - [Boundary Representation (Brep)](/guides/grasshopper/csharp-essentials/3-rhinocommon-geometry/#334-boundary-representation-brep)  
+    - [Other Geometry Classes](/guides/grasshopper/csharp-essentials/3-rhinocommon-geometry/#335-other-geometry-classes)  
 - [Geometry transformations](/guides/grasshopper/csharp-essentials/3-rhinocommon-geometry/#34-geometry-transformations)  
 
 ### Rendering
@@ -168,13 +174,18 @@ toc_type = "single"
 
 {{< dev-topic-list "guides" "RhinoCommon" "Advanced" "weight" >}}
 
-### Zoo
+### LAN Zoo
 
 {{< dev-topic-list "guides" "RhinoCommon" "Zoo" "weight" >}}
 
 ### Cloud Zoo
 
 {{< dev-topic-list "guides" "RhinoCommon" "CloudZoo" "weight" >}}
+
+### Other Resources
+
+- [Developer samples on GitHub](https://github.com/mcneel/rhino-developer-samples)
+- [Developer discussions on Discourse](https://discourse.mcneel.com/c/rhino-developer)
 
 ## [Rhino.Python](/guides/rhinopython)
 
@@ -187,7 +198,7 @@ toc_type = "single"
 
 ### Getting Started
 
-- Your First Python Script in Rhino ([Windows](/guides/rhinopython/your-first-python-script-in-rhino-windows), [Mac](/guides/rhinopython/your-first-python-script-in-rhino-mac), [Grasshopper](/guides/rhinopython/your-first-python-script-in-grasshopper))
+- Your First Python Script in Rhino ([Windows](/guides/rhinopython/your-first-python-script-in-rhino-windows), [Grasshopper](/guides/rhinopython/your-first-python-script-in-grasshopper))
 - [Where to get help...](/guides/rhinopython/python-where-to-find-help)
 - [Troubleshooting Installation](/guides/rhinopython/python-troubleshooting-install)
 
@@ -265,6 +276,10 @@ toc_type = "single"
 
 {{< dev-topic-list "guides" "openNURBS" "Advanced" "weight" >}}
 
+### Other Resources
+
+- [Developer discussions on Discourse](https://discourse.mcneel.com/c/opennurbs)
+
 ## [C/C++](/guides/cpp)
 
 *Native SDK for Rhino for Windows plugins.*
@@ -289,13 +304,18 @@ toc_type = "single"
 
 {{< dev-topic-list "guides" "C/C++" "RDK" "weight" >}}
 
-### Zoo
+### LAN Zoo
 
 {{< dev-topic-list "guides" "C/C++" "Zoo" "weight" >}}
 
 ### Troubleshooting
 
 {{< dev-topic-list "guides" "C/C++" "Troubleshooting" "weight" >}}
+
+### Other Resources
+
+- [Developer samples on GitHub](https://github.com/mcneel/rhino-developer-samples)
+- [Developer discussions on Discourse](https://discourse.mcneel.com/c/rhino-developer)
 
 ## [Grasshopper](/guides/grasshopper)
 
@@ -378,11 +398,12 @@ toc_type = "single"
 
 *Create custom Grasshopper 2 components and plugins.*
 
-### Grasshopper Plugins
+### Grasshopper 2 Plugins
 
-- [Getting Started](/guides/grasshopper2/getting-started/)
+- Installing Tools ([Windows](/guides/grasshopper/installing-tools-windows/), [Mac](/guides/grasshopper/installing-tools-mac/))
+- [Getting Started](/guides/grasshopper2/getting-started/) {{< new-label version="9" style="inline" link="/guides/general/new-in-v9/" >}}
 - Your First Component ([Windows](/guides/grasshopper2/your-first-component-windows/), [Mac](/guides/grasshopper2/your-first-component-mac/))
-- [Migrating Components to Grasshopper 2](/guides/grasshopper2/migrating-components-to-gh2/)
+- [Migrating Components to Grasshopper 2](/guides/grasshopper2/migrating-components-to-gh2/) {{< new-label version="9" style="inline" link="/guides/general/new-in-v9/" >}}
 - [Developer discussions on Discourse](https://discourse.mcneel.com/c/grasshopper-developer)
 
 
@@ -427,10 +448,12 @@ toc_type = "single"
 
 ### Other Resources
 
+- [Developer samples on GitHub](https://github.com/mcneel/rhino-developer-samples)
 - [Pascal Golay's scripted utilities for Rhino](https://wiki.mcneel.com/people/pascalgolay)
 - [RhinoScript Samples on GitHub](https://github.com/mcneel/rhinoscript)
 - [RhinoScript Dash Docset](https://discourse.mcneel.com/t/rhinoscript-dash-docset/6382)
 - [RhinoScript Help File On-Line](https://www.rhino3d.com/5/rhinoscript/index.html)
+- [Scripting discussions on Discourse](https://discourse.mcneel.com/c/scripting)
 
 <!-- ## [Compute](/guides/compute) -->
 <h2 id="compute"><a href="/guides/compute">Compute</a></h2>
@@ -451,24 +474,44 @@ toc_type = "single"
 <!-- ## [Eto](/guides/eto) -->
 <h2 id="eto"><a href="/guides/eto">Eto</a></h2>
 
+### Overview
+
+- [What is Eto?](/guides/eto/what-is-eto)
+- [Why Eto?](/guides/eto/why-eto)
+
 ### Getting Started
 
-- [What is Eto](/guides/eto/what-is-eto)
 - [Required Tools](/guides/eto/required-tools)
 - [Your First UI](/guides/eto/your-first-ui)
 
 ### Fundamentals
 
-- [Forms and Dialogs](/guides/eto/forms-and-dialogs)
+- [Forms & Dialogs](/guides/eto/forms-and-dialogs)
 - [Existing Dialogs](/guides/eto/existing-dialogs)
 - [Containers](/guides/eto/containers)
+- [Control Properties](/guides/eto/control-properties)
+- [Clipboard (Copy & Paste)](/guides/eto/clipboard)
 - [Basic Controls](/guides/eto/controls)
+- [Drawable](/guides/eto/advanced-controls/drawable)
+- [Cells](/guides/eto/cells)
 
 ### DataContext and View Models
 
-- [Data Context](/guides/eto/view-and-data/data-context)
-- [View Models](/guides/eto/view-and-data/view-models)
-- [Bindings](/guides/eto/view-and-data/binding)
+- [DataContext](/guides/eto/view-and-data/data-context)
+- [What is a View Model?](/guides/eto/view-and-data/view-models)
+- [Binding Data with a ViewModel](/guides/eto/view-and-data/binding)
+- [Complex Bindings](/guides/eto/view-and-data/complex-bindings)
+- [How do Bindings work?](/guides/eto/view-and-data/bindings-explained)
+
+### Rhino Specific Eto
+
+- [Extensions and Helpers](/guides/eto/rhino-specific)
+
+### Advanced
+
+- [Async](/guides/eto/async/)
+- [Events](/guides/eto/events/)
+- [Examples](/guides/eto/misc-examples/)
 
 ## Developer Services
 

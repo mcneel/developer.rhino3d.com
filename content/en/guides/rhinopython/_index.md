@@ -38,7 +38,7 @@ platforms = [ "Windows", "Mac" ]
 - [Developer samples on GitHub](https://github.com/mcneel/rhino-developer-samples)
 - [Scripting discussions on Discourse](https://discourse.mcneel.com/c/scripting)
 
-### Python Editor
+### Python Editor for Windows
 
 {{< dev-topic-list "guides" "RhinoPython" "Python Windows" "weight" 8 >}}
 

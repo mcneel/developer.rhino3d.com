@@ -24,7 +24,7 @@ since = 0
 {{< column >}}
 
 <!--the .snagit project for this image can be found next to the image -->
-[<img src="/images/rhinoscript-guides-col1.png">](http://www.rhino3d.com/download/rhino/5.0/rhinoscript101)
+[<img src="/images/rhinoscript-guides-col1.png">](https://www.rhino3d.com/download/rhino/5.0/rhinoscript101)
 
 ### Overview
 
@@ -41,7 +41,7 @@ since = 0
 &nbsp;&nbsp; 5. [Conditional Execution](/guides/rhinoscript/primer-101/5-conditional-execution/)  
 &nbsp;&nbsp; 6. [Arrays](/guides/rhinoscript/primer-101/6-arrays/)  
 &nbsp;&nbsp; 7. [Geometry](/guides/rhinoscript/primer-101/7-geometry/)  
-&nbsp;&nbsp; [{{< awesome "fas fa-download">}} ](http://www.rhino3d.com/download/rhino/5.0/rhinoscript101) [Download the RhinoScript 101 Primer as a single PDF ](http://www.rhino3d.com/download/rhino/5.0/rhinoscript101)
+&nbsp;&nbsp; [{{< awesome "fas fa-download">}} ](https://www.rhino3d.com/download/rhino/5.0/rhinoscript101) [Download the RhinoScript 101 Primer as a single PDF ](https://www.rhino3d.com/download/rhino/5.0/rhinoscript101)
 
 ### Fundamentals
 
@@ -54,9 +54,10 @@ since = 0
 ### Other Resources
 
 - [Developer samples on GitHub](https://github.com/mcneel/rhino-developer-samples)
-- [Pascal Golay's scripted utilities for Rhino](http://wiki.mcneel.com/people/pascalgolay)
-- [RhinoScript Dash Docset](http://discourse.mcneel.com/t/rhinoscript-dash-docset/6382)
-- [RhinoScript Help File On-Line](http://www.rhino3d.com/5/rhinoscript/index.html)
+- [Pascal Golay's scripted utilities for Rhino](https://wiki.mcneel.com/people/pascalgolay)
+- [RhinoScript Samples on GitHub](https://github.com/mcneel/rhinoscript)
+- [RhinoScript Dash Docset](https://discourse.mcneel.com/t/rhinoscript-dash-docset/6382)
+- [RhinoScript Help File On-Line](https://www.rhino3d.com/5/rhinoscript/index.html)
 - [Scripting discussions on Discourse](https://discourse.mcneel.com/c/scripting)
 
 {{< /column >}}

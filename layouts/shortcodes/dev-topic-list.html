@@ -28,7 +28,10 @@
         {{- if in .Params.sdk ($.Scratch.Get "sdk") -}}
             {{- if or (and ( ge ($.Scratch.Get "version") .Params.Included_in.Since) ( or (not .Params.Included_in.Until) ( lt ($.Scratch.Get "version") .Params.Included_in.Until))) (not ($.Scratch.Get "version")) -}}
                 {{- if in .Params.categories ($.Scratch.Get "category") -}}
-<li><a href="{{ .RelPermalink }}" title="{{ .Description }}">{{ .Title }}</a></li>
+<li><a href="{{ .RelPermalink }}" title="{{ .Description }}">{{ .Title }}</a>
+                {{- /* Label pages that are new in the latest Rhino */ -}}
+                {{- with .Params.included_in.since -}}{{- if eq (int .) (int site.Params.latestRhinoVersion) }} <div class="new-callout new-callout-inline"><a href="/guides/general/new-in-v9/">{{ replace (i18n "New-in-N") "[VERSION]" (string site.Params.latestRhinoVersion) }}</a></div>{{- end -}}{{- end -}}
+</li>
                 {{- end -}}
             {{- end -}}
         {{- end -}}

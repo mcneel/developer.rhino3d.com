@@ -48,6 +48,22 @@ h3 .new-callout a:visited {
   color: #ffffff !important;
 }
 
+/* inline badges in list items use the compact "small" sizing so they do
+   not make the line taller; heading badges keep the larger size */
+li .new-callout.new-callout-inline {
+  font-size: 70%;
+  line-height: normal;
+  padding: 3px 8px;
+  margin: 0 0 0 6px;
+  border-radius: 5px;
+  position: relative;
+  bottom: 1px;
+}
+li .new-callout a,
+li .new-callout a:visited {
+  color: #ffffff !important;
+}
+
 /*
 ##################################################################
 # Site-specific tuning for the static (collapsed-by-default) navbar.

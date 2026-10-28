@@ -16,8 +16,8 @@ since = 0
 list_group = "uncategorized"
 +++
 
-{{< call-out note "Need help migrating C# to Rhino 8?" >}}
-Please check out the [Moving to .NET Core guide](/guides/rhinocommon/moving-to-dotnet-core/).
+{{< call-out note "Need help migrating C# to Rhino 9?" >}}
+Please check out the [Moving to .NET Core guide](/guides/rhinocommon/moving-to-dotnet-core/).  Also, check out [What's New for developers in V9](/guides/general/new-in-v9).
 {{< /call-out >}}
 
 {{< vimeo 188730450 >}}
@@ -60,10 +60,10 @@ Please check out the [Moving to .NET Core guide](/guides/rhinocommon/moving-to-d
     <td class="index_table_primary_use">Rhino for Windows scripting</td>
   </tr>
   <tr>
-    <td><a href="/guides/cpp" title="C/C++ SDK for Rhino for Windows"> C/C++</a></td>
-	<td><img src="/images/win-logo-small.png" alt="Windows" class="index_table_icon" title="Windows"></td>
+    <td><a href="/guides/cpp" title="C/C++ SDK for Rhino"> C/C++</a></td>
+	<td><img src="/images/win-logo-small.png" alt="Windows" class="index_table_icon" title="Windows"><img src="/images/mac-logo-small.png" alt="macOS" class="index_table_icon" title="Apple macOS"></td>
 	<td><img src="/images/cpp-logo-small.png" alt="C/C++" class="index_table_icon" title="C/C++"></td>
-    <td class="index_table_primary_use">Rhino for Windows plugins</td>
+    <td class="index_table_primary_use">Write Rhino plugins</td>
   </tr>
    <tr>
     <td><a href="/guides/grasshopper" title="Grasshopper Component Development"> Grasshopper</a></td>
