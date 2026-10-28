@@ -33,7 +33,7 @@ target = 'assets'
 
 [params]
   nwo = "mcneel/developer.rhino3d.com" # github repository (name with owner)
-  latestRhinoVersion = 8
+  latestRhinoVersion = 9
   supportedPlatforms = "Windows and macOS" # used for unfurls
   siteRootURL = "/" # used in navigation banner
   rhinoURL = "https://www.rhino3d.com"
