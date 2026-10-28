@@ -64,13 +64,13 @@ since = 8
 
 - [Scripting: Python](/guides/scripting/scripting-python)
 - [Grasshopper Scripting: Python](/guides/scripting/scripting-gh-python)
-- [Grasshopper 2 Scripting: Python](/guides/scripting/scripting-gh2-python) *(Rhino 9)*
+- [Grasshopper 2 Scripting: Python](/guides/scripting/scripting-gh2-python) {{< new-label version="9" style="inline" link="/guides/general/new-in-v9/" >}}
 
 ### C# Scripting
 
 - [Scripting: C#](/guides/scripting/scripting-csharp)
 - [Grasshopper Scripting: C#](/guides/scripting/scripting-gh-csharp)
-- [Grasshopper 2 Scripting: C#](/guides/scripting/scripting-gh2-csharp) *(Rhino 9)*
+- [Grasshopper 2 Scripting: C#](/guides/scripting/scripting-gh2-csharp) {{< new-label version="9" style="inline" link="/guides/general/new-in-v9/" >}}
 
 ### Editor Features
 
@@ -82,7 +82,7 @@ since = 8
 - [Debugging Your Scripts](/guides/scripting/editor-debug)
 - [Templates](/guides/scripting/editor-templates)
 - [Examples](/guides/scripting/editor-examples)
-- [Tests](/guides/scripting/editor-tests) *(Rhino 9)*
+- [Tests](/guides/scripting/editor-tests) {{< new-label version="9" style="inline" link="/guides/general/new-in-v9/" >}}
 - [Help](/guides/scripting/editor-help)
 - [Options](/guides/scripting/editor-configs)
 - [Logs](/guides/scripting/editor-logs)
@@ -100,7 +100,7 @@ since = 8
 
 - [ScriptEditor Macros](/guides/scripting/advanced-scripteditor-macros)
 - [Language Initialization](/guides/scripting/advanced-langinit)
-- [Script Package References](/guides/scripting/advanced-packages) *(Rhino 9)*
+- [Script Package References](/guides/scripting/advanced-packages) {{< new-label version="9" style="inline" link="/guides/general/new-in-v9/" >}}
 - [Python Path Files](/guides/scripting/advanced-pthfiles)
 - [Python Package Environments](/guides/scripting/advanced-pyvenvs)
 - [Asynchronous Execution](/guides/scripting/advanced-async)

@@ -28,8 +28,10 @@ since = 0
 
 ### Overview
 
+- [New for Developers in V9](/guides/general/new-in-v9/)
 - [Developing Software In Public](/guides/general/developing-software-in-public)
 - [Rhino Technology Overview](/guides/general/rhino-technology-overview)
+    - [OpenGL in Rhino 9](/guides/general/rhino-technology-overview/opengl/) {{< new-label version="9" style="inline" link="/guides/general/new-in-v9/" >}}
 - [Frequently Asked Questions (FAQ)](/guides/general/frequently-asked-questions)
 
 ### Getting Started
@@ -47,8 +49,9 @@ since = 0
 
 - [What is a Rhino Plugin?](/guides/general/what-is-a-rhino-plugin)
 - [Rhino Installer Engine](/guides/general/rhino-installer-engine)
+- [Rhino Package Manager](/guides/yak/)
 - [Rhino UI System](/guides/general/rhino-ui-system/)
-- [In-Viewport User Interface](/guides/general/rhino-ui-system/in-viewport-ui/)
+- [In-Viewport User Interface](/guides/general/rhino-ui-system/in-viewport-ui/) {{< new-label version="9" style="inline" link="/guides/general/new-in-v9/" >}}
 - [Simple Command Macros](/guides/general/creating-command-macros/)
 
 ### [Essential Mathematics](/guides/general/essential-mathematics)
@@ -57,7 +60,7 @@ since = 0
 - [Vector Mathematics](/guides/general/essential-mathematics/vector-mathematics)
 - [Matrices and Transformations](/guides/general/essential-mathematics/matrices-transformations)
 - [Parametric Curves and Surfaces](/guides/general/essential-mathematics/parametric-curves-surfaces)
-- [{{< awesome "fas fa-download">}} ](http://www.rhino3d.com/download/rhino/5.0/essentialmathematicsthirdedition/) [Download Essential Mathematics for Computational Design as a single PDF ](http://www.rhino3d.com/download/rhino/5.0/essentialmathematicsthirdedition/)
+- [{{< awesome "fas fa-download">}} ](https://www.rhino3d.com/download/rhino/6/essentialmathematics/) [Download Essential Mathematics for Computational Design as a single PDF ](https://www.rhino3d.com/download/rhino/6/essentialmathematics/)
 
 {{< /column >}}
 {{< column >}}

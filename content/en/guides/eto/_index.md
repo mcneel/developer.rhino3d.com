@@ -22,7 +22,7 @@ platforms = [ "Windows", "Mac" ]
 +++
 
 {{< call-out note "Follow Along" >}}
-  If you're new to Eto, or even an advanced user, it is recommended to open the [script editor](http://localhost:1313/guides/scripting/scripting-command/#first-script) and copy/paste (or better yet write out!) the sample code so you can walk through and understand how Eto works.
+  If you're new to Eto, or even an advanced user, it is recommended to open the [script editor](/guides/scripting/scripting-command/#first-script) and copy/paste (or better yet write out!) the sample code so you can walk through and understand how Eto works.
 
   Each page with samples will have both C# and Python 3 (The samples ARE NOT designed for Python 2), will work on both Windows and Mac and assumes little familiarity with Rhino.
 

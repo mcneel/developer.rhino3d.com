@@ -31,8 +31,10 @@ since = 0
 ### Grasshopper 2 Plugins
 
 - Installing Tools ([Windows](/guides/grasshopper/installing-tools-windows/), [Mac](/guides/grasshopper/installing-tools-mac/))
-- [Getting Started](getting-started/)
+- [Getting Started](getting-started/) {{< new-label version="9" style="inline" link="/guides/general/new-in-v9/" >}}
 - Your First Component ([Windows](your-first-component-windows/), [Mac](your-first-component-mac/))
+- [Migrating Components to Grasshopper 2](migrating-components-to-gh2/) {{< new-label version="9" style="inline" link="/guides/general/new-in-v9/" >}}
+- [Developer discussions on Discourse](https://discourse.mcneel.com/c/grasshopper-developer)
 
 {{< /column >}}
 {{< /row >}}

@@ -2,7 +2,7 @@
 aliases = ["/en/5/guides/cpp/", "/en/6/guides/cpp/", "/en/7/guides/cpp/", "/en/wip/guides/cpp/"]
 authors = "unset"
 categories = [ "Unsorted" ]
-description = "Guides to the C/C++ SDK for Rhino for Windows plugins."
+description = "Guides to the C/C++ SDK for Rhino plugins."
 keywords = [ "rhino", "developer" ]
 languages = [ "C/C++" ]
 sdk = "unset"
@@ -17,7 +17,7 @@ picky_sisters = ""
 state = ""
 
 [included_in]
-platforms = [ "Windows" ]
+platforms = [ "Windows", "Mac" ]
 since = 0
 +++
 {{< row >}}
