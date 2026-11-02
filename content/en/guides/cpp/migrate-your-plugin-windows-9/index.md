@@ -45,7 +45,7 @@ However, if you want to migrate your C++ plug-in projects to Rhino 9, so you can
 
 ## Replace property sheets
 
-The Rhino C/C++ SDK includes Visual Studio Property Sheets that provide a convenient way to synchronize or share common settings among other plugin projects. You will need to remove references to Rhino 8 C/C++ SDK property sheets and replace them with references to Rhino 8 C/C++ SDK property sheets.
+The Rhino C/C++ SDK includes Visual Studio Property Sheets that provide a convenient way to synchronize or share common settings among other plugin projects. You will need to remove references to Rhino 8 C/C++ SDK property sheets and replace them with references to Rhino 9 C/C++ SDK property sheets.
 
    1. From *Visual Studio*, click *View* > *Property Manager*.
 
