@@ -8,7 +8,7 @@ languages = [ "C/C++" ]
 sdk = [ "C/C++" ]
 title = "Migrate your plug-in project to Rhino 9"
 type = "guides"
-weight = 4
+weight = 3
 override_last_modified = "2020-08-28T14:47:34Z"
 
 [admin]
