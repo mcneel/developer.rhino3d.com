@@ -15,7 +15,7 @@ since = 0
 +++
 
 
-<a href="/api/RhinoCommon" target="_blank">RhinoCommon</a> {{< awesome "fas fa-external-link-alt" >}}  
+<a href="/api/rhinocommon" target="_blank">RhinoCommon</a> {{< awesome "fas fa-external-link-alt" >}}  
 <a href="/api/RhinoScriptSyntax">Rhino.Python RhinoScriptSyntax</a>  
 <a href="/api/gh1" target="_blank">Grasshopper 1</a> {{< awesome "fas fa-external-link-alt" >}}  
 <a href="/api/gh2" target="_blank">Grasshopper 2</a> {{< awesome "fas fa-external-link-alt" >}}  
