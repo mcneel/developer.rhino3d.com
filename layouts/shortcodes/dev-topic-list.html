@@ -22,13 +22,14 @@
 {{- end -}}
 
 <ul>
-<!-- This is a dirty hack to get the guides page to render correctly in localized versions where the files
- are missing for that language...ideally, we wouldn't have to do this and should find a better way -->
+{{- /* Most pages are not translated, so list the fallback-language pages and show the translation when one exists. */ -}}
 {{- range where (where site.AllPages ".Lang" ($.Scratch.Get "fallbacklang")) "Section" ($.Scratch.Get "section") -}}
         {{- if in .Params.sdk ($.Scratch.Get "sdk") -}}
             {{- if or (and ( ge ($.Scratch.Get "version") .Params.Included_in.Since) ( or (not .Params.Included_in.Until) ( lt ($.Scratch.Get "version") .Params.Included_in.Until))) (not ($.Scratch.Get "version")) -}}
                 {{- if in .Params.categories ($.Scratch.Get "category") -}}
-<li><a href="{{ .RelPermalink }}" title="{{ .Description }}">{{ .Title }}</a>
+                {{- $show := . -}}
+                {{- with where .Translations "Lang" $.Page.Lang -}}{{- $show = index . 0 -}}{{- end -}}
+<li><a href="{{ $show.RelPermalink }}" title="{{ $show.Description }}">{{ $show.Title }}</a>
                 {{- /* Label pages that are new in the latest Rhino */ -}}
                 {{- with .Params.included_in.since -}}{{- if eq (int .) (int site.Params.latestRhinoVersion) }} <div class="new-callout new-callout-inline"><a href="/guides/general/new-in-v9/">{{ replace (i18n "New-in-N") "[VERSION]" (string site.Params.latestRhinoVersion) }}</a></div>{{- end -}}{{- end -}}
 </li>
