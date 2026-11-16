@@ -15,7 +15,7 @@
 {{- if eq ($.Scratch.Get "lang") "cn" -}}
 {{ $.Scratch.Get "year" }}年{{ $.Scratch.Get "month_trans" }}月{{ $.Scratch.Get "day" }}日
 {{- else if eq ($.Scratch.Get "lang") "cs" -}}
-{{- $.Scratch.Get "day" }} {{ $.Scratch.Get "month_trans" }} {{ $.Scratch.Get "year" -}}
+{{- $.Scratch.Get "day" }}. {{ $.Scratch.Get "month_trans" }} {{ $.Scratch.Get "year" -}}
 {{- else if eq ($.Scratch.Get "lang") "de" -}}
 {{- $.Scratch.Get "weekday_trans" }}, {{ $.Scratch.Get "day" }}. {{ $.Scratch.Get "month_trans" }} {{ $.Scratch.Get "year" -}}
 {{- else if eq ($.Scratch.Get "lang") "es" -}}
