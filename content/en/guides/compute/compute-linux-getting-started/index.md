@@ -38,13 +38,13 @@ Your core-hour billing token allows anyone with it to charge your team at will. 
 
 Rhino.Compute on Linux has been tested to run on Ubuntu Server 24.04 and AmazonLinux 2023. You can run these systems as virtual machines or in docker containers on macOS, Windows, or Linux.
 
-We have also tested running Rhino.Compute on Linix on AWS EC2 and Azure instances.
+We have also tested running Rhino.Compute on Linux on AWS EC2 and Azure instances.
 
 ### Containers (Docker)
 
 Running rhino-compute in a container is a straightforward way of getting started, but is not recommended for production environments as docker containers lack the systemd service manager which enables the start of the rhino-compute service when the system reboots. At the time of writing, we are typically developing on Ubuntu 24.04 and ensuring that things work on AmazonLinux 2023. There has been no additional effort to ensure these instructions work on Debian 13, other than testing them on this base image.
 
-1. Install Docker - You need either Docker Desktop (macOS, Windows, Linux Desktop) of Docker Engine (Linux, CLI)
+1. Install Docker - You need either Docker Desktop (macOS, Windows, Linux Desktop) or Docker Engine (Linux, CLI)
     - Desktop: https://docs.docker.com/get-started/get-docker/
     - Engine: https://docs.docker.com/engine/install/ 
 1. Start container
@@ -59,16 +59,16 @@ Running rhino-compute in a container is a straightforward way of getting started
     docker run --rm -it -p 5000:5000 ubuntu:noble /bin/bash 
     ```
 
-{{< call-out "note" "Flags" >}}
+    {{< call-out "note" "Flags" >}}
 
 - `--rm`: remove the container after exit.
 - `-it`: interactive terminal (stdin and stdout).
 - `-p 5000:5000`: port mapping [Host Port:Container Port]. Please note, your host OS might already have certain ports reserved. For example, macOS reserves port 5000 for AirPlay. In this case, you should choose a different HOST port: `-p 5001:5000`
 - `amazonlinux:2023` or `ubuntu:noble`: the base image for the container. ubuntu:noble = Ubuntu 24.04. debian:trixie = Debian 13
 - `/bin/bash`: start bash shell
-{{< /call-out >}}
+    {{< /call-out >}}
 
-3. Continue to the setup section for your Linux distribution:
+1. Continue to the setup section for your Linux distribution:
 
     - [Ubuntu](#ubuntu)
     - [AmazonLinux](#amazonlinux)
@@ -135,7 +135,7 @@ If you are on a VM or Production Environment, switch to root first: `sudo -s`
     # dotnet
     wget https://dotnet.microsoft.com/download/dotnet/scripts/v1/dotnet-install.sh -O dotnet-install.sh
     chmod +x ./dotnet-install.sh
-    ./dotnet-install.sh --version 9.0.102 --install-dir /usr/share/dotnet
+    ./dotnet-install.sh --version 10.0.102 --install-dir /usr/share/dotnet
     ```
 
 1. Add mcneel-packages to package sources:
@@ -172,11 +172,11 @@ If you are on a VM or Production Environment, switch to root first: `sudo -s`
     apt install yak-cli
     ```
 
-{{< call-out "note" "Note" >}}
+    {{< call-out "note" "Note" >}}
 Expect that 3rd party plugins will not work at this time. Only packages that are marked "-any" (i.e. `package-0.0.0-\<some rhino version>\_any.yak`) will be installed, and only packages with Grasshopper add-ons will be loaded. We are actively working on expanding the support for loading 3rd party plugins on Rhino.Compute on Linux.
-{{< /call-out >}}
+    {{< /call-out >}}
 
-6. Continue to the [Run rhino-compute](#run-rhino-compute) section.
+1. Continue to the [Run rhino-compute](#run-rhino-compute) section.
 
 ### AmazonLinux
 
@@ -186,16 +186,16 @@ Expect that 3rd party plugins will not work at this time. Only packages that are
     # dotnet
     wget https://dotnet.microsoft.com/download/dotnet/scripts/v1/dotnet-install.sh -O dotnet-install.sh
     chmod +x ./dotnet-install.sh
-    ./dotnet-install.sh --version 9.0.102 --install-dir /usr/share/dotnet
+    ./dotnet-install.sh --version 10.0.102 --install-dir /usr/share/dotnet
     ```
 
-{{< call-out "note" "Note" >}}
+    {{< call-out "note" "Note" >}}
 Install additional dependencies if you are running AmazonLinux in a container:
 
 `dnf install -y wget tar gzip nano findutils`
-{{< /call-out >}}
+    {{< /call-out >}}
 
-2. Add mcneel-packages to package sources
+1. Add mcneel-packages to package sources
 
     ```bash
     wget -O /etc/yum.repos.d/mcneel.repo https://mcneel-packages.s3.amazonaws.com/rpm/repos/mcneel-amzn2023.repo
@@ -225,14 +225,14 @@ Install additional dependencies if you are running AmazonLinux in a container:
     dnf install -y yak-cli
     ```
 
-{{< call-out "note" "Note" >}}
+    {{< call-out "note" "Note" >}}
 Expect that 3rd party plugins will not work at this time. Only packages that are marked "-any" (i.e. `package-0.0.0-\<some rhino version>\_any.yak`) will be installed, and only packages with Grasshopper add-ons will be loaded. We are actively working on expanding the support for loading 3rd party plugins on Rhino.Compute on Linux.
-{{< /call-out >}}
+    {{< /call-out >}}
 
-6. Continue to the [Run rhino-compute](#run-rhino-compute) section.
+1. Continue to the [Run rhino-compute](#run-rhino-compute) section.
 
 {{< call-out "note" "Note" >}}
-If you are running AmazonLinux in a container, access on the container from the host with `http://localhost:5001` or whichever port you have set in [docker run](#containers-docker)
+If you are running AmazonLinux in a container, access on the container from the host with `http://localhost:5000` or whichever port you have set in [docker run](#containers-docker)
 {{< /call-out >}}
 
 ## Run Rhino.Compute
@@ -289,5 +289,5 @@ This section requires the Host computer to have Rhino 8 or Rhino WIP with Hops i
 
 1. Open Rhino 8 or WIP, open GH, and navigate to the Grasshopper Solver Settings.
 1. In the text field under "Hops - Compute server URLs", enter in the IP and port of your Linux system
-1. In the text field next to "API Key" enter in your Core-Hour Billing token aka the `RHINO_COMPUTE_KEY`.
+1. In the text field next to "API Key" enter the `RHINO_COMPUTE_KEY` you set in `/etc/rhino-compute/environment` during [Setup](#setup). Do **NOT** enter your Core-Hour Billing token (`RHINO_TOKEN`) here. It stays on the server and should never be shared.
 1. Drag the Hops component onto the canvas and reference a definition. If you are following the logs in real-time, you should see your Linux system start to log events related to Rhino.Compute.
