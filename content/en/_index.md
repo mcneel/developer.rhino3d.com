@@ -78,6 +78,13 @@ list_group = "uncategorized"
 	<td><img src="/images/cs-logo-small.png" alt="C#" class="index_table_icon" title="C#"><img src="/images/vb-logo-small.png" alt="Visual Basic" class="index_table_icon" title="Visual Basic"><img src="/images/python-logo-small.png" alt="Python via IronPython" class="index_table_icon" title="Python via IronPython"></td>
     <td class="index_table_primary_use">Grasshopper components</td>
   </tr>
+  <tr>
+    <td><a href="/guides/ai" title="AI with Rhino MCP"> AI with Rhino MCP</a></td>
+	<td><img src="/images/win-logo-small.png" alt="Windows" class="index_table_icon" title="Windows"><img src="/images/mac-logo-small.png" alt="OS X" class="index_table_icon" title="Mac OS X"></td>
+	<td><img src="/images/cs-logo-small.png" alt="C#" class="index_table_icon" title="C#"><img src="/images/vb-logo-small.png" alt="Visual Basic" class="index_table_icon" title="Visual Basic"><img src="/images/python-logo-small.png" alt="Python via IronPython" class="index_table_icon" title="Python via IronPython"></td>
+    <td class="index_table_primary_use">Connect to AI LLM models with Rhino MCP</td>
+  </tr>
+
   <!--
   <tr>
     <td><a href="/guides/#rdk" title="Renderer Development Kit"> RDK</a></td>
