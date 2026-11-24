@@ -4,7 +4,7 @@ authors = [ "steve" ]
 categories = [ "Other" ]
 description = "Demonstrates how to extrude the Brep face from a user-specified surface."
 keywords = [ "extrude", "brep", "face" ]
-languages = [ "C#" ]
+languages = [ "C#", "Python" ]
 sdk = [ "RhinoCommon" ]
 title = "Extrude Brep Face"
 type = "samples/rhinocommon"
@@ -70,7 +70,45 @@ partial class Examples
 <div class="codetab-content" id="py">
 
 ```python
-# No Python sample available
+#! python 3
+import Rhino
+import scriptcontext as sc
+
+def RunCommand():
+    go0 = Rhino.Input.Custom.GetObject()
+    go0.SetCommandPrompt("Select surface to extrude")
+    go0.GeometryFilter = Rhino.DocObjects.ObjectType.Surface
+    go0.SubObjectSelect = True
+    go0.Get()
+    if go0.CommandResult() != Rhino.Commands.Result.Success:
+        return go0.CommandResult()
+
+    face = go0.Object(0).Face()
+    if face is None:
+        return Rhino.Commands.Result.Failure
+
+    go1 = Rhino.Input.Custom.GetObject()
+    go1.SetCommandPrompt("Select path curve")
+    go1.GeometryFilter = Rhino.DocObjects.ObjectType.Curve
+    go1.SubObjectSelect = True
+    go1.DeselectAllBeforePostSelect = False
+    go1.Get()
+    if go1.CommandResult() != Rhino.Commands.Result.Success:
+        return go1.CommandResult()
+
+    curve = go1.Object(0).Curve()
+    if curve is None:
+        return Rhino.Commands.Result.Failure
+
+    brep = face.CreateExtrusion(curve, True)
+    if brep is not None:
+        sc.doc.Objects.Add(brep)
+        sc.doc.Views.Redraw()
+
+    return Rhino.Commands.Result.Success
+
+if __name__ == "__main__":
+    RunCommand()
 ```
 
 </div>

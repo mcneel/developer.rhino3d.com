@@ -4,7 +4,7 @@ authors = [ "steve" ]
 categories = [ "Other" ]
 description = "Demonstrates how to extract the render mesh from a surface or polysurface."
 keywords = [ "extract", "render", "mesh" ]
-languages = [ "C#" ]
+languages = [ "C#", "Python" ]
 sdk = [ "RhinoCommon" ]
 title = "Extract Render Mesh"
 type = "samples/rhinocommon"
@@ -66,7 +66,37 @@ partial class Examples
 <div class="codetab-content" id="py">
 
 ```python
-# No Python sample available
+#! python 3
+import Rhino
+import System
+import scriptcontext as sc
+
+def RunCommand():
+    rc, objRef = Rhino.Input.RhinoGet.GetOneObject("Select surface or polysurface", False, Rhino.DocObjects.ObjectType.Brep)
+    if rc != Rhino.Commands.Result.Success:
+        return rc
+
+    obj = objRef.Object()
+    if obj is None:
+        return Rhino.Commands.Result.Failure
+
+    objList = System.Collections.Generic.List[Rhino.DocObjects.RhinoObject](1)
+    objList.Add(obj)
+
+    meshObjRefs = Rhino.DocObjects.RhinoObject.GetRenderMeshes(objList, True, False)
+    if meshObjRefs is not None:
+        for i in range(meshObjRefs.Length):
+            meshObjRef = meshObjRefs[i]
+            if meshObjRef is not None:
+                mesh = meshObjRef.Mesh()
+                if mesh is not None:
+                    sc.doc.Objects.AddMesh(mesh)
+        sc.doc.Views.Redraw()
+
+    return Rhino.Commands.Result.Success
+
+if __name__ == "__main__":
+    RunCommand()
 ```
 
 </div>

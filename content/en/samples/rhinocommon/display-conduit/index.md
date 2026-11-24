@@ -4,7 +4,7 @@ authors = [ "steve" ]
 categories = [ "Other" ]
 description = "Demonstrates a basic display conduit that draws a custom axis in the Rhino viewport."
 keywords = [ "display", "conduit", "introduction", "rhinocommon" ]
-languages = [ "C#" ]
+languages = [ "C#", "Python" ]
 sdk = [ "RhinoCommon" ]
 title = "Display Conduit"
 type = "samples/rhinocommon"
@@ -80,7 +80,62 @@ class MyConduit : Rhino.Display.DisplayConduit
 <div class="codetab-content" id="py">
 
 ```python
-# No Python sample available
+#! python 3
+import Rhino
+import System
+import scriptcontext as sc
+
+
+class MyConduit(Rhino.Display.DisplayConduit):
+    def __init__(self):
+        super().__init__()
+
+    def CalculateBoundingBox(self, e):
+        e.BoundingBox.Union(e.Display.Viewport.ConstructionPlane().Origin)
+
+    def PreDrawObjects(self, e):
+        c_plane = e.Display.Viewport.ConstructionPlane()
+        x_color = Rhino.ApplicationSettings.AppearanceSettings.GridXAxisLineColor
+        y_color = Rhino.ApplicationSettings.AppearanceSettings.GridYAxisLineColor
+        z_color = Rhino.ApplicationSettings.AppearanceSettings.GridZAxisLineColor
+
+        e.Display.PushDepthWriting(False)
+        e.Display.PushDepthTesting(False)
+
+        e.Display.DrawPoint(c_plane.Origin, System.Drawing.Color.White)
+        e.Display.DrawArrow(
+            Rhino.Geometry.Line(c_plane.Origin, Rhino.Geometry.Vector3d(c_plane.XAxis) * 10.0),
+            x_color,
+        )
+        e.Display.DrawArrow(
+            Rhino.Geometry.Line(c_plane.Origin, Rhino.Geometry.Vector3d(c_plane.YAxis) * 10.0),
+            y_color,
+        )
+        e.Display.DrawArrow(
+            Rhino.Geometry.Line(c_plane.Origin, Rhino.Geometry.Vector3d(c_plane.ZAxis) * 10.0),
+            z_color,
+        )
+
+        e.Display.PopDepthWriting()
+        e.Display.PopDepthTesting()
+
+
+def RunCommand():
+    # The following code lets you toggle the conduit on and off by repeatedly running the command
+    conduit = sc.sticky.get("my_conduit")
+    if conduit is not None:
+        conduit.Enabled = False
+        sc.sticky["my_conduit"] = None
+    else:
+        conduit = MyConduit()
+        conduit.Enabled = True
+        sc.sticky["my_conduit"] = conduit
+    sc.doc.Views.Redraw()
+    return Rhino.Commands.Result.Success
+
+
+if __name__ == "__main__":
+    RunCommand()
 ```
 
 </div>

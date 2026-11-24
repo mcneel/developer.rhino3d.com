@@ -4,7 +4,7 @@ authors = [ "steve" ]
 categories = [ "Adding Objects" ]
 description = "Demonstrates how to construct a twisted cube object from an array of points and a list of curves."
 keywords = [ "add", "twisted", "cube" ]
-languages = [ "C#" ]
+languages = [ "C#", "Python" ]
 sdk = [ "RhinoCommon" ]
 title = "Add Twisted Cube"
 type = "samples/rhinocommon"
@@ -359,7 +359,281 @@ partial class Examples
 <div class="codetab-content" id="py">
 
 ```python
-# No Python sample available
+#! python 3
+import Rhino
+import scriptcontext as sc
+from Rhino.Geometry import Point3d, Point2d, Brep, LineCurve, Interval, NurbsSurface, Surface, Curve
+from Rhino.Geometry import BrepLoopType, BrepTrimType, IsoStatus
+
+# Symbolic vertex index constants to make code more readable
+A, B, C, D, E, F, G, H = 0, 1, 2, 3, 4, 5, 6, 7
+
+# Symbolic edge index constants to make code more readable
+AB, BC, CD, AD, EF, FG, GH, EH, AE, BF, CG, DH = 0, 1, 2, 3, 4, 5, 6, 7, 8, 9, 10, 11
+
+# Symbolic face index constants to make code more readable
+ABCD, BCGF, CDHG, ADHE, ABFE, EFGH = 0, 1, 2, 3, 4, 5
+
+
+def TwistedCubeEdgeCurve(fromPt, toPt):
+    # Create a 3d line segment to be used as a 3d curve in a Brep
+    lc = LineCurve(fromPt, toPt)
+    lc.Domain = Interval(0, 1)
+    return lc
+
+
+def MakeTwistedCubeEdges(brep):
+    # In this simple example, the edge indices exactly match the 3d curve
+    # indices.  In general, the correspondence between edge and curve indices
+    # can be arbitrary.  It is permitted for multiple edges to use different
+    # portions of the same 3d curve.  The orientation of the edge always
+    # agrees with the natural parametric orientation of the curve.
+    brep.Edges.Add(A, B, AB, 0)  # Edge that runs from A to B
+    brep.Edges.Add(B, C, BC, 0)  # Edge that runs from B to C
+    brep.Edges.Add(C, D, CD, 0)  # Edge that runs from C to D
+    brep.Edges.Add(A, D, AD, 0)  # Edge that runs from A to D
+    brep.Edges.Add(E, F, EF, 0)  # Edge that runs from E to F
+    brep.Edges.Add(F, G, FG, 0)  # Edge that runs from F to G
+    brep.Edges.Add(G, H, GH, 0)  # Edge that runs from G to H
+    brep.Edges.Add(E, H, EH, 0)  # Edge that runs from E to H
+    brep.Edges.Add(A, E, AE, 0)  # Edge that runs from A to E
+    brep.Edges.Add(B, F, BF, 0)  # Edge that runs from B to F
+    brep.Edges.Add(C, G, CG, 0)  # Edge that runs from C to G
+    brep.Edges.Add(D, H, DH, 0)  # Edge that runs from D to H
+
+
+def TwistedCubeSideSurface(southwest, southeast, northeast, northwest):
+    ns = NurbsSurface.Create(3, False, 2, 2, 2, 2)
+
+    # Corner CVs in counter clockwise order starting in the south west
+    ns.Points.SetControlPoint(0, 0, southwest)
+    ns.Points.SetControlPoint(1, 0, southeast)
+    ns.Points.SetControlPoint(1, 1, northeast)
+    ns.Points.SetControlPoint(0, 1, northwest)
+
+    # "u" knots
+    ns.KnotsU[0] = 0.0
+    ns.KnotsU[1] = 1.0
+
+    # "v" knots
+    ns.KnotsV[0] = 0
+    ns.KnotsV[1] = 1
+    return ns
+
+
+def TwistedCubeTrimmingCurve(s, side):
+    # 0 = SW to SE
+    # 1 = SE to NE
+    # 2 = NE to NW
+    # 3 = NW to SW
+    # A trimming curve is a 2d curve whose image lies in the surface's domain.
+    # The "active" portion of the surface is to the left of the trimming curve.
+    # An outer trimming loop consists of a simple closed curve running
+    # counter-clockwise around the region it trims.
+    u_domain = s.Domain(0)
+    v_domain = s.Domain(1)
+    u0 = u_domain[0]
+    u1 = u_domain[1]
+    v0 = v_domain[0]
+    v1 = v_domain[1]
+
+    if side == 0:  # SW to SE
+        fromPt = Point2d(u0, v0)
+        toPt = Point2d(u1, v0)
+    elif side == 1:  # SE to NE
+        fromPt = Point2d(u1, v0)
+        toPt = Point2d(u1, v1)
+    elif side == 2:  # NE to NW
+        fromPt = Point2d(u1, v1)
+        toPt = Point2d(u0, v1)
+    elif side == 3:  # NW to SW
+        fromPt = Point2d(u0, v1)
+        toPt = Point2d(u0, v0)
+    else:
+        return None
+
+    lc = LineCurve(fromPt, toPt)
+    lc.Domain = Interval(0, 1)
+    return lc
+
+
+def MakeTwistedCubeTrimmingLoop(brep, face, eSi, eS_dir, eEi, eE_dir, eNi, eN_dir, eWi, eW_dir):
+    srf = brep.Surfaces[face.SurfaceIndex]
+    loop = brep.Loops.Add(BrepLoopType.Outer, face)
+
+    # Create trimming curves running counter clockwise around the surface's domain.
+    # Start at the south side
+    # side: 0=south, 1=east, 2=north, 3=west
+    for side in range(4):
+        trimming_curve = TwistedCubeTrimmingCurve(srf, side)
+        curve_index = brep.Curves2D.Add(trimming_curve)
+
+        ei = 0
+        reverse = False
+        iso = IsoStatus.None_  # 'None' is a Python keyword; use None_ alias
+
+        if side == 0:  # south
+            ei = eSi
+            reverse = (eS_dir == -1)
+            iso = IsoStatus.South
+        elif side == 1:  # east
+            ei = eEi
+            reverse = (eE_dir == -1)
+            iso = IsoStatus.East
+        elif side == 2:  # north
+            ei = eNi
+            reverse = (eN_dir == -1)
+            iso = IsoStatus.North
+        elif side == 3:  # west
+            ei = eWi
+            reverse = (eW_dir == -1)
+            iso = IsoStatus.West
+
+        edge = brep.Edges[ei]
+        trim = brep.Trims.Add(edge, reverse, loop, curve_index)
+        trim.IsoStatus = iso
+        trim.TrimType = BrepTrimType.Mated  # This b-rep is closed, so all trims have mates.
+        trim.SetTolerances(0, 0)  # This simple example is exact - for models with
+        # non-exact data, set tolerance as explained in
+        # definition of BrepTrim.
+
+
+def MakeTwistedCubeFace(brep, surfaceIndex, s_dir,
+                        southEdgeIndex, eS_dir,
+                        eastEdgeIndex, eE_dir,
+                        northEdgeIndex, eN_dir,
+                        westEdgeIndex, eW_dir):
+    face = brep.Faces.Add(surfaceIndex)
+
+    MakeTwistedCubeTrimmingLoop(
+        brep,
+        face,
+        southEdgeIndex, eS_dir,
+        eastEdgeIndex, eE_dir,
+        northEdgeIndex, eN_dir,
+        westEdgeIndex, eW_dir
+    )
+
+    face.OrientationIsReversed = (s_dir == -1)
+
+
+def MakeTwistedCubeFaces(brep):
+    MakeTwistedCubeFace(brep,
+        ABCD,       # Index of surface ABCD
+        +1,         # Indices of vertices listed in SW,SE,NW,NE order
+        AB, +1,     # South side edge and its orientation with respect to
+                    # to the trimming curve.  (AB)
+        BC, +1,     # South side edge and its orientation with respect to
+                    # to the trimming curve.  (BC)
+        CD, +1,     # South side edge and its orientation with respect to
+                    # to the trimming curve   (CD)
+        AD, -1      # South side edge and its orientation with respect to
+                    # to the trimming curve   (AD)
+    )
+
+    MakeTwistedCubeFace(brep,
+        BCGF,       # Index of surface BCGF
+        -1,         # Indices of vertices listed in SW,SE,NW,NE order
+        BC, +1,
+        CG, +1,
+        FG, -1,
+        BF, -1
+    )
+
+    MakeTwistedCubeFace(brep,
+        CDHG,       # Index of surface CDHG
+        -1,
+        CD, +1,
+        DH, +1,
+        GH, -1,
+        CG, -1
+    )
+
+    MakeTwistedCubeFace(brep,
+        ADHE,       # Index of surface ADHE
+        +1,
+        AD, +1,
+        DH, +1,
+        EH, -1,
+        AE, -1
+    )
+
+    MakeTwistedCubeFace(brep,
+        ABFE,       # Index of surface ABFE
+        -1,
+        AB, +1,
+        BF, +1,
+        EF, -1,
+        AE, -1
+    )
+
+    MakeTwistedCubeFace(brep,
+        EFGH,       # Index of surface EFGH
+        -1,
+        EF, +1,
+        FG, +1,
+        GH, +1,
+        EH, -1
+    )
+
+
+def RunCommand():
+    points = [
+        Point3d(0.0, 0.0, 0.0),    # point A = geometry for vertex 0
+        Point3d(10.0, 0.0, 0.0),   # point B = geometry for vertex 1
+        Point3d(10.0, 8.0, -1.0),  # point C = geometry for vertex 2
+        Point3d(0.0, 6.0, 0.0),    # point D = geometry for vertex 3
+        Point3d(1.0, 2.0, 11.0),   # point E = geometry for vertex 4
+        Point3d(10.0, 0.0, 12.0),  # point F = geometry for vertex 5
+        Point3d(10.0, 7.0, 13.0),  # point G = geometry for vertex 6
+        Point3d(0.0, 6.0, 12.0),   # point H = geometry for vertex 7
+    ]
+
+    brep = Brep()
+
+    # Create eight vertices located at the eight points
+    for vi in range(8):
+        brep.Vertices.Add(points[vi], 0.0)
+
+    # Create 3d curve geometry - the orientations are arbitrarily chosen
+    # so that the end vertices are in alphabetical order.
+    brep.Curves3D.Add(TwistedCubeEdgeCurve(points[A], points[B]))  # line AB
+    brep.Curves3D.Add(TwistedCubeEdgeCurve(points[B], points[C]))  # line BC
+    brep.Curves3D.Add(TwistedCubeEdgeCurve(points[C], points[D]))  # line CD
+    brep.Curves3D.Add(TwistedCubeEdgeCurve(points[A], points[D]))  # line AD
+    brep.Curves3D.Add(TwistedCubeEdgeCurve(points[E], points[F]))  # line EF
+    brep.Curves3D.Add(TwistedCubeEdgeCurve(points[F], points[G]))  # line FG
+    brep.Curves3D.Add(TwistedCubeEdgeCurve(points[G], points[H]))  # line GH
+    brep.Curves3D.Add(TwistedCubeEdgeCurve(points[E], points[H]))  # line EH
+    brep.Curves3D.Add(TwistedCubeEdgeCurve(points[A], points[E]))  # line AE
+    brep.Curves3D.Add(TwistedCubeEdgeCurve(points[B], points[F]))  # line BF
+    brep.Curves3D.Add(TwistedCubeEdgeCurve(points[C], points[G]))  # line CG
+    brep.Curves3D.Add(TwistedCubeEdgeCurve(points[D], points[H]))  # line DH
+
+    # Create the 12 edges that connect the corners of the cube.
+    MakeTwistedCubeEdges(brep)
+
+    # Create 3d surface geometry - the orientations are arbitrarily chosen so
+    # that some normals point into the cube and others point out of the cube.
+    brep.AddSurface(TwistedCubeSideSurface(points[A], points[B], points[C], points[D]))  # ABCD
+    brep.AddSurface(TwistedCubeSideSurface(points[B], points[C], points[G], points[F]))  # BCGF
+    brep.AddSurface(TwistedCubeSideSurface(points[C], points[D], points[H], points[G]))  # CDHG
+    brep.AddSurface(TwistedCubeSideSurface(points[A], points[D], points[H], points[E]))  # ADHE
+    brep.AddSurface(TwistedCubeSideSurface(points[A], points[B], points[F], points[E]))  # ABFE
+    brep.AddSurface(TwistedCubeSideSurface(points[E], points[F], points[G], points[H]))  # EFGH
+
+    # Create the CRhinoBrepFaces
+    MakeTwistedCubeFaces(brep)
+
+    if brep.IsValid:
+        sc.doc.Objects.AddBrep(brep)
+        sc.doc.Views.Redraw()
+        return Rhino.Commands.Result.Success
+    return Rhino.Commands.Result.Failure
+
+
+if __name__ == "__main__":
+    RunCommand()
 ```
 
 </div>
