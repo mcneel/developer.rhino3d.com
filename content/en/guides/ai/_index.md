@@ -32,6 +32,8 @@ since = 8
 
 Connect an AI assistant such as Claude, GitHub Copilot, OpenAI Codex, Gemini CLI, or a local model to Rhino and Grasshopper through Rhino MCP. Have it model geometry, build Grasshopper definitions, automate batch work across many files, and speed up plug-in development while you review the results.
 
+Rhino AI panel and MCP is also an opensource project open for contributions.  See the details at the [RhinoAI Github Project](https://github.com/mcneel/RhinoAI)
+
 {{< /column >}}
 </div>
 

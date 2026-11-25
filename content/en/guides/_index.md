@@ -406,6 +406,41 @@ toc_type = "single"
 - [Migrating Components to Grasshopper 2](/guides/grasshopper2/migrating-components-to-gh2/) {{< new-label version="9" style="inline" link="/guides/general/new-in-v9/" >}}
 - [Developer discussions on Discourse](https://discourse.mcneel.com/c/grasshopper-developer)
 
+## [Rhino with AI](/guides/ai)
+
+*Guides to using AI assistants with Rhino and Grasshopper through Rhino MCP.*
+
+Connect an AI assistant such as Claude, GitHub Copilot, OpenAI Codex, Gemini CLI, or a local model to Rhino and Grasshopper through Rhino MCP. 
+
+The Rhino AI panel and MCP are also an open-source project open for contributions. See the [RhinoAI GitHub Project](https://github.com/mcneel/RhinoAI) for details.
+
+### Getting Started with Rhino MCP
+
+- [Getting Started with Rhino MCP](/guides/ai/MCP/getting-started/overview/)
+- [Claude Desktop](/guides/ai/MCP/getting-started/connector/)
+- [Claude Code](/guides/ai/MCP/getting-started/cc-plugin/)
+- [GitHub Copilot](/guides/ai/MCP/getting-started/copilot/)
+- [OpenAI Codex](/guides/ai/MCP/getting-started/codex/)
+- [Gemini CLI](/guides/ai/MCP/getting-started/gemini/)
+- [Local LLMs](/guides/ai/MCP/getting-started/lm-studio/)
+
+### Automation thru MCP
+
+- [Bulk File Processing](/guides/ai/bulk-file-processing/)
+- [Headless Render Farm](/guides/ai/headless-render-farm/)
+- [Make This Parametric](/guides/ai/make-this-parametric/)
+
+### Plug-in Development using an LLM
+
+- [Port GH1 plugin to GH2](/guides/ai/gh1-gh2-plugins/)
+- [Vibe Coding a Rhino Plug-in](/guides/ai/plugins/)
+- [Upgrade a Plug-in to .NET Core](/guides/ai/upgrade-to-netcore/)
+- [Make a Windows-only Plug-in Cross-platform](/guides/ai/windows-to-cross-platform/)
+- [Convert a WPF UI to Eto](/guides/ai/wpf-to-eto/)
+
+### Troubleshooting
+
+- [Rhino MCP Troubleshooting](/guides/ai/troubleshooting/)
 
 ## [RhinoScript](/guides/rhinoscript)
 
